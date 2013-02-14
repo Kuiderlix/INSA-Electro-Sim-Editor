@@ -3,6 +3,7 @@
 
 #include <QtGui>
 #include "visualisation3d.h"
+#include "zonecentrale.h"
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */
@@ -17,7 +18,7 @@ public:
     ~MainWindow();
 
 private:
-    Visualisation3D *zoneCentrale;
+    ZoneCentrale *zoneCentrale;
 };
 
 #endif // MAINWINDOW_H

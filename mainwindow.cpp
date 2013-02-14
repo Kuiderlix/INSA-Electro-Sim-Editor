@@ -4,7 +4,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     construitMenu();
-    zoneCentrale = new Visualisation3D;
+    zoneCentrale = new ZoneCentrale;
     setCentralWidget(zoneCentrale);
 }
 

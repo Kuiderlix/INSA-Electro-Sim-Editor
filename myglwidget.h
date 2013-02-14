@@ -14,6 +14,7 @@ public:
     virtual void initializeGL() = 0;
     virtual void resizeGL(int width, int height) = 0;
     virtual void paintGL() = 0;
+    virtual QSize	sizeHint () const;
 
 public slots:
     virtual void timeOutSlot();

@@ -21,3 +21,8 @@ void MyGLWidget::timeOutSlot()
 {
     updateGL();
 }
+
+QSize MyGLWidget::sizeHint () const
+{
+    return QSize(500,500);
+}
