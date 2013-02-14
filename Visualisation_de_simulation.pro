@@ -13,13 +13,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    zonecentral.cpp \
     myglwidget.cpp \
     visualisation3d.cpp \
-    cube.cpp
+    cube.cpp \
+    formulaire.cpp \
+    zonecentrale.cpp
 
 HEADERS  += mainwindow.h \
-    zonecentral.h \
     myglwidget.h \
     visualisation3d.h \
-    cube.h
+    cube.h \
+    formulaire.h \
+    zonecentrale.h
