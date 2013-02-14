@@ -12,9 +12,6 @@ Visualisation3D::Visualisation3D(QWidget *parent)
 void Visualisation3D::initializeGL()
 {
     angleRot=0.0;
-    xRot=0.0;
-    yRot=0.0;
-    zRot=-10.0;
 
     glShadeModel(GL_SMOOTH);
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
