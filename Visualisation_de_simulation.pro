@@ -4,12 +4,12 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-QT += opengl
+QT       += core gui opengl
 
 TARGET = Visualisation_de_simulation
 TEMPLATE = app
 
+LIBS += -L/usr/local/bar/libs -lGLU
 
 SOURCES += main.cpp\
         mainwindow.cpp \

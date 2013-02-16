@@ -2,6 +2,7 @@
 #define VISUALISATION3D_H
 
 #include "myglwidget.h"
+#include <GL/glu.h>
 #include "cube.h"
 #include "point.h"
 /*

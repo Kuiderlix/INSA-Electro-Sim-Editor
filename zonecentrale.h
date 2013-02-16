@@ -1,7 +1,7 @@
 #ifndef ZONECENTRAL_H
 #define ZONECENTRAL_H
 
-#include <QWidget>
+#include <QtWidgets>
 #include "visualisation3d.h"
 #include "formulaire.h"
 /*

@@ -1,7 +1,7 @@
 #ifndef FORMULAIRE_H
 #define FORMULAIRE_H
 
-#include <QtGui>
+#include <QtWidgets>
 
 class Formulaire : public QWidget
 {
