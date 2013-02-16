@@ -22,9 +22,12 @@ class Visualisation3D : public MyGLWidget
         void mousePressEvent ( QMouseEvent * event );
         void mouseMoveEvent ( QMouseEvent * event );
         void mouseReleaseEvent ( QMouseEvent * event );
+
+        void wheelEvent ( QWheelEvent * event );
     private:
         Cube* cube; // le cube a affiché
-        double angleRot;
+        double zoom;
+        double rotateX, rotateY;
 };
 
 #endif // VISUALISATION3D_H

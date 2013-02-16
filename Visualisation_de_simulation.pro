@@ -17,11 +17,13 @@ SOURCES += main.cpp\
     visualisation3d.cpp \
     cube.cpp \
     formulaire.cpp \
-    zonecentrale.cpp
+    zonecentrale.cpp \
+    point.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
     visualisation3d.h \
     cube.h \
     formulaire.h \
-    zonecentrale.h
+    zonecentrale.h \
+    point.h

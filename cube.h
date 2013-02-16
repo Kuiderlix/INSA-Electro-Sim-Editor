@@ -2,6 +2,7 @@
 #define CUBE_H
 
 #include <QtOpenGL>
+#include "point.h"
 
 class Cube
 {
@@ -11,6 +12,7 @@ public:
     void dessineCube();
 
 private:
+    Point topLeftCorner, bottomRightCorner; // définition d'un cube avec les données des fichiers de config
 };
 
 #endif // CUBE_H
