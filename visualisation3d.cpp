@@ -42,10 +42,10 @@ void Visualisation3D::paintGL()
     glLoadIdentity();
     glTranslatef(0.0f, 0.0f, 0.0f); // méthode de translation (x,y,z)
     gluLookAt(0,0,zoom,0,0,0,1,0,0); // gestion de la caméra
-    glRotatef(depart.y-pointActuel.y, 1.0, 0, 0); // rotation en x
-    glRotatef(pointActuel.x-depart.x, 0, 1.0, 0);  //rotation en y
-    glRotatef(rotateX, 1.0, 0, 0); // rotation en x
-    glRotatef(rotateY, 0, 1.0, 0);  //rotation en y
+    glRotatef(depart.y-pointActuel.y, 1.0, 0, 0); // rotation en x avec la souris
+    glRotatef(pointActuel.x-depart.x, 0, 1.0, 0);  //rotation en y avec la souris
+    glRotatef(rotateX, 1.0, 0, 0); // rotation en x avec le clavier
+    glRotatef(rotateY, 0, 1.0, 0);  //rotation en y avec le clavier
     cube->dessineCube();
 }
 
