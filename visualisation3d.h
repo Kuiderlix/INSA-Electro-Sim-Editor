@@ -3,7 +3,7 @@
 
 #include "myglwidget.h"
 #include "cube.h"
-
+#include "point.h"
 /*
   Cette classe affiche le rendu 3D de la scene
 */
@@ -28,6 +28,8 @@ class Visualisation3D : public MyGLWidget
         Cube* cube; // le cube a affiché
         double zoom;
         double rotateX, rotateY;
+        Point depart, pointActuel, ecartPrecedent;
+
 };
 
 #endif // VISUALISATION3D_H

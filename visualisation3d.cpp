@@ -42,6 +42,8 @@ void Visualisation3D::paintGL()
     glLoadIdentity();
     glTranslatef(0.0f, 0.0f, 0.0f); // méthode de translation (x,y,z)
     gluLookAt(0,0,zoom,0,0,0,1,0,0); // gestion de la caméra
+    glRotatef(depart.y-pointActuel.y, 1.0, 0, 0); // rotation en x
+    glRotatef(pointActuel.x-depart.x, 0, 1.0, 0);  //rotation en y
     glRotatef(rotateX, 1.0, 0, 0); // rotation en x
     glRotatef(rotateY, 0, 1.0, 0);  //rotation en y
     cube->dessineCube();
@@ -73,15 +75,22 @@ void Visualisation3D::keyPressEvent(QKeyEvent *keyEvent)
 void Visualisation3D::mousePressEvent( QMouseEvent * event )
 {
     setCursor(QCursor(Qt::ClosedHandCursor)); // change le curseur qui on clique dessus
+    depart.x=ecartPrecedent.x+event->pos().x();
+    depart.y=ecartPrecedent.y+event->pos().y();
+    pointActuel.x=event->pos().x();
+    pointActuel.y=event->pos().y();
 }
 void Visualisation3D::mouseMoveEvent( QMouseEvent * event )
 {
-
+    pointActuel.x=event->pos().x();
+    pointActuel.y=event->pos().y();
 }
 
 void Visualisation3D::mouseReleaseEvent( QMouseEvent * event )
 {
     setCursor(QCursor(Qt::OpenHandCursor)); // remet le curseur dans on état d'origine quand on relache le clic
+    ecartPrecedent.x=depart.x-pointActuel.x;
+    ecartPrecedent.y=depart.y-pointActuel.y;
 }
 
 void Visualisation3D::wheelEvent(QWheelEvent * event) // gestion de la molette de la souris
