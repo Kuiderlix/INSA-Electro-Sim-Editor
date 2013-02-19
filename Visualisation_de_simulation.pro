@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     cube.cpp \
     formulaire.cpp \
     zonecentrale.cpp \
-    point.cpp
+    point.cpp \
+    parser.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -26,4 +27,6 @@ HEADERS  += mainwindow.h \
     cube.h \
     formulaire.h \
     zonecentrale.h \
-    point.h
+    point.h \
+    constants.h \
+    structures.h
