@@ -12,5 +12,8 @@ ZoneCentrale::ZoneCentrale(QWidget *parent) :
     layoutPrincipale->addWidget(visualisation);
     layoutPrincipale->addWidget(formulaire); // pour le formulaire
 
+
+    connect(formulaire, SIGNAL(cubeSent(Cube*)), visualisation, SLOT(ajoutCube(Cube*)));
+
     this->setLayout(layoutPrincipale);
 }

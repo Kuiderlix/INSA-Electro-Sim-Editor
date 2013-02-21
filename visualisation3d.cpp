@@ -4,7 +4,6 @@
 Visualisation3D::Visualisation3D(QWidget *parent)
     : MyGLWidget(parent)
 {
-    cube = new Cube();
     setFocusPolicy(Qt::ClickFocus);
     setCursor(QCursor(Qt::OpenHandCursor));
 }
@@ -46,7 +45,10 @@ void Visualisation3D::paintGL()
     glRotatef(pointActuel.x-depart.x, 0, 1.0, 0);  //rotation en y avec la souris
     glRotatef(rotateX, 1.0, 0, 0); // rotation en x avec le clavier
     glRotatef(rotateY, 0, 1.0, 0);  //rotation en y avec le clavier
-    cube->dessineCube();
+
+    for (vector<Cube*>::iterator it = tabCubes.begin(); it!=tabCubes.end(); ++it) {
+        (*it)->dessineCube();
+    }
 }
 
 void Visualisation3D::keyPressEvent(QKeyEvent *keyEvent)
@@ -104,5 +106,11 @@ void Visualisation3D::wheelEvent(QWheelEvent * event) // gestion de la molette d
      zoom+=numSteps;
     }
     event->accept();
+}
+
+
+void Visualisation3D::ajoutCube(Cube * c)
+{
+    tabCubes.push_back(c);
 }
 

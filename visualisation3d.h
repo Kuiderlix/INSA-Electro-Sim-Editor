@@ -5,6 +5,10 @@
 #include <GL/glu.h>
 #include "cube.h"
 #include "point.h"
+#include <vector>
+
+using namespace std;
+
 /*
   Cette classe affiche le rendu 3D de la scene
 */
@@ -25,8 +29,12 @@ class Visualisation3D : public MyGLWidget
         void mouseReleaseEvent ( QMouseEvent * event );
 
         void wheelEvent ( QWheelEvent * event );
+
+    public slots:
+        void ajoutCube(Cube *);
+
     private:
-        Cube* cube; // le cube a affiché
+        vector<Cube*> tabCubes;
         double zoom;
         double rotateX, rotateY;
         Point depart, pointActuel, ecartPrecedent;

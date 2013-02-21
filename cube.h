@@ -8,6 +8,7 @@ class Cube
 {
 public:
     Cube();
+    Cube(Point, Point);
 
     void dessineCube();
 

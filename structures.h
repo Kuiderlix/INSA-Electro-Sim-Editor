@@ -8,6 +8,12 @@
 #ifndef STRUCTURES_H
 #define	STRUCTURES_H
 
+
+/**
+ * IL FAUDRAIT LES TRANSFORMER EN CLASSES POUR UTILISATION PLUS SIMPLE
+ *
+
+*/
 /*-----------------------------------------------------------------------------
  *                                                           metal          
  *-----------------------------------------------------------------------------

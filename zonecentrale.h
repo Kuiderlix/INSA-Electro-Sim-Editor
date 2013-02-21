@@ -2,6 +2,7 @@
 #define ZONECENTRAL_H
 
 #include <QtWidgets>
+#include <QObject>
 #include "visualisation3d.h"
 #include "formulaire.h"
 /*
