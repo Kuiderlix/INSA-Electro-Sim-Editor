@@ -127,7 +127,7 @@ typedef struct {
     int nbx_inc_prel;
     int nby_inc_prel;
     int nbz_inc_prel;
-}            CageExcitation;
+}            structCageExcitation;
 
 /*-----------------------------------------------------------------------------
  *                                                           portacces = sonde     
@@ -185,7 +185,7 @@ typedef struct
 {
     //Général
     int typ_surf_prelev;
-    //Huygens
+    //Pour les deux
     int nb_surf_ch_loin;
     int mx_surfHuy_inf;
     int my_surfHuy_inf;
@@ -195,20 +195,13 @@ typedef struct
     int mz_surfHuy_sup;
     //DG
     int surf_prel_inside_outside;
-    int nb_faces_surf_Prel_DG;
-    int mx_surfPrel_DG_inf; //TODO : joindre les deux ?
-    int my_surfPrel_DG_inf;
-    int mz_surfPrel_DG_inf;
-    int mx_surfPrel_DG_sup;
-    int my_surfPrel_DG_sup;
-    int mz_surfPrel_DG_sup; // fin joindre
     int compx_Prel;
     int compy_Prel;
     int compz_Prel;
     int nbx_surfPrel;
     int nby_surfPrel;
     int nbz_surfPrel;
-}            SurfacePrelevement;
+}            structSurfacePrelevement;
 
 
 

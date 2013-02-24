@@ -8,6 +8,8 @@
 #include <iostream>
 #include "constants.h"
 #include "structures.h"
+#include "CageExcitation.h"
+#include "SurfacePrelevement.h"
 
 using namespace std;
 /******************************************************************************/
@@ -58,7 +60,7 @@ float dt, tobs;
 PortExcitation *portexcit;
 //Cages d'Excitation
 int nb_cages_excitation;
-CageExcitation *cageExcitations;
+CageExcitation cageExcitation = new CageExcitation();
 //Sondes
 int nbsonde;
 Sonde *sonde;
@@ -69,8 +71,44 @@ CartographieTemporelle *CT;
 int ind_ch_loin, ind_ch_Prel_DG, cpt_surf_DG;
 int nbsurf_prel;
 int nb_surf_Prel_DG;
-SurfacePrelevement *surfaces;
+SurfacePrelevement surface = new SurfacePrelevement();
 
+/******************************************************************************/
+/** >VARIABLES RECUPEREES .PTR ************************************************/
+/******************************************************************************/
+//Champ lointain
+int nbsurf_huy;
+int x_origine;
+int y_origine;
+int z_origine;
+float freq_min_ch_loin;
+float freq_max_ch_loin;
+float freq_pas_ch_loin;
+int ind_cal_image;
+int z_masse_ref;
+int pas_theta;
+int pas_phi;
+
+/******************************************************************************/
+/** >VARIABLES RECUPEREES .AVC ************************************************/
+/******************************************************************************/
+//Excitation
+float v0;
+//Format stockage
+int format_stock;
+int flag_EnregChampsPrelBinaire;
+//Echantillonnage
+int fact_echantill;
+//Compression Huygens
+int compx_Huy;
+int compy_Huy;
+int compz_Huy;
+int fact_echantill_huy;
+int inter_iter;
+//Calcul directivité
+int ind_direct;
+int pas_theta_dir;
+int pas_phi_dir;
 /******************************************************************************/
 /** >FONCTION PARSAGE .DSC ****************************************************/
 /******************************************************************************/
@@ -115,81 +153,59 @@ void scanTypeParoi() {
     if ((typaroi_inf == PAROI_PEC) &&
             (typaroi_sup == PAROI_MUR) &&
             (typaroi_x == PAROI_MUR) &&
-            (typaroi_y == PAROI_MUR))
- {
+            (typaroi_y == PAROI_MUR)) {
         typaroi = 0;
-    }
-    else if ((typaroi_inf == PAROI_PEC) &&
+    } else if ((typaroi_inf == PAROI_PEC) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_PEC) &&
-            (typaroi_y == PAROI_PEC))
- {
+            (typaroi_y == PAROI_PEC)) {
         typaroi = 1;
-    }
-    else if ((typaroi_inf == PAROI_PML) &&
+    } else if ((typaroi_inf == PAROI_PML) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_PEC) &&
-            (typaroi_y == PAROI_PEC))
- {
+            (typaroi_y == PAROI_PEC)) {
         typaroi = 2;
-    }
-    else if ((typaroi_inf == PAROI_PEC) &&
+    } else if ((typaroi_inf == PAROI_PEC) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_FLOQUET) &&
-            (typaroi_y == PAROI_FLOQUET))
- {
+            (typaroi_y == PAROI_FLOQUET)) {
         typaroi = 3;
-    }
-    else if ((typaroi_inf == PAROI_PML) &&
+    } else if ((typaroi_inf == PAROI_PML) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_FLOQUET) &&
-            (typaroi_y == PAROI_FLOQUET))
- {
+            (typaroi_y == PAROI_FLOQUET)) {
         typaroi = 4;
-    }
-    else if ((typaroi_inf == PAROI_PEC) &&
+    } else if ((typaroi_inf == PAROI_PEC) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_PML) &&
-            (typaroi_y == PAROI_PML))
- {
+            (typaroi_y == PAROI_PML)) {
         typaroi = 5;
-    }
-    else if ((typaroi_inf == PAROI_PML) &&
+    } else if ((typaroi_inf == PAROI_PML) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_PML) &&
-            (typaroi_y == PAROI_PML))
- {
+            (typaroi_y == PAROI_PML)) {
         typaroi = 6;
-    }
-    else if ((typaroi_inf == PAROI_PEC) &&
+    } else if ((typaroi_inf == PAROI_PEC) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_PML) &&
-            (typaroi_y == PAROI_FLOQUET))
- {
+            (typaroi_y == PAROI_FLOQUET)) {
         typaroi = 7;
-    }
-    else if ((typaroi_inf == PAROI_PML) &&
+    } else if ((typaroi_inf == PAROI_PML) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_PML) &&
-            (typaroi_y == PAROI_FLOQUET))
- {
+            (typaroi_y == PAROI_FLOQUET)) {
         typaroi = 8;
-    }
-    else if ((typaroi_inf == PAROI_PEC) &&
+    } else if ((typaroi_inf == PAROI_PEC) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_PEC) &&
-            (typaroi_y == PAROI_PMC))
- {
+            (typaroi_y == PAROI_PMC)) {
         typaroi = 9;
-    }
-    else if ((typaroi_inf == PAROI_PML) &&
+    } else if ((typaroi_inf == PAROI_PML) &&
             (typaroi_sup == PAROI_PML) &&
             (typaroi_x == PAROI_PEC) &&
-            (typaroi_y == PAROI_PMC))
- {
+            (typaroi_y == PAROI_PMC)) {
         typaroi = 10;
-    }
-    else {
+    } else {
         printf("\n\n\7\7 ** Definition des ABCs non conforme aux fonctionnalites du code **\n");
         exit(0);
     }
@@ -232,11 +248,11 @@ void scanMetallisation() {
 
         // verification des donnees
         if (meta[i].izm1 != meta[i].izm2)
-        if (meta[i].iym1 != meta[i].iym2)
-        if (meta[i].ixm1 != meta[i].ixm2) {
-                printf("Erreur: Les metallisations sont forcement des plans");
-                exit(0);
-        }
+            if (meta[i].iym1 != meta[i].iym2)
+                if (meta[i].ixm1 != meta[i].ixm2) {
+                    printf("Erreur: Les metallisations sont forcement des plans");
+                    exit(0);
+                }
     }
 
     //Affichage des m�talisations
@@ -264,110 +280,126 @@ void scanMetallisation() {
     }
 }
 
-void scanParallelepipedes(){
-    fscanf(fp,"%*s");
-    fscanf(fp,"%d",&nbsubs);
+void scanParallelepipedes() {
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &nbsubs);
 
     printf("Nombre_de_parallelepipedes:\n");
-    printf("%d\n",nbsubs);
+    printf("%d\n", nbsubs);
 
-    subs=(Substrat *)calloc( nbsubs+1 , sizeof(Substrat) );   // Modif GODI/QUEUDET : allocation dynamique de la liste de substrats
+    subs = (Substrat *) calloc(nbsubs + 1, sizeof (Substrat)); // Modif GODI/QUEUDET : allocation dynamique de la liste de substrats
 
     int i;
-    for ( i=0 ; i<nbsubs ; i++ )
-    {
-        fscanf(fp,"%*s");
-        fscanf(fp,"%*s");
-        fscanf(fp,"%f",&subs[i].perm);
-        fscanf(fp,"%*s");
-        fscanf(fp,"%f",&subs[i].permea);
-        fscanf(fp,"%*s");
-        fscanf(fp,"%f",&subs[i].cond);
-        fscanf(fp,"%*s");
-        fscanf(fp,"%*s");
-        fscanf(fp,"%d",&subs[i].iys1);
-        fscanf(fp,"%*s");
-        fscanf(fp,"%d",&subs[i].ixs1);
-        fscanf(fp,"%*s");
-        fscanf(fp,"%d",&subs[i].izs1);
-        fscanf(fp,"%*s");
-        fscanf(fp,"%*s");
-        fscanf(fp,"%d",&subs[i].iys2);
-        fscanf(fp,"%*s");
-        fscanf(fp,"%d",&subs[i].ixs2);
-        fscanf(fp,"%*s");
-        fscanf(fp,"%d",&subs[i].izs2);
+    for (i = 0; i < nbsubs; i++) {
+        fscanf(fp, "%*s");
+        fscanf(fp, "%*s");
+        fscanf(fp, "%f", &subs[i].perm);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%f", &subs[i].permea);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%f", &subs[i].cond);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &subs[i].iys1);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &subs[i].ixs1);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &subs[i].izs1);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &subs[i].iys2);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &subs[i].ixs2);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &subs[i].izs2);
 
-        printf("parallelepipede_numero_%d\n",i+1);
-        printf("Permittivite_relative:\n"); printf("%f\n",subs[i].perm);
-        printf("Permeabilite_relative:\n"); printf("%f\n",subs[i].permea);
-        printf("Conductivite:\n"); 			printf("%f\n",subs[i].cond);
+        printf("parallelepipede_numero_%d\n", i + 1);
+        printf("Permittivite_relative:\n");
+        printf("%f\n", subs[i].perm);
+        printf("Permeabilite_relative:\n");
+        printf("%f\n", subs[i].permea);
+        printf("Conductivite:\n");
+        printf("%f\n", subs[i].cond);
 
-        if (subs[i].permea!=1.0)
-                 {printf("Les materiaux magnetiques ne sont pas pris en compte dans cette version du code\n");}
+        if (subs[i].permea != 1.0) {
+            printf("Les materiaux magnetiques ne sont pas pris en compte dans cette version du code\n");
+        }
 
         printf("Coordonnees_du_coin_inferieur_avant_gauche\n");
-        printf("Sur_la_longueur_y_(en_cellules):\n"); printf("%d\n",subs[i].iys1);
-        printf("Sur_la_largeur_x_(en_cellules):\n"); printf("%d\n",subs[i].ixs1);
-        printf("Sur_la_hauteur_z_(en_cellules):\n"); printf("%d\n",subs[i].izs1);
+        printf("Sur_la_longueur_y_(en_cellules):\n");
+        printf("%d\n", subs[i].iys1);
+        printf("Sur_la_largeur_x_(en_cellules):\n");
+        printf("%d\n", subs[i].ixs1);
+        printf("Sur_la_hauteur_z_(en_cellules):\n");
+        printf("%d\n", subs[i].izs1);
 
         printf("Coordonnees_du_coin_superieur_arriere_droit\n");
-        printf("Sur_la_longueur_y_(en_cellules):\n"); printf("%d\n",subs[i].iys2);
-        printf("Sur_la_largeur_x_(en_cellules):\n"); printf("%d\n",subs[i].ixs2);
-        printf("Sur_la_hauteur_z_(en_cellules):\n"); printf("%d\n",subs[i].izs2);
+        printf("Sur_la_longueur_y_(en_cellules):\n");
+        printf("%d\n", subs[i].iys2);
+        printf("Sur_la_largeur_x_(en_cellules):\n");
+        printf("%d\n", subs[i].ixs2);
+        printf("Sur_la_hauteur_z_(en_cellules):\n");
+        printf("%d\n", subs[i].izs2);
     }
 }
 
-void scanElementsLocalises(){
-    fscanf(fp,"%*s");
-    fscanf(fp,"%d",&nbelt);
+void scanElementsLocalises() {
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &nbelt);
 
     printf("Nombre_d_elements_localises:\n");
-    printf("%d\n",nbelt);
+    printf("%d\n", nbelt);
 
-    if (nbelt > 0)
-    {
-        elts=(ElementLocalise *)calloc( nbelt+1 , sizeof(ElementLocalise) );  // Modif QUEUDET : allocation dynamique de la liste des elements localises
-        
+    if (nbelt > 0) {
+        elts = (ElementLocalise *) calloc(nbelt + 1, sizeof (ElementLocalise)); // Modif QUEUDET : allocation dynamique de la liste des elements localises
+
         int i;
-        for ( i=0 ; i<nbelt ; i++ )
-        {
-           fscanf(fp,"%*s");
-           fscanf(fp,"%*s");
-           fscanf(fp,"%d",&elts[i].type);
-           fscanf(fp,"%*s");
-           fscanf(fp,"%e",&elts[i].val);
-           fscanf(fp,"%*s");
-           fscanf(fp,"%d",&elts[i].dir);
-           fscanf(fp,"%*s");
-           fscanf(fp,"%*s");
-           fscanf(fp,"%d",&elts[i].iy1);
-           fscanf(fp,"%*s");
-           fscanf(fp,"%d",&elts[i].ix1);
-           fscanf(fp,"%*s");
-           fscanf(fp,"%d",&elts[i].iz1);
-           fscanf(fp,"%*s");
-           fscanf(fp,"%*s");
-           fscanf(fp,"%d",&elts[i].iy2);
-           fscanf(fp,"%*s");
-           fscanf(fp,"%d",&elts[i].ix2);
-           fscanf(fp,"%*s");
-           fscanf(fp,"%d",&elts[i].iz2);
+        for (i = 0; i < nbelt; i++) {
+            fscanf(fp, "%*s");
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &elts[i].type);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%e", &elts[i].val);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &elts[i].dir);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &elts[i].iy1);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &elts[i].ix1);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &elts[i].iz1);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &elts[i].iy2);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &elts[i].ix2);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &elts[i].iz2);
 
-           printf("Element_Localise_numero_%i\n",i+1);
-           printf("Type_d_element_1>resistance_2>capacite_3>self:\n"); printf("%d\n",elts[i].type);
-           printf("Valeur_de_l_element_en_Ohm_Farad_ou_Henry:\n"); printf("%e\n",elts[i].val);
-           printf("Direction_1>x_2>y_3>z\n"); printf("%d\n",elts[i].dir);
+            printf("Element_Localise_numero_%i\n", i + 1);
+            printf("Type_d_element_1>resistance_2>capacite_3>self:\n");
+            printf("%d\n", elts[i].type);
+            printf("Valeur_de_l_element_en_Ohm_Farad_ou_Henry:\n");
+            printf("%e\n", elts[i].val);
+            printf("Direction_1>x_2>y_3>z\n");
+            printf("%d\n", elts[i].dir);
 
-           printf("Coordonnees_du_coin_inferieur:\n");
-           printf("Sur_la_longueur_y_(en_cellules):\n"); printf("%d\n",elts[i].iy1);
-           printf("Sur_la_largeur_x_(en_cellules):\n"); printf("%d\n",elts[i].ix1);
-           printf("Sur_la_hauteur_z_(en_cellules):\n"); printf("%d\n",elts[i].iz1);
+            printf("Coordonnees_du_coin_inferieur:\n");
+            printf("Sur_la_longueur_y_(en_cellules):\n");
+            printf("%d\n", elts[i].iy1);
+            printf("Sur_la_largeur_x_(en_cellules):\n");
+            printf("%d\n", elts[i].ix1);
+            printf("Sur_la_hauteur_z_(en_cellules):\n");
+            printf("%d\n", elts[i].iz1);
 
-           printf("Coordonnee_du_coin_superieur\n");
-           printf("Sur_la_longueur_y_(en_cellules):\n"); printf("%d\n",elts[i].iy2);
-           printf("Sur_la_largeur_x_(en_cellules):\n"); printf("%d\n",elts[i].ix2);
-           printf("Sur_la_hauteur_z_(en_cellules):\n"); printf("%d\n",elts[i].iz2);
+            printf("Coordonnee_du_coin_superieur\n");
+            printf("Sur_la_longueur_y_(en_cellules):\n");
+            printf("%d\n", elts[i].iy2);
+            printf("Sur_la_largeur_x_(en_cellules):\n");
+            printf("%d\n", elts[i].ix2);
+            printf("Sur_la_hauteur_z_(en_cellules):\n");
+            printf("%d\n", elts[i].iz2);
 
         }
     }
@@ -394,9 +426,9 @@ void parseDSC() {
                 scanTypeParoi();
             if (0 == strcmp(chaine, "[METALLISATIONS]\n"))
                 scanMetallisation();
-            if (0 == strcmp(chaine,"[PARALLELEPIPEDES_MATERIAUX]\n"))
+            if (0 == strcmp(chaine, "[PARALLELEPIPEDES_MATERIAUX]\n"))
                 scanParallelepipedes();
-            if (0 == strcmp(chaine,"[ELEMENTS_LOCALISES]\n"))
+            if (0 == strcmp(chaine, "[ELEMENTS_LOCALISES]\n"))
                 scanElementsLocalises();
 
 
@@ -410,54 +442,58 @@ void parseDSC() {
 
 /******************************************************************************/
 /** >FONCTION PARSAGE .ANA ****************************************************/
-/******************************************************************************/
-void scanPML(){
-    fscanf(fp,"%*s");
-    fscanf(fp,"%d",&n_couche);
-    fscanf(fp,"%*s");
-    fscanf(fp,"%d",&m_pml);
-    fscanf(fp,"%*s");
-    fscanf(fp,"%f",&sigma_max);
-    fscanf(fp,"%*s");
-    fscanf(fp,"%f",&k_max);
 
-    printf("Epaisseur_de_la_couche_(en_cellules):\n"); printf("%d\n",n_couche);
-    printf("Ordre_de_la_variation_geometrique_de_sigma_(valeur_de_m):\n"); printf("%d\n",m_pml);
-    printf("Sigma_max:\n"); printf("%f\n",sigma_max);
-    printf("K_max:\n"); printf("%f\n",k_max);
+/******************************************************************************/
+void scanPML() {
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &n_couche);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &m_pml);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%f", &sigma_max);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%f", &k_max);
+
+    printf("Epaisseur_de_la_couche_(en_cellules):\n");
+    printf("%d\n", n_couche);
+    printf("Ordre_de_la_variation_geometrique_de_sigma_(valeur_de_m):\n");
+    printf("%d\n", m_pml);
+    printf("Sigma_max:\n");
+    printf("%f\n", sigma_max);
+    printf("K_max:\n");
+    printf("%f\n", k_max);
 }
 
-void scanParametreExcitation(){
-    fscanf(fp,"%*s");
-    fscanf(fp,"%e",&frehau);
-    fscanf(fp,"%*s");
-    fscanf(fp,"%i",&gausstype);
+void scanParametreExcitation() {
+    fscanf(fp, "%*s");
+    fscanf(fp, "%e", &frehau);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%i", &gausstype);
 
     printf("Frequence_maximale_de_la_bande_d'analyse_(en_GHz):\n");
-    printf("%e\n",frehau);
+    printf("%e\n", frehau);
     printf("Excitation_0>Gaussienne_1>Gaussienne_modulant_un_sinus:\n");
-    printf("%i\n",gausstype);
+    printf("%i\n", gausstype);
 
-    if ( gausstype ==  1 )
-      {
-                fscanf(fp,"%*s");
-                fscanf(fp,"%e",&f_sinus);
+    if (gausstype == 1) {
+        fscanf(fp, "%*s");
+        fscanf(fp, "%e", &f_sinus);
 
-                printf("Frequence_du_sinus_(GHz):\n");
-        printf("%e\n",f_sinus);
-      }
+        printf("Frequence_du_sinus_(GHz):\n");
+        printf("%e\n", f_sinus);
+    }
 }
 
-void scanAnalyseTemporelle(){
-    fscanf(fp,"%*s");
-    fscanf(fp,"%e",&dt);
-    fscanf(fp,"%*s");
-    fscanf(fp,"%e",&tobs);
+void scanAnalyseTemporelle() {
+    fscanf(fp, "%*s");
+    fscanf(fp, "%e", &dt);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%e", &tobs);
 
     printf("Periode_d'echantillonnage_temporelle_(en_s):\n");
-    printf("%e\n",dt);
+    printf("%e\n", dt);
     printf("Temps_d'observation_(en_s):\n");
-    printf("%e\n",tobs);
+    printf("%e\n", tobs);
 }
 
 void scanPortExcitation() {
@@ -466,7 +502,7 @@ void scanPortExcitation() {
 
     if (nbports_excitation > 0) {
         portexcit = (PortExcitation *) calloc(nbports_excitation + 1, sizeof (PortExcitation));
-        
+
         int i;
         for (i = 0; i < nbports_excitation; i++) {
             fscanf(fp, "%*s");
@@ -544,255 +580,295 @@ void scanPortExcitation() {
     }
 }
 
-void scanCageExcitation(){
+void scanCageExcitation() {
     onde_plane_oblique = NON; // flags indiquant la presence ou non d'une excitation par onde plane 5 ou 6 faces
 
     fscanf(fp, "%*s");
     fscanf(fp, "%d", &nb_cages_excitation);
 
-    if (nb_cages_excitation > 0)
-        cageExcitations = (CageExcitation *) calloc(nb_cages_excitation + 1, sizeof (CageExcitation));
+    if (nb_cages_excitation > 1) {
+        printf("Erreur. Il ne peut y avoir qu'une seule cage d'excitation dans le programme.");
+        exit(0);
+    }
 
     printf("Nombre de cages d'excitation:\n");
     printf("%d\n", nb_cages_excitation);
 
-    int i;
-    for (i = 0; i < nb_cages_excitation; i++) {
+    if (nb_cages_excitation == 1) {
+        int int_temp;
+        float float_temp;
         fscanf(fp, "%*s");
         fscanf(fp, "%*s");
-        fscanf(fp, "%d", &cageExcitations[i].inside_outside);
+        fscanf(fp, "%d", &int_temp);
+        cageExcitation.setInside_outside(int_temp);
 
-        if (cageExcitations[i].inside_outside == 1) //si excitation de type inside
+        if (cageExcitation.getInside_outside() == 1) //si excitation de type inside
         {
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &cageExcitations[i].nb_faces_excitation);
+            fscanf(fp, "%d", &int_temp);
+            cageExcitation.setNb_faces_excitation(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &cageExcitations[i].type_excitation);
+            fscanf(fp, "%d", &int_temp);
+            cageExcitation.setType_excitation(int_temp);
 
-            if ((cageExcitations[i].type_excitation == 1) || 
-                    (cageExcitations[i].type_excitation == 2) || 
-                    (cageExcitations[i].type_excitation == 3)) {
-                printf("Cage_d_excitation numero%d\n", i + 1);
+            if (cageExcitation.getType_excitation() == 1 ||
+                    cageExcitation.getType_excitation() == 2 ||
+                    cageExcitation.getType_excitation() == 3) {
+
+                printf("Cage_d_excitation");
                 printf("Nombre_de_faces_d_excitation:\n");
-                printf("%d\n", cageExcitations[i].nb_faces_excitation);
+                printf("%d\n", cageExcitation.getNb_faces_excitation());
                 printf("Type_excitation_1>onde_plane_2>TE10_3>TM10_4>fichier_excitation:\n");
-                printf("%d\n", cageExcitations[i].type_excitation);
+                printf("%d\n", cageExcitation.getType_excitation());
 
 
-                if ((cageExcitations[i].nb_faces_excitation == 5) || 
-                        (cageExcitations[i].nb_faces_excitation == 6)) {
+                if ((cageExcitation.getNb_faces_excitation() == 5) ||
+                        (cageExcitation.getNb_faces_excitation() == 6)) {
                     // activation du flag onde plane oblique
                     onde_plane_oblique = OUI;
 
                     fscanf(fp, "%*s");
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].my_inc_inf);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setMy_inc_inf(int_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].mx_inc_inf);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setMx_inc_inf(int_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].mz_inc_inf);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setMz_inc_inf(int_temp);
                     fscanf(fp, "%*s");
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].my_inc_sup);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setMy_inc_sup(int_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].mx_inc_sup);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setMx_inc_sup(int_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].mz_inc_sup);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setMz_inc_sup(int_temp);
                     //TODO : les variables dessous étaient à l'origine uniques
                     // (pas de [i]) mais il fallait quand même les déclarer
                     // pour chaque cage. À garder ?????
                     fscanf(fp, "%*s");
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].y_inc0);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setY_inc0(int_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].x_inc0);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setX_inc0(int_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].z_inc0);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setZ_inc0(int_temp);
                     fscanf(fp, "%*s");
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%f", &cageExcitations[i].theta0deg);
+                    fscanf(fp, "%f", &float_temp);
+                    cageExcitation.setTheta0deg(float_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%f", &cageExcitations[i].phi0deg);
+                    fscanf(fp, "%f", &float_temp);
+                    cageExcitation.setPhi0deg(float_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%f", &cageExcitations[i].psi0deg);
+                    fscanf(fp, "%f", &float_temp);
+                    cageExcitation.setPsi0deg(float_temp);
 
                     printf("Coordonnees_du_coin_inferieur_gauche\n");
                     printf("Sur_la_longueur_(en_cellules):\n");
-                    printf("%d\n", cageExcitations[i].my_inc_inf);
+                    printf("%d\n", cageExcitation.getMy_inc_inf());
                     printf("Sur_la_largeur_(en_cellules):\n");
-                    printf("%d\n", cageExcitations[i].mx_inc_inf);
+                    printf("%d\n", cageExcitation.getMx_inc_inf());
                     printf("Sur_la_hauteur_(en_cellules):\n");
-                    printf("%d\n", cageExcitations[i].mz_inc_inf);
+                    printf("%d\n", cageExcitation.getMz_inc_inf());
 
                     printf("Coordonnee_du_coin_superieur_droit\n");
                     printf("Sur_la_longueur_(en_cellules):\n");
-                    printf("%d\n", cageExcitations[i].my_inc_sup);
+                    printf("%d\n", cageExcitation.getMy_inc_sup());
                     printf("Sur_la_largeur_(en_cellules):\n");
-                    printf("%d\n", cageExcitations[i].mx_inc_sup);
+                    printf("%d\n", cageExcitation.getMx_inc_sup());
                     printf("Sur_la_hauteur_(en_cellules):\n");
-                    printf("%d\n", cageExcitations[i].mz_inc_sup);
+                    printf("%d\n", cageExcitation.getMz_inc_sup());
 
                     printf("Coordonnees_du_point_de_reference\n");
                     printf("Sur_la_longueur_(en_cellules):\n");
-                    printf("%d\n", cageExcitations[i].y_inc0);
+                    printf("%d\n", cageExcitation.getY_inc0());
                     printf("Sur_la_largeur_(en_cellules):\n");
-                    printf("%d\n", cageExcitations[i].x_inc0);
+                    printf("%d\n", cageExcitation.getX_inc0());
                     printf("Sur_la_hauteur_(en_cellules):\n");
-                    printf("%d\n", cageExcitations[i].z_inc0);
+                    printf("%d\n", cageExcitation.getZ_inc0());
 
                     printf("Avec_les_angles_d_incidence_en_degres\n");
                     printf("theta0:\n");
-                    printf("%f\n", cageExcitations[i].theta0deg);
+                    printf("%f\n", cageExcitation.getTheta0deg());
                     printf("phi0:\n");
-                    printf("%f\n", cageExcitations[i].phi0deg);
+                    printf("%f\n", cageExcitation.getPhi0deg());
                     printf("psi0:\n");
-                    printf("%f\n", cageExcitations[i].psi0deg);
+                    printf("%f\n", cageExcitation.getPsi0deg());
 
-                } else if (cageExcitations[i].nb_faces_excitation == 1) {
+                } else if (cageExcitation.getNb_faces_excitation() == 1) {
                     onde_plane_oblique = NON;
 
                     //Ces valeurs également étaient uniques également
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].mode_excitation);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setMode_excitation(int_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].zexc);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setZexc(int_temp);
                     fscanf(fp, "%*s");
-                    fscanf(fp, "%d", &cageExcitations[i].sens_propa);
+                    fscanf(fp, "%d", &int_temp);
+                    cageExcitation.setSens_propa(int_temp);
 
                     printf("Type_0>OndeplaneX_1>OndeplaneY_2>GuideTE10X_3>GuideTE10Y:\n");
-                    printf("%d\n", cageExcitations[i].mode_excitation);
+                    printf("%d\n", cageExcitation.getMode_excitation());
                     printf("Coordonnees_sur_la_hauteur:\n");
-                    printf("%d\n", cageExcitations[i].zexc);
+                    printf("%d\n", cageExcitation.getZexc());
                     printf("Sens_de_propagation_de_l_onde_-1>z_croissants_1>z_decroissants:\n");
-                    printf("%d\n", cageExcitations[i].sens_propa);
+                    printf("%d\n", cageExcitation.getSens_propa());
                 } else {
                     printf("\n\7 excitation non disponible dans ce code\n");
                     exit(0);
                 }
 
-            } else if (cageExcitations[i].type_excitation == 4) // excitation inside � partir d'un fichier d'excitation
+            } else if (cageExcitation.getType_excitation() == 4) // excitation inside � partir d'un fichier d'excitation
             {
 
                 fscanf(fp, "%*s");
                 fscanf(fp, "%*s"); // nom du fichier d'excitation;
                 fscanf(fp, "%*s");
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].my_inc_inf);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMy_inc_inf(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].mx_inc_inf);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMx_inc_inf(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].mz_inc_inf);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMz_inc_inf(int_temp);
                 fscanf(fp, "%*s");
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].my_inc_sup);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMy_inc_sup(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].mx_inc_sup);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMx_inc_sup(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].mz_inc_sup);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMz_inc_sup(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%f", &cageExcitations[i].mod_ampl_Exci);
+                fscanf(fp, "%f", &float_temp);
+                cageExcitation.setMod_ampl_Exci(float_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%f", &cageExcitations[i].mod_ret_Exci);
+                fscanf(fp, "%f", &float_temp);
+                cageExcitation.setMod_ret_Exci(float_temp);
 
-                printf("Cage_d_excitation numero%d\n", i + 1);
+                printf("Cage_d_excitation");
                 printf("Nombre_de_faces_d_excitation:\n");
-                printf("%d\n", cageExcitations[i].nb_faces_excitation);
+                printf("%d\n", cageExcitation.getNb_faces_excitation());
                 printf("Type_excitation_1>onde_plane_2>TE10_3>TM10_4>fichier_excitation:\n");
-                printf("%d\n", cageExcitations[i].type_excitation);
+                printf("%d\n", cageExcitation.getType_excitation());
 
                 printf("Coordonnees_du_coin_inferieur_gauche\n");
                 printf("Sur_la_longueur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].my_inc_inf);
+                printf("%d\n", cageExcitation.getMy_inc_inf());
                 printf("Sur_la_largeur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].mx_inc_inf);
+                printf("%d\n", cageExcitation.getMx_inc_inf());
                 printf("Sur_la_hauteur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].mz_inc_inf);
+                printf("%d\n", cageExcitation.getMz_inc_inf());
 
                 printf("Coordonnee_du_coin_superieur_droit\n");
                 printf("Sur_la_longueur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].my_inc_sup);
+                printf("%d\n", cageExcitation.getMy_inc_sup());
                 printf("Sur_la_largeur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].mx_inc_sup);
+                printf("%d\n", cageExcitation.getMx_inc_sup());
                 printf("Sur_la_hauteur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].mz_inc_sup);
+                printf("%d\n", cageExcitation.getMz_inc_sup());
 
-                printf("Coefficient_modulation_amplitude: %e\n", cageExcitations[i].mod_ampl_Exci);
-                printf("Coefficient_modulation_phase_(retard_temporel): %e\n", cageExcitations[i].mod_ret_Exci);
+                printf("Coefficient_modulation_amplitude: %e\n", cageExcitation.getMod_ampl_Exci());
+                printf("Coefficient_modulation_phase_(retard_temporel): %e\n", cageExcitation.getMod_ret_Exci());
 
-                cageExcitations[i].nbx_inc_prel = cageExcitations[i].mx_inc_sup - cageExcitations[i].mx_inc_inf;
-                cageExcitations[i].nby_inc_prel = cageExcitations[i].my_inc_sup - cageExcitations[i].my_inc_inf;
-                cageExcitations[i].nbz_inc_prel = cageExcitations[i].mz_inc_sup - cageExcitations[i].mz_inc_inf;
+                cageExcitation.setNbx_inc_prel(cageExcitation.getMx_inc_sup() - cageExcitation.getMx_inc_inf());
+                cageExcitation.setNby_inc_prel(cageExcitation.getMy_inc_sup() - cageExcitation.getMy_inc_inf());
+                cageExcitation.setNbz_inc_prel(cageExcitation.getMz_inc_sup() - cageExcitation.getMz_inc_inf());
 
-                printf("nbx_inc_prel[i]: %d\n", cageExcitations[i].nbx_inc_prel);
-                printf("nby_inc_prel[i]: %d\n", cageExcitations[i].nby_inc_prel);
-                printf("nbz_inc_prel[i]: %d\n", cageExcitations[i].nbz_inc_prel);
+                printf("nbx_inc_prel[i]: %d\n", cageExcitation.getNbx_inc_prel());
+                printf("nby_inc_prel[i]: %d\n", cageExcitation.getNby_inc_prel());
+                printf("nbz_inc_prel[i]: %d\n", cageExcitation.getNbz_inc_prel());
 
             }
         }
 
-        if (cageExcitations[i].inside_outside == 2) //excitation de type outside
+        if (cageExcitation.getInside_outside() == 2) //excitation de type outside
         {
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &cageExcitations[i].nb_faces_excitation);
+            fscanf(fp, "%d", &int_temp);
+            cageExcitation.setNb_faces_excitation(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &cageExcitations[i].type_excitation);
+            fscanf(fp, "%d", &int_temp);
+            cageExcitation.setType_excitation(int_temp);
 
-            if (cageExcitations[i].type_excitation == 4) // excitation outside � partir d'un fichier de description
+            if (cageExcitation.getType_excitation() == 4) // excitation outside � partir d'un fichier de description
             {
 
                 fscanf(fp, "%*s");
                 fscanf(fp, "%*s"); // nom du fichier d'excitation;
                 fscanf(fp, "%*s");
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].my_inc_inf);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMy_inc_inf(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].mx_inc_inf);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMx_inc_inf(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].mz_inc_inf);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMz_inc_inf(int_temp);
                 fscanf(fp, "%*s");
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].my_inc_sup);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMy_inc_sup(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].mx_inc_sup);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMx_inc_sup(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%d", &cageExcitations[i].mz_inc_sup);
+                fscanf(fp, "%d", &int_temp);
+                cageExcitation.setMz_inc_sup(int_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%f", &cageExcitations[i].mod_ampl_Exci);
+                fscanf(fp, "%f", &float_temp);
+                cageExcitation.setMod_ampl_Exci(float_temp);
                 fscanf(fp, "%*s");
-                fscanf(fp, "%f", &cageExcitations[i].mod_ret_Exci);
+                fscanf(fp, "%f", &float_temp);
+                cageExcitation.setMod_ret_Exci(float_temp);
 
-                printf("Cage_d_excitation numero%d\n", i + 1);
+                printf("Cage_d_excitation");
                 printf("Nombre_de_faces_d_excitation:\n");
-                printf("%d\n", cageExcitations[i].nb_faces_excitation);
+                printf("%d\n", cageExcitation.getNb_faces_excitation());
                 printf("Type_excitation_1>onde_plane_2>TE10_3>TM10_4>fichier_excitation:\n");
-                printf("%d\n", cageExcitations[i].type_excitation);
+                printf("%d\n", cageExcitation.getType_excitation());
 
                 printf("Coordonnees_du_coin_inferieur_gauche\n");
                 printf("Sur_la_longueur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].my_inc_inf);
+                printf("%d\n", cageExcitation.getMy_inc_inf());
                 printf("Sur_la_largeur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].mx_inc_inf);
+                printf("%d\n", cageExcitation.getMx_inc_inf());
                 printf("Sur_la_hauteur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].mz_inc_inf);
+                printf("%d\n", cageExcitation.getMz_inc_inf());
 
                 printf("Coordonnee_du_coin_superieur_droit\n");
                 printf("Sur_la_longueur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].my_inc_sup);
+                printf("%d\n", cageExcitation.getMy_inc_sup());
                 printf("Sur_la_largeur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].mx_inc_sup);
+                printf("%d\n", cageExcitation.getMx_inc_sup());
                 printf("Sur_la_hauteur_(en_cellules):\n");
-                printf("%d\n", cageExcitations[i].mz_inc_sup);
+                printf("%d\n", cageExcitation.getMz_inc_sup());
 
-                printf("Coefficient_modulation_amplitude: %e\n", cageExcitations[i].mod_ampl_Exci);
-                printf("Coefficient_modulation_phase_(retard_temporel): %e\n", cageExcitations[i].mod_ret_Exci);
+                printf("Coefficient_modulation_amplitude: %e\n", cageExcitation.getMod_ampl_Exci());
+                printf("Coefficient_modulation_phase_(retard_temporel): %e\n", cageExcitation.getMod_ret_Exci());
 
-                cageExcitations[i].nbx_inc_prel = cageExcitations[i].mx_inc_sup - cageExcitations[i].mx_inc_inf;
-                cageExcitations[i].nby_inc_prel = cageExcitations[i].my_inc_sup - cageExcitations[i].my_inc_inf;
-                cageExcitations[i].nbz_inc_prel = cageExcitations[i].mz_inc_sup - cageExcitations[i].mz_inc_inf;
+                cageExcitation.setNbx_inc_prel(cageExcitation.getMx_inc_sup() - cageExcitation.getMx_inc_inf());
+                cageExcitation.setNby_inc_prel(cageExcitation.getMy_inc_sup() - cageExcitation.getMy_inc_inf());
+                cageExcitation.setNbz_inc_prel(cageExcitation.getMz_inc_sup() - cageExcitation.getMz_inc_inf());
 
-                printf("nbx_inc_prel[i]: %d\n", cageExcitations[i].nbx_inc_prel);
-                printf("nby_inc_prel[i]: %d\n", cageExcitations[i].nby_inc_prel);
-                printf("nbz_inc_prel[i]: %d\n", cageExcitations[i].nbz_inc_prel);
+                printf("nbx_inc_prel[i]: %d\n", cageExcitation.getNbx_inc_prel());
+                printf("nby_inc_prel[i]: %d\n", cageExcitation.getNby_inc_prel());
+                printf("nbz_inc_prel[i]: %d\n", cageExcitation.getNbz_inc_prel());
 
             } else {
                 printf("\n\7 L'excitation outside ne peut se faire qu'a partir d'un fichier d'entree\n");
@@ -802,7 +878,7 @@ void scanCageExcitation(){
     }
 }
 
-void scanSondes(){
+void scanSondes() {
     fscanf(fp, "%*s");
     fscanf(fp, "%d", &nbsonde);
 
@@ -848,7 +924,7 @@ void scanSondes(){
     }
 }
 
-void scanCartographieTemporelle(){
+void scanCartographieTemporelle() {
     fscanf(fp, "%*s");
     fscanf(fp, "%d", &nbcarto);
 
@@ -915,7 +991,7 @@ void scanCartographieTemporelle(){
     }
 }
 
-void scanSurfacePrelevement(){
+void scanSurfacePrelevement() {
     //flags suivant le type de surfaces de prelevement
     ind_ch_loin = 0;
     ind_ch_Prel_DG = 0;
@@ -926,21 +1002,25 @@ void scanSurfacePrelevement(){
     fscanf(fp, "%d", &nbsurf_prel);
     fscanf(fp, "%*s");
     fscanf(fp, "%d", &nb_surf_Prel_DG); // ajout LE LEPVRIER : nombre de surfaces de pr�l�vement DG
-    if(nbsurf_prel >0) 
-        surfaces = (SurfacePrelevement *) calloc(nbsurf_prel, sizeof (SurfacePrelevement));
+    if (nbsurf_prel > 1){
+        printf("Erreur : Une seule surface de prélèvement permise");
+        exit(0);
+    }
 
     printf("Nombre_de_surfaces de prelevement:\n");
     printf("%d\n", nbsurf_prel);
     printf("Nombre_de_surfaces de prelevement DG:\n");
     printf("%d\n", nb_surf_Prel_DG);
 
-    int i;
-    for (i = 0; i < nbsurf_prel; i++) {
+    if (nbsurf_prel == 1) {
+        int int_temp;
+        
         fscanf(fp, "%*s");
         fscanf(fp, "%*s");
-        fscanf(fp, "%d", &surfaces[i].typ_surf_prelev);
+        fscanf(fp, "%d", &int_temp);
+        surface.setTyp_surf_prelev(int_temp);
 
-        if (surfaces[i].typ_surf_prelev == 1) {
+        if (surface.getTyp_surf_prelev() == 1) {
             ind_ch_loin = 1; //indique la presence d'une surface de Huygens
 
 
@@ -948,113 +1028,130 @@ void scanSurfacePrelevement(){
             fscanf(fp, "%*s"); //nom du fichier
 
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].nb_surf_ch_loin); // nombre de faces de la surface de Huygens
+            fscanf(fp, "%d", &int_temp);
+            surface.setNb_surfaces(int_temp);// nombre de faces de la surface de Huygens
 
             fscanf(fp, "%*s");
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].my_surfHuy_inf);
+            fscanf(fp, "%d", &int_temp);
+            surface.setMy_surf_inf(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].mx_surfHuy_inf);
+            fscanf(fp, "%d", &int_temp);
+            surface.setMx_surf_inf(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].mz_surfHuy_inf);
+            fscanf(fp, "%d", &int_temp);
+            surface.setMz_surf_inf(int_temp);
             fscanf(fp, "%*s");
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].my_surfHuy_sup);
+            fscanf(fp, "%d", &int_temp);
+            surface.setMy_surf_sup(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].mx_surfHuy_sup);
+            fscanf(fp, "%d", &int_temp);
+            surface.setMx_surf_sup(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].mz_surfHuy_sup);
+            fscanf(fp, "%d", &int_temp);
+            surface.setMz_surf_sup(int_temp);
 
-            printf("Surface_de_prelevement_%d\n", i + 1);
+            printf("Surface_de_prelevement");
             printf("Type_de_surface_1>Huygens_2>Surface_de_prelevement_DG_3>Kirchhoff\n");
-            printf("%d \n", surfaces[i].typ_surf_prelev);
+            printf("%d \n", surface.getTyp_surf_prelev());
             printf("Coordonnees_du_coin_inferieur_gauche\n");
             printf("Sur_la_longueur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].my_surfHuy_inf);
+            printf("%d \n", surface.getMy_surf_inf());
             printf("Sur_la_largeur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].mx_surfHuy_inf);
+            printf("%d \n", surface.getMx_surf_inf());
             printf("Sur_la_hauteur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].mz_surfHuy_inf);
+            printf("%d \n", surface.getMz_surf_inf());
             printf("Coordonnee_du_coin_superieur_droit\n");
             printf("Sur_la_longueur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].my_surfHuy_sup);
+            printf("%d \n", surface.getMy_surf_sup());
             printf("Sur_la_largeur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].mx_surfHuy_sup);
+            printf("%d \n", surface.getMx_surf_sup());
             printf("Sur_la_hauteur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].mz_surfHuy_sup);
+            printf("%d \n", surface.getMz_surf_sup());
             printf("Surface de Huygens: \n");
-            if (surfaces[i].nb_surf_ch_loin == 1) printf("1 face (la face sup�rieure)\n");
-            if (surfaces[i].nb_surf_ch_loin == 5) printf("5 faces\n");
-            if (surfaces[i].nb_surf_ch_loin == 6) printf("6 faces \n");
+            if (surface.getNb_surfaces() == 1) printf("1 face (la face sup�rieure)\n");
+            if (surface.getNb_surfaces() == 5) printf("5 faces\n");
+            if (surface.getNb_surfaces() == 6) printf("6 faces \n");
 
         }//fin du if surface de Huygens
-        else if (surfaces[i].typ_surf_prelev == 2) {
+        else if (surface.getTyp_surf_prelev() == 2) {
             ind_ch_Prel_DG = 1; //indique la pr�sence d'une surface de prelevement DG
 
             fscanf(fp, "%*s");
             fscanf(fp, "%*s"); //nom du fichier pas recuperer pour le moment
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].surf_prel_inside_outside);
+            fscanf(fp, "%d", &int_temp);
+            surface.setSurf_prel_inside_outside(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].nb_faces_surf_Prel_DG); //nombre de faces de la surface de prelevement DG
+            fscanf(fp, "%d", &int_temp);
+            surface.setNb_surfaces(int_temp);// nombre de faces de la surface DG
 
             fscanf(fp, "%*s");
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].my_surfPrel_DG_inf);
+            fscanf(fp, "%d", &int_temp);
+            surface.setMy_surf_inf(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].mx_surfPrel_DG_inf);
+            fscanf(fp, "%d", &int_temp);
+            surface.setMx_surf_inf(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].mz_surfPrel_DG_inf);
+            fscanf(fp, "%d", &int_temp);
+            surface.setMz_surf_inf(int_temp);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &int_temp);
+            surface.setMy_surf_sup(int_temp);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &int_temp);
+            surface.setMx_surf_sup(int_temp);
+            fscanf(fp, "%*s");
+            fscanf(fp, "%d", &int_temp);
+            surface.setMz_surf_sup(int_temp);
 
             fscanf(fp, "%*s");
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].my_surfPrel_DG_sup);
+            fscanf(fp, "%d", &int_temp);
+            surface.setCompy_Prel(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].mx_surfPrel_DG_sup);
+            fscanf(fp, "%d", &int_temp);
+            surface.setCompx_Prel(int_temp);
             fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].mz_surfPrel_DG_sup);
+            fscanf(fp, "%d", &int_temp);
+            surface.setCompz_Prel(int_temp);
 
-            fscanf(fp, "%*s");
-            fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].compy_Prel);
-            fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].compx_Prel);
-            fscanf(fp, "%*s");
-            fscanf(fp, "%d", &surfaces[i].compz_Prel);
-
-            surfaces[i].nbx_surfPrel = (surfaces[i].mx_surfPrel_DG_sup - surfaces[i].mx_surfPrel_DG_inf) / surfaces[i].compx_Prel;
-            surfaces[i].nby_surfPrel = (surfaces[i].my_surfPrel_DG_sup - surfaces[i].my_surfPrel_DG_inf) / surfaces[i].compy_Prel;
-            surfaces[i].nbz_surfPrel = (surfaces[i].mz_surfPrel_DG_sup - surfaces[i].mz_surfPrel_DG_inf) / surfaces[i].compz_Prel;
+            surface.setNbx_surfPrel( (surface.getMx_surf_sup() - surface.getMx_surf_inf()) / surface.getCompx_Prel());
+            surface.setNby_surfPrel( (surface.getMy_surf_sup() - surface.getMy_surf_inf()) / surface.getCompy_Prel());
+            surface.setNbz_surfPrel( (surface.getMz_surf_sup() - surface.getMz_surf_inf()) / surface.getCompz_Prel());
 
             //affichages des donnees recuperees
 
-            printf("Surface_de_prelevement_%d:\n", i + 1);
+            printf("Surface_de_prelevement");
             printf("Type_de_surface_1>Huygens_2>Surface_de_prelevement_DG_3>Kirchhoff\n");
-            printf("%d \n", surfaces[i].typ_surf_prelev);
-            if (surfaces[i].surf_prel_inside_outside == 1) printf("surface_de_prelevement_DG_de_type_inside\n");
-            if (surfaces[i].surf_prel_inside_outside == 2) printf("surface_de_prelevement_DG_de_type_outside\n");
+            printf("%d \n", surface.getTyp_surf_prelev());
+            if (surface.getSurf_prel_inside_outside() == 1) printf("surface_de_prelevement_DG_de_type_inside\n");
+            if (surface.getSurf_prel_inside_outside() == 2) printf("surface_de_prelevement_DG_de_type_outside\n");
 
             printf("Coordonnees_du_coin_inferieur_gauche\n");
             printf("Sur_la_longueur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].my_surfPrel_DG_inf);
+            printf("%d \n", surface.getMy_surf_inf());
             printf("Sur_la_largeur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].mx_surfPrel_DG_inf);
+            printf("%d \n", surface.getMx_surf_inf());
             printf("Sur_la_hauteur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].mz_surfPrel_DG_inf);
+            printf("%d \n", surface.getMz_surf_inf());
             printf("Coordonnee_du_coin_superieur_droit\n");
             printf("Sur_la_longueur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].my_surfPrel_DG_sup);
+            printf("%d \n", surface.getMy_surf_sup());
             printf("Sur_la_largeur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].mx_surfPrel_DG_sup);
+            printf("%d \n", surface.getMx_surf_sup());
             printf("Sur_la_hauteur_(en_cellules):\n");
-            printf("%d \n", surfaces[i].mz_surfPrel_DG_sup);
+            printf("%d \n", surface.getMz_surf_sup());
             printf("Surface_de_prelevement_DG: \n");
-            if (surfaces[i].nb_faces_surf_Prel_DG == 5) printf("5 faces + plan de masse \n");
-            if (surfaces[i].nb_faces_surf_Prel_DG == 6) printf("6 faces \n");
-
-            printf("cpt_surf_DG : %d \n", cpt_surf_DG);
+            if (surface.getNb_surfaces() == 5) printf("5 faces + plan de masse \n");
+            if (surface.getNb_surfaces() == 6) printf("6 faces \n");
 
             cpt_surf_DG++; //incrementation du nombre de surface DG
+
+            printf("cpt_surf_DG : %d \n", cpt_surf_DG);
 
         } else {
             printf("Ce type de surface de pr�l�vement n'est pas disponible dans ce code\n");
@@ -1066,7 +1163,7 @@ void scanSurfacePrelevement(){
 void parseANA() {
     sprintf(nomfic, "DATA%d.ana\0", numstru);
     printf("%s \n", nomfic);
-    
+
     if ((fp = fopen(nomfic, "r")) != NULL) {
         printf("** CHARGEMENT DE LA STRUCTURE DATA.ana **\n");
         printf("*****************************************\n");
@@ -1077,24 +1174,24 @@ void parseANA() {
         do {
             fgets(chaine, 100, fp);
             //printf("%s\n", chaine);
-            
-            if ( 0 == strcmp(chaine,"[PML]\n") )
+
+            if (0 == strcmp(chaine, "[PML]\n"))
                 scanPML();
-            if (0 == strcmp(chaine,"[PARAMETRES_EXCITATION]\n"))
+            if (0 == strcmp(chaine, "[PARAMETRES_EXCITATION]\n"))
                 scanParametreExcitation();
-            if (0 == strcmp(chaine,"[ANALYSE_TEMPORELLE]\n"))
+            if (0 == strcmp(chaine, "[ANALYSE_TEMPORELLE]\n"))
                 scanAnalyseTemporelle();
-            if (0 == strcmp(chaine,"[PORTS_EXCITATION]\n"))
+            if (0 == strcmp(chaine, "[PORTS_EXCITATION]\n"))
                 scanPortExcitation();
-            if (0 == strcmp(chaine,"[CAGES_EXCITATION]\n"))
+            if (0 == strcmp(chaine, "[CAGES_EXCITATION]\n"))
                 scanCageExcitation();
-            if (0 == strcmp(chaine,"[SONDES]\n"))
+            if (0 == strcmp(chaine, "[SONDES]\n"))
                 scanSondes();
-            if ( 0 == strcmp(chaine,"[CARTOGRAPHIES_TEMPORELLES]\n") )
+            if (0 == strcmp(chaine, "[CARTOGRAPHIES_TEMPORELLES]\n"))
                 scanCartographieTemporelle();
-            if (0 == strcmp(chaine,"[SURFACES_DE_PRELEVEMENT]\n"))
+            if (0 == strcmp(chaine, "[SURFACES_DE_PRELEVEMENT]\n"))
                 scanSurfacePrelevement();
-            
+
         } while (!feof(fp));
 
         fclose(fp);
@@ -1103,8 +1200,233 @@ void parseANA() {
     }
 }
 
+/******************************************************************************/
+/** >FONCTION PARSAGE .ANA ****************************************************/
+
+/******************************************************************************/
+void scanChampLointain() {
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &nbsurf_huy);
+
+    if (nbsurf_huy > 1) {
+        printf("Une seule surface de Huygens disponible dans ce code");
+        exit(0);
+    }
+
+    int i;
+    for (i = 0; i < nbsurf_huy; i++) {
+        fscanf(fp, "%*s");
+        fscanf(fp, "%*s");
+        fscanf(fp, "%*s");
+        fscanf(fp, "%*s");
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &y_origine);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &x_origine);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &z_origine);
+
+        printf("Origine_repere:\n");
+        printf("Coordonnees_en_y_de_l_origine_du_repere_en_nombre_de_cellules:\n");
+        printf("%d \n", y_origine);
+        printf("Coordonnees_en_x_de_l_origine_du_repere_en_nombre_de_cellules:\n");
+        printf("%d \n", x_origine);
+        printf("Coordonnees_en_z_de_l_origine_du_repere_en_nombre_de_cellules:\n");
+        printf("%d \n", z_origine);
+
+
+        // frequences de calcul du champ lointain          
+        fscanf(fp, "%*s");
+        fscanf(fp, "%*s");
+        fscanf(fp, "%f", &freq_min_ch_loin);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%f", &freq_max_ch_loin);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%f", &freq_pas_ch_loin);
+
+        printf("Frequences_de_calcul:\n");
+        printf("Frequence_min_en_GHz:\n");
+        printf("%f \n", freq_min_ch_loin);
+        printf("Frequence_max_en_GHz:\n");
+        printf("%f \n", freq_max_ch_loin);
+        printf("Pas_de_frequence_en_GHz:\n");
+        printf("%f \n", freq_pas_ch_loin);
+
+
+        //Calcul du champ lointain avec ou sans image et plan de masse de r���f���rence
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &ind_cal_image);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &z_masse_ref);
+
+        printf("Plan de masse de r���f���rence en z = %d\n", z_masse_ref);
+        if (ind_cal_image == 1) {
+            printf("Calcul avec prise en compte des images des courants\n");
+        } else {
+            printf("Calcul sans prise en compte des images des courants\n");
+        }
+
+
+        // Pas des plans de fr���quences qui sont ��� calculer
+        fscanf(fp, "%*s");
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &pas_theta);
+        fscanf(fp, "%*s");
+        fscanf(fp, "%d", &pas_phi);
+
+        printf("Plans_calcules:\n");
+        printf("Pas_de_discr���tisation_selon_theta_(en_degres):\n");
+        printf("%d \n", pas_theta);
+
+        printf("Pas_de_discr���tisation_selon_phi_(en_degres):\n");
+        printf("%d \n", pas_phi);
+
+    }
+}
+
+void parsePTR() {
+    sprintf(nomfic, "DATA%d.ptr\0", numstru);
+    printf("%s \n", nomfic);
+
+    if ((fp = fopen(nomfic, "r")) != NULL) {
+        printf("** CHARGEMENT DE LA STRUCTURE DATA.ptr **\n");
+        printf("*****************************************\n");
+
+        onde_plane_oblique = NON;
+        nbports_excitation = 0;
+
+        do {
+            fgets(chaine, 100, fp);
+            //printf("%s\n", chaine);
+
+            if (0 == strcmp(chaine, "[CALCUL_CHAMP_LOINTAIN]\n"))
+                scanChampLointain();
+        } while (!feof(fp));
+
+        fclose(fp);
+        printf("**  FIN CHARGEMENT STRUCTURE DATA.ptr  **\n");
+        printf("*****************************************\n");
+    }
+}
+
+/******************************************************************************/
+/** >FONCTION PARSAGE .AVC ****************************************************/
+
+/******************************************************************************/
+scanExcitation() {
+    fscanf(fp, "%*s");
+    fscanf(fp, "%e", &v0);
+
+    printf("Amplitude_V0:\n");
+    printf("%e\n", v0);
+}
+
+scanFormatStockage() {
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &format_stock);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &flag_EnregChampsPrelBinaire);
+
+    printf("Format_binaire>1_texte>2::\n");
+    printf("%d\n", format_stock);
+    printf("Format_stockage_fichier_prelevement_DG_0>texte_1>binaire::\n");
+    printf("%d\n", flag_EnregChampsPrelBinaire);
+}
+
+scanEchantillonnage() {
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &fact_echantill);
+
+    printf("Facteur_multiplicatif_pour_le_nombre_d_echantillons_preleves:\n");
+    printf("%d\n", fact_echantill);
+}
+
+//Est ce que cela ne se lance que si une surface de Huygens existe ?
+scanCompressionHuygens() {
+    int temp;
+    fscanf(fp, "%*s");
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &temp);
+    surface.setCompy_Prel(temp);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &temp);
+    surface.setCompx_Prel(temp);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &temp);
+    surface.setCompz_Prel(temp);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &fact_echantill_huy);
+
+    //Calcul des parametres de la compression Huygens
+    surface.setNbx_surfPrel( (surface.getMx_surf_sup() - surface.getMx_surf_inf()) / surface.getCompx_Prel());  
+    surface.setNby_surfPrel( (surface.getMy_surf_sup() - surface.getMy_surf_inf()) / surface.getCompy_Prel());  
+    surface.setNbz_surfPrel( (surface.getMz_surf_sup() - surface.getMz_surf_inf()) / surface.getCompz_Prel());
+    inter_iter = (1 / (2 * frehau * 1e9 * dt * fact_echantill_huy)) - 1;
+
+    printf("\nCompression pour le calcul du champ lointain, en nombre de cellules\n");
+    printf("Sur la longueur (en cellules), un diviseur de %d :\n%d\n", surface.getMy_surf_sup() - surface.getMy_surf_inf(),  surface.getCompy_Prel());
+    printf("Sur la largeur (en cellules), un diviseur de %d :\n%d\n", surface.getMx_surf_sup() - surface.getMx_surf_inf(),  surface.getCompx_Prel());
+    printf("Sur la hauteur (en cellules), un diviseur de %d :\n%d\n", surface.getMz_surf_sup() - surface.getMz_surf_inf(),  surface.getCompz_Prel());
+    printf("\nFacteur_multiplicatif_pour_le_nombre_d_echantillons_preleves:\n");
+    printf("%d \n", fact_echantill_huy);
+    printf("\nIntervalle_echantillonnage_(en_iterations):\n");
+    printf("%d \n", inter_iter);
+}
+
+scanCalculDirectivite(){
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &ind_direct);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &pas_theta_dir);
+    fscanf(fp, "%*s");
+    fscanf(fp, "%d", &pas_phi_dir);
+
+    printf("\nCalcul_de_la_directivite_0>Non_1>Oui\n");
+    printf("%d \n", ind_direct);
+    printf("Plans_calcules:\n");
+    printf("Pas_de_discretisation_selon_theta_(en_degres):\n");
+    printf("%d \n", pas_theta_dir);
+    printf("Pas_de_discretisation_selon_phi_(en_degres):\n");
+    printf("%d \n", pas_phi_dir);
+}
+
+void parseAVC() {
+    sprintf(nomfic, "DATA%d.avc\0", numstru);
+    printf("%s \n", nomfic);
+
+    if ((fp = fopen(nomfic, "r")) != NULL) {
+        printf("** CHARGEMENT DE LA STRUCTURE DATA.avc **\n");
+        printf("*****************************************\n");
+
+        onde_plane_oblique = NON;
+        nbports_excitation = 0;
+
+        do {
+            fgets(chaine, 100, fp);
+            //printf("%s\n", chaine);
+
+            if (0 == strcmp(chaine, "[EXCITATION]\n"))
+                scanExcitation();
+            if (0 == strcmp(chaine, "[FORMAT_STOCKAGE]\n"))
+                scanFormatStockage();
+            if (0 == strcmp(chaine, "[ECHANTILLONNAGE]\n"))
+                scanEchantillonnage();
+            if (0 == strcmp(chaine, "[COMPRESSION_HUYGENS]\n"))
+                scanCompressionHuygens();
+            if ( 0 == strcmp(chaine,"[CALCUL_DIRECTIVITE]\n") )
+                scanCalculDirectivite();
+        } while (!feof(fp));
+
+        fclose(fp);
+        printf("**  FIN CHARGEMENT STRUCTURE DATA.avc  **\n");
+        printf("*****************************************\n");
+    }
+}
+
 int parse() {
     parseDSC();
     parseANA();
+    if (ind_ch_loin == 1)parsePTR();
+    parseAVC();
     return 0;
 }
