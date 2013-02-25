@@ -60,7 +60,7 @@ float dt, tobs;
 PortExcitation *portexcit;
 //Cages d'Excitation
 int nb_cages_excitation;
-CageExcitation cageExcitation = new CageExcitation();
+CageExcitation cageExcitation;
 //Sondes
 int nbsonde;
 Sonde *sonde;
@@ -71,7 +71,7 @@ CartographieTemporelle *CT;
 int ind_ch_loin, ind_ch_Prel_DG, cpt_surf_DG;
 int nbsurf_prel;
 int nb_surf_Prel_DG;
-SurfacePrelevement surface = new SurfacePrelevement();
+SurfacePrelevement surface;
 
 /******************************************************************************/
 /** >VARIABLES RECUPEREES .PTR ************************************************/
@@ -393,7 +393,7 @@ void scanElementsLocalises() {
             printf("Sur_la_hauteur_z_(en_cellules):\n");
             printf("%d\n", elts[i].iz1);
 
-            printf("Coordonnee_du_coin_superieur\n");
+            printf("Coordonnees_du_coin_superieur\n");
             printf("Sur_la_longueur_y_(en_cellules):\n");
             printf("%d\n", elts[i].iy2);
             printf("Sur_la_largeur_x_(en_cellules):\n");
@@ -760,7 +760,7 @@ void scanCageExcitation() {
                 fscanf(fp, "%f", &float_temp);
                 cageExcitation.setMod_ret_Exci(float_temp);
 
-                printf("Cage_d_excitation");
+                printf("Cage_d_excitation\n");
                 printf("Nombre_de_faces_d_excitation:\n");
                 printf("%d\n", cageExcitation.getNb_faces_excitation());
                 printf("Type_excitation_1>onde_plane_2>TE10_3>TM10_4>fichier_excitation:\n");
@@ -837,7 +837,7 @@ void scanCageExcitation() {
                 fscanf(fp, "%f", &float_temp);
                 cageExcitation.setMod_ret_Exci(float_temp);
 
-                printf("Cage_d_excitation");
+                printf("Cage_d_excitation\n");
                 printf("Nombre_de_faces_d_excitation:\n");
                 printf("%d\n", cageExcitation.getNb_faces_excitation());
                 printf("Type_excitation_1>onde_plane_2>TE10_3>TM10_4>fichier_excitation:\n");
@@ -1052,7 +1052,7 @@ void scanSurfacePrelevement() {
             fscanf(fp, "%d", &int_temp);
             surface.setMz_surf_sup(int_temp);
 
-            printf("Surface_de_prelevement");
+            printf("Surface_de_prelevement\n");
             printf("Type_de_surface_1>Huygens_2>Surface_de_prelevement_DG_3>Kirchhoff\n");
             printf("%d \n", surface.getTyp_surf_prelev());
             printf("Coordonnees_du_coin_inferieur_gauche\n");
@@ -1125,7 +1125,7 @@ void scanSurfacePrelevement() {
 
             //affichages des donnees recuperees
 
-            printf("Surface_de_prelevement");
+            printf("Surface_de_prelevement\n");
             printf("Type_de_surface_1>Huygens_2>Surface_de_prelevement_DG_3>Kirchhoff\n");
             printf("%d \n", surface.getTyp_surf_prelev());
             if (surface.getSurf_prel_inside_outside() == 1) printf("surface_de_prelevement_DG_de_type_inside\n");
@@ -1313,7 +1313,7 @@ void parsePTR() {
 /** >FONCTION PARSAGE .AVC ****************************************************/
 
 /******************************************************************************/
-scanExcitation() {
+void scanExcitation() {
     fscanf(fp, "%*s");
     fscanf(fp, "%e", &v0);
 
@@ -1321,7 +1321,7 @@ scanExcitation() {
     printf("%e\n", v0);
 }
 
-scanFormatStockage() {
+void scanFormatStockage() {
     fscanf(fp, "%*s");
     fscanf(fp, "%d", &format_stock);
     fscanf(fp, "%*s");
@@ -1333,7 +1333,7 @@ scanFormatStockage() {
     printf("%d\n", flag_EnregChampsPrelBinaire);
 }
 
-scanEchantillonnage() {
+void scanEchantillonnage() {
     fscanf(fp, "%*s");
     fscanf(fp, "%d", &fact_echantill);
 
@@ -1342,7 +1342,7 @@ scanEchantillonnage() {
 }
 
 //Est ce que cela ne se lance que si une surface de Huygens existe ?
-scanCompressionHuygens() {
+void scanCompressionHuygens() {
     int temp;
     fscanf(fp, "%*s");
     fscanf(fp, "%*s");
@@ -1373,7 +1373,7 @@ scanCompressionHuygens() {
     printf("%d \n", inter_iter);
 }
 
-scanCalculDirectivite(){
+void scanCalculDirectivite(){
     fscanf(fp, "%*s");
     fscanf(fp, "%d", &ind_direct);
     fscanf(fp, "%*s");

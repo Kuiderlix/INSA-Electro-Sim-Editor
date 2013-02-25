@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     formulaire.cpp \
     zonecentrale.cpp \
     point.cpp \
-    parser.cpp
+    parser.cpp \
+    SurfacePrelevement.cpp \
+    CageExcitation.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -29,4 +31,7 @@ HEADERS  += mainwindow.h \
     zonecentrale.h \
     point.h \
     constants.h \
-    structures.h
+    structures.h \
+    SurfacePrelevement.h \
+    CageExcitation.h \
+    parser.h

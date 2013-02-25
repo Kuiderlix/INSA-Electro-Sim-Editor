@@ -1,0 +1,13 @@
+[EXCITATION]
+Amplitude_V0:
+10
+
+[FORMAT_STOCKAGE]
+Format_binaire>1_texte>2:
+0
+Format_stockage_fichier_prelevement_DG_0>texte_1>binaire:
+1
+
+[ECHANTILLONNAGE]
+Facteur_multiplicatif_pour_le_nombre_d_echantillons_preleves:
+10
