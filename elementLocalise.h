@@ -9,10 +9,9 @@
 #define	ELEMENTLOCALISE_H
 
 #include "elementBase.h"
-#include "blocConfiguration.h"
 
 
-class elementLocalise : elementBase{
+class elementLocalise : public elementBase{
 public:
     elementLocalise();
     elementLocalise(const elementLocalise& orig);

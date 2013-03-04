@@ -8,7 +8,11 @@
 #ifndef SURFACEPRELEVEMENT_H
 #define	SURFACEPRELEVEMENT_H
 
-class surfacePrelevement {
+#include "elementBase.h"
+#include <string>
+
+
+class surfacePrelevement : public elementBase{
 public:
     surfacePrelevement();
     surfacePrelevement(const surfacePrelevement& orig);
@@ -53,14 +57,23 @@ public:
     void SetTypeSurface(int typeSurface) {
         this->typeSurface = typeSurface;
     }
+    
+    std::string GetNomFichier() const {
+        return nomFichier;
+    }
+
+    void SetNomFichier(std::string nomFichier) {
+        this->nomFichier = nomFichier;
+    }
+
 private:
     int typeSurface;
+    std::string nomFichier;
     //SI typeSurface = 2
     int insideOutside;
     int compressionLongueur;
     int compressionLargeur;
     int compressionHauteur;
-    
 };
 
 #endif	/* SURFACEPRELEVEMENT_H */

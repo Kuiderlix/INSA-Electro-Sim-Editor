@@ -81,6 +81,14 @@ public:
     void SetPasFrequence(float pasFrequence) {
         this->pasFrequence = pasFrequence;
     }
+    
+    std::string GetNomFichier() const {
+        return nomFichier;
+    }
+
+    void SetNomFichier(std::string nomFichier) {
+        this->nomFichier = nomFichier;
+    }
 
 private:
     coordonnee origineRepere;
@@ -91,7 +99,7 @@ private:
     int hauteurPlanMasse;
     int pasDiscrTeta;
     int pasDiscrPhi;
-    
+    std::string nomFichier;
 };
 
 #endif	/* CHAMPLOINTAIN_H */

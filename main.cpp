@@ -1,15 +1,22 @@
-#include <QtGui>
-#include "mainwindow.h"
+/* 
+ * File:   main.cpp
+ * Author: camille
+ *
+ * Created on February 26, 2013, 4:47 PM
+ */
+
+#include <cstdlib>
+#include <stdio.h>
 #include "parser.h"
 
-int main(int argc, char *argv[])
-{
-    parse();
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.showMaximized();
-    w.setWindowTitle("Visualisation et description de structures géométriques");
 
-    
-    return a.exec();
+using namespace std;
+
+/*
+ * 
+ */
+int main(int argc, char** argv) {    
+    parse();
+    return 0;
 }
+

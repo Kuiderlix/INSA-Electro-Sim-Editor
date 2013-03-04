@@ -11,7 +11,7 @@
 #include "coordonnee.h"
 #include "elementBase.h"
 
-class parallelepipede : elementBase {
+class parallelepipede : public elementBase {
 public:
     parallelepipede();
     parallelepipede(const parallelepipede& orig);

@@ -11,7 +11,7 @@
 #include "elementBase.h"
 
 
-class portExcitation : elementBase{
+class portExcitation : public elementBase{
 public:
     portExcitation();
     portExcitation(const portExcitation& orig);

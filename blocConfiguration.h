@@ -8,15 +8,24 @@
 #ifndef BLOCCONFIGURATION_H
 #define	BLOCCONFIGURATION_H
 
+#include <string>
+
 class blocConfiguration {
 public:
     blocConfiguration();
     blocConfiguration(const blocConfiguration& orig);
     virtual ~blocConfiguration();
     
-    void ecrire();
-private:
+    std::string getHeader() const {
+        return header;
+    }
 
+    void setHeader(std::string header) {
+        this->header = header;
+    }
+    
+private:
+    std::string header;
 };
 
 #endif	/* BLOCCONFIGURATION_H */

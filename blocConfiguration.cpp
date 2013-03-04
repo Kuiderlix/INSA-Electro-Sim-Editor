@@ -15,7 +15,3 @@ blocConfiguration::blocConfiguration(const blocConfiguration& orig) {
 
 blocConfiguration::~blocConfiguration() {
 }
-
-blocConfiguration::ecrire(){
-    
-}

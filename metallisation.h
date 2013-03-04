@@ -13,7 +13,7 @@
 #include "blocConfiguration.h"
 
 
-class metallisation : elementBase{
+class metallisation : public elementBase{
 public:
     metallisation();
     metallisation(const metallisation& orig);

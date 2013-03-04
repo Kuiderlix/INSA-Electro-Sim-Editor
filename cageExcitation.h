@@ -10,9 +10,9 @@
 
 #include "elementBase.h"
 #include "coordonnee.h"
+#include <string>
 
-
-class cageExcitation : elementBase{
+class cageExcitation : public elementBase{
 public:
     cageExcitation();
     cageExcitation(const cageExcitation& orig);
@@ -113,6 +113,14 @@ public:
     void SetTypeExcitation(int typeExcitation) {
         this->typeExcitation = typeExcitation;
     }
+    
+    std::string GetNomFichier() const {
+        return nomFichier;
+    }
+
+    void SetNomFichier(std::string nomFichier) {
+        this->nomFichier = nomFichier;
+    }
 
 private:
     int insideOutside;
@@ -130,6 +138,7 @@ private:
     //Si typeExcitation = 4
     float modulationAmplitude;
     float modulationPhase;
+    std::string nomFichier;
 };
 
 #endif	/* CAGEEXCITATION_H */
