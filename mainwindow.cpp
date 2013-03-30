@@ -3,9 +3,14 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    construitMenu();
-    zoneCentrale = new ZoneCentrale;
-    setCentralWidget(zoneCentrale);
+    construireMenu();
+    construireDockToolBox();
+    construireDockListeObjet();
+    visualisation = new Visualisation3D(this);
+    setCentralWidget(visualisation);
+
+
+
 }
 
 MainWindow::~MainWindow()
@@ -14,7 +19,7 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::construitMenu()
+void MainWindow::construireMenu()
 {
     QMenu *menuFichier = menuBar()->addMenu("&Fichier");
 
@@ -32,3 +37,46 @@ void MainWindow::construitMenu()
     QMenu *menuEdition = menuBar()->addMenu("&Edition");
     QMenu *menuAffichage = menuBar()->addMenu("&Affichage");
 }
+
+void MainWindow::construireDockToolBox()
+{
+    QDockWidget *dock = new QDockWidget("ToolBox", this);
+    addDockWidget(Qt::LeftDockWidgetArea, dock);
+
+    QWidget *dockToolbox = new QWidget;
+    dock->setWidget(dockToolbox);
+    dock->setMinimumWidth(300);
+    QVBoxLayout *dockLayout = new QVBoxLayout;
+
+    QToolBox * toolbox = new QToolBox();
+    toolbox->addItem(new QPushButton("test"), "Métallisation");
+    toolbox->addItem(new QPushButton("test2"), "bouton2");
+    toolbox->addItem(new QPushButton("test3"), "bouton3");
+    toolbox->addItem(new QPushButton("test4"), "bouton4");
+
+    dockLayout->addWidget(toolbox);
+
+    dockToolbox->setLayout(dockLayout);
+}
+
+void MainWindow::construireDockListeObjet()
+{
+    QDockWidget *dock = new QDockWidget("Liste", this);
+    addDockWidget(Qt::BottomDockWidgetArea, dock);
+
+    QWidget *dockToolbox = new QWidget;
+    dock->setWidget(dockToolbox);
+    dock->setMinimumHeight(300);
+    QHBoxLayout *dockLayout = new QHBoxLayout;
+
+    QTabWidget * tabWidget = new QTabWidget();
+    tabWidget->addTab(new QPushButton("test"), "Métallisation");
+    tabWidget->addTab(new QPushButton("test2"), "bouton2");
+    tabWidget->addTab(new QPushButton("test3"), "bouton3");
+    tabWidget->addTab(new QPushButton("test4"), "bouton4");
+
+    dockLayout->addWidget(tabWidget);
+
+    dockToolbox->setLayout(dockLayout);
+}
+

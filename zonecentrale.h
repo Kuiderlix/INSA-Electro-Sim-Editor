@@ -4,7 +4,6 @@
 #include <QtWidgets>
 #include <QObject>
 #include "visualisation3d.h"
-#include "formulaire.h"
 /*
   Cette classe est le Widget qui est placé au centre de la fenêtre principale.
   Il contient les différents Widgets comme le rendu 3D et le formulaire.
@@ -21,7 +20,6 @@ public slots:
 
 private:
     Visualisation3D* visualisation;
-    Formulaire* formulaire;
     QHBoxLayout * layoutPrincipale;
     
 };

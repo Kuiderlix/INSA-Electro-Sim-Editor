@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include "parser.h"
 
+#include "mainwindow.h"
+
 
 using namespace std;
 
@@ -17,6 +19,12 @@ using namespace std;
  */
 int main(int argc, char** argv) {    
     parse();
-    return 0;
+
+    QApplication app(argc, argv);
+
+    MainWindow fenetre;
+    fenetre.showMaximized();
+
+    return app.exec();
 }
 
