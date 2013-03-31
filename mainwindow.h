@@ -3,6 +3,7 @@
 
 #include <QtGui>
 #include "visualisation3d.h"
+#include "TableMetallisation.h"
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */

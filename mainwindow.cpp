@@ -69,8 +69,10 @@ void MainWindow::construireDockListeObjet()
     dock->setMinimumHeight(300);
     QHBoxLayout *dockLayout = new QHBoxLayout;
 
+    TableMetallisation* tableMeta = new TableMetallisation();
+
     QTabWidget * tabWidget = new QTabWidget();
-    tabWidget->addTab(new QPushButton("test"), "Métallisation");
+    tabWidget->addTab(tableMeta, "Métallisation");
     tabWidget->addTab(new QPushButton("test2"), "bouton2");
     tabWidget->addTab(new QPushButton("test3"), "bouton3");
     tabWidget->addTab(new QPushButton("test4"), "bouton4");

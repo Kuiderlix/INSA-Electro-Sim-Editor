@@ -50,7 +50,10 @@ SOURCES += main.cpp\
     portExcitation.cpp \
     sonde.cpp \
     surfacePrelevement.cpp \
-    volumeCalcul.cpp
+    volumeCalcul.cpp \
+    TableMetallisation.cpp \
+    FormMetallisation.cpp \
+    FormCoordonnees.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -91,7 +94,10 @@ HEADERS  += mainwindow.h \
     portExcitation.h \
     sonde.h \
     surfacePrelevement.h \
-    volumeCalcul.h
+    volumeCalcul.h \
+    TableMetallisation.h \
+    FormMetallisation.h \
+    FormCoordonnees.h
 
 OTHER_FILES += \
     DATA1.ana \
