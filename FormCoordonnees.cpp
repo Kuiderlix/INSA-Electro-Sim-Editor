@@ -1,17 +1,17 @@
 #include "FormCoordonnees.h"
 
-FormCoordonnees::FormCoordonnees(coordonnee * coord,QWidget *parent) :
+FormCoordonnees::FormCoordonnees(coordonnee coord,QWidget *parent) :
     QWidget(parent)
 {
     this->coord=coord;
     QHBoxLayout * layout = new QHBoxLayout;
 
     champsX = new QSpinBox();
-    champsX->setValue(coord->GetX());
+    champsX->setValue(coord.GetX());
     champsY = new QSpinBox();
-    champsX->setValue(coord->GetY());
+    champsX->setValue(coord.GetY());
     champsZ = new QSpinBox();
-    champsX->setValue(coord->GetZ());
+    champsX->setValue(coord.GetZ());
 
     layout->addWidget(new QLabel("x:"));
     layout->addWidget(champsX);

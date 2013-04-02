@@ -17,16 +17,15 @@ FormMetallisation::FormMetallisation(metallisation* metal,int mode, QWidget *par
     layout->addLayout(layoutConduc);
 
     layout->addWidget(new QLabel("Coordonnees Avant Gauche:"));
-    coordonnee coord = metal->GetAvantGauche();
-    FormCoordonnees * formCoord1 = new FormCoordonnees(&coord);
+    formCoord1 = new FormCoordonnees(metal->GetAvantGauche());
     layout->addWidget(formCoord1);
 
     layout->addWidget(new QLabel("Coordonnees Arrière Droit:"));
-    coordonnee coord2 = metal->GetArriereDroit();
-    FormCoordonnees * formCoord2 = new FormCoordonnees(&coord2);
+    formCoord2 = new FormCoordonnees(metal->GetArriereDroit());
     layout->addWidget(formCoord2);
 
-    layout->addWidget(new QPushButton("Valider"));
+    boutonValider = new QPushButton("Valider");
+    layout->addWidget(boutonValider);
 
     layout->setAlignment(Qt::AlignTop);
 

@@ -23,6 +23,10 @@ private:
     int mode;
 
     metallisation * metal;
+
+    QPushButton * boutonValider;
+    FormCoordonnees * formCoord1;
+    FormCoordonnees * formCoord2;
     
 };
 
