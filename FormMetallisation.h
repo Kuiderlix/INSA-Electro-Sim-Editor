@@ -3,9 +3,9 @@
 
 #include <QtWidgets>
 #include "metallisation.h"
-#include "FormCoordonnees.h"
+#include "FormElementBase.h"
 
-class FormMetallisation : public QWidget
+class FormMetallisation : public FormElementBase
 {
     Q_OBJECT
 public:
@@ -14,19 +14,9 @@ public:
 signals:
     
 public slots:
-
-public:
-    static const int NOUVEAU = 0;
-    static const int MODIFIER = 1;
-
 private:
-    int mode;
 
     metallisation * metal;
-
-    QPushButton * boutonValider;
-    FormCoordonnees * formCoord1;
-    FormCoordonnees * formCoord2;
     
 };
 

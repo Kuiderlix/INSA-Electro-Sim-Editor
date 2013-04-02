@@ -5,6 +5,7 @@
 #include "visualisation3d.h"
 #include "TableMetallisation.h"
 #include "FormMetallisation.h"
+#include "FormElementLocalise.h"
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */

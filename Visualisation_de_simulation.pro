@@ -52,7 +52,9 @@ SOURCES += main.cpp\
     volumeCalcul.cpp \
     TableMetallisation.cpp \
     FormMetallisation.cpp \
-    FormCoordonnees.cpp
+    FormCoordonnees.cpp \
+    FormElementLocalise.cpp \
+    FormElementBase.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -96,7 +98,9 @@ HEADERS  += mainwindow.h \
     volumeCalcul.h \
     TableMetallisation.h \
     FormMetallisation.h \
-    FormCoordonnees.h
+    FormCoordonnees.h \
+    FormElementLocalise.h \
+    FormElementBase.h
 
 OTHER_FILES += \
     DATA1.ana \

@@ -62,12 +62,11 @@ void MainWindow::construireDockToolBox()
 
     QWidget *dockToolbox = new QWidget;
     dock->setWidget(dockToolbox);
-    dock->setMaximumWidth(300);
     QVBoxLayout *dockLayout = new QVBoxLayout;
 
     QToolBox * toolbox = new QToolBox();
     toolbox->addItem(new FormMetallisation(new metallisation(),FormMetallisation::NOUVEAU), "Métallisation");
-    toolbox->addItem(new QPushButton("test2"), "Element localise");
+    toolbox->addItem(new FormElementLocalise(new elementLocalise(), FormElementLocalise::NOUVEAU), "Element localise");
     toolbox->addItem(new QPushButton("test3"), "Parallelepipede");
     toolbox->addItem(new QPushButton("test4"), "Cage Excitation");
     toolbox->addItem(new QPushButton("test4"), "Cartographie Temporelle");
