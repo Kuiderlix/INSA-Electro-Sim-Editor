@@ -4,6 +4,7 @@
 #include <QtGui>
 #include "visualisation3d.h"
 #include "TableMetallisation.h"
+#include "FormMetallisation.h"
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */
@@ -14,7 +15,6 @@ class MainWindow : public QMainWindow
     void construireMenu();
 
     void construireDockToolBox();
-    void construireDockListeObjet();
     
 public:
     MainWindow(QWidget *parent = 0);

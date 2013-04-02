@@ -20,7 +20,6 @@ SOURCES += main.cpp\
     zonecentrale.cpp \
     point.cpp \
     parser.cpp \
-    SurfacePrelevement.cpp \
     CageExcitation.cpp \
     anayseTemporelle.cpp \
     blocAmplitude.cpp \

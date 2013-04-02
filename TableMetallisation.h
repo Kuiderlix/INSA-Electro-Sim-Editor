@@ -13,7 +13,7 @@ public:
 signals:
     
 public slots:
-
+private:
     blocMetallisation* listeMetallisation;
     
 };

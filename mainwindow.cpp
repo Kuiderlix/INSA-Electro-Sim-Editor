@@ -5,12 +5,26 @@ MainWindow::MainWindow(QWidget *parent)
 {
     construireMenu();
     construireDockToolBox();
-    construireDockListeObjet();
+    QVBoxLayout * layout = new QVBoxLayout();
     visualisation = new Visualisation3D(this);
-    setCentralWidget(visualisation);
+    layout->addWidget(visualisation);
 
+    QWidget *tables = new QWidget;
+    QHBoxLayout *layoutTable = new QHBoxLayout;
+    TableMetallisation* tableMeta = new TableMetallisation();
+    QTabWidget * tabWidget = new QTabWidget();
+    tabWidget->addTab(tableMeta, "Métallisation");
+    tabWidget->addTab(new QPushButton("test2"), "bouton2");
+    tabWidget->addTab(new QPushButton("test3"), "bouton3");
+    tabWidget->addTab(new QPushButton("test4"), "bouton4");
+    layoutTable->addWidget(tabWidget);
+    tables->setLayout(layoutTable);
+    layout->addWidget(tables);
 
+    QWidget *central = new QWidget();
+    central->setLayout(layout);
 
+    setCentralWidget(central);
 }
 
 MainWindow::~MainWindow()
@@ -45,39 +59,18 @@ void MainWindow::construireDockToolBox()
 
     QWidget *dockToolbox = new QWidget;
     dock->setWidget(dockToolbox);
-    dock->setMinimumWidth(300);
+    dock->setMaximumWidth(300);
     QVBoxLayout *dockLayout = new QVBoxLayout;
 
     QToolBox * toolbox = new QToolBox();
-    toolbox->addItem(new QPushButton("test"), "Métallisation");
+    toolbox->addItem(new FormMetallisation(new metallisation(),FormMetallisation::NOUVEAU), "Métallisation");
     toolbox->addItem(new QPushButton("test2"), "bouton2");
     toolbox->addItem(new QPushButton("test3"), "bouton3");
     toolbox->addItem(new QPushButton("test4"), "bouton4");
 
+
+    dockLayout->addWidget(new QPushButton("Générer"));
     dockLayout->addWidget(toolbox);
-
-    dockToolbox->setLayout(dockLayout);
-}
-
-void MainWindow::construireDockListeObjet()
-{
-    QDockWidget *dock = new QDockWidget("Liste", this);
-    addDockWidget(Qt::BottomDockWidgetArea, dock);
-
-    QWidget *dockToolbox = new QWidget;
-    dock->setWidget(dockToolbox);
-    dock->setMinimumHeight(300);
-    QHBoxLayout *dockLayout = new QHBoxLayout;
-
-    TableMetallisation* tableMeta = new TableMetallisation();
-
-    QTabWidget * tabWidget = new QTabWidget();
-    tabWidget->addTab(tableMeta, "Métallisation");
-    tabWidget->addTab(new QPushButton("test2"), "bouton2");
-    tabWidget->addTab(new QPushButton("test3"), "bouton3");
-    tabWidget->addTab(new QPushButton("test4"), "bouton4");
-
-    dockLayout->addWidget(tabWidget);
 
     dockToolbox->setLayout(dockLayout);
 }
