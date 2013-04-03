@@ -56,7 +56,9 @@ SOURCES += main.cpp\
     FormElementLocalise.cpp \
     FormElementBase.cpp \
     FormParallelepipede.cpp \
-    FormCartographieTemporelle.cpp
+    FormCartographieTemporelle.cpp \
+    FormSurfacePrelevement.cpp \
+    FormPortExcitation.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -105,7 +107,9 @@ HEADERS  += mainwindow.h \
     FormElementBase.h \
     FormParallelepipede.h \
     FormParallelepipede.h \
-    FormCartographieTemporelle.h
+    FormCartographieTemporelle.h \
+    FormSurfacePrelevement.h \
+    FormPortExcitation.h
 
 OTHER_FILES += \
     DATA1.ana \

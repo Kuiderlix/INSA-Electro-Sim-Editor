@@ -1,7 +1,7 @@
 #ifndef FORMELEMENTBASE_H
 #define FORMELEMENTBASE_H
 
-#include <QWidget>
+#include <QtWidgets>
 #include "FormCoordonnees.h"
 #include "elementBase.h"
 

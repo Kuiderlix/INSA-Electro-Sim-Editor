@@ -11,7 +11,7 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
     QHBoxLayout * layoutType = new QHBoxLayout;
     layoutType->addWidget(new QLabel("Type:"));
     QComboBox * typeWidget = new QComboBox();
-    typeWidget->addItems(QStringList() << "1" << "2" << "3");
+    typeWidget->addItems(QStringList() << "Résistance" << "Capacité" << "Self");
     layoutType->addWidget(typeWidget);
     layout->addLayout(layoutType);
 
@@ -27,7 +27,7 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
     QHBoxLayout * layoutDirection = new QHBoxLayout;
     layoutDirection->addWidget(new QLabel("Direction:"));
     QComboBox * directionWidget = new QComboBox();
-    directionWidget->addItems(QStringList() << "1" << "2" << "3");
+    directionWidget->addItems(QStringList() << "x" << "y" << "z");
     layoutDirection->addWidget(directionWidget);
     layout->addLayout(layoutDirection);
 

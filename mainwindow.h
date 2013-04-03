@@ -8,6 +8,8 @@
 #include "FormElementLocalise.h"
 #include "FormParallelepipede.h"
 #include "FormCartographieTemporelle.h"
+#include "FormSurfacePrelevement.h"
+#include "FormPortExcitation.h"
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */
