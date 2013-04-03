@@ -6,6 +6,8 @@
 #include "TableMetallisation.h"
 #include "FormMetallisation.h"
 #include "FormElementLocalise.h"
+#include "FormParallelepipede.h"
+#include "FormCartographieTemporelle.h"
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */

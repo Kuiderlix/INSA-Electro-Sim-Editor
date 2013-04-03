@@ -54,7 +54,9 @@ SOURCES += main.cpp\
     FormMetallisation.cpp \
     FormCoordonnees.cpp \
     FormElementLocalise.cpp \
-    FormElementBase.cpp
+    FormElementBase.cpp \
+    FormParallelepipede.cpp \
+    FormCartographieTemporelle.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -100,7 +102,10 @@ HEADERS  += mainwindow.h \
     FormMetallisation.h \
     FormCoordonnees.h \
     FormElementLocalise.h \
-    FormElementBase.h
+    FormElementBase.h \
+    FormParallelepipede.h \
+    FormParallelepipede.h \
+    FormCartographieTemporelle.h
 
 OTHER_FILES += \
     DATA1.ana \

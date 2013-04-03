@@ -21,7 +21,14 @@ QWidget *FormElementBase::getWidgetElementBase()
     formCoord2 = new FormCoordonnees(element->GetArriereDroit());
     layout->addWidget(formCoord2);
 
-    boutonValider = new QPushButton("Valider");
+    if (mode == NOUVEAU)
+    {
+        boutonValider = new QPushButton("Ajouter");
+    }
+    else
+    {
+        boutonValider = new QPushButton("Modifier");
+    }
     layout->addWidget(boutonValider);
 
     conteneur->setLayout(layout);

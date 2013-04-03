@@ -67,9 +67,10 @@ void MainWindow::construireDockToolBox()
     QToolBox * toolbox = new QToolBox();
     toolbox->addItem(new FormMetallisation(new metallisation(),FormMetallisation::NOUVEAU), "Métallisation");
     toolbox->addItem(new FormElementLocalise(new elementLocalise(), FormElementLocalise::NOUVEAU), "Element localise");
-    toolbox->addItem(new QPushButton("test3"), "Parallelepipede");
+    toolbox->addItem(new FormParallelepipede(new parallelepipede(), FormParallelepipede::NOUVEAU), "Parallelepipede");
+    toolbox->addItem(new QPushButton("test4"), "Port Excitation");
     toolbox->addItem(new QPushButton("test4"), "Cage Excitation");
-    toolbox->addItem(new QPushButton("test4"), "Cartographie Temporelle");
+    toolbox->addItem(new FormCartographieTemporelle(new cartographieTemporelle(), FormCartographieTemporelle::NOUVEAU), "Cartographie Temporelle");
     toolbox->addItem(new QPushButton("test4"), "Surface Prelevement");
 
 
