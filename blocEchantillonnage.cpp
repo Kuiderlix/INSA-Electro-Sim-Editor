@@ -8,6 +8,8 @@
 #include "blocEchantillonnage.h"
 
 blocEchantillonnage::blocEchantillonnage() {
+    this->setHeader("[ECHANTILLONNAGE]");
+    this->setExtension(".avc");
 }
 
 blocEchantillonnage::blocEchantillonnage(const blocEchantillonnage& orig) {

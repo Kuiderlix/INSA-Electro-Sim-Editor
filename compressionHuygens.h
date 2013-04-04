@@ -8,7 +8,10 @@
 #ifndef COMPRESSIONHUYGENS_H
 #define	COMPRESSIONHUYGENS_H
 
-class compressionHuygens {
+#include "blocConfiguration.h"
+
+
+class compressionHuygens : public blocConfiguration{
 public:
     compressionHuygens();
     compressionHuygens(const compressionHuygens& orig);

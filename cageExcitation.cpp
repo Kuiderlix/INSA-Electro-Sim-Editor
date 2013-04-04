@@ -8,6 +8,8 @@
 #include "cageExcitation.h"
 
 cageExcitation::cageExcitation() {
+    this->setHeader("[CAGES_EXCITATION]");
+    this->setExtension(".ana");
 }
 
 cageExcitation::cageExcitation(const cageExcitation& orig) {

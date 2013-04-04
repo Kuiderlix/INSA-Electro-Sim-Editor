@@ -10,6 +10,8 @@
 #include "blocPortExcitation.h"
 
 blocPortExcitation::blocPortExcitation() {
+    this->setHeader("[PORTS_EXCITATION]");
+    this->setExtension(".ana");
 }
 
 blocPortExcitation::blocPortExcitation(const blocPortExcitation& orig) {

@@ -9,6 +9,9 @@
 #define	BLOCCONFIGURATION_H
 
 #include <string>
+#include <sstream>
+
+#include "Ecriture.h"
 
 class blocConfiguration {
 public:
@@ -21,11 +24,36 @@ public:
     }
 
     void setHeader(std::string header) {
-        this->header = header;
+        this->header.reserve(header.length());
+        this->header.append(header);
     }
     
-private:
+    void setExtension(std::string extension) {
+        this->extension = extension;
+    }
+    
+    void setTest(int test){
+        this->test = test;
+    }
+    
+    void ecrire(){
+        //TODO: extension & header ne s'écrivent pas.
+        std::ostringstream name;
+        name << "DATA1" << this->extension << "s";
+        std::string nomFichier(name.str());
+        Ecriture::SetNomFichier(nomFichier);
+        
+        std::ostringstream header;
+        header << this->getHeader() << this->test << std::endl;
+        std::string ecriture(header.str());
+        Ecriture::Ecrire(ecriture);
+    }
+
+    
+protected:
     std::string header;
+    std::string extension;
+    int test;
 };
 
 #endif	/* BLOCCONFIGURATION_H */

@@ -11,7 +11,7 @@
 #include "blocConfiguration.h"
 
 
-class pml : blocConfiguration{
+class pml : public blocConfiguration{
 public:
     pml();
     pml(const pml& orig);

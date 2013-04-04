@@ -8,7 +8,10 @@
 #ifndef FORMATSTOCKAGE_H
 #define	FORMATSTOCKAGE_H
 
-class formatStockage {
+#include "blocConfiguration.h"
+
+
+class formatStockage : public blocConfiguration{
 public:
     formatStockage();
     formatStockage(const formatStockage& orig);

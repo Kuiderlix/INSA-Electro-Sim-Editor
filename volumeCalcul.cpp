@@ -6,12 +6,38 @@
  */
 
 #include "volumeCalcul.h"
+#include <sstream>
+#include <string>
 
 volumeCalcul::volumeCalcul() {
+    std::string header = "[VOLUME_DE_CALCUL]";
+    this->setHeader(header);
+    this->setExtension(".dsc");
 }
 
 volumeCalcul::volumeCalcul(const volumeCalcul& orig) {
 }
 
 volumeCalcul::~volumeCalcul() {
+}
+
+void volumeCalcul::ecrire(){
+    blocConfiguration(*this).ecrire();
+    
+    std::ostringstream monEcriture;
+    monEcriture << "Longueur_y_de_la_boite_(en_mm):\n";
+    monEcriture << this->longueur << std::endl;
+    monEcriture << "Largeur_x_de_la_boite_(en_mm):\n";
+    monEcriture << this->largeur << std::endl;
+    monEcriture << "Hauteur_z_de_la_boite_(en_mm):\n";
+    monEcriture << this->hauteur << std::endl;
+    monEcriture << "Nombre_de_cellules_sur_la_longueur_y:\n";
+    monEcriture << this->nombreY << std::endl;
+    monEcriture << "Nombre_de_cellules_sur_la_largeur_x:\n";
+    monEcriture << this->nombreX << std::endl;
+    monEcriture << "Nombre_de_cellules_sur_la_hauteur_z:\n";
+    monEcriture << this->nombreZ << std::endl;
+    
+    std::string ecriture(monEcriture.str());
+    Ecriture::Ecrire(ecriture);
 }

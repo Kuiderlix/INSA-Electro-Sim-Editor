@@ -10,6 +10,9 @@
 #include "blocMetallisation.h"
 
 blocMetallisation::blocMetallisation() {
+    this->setHeader("[METALLISATIONS]");
+    this->setHeader(".dsc");
+    this->setTest(2);
 }
 
 blocMetallisation::blocMetallisation(const blocMetallisation& orig) {

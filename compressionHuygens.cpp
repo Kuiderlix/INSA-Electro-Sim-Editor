@@ -8,6 +8,8 @@
 #include "compressionHuygens.h"
 
 compressionHuygens::compressionHuygens() {
+    this->setHeader("[COMPRESSION_HUYGENS]");
+    this->setExtension(".avc");
 }
 
 compressionHuygens::compressionHuygens(const compressionHuygens& orig) {

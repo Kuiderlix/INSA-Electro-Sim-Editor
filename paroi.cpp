@@ -8,6 +8,8 @@
 #include "paroi.h"
 
 paroi::paroi() {
+    this->setHeader("[TYPE_PAROIS_0>Mur_1>PEC_2>FLOQUET_3>PML_4>PMC]");
+    this->setExtension(".dsc");
 }
 
 paroi::paroi(const paroi& orig) {

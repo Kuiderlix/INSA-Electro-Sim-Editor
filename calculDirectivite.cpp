@@ -8,6 +8,8 @@
 #include "calculDirectivite.h"
 
 calculDirectivite::calculDirectivite() {
+    this->setHeader("[CALCUL_DIRECTIVITE]");
+    this->setExtension(".avc");
 }
 
 calculDirectivite::calculDirectivite(const calculDirectivite& orig) {

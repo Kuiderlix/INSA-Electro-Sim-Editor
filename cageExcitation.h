@@ -10,9 +10,10 @@
 
 #include "elementBase.h"
 #include "coordonnee.h"
+#include "blocConfiguration.h"
 #include <string>
 
-class cageExcitation : public elementBase{
+class cageExcitation : public elementBase, public blocConfiguration{
 public:
     cageExcitation();
     cageExcitation(const cageExcitation& orig);

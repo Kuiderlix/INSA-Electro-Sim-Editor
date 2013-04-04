@@ -8,6 +8,8 @@
 #include "formatStockage.h"
 
 formatStockage::formatStockage() {
+    this->setHeader("[FORMAT_STOCKAGE]");
+    this->setExtension(".avc");
 }
 
 formatStockage::formatStockage(const formatStockage& orig) {

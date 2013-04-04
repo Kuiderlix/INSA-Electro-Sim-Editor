@@ -8,6 +8,8 @@
 #include "blocAmplitude.h"
 
 blocAmplitude::blocAmplitude() {
+    this->setHeader("[EXCITATION]");
+    this->setExtension(".avc");
 }
 
 blocAmplitude::blocAmplitude(const blocAmplitude& orig) {

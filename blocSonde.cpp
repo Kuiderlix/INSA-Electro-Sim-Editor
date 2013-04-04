@@ -10,6 +10,8 @@
 #include "blocSonde.h"
 
 blocSonde::blocSonde() {
+    this->setHeader("[SONDES]");
+    this->setExtension(".ana");
 }
 
 blocSonde::blocSonde(const blocSonde& orig) {

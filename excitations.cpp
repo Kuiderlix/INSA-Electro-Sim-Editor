@@ -8,6 +8,8 @@
 #include "excitations.h"
 
 excitations::excitations() {
+    this->setHeader("[PARAMETRES_EXCITATION]");
+    this->setExtension(".ana");
 }
 
 excitations::excitations(const excitations& orig) {

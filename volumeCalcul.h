@@ -65,6 +65,7 @@ public:
         this->nombreZ = nombreZ;
     }
 
+    void ecrire();
     
 private:
     float longueur;

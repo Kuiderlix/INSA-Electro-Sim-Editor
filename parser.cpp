@@ -16,7 +16,7 @@
 #include "blocElementLocalise.h"
 #include "pml.h"
 #include "excitations.h"
-#include "anayseTemporelle.h"
+#include "analyseTemporelle.h"
 #include "blocPortExcitation.h"
 #include "cageExcitation.h"
 #include "blocSonde.h"
@@ -28,7 +28,6 @@
 #include "blocEchantillonnage.h"
 #include "compressionHuygens.h"
 #include "calculDirectivite.h"
-
 using namespace std;
 /******************************************************************************/
 /**>Variables Parser **********************************************************/
@@ -38,12 +37,8 @@ using namespace std;
 char nomfic[TAILLE_NOM_FICHIER];
 FILE *fp;
 char chaine[TAILLE_CHAINE];
-
-
 //Numero du fichier à récupérer !
 int numstru = 1;
-#define NUMSTRU numstru
-
 /******************************************************************************/
 /**>Variables récupérées .DSC *************************************************/
 /******************************************************************************/
@@ -57,7 +52,7 @@ blocElementLocalise elementLocalises;
 /******************************************************************************/
 pml PML;
 excitations excitation;
-anayseTemporelle analyseTemp;
+analyseTemporelle analyseTemp;
 blocPortExcitation portExcitations;
 cageExcitation cage;
 blocSonde sondes;
@@ -109,7 +104,6 @@ void scanVolumeDeCalcul(){
     volume.SetLargeur(parserGetFloat());
     volume.SetHauteur(parserGetFloat());
     volume.SetNombreY(parserGetInt());
-    fscanf(fp, "%*s");
     volume.SetNombreX(parserGetInt());
     volume.SetNombreZ(parserGetInt());
 }
@@ -572,4 +566,5 @@ void parse(){
     if(surfacePrelevements.GetNbSurfaces() == 1 && surfacePrelevements.GetSurface(0).GetTypeSurface() == 1)
         parsePTR();
     parseAVC();
+    volume.ecrire();
 }

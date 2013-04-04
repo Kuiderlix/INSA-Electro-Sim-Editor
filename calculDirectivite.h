@@ -8,7 +8,10 @@
 #ifndef CALCULDIRECTIVITE_H
 #define	CALCULDIRECTIVITE_H
 
-class calculDirectivite {
+#include "blocConfiguration.h"
+
+
+class calculDirectivite : public blocConfiguration{
 public:
     calculDirectivite();
     calculDirectivite(const calculDirectivite& orig);

@@ -11,11 +11,11 @@
 #include "blocConfiguration.h"
 
 
-class anayseTemporelle : blocConfiguration {
+class analyseTemporelle : public blocConfiguration {
 public:
-    anayseTemporelle();
-    anayseTemporelle(const anayseTemporelle& orig);
-    virtual ~anayseTemporelle();
+    analyseTemporelle();
+    analyseTemporelle(const analyseTemporelle& orig);
+    virtual ~analyseTemporelle();
     
     float GetPeriode() const {
         return periode;

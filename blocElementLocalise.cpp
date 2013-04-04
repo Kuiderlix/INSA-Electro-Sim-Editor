@@ -11,6 +11,8 @@
 #include "elementLocalise.h"
 
 blocElementLocalise::blocElementLocalise() {
+    this->setHeader("[ELEMENTS_LOCALISES]");
+    this->setExtension(".dsc");
 }
 
 blocElementLocalise::blocElementLocalise(const blocElementLocalise& orig) {

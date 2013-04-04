@@ -8,6 +8,8 @@
 #include "champLointain.h"
 
 champLointain::champLointain() {
+    this->setHeader("[CALCUL_CHAMP_LOINTAIN]");
+    this->setExtension(".ptr");
 }
 
 champLointain::champLointain(const champLointain& orig) {

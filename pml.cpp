@@ -8,6 +8,8 @@
 #include "pml.h"
 
 pml::pml() {
+    this->setHeader("[PML]");
+    this->setExtension(".ana");
 }
 
 pml::pml(const pml& orig) {

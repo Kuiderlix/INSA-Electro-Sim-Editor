@@ -8,6 +8,8 @@
 #include "blocParallelepipede.h"
 
 blocParallelepipede::blocParallelepipede() {
+    this->setHeader("[PARALLELEPIPEDES_MATERIAUX]");
+    this->setExtension(".dsc");
 }
 
 blocParallelepipede::blocParallelepipede(const blocParallelepipede& orig) {
