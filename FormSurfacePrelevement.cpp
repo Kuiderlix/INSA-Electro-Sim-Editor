@@ -23,7 +23,7 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
     layout->addLayout(layoutNomFichier);
 
     resteForm = new QWidget();
-    resteForm->setEnabled(false);
+    resteForm->setVisible(false);
     QVBoxLayout * layoutResteForm = new QVBoxLayout;
     layoutResteForm->setContentsMargins(0,0,0,0);
 
@@ -70,10 +70,10 @@ void FormSurfacePrelevement::activeResteForm(int val)
     qDebug() << val;
     if (val==1)
     {
-        resteForm->setEnabled(true);
+        resteForm->setVisible(true);
     }
     else
     {
-        resteForm->setEnabled(false);
+        resteForm->setVisible(false);
     }
 }

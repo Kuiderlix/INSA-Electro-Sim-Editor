@@ -7,12 +7,12 @@
 
 #include "cageExcitation.h"
 
-cageExcitation::cageExcitation() {
+cageExcitation::cageExcitation() : elementBase(), blocConfiguration() {
     this->setHeader("[CAGES_EXCITATION]");
     this->setExtension(".ana");
 }
 
-cageExcitation::cageExcitation(const cageExcitation& orig) {
+cageExcitation::cageExcitation(const cageExcitation& orig) : elementBase(), blocConfiguration()  {
 }
 
 cageExcitation::~cageExcitation() {

@@ -9,4 +9,7 @@ TableMetallisation::TableMetallisation(QWidget *parent) :
     this->setSelectionBehavior(QAbstractItemView::SelectRows);
     this->setSelectionMode(QAbstractItemView::ExtendedSelection);
     this->setHorizontalHeaderLabels(QStringList() << "conductivité" << "coordonnees" << "coordonnees");
+    setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+
 }

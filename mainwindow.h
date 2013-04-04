@@ -10,6 +10,7 @@
 #include "FormCartographieTemporelle.h"
 #include "FormSurfacePrelevement.h"
 #include "FormPortExcitation.h"
+#include "FormCageExcitation.h"
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */

@@ -20,8 +20,6 @@ SOURCES += main.cpp\
     zonecentrale.cpp \
     point.cpp \
     parser.cpp \
-    CageExcitation.cpp \
-    anayseTemporelle.cpp \
     blocAmplitude.cpp \
     blocCartographieTemporelle.cpp \
     blocConfiguration.cpp \
@@ -59,7 +57,9 @@ SOURCES += main.cpp\
     FormCartographieTemporelle.cpp \
     FormSurfacePrelevement.cpp \
     FormPortExcitation.cpp \
-    FormCageExcitation.cpp
+    FormCageExcitation.cpp \
+    Ecriture.cpp \
+    analyseTemporelle.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -70,9 +70,7 @@ HEADERS  += mainwindow.h \
     point.h \
     constants.h \
     structures.h \
-    CageExcitation.h \
     parser.h \
-    anayseTemporelle.h \
     blocAmplitude.h \
     blocCartographieTemporelle.h \
     blocConfiguration.h \
@@ -111,7 +109,9 @@ HEADERS  += mainwindow.h \
     FormCartographieTemporelle.h \
     FormSurfacePrelevement.h \
     FormPortExcitation.h \
-    FormCageExcitation.h
+    FormCageExcitation.h \
+    Ecriture.h \
+    analyseTemporelle.h
 
 OTHER_FILES += \
     DATA1.ana \

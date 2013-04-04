@@ -69,7 +69,7 @@ void MainWindow::construireDockToolBox()
     toolbox->addItem(new FormElementLocalise(new elementLocalise(), FormElementLocalise::NOUVEAU), "Element localise");
     toolbox->addItem(new FormParallelepipede(new parallelepipede(), FormParallelepipede::NOUVEAU), "Parallelepipede");
     toolbox->addItem(new FormPortExcitation(new portExcitation(), FormPortExcitation::NOUVEAU), "Port Excitation");
-    toolbox->addItem(new QPushButton("test4"), "Cage Excitation");
+    toolbox->addItem(new FormCageExcitation(new cageExcitation(), FormCageExcitation::NOUVEAU), "Cage Excitation");
     toolbox->addItem(new FormCartographieTemporelle(new cartographieTemporelle(), FormCartographieTemporelle::NOUVEAU), "Cartographie Temporelle");
     toolbox->addItem(new FormSurfacePrelevement(new surfacePrelevement(), FormSurfacePrelevement::NOUVEAU), "Surface Prelevement");
 
