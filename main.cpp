@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
     parse();
 
     QApplication app(argc, argv);
-
+    QApplication::setStyle(QStyleFactory::create("Fusion"));
     MainWindow fenetre;
     fenetre.showMaximized();
 

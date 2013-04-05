@@ -6,6 +6,10 @@ FormCartographieTemporelle::FormCartographieTemporelle(cartographieTemporelle *c
     this->carto=carto;
 
 
+    QVBoxLayout * layoutPrincipal = new QVBoxLayout();
+    layoutPrincipal->setMargin(0);
+    QGroupBox * groupGeo = new QGroupBox("Cartographie Temporelle");
+
 
     QVBoxLayout * layout = new QVBoxLayout;
 
@@ -48,7 +52,11 @@ FormCartographieTemporelle::FormCartographieTemporelle(cartographieTemporelle *c
 
     layout->setAlignment(Qt::AlignTop);
 
-    setLayout(layout);
+    groupGeo->setLayout(layout);
+
+    layoutPrincipal->addWidget(groupGeo);
+
+    setLayout(layoutPrincipal);
 
 
 }

@@ -65,6 +65,16 @@ void MainWindow::construireDockToolBox()
     QVBoxLayout *dockLayout = new QVBoxLayout;
 
     QToolBox * toolbox = new QToolBox();
+    toolbox->setMinimumWidth(300);
+
+
+
+    toolbox->addItem(new DescriptionGeoWidget(), "Description Géométrie");
+    toolbox->addItem(new ParamSimuWidget(), "Paramètres Simulation");
+    toolbox->addItem(new ObjetFDTDWidget(), "Objets FDTD et DG-FDTD");
+    toolbox->addItem(new QPushButton("test"), "Calcul Champ Lointain");
+    toolbox->addItem(new QPushButton("test"), "Paramètres Avancés");
+    /*
     toolbox->addItem(new FormMetallisation(new metallisation(),FormMetallisation::NOUVEAU), "Métallisation");
     toolbox->addItem(new FormElementLocalise(new elementLocalise(), FormElementLocalise::NOUVEAU), "Element localise");
     toolbox->addItem(new FormParallelepipede(new parallelepipede(), FormParallelepipede::NOUVEAU), "Parallelepipede");
@@ -72,7 +82,7 @@ void MainWindow::construireDockToolBox()
     toolbox->addItem(new FormCageExcitation(new cageExcitation(), FormCageExcitation::NOUVEAU), "Cage Excitation");
     toolbox->addItem(new FormCartographieTemporelle(new cartographieTemporelle(), FormCartographieTemporelle::NOUVEAU), "Cartographie Temporelle");
     toolbox->addItem(new FormSurfacePrelevement(new surfacePrelevement(), FormSurfacePrelevement::NOUVEAU), "Surface Prelevement");
-
+*/
 
     dockLayout->addWidget(new QPushButton("Générer"));
     dockLayout->addWidget(toolbox);

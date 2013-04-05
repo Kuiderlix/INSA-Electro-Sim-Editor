@@ -5,6 +5,12 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
 {
     this->surface=surface;
 
+
+    QVBoxLayout * layoutPrincipal = new QVBoxLayout();
+    layoutPrincipal->setMargin(0);
+    QGroupBox * groupGeo = new QGroupBox("Surface Prelevement");
+
+
     QVBoxLayout * layout = new QVBoxLayout;
 
     QHBoxLayout * layoutTypeSurface = new QHBoxLayout;
@@ -60,14 +66,16 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
 
     layout->setAlignment(Qt::AlignTop);
 
-    setLayout(layout);
+    groupGeo->setLayout(layout);
 
+    layoutPrincipal->addWidget(groupGeo);
+
+    setLayout(layoutPrincipal);
 
 }
 
 void FormSurfacePrelevement::activeResteForm(int val)
 {
-    qDebug() << val;
     if (val==1)
     {
         resteForm->setVisible(true);

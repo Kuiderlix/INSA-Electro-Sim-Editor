@@ -5,7 +5,13 @@ FormMetallisation::FormMetallisation(metallisation* metal,int mode, QWidget *par
 {
     this->metal=metal;
 
+    QVBoxLayout * layoutPrincipal = new QVBoxLayout();
+    layoutPrincipal->setMargin(0);
+
+    QGroupBox * groupGeo = new QGroupBox("Métallisation");
+
     QVBoxLayout * layout = new QVBoxLayout;
+    layout->setMargin(0);
 
     QHBoxLayout * layoutConduc = new QHBoxLayout;
 
@@ -19,8 +25,10 @@ FormMetallisation::FormMetallisation(metallisation* metal,int mode, QWidget *par
 
     layout->setAlignment(Qt::AlignTop);
 
-    setLayout(layout);
+    groupGeo->setLayout(layout);
 
+    layoutPrincipal->addWidget(groupGeo);
 
+    setLayout(layoutPrincipal);
 
 }

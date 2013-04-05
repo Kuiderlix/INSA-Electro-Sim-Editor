@@ -6,6 +6,10 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
     this->localise=localise;
 
 
+    QVBoxLayout * layoutPrincipal = new QVBoxLayout();
+    layoutPrincipal->setMargin(0);
+    QGroupBox * groupGeo = new QGroupBox("Element Localise");
+
     QVBoxLayout * layout = new QVBoxLayout;
 
     QHBoxLayout * layoutType = new QHBoxLayout;
@@ -36,8 +40,10 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
 
     layout->setAlignment(Qt::AlignTop);
 
-    setLayout(layout);
+    groupGeo->setLayout(layout);
 
+    layoutPrincipal->addWidget(groupGeo);
 
+    setLayout(layoutPrincipal);
 
 }

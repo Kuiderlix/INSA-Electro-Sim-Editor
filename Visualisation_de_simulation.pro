@@ -59,7 +59,10 @@ SOURCES += main.cpp\
     FormPortExcitation.cpp \
     FormCageExcitation.cpp \
     Ecriture.cpp \
-    analyseTemporelle.cpp
+    analyseTemporelle.cpp \
+    DescriptionGeoWidget.cpp \
+    ParamSimuWidget.cpp \
+    ObjetFDTDWidget.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -111,7 +114,10 @@ HEADERS  += mainwindow.h \
     FormPortExcitation.h \
     FormCageExcitation.h \
     Ecriture.h \
-    analyseTemporelle.h
+    analyseTemporelle.h \
+    DescriptionGeoWidget.h \
+    ParamSimuWidget.h \
+    ObjetFDTDWidget.h
 
 OTHER_FILES += \
     DATA1.ana \

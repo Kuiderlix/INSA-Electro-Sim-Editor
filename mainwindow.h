@@ -2,15 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QtGui>
+
 #include "visualisation3d.h"
 #include "TableMetallisation.h"
-#include "FormMetallisation.h"
-#include "FormElementLocalise.h"
-#include "FormParallelepipede.h"
-#include "FormCartographieTemporelle.h"
-#include "FormSurfacePrelevement.h"
-#include "FormPortExcitation.h"
-#include "FormCageExcitation.h"
+#include "DescriptionGeoWidget.h"
+#include "ParamSimuWidget.h"
+#include "ObjetFDTDWidget.h"
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */
