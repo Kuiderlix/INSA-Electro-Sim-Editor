@@ -62,7 +62,9 @@ SOURCES += main.cpp\
     analyseTemporelle.cpp \
     DescriptionGeoWidget.cpp \
     ParamSimuWidget.cpp \
-    ObjetFDTDWidget.cpp
+    ObjetFDTDWidget.cpp \
+    FormVolumeCalcul.cpp \
+    FormParoi.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -117,7 +119,9 @@ HEADERS  += mainwindow.h \
     analyseTemporelle.h \
     DescriptionGeoWidget.h \
     ParamSimuWidget.h \
-    ObjetFDTDWidget.h
+    ObjetFDTDWidget.h \
+    FormVolumeCalcul.h \
+    FormParoi.h
 
 OTHER_FILES += \
     DATA1.ana \

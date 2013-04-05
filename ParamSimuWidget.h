@@ -2,6 +2,7 @@
 #define PARAMSIMUWIDGET_H
 
 #include <QWidget>
+#include "FormPortExcitation.h"
 
 class ParamSimuWidget : public QWidget
 {

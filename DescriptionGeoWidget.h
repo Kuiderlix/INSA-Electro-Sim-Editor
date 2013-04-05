@@ -4,6 +4,8 @@
 #include <QWidget>
 #include "FormParallelepipede.h"
 #include "FormMetallisation.h"
+#include "FormVolumeCalcul.h"
+#include "FormParoi.h"
 
 class DescriptionGeoWidget : public QWidget
 {
