@@ -1,9 +1,9 @@
 #include "TableMetallisation.h"
 
-TableMetallisation::TableMetallisation(QWidget *parent) :
+TableMetallisation::TableMetallisation(blocMetallisation *bloc, QWidget *parent) :
     QTableWidget(parent)
 {
-
+    listeMetallisation = bloc;
     this->setColumnCount(3);
     this->setRowCount(10);
     this->setSelectionBehavior(QAbstractItemView::SelectRows);

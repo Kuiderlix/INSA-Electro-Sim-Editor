@@ -3,6 +3,7 @@
 
 #include <QtGui>
 
+#include "parser.h"
 #include "visualisation3d.h"
 #include "TableMetallisation.h"
 #include "DescriptionGeoWidget.h"
@@ -24,6 +25,7 @@ public:
     ~MainWindow();
 
 private:
+    Parser parser;
     Visualisation3D * visualisation;
 };
 

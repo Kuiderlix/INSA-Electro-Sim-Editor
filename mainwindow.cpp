@@ -3,6 +3,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    parser.parse();
+
     construireMenu();
     construireDockToolBox();
     QVBoxLayout * layout = new QVBoxLayout();
@@ -11,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QWidget *tables = new QWidget;
     QHBoxLayout *layoutTable = new QHBoxLayout;
-    TableMetallisation* tableMeta = new TableMetallisation();
+    TableMetallisation* tableMeta = new TableMetallisation(parser.getBlocMetallisations());
     QTabWidget * tabWidget = new QTabWidget();
     tabWidget->addTab(tableMeta, "Métallisations");
     tabWidget->addTab(new QPushButton("test2"), "Elements Localises");
@@ -69,7 +71,7 @@ void MainWindow::construireDockToolBox()
 
 
 
-    toolbox->addItem(new DescriptionGeoWidget(), "Description Géométrie");
+    toolbox->addItem(new DescriptionGeoWidget(&parser), "Description Géométrie");
     toolbox->addItem(new ParamSimuWidget(), "Paramètres Simulation");
     toolbox->addItem(new ObjetFDTDWidget(), "Objets FDTD et DG-FDTD");
     toolbox->addItem(new QPushButton("test"), "Calcul Champ Lointain");

@@ -6,12 +6,13 @@
 #include "FormMetallisation.h"
 #include "FormVolumeCalcul.h"
 #include "FormParoi.h"
+#include "parser.h"
 
 class DescriptionGeoWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit DescriptionGeoWidget(QWidget *parent = 0);
+    explicit DescriptionGeoWidget(Parser * parser, QWidget *parent = 0);
     
 signals:
     

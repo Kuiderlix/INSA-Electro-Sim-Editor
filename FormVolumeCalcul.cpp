@@ -10,43 +10,68 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
     QGroupBox * groupGeo = new QGroupBox("Volume Calcul");
 
     QVBoxLayout * layout = new QVBoxLayout;
+    layout->setMargin(0);
+
+    QHBoxLayout * layoutDimension = new QHBoxLayout;
+    layoutDimension->setMargin(0);
 
     QHBoxLayout * layoutLongueur = new QHBoxLayout;
-    layoutLongueur->addWidget(new QLabel("Longueur:"));
+    layoutLongueur->addWidget(new QLabel("Long."));
     QDoubleSpinBox * longueurWidget = new QDoubleSpinBox();
+    longueurWidget->setMaximum(9999.9);
+    longueurWidget->setValue(volCal->GetLongueur());
     layoutLongueur->addWidget(longueurWidget);
-    layout->addLayout(layoutLongueur);
+    layoutDimension->addLayout(layoutLongueur);
 
     QHBoxLayout * layoutLargeur = new QHBoxLayout;
-    layoutLargeur->addWidget(new QLabel("Largeur:"));
+    layoutLargeur->addWidget(new QLabel("Larg."));
     QDoubleSpinBox * largeurWidget = new QDoubleSpinBox();
+    largeurWidget->setMaximum(9999.9);
+    largeurWidget->setValue(volCal->GetLargeur());
     layoutLargeur->addWidget(largeurWidget);
-    layout->addLayout(layoutLargeur);
+    layoutDimension->addLayout(layoutLargeur);
 
     QHBoxLayout * layoutHauteur = new QHBoxLayout;
-    layoutHauteur->addWidget(new QLabel("Hauteur:"));
+    layoutHauteur->addWidget(new QLabel("Haut."));
     QDoubleSpinBox * hauteurWidget = new QDoubleSpinBox();
+    hauteurWidget->setMaximum(9999.9);
+    hauteurWidget->setValue(volCal->GetHauteur());
     layoutHauteur->addWidget(hauteurWidget);
-    layout->addLayout(layoutHauteur);
+    layoutDimension->addLayout(layoutHauteur);
+
+    layout->addLayout(layoutDimension);
+
+    QHBoxLayout * layoutCoord = new QHBoxLayout;
 
 
     QHBoxLayout * layoutNbrY = new QHBoxLayout;
-    layoutNbrY->addWidget(new QLabel("NombreY:"));
+    layoutNbrY->addWidget(new QLabel("NbrY"));
     QDoubleSpinBox * nbrYWidget = new QDoubleSpinBox();
+    nbrYWidget->setMaximum(9999.9);
+    nbrYWidget->setValue(volCal->GetNombreY());
     layoutNbrY->addWidget(nbrYWidget);
-    layout->addLayout(layoutNbrY);
+    layoutCoord->addLayout(layoutNbrY);
 
     QHBoxLayout * layoutNbrX = new QHBoxLayout;
-    layoutNbrX->addWidget(new QLabel("NombreX:"));
+    layoutNbrX->addWidget(new QLabel("NbrX"));
     QDoubleSpinBox * nbrXWidget = new QDoubleSpinBox();
+    nbrXWidget->setMaximum(9999.9);
+    nbrXWidget->setValue(volCal->GetNombreX());
     layoutNbrX->addWidget(nbrXWidget);
-    layout->addLayout(layoutNbrX);
+    layoutCoord->addLayout(layoutNbrX);
 
     QHBoxLayout * layoutNbrZ = new QHBoxLayout;
-    layoutNbrZ->addWidget(new QLabel("NombreZ:"));
+    layoutNbrZ->addWidget(new QLabel("NbrZ"));
     QDoubleSpinBox * nbrZWidget = new QDoubleSpinBox();
+    nbrZWidget->setMaximum(9999.9);
+    nbrZWidget->setValue(volCal->GetNombreZ());
     layoutNbrZ->addWidget(nbrZWidget);
-    layout->addLayout(layoutNbrZ);
+    layoutCoord->addLayout(layoutNbrZ);
+
+    layout->addLayout(layoutCoord);
+
+
+    layout->addWidget(new QPushButton("Valider"));
 
 
     layout->setAlignment(Qt::AlignTop);

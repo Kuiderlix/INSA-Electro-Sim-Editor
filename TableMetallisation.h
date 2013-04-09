@@ -8,7 +8,7 @@ class TableMetallisation : public QTableWidget
 {
     Q_OBJECT
 public:
-    explicit TableMetallisation(QWidget *parent = 0);
+    explicit TableMetallisation(blocMetallisation * bloc , QWidget *parent = 0);
     
 signals:
     

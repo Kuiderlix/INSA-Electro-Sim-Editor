@@ -1,94 +1,30 @@
-/******************************************************************************/
-/**>INTERFACE SYSTEME *********************************************************/
-/******************************************************************************/
-#include<stdlib.h>
-#include<stdio.h>
-#include<math.h>
-#include<string.h>
-#include <iostream>
-#include <list>
-#include "volumeCalcul.h"
-#include "paroi.h"
-#include "metallisation.h"
-#include "blocMetallisation.h"
-#include "parallelepipede.h"
-#include "blocParallelepipede.h"
-#include "blocElementLocalise.h"
-#include "pml.h"
-#include "excitations.h"
-#include "analyseTemporelle.h"
-#include "blocPortExcitation.h"
-#include "cageExcitation.h"
-#include "blocSonde.h"
-#include "blocCartographieTemporelle.h"
-#include "blocSurfacePrelevement.h"
-#include "champLointain.h"
-#include "blocAmplitude.h"
-#include "formatStockage.h"
-#include "blocEchantillonnage.h"
-#include "compressionHuygens.h"
-#include "calculDirectivite.h"
-using namespace std;
-/******************************************************************************/
-/**>Variables Parser **********************************************************/
-/******************************************************************************/
-#define TAILLE_NOM_FICHIER 10
-#define TAILLE_CHAINE 100
-char nomfic[TAILLE_NOM_FICHIER];
-FILE *fp;
-char chaine[TAILLE_CHAINE];
-//Numero du fichier à récupérer !
-int numstru = 1;
-/******************************************************************************/
-/**>Variables récupérées .DSC *************************************************/
-/******************************************************************************/
-volumeCalcul volume;
-paroi parois;
-blocMetallisation metallisations;
-blocParallelepipede parallelepipedes;
-blocElementLocalise elementLocalises;
-/******************************************************************************/
-/**>Variables récupérées .ANA *************************************************/
-/******************************************************************************/
-pml PML;
-excitations excitation;
-analyseTemporelle analyseTemp;
-blocPortExcitation portExcitations;
-cageExcitation cage;
-blocSonde sondes;
-blocCartographieTemporelle cartographies;
-blocSurfacePrelevement surfacePrelevements;
-/******************************************************************************/
-/**>Variables récupérées .PTR *************************************************/
-/******************************************************************************/
-champLointain champlointain;
-/******************************************************************************/
-/**>Variables récupérées .AVC *************************************************/
-/******************************************************************************/
-blocAmplitude amplitudeV0;
-formatStockage stockage;
-blocEchantillonnage facteurEchantillonnage;
-compressionHuygens compHuygens;
-calculDirectivite calculdirectivite;
+#include "parser.h"
+
+Parser::Parser()
+{
+    numstru = 1;
+}
+
+
 /******************************************************************************/
 /**>Fonctions Parser **********************************************************/
 /******************************************************************************/
-void parserSautLigne(){
+void Parser::parserSautLigne(){
     fscanf(fp, "%*s");
 }
-int parserGetInt(){
+int Parser::parserGetInt(){
     int temp;
     parserSautLigne();
     fscanf(fp, "%d", &temp);
     return temp;
 }
-float parserGetFloat(){
+float Parser::parserGetFloat(){
     float temp;
     parserSautLigne();
     fscanf(fp, "%f", &temp);
     return temp;
 }
-string parserGetString(){
+string Parser::parserGetString(){
     char temp[TAILLE_CHAINE];
     parserSautLigne();
     fscanf(fp, "%s", temp);
@@ -98,8 +34,8 @@ string parserGetString(){
 /******************************************************************************/
 /**>Fonctions DSC *************************************************************/
 /******************************************************************************/
-void scanVolumeDeCalcul(){
-    printf("    scanVolumeDeCalcul\n");
+void Parser::scanVolumeDeCalcul(){
+    cout << "    scanVolumeDeCalcul\n" << endl;
     volume.SetLongueur(parserGetFloat());
     volume.SetLargeur(parserGetFloat());
     volume.SetHauteur(parserGetFloat());
@@ -107,15 +43,15 @@ void scanVolumeDeCalcul(){
     volume.SetNombreX(parserGetInt());
     volume.SetNombreZ(parserGetInt());
 }
-void scanTypeParoi(){
-    printf("    scanTypeParoi\n");
+void Parser::scanTypeParoi(){
+    cout << "    scanTypeParoi\n" << endl;
     parois.SetParoiInferieure(parserGetInt());
     parois.SetParoiSuperieure(parserGetInt());
     parois.SetParoiX(parserGetInt());
     parois.SetParoiY(parserGetInt());
 }
-void scanMetallisation(){
-    printf("    scanMetallisation\n");
+void Parser::scanMetallisation(){
+    cout << "    scanMetallisation\n" << endl;
     int nbMettalisations = parserGetInt();
     metallisations.SetNbMetallisation(nbMettalisations);
     
@@ -139,8 +75,8 @@ void scanMetallisation(){
         metallisations.addMetallisation(temp);
     }
 }
-void scanParallelepipedes(){
-    printf("    scanParallelepipedes\n");
+void Parser::scanParallelepipedes(){
+    cout << "    scanParallelepipedes\n" << endl;
     int nbParallelepipedes = parserGetInt();
     parallelepipedes.SetNbParallelepipede(nbParallelepipedes);
     
@@ -166,8 +102,8 @@ void scanParallelepipedes(){
         parallelepipedes.addParallelepipede(temp);
     }
 }
-void scanElementsLocalises(){
-    printf("    scanElementsLocalises\n");
+void Parser::scanElementsLocalises(){
+    cout << "    scanElementsLocalises\n" << endl;
     int nbElements = parserGetInt();
     elementLocalises.SetNbElements(nbElements);
     
@@ -191,17 +127,17 @@ void scanElementsLocalises(){
         temp.SetArriereDroit(x,y,z);
     }
 }
-void parseDSC() {
+void Parser::parseDSC() {
     sprintf(nomfic, "DATA%d.dsc\0", numstru);
-    printf("%s \n", nomfic);
+    cout << nomfic << "\n" << endl;
 
     if ((fp = fopen(nomfic, "r")) != NULL) {
-        printf("** CHARGEMENT DE LA STRUCTURE DATA.dsc **\n");
-        printf("*****************************************\n");
+        cout << "** CHARGEMENT DE LA STRUCTURE DATA.dsc **\n" << endl;
+        cout << "*****************************************\n" << endl;
 
         do {
             fgets(chaine, 100, fp);
-            //printf("%s\n",chaine);
+            //cout << "%s\n",chaine);
 
             /*
              * Dimensions du volume de simulation.
@@ -221,35 +157,35 @@ void parseDSC() {
         } while (!feof(fp));
 
         fclose(fp);
-        printf("**  FIN CHARGEMENT STRUCTURE DATA.dsc  **\n");
-        printf("*****************************************\n");
+        cout << "**  FIN CHARGEMENT STRUCTURE DATA.dsc  **\n" << endl;
+        cout << "*****************************************\n" << endl;
     }
 }
 /******************************************************************************/
 /**>Fonctions ANA *************************************************************/
 /******************************************************************************/
-void scanPML(){
-    printf("    scanPML\n");
+void Parser::scanPML(){
+    cout << "    scanPML\n" << endl;
     PML.SetEpaisseurCouche(parserGetInt());
     PML.SetOrdreVariation(parserGetInt());
     PML.SetSigmaMax(parserGetFloat());
     PML.SetKMax(parserGetFloat());
 }
-void scanParametreExcitation(){
-    printf("    scanParametreExcitation\n");
+void Parser::scanParametreExcitation(){
+    cout << "    scanParametreExcitation\n" << endl;
     excitation.SetFrequenceMax(parserGetFloat());
     int typeExcitation = parserGetInt();
     excitation.SetType(typeExcitation);
     if(typeExcitation == 1)
         excitation.SetFrequenceSinus(parserGetFloat());
 }
-void scanAnalyseTemporelle(){
-    printf("    scanAnalyseTemporelle\n");
+void Parser::scanAnalyseTemporelle(){
+    cout << "    scanAnalyseTemporelle\n" << endl;
     analyseTemp.SetPeriode(parserGetFloat());
     analyseTemp.SetTemps(parserGetFloat());
 }
-void scanPortExcitation(){
-    printf("    scanPortExcitation\n");
+void Parser::scanPortExcitation(){
+    cout << "    scanPortExcitation\n" << endl;
     int nbPorts = parserGetInt();
     portExcitations.SetNbPorts(nbPorts);
     
@@ -281,13 +217,13 @@ void scanPortExcitation(){
         temp.SetPonderationPhase(parserGetFloat());
     }
 }
-void scanCageExcitation(){
-    printf("    scanCageExcitation\n");
+void Parser::scanCageExcitation(){
+    cout << "    scanCageExcitation\n" << endl;
     int nbCages = parserGetInt();
     if(nbCages > 1){
-        printf("*****************************************\n");
-        printf("* Erreur, plus qu'une cage d'excitation *\n");
-        printf("*****************************************\n");
+        cout << "*****************************************\n" << endl;
+        cout << "* Erreur, plus qu'une cage d'excitation *\n" << endl;
+        cout << "*****************************************\n" << endl;
         return;
     }
     parserSautLigne();
@@ -329,8 +265,8 @@ void scanCageExcitation(){
         }
     }
 }
-void scanSondes(){
-    printf("    scanSondes\n");
+void Parser::scanSondes(){
+    cout << "    scanSondes\n" << endl;
     int nbSondes = parserGetInt();
     sondes.SetNbSondes(nbSondes);
     
@@ -355,8 +291,8 @@ void scanSondes(){
         sondes.AddSonde(temp);
     }
 }
-void scanCartographieTemporelle(){
-    printf("    scanCartographieTemporelle\n");
+void Parser::scanCartographieTemporelle(){
+    cout << "    scanCartographieTemporelle\n" << endl;
     int nbCartos = parserGetInt();
     cartographies.SetNbCarto(nbCartos);
     
@@ -382,8 +318,8 @@ void scanCartographieTemporelle(){
         temp.SetArriereDroit(x,y,z);
     }
 }
-void scanSurfacePrelevement(){
-    printf("    scanSurfacePrelevement\n");
+void Parser::scanSurfacePrelevement(){
+    cout << "    scanSurfacePrelevement\n" << endl;
     int nbSurfaces = parserGetInt();
     surfacePrelevements.SetNbSurfaces(nbSurfaces);
     
@@ -414,20 +350,20 @@ void scanSurfacePrelevement(){
         }
     }
 }
-void parseANA() {
+void Parser::parseANA() {
     sprintf(nomfic, "DATA%d.ana\0", numstru);
-    printf("%s \n", nomfic);
+    cout << nomfic << "\n" << endl;
 
     if ((fp = fopen(nomfic, "r")) != NULL) {
-        printf("** CHARGEMENT DE LA STRUCTURE DATA.ana **\n");
-        printf("*****************************************\n");
+        cout << "** CHARGEMENT DE LA STRUCTURE DATA.ana **\n" << endl;
+        cout << "*****************************************\n" << endl;
 
         bool onde_plane_oblique = false;
         int nbports_excitation = 0;
 
         do {
             fgets(chaine, 100, fp);
-            //printf("%s\n", chaine);
+            //cout << "%s\n", chaine);
 
             if (0 == strcmp(chaine, "[PML]\n"))
                 scanPML();
@@ -449,15 +385,15 @@ void parseANA() {
         } while (!feof(fp));
 
         fclose(fp);
-        printf("**  FIN CHARGEMENT STRUCTURE DATA.ana  **\n");
-        printf("*****************************************\n");
+        cout << "**  FIN CHARGEMENT STRUCTURE DATA.ana  **\n" << endl;
+        cout << "*****************************************\n" << endl;
     }
 }
 /******************************************************************************/
 /**>Fonctions PTR *************************************************************/
 /******************************************************************************/
-void scanChampLointain(){
-    printf("    scanCahmpLointain\n");
+void Parser::scanChampLointain(){
+    cout << "    scanCahmpLointain\n" << endl;
     parserSautLigne();
     parserSautLigne();
     parserSautLigne();
@@ -477,68 +413,68 @@ void scanChampLointain(){
     champlointain.SetPasDiscrTeta(parserGetInt());
     champlointain.SetPasDiscrPhi(parserGetInt());
 }
-void parsePTR(){
+void Parser::parsePTR(){
     sprintf(nomfic, "DATA%d.ptr\0", numstru);
-    printf("%s \n", nomfic);
+    cout << nomfic << "\n" << endl;
 
     if ((fp = fopen(nomfic, "r")) != NULL) {
-        printf("** CHARGEMENT DE LA STRUCTURE DATA.ptr **\n");
-        printf("*****************************************\n");
+        cout << "** CHARGEMENT DE LA STRUCTURE DATA.ptr **\n" << endl;
+        cout << "*****************************************\n" << endl;
 
         do {
             fgets(chaine, 100, fp);
-            //printf("%s\n", chaine);
+            //cout << "%s\n", chaine);
 
             if (0 == strcmp(chaine, "[CALCUL_CHAMP_LOINTAIN]\n"))
                 scanChampLointain();
         } while (!feof(fp));
 
         fclose(fp);
-        printf("**  FIN CHARGEMENT STRUCTURE DATA.ptr  **\n");
-        printf("*****************************************\n");
+        cout << "**  FIN CHARGEMENT STRUCTURE DATA.ptr  **\n" << endl;
+        cout << "*****************************************\n" << endl;
     }
 }
 /******************************************************************************/
 /**>Fonctions AVC *************************************************************/
 /******************************************************************************/
-void scanExcitation(){
-    printf("    scanExcitation\n");
+void Parser::scanExcitation(){
+    cout << "    scanExcitation\n" << endl;
     amplitudeV0.SetAmplitudeV0(parserGetFloat());
 }
-void scanFormatStockage(){
-    printf("    scanFormatStockage\n");
+void Parser::scanFormatStockage(){
+    cout << "    scanFormatStockage\n" << endl;
     stockage.SetFormat(parserGetInt());
     stockage.SetFormatFichierPrelevement(parserGetInt());
 }
-void scanEchantillonnage(){
-    printf("    scanEchantillonnage\n");
+void Parser::scanEchantillonnage(){
+    cout << "    scanEchantillonnage\n" << endl;
     facteurEchantillonnage.SetFacteurEchatillonnage(parserGetInt());
 }
-void scanCompressionHuygens(){
-    printf("    scanCompressionHuygens\n");
+void Parser::scanCompressionHuygens(){
+    cout << "    scanCompressionHuygens\n" << endl;
     parserSautLigne();
     compHuygens.SetCompressionLongueur(parserGetInt());
     compHuygens.SetCompressionLargeur(parserGetInt());
     compHuygens.SetCompressionHauteur(parserGetInt());
     compHuygens.SetFacteurMultiplicatif(parserGetInt());
 }
-void scanCalculDirectivite(){
-    printf("    scanCalculDirectivite");
+void Parser::scanCalculDirectivite(){
+    cout << "    scanCalculDirectivite" << endl;
     calculdirectivite.SetCalcul(parserGetInt());
     calculdirectivite.SetPasTheta(parserGetInt());
     calculdirectivite.SetPasPhi(parserGetInt());
 }
-void parseAVC(){
+void Parser::parseAVC(){
     sprintf(nomfic, "DATA%d.avc\0", numstru);
-    printf("%s \n", nomfic);
+    cout << nomfic << "\n" << endl;
 
     if ((fp = fopen(nomfic, "r")) != NULL) {
-        printf("** CHARGEMENT DE LA STRUCTURE DATA.avc **\n");
-        printf("*****************************************\n");
+        cout << "** CHARGEMENT DE LA STRUCTURE DATA.avc **\n" << endl;
+        cout << "*****************************************\n" << endl;
 
         do {
             fgets(chaine, 100, fp);
-            //printf("%s\n", chaine);
+            //cout << "%s\n", chaine);
 
             if (0 == strcmp(chaine, "[EXCITATION]\n"))
                 scanExcitation();
@@ -553,18 +489,21 @@ void parseAVC(){
         } while (!feof(fp));
 
         fclose(fp);
-        printf("**  FIN CHARGEMENT STRUCTURE DATA.avc  **\n");
-        printf("*****************************************\n");
+        cout << "**  FIN CHARGEMENT STRUCTURE DATA.avc  **\n" << endl;
+        cout << "*****************************************\n" << endl;
     }
 }
 /******************************************************************************/
 /**>Fonction principale *******************************************************/
 /******************************************************************************/
-void parse(){
+
+void Parser::parse(){
     parseDSC();
     parseANA();
     if(surfacePrelevements.GetNbSurfaces() == 1 && surfacePrelevements.GetSurface(0).GetTypeSurface() == 1)
         parsePTR();
     parseAVC();
-    volume.ecrire();
+    cout << volume.GetHauteur() << " " << volume.GetLargeur() << " " << volume.GetLongueur() << endl;
+    cout << volume.GetNombreY() << " " << volume.GetNombreX() << " " << volume.GetNombreZ() << endl;
+    //volume.ecrire();
 }
