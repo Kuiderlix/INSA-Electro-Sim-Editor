@@ -5,8 +5,6 @@ FormCoordonnees::FormCoordonnees(coordonnee coord,QWidget *parent) :
 {
     this->coord=coord;
     QHBoxLayout * layout = new QHBoxLayout;
-    layout->setMargin(0);
-
     champsX = new QSpinBox();
     champsX->setValue(coord.GetX());
     champsY = new QSpinBox();

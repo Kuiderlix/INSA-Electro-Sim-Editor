@@ -7,7 +7,6 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
 
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    layoutPrincipal->setMargin(0);
     QGroupBox * groupGeo = new QGroupBox("Element Localise");
 
     QVBoxLayout * layout = new QVBoxLayout;

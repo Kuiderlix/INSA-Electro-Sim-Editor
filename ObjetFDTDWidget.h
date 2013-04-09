@@ -4,6 +4,8 @@
 #include <QWidget>
 #include "FormSurfacePrelevement.h"
 #include "FormCageExcitation.h"
+#include "FormSonde.h"
+#include "FormCartographieTemporelle.h"
 
 class ObjetFDTDWidget : public QWidget
 {
@@ -14,6 +16,8 @@ public:
 signals:
     
 public slots:
+
+    void openCartoTempoWindows();
     
 };
 

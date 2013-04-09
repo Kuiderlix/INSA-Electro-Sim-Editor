@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include "FormPortExcitation.h"
+#include "FormAnalyseTempo.h"
+#include "FormExcitation.h"
 
 class ParamSimuWidget : public QWidget
 {

@@ -6,6 +6,7 @@ Visualisation3D::Visualisation3D(QWidget *parent)
 {
     setFocusPolicy(Qt::ClickFocus);
     setCursor(QCursor(Qt::OpenHandCursor));
+    ajoutCube(new Cube(Point(-3,-3,-3),Point(3,3,3)));
 }
 
 void Visualisation3D::initializeGL()

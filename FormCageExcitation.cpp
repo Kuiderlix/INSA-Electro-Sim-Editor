@@ -9,7 +9,6 @@ FormCageExcitation::FormCageExcitation(cageExcitation *cageExci, int mode, QWidg
 
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    layoutPrincipal->setMargin(0);
     QGroupBox * groupGeo = new QGroupBox("Cage Excitation");
 
 

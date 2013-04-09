@@ -7,7 +7,6 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
 
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    layoutPrincipal->setMargin(0);
     QGroupBox * groupGeo = new QGroupBox("Surface Prelevement");
 
 

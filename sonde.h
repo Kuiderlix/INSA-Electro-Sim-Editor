@@ -12,7 +12,7 @@
 #include "coordonnee.h"
 
 
-class sonde{
+class sonde : public elementBase{
 public:
     sonde();
     sonde(const sonde& orig);

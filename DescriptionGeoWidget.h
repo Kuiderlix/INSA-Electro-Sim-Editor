@@ -5,6 +5,7 @@
 #include "FormParallelepipede.h"
 #include "FormMetallisation.h"
 #include "FormVolumeCalcul.h"
+#include "FormElementLocalise.h"
 #include "FormParoi.h"
 #include "parser.h"
 
@@ -17,6 +18,8 @@ public:
 signals:
     
 public slots:
+
+    void openElementLocaliseWindows();
     
 };
 

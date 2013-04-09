@@ -7,7 +7,6 @@ FormCartographieTemporelle::FormCartographieTemporelle(cartographieTemporelle *c
 
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    layoutPrincipal->setMargin(0);
     QGroupBox * groupGeo = new QGroupBox("Cartographie Temporelle");
 
 

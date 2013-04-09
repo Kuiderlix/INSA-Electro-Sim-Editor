@@ -6,7 +6,6 @@ FormParallelepipede::FormParallelepipede(parallelepipede *paralle, int mode, QWi
     this->paralle=paralle;
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    layoutPrincipal->setMargin(0);
     QGroupBox * groupGeo = new QGroupBox("Parallélépipède");
 
 

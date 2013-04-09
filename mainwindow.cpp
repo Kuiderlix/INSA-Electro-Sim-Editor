@@ -74,7 +74,7 @@ void MainWindow::construireDockToolBox()
     toolbox->addItem(new DescriptionGeoWidget(&parser), "Description Géométrie");
     toolbox->addItem(new ParamSimuWidget(), "Paramètres Simulation");
     toolbox->addItem(new ObjetFDTDWidget(), "Objets FDTD et DG-FDTD");
-    toolbox->addItem(new QPushButton("test"), "Calcul Champ Lointain");
+    toolbox->addItem(new CalculChampsLointainWidget(), "Calcul Champ Lointain");
     toolbox->addItem(new QPushButton("test"), "Paramètres Avancés");
     /*
     toolbox->addItem(new FormMetallisation(new metallisation(),FormMetallisation::NOUVEAU), "Métallisation");

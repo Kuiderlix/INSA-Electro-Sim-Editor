@@ -9,6 +9,7 @@
 #include "DescriptionGeoWidget.h"
 #include "ParamSimuWidget.h"
 #include "ObjetFDTDWidget.h"
+#include "CalculChampsLointainWidget.h"
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */

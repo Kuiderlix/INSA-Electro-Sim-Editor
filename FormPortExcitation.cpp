@@ -6,7 +6,6 @@ FormPortExcitation::FormPortExcitation(portExcitation *port, int mode, QWidget *
     this->port=port;
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    layoutPrincipal->setMargin(0);
     QGroupBox * groupGeo = new QGroupBox("Port Excitation");
 
     QVBoxLayout * layout = new QVBoxLayout;

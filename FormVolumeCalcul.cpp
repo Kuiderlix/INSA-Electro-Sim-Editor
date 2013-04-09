@@ -6,14 +6,11 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
     this->volCal=volCal;
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    layoutPrincipal->setMargin(0);
     QGroupBox * groupGeo = new QGroupBox("Volume Calcul");
 
     QVBoxLayout * layout = new QVBoxLayout;
-    layout->setMargin(0);
 
     QHBoxLayout * layoutDimension = new QHBoxLayout;
-    layoutDimension->setMargin(0);
 
     QHBoxLayout * layoutLongueur = new QHBoxLayout;
     layoutLongueur->addWidget(new QLabel("Long."));

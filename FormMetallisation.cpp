@@ -6,13 +6,10 @@ FormMetallisation::FormMetallisation(metallisation* metal,int mode, QWidget *par
     this->metal=metal;
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    layoutPrincipal->setMargin(0);
 
     QGroupBox * groupGeo = new QGroupBox("Métallisation");
 
     QVBoxLayout * layout = new QVBoxLayout;
-    layout->setMargin(0);
-
     QHBoxLayout * layoutConduc = new QHBoxLayout;
 
     layoutConduc->addWidget(new QLabel("Conductivité:"));

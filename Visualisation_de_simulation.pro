@@ -64,7 +64,12 @@ SOURCES += main.cpp\
     ParamSimuWidget.cpp \
     ObjetFDTDWidget.cpp \
     FormVolumeCalcul.cpp \
-    FormParoi.cpp
+    FormParoi.cpp \
+    FormAnalyseTempo.cpp \
+    FormExcitation.cpp \
+    CalculChampsLointainWidget.cpp \
+    FormCompressionHuygens.cpp \
+    FormSonde.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -121,7 +126,12 @@ HEADERS  += mainwindow.h \
     ParamSimuWidget.h \
     ObjetFDTDWidget.h \
     FormVolumeCalcul.h \
-    FormParoi.h
+    FormParoi.h \
+    FormAnalyseTempo.h \
+    FormExcitation.h \
+    CalculChampsLointainWidget.h \
+    FormCompressionHuygens.h \
+    FormSonde.h
 
 OTHER_FILES += \
     DATA1.ana \

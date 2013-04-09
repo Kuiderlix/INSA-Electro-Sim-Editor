@@ -6,7 +6,6 @@ FormParoi::FormParoi(paroi *m_paroi, QWidget *parent) :
 
     this->m_paroi=m_paroi;
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    layoutPrincipal->setMargin(0);
     QGroupBox * groupGeo = new QGroupBox("Paroi");
 
     QVBoxLayout * layout = new QVBoxLayout;

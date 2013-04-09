@@ -19,9 +19,10 @@ DescriptionGeoWidget::DescriptionGeoWidget(Parser *parser, QWidget *parent) :
     layout->addWidget(formPara);
 
     QHBoxLayout * layoutAvance = new QHBoxLayout;
-    layoutAvance->setMargin(0);
     layoutAvance->addWidget(new QLabel("Element Localisé"));
-    layoutAvance->addWidget(new QPushButton("+"));
+    QPushButton * boutonAvance = new QPushButton("+");
+    layoutAvance->addWidget(boutonAvance);
+    this->connect(boutonAvance, SIGNAL(clicked()), this, SLOT(openElementLocaliseWindows()));
 
     QWidget * widgetAvance = new QWidget();
 
@@ -32,4 +33,10 @@ DescriptionGeoWidget::DescriptionGeoWidget(Parser *parser, QWidget *parent) :
 
 
     setLayout(layout);
+}
+
+void DescriptionGeoWidget::openElementLocaliseWindows()
+{
+    FormElementLocalise * win = new FormElementLocalise(new elementLocalise(), FormElementLocalise::NOUVEAU);
+    win->show();
 }
