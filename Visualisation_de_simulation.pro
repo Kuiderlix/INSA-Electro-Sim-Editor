@@ -70,7 +70,8 @@ SOURCES += main.cpp\
     CalculChampsLointainWidget.cpp \
     FormCompressionHuygens.cpp \
     FormSonde.cpp \
-    FormCalculDirective.cpp
+    FormCalculDirective.cpp \
+    CoordonneeDelegate.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -133,7 +134,8 @@ HEADERS  += mainwindow.h \
     CalculChampsLointainWidget.h \
     FormCompressionHuygens.h \
     FormSonde.h \
-    FormCalculDirective.h
+    FormCalculDirective.h \
+    CoordonneeDelegate.h
 
 OTHER_FILES += \
     DATA1.ana \

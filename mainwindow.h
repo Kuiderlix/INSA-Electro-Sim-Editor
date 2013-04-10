@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "CoordonneeDelegate.h"
 #include <QtGui>
 
 #include "parser.h"
@@ -10,6 +11,7 @@
 #include "ParamSimuWidget.h"
 #include "ObjetFDTDWidget.h"
 #include "CalculChampsLointainWidget.h"
+
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
 */

@@ -7,6 +7,7 @@
 
 #ifndef COORDONNEE_H
 #define	COORDONNEE_H
+#include <QVariant>
 
 class coordonnee {
 public:
@@ -44,6 +45,6 @@ private:
     int y;
     int z;
 };
-
+Q_DECLARE_METATYPE(coordonnee)
 #endif	/* COORDONNEE_H */
 

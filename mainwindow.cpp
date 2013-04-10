@@ -14,8 +14,11 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *tables = new QWidget;
     QHBoxLayout *layoutTable = new QHBoxLayout;
     TableMetallisation* tableMeta = new TableMetallisation(parser.getBlocMetallisations());
+    QTableView * vue = new QTableView();
+    vue->setItemDelegateForColumn(1,new CoordonneeDelegate());
+    vue->setModel(tableMeta);
     QTabWidget * tabWidget = new QTabWidget();
-    tabWidget->addTab(tableMeta, "Métallisations");
+    tabWidget->addTab(vue, "Métallisations");
     tabWidget->addTab(new QPushButton("test2"), "Elements Localises");
     tabWidget->addTab(new QPushButton("test3"), "Parallelepipèdes");
     tabWidget->addTab(new QPushButton("test4"), "Ports Excitations");
