@@ -11,6 +11,7 @@ QWidget *FormElementBase::getWidgetElementBase()
 {
     QWidget * conteneur = new QWidget(this);
     QVBoxLayout * layout = new QVBoxLayout;
+    layout->setMargin(0);
 
     layout->addWidget(new QLabel("Coordonnees Avant Gauche:"));
     formCoord1 = new FormCoordonnees(element->GetAvantGauche());

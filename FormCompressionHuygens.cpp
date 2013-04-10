@@ -10,37 +10,24 @@ FormCompressionHuygens::FormCompressionHuygens(compressionHuygens *compreHuy, QW
     QGroupBox * group = new QGroupBox("Compression Huygens");
 
 
-    QVBoxLayout * layout = new QVBoxLayout;
+    QFormLayout * layout = new QFormLayout;
 
-    QHBoxLayout * layoutCompLong = new QHBoxLayout;
-    layoutCompLong->addWidget(new QLabel("Compression Longueur:"));
     QSpinBox * compLongWidget = new QSpinBox();
-    layoutCompLong->addWidget(compLongWidget);
-    layout->addLayout(layoutCompLong);
+    layout->addRow("Compression Longueur:",compLongWidget);
 
-
-    QHBoxLayout * layoutCompLarg = new QHBoxLayout;
-    layoutCompLarg->addWidget(new QLabel("Compression Largeur:"));
     QSpinBox * compLargWidget = new QSpinBox();
-    layoutCompLarg->addWidget(compLargWidget);
-    layout->addLayout(layoutCompLarg);
+    layout->addRow("Compression Largeur:",compLargWidget);
 
 
-    QHBoxLayout * layoutCompHaut = new QHBoxLayout;
-    layoutCompHaut->addWidget(new QLabel("Compression Hauteur:"));
     QSpinBox * compHautWidget = new QSpinBox();
-    layoutCompHaut->addWidget(compHautWidget);
-    layout->addLayout(layoutCompHaut);
+    layout->addRow("Compression Hauteur:",compHautWidget);
 
 
-    QHBoxLayout * layoutFacteurMulti = new QHBoxLayout;
-    layoutFacteurMulti->addWidget(new QLabel("Facteur Multiplicatif:"));
     QSpinBox * facteurMultiWidget = new QSpinBox();
-    layoutFacteurMulti->addWidget(facteurMultiWidget);
-    layout->addLayout(layoutFacteurMulti);
+    layout->addRow("Facteur Multiplicatif:",facteurMultiWidget);
 
 
-    layout->addWidget(new QPushButton("Valider"));
+    layout->addRow(new QPushButton("Valider"));
 
     layout->setAlignment(Qt::AlignTop);
 

@@ -3,6 +3,7 @@
 
 #include <QtWidgets>
 #include "FormCompressionHuygens.h"
+#include "FormCalculDirective.h"
 
 class CalculChampsLointainWidget : public QWidget
 {

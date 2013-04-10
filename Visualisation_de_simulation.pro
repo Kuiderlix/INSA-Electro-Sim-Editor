@@ -69,7 +69,8 @@ SOURCES += main.cpp\
     FormExcitation.cpp \
     CalculChampsLointainWidget.cpp \
     FormCompressionHuygens.cpp \
-    FormSonde.cpp
+    FormSonde.cpp \
+    FormCalculDirective.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -131,7 +132,8 @@ HEADERS  += mainwindow.h \
     FormExcitation.h \
     CalculChampsLointainWidget.h \
     FormCompressionHuygens.h \
-    FormSonde.h
+    FormSonde.h \
+    FormCalculDirective.h
 
 OTHER_FILES += \
     DATA1.ana \

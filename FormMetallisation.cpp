@@ -9,16 +9,12 @@ FormMetallisation::FormMetallisation(metallisation* metal,int mode, QWidget *par
 
     QGroupBox * groupGeo = new QGroupBox("Métallisation");
 
-    QVBoxLayout * layout = new QVBoxLayout;
-    QHBoxLayout * layoutConduc = new QHBoxLayout;
+    QFormLayout * layout = new QFormLayout;
 
-    layoutConduc->addWidget(new QLabel("Conductivité:"));
     QDoubleSpinBox * lineEditConductivite = new QDoubleSpinBox();
-    layoutConduc->addWidget(lineEditConductivite);
+    layout->addRow("Conductivité:",lineEditConductivite);
 
-    layout->addLayout(layoutConduc);
-
-    layout->addWidget(getWidgetElementBase());
+    layout->addRow(getWidgetElementBase());
 
     layout->setAlignment(Qt::AlignTop);
 

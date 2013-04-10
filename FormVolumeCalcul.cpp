@@ -8,7 +8,7 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
     QGroupBox * groupGeo = new QGroupBox("Volume Calcul");
 
-    QVBoxLayout * layout = new QVBoxLayout;
+    QFormLayout * layout = new QFormLayout;
 
     QHBoxLayout * layoutDimension = new QHBoxLayout;
 
@@ -36,7 +36,7 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
     layoutHauteur->addWidget(hauteurWidget);
     layoutDimension->addLayout(layoutHauteur);
 
-    layout->addLayout(layoutDimension);
+    layout->addRow(layoutDimension);
 
     QHBoxLayout * layoutCoord = new QHBoxLayout;
 
@@ -65,10 +65,10 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
     layoutNbrZ->addWidget(nbrZWidget);
     layoutCoord->addLayout(layoutNbrZ);
 
-    layout->addLayout(layoutCoord);
+    layout->addRow(layoutCoord);
 
 
-    layout->addWidget(new QPushButton("Valider"));
+    layout->addRow(new QPushButton("Valider"));
 
 
     layout->setAlignment(Qt::AlignTop);

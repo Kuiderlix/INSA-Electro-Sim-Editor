@@ -5,29 +5,23 @@ FormAnalyseTempo::FormAnalyseTempo(analyseTemporelle *anaTempo, QWidget *parent)
     this->anaTempo=anaTempo;
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    QGroupBox * groupGeo = new QGroupBox("Volume Calcul");
+    QGroupBox * groupGeo = new QGroupBox("Analyse Temporelle");
 
-    QVBoxLayout * layout = new QVBoxLayout;
+    QFormLayout * layout = new QFormLayout;
 
 
-    QHBoxLayout * layoutPeriode = new QHBoxLayout;
-    layoutPeriode->addWidget(new QLabel("Période:"));
     QDoubleSpinBox * periodeWidget = new QDoubleSpinBox();
     periodeWidget->setMaximum(9999.9);
     periodeWidget->setValue(anaTempo->GetPeriode());
-    layoutPeriode->addWidget(periodeWidget);
-    layout->addLayout(layoutPeriode);
+    layout->addRow("Période:",periodeWidget);
 
-    QHBoxLayout * layoutTemps = new QHBoxLayout;
-    layoutTemps->addWidget(new QLabel("Temps:"));
     QDoubleSpinBox * tempsWidget = new QDoubleSpinBox();
     tempsWidget->setMaximum(9999.9);
     tempsWidget->setValue(anaTempo->GetTemps());
-    layoutTemps->addWidget(tempsWidget);
-    layout->addLayout(layoutTemps);
+    layout->addRow("Temps:",tempsWidget);
 
 
-    layout->addWidget(new QPushButton("Valider"));
+    layout->addRow(new QPushButton("Valider"));
 
 
     layout->setAlignment(Qt::AlignTop);

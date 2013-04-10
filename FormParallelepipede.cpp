@@ -9,30 +9,21 @@ FormParallelepipede::FormParallelepipede(parallelepipede *paralle, int mode, QWi
     QGroupBox * groupGeo = new QGroupBox("Parallélépipède");
 
 
-    QVBoxLayout * layout = new QVBoxLayout;
+    QFormLayout * layout = new QFormLayout;
 
 
-    QHBoxLayout * layoutPermitRelative = new QHBoxLayout;
-    layoutPermitRelative->addWidget(new QLabel("PermitRelative:"));
     QDoubleSpinBox * permitRelativeWidget = new QDoubleSpinBox();
-    layoutPermitRelative->addWidget(permitRelativeWidget);
-    layout->addLayout(layoutPermitRelative);
+    layout->addRow("PermitRelative:", permitRelativeWidget);
 
 
-    QHBoxLayout * layoutPermeRelative = new QHBoxLayout;
-    layoutPermeRelative->addWidget(new QLabel("PermeRelative:"));
     QDoubleSpinBox * permeRelativeWidget = new QDoubleSpinBox();
-    layoutPermeRelative->addWidget(permeRelativeWidget);
-    layout->addLayout(layoutPermeRelative);
+    layout->addRow("PermeRelative:",permeRelativeWidget);
 
 
-    QHBoxLayout * layoutConduc = new QHBoxLayout;
-    layoutConduc->addWidget(new QLabel("Conductivité:"));
     QDoubleSpinBox * conductiviteWidget = new QDoubleSpinBox();
-    layoutConduc->addWidget(conductiviteWidget);
-    layout->addLayout(layoutConduc);
+    layout->addRow("Conductivité:",conductiviteWidget);
 
-    layout->addWidget(getWidgetElementBase());
+    layout->addRow(getWidgetElementBase());
 
     layout->setAlignment(Qt::AlignTop);
 

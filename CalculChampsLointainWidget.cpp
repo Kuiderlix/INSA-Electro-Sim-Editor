@@ -9,8 +9,11 @@ CalculChampsLointainWidget::CalculChampsLointainWidget(QWidget *parent) :
     layout->setMargin(0);
 
     FormCompressionHuygens * formHuy = new FormCompressionHuygens(new compressionHuygens());
+    FormCalculDirective * formCal = new FormCalculDirective(new calculDirectivite());
 
     layout->addWidget(formHuy);
+    layout->addWidget(formCal);
 
+    layout->setAlignment(Qt::AlignTop);
     setLayout(layout);
 }

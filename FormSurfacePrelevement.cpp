@@ -10,58 +10,39 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
     QGroupBox * groupGeo = new QGroupBox("Surface Prelevement");
 
 
-    QVBoxLayout * layout = new QVBoxLayout;
+    QFormLayout * layout = new QFormLayout;
 
-    QHBoxLayout * layoutTypeSurface = new QHBoxLayout;
-    layoutTypeSurface->addWidget(new QLabel("Type Surface:"));
     QComboBox * typeSurfaceWidget = new QComboBox();
     typeSurfaceWidget->addItems(QStringList() << "1" << "2" << "3" << "4");
-    layoutTypeSurface->addWidget(typeSurfaceWidget);
-    layout->addLayout(layoutTypeSurface);
+    layout->addRow("Type Surface:",typeSurfaceWidget);
     this->connect(typeSurfaceWidget, SIGNAL(currentIndexChanged(int)), this, SLOT(activeResteForm(int)));
 
 
-    QHBoxLayout * layoutNomFichier = new QHBoxLayout;
-    layoutNomFichier->addWidget(new QLabel("Nom Fichier:"));
     QLineEdit * nomFichierWidget = new QLineEdit();
-    layoutNomFichier->addWidget(nomFichierWidget);
-    layout->addLayout(layoutNomFichier);
+    layout->addRow("Nom Fichier:",nomFichierWidget);
 
     resteForm = new QWidget();
     resteForm->setVisible(false);
-    QVBoxLayout * layoutResteForm = new QVBoxLayout;
-    layoutResteForm->setContentsMargins(0,0,0,0);
+    QFormLayout * layoutResteForm = new QFormLayout;
+    layoutResteForm->setMargin(0);
 
-
-    QHBoxLayout * layoutInsideOutside = new QHBoxLayout;
-    layoutInsideOutside->addWidget(new QLabel("InsideOutside:"));
     QSpinBox * insideOutsideWidget = new QSpinBox();
-    layoutInsideOutside->addWidget(insideOutsideWidget);
-    layoutResteForm->addLayout(layoutInsideOutside);
+    layoutResteForm->addRow("InsideOutside:",insideOutsideWidget);
 
-    QHBoxLayout * layoutCompressionLongueur = new QHBoxLayout;
-    layoutCompressionLongueur->addWidget(new QLabel("Compression Longueur:"));
     QDoubleSpinBox * compressionLongueurWidget = new QDoubleSpinBox();
-    layoutCompressionLongueur->addWidget(compressionLongueurWidget);
-    layoutResteForm->addLayout(layoutCompressionLongueur);
+    layoutResteForm->addRow("Compression Longueur:",compressionLongueurWidget);
 
-    QHBoxLayout * layoutCompressionLargeur = new QHBoxLayout;
-    layoutCompressionLargeur->addWidget(new QLabel("Compression Largeur:"));
     QDoubleSpinBox * compressionLargeurWidget = new QDoubleSpinBox();
-    layoutCompressionLargeur->addWidget(compressionLargeurWidget);
-    layoutResteForm->addLayout(layoutCompressionLargeur);
+    layoutResteForm->addRow("Compression Largeur:",compressionLargeurWidget);
 
-    QHBoxLayout * layoutCompressionHauteur = new QHBoxLayout;
-    layoutCompressionHauteur->addWidget(new QLabel("Compression Hauteur:"));
     QDoubleSpinBox * compressionHauteurWidget = new QDoubleSpinBox();
-    layoutCompressionHauteur->addWidget(compressionHauteurWidget);
-    layoutResteForm->addLayout(layoutCompressionHauteur);
+    layoutResteForm->addRow("Compression Hauteur:",compressionHauteurWidget);
 
     resteForm->setLayout(layoutResteForm);
 
-    layout->addWidget(resteForm);
+    layout->addRow(resteForm);
 
-    layout->addWidget(getWidgetElementBase());
+    layout->addRow(getWidgetElementBase());
 
     layout->setAlignment(Qt::AlignTop);
 

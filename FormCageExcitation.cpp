@@ -12,132 +12,88 @@ FormCageExcitation::FormCageExcitation(cageExcitation *cageExci, int mode, QWidg
     QGroupBox * groupGeo = new QGroupBox("Cage Excitation");
 
 
-    QVBoxLayout * layout = new QVBoxLayout;
+    QFormLayout * layout = new QFormLayout;
 
-    QHBoxLayout * layoutInsideOutside = new QHBoxLayout;
-    layoutInsideOutside->addWidget(new QLabel("Inside/Outside:"));
     QComboBox * insideOutsideWidget = new QComboBox();
     insideOutsideWidget->addItems(QStringList() << "Inside" << "Outside");
-    layoutInsideOutside->addWidget(insideOutsideWidget);
-    layout->addLayout(layoutInsideOutside);
+    layout->addRow("Inside/Outside:",insideOutsideWidget);
 
 
-    QHBoxLayout * layoutNbFaces = new QHBoxLayout;
-    layoutNbFaces->addWidget(new QLabel("Nombres Faces:"));
     nbFacesWidget = new QSpinBox();
-    layoutNbFaces->addWidget(nbFacesWidget);
-    layout->addLayout(layoutNbFaces);
+    layout->addRow("Nombres Faces:",nbFacesWidget);
     this->connect(nbFacesWidget, SIGNAL(valueChanged(int)), this, SLOT(actualiseFormulaire(int)));
 
 
-    QHBoxLayout * layoutType = new QHBoxLayout;
-    layoutType->addWidget(new QLabel("Type d'excitation:"));
     typeWidget = new QComboBox();
     typeWidget->addItems(QStringList() << "onde_plane" << "TE10" << "TM10" << "fichier_excitation");
-    layoutType->addWidget(typeWidget);
-    layout->addLayout(layoutType);
+    layout->addRow("Type d'excitation:",typeWidget);
     this->connect(typeWidget, SIGNAL(currentIndexChanged(int)), this, SLOT(manageFormulaire(int)));
 
 
     formFace1 = new QWidget();
-    QVBoxLayout * layoutFormFace1 = new QVBoxLayout;
+
+    QFormLayout * layoutFormFace1 = new QFormLayout;
     layoutFormFace1->setMargin(0);
 
-    QHBoxLayout * layoutMode = new QHBoxLayout;
-    layoutMode->addWidget(new QLabel("Mode d'excitation:"));
     QComboBox * modeWidget = new QComboBox();
     modeWidget->addItems(QStringList() << "OndeplaneX" << "OndeplaneY" << "GuideTE10X" << "GuideTE10Y");
-    layoutMode->addWidget(modeWidget);
-    layoutFormFace1->addLayout(layoutMode);
+    layoutFormFace1->addRow("Mode d'excitation:",modeWidget);
 
-
-    QHBoxLayout * layoutHauteur = new QHBoxLayout;
-    layoutHauteur->addWidget(new QLabel("Hauteur:"));
     QSpinBox * hauteurWidget = new QSpinBox();
-    layoutHauteur->addWidget(hauteurWidget);
-    layoutFormFace1->addLayout(layoutHauteur);
+    layoutFormFace1->addRow("Hauteur:",hauteurWidget);
 
-    QHBoxLayout * layoutSensPropa = new QHBoxLayout;
-    layoutSensPropa->addWidget(new QLabel("Sens propagation:"));
     QComboBox * sensPropaWidget = new QComboBox();
     sensPropaWidget->addItems(QStringList() << "Z_croissant" << "Z_decroissant");
-    layoutSensPropa->addWidget(sensPropaWidget);
-    layoutFormFace1->addLayout(layoutSensPropa);
-
+    layoutFormFace1->addRow("Sens propagation:",sensPropaWidget);
 
     formFace1->setLayout(layoutFormFace1);
-    layout->addWidget(formFace1);
+    layout->addRow(formFace1);
 
 
     formFaceDif1 = new QWidget();
-    QVBoxLayout* layoutFormFaceDif1 = new QVBoxLayout;
+    QFormLayout* layoutFormFaceDif1 = new QFormLayout;
     layoutFormFaceDif1->setMargin(0);
 
-    //formulaire de pointReference
-    layoutFormFaceDif1->addWidget(new QLabel("Point référence:"));
     FormCoordonnees* pointRefWidget = new FormCoordonnees(cageExci->GetPointReference());
-    layoutFormFaceDif1->addWidget(pointRefWidget);
+    layoutFormFaceDif1->addRow("Point référence:",pointRefWidget);
 
 
-
-    QHBoxLayout * layoutTheta0 = new QHBoxLayout;
-    layoutTheta0->addWidget(new QLabel("theta0:"));
     QDoubleSpinBox * theta0Widget = new QDoubleSpinBox();
-    layoutTheta0->addWidget(theta0Widget);
-    layoutFormFaceDif1->addLayout(layoutTheta0);
+    layoutFormFaceDif1->addRow("Theta0:",theta0Widget);
 
 
-
-    QHBoxLayout * layoutPhi0 = new QHBoxLayout;
-    layoutPhi0->addWidget(new QLabel("phi0:"));
     QDoubleSpinBox * phi0Widget = new QDoubleSpinBox();
-    layoutPhi0->addWidget(phi0Widget);
-    layoutFormFaceDif1->addLayout(layoutPhi0);
+    layoutFormFaceDif1->addRow("Phi0:",phi0Widget);
 
 
-
-    QHBoxLayout * layoutPsi0 = new QHBoxLayout;
-    layoutPsi0->addWidget(new QLabel("psi0:"));
     QDoubleSpinBox * psi0Widget = new QDoubleSpinBox();
-    layoutPsi0->addWidget(psi0Widget);
-    layoutFormFaceDif1->addLayout(layoutPsi0);
-
-
+    layoutFormFaceDif1->addRow("Psi0:",psi0Widget);
 
     formFaceDif1->setLayout(layoutFormFaceDif1);
-    layout->addWidget(formFaceDif1);
+
+
+
+    layout->addRow(formFaceDif1);
 
 
     formType4 = new QWidget();
-    QVBoxLayout * layoutFormType4 = new QVBoxLayout;
+    QFormLayout * layoutFormType4 = new QFormLayout;
     layoutFormType4->setMargin(0);
 
-    QHBoxLayout * layoutModulationAmplitude = new QHBoxLayout;
-    layoutModulationAmplitude->addWidget(new QLabel("Modulation Amplitude:"));
     QDoubleSpinBox * modulationAmplitudeWidget = new QDoubleSpinBox();
-    layoutModulationAmplitude->addWidget(modulationAmplitudeWidget);
-    layoutFormType4->addLayout(layoutModulationAmplitude);
+    layoutFormType4->addRow("Modulation Amplitude:",modulationAmplitudeWidget);
 
-
-    QHBoxLayout * layoutModulationPhase = new QHBoxLayout;
-    layoutModulationPhase->addWidget(new QLabel("Modulation Phase:"));
     QDoubleSpinBox * modulationPhaseWidget = new QDoubleSpinBox();
-    layoutModulationPhase->addWidget(modulationPhaseWidget);
-    layoutFormType4->addLayout(layoutModulationPhase);
+    layoutFormType4->addRow("Modulation Phase:",modulationPhaseWidget);
 
-
-    QHBoxLayout * layoutNomFichier = new QHBoxLayout;
-    layoutNomFichier->addWidget(new QLabel("Nom Fichier:"));
-    QDoubleSpinBox * nomFichierWidget = new QDoubleSpinBox();
-    layoutNomFichier->addWidget(nomFichierWidget);
-    layoutFormType4->addLayout(layoutNomFichier);
-
+    QLineEdit * nomFichierWidget = new QLineEdit();
+    layoutFormType4->addRow("Nom Fichier:",nomFichierWidget);
 
     formType4->setLayout(layoutFormType4);
-    layout->addWidget(formType4);
+    layout->addRow(formType4);
 
 
-    layout->addWidget(getWidgetElementBase());
+    layout->addRow(getWidgetElementBase());
 
     layout->setAlignment(Qt::AlignTop);
 
