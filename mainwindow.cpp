@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     TableMetallisation* tableMeta = new TableMetallisation(parser.getBlocMetallisations());
     QTableView * vue = new QTableView();
     vue->setItemDelegateForColumn(1,new CoordonneeDelegate());
+    vue->setItemDelegateForColumn(2,new CoordonneeDelegate());
     vue->setModel(tableMeta);
     QTabWidget * tabWidget = new QTabWidget();
     tabWidget->addTab(vue, "Métallisations");

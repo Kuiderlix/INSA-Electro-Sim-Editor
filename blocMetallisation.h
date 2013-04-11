@@ -27,22 +27,23 @@ public:
         metallisations.resize(nbMetallisation);
     }
     
-    metallisation GetMetallisation(int i){
+    metallisation* GetMetallisation(int i){
         return metallisations[i];
     }
     
-    void setMetallisation(int i, metallisation met){
+    void setMetallisation(int i, metallisation* met){
         if(i> nbMetallisation)return;
         metallisations[i] = met;
     }
     
-    void addMetallisation(metallisation met){
+    void addMetallisation(metallisation* met){
         metallisations.push_back(met);
+        nbMetallisation++;
     }
     
 private:
     int nbMetallisation;
-    std::vector <metallisation> metallisations;
+    std::vector <metallisation*> metallisations;
 
 };
 

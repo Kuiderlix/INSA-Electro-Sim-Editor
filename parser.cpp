@@ -57,20 +57,20 @@ void Parser::scanMetallisation(){
     
     int i;
     for(i=0; i<nbMettalisations; i++){
-        metallisation temp;
+        metallisation *temp = new metallisation();
         
         parserSautLigne();
-        temp.SetConductivite(parserGetFloat());
+        temp->SetConductivite(parserGetFloat());
         parserSautLigne();
         int y = parserGetInt();
         int x = parserGetInt();
         int z = parserGetInt();
-        temp.SetAvantGauche(x,y,z);
+        temp->SetAvantGauche(x,y,z);
         parserSautLigne();
         y = parserGetInt();
         x = parserGetInt();
         z = parserGetInt();
-        temp.SetArriereDroit(x,y,z);
+        temp->SetArriereDroit(x,y,z);
         
         metallisations.addMetallisation(temp);
     }

@@ -7,7 +7,9 @@
 
 #include "coordonnee.h"
 coordonnee::coordonnee(){
-    
+    this->x = 0;
+    this->y = 0;
+    this->z = 0;
 }
 
 coordonnee::coordonnee(int x, int y, int z) {
@@ -17,6 +19,9 @@ coordonnee::coordonnee(int x, int y, int z) {
 }
 
 coordonnee::coordonnee(const coordonnee& orig) {
+    this->x = orig.x;
+    this->y = orig.y;
+    this->z = orig.z;
 }
 
 coordonnee::~coordonnee() {

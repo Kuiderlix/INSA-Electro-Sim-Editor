@@ -5,11 +5,12 @@ TableMetallisation::TableMetallisation(blocMetallisation *bloc, QWidget *parent)
 {
     listeMetallisation = bloc;
 
-    listeMetallisation->SetNbMetallisation(10);
-    for (int i=0;i<listeMetallisation->GetNbMetallisation();i++)
+    for (int i=0;i<15;i++)
     {
-        listeMetallisation->addMetallisation(*(new metallisation()));
+        metallisation *metal = new metallisation();
+        listeMetallisation->addMetallisation(metal);
     }
+
 }
 Qt::ItemFlags TableMetallisation::flags(const QModelIndex &index) const
 {
@@ -40,18 +41,18 @@ QVariant TableMetallisation::data(const QModelIndex &index, int role) const
     case Qt::EditRole:
         if (index.column() == Conductivite)
         {
-            return listeMetallisation->GetMetallisation(index.row()).GetConductivite();
+            return listeMetallisation->GetMetallisation(index.row())->GetConductivite();
         }
         else if (index.column() == Coord1)
         {
             QVariant var;
-            var.setValue(listeMetallisation->GetMetallisation(index.row()).GetArriereDroit());
+            var.setValue(listeMetallisation->GetMetallisation(index.row())->GetArriereDroit());
             return var;
         }
         else if (index.column() == Coord2)
         {
             QVariant var;
-            var.setValue(listeMetallisation->GetMetallisation(index.row()).GetAvantGauche());
+            var.setValue(listeMetallisation->GetMetallisation(index.row())->GetAvantGauche());
             return var;
         }
         break;

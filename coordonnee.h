@@ -8,6 +8,7 @@
 #ifndef COORDONNEE_H
 #define	COORDONNEE_H
 #include <QVariant>
+#include <QString>
 
 class coordonnee {
 public:
@@ -38,6 +39,11 @@ public:
 
     void SetZ(int z) {
         this->z = z;
+    }
+
+    QString toQString()
+    {
+        return QString().append("(x:").append(QString::number(x)).append(", y:").append(QString::number(y)).append(", z:").append(QString::number(z)).append(")");
     }
 
 private:
