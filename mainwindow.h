@@ -1,12 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "CoordonneeDelegate.h"
 #include <QtGui>
 
 #include "parser.h"
 #include "visualisation3d.h"
-#include "TableMetallisation.h"
+#include "TableViewMetallisation.h"
 #include "DescriptionGeoWidget.h"
 #include "ParamSimuWidget.h"
 #include "ObjetFDTDWidget.h"

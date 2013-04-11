@@ -13,11 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QWidget *tables = new QWidget;
     QHBoxLayout *layoutTable = new QHBoxLayout;
-    TableMetallisation* tableMeta = new TableMetallisation(parser.getBlocMetallisations());
-    QTableView * vue = new QTableView();
-    vue->setItemDelegateForColumn(1,new CoordonneeDelegate());
-    vue->setItemDelegateForColumn(2,new CoordonneeDelegate());
-    vue->setModel(tableMeta);
+    TableViewMetallisation * vue = new TableViewMetallisation(parser.getBlocMetallisations());
     QTabWidget * tabWidget = new QTabWidget();
     tabWidget->addTab(vue, "Métallisations");
     tabWidget->addTab(new QPushButton("test2"), "Elements Localises");

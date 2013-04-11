@@ -48,7 +48,6 @@ SOURCES += main.cpp\
     sonde.cpp \
     surfacePrelevement.cpp \
     volumeCalcul.cpp \
-    TableMetallisation.cpp \
     FormMetallisation.cpp \
     FormCoordonnees.cpp \
     FormElementLocalise.cpp \
@@ -71,7 +70,9 @@ SOURCES += main.cpp\
     FormCompressionHuygens.cpp \
     FormSonde.cpp \
     FormCalculDirective.cpp \
-    CoordonneeDelegate.cpp
+    CoordonneeDelegate.cpp \
+    TableMetallisationModel.cpp \
+    TableViewMetallisation.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -111,7 +112,6 @@ HEADERS  += mainwindow.h \
     sonde.h \
     surfacePrelevement.h \
     volumeCalcul.h \
-    TableMetallisation.h \
     FormMetallisation.h \
     FormCoordonnees.h \
     FormElementLocalise.h \
@@ -135,7 +135,9 @@ HEADERS  += mainwindow.h \
     FormCompressionHuygens.h \
     FormSonde.h \
     FormCalculDirective.h \
-    CoordonneeDelegate.h
+    CoordonneeDelegate.h \
+    TableMetallisationModel.h \
+    TableViewMetallisation.h
 
 OTHER_FILES += \
     DATA1.ana \

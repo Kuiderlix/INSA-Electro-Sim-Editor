@@ -25,6 +25,10 @@ public:
         this->arriereDroit = coordonnee(x,y,z);
     }
 
+    void SetArriereDroit(coordonnee copie) {
+        arriereDroit=copie;
+    }
+
     coordonnee GetAvantGauche() const {
         return avantGauche;
     }
@@ -32,6 +36,11 @@ public:
     void SetAvantGauche(int x, int y, int z) {
         this->avantGauche = coordonnee(x,y,z);
     }
+
+    void SetAvantGauche(coordonnee copie) {
+        avantGauche=copie;
+    }
+
 
 protected:
     coordonnee avantGauche;
