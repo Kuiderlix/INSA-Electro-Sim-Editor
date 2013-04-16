@@ -41,6 +41,8 @@ public:
         nbMetallisation++;
     }
     
+    void ecrire();
+    
 private:
     int nbMetallisation;
     std::vector <metallisation*> metallisations;

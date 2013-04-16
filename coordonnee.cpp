@@ -6,6 +6,9 @@
  */
 
 #include "coordonnee.h"
+#include "Ecriture.h"
+#include <string>
+#include <sstream>
 coordonnee::coordonnee(){
     this->x = 0;
     this->y = 0;
@@ -27,4 +30,16 @@ coordonnee::coordonnee(const coordonnee& orig) {
 coordonnee::~coordonnee() {
 }
 
+void coordonnee::ecrire(){
+    std::ostringstream monEcriture;
 
+    monEcriture << "Sur_la_longueur_y_(en_cellules):\n";
+    monEcriture << this->GetY() << std::endl;
+    monEcriture << "Sur_la_largeur_x_(en_cellules):\n";
+    monEcriture << this->GetX() << std::endl;
+    monEcriture << "Sur_la_hauteur_z_(en_cellules):\n";
+    monEcriture << this->GetZ() << std::endl;
+
+    std::string ecriture(monEcriture.str());
+    Ecriture::Ecrire(ecriture);
+}

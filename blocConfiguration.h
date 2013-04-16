@@ -32,19 +32,14 @@ public:
         this->extension = extension;
     }
     
-    void setTest(int test){
-        this->test = test;
-    }
-    
     void ecrire(){
-        //TODO: extension & header ne s'écrivent pas.
         std::ostringstream name;
-        name << "DATA1" << this->extension << "s";
+        name << "DATA1" << this->extension << "s"; //TODO: retirer ce s une fois terminé.
         std::string nomFichier(name.str());
         Ecriture::SetNomFichier(nomFichier);
         
         std::ostringstream header;
-        header << this->getHeader() << this->test << std::endl;
+        header << this->getHeader() << std::endl;
         std::string ecriture(header.str());
         Ecriture::Ecrire(ecriture);
     }
@@ -53,7 +48,6 @@ public:
 protected:
     std::string header;
     std::string extension;
-    int test;
 };
 
 #endif	/* BLOCCONFIGURATION_H */

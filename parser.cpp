@@ -226,6 +226,9 @@ void Parser::scanCageExcitation(){
         cout << "*****************************************\n" << endl;
         return;
     }
+    if(nbCages < 1){
+        return; //On veut exactement une cage d'excitation.
+    }
     parserSautLigne();
     cage.SetInsideOutside(parserGetInt());
     cage.SetNbFaces(parserGetInt());
@@ -322,6 +325,8 @@ void Parser::scanSurfacePrelevement(){
     cout << "    scanSurfacePrelevement\n" << endl;
     int nbSurfaces = parserGetInt();
     surfacePrelevements.SetNbSurfaces(nbSurfaces);
+
+    surfacePrelevements.SetNbSurfacesDG(parserGetInt()); //Rajouté dernièrement. À vérifier !!
     
     int i;
     for(i=0; i<nbSurfaces; i++){
@@ -332,6 +337,7 @@ void Parser::scanSurfacePrelevement(){
         temp.SetNomFichier(parserGetString());
         if(temp.GetTypeSurface() == 2)
             temp.SetInsideOutside(parserGetInt());
+        temp.SetNbFaces(parserGetInt()); //Rajouté dernièrement. À vérifier !!
         parserSautLigne();
         int y = parserGetInt();
         int x = parserGetInt();
@@ -503,7 +509,28 @@ void Parser::parse(){
     if(surfacePrelevements.GetNbSurfaces() == 1 && surfacePrelevements.GetSurface(0).GetTypeSurface() == 1)
         parsePTR();
     parseAVC();
+    
     cout << volume.GetHauteur() << " " << volume.GetLargeur() << " " << volume.GetLongueur() << endl;
     cout << volume.GetNombreY() << " " << volume.GetNombreX() << " " << volume.GetNombreZ() << endl;
-    //volume.ecrire();
+
+    //On réécrit tout pour vérifier.
+    volume.ecrire();
+    parois.ecrire();
+    metallisations.ecrire();
+    parallelepipedes.ecrire();
+    elementLocalises.ecrire();
+    PML.ecrire();
+    excitation.ecrire();
+    analyseTemp.ecrire();
+    portExcitations.ecrire();
+    cage.ecrire();
+    sondes.ecrire();
+    cartographies.ecrire();
+    surfacePrelevements.ecrire();
+    champlointain.ecrire();
+    amplitudeV0.ecrire();
+    stockage.ecrire();
+    facteurEchantillonnage.ecrire();
+    compHuygens.ecrire();
+    calculdirectivite.ecrire();
 }

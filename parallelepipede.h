@@ -41,6 +41,8 @@ public:
         this->permitRelative = permitRelative;
     }
 
+    void ecrire(int nb);
+
 private:
     float permitRelative;
     float permeRelative;

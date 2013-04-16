@@ -41,6 +41,8 @@ public:
         this->valeur = valeur;
     }
 
+    void ecrire(int nb);
+
 private:
     int type;
     float valeur;

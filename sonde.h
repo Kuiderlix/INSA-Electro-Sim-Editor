@@ -82,6 +82,8 @@ public:
         this->valeurAuCentre = valeurAuCentre;
     }
 
+    void ecrire(int nb);
+
 private:
     bool ex;
     bool ey;

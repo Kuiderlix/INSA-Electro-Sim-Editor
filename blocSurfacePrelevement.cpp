@@ -19,3 +19,26 @@ blocSurfacePrelevement::blocSurfacePrelevement(const blocSurfacePrelevement& ori
 
 blocSurfacePrelevement::~blocSurfacePrelevement() {
 }
+
+void blocSurfacePrelevement::ecrire(){
+
+    blocConfiguration bC = blocConfiguration(*this);
+    bC.setHeader("[SURFACES_DE_PRELEVEMENT]");
+    bC.setExtension(".ana");
+    bC.ecrire();
+
+    std::ostringstream monEcriture;
+    monEcriture << "Nombre_de_surfaces_de_prelevement_au_total\n";
+    monEcriture << this->nbSurfaces << std::endl;
+    monEcriture << "Nombre_de_surfaces_de_prelevement_DG\n";
+    monEcriture << this->nbSurfacesDG << std::endl;
+    std::string ecriture(monEcriture.str());
+    Ecriture::Ecrire(ecriture);
+
+    for(int i=0; i<this->nbSurfaces; i++){
+        surfacePrelevement temp = this->surfaces[i];
+        temp.ecrire(i+1);
+    }
+
+    Ecriture::Ecrire("\n");
+}

@@ -41,6 +41,7 @@ public:
         avantGauche=copie;
     }
 
+    void ecrireElementBase();
 
 protected:
     coordonnee avantGauche;

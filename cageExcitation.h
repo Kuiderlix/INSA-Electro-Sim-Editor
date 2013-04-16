@@ -125,6 +125,8 @@ public:
         this->nomFichier = nomFichier;
     }
 
+    void ecrire();
+
 private:
     int insideOutside;
     int nbFaces;

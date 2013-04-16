@@ -24,6 +24,8 @@ public:
     void SetAmplitudeV0(float amplitudeV0) {
         this->amplitudeV0 = amplitudeV0;
     }
+
+    void ecrire();
     
 private:
     float amplitudeV0;

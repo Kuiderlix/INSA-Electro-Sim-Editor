@@ -19,3 +19,14 @@ metallisation::metallisation(const metallisation& orig) {
 metallisation::~metallisation() {
 }
 
+void metallisation::ecrire(int nb){
+    std::ostringstream monEcriture;
+    monEcriture << "Metallisation_numero_" << nb << "\n";
+    monEcriture << "Conductivité:\n";
+    monEcriture << this->conductivite << std::endl;
+    std::string ecriture(monEcriture.str());
+    Ecriture::Ecrire(ecriture);
+
+    this->ecrireElementBase();
+}
+

@@ -40,6 +40,8 @@ public:
         return cartos[i];
     }
 
+    void ecrire();
+
 private:
     int nbCarto;
     std::vector <cartographieTemporelle> cartos;

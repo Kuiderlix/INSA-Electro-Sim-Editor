@@ -41,6 +41,8 @@ public:
         this->pasTheta = pasTheta;
     }
 
+    void ecrire();
+
 private:
     bool calcul;
     int pasTheta;

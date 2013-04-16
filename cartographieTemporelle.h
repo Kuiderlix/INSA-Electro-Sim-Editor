@@ -57,6 +57,8 @@ public:
         this->iterationFin = iterationFin;
     }
 
+    void ecrire(int nb);
+
 private:
     bool champE;
     bool champH;

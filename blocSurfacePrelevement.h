@@ -17,7 +17,7 @@ public:
     blocSurfacePrelevement();
     blocSurfacePrelevement(const blocSurfacePrelevement& orig);
     virtual ~blocSurfacePrelevement();
-    
+
     int GetNbSurfaces() const {
         return nbSurfaces;
     }
@@ -25,6 +25,14 @@ public:
     void SetNbSurfaces(int nbSurfaces) {
         this->nbSurfaces = nbSurfaces;
         surfaces.resize(nbSurfaces);
+    }
+
+    int GetNbSurfacesDG() const {
+        return nbSurfacesDG;
+    }
+
+    void SetNbSurfacesDG(int nbSurfacesDG) {
+        this->nbSurfacesDG = nbSurfacesDG;
     }
     
     void AddSurface(surfacePrelevement surface){
@@ -40,8 +48,11 @@ public:
         return surfaces[i];
     }
 
+    void ecrire();
+
 private:
     int nbSurfaces;
+    int nbSurfacesDG;
     std::vector <surfacePrelevement> surfaces;
 };
 

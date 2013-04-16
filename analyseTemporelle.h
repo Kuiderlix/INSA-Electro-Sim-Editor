@@ -33,6 +33,8 @@ public:
         this->temps = temps;
     }
 
+    void ecrire();
+
 private:
     float periode;
     float temps;

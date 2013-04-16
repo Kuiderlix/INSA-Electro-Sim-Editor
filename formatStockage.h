@@ -33,6 +33,8 @@ public:
         this->formatFichierPrelevement = formatFichierPrelevement;
     }
 
+    void ecrire();
+
 private:
     int format;
     int formatFichierPrelevement;

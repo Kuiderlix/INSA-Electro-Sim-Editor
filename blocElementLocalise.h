@@ -39,6 +39,8 @@ public:
         elements.push_back(elt);
     }
 
+    void ecrire();
+
 private:
     int nbElements;
     std::vector <elementLocalise> elements;

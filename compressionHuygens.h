@@ -49,6 +49,8 @@ public:
         this->facteurMultiplicatif = facteurMultiplicatif;
     }
 
+    void ecrire();
+
 private:
     int compressionLongueur;
     int compressionLargeur;

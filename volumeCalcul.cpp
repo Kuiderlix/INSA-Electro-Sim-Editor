@@ -10,9 +10,6 @@
 #include <string>
 
 volumeCalcul::volumeCalcul() {
-    std::string header = "[VOLUME_DE_CALCUL]";
-    this->setHeader(header);
-    this->setExtension(".dsc");
 }
 
 volumeCalcul::volumeCalcul(const volumeCalcul& orig) {
@@ -22,7 +19,12 @@ volumeCalcul::~volumeCalcul() {
 }
 
 void volumeCalcul::ecrire(){
-    blocConfiguration(*this).ecrire();
+    
+    blocConfiguration bC = blocConfiguration(*this);
+    bC.setHeader("[VOLUME_DE_CALCUL]");
+    bC.setExtension(".dsc");
+    bC.ecrire();
+
     
     std::ostringstream monEcriture;
     monEcriture << "Longueur_y_de_la_boite_(en_mm):\n";
@@ -40,4 +42,6 @@ void volumeCalcul::ecrire(){
     
     std::string ecriture(monEcriture.str());
     Ecriture::Ecrire(ecriture);
+
+    Ecriture::Ecrire("\n");
 }

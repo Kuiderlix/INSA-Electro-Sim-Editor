@@ -40,6 +40,8 @@ public:
         sondes.push_back(s);
     }
 
+    void ecrire();
+
 private:
     int nbSondes;
     std::vector <sonde> sondes;

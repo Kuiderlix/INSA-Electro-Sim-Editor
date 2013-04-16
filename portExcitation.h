@@ -81,6 +81,8 @@ public:
         this->typeSource = typeSource;
     }
 
+    void ecrire(int nb);
+
 private:
     bool portActif;
     bool portInfinitesimal;

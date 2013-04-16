@@ -18,3 +18,24 @@ compressionHuygens::compressionHuygens(const compressionHuygens& orig) {
 compressionHuygens::~compressionHuygens() {
 }
 
+void compressionHuygens::ecrire(){
+    blocConfiguration bC = blocConfiguration(*this);
+    bC.setHeader("[COMPRESSION_HUYGENS]");
+    bC.setExtension(".avc");
+    bC.ecrire();
+
+    std::ostringstream monEcriture;
+    monEcriture << "Compression_pour_le_calcul_du_champ_lointain,_en_nombre_de_cellules\n";
+    monEcriture << "Sur_la_longueur_y_(en_cellules):\n";
+    monEcriture << this->compressionLongueur << std::endl;
+    monEcriture << "Sur_la_largeur_x_(en_cellules):\n";
+    monEcriture << this->compressionLargeur << std::endl;
+    monEcriture << "Sur_la_hauteur_z_(en_cellules):\n";
+    monEcriture << this->compressionHauteur << std::endl;
+    monEcriture << "Facteur_multiplicatif_pour_le_nombre_d_echantillons_preleves:\n";
+    monEcriture << this->facteurMultiplicatif << std::endl;
+    std::string ecriture(monEcriture.str());
+    Ecriture::Ecrire(ecriture);
+
+    Ecriture::Ecrire("\n");
+}

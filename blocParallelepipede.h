@@ -41,6 +41,8 @@ public:
         parallelepipedes.push_back(para);
     }
 
+    void ecrire();
+
 private:
     int nbParallelepipede;
     std::vector <parallelepipede> parallelepipedes;

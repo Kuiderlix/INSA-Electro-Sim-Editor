@@ -25,6 +25,8 @@ public:
         this->facteurEchatillonnage = facteurEchatillonnage;
     }
     
+    void ecrire();
+
 private:
     int facteurEchatillonnage;
 };

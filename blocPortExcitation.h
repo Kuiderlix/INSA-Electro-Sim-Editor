@@ -40,6 +40,8 @@ public:
         portExcitations.push_back(port);
     }
 
+    void ecrire();
+
 private:
     int nbPorts;
     std::vector <portExcitation> portExcitations;

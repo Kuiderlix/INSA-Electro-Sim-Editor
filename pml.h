@@ -49,6 +49,8 @@ public:
         this->sigmaMax = sigmaMax;
     }
 
+    void ecrire();
+
 private:
     int epaisseurCouche;
     int ordreVariation;

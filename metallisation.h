@@ -26,6 +26,8 @@ public:
     void SetConductivite(float conductivite) {
         this->conductivite = conductivite;
     }
+
+    void ecrire(int nb);
 private:
     float conductivite;
 

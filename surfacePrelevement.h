@@ -66,11 +66,22 @@ public:
         this->nomFichier = nomFichier;
     }
 
+    int GetNbFaces() const {
+        return nbFaces;
+    }
+
+    void SetNbFaces(int nbFaces) {
+        this->nbFaces = nbFaces;
+    }
+
+    void ecrire(int type);
+
 private:
     int typeSurface;
     std::string nomFichier;
     //SI typeSurface = 2
     int insideOutside;
+    int nbFaces;
     int compressionLongueur;
     int compressionLargeur;
     int compressionHauteur;

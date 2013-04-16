@@ -49,6 +49,8 @@ public:
         this->paroiY = paroiY;
     }
 
+    void ecrire();
+
 private:
     int paroiInferieure;
     int paroiSuperieure;

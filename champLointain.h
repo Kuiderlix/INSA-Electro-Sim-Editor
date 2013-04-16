@@ -90,6 +90,8 @@ public:
         this->nomFichier = nomFichier;
     }
 
+    void ecrire();
+
 private:
     coordonnee origineRepere;
     float frequenceMin;

@@ -41,6 +41,8 @@ public:
         this->type = type;
     }
 
+    void ecrire();
+
 private:
     float frequenceMax;
     int type;
