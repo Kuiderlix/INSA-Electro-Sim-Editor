@@ -10,12 +10,19 @@ class FormMetallisation : public FormElementBase
     Q_OBJECT
 public:
     explicit FormMetallisation(metallisation* metal,int mode,QWidget *parent = 0);
+
+    metallisation * getMetallisation();
     
 signals:
+
+    void metallisationValider(metallisation *);
     
 public slots:
-private:
 
+    void valider();
+
+private:
+    QDoubleSpinBox * lineEditConductivite;
     metallisation * metal;
     
 };

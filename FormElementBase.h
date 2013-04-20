@@ -5,7 +5,7 @@
 #include "FormCoordonnees.h"
 #include "elementBase.h"
 
-class FormElementBase : public QWidget
+class FormElementBase : public QDialog
 {
     Q_OBJECT
 public:
@@ -13,21 +13,26 @@ public:
 
 
     QWidget * getWidgetElementBase();
-    
+
 signals:
     
 public slots:
+
+    virtual void valider();
 
 
 public:
     static const int NOUVEAU = 0;
     static const int MODIFIER = 1;
 
+
+protected:
+    FormCoordonnees * formCoord1, *formCoord2;
+
 private:
     int mode;
     QPushButton * boutonValider;
     elementBase * element;
-    FormCoordonnees * formCoord1, *formCoord2;
     
 };
 

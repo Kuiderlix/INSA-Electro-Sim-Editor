@@ -19,12 +19,7 @@ public:
     virtual ~blocMetallisation();
     
     int GetNbMetallisation() const {
-        return nbMetallisation;
-    }
-
-    void SetNbMetallisation(int nbMetallisation) {
-        this->nbMetallisation = nbMetallisation;
-        metallisations.resize(nbMetallisation);
+        return metallisations.size();
     }
     
     metallisation* GetMetallisation(int i){
@@ -32,19 +27,42 @@ public:
     }
     
     void setMetallisation(int i, metallisation* met){
-        if(i> nbMetallisation)return;
+        if(i> metallisations.size())return;
         metallisations[i] = met;
+    }
+
+    void removeMetallisation(metallisation * met)
+    {
+        std::vector<metallisation*>::iterator it = metallisations.begin();
+        for (;it!=metallisations.end();it++)
+        {
+            if (*it == met)
+            {
+                metallisations.erase(it);
+                break;
+            }
+        }
+    }
+
+    int GetMetalPosition(metallisation * met)
+    {
+        std::vector<metallisation*>::iterator it = metallisations.begin();
+        for (int i=0;it!=metallisations.end();it++,i++)
+        {
+            if (*it == met)
+            {
+                return i;
+            }
+        }
     }
     
     void addMetallisation(metallisation* met){
         metallisations.push_back(met);
-        nbMetallisation++;
     }
     
     void ecrire();
     
 private:
-    int nbMetallisation;
     std::vector <metallisation*> metallisations;
 
 };

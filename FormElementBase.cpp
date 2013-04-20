@@ -1,7 +1,7 @@
 #include "FormElementBase.h"
 
 FormElementBase::FormElementBase(elementBase *element, int mode, QWidget *parent) :
-    QWidget(parent)
+    QDialog(parent)
 {
     this->element=element;
     this->mode=mode;
@@ -33,5 +33,11 @@ QWidget *FormElementBase::getWidgetElementBase()
 
     conteneur->setLayout(layout);
 
+    connect(boutonValider, SIGNAL(clicked()),this,SLOT(valider()));
+
     return conteneur;
+}
+
+void FormElementBase::valider()
+{
 }

@@ -5,6 +5,7 @@
 #include "TableMetallisationModel.h"
 #include "CoordonneeDelegate.h"
 #include "blocMetallisation.h"
+#include "FormMetallisation.h"
 
 class TableViewMetallisation : public QTableView
 {
@@ -17,7 +18,9 @@ public:
 signals:
     
 public slots:
-
+    void addNewMetallisation();
+    void editMetallisation();
+    void deleteMetallisation();
 
 
 private:

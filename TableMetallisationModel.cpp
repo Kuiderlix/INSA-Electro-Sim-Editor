@@ -41,7 +41,8 @@ QVariant TableMetallisationModel::data(const QModelIndex &index, int role) const
     case Qt::EditRole:
         if (index.column() == Conductivite)
         {
-            return listeMetallisation->GetMetallisation(index.row())->GetConductivite();
+            QVariant var(listeMetallisation->GetMetallisation(index.row())->GetConductivite());
+            return var;
         }
         else if (index.column() == Coord1)
         {
@@ -103,7 +104,6 @@ bool TableMetallisationModel::setData(const QModelIndex &index, const QVariant &
         {
             metallisation * met = listeMetallisation->GetMetallisation(index.row());
             coordonnee c = value.value<coordonnee>();
-            qDebug() << c.GetX();
             met->SetArriereDroit(c);
             listeMetallisation->setMetallisation(index.row(),met);
         }
@@ -128,4 +128,16 @@ void TableMetallisationModel::addElement(metallisation *element)
     beginInsertRows(QModelIndex(), count, count);
     listeMetallisation->addMetallisation(element);
     endInsertRows();
+}
+
+void TableMetallisationModel::removeElement(metallisation *element)
+{
+    int i = listeMetallisation->GetMetalPosition(element);
+    beginRemoveRows(QModelIndex(),i,i);
+    listeMetallisation->removeMetallisation(element);
+    endRemoveRows();
+}
+
+void TableMetallisationModel::removeElement(int i)
+{
 }

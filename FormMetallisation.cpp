@@ -11,7 +11,8 @@ FormMetallisation::FormMetallisation(metallisation* metal,int mode, QWidget *par
 
     QFormLayout * layout = new QFormLayout;
 
-    QDoubleSpinBox * lineEditConductivite = new QDoubleSpinBox();
+    lineEditConductivite = new QDoubleSpinBox();
+    lineEditConductivite->setValue(metal->GetConductivite());
     layout->addRow("Conductivité:",lineEditConductivite);
 
     layout->addRow(getWidgetElementBase());
@@ -24,4 +25,14 @@ FormMetallisation::FormMetallisation(metallisation* metal,int mode, QWidget *par
 
     setLayout(layoutPrincipal);
 
+}
+
+
+void FormMetallisation::valider()
+{
+    metal->SetConductivite(lineEditConductivite->value());
+    metal->SetAvantGauche(formCoord1->getCoord());
+    metal->SetArriereDroit(formCoord2->getCoord());
+    emit metallisationValider(metal);
+    this->accept();
 }

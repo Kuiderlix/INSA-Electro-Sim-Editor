@@ -15,7 +15,7 @@ void Parser::parserSautLigne(){
 int Parser::parserGetInt(){
     int temp;
     parserSautLigne();
-    fscanf(fp, "%d", &temp);
+    fscanf(fp, "%i", &temp);
     return temp;
 }
 float Parser::parserGetFloat(){
@@ -53,7 +53,6 @@ void Parser::scanTypeParoi(){
 void Parser::scanMetallisation(){
     cout << "    scanMetallisation\n" << endl;
     int nbMettalisations = parserGetInt();
-    metallisations.SetNbMetallisation(nbMettalisations);
     
     int i;
     for(i=0; i<nbMettalisations; i++){
@@ -512,7 +511,7 @@ void Parser::parse(){
     
     cout << volume.GetHauteur() << " " << volume.GetLargeur() << " " << volume.GetLongueur() << endl;
     cout << volume.GetNombreY() << " " << volume.GetNombreX() << " " << volume.GetNombreZ() << endl;
-
+/*
     //On réécrit tout pour vérifier.
     volume.ecrire();
     parois.ecrire();
@@ -532,5 +531,5 @@ void Parser::parse(){
     stockage.ecrire();
     facteurEchantillonnage.ecrire();
     compHuygens.ecrire();
-    calculdirectivite.ecrire();
+    calculdirectivite.ecrire();*/
 }
