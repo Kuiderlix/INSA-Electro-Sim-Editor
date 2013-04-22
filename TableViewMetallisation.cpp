@@ -10,6 +10,8 @@ TableViewMetallisation::TableViewMetallisation(blocMetallisation *blocMetal, QWi
     this->setModel(tableMeta);
     this->setSelectionBehavior(QAbstractItemView::SelectRows);
     this->setSelectionMode(QAbstractItemView::ExtendedSelection);
+
+
 }
 
 void TableViewMetallisation::contextMenuEvent(QContextMenuEvent *e)
@@ -20,6 +22,25 @@ void TableViewMetallisation::contextMenuEvent(QContextMenuEvent *e)
     menu.addAction("Supprimer",this,SLOT(deleteMetallisation()));
 
     menu.exec(e->globalPos());
+}
+
+void TableViewMetallisation::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Delete)
+    {
+        deleteMetallisation();
+    }
+}
+
+QModelIndexList TableViewMetallisation::selectedIndexes() const
+{
+    QModelIndexList list = this->QTableView::selectedIndexes();
+    QModelIndexList::Iterator it = list.begin();
+    for (;it!=list.end();it++)
+    {
+        //effacer les item en trop
+    }
+    return list;
 }
 
 void TableViewMetallisation::addNewMetallisation()
@@ -43,10 +64,12 @@ void TableViewMetallisation::editMetallisation()
 void TableViewMetallisation::deleteMetallisation()
 {
     QModelIndexList list = this->selectedIndexes();
-    for (int i=0;i<list.count()/tableMeta->columnCount();i++)
+    qDebug() << list.count();
+    QModelIndexList::Iterator it = list.begin();
+    for (;it!=list.end();it++)
     {
-        metallisation * metal = tableMeta->getMetallisations()->GetMetallisation(list.at(i*tableMeta->columnCount()).row());
-        tableMeta->removeElement(metal);
+        tableMeta->removeElement((*it).row());
     }
+
 }
 

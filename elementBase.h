@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   elementBase.h
  * Author: camille
  *
@@ -42,6 +42,9 @@ public:
     }
 
     void ecrireElementBase();
+
+    bool operator==(elementBase const& b);
+
 
 protected:
     coordonnee avantGauche;

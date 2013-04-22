@@ -27,7 +27,6 @@ signals:
     
 public slots:
     void addElement(metallisation *element);
-    void removeElement(metallisation * element);
     void removeElement(int i);
 private:
     blocMetallisation* listeMetallisation;

@@ -9,8 +9,7 @@
 #define	BLOCMETALLISATION_H
 
 #include "metallisation.h"
-#include <vector>
-
+#include <QDebug>
 
 class blocMetallisation : public blocConfiguration{
 public:
@@ -23,7 +22,7 @@ public:
     }
     
     metallisation* GetMetallisation(int i){
-        return metallisations[i];
+        return metallisations.at(i);
     }
     
     void setMetallisation(int i, metallisation* met){
@@ -33,27 +32,13 @@ public:
 
     void removeMetallisation(metallisation * met)
     {
-        std::vector<metallisation*>::iterator it = metallisations.begin();
-        for (;it!=metallisations.end();it++)
-        {
-            if (*it == met)
-            {
-                metallisations.erase(it);
-                break;
-            }
-        }
+        metallisations.removeOne(met);
     }
 
-    int GetMetalPosition(metallisation * met)
+    void removeMetallisation(int i)
     {
-        std::vector<metallisation*>::iterator it = metallisations.begin();
-        for (int i=0;it!=metallisations.end();it++,i++)
-        {
-            if (*it == met)
-            {
-                return i;
-            }
-        }
+        qDebug() << "i" << i << " conductivité:" << GetMetallisation(i)->GetConductivite();
+        metallisations.removeAt(i);
     }
     
     void addMetallisation(metallisation* met){
@@ -63,7 +48,7 @@ public:
     void ecrire();
     
 private:
-    std::vector <metallisation*> metallisations;
+    QList<metallisation*> metallisations;
 
 };
 

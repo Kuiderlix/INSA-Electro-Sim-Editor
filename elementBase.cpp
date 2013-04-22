@@ -24,3 +24,8 @@ void elementBase::ecrireElementBase(){
     Ecriture::Ecrire("Coordonnees_du_coin_superieur_arriere_droit\n");
     this->GetArriereDroit().ecrire();
 }
+
+bool elementBase::operator==(elementBase const &b)
+{
+    return this->arriereDroit==b.arriereDroit & this->avantGauche == b.avantGauche;
+}

@@ -30,6 +30,11 @@ coordonnee::coordonnee(const coordonnee& orig) {
 coordonnee::~coordonnee() {
 }
 
+bool coordonnee::operator ==(const coordonnee &b)
+{
+    return this->x==b.x && this->y==b.y && this->z==b.z;;
+}
+
 void coordonnee::ecrire(){
     std::ostringstream monEcriture;
 

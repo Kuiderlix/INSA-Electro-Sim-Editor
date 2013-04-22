@@ -31,7 +31,10 @@ public:
 private:
     float conductivite;
 
+    static int nbMetal;
+
 };
+
 
 #endif	/* METALLISATION_H */
 

@@ -14,6 +14,9 @@ public:
     explicit TableViewMetallisation(blocMetallisation *blocMetal, QWidget *parent = 0);
     
      void contextMenuEvent ( QContextMenuEvent * e );
+     void keyPressEvent(QKeyEvent * event);
+
+     QModelIndexList selectedIndexes() const;
 
 signals:
     

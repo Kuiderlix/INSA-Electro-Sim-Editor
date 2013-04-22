@@ -128,16 +128,13 @@ void TableMetallisationModel::addElement(metallisation *element)
     beginInsertRows(QModelIndex(), count, count);
     listeMetallisation->addMetallisation(element);
     endInsertRows();
-}
-
-void TableMetallisationModel::removeElement(metallisation *element)
-{
-    int i = listeMetallisation->GetMetalPosition(element);
-    beginRemoveRows(QModelIndex(),i,i);
-    listeMetallisation->removeMetallisation(element);
-    endRemoveRows();
+    qDebug() << "ajout : " << listeMetallisation->GetNbMetallisation();
 }
 
 void TableMetallisationModel::removeElement(int i)
 {
+    beginRemoveRows(QModelIndex(),i,i);
+    listeMetallisation->removeMetallisation(i);
+    endRemoveRows();
+
 }

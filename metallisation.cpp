@@ -7,8 +7,9 @@
 
 #include "metallisation.h"
 
+int metallisation::nbMetal = 0;
 metallisation::metallisation() {
-    conductivite=4.5;
+    conductivite=nbMetal++;
     this->arriereDroit = coordonnee(1,2,3);
     this->avantGauche = coordonnee(3,2,1);
 }

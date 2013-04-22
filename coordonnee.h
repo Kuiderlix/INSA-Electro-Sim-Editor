@@ -46,6 +46,8 @@ public:
         return QString().append("(x:").append(QString::number(x)).append(", y:").append(QString::number(y)).append(", z:").append(QString::number(z)).append(")");
     }
 
+    bool operator==(coordonnee const& b);
+
     void ecrire();
 
 private:
