@@ -12,15 +12,18 @@ FormParallelepipede::FormParallelepipede(parallelepipede *paralle, int mode, QWi
     QFormLayout * layout = new QFormLayout;
 
 
-    QDoubleSpinBox * permitRelativeWidget = new QDoubleSpinBox();
+    permitRelativeWidget = new QDoubleSpinBox();
+    permitRelativeWidget->setValue(paralle->GetPermitRelative());
     layout->addRow("PermitRelative:", permitRelativeWidget);
 
 
-    QDoubleSpinBox * permeRelativeWidget = new QDoubleSpinBox();
+    permeRelativeWidget = new QDoubleSpinBox();
+    permeRelativeWidget->setValue(paralle->GetPermeRelative());
     layout->addRow("PermeRelative:",permeRelativeWidget);
 
 
-    QDoubleSpinBox * conductiviteWidget = new QDoubleSpinBox();
+    conductiviteWidget = new QDoubleSpinBox();
+    conductiviteWidget->setValue(paralle->GetConductivite());
     layout->addRow("Conductivité:",conductiviteWidget);
 
     layout->addRow(getWidgetElementBase());
@@ -34,3 +37,13 @@ FormParallelepipede::FormParallelepipede(parallelepipede *paralle, int mode, QWi
     setLayout(layoutPrincipal);
 
 }
+
+void FormParallelepipede::valider()
+{
+    FormElementBase::valider();
+    paralle->SetConductivite(conductiviteWidget->value());
+    paralle->SetPermitRelative(permitRelativeWidget->value());
+    paralle->SetPermeRelative(permeRelativeWidget->value());
+    emit elementValidee(paralle);
+}
+

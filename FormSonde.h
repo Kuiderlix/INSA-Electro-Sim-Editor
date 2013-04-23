@@ -13,9 +13,22 @@ public:
 signals:
     
 public slots:
+    void valider();
 
 private:
     sonde * m_sonde;
+
+    QCheckBox * eXWidget;
+    QCheckBox * eYWidget;
+    QCheckBox * eZWidget;
+
+    QCheckBox * hXWidget;
+    QCheckBox * hYWidget;
+    QCheckBox * hZWidget;
+
+    FormCoordonnees * formPtAppli;
+
+    QCheckBox * valCentreWidget;
     
 };
 

@@ -4,6 +4,7 @@ TableModelMetallisation::TableModelMetallisation(BlocElementBase *bloc, QObject 
     TableModel(bloc,parent)
 {
     listeMetal = (blocMetallisation*)bloc;
+    initHeaders(QStringList() << "Conductivité" << "Avant Gauche" << "Arrière Droit");
     for (int i=0;i<15;i++)
     {
         metallisation *metal = new metallisation();
@@ -51,27 +52,6 @@ QVariant TableModelMetallisation::data(const QModelIndex &index, int role) const
     }
 
     return QVariant();
-}
-
-QVariant TableModelMetallisation::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
-        {
-            switch (section)
-            {
-            case Conductivite:
-                return trUtf8("Conductivité");
-                break;
-            case Coord1:
-                return trUtf8("Arrière Droit");
-                break;
-            case Coord2:
-                return trUtf8("Avant Gauche");
-                break;
-            }
-        }
-
-        return QAbstractTableModel::headerData(section, orientation, role);
 }
 
 bool TableModelMetallisation::setData(const QModelIndex &index, const QVariant &value, int role)

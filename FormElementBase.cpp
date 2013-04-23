@@ -40,4 +40,6 @@ QWidget *FormElementBase::getWidgetElementBase()
 
 void FormElementBase::valider()
 {
+    element->SetAvantGauche(formCoord1->getCoord());
+    element->SetArriereDroit(formCoord2->getCoord());
 }

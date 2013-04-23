@@ -8,43 +8,25 @@
 #ifndef BLOCSONDE_H
 #define	BLOCSONDE_H
 
-#include "blocConfiguration.h"
+#include "BlocElementBase.h"
 #include "sonde.h"
 
 
-class blocSonde : public blocConfiguration{
+class blocSonde : public BlocElementBase{
 public:
     blocSonde();
     blocSonde(const blocSonde& orig);
     virtual ~blocSonde();
     
-    int GetNbSondes() const {
-        return nbSondes;
+
+    sonde* GetSonde(int i){
+        return (sonde*)listElement.at(i);
     }
 
-    void SetNbSondes(int nbSondes) {
-        this->nbSondes = nbSondes;
-        sondes.resize(nbSondes);
-    }
-    
-    sonde GetSonde(int i){
-        return sondes[i];
-    }
-    
-    void SetSonde(int i, sonde s){
-        if(i>nbSondes)return;
-        sondes[i] = s;
-    }
-    
-    void AddSonde(sonde s){
-        sondes.push_back(s);
-    }
 
     void ecrire();
 
 private:
-    int nbSondes;
-    std::vector <sonde> sondes;
 };
 
 #endif	/* BLOCSONDE_H */

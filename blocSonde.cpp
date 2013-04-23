@@ -29,14 +29,14 @@ void blocSonde::ecrire(){
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_sondes:\n";
-    monEcriture << this->nbSondes << std::endl;
+    monEcriture << this->getNbElement() << std::endl;
 
     std::string ecriture(monEcriture.str());
     Ecriture::Ecrire(ecriture);
 
-    for(int i=0; i<this->nbSondes; i++){
-        sonde temp = this->sondes[i];
-        temp.ecrire(i+1);
+    for(int i=0; i<this->getNbElement(); i++){
+        sonde* temp = this->GetSonde(i);
+        temp->ecrire(i+1);
     }
 
     Ecriture::Ecrire("\n");

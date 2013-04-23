@@ -13,10 +13,14 @@ public:
 signals:
     
 public slots:
+    void valider();
 
 
 private:
     parallelepipede * paralle;
+    QDoubleSpinBox * permitRelativeWidget;
+    QDoubleSpinBox * permeRelativeWidget;
+    QDoubleSpinBox * conductiviteWidget;
     
 };
 

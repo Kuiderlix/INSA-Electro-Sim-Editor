@@ -27,14 +27,14 @@ void blocPortExcitation::ecrire(){
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_ports_d_excitation:\n";
-    monEcriture << this->nbPorts << std::endl;
+    monEcriture << this->getNbElement() << std::endl;
 
     std::string ecriture(monEcriture.str());
     Ecriture::Ecrire(ecriture);
 
-    for(int i=0; i<this->nbPorts; i++){
-        portExcitation temp = this->portExcitations[i];
-        temp.ecrire(i+1);
+    for(int i=0; i<this->getNbElement(); i++){
+        portExcitation* temp = this->GetPortExcitation(i);
+        temp->ecrire(i+1);
     }
 
     Ecriture::Ecrire("\n");

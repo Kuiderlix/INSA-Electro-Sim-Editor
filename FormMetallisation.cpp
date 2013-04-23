@@ -30,8 +30,7 @@ FormMetallisation::FormMetallisation(metallisation* metal,int mode, QWidget *par
 
 void FormMetallisation::valider()
 {
+    FormElementBase::valider();
     metal->SetConductivite(lineEditConductivite->value());
-    metal->SetAvantGauche(formCoord1->getCoord());
-    metal->SetArriereDroit(formCoord2->getCoord());
     emit elementValidee(metal);
 }

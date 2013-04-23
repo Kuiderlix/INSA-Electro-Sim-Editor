@@ -73,6 +73,9 @@ public:
     void SetPointApplication(int x, int y, int z) {
         this->pointApplication = coordonnee(x,y,z);
     }
+    void SetPointApplication(coordonnee c) {
+        this->pointApplication = c;
+    }
 
     bool IsValeurAuCentre() const {
         return valeurAuCentre;

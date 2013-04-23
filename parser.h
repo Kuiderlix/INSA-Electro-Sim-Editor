@@ -54,6 +54,9 @@ public:
     volumeCalcul * getVolumeCalcul() {return &volume;}
     blocMetallisation * getBlocMetallisations() {return &metallisations;}
     blocParallelepipede * getBlocParallelepipede() {return &parallelepipedes;}
+    blocSonde * getBlocSonde() {return &sondes;}
+    blocElementLocalise * getBlocElementLocalise() {return &elementLocalises;}
+    blocPortExcitation * getBlocPortExcitation()  {return &portExcitations;}
 
 
 

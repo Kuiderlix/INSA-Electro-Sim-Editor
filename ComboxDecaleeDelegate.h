@@ -1,14 +1,14 @@
-#ifndef COORDONNEEDELEGATE_H
-#define COORDONNEEDELEGATE_H
+#ifndef TYPEELEMLOCALDELEGATE_H
+#define TYPEELEMLOCALDELEGATE_H
 
 #include <QStyledItemDelegate>
-#include "coordonnee.h"
-#include "FormCoordonnees.h"
+#include <QtWidgets>
 
-class CoordonneeDelegate : public QStyledItemDelegate
+class ComboxDecaleeDelegate : public QStyledItemDelegate
 {
+    Q_OBJECT
 public:
-    CoordonneeDelegate();
+    explicit ComboxDecaleeDelegate(QStringList list, QObject *parent = 0);
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
@@ -17,7 +17,14 @@ public:
      void setModelData ( QWidget * editor, QAbstractItemModel * model, const QModelIndex & index ) const;
      void updateEditorGeometry ( QWidget * editor, const QStyleOptionViewItem & option, const QModelIndex & index ) const;
 
+signals:
+    
+public slots:
+
+
 private:
+     QStringList list;
+    
 };
 
-#endif // COORDONNEEDELEGATE_H
+#endif // TYPEELEMLOCALDELEGATE_H

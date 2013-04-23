@@ -11,6 +11,8 @@
 #include "Ecriture.h"
 
 elementLocalise::elementLocalise() {
+    type=1;
+    direction=1;
 }
 
 elementLocalise::elementLocalise(const elementLocalise& orig) {

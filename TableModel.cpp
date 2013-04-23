@@ -30,3 +30,18 @@ void TableModel::removeElement(int i)
     listeElement->removeElement(i);
     endRemoveRows();
 }
+
+QVariant TableModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
+    {
+        return headers.at(section);
+    }
+
+    return QAbstractTableModel::headerData(section, orientation, role);
+}
+
+void TableModel::initHeaders(QStringList l)
+{
+    headers=l;
+}

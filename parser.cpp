@@ -103,26 +103,27 @@ void Parser::scanParallelepipedes(){
 void Parser::scanElementsLocalises(){
     cout << "    scanElementsLocalises\n" << endl;
     int nbElements = parserGetInt();
-    elementLocalises.SetNbElements(nbElements);
     
     int i;
     for(i=0; i<nbElements; i++){
-        elementLocalise temp;
+        elementLocalise *temp;
         
         parserSautLigne();
-        temp.SetType(parserGetInt());
-        temp.SetValeur(parserGetFloat());
-        temp.SetDirection(parserGetInt());
+        temp->SetType(parserGetInt());
+        temp->SetValeur(parserGetFloat());
+        temp->SetDirection(parserGetInt());
         parserSautLigne();
         int y = parserGetInt();
         int x = parserGetInt();
         int z = parserGetInt();
-        temp.SetAvantGauche(x,y,z);
+        temp->SetAvantGauche(x,y,z);
         parserSautLigne();
         y = parserGetInt();
         x = parserGetInt();
         z = parserGetInt();
-        temp.SetArriereDroit(x,y,z);
+        temp->SetArriereDroit(x,y,z);
+
+        elementLocalises.addElement(temp);
     }
 }
 void Parser::parseDSC() {
@@ -185,34 +186,34 @@ void Parser::scanAnalyseTemporelle(){
 void Parser::scanPortExcitation(){
     cout << "    scanPortExcitation\n" << endl;
     int nbPorts = parserGetInt();
-    portExcitations.SetNbPorts(nbPorts);
     
     int i;
     for(i=0; i<nbPorts; i++){
-        portExcitation temp;
+        portExcitation* temp;
         
         parserSautLigne();
-        temp.SetPortActif(parserGetInt());
-        temp.SetPortInfinitesimal(parserGetInt());
+        temp->SetPortActif(parserGetInt());
+        temp->SetPortInfinitesimal(parserGetInt());
         
-        if(temp.IsPortInfinitesimal())
-            temp.SetTypePort(parserGetInt());
+        if(temp->IsPortInfinitesimal())
+            temp->SetTypePort(parserGetInt());
         
-        temp.SetDirection(parserGetInt());
+        temp->SetDirection(parserGetInt());
         parserSautLigne();
         int y = parserGetInt();
         int x = parserGetInt();
         int z = parserGetInt();
-        temp.SetAvantGauche(x,y,z);
+        temp->SetAvantGauche(x,y,z);
         parserSautLigne();
         y = parserGetInt();
         x = parserGetInt();
         z = parserGetInt();
-        temp.SetArriereDroit(x,y,z);
-        temp.SetImpedance(parserGetFloat());
-        temp.SetTypeSource(parserGetInt());
-        temp.SetPonderationAmplitude(parserGetFloat());
-        temp.SetPonderationPhase(parserGetFloat());
+        temp->SetArriereDroit(x,y,z);
+        temp->SetImpedance(parserGetFloat());
+        temp->SetTypeSource(parserGetInt());
+        temp->SetPonderationAmplitude(parserGetFloat());
+        temp->SetPonderationPhase(parserGetFloat());
+        portExcitations.addElement(temp);
     }
 }
 void Parser::scanCageExcitation(){
@@ -269,27 +270,26 @@ void Parser::scanCageExcitation(){
 void Parser::scanSondes(){
     cout << "    scanSondes\n" << endl;
     int nbSondes = parserGetInt();
-    sondes.SetNbSondes(nbSondes);
     
     int i;
     for(i=0; i<nbSondes; i++){
-        sonde temp;
+        sonde *temp = new sonde();
         
         parserSautLigne();
-        temp.SetEx(parserGetInt());
-        temp.SetEy(parserGetInt());
-        temp.SetEz(parserGetInt());
-        temp.SetHx(parserGetInt());
-        temp.SetHy(parserGetInt());
-        temp.SetHz(parserGetInt());
+        temp->SetEx(parserGetInt());
+        temp->SetEy(parserGetInt());
+        temp->SetEz(parserGetInt());
+        temp->SetHx(parserGetInt());
+        temp->SetHy(parserGetInt());
+        temp->SetHz(parserGetInt());
         parserSautLigne();
         int y = parserGetInt();
         int x = parserGetInt();
         int z = parserGetInt();
-        temp.SetPointApplication(x,y,z);
-        temp.SetValeurAuCentre(parserGetInt());
+        temp->SetPointApplication(x,y,z);
+        temp->SetValeurAuCentre(parserGetInt());
         
-        sondes.AddSonde(temp);
+        sondes.addElement(temp);
     }
 }
 void Parser::scanCartographieTemporelle(){

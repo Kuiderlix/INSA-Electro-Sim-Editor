@@ -11,6 +11,9 @@
 #include "Ecriture.h"
 
 portExcitation::portExcitation() {
+    typePort=1;
+    direction=1;
+    typeSource=1;
 }
 
 portExcitation::portExcitation(const portExcitation& orig) {

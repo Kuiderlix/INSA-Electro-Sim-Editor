@@ -4,6 +4,7 @@ TableModelParallelepipede::TableModelParallelepipede(BlocElementBase *bloc , QOb
     :TableModel(bloc,parent)
 {
     this->bloc = (blocParallelepipede*)bloc;
+    initHeaders(QStringList() << "PermitRelative" << "PermeRelative" << "Conductivité" << "Avant Gauche" << "Arrière Droit");
     for (int i=0;i<15;i++)
     {
         parallelepipede *metal = new parallelepipede();
@@ -13,7 +14,6 @@ TableModelParallelepipede::TableModelParallelepipede(BlocElementBase *bloc , QOb
 
 QVariant TableModelParallelepipede::data(const QModelIndex &index, int role) const
 {
-
     if (!index.isValid() || index.row() < 0 || index.row() >= bloc->getNbElement())
     {
         return QVariant();
@@ -54,33 +54,6 @@ QVariant TableModelParallelepipede::data(const QModelIndex &index, int role) con
     }
 
     return QVariant();
-}
-
-QVariant TableModelParallelepipede::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
-        {
-            switch (section)
-            {
-            case PermitRelative:
-                return trUtf8("PermitRelative");
-                break;
-            case PermeRelative:
-                return trUtf8("PermeRelative");
-                break;
-            case Conductivite:
-                return trUtf8("Conductivité");
-                break;
-            case Coord1:
-                return trUtf8("Arrière Droit");
-                break;
-            case Coord2:
-                return trUtf8("Avant Gauche");
-                break;
-            }
-        }
-
-        return QAbstractTableModel::headerData(section, orientation, role);
 }
 
 int TableModelParallelepipede::columnCount(const QModelIndex &parent) const

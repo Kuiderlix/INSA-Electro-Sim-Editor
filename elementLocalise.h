@@ -33,11 +33,11 @@ public:
         this->type = type;
     }
 
-    float GetValeur() const {
+    double GetValeur() const {
         return valeur;
     }
 
-    void SetValeur(float valeur) {
+    void SetValeur(double valeur) {
         this->valeur = valeur;
     }
 
@@ -45,7 +45,7 @@ public:
 
 private:
     int type;
-    float valeur;
+    double valeur;
     int direction;
 
 };

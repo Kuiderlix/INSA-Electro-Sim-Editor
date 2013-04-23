@@ -2,6 +2,7 @@
 #define TABLEMODEL_H
 
 #include <QAbstractTableModel>
+#include <QStringList>
 #include "BlocElementBase.h"
 
 class TableModel : public QAbstractTableModel
@@ -13,6 +14,9 @@ public:
 
     int	rowCount(const QModelIndex & parent = QModelIndex()) const;
     Qt::ItemFlags flags(const QModelIndex &index) const;
+    QVariant headerData ( int section, Qt::Orientation orientation, int role = Qt::DisplayRole ) const;
+
+    void initHeaders(QStringList l);
     
 signals:
 
@@ -22,6 +26,7 @@ public slots:
 
 private:
     BlocElementBase * listeElement;
+    QStringList headers;
     
 };
 

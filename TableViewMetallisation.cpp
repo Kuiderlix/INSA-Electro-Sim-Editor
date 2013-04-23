@@ -4,8 +4,8 @@ TableViewMetallisation::TableViewMetallisation(blocMetallisation *blocMetal, QWi
     TableView(parent)
 {
     this->setModel(new TableModelMetallisation(blocMetal));
-    this->setItemDelegateForColumn(1,new CoordonneeDelegate());
-    this->setItemDelegateForColumn(2,new CoordonneeDelegate());
+    this->setItemDelegateForColumn(TableModelMetallisation::Coord1,new CoordonneeDelegate());
+    this->setItemDelegateForColumn(TableModelMetallisation::Coord2,new CoordonneeDelegate());
 }
 
 

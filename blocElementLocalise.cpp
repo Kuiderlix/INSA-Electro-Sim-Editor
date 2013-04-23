@@ -29,14 +29,14 @@ void blocElementLocalise::ecrire(){
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_d_elements_localises:\n";
-    monEcriture << this->nbElements << std::endl;
+    monEcriture << this->getNbElement() << std::endl;
 
     std::string ecriture(monEcriture.str());
     Ecriture::Ecrire(ecriture);
 
-    for(int i=0; i<this->nbElements; i++){
-        elementLocalise temp = this->elements[i];
-        temp.ecrire(i+1);
+    for(int i=0; i<this->getNbElement(); i++){
+        elementLocalise *temp = this->GetElementLocalise(i);
+        temp->ecrire(i+1);
     }
 
     Ecriture::Ecrire("\n");

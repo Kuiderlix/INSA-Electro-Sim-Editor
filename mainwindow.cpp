@@ -16,13 +16,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     TableViewMetallisation * vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
     TableViewParallelepipede * vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
+    TableViewSonde * vueSonde = new TableViewSonde(parser.getBlocSonde());
+    TableViewElementLocalise * vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
+    TableViewPortExcitation * vuePortExci = new TableViewPortExcitation(parser.getBlocPortExcitation());
 
     QTabWidget * tabWidget = new QTabWidget();
     tabWidget->addTab(vueMetal, "Métallisations");
-    tabWidget->addTab(new QPushButton("test2"), "Elements Localises");
+    tabWidget->addTab(vueElemLocal, "Elements Localises");
     tabWidget->addTab(vueParal, "Parallelepipèdes");
-    tabWidget->addTab(new QPushButton("test4"), "Ports Excitations");
-    tabWidget->addTab(new QPushButton("test4"), "Sondes");
+    tabWidget->addTab(vuePortExci, "Ports Excitations");
+    tabWidget->addTab(vueSonde, "Sondes");
     tabWidget->addTab(new QPushButton("test4"), "Surfaces Prelevements");
     tabWidget->addTab(new QPushButton("test4"), "Cartographies Temporelles");
     layoutTable->addWidget(tabWidget);
@@ -79,15 +82,7 @@ void MainWindow::construireDockToolBox()
     toolbox->addItem(new ObjetFDTDWidget(), "Objets FDTD et DG-FDTD");
     toolbox->addItem(new CalculChampsLointainWidget(), "Calcul Champ Lointain");
     toolbox->addItem(new QPushButton("test"), "Paramètres Avancés");
-    /*
-    toolbox->addItem(new FormMetallisation(new metallisation(),FormMetallisation::NOUVEAU), "Métallisation");
-    toolbox->addItem(new FormElementLocalise(new elementLocalise(), FormElementLocalise::NOUVEAU), "Element localise");
-    toolbox->addItem(new FormParallelepipede(new parallelepipede(), FormParallelepipede::NOUVEAU), "Parallelepipede");
-    toolbox->addItem(new FormPortExcitation(new portExcitation(), FormPortExcitation::NOUVEAU), "Port Excitation");
-    toolbox->addItem(new FormCageExcitation(new cageExcitation(), FormCageExcitation::NOUVEAU), "Cage Excitation");
-    toolbox->addItem(new FormCartographieTemporelle(new cartographieTemporelle(), FormCartographieTemporelle::NOUVEAU), "Cartographie Temporelle");
-    toolbox->addItem(new FormSurfacePrelevement(new surfacePrelevement(), FormSurfacePrelevement::NOUVEAU), "Surface Prelevement");
-*/
+
 
     dockLayout->addWidget(new QPushButton("Générer"));
     dockLayout->addWidget(toolbox);

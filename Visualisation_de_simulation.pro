@@ -77,7 +77,14 @@ SOURCES += main.cpp\
     TableView.cpp \
     TableModelMetallisation.cpp \
     TableModelParallelepipede.cpp \
-    TableViewParallelepipede.cpp
+    TableViewParallelepipede.cpp \
+    TableModelSonde.cpp \
+    TableViewSonde.cpp \
+    TableModelElementLocalise.cpp \
+    TableViewElementLocalise.cpp \
+    ComboxDecaleeDelegate.cpp \
+    TableModelPortExcitation.cpp \
+    TableViewPortExcitation.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -147,7 +154,14 @@ HEADERS  += mainwindow.h \
     TableView.h \
     TableModelMetallisation.h \
     TableModelParallelepipede.h \
-    TableViewParallelepipede.h
+    TableViewParallelepipede.h \
+    TableModelSonde.h \
+    TableViewSonde.h \
+    TableModelElementLocalise.h \
+    TableViewElementLocalise.h \
+    ComboxDecaleeDelegate.h \
+    TableModelPortExcitation.h \
+    TableViewPortExcitation.h
 
 OTHER_FILES += \
     DATA1.ana \
