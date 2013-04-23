@@ -65,6 +65,6 @@ void TableView::deleteMetallisation()
     QModelIndexList::Iterator it = list.begin();
     for (int i=0;it!=list.end();it++,i++)
     {
-        table->removeElement((*it).row()-i);
+        ((TableModel*)this->model())->removeElement((*it).row()-i);
     }
 }

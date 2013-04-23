@@ -1,6 +1,6 @@
-#include "TableMetallisationModel.h"
+#include "TableModelMetallisation.h"
 
-TableMetallisationModel::TableMetallisationModel(BlocElementBase *bloc, QWidget *parent) :
+TableModelMetallisation::TableModelMetallisation(BlocElementBase *bloc, QObject *parent) :
     TableModel(bloc,parent)
 {
     listeMetal = (blocMetallisation*)bloc;
@@ -13,12 +13,12 @@ TableMetallisationModel::TableMetallisationModel(BlocElementBase *bloc, QWidget 
 }
 
 
-int TableMetallisationModel::columnCount(const QModelIndex &parent) const
+int TableModelMetallisation::columnCount(const QModelIndex &parent) const
 {
     return parent.isValid() ? 0 : 3;
 }
 
-QVariant TableMetallisationModel::data(const QModelIndex &index, int role) const
+QVariant TableModelMetallisation::data(const QModelIndex &index, int role) const
 {
 
     if (!index.isValid() || index.row() < 0 || index.row() >= listeMetal->getNbElement())
@@ -53,7 +53,7 @@ QVariant TableMetallisationModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-QVariant TableMetallisationModel::headerData(int section, Qt::Orientation orientation, int role) const
+QVariant TableModelMetallisation::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
         {
@@ -74,7 +74,7 @@ QVariant TableMetallisationModel::headerData(int section, Qt::Orientation orient
         return QAbstractTableModel::headerData(section, orientation, role);
 }
 
-bool TableMetallisationModel::setData(const QModelIndex &index, const QVariant &value, int role)
+bool TableModelMetallisation::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     if (!index.isValid() || index.row() < 0 || index.row() >= listeMetal->getNbElement())
     {
@@ -85,26 +85,22 @@ bool TableMetallisationModel::setData(const QModelIndex &index, const QVariant &
     {
     case Qt::DisplayRole:
     case Qt::EditRole:
+        metallisation * met = listeMetal->GetMetallisation(index.row());
         if (index.column() == Conductivite)
         {
-            metallisation * met = listeMetal->GetMetallisation(index.row());
             met->SetConductivite(value.toFloat());
-            listeMetal->setElement(index.row(),met);
         }
         else if (index.column() == Coord1)
         {
-            metallisation * met = listeMetal->GetMetallisation(index.row());
             coordonnee c = value.value<coordonnee>();
             met->SetArriereDroit(c);
-            listeMetal->setElement(index.row(),met);
         }
         else if (index.column() == Coord2)
         {
-            metallisation * met = listeMetal->GetMetallisation(index.row());
             coordonnee c = value.value<coordonnee>();
             met->SetAvantGauche(c);
-            listeMetal->setElement(index.row(),met);
         }
+        listeMetal->setElement(index.row(),met);
         emit dataChanged(index, index);
         return true;
         break;

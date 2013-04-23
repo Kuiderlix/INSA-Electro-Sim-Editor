@@ -3,8 +3,7 @@
 TableViewMetallisation::TableViewMetallisation(blocMetallisation *blocMetal, QWidget *parent) :
     TableView(parent)
 {
-    table = new TableMetallisationModel(blocMetal);
-    this->setModel(table);
+    this->setModel(new TableModelMetallisation(blocMetal));
     this->setItemDelegateForColumn(1,new CoordonneeDelegate());
     this->setItemDelegateForColumn(2,new CoordonneeDelegate());
 }
@@ -18,7 +17,8 @@ TableViewMetallisation::TableViewMetallisation(blocMetallisation *blocMetal, QWi
 void TableViewMetallisation::addNewMetallisation()
 {
     FormMetallisation * form = new FormMetallisation(new metallisation,FormMetallisation::NOUVEAU);
-    connect(form,SIGNAL(elementValidee(elementBase*)),table,SLOT(addElement(elementBase*)));
+    connect(form,SIGNAL(elementValidee(elementBase*)),((TableModel*)this->model()),SLOT(addElement(elementBase*)));
+    connect(form,SIGNAL(elementValidee(elementBase*)),form,SLOT(accept()));
     form->exec();
 }
 

@@ -25,14 +25,14 @@ void blocParallelepipede::ecrire(){
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_parallelepipedes:\n";
-    monEcriture << this->nbParallelepipede << std::endl;
+    monEcriture << this->getNbElement() << std::endl;
 
     std::string ecriture(monEcriture.str());
     Ecriture::Ecrire(ecriture);
 
-    for(int i=0; i<this->nbParallelepipede; i++){
-        parallelepipede temp = this->parallelepipedes[i];
-        temp.ecrire(i+1);
+    for(int i=0; i<this->getNbElement(); i++){
+        parallelepipede *temp = this->getParallelepipede(i);
+        temp->ecrire(i+1);
     }
 
     Ecriture::Ecrire("\n");

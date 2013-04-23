@@ -34,5 +34,4 @@ void FormMetallisation::valider()
     metal->SetAvantGauche(formCoord1->getCoord());
     metal->SetArriereDroit(formCoord2->getCoord());
     emit elementValidee(metal);
-    this->accept();
 }

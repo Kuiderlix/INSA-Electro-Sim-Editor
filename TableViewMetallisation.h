@@ -1,9 +1,8 @@
 #ifndef TABLEVIEWMETALLISATION_H
 #define TABLEVIEWMETALLISATION_H
 
-#include <QTableView>
 #include "TableView.h"
-#include "TableMetallisationModel.h"
+#include "TableModelMetallisation.h"
 #include "CoordonneeDelegate.h"
 #include "blocMetallisation.h"
 #include "FormMetallisation.h"

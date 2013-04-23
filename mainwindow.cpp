@@ -14,12 +14,13 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *tables = new QWidget;
     QHBoxLayout *layoutTable = new QHBoxLayout;
 
-    TableViewMetallisation * vue = new TableViewMetallisation(parser.getBlocMetallisations());
+    TableViewMetallisation * vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
+    TableViewParallelepipede * vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
 
     QTabWidget * tabWidget = new QTabWidget();
-    tabWidget->addTab(vue, "Métallisations");
+    tabWidget->addTab(vueMetal, "Métallisations");
     tabWidget->addTab(new QPushButton("test2"), "Elements Localises");
-    tabWidget->addTab(new QPushButton("test3"), "Parallelepipèdes");
+    tabWidget->addTab(vueParal, "Parallelepipèdes");
     tabWidget->addTab(new QPushButton("test4"), "Ports Excitations");
     tabWidget->addTab(new QPushButton("test4"), "Sondes");
     tabWidget->addTab(new QPushButton("test4"), "Surfaces Prelevements");
@@ -73,7 +74,7 @@ void MainWindow::construireDockToolBox()
 
 
 
-    toolbox->addItem(new DescriptionGeoWidget(&parser), "Description Géométrie");
+    toolbox->addItem(new DescriptionGeoWidget(&parser), "Description Géométrique");
     toolbox->addItem(new ParamSimuWidget(), "Paramètres Simulation");
     toolbox->addItem(new ObjetFDTDWidget(), "Objets FDTD et DG-FDTD");
     toolbox->addItem(new CalculChampsLointainWidget(), "Calcul Champ Lointain");

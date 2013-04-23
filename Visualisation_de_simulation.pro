@@ -71,11 +71,13 @@ SOURCES += main.cpp\
     FormSonde.cpp \
     FormCalculDirective.cpp \
     CoordonneeDelegate.cpp \
-    TableMetallisationModel.cpp \
     TableViewMetallisation.cpp \
     BlocElementBase.cpp \
     TableModel.cpp \
-    TableView.cpp
+    TableView.cpp \
+    TableModelMetallisation.cpp \
+    TableModelParallelepipede.cpp \
+    TableViewParallelepipede.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -139,11 +141,13 @@ HEADERS  += mainwindow.h \
     FormSonde.h \
     FormCalculDirective.h \
     CoordonneeDelegate.h \
-    TableMetallisationModel.h \
     TableViewMetallisation.h \
     BlocElementBase.h \
     TableModel.h \
-    TableView.h
+    TableView.h \
+    TableModelMetallisation.h \
+    TableModelParallelepipede.h \
+    TableViewParallelepipede.h
 
 OTHER_FILES += \
     DATA1.ana \

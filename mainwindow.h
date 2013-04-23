@@ -6,6 +6,7 @@
 #include "parser.h"
 #include "visualisation3d.h"
 #include "TableViewMetallisation.h"
+#include "TableViewParallelepipede.h"
 #include "DescriptionGeoWidget.h"
 #include "ParamSimuWidget.h"
 #include "ObjetFDTDWidget.h"

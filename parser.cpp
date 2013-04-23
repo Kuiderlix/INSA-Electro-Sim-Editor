@@ -77,28 +77,27 @@ void Parser::scanMetallisation(){
 void Parser::scanParallelepipedes(){
     cout << "    scanParallelepipedes\n" << endl;
     int nbParallelepipedes = parserGetInt();
-    parallelepipedes.SetNbParallelepipede(nbParallelepipedes);
     
     int i;
     for(i=0; i<nbParallelepipedes; i++){
-        parallelepipede temp;
+        parallelepipede* temp = new parallelepipede;
         
         parserSautLigne();
-        temp.SetPermitRelative(parserGetFloat());
-        temp.SetPermeRelative(parserGetFloat());
-        temp.SetConductivite(parserGetFloat());
+        temp->SetPermitRelative(parserGetFloat());
+        temp->SetPermeRelative(parserGetFloat());
+        temp->SetConductivite(parserGetFloat());
         parserSautLigne();
         int y = parserGetInt();
         int x = parserGetInt();
         int z = parserGetInt();
-        temp.SetAvantGauche(x,y,z);
+        temp->SetAvantGauche(x,y,z);
         parserSautLigne();
         y = parserGetInt();
         x = parserGetInt();
         z = parserGetInt();
-        temp.SetArriereDroit(x,y,z);
+        temp->SetArriereDroit(x,y,z);
         
-        parallelepipedes.addParallelepipede(temp);
+        parallelepipedes.addElement(temp);
     }
 }
 void Parser::scanElementsLocalises(){

@@ -8,44 +8,24 @@
 #ifndef BLOCPARALLELEPIPEDE_H
 #define	BLOCPARALLELEPIPEDE_H
 
-#include "blocConfiguration.h"
+#include "BlocElementBase.h"
 #include "parallelepipede.h"
 #include <vector>
 
 
-class blocParallelepipede : public blocConfiguration{
+class blocParallelepipede : public BlocElementBase{
 public:
     blocParallelepipede();
     blocParallelepipede(const blocParallelepipede& orig);
     virtual ~blocParallelepipede();
     
-    int GetNbParallelepipede() const {
-        return nbParallelepipede;
+
+    parallelepipede* getParallelepipede(int i){
+        return (parallelepipede*)listElement.at(i);
     }
 
-    void SetNbParallelepipede(int nbParallelepipede) {
-        this->nbParallelepipede = nbParallelepipede;
-        parallelepipedes.resize(nbParallelepipede);
-    }
-    
-    parallelepipede GetParallelepipede(int i){
-        return parallelepipedes[i];
-    }
-    
-    void setParallelepipede(int i, parallelepipede para){
-        if(i> nbParallelepipede)return;
-        parallelepipedes[i] = para;
-    }
-    
-    void addParallelepipede(parallelepipede para){
-        parallelepipedes.push_back(para);
-    }
 
     void ecrire();
-
-private:
-    int nbParallelepipede;
-    std::vector <parallelepipede> parallelepipedes;
     
 };
 
