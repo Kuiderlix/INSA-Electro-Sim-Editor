@@ -71,7 +71,7 @@ void Parser::scanMetallisation(){
         z = parserGetInt();
         temp->SetArriereDroit(x,y,z);
         
-        metallisations.addMetallisation(temp);
+        metallisations.addElement(temp);
     }
 }
 void Parser::scanParallelepipedes(){

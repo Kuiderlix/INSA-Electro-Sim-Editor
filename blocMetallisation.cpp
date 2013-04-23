@@ -25,16 +25,18 @@ void blocMetallisation::ecrire(){
     bC.setExtension(".dsc");
     bC.ecrire();
 
+    //blocConfiguration::ecrire();
+
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_plans_de_metallisations\n";
-    monEcriture << this->metallisations.size() << std::endl;
+    monEcriture << this->getNbElement() << std::endl;
 
     std::string ecriture(monEcriture.str());
     Ecriture::Ecrire(ecriture);
 
-    for(int i=0; i<this->metallisations.size() ; i++){
-        metallisation* temp = this->metallisations[i];
+    for(int i=0; i<this->getNbElement() ; i++){
+        metallisation* temp = this->GetMetallisation(i);
         temp->ecrire(i+1);
     }
 

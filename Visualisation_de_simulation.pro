@@ -72,7 +72,10 @@ SOURCES += main.cpp\
     FormCalculDirective.cpp \
     CoordonneeDelegate.cpp \
     TableMetallisationModel.cpp \
-    TableViewMetallisation.cpp
+    TableViewMetallisation.cpp \
+    BlocElementBase.cpp \
+    TableModel.cpp \
+    TableView.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -137,7 +140,10 @@ HEADERS  += mainwindow.h \
     FormCalculDirective.h \
     CoordonneeDelegate.h \
     TableMetallisationModel.h \
-    TableViewMetallisation.h
+    TableViewMetallisation.h \
+    BlocElementBase.h \
+    TableModel.h \
+    TableView.h
 
 OTHER_FILES += \
     DATA1.ana \

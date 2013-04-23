@@ -1,26 +1,17 @@
 #include "TableMetallisationModel.h"
 
-TableMetallisationModel::TableMetallisationModel(blocMetallisation *bloc, QWidget *parent) :
-    QAbstractTableModel(parent)
+TableMetallisationModel::TableMetallisationModel(BlocElementBase *bloc, QWidget *parent) :
+    TableModel(bloc,parent)
 {
-    listeMetallisation = bloc;
-
+    listeMetal = (blocMetallisation*)bloc;
     for (int i=0;i<15;i++)
     {
         metallisation *metal = new metallisation();
-        listeMetallisation->addMetallisation(metal);
+        listeMetal->addElement(metal);
     }
 
 }
-Qt::ItemFlags TableMetallisationModel::flags(const QModelIndex &index) const
-{
-    return Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled;
-}
 
-int TableMetallisationModel::rowCount(const QModelIndex &parent) const
-{
-    return parent.isValid() ? 0 : listeMetallisation->GetNbMetallisation();
-}
 
 int TableMetallisationModel::columnCount(const QModelIndex &parent) const
 {
@@ -30,7 +21,7 @@ int TableMetallisationModel::columnCount(const QModelIndex &parent) const
 QVariant TableMetallisationModel::data(const QModelIndex &index, int role) const
 {
 
-    if (!index.isValid() || index.row() < 0 || index.row() >= listeMetallisation->GetNbMetallisation())
+    if (!index.isValid() || index.row() < 0 || index.row() >= listeMetal->getNbElement())
     {
         return QVariant();
     }
@@ -41,19 +32,19 @@ QVariant TableMetallisationModel::data(const QModelIndex &index, int role) const
     case Qt::EditRole:
         if (index.column() == Conductivite)
         {
-            QVariant var(listeMetallisation->GetMetallisation(index.row())->GetConductivite());
+            QVariant var(listeMetal->GetMetallisation(index.row())->GetConductivite());
             return var;
         }
         else if (index.column() == Coord1)
         {
             QVariant var;
-            var.setValue(listeMetallisation->GetMetallisation(index.row())->GetArriereDroit());
+            var.setValue(listeMetal->GetMetallisation(index.row())->GetArriereDroit());
             return var;
         }
         else if (index.column() == Coord2)
         {
             QVariant var;
-            var.setValue(listeMetallisation->GetMetallisation(index.row())->GetAvantGauche());
+            var.setValue(listeMetal->GetMetallisation(index.row())->GetAvantGauche());
             return var;
         }
         break;
@@ -85,7 +76,7 @@ QVariant TableMetallisationModel::headerData(int section, Qt::Orientation orient
 
 bool TableMetallisationModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
-    if (!index.isValid() || index.row() < 0 || index.row() >= listeMetallisation->GetNbMetallisation())
+    if (!index.isValid() || index.row() < 0 || index.row() >= listeMetal->getNbElement())
     {
         return false;
     }
@@ -96,23 +87,23 @@ bool TableMetallisationModel::setData(const QModelIndex &index, const QVariant &
     case Qt::EditRole:
         if (index.column() == Conductivite)
         {
-            metallisation * met = listeMetallisation->GetMetallisation(index.row());
+            metallisation * met = listeMetal->GetMetallisation(index.row());
             met->SetConductivite(value.toFloat());
-            listeMetallisation->setMetallisation(index.row(),met);
+            listeMetal->setElement(index.row(),met);
         }
         else if (index.column() == Coord1)
         {
-            metallisation * met = listeMetallisation->GetMetallisation(index.row());
+            metallisation * met = listeMetal->GetMetallisation(index.row());
             coordonnee c = value.value<coordonnee>();
             met->SetArriereDroit(c);
-            listeMetallisation->setMetallisation(index.row(),met);
+            listeMetal->setElement(index.row(),met);
         }
         else if (index.column() == Coord2)
         {
-            metallisation * met = listeMetallisation->GetMetallisation(index.row());
+            metallisation * met = listeMetal->GetMetallisation(index.row());
             coordonnee c = value.value<coordonnee>();
             met->SetAvantGauche(c);
-            listeMetallisation->setMetallisation(index.row(),met);
+            listeMetal->setElement(index.row(),met);
         }
         emit dataChanged(index, index);
         return true;
@@ -122,18 +113,4 @@ bool TableMetallisationModel::setData(const QModelIndex &index, const QVariant &
     return false;
 }
 
-void TableMetallisationModel::addElement(metallisation *element)
-{
-    const int count = listeMetallisation->GetNbMetallisation();
-    beginInsertRows(QModelIndex(), count, count);
-    listeMetallisation->addMetallisation(element);
-    endInsertRows();
-}
 
-void TableMetallisationModel::removeElement(int i)
-{
-    beginRemoveRows(QModelIndex(),i,i);
-    listeMetallisation->removeMetallisation(i);
-    endRemoveRows();
-
-}

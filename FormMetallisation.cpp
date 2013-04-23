@@ -33,6 +33,6 @@ void FormMetallisation::valider()
     metal->SetConductivite(lineEditConductivite->value());
     metal->SetAvantGauche(formCoord1->getCoord());
     metal->SetArriereDroit(formCoord2->getCoord());
-    emit metallisationValider(metal);
+    emit elementValidee(metal);
     this->accept();
 }

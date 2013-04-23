@@ -13,7 +13,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     QWidget *tables = new QWidget;
     QHBoxLayout *layoutTable = new QHBoxLayout;
+
     TableViewMetallisation * vue = new TableViewMetallisation(parser.getBlocMetallisations());
+
     QTabWidget * tabWidget = new QTabWidget();
     tabWidget->addTab(vue, "Métallisations");
     tabWidget->addTab(new QPushButton("test2"), "Elements Localises");

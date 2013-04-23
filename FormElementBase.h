@@ -15,7 +15,8 @@ public:
     QWidget * getWidgetElementBase();
 
 signals:
-    
+
+    void elementValidee(elementBase *);
 public slots:
 
     virtual void valider();

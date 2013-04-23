@@ -2,34 +2,28 @@
 #define TABLEVIEWMETALLISATION_H
 
 #include <QTableView>
+#include "TableView.h"
 #include "TableMetallisationModel.h"
 #include "CoordonneeDelegate.h"
 #include "blocMetallisation.h"
 #include "FormMetallisation.h"
 
-class TableViewMetallisation : public QTableView
+class TableViewMetallisation : public TableView
 {
     Q_OBJECT
 public:
     explicit TableViewMetallisation(blocMetallisation *blocMetal, QWidget *parent = 0);
-    
-     void contextMenuEvent ( QContextMenuEvent * e );
-     void keyPressEvent(QKeyEvent * event);
 
-     QModelIndexList selectedIndexes() const;
+
 
 signals:
     
 public slots:
     void addNewMetallisation();
-    void editMetallisation();
-    void deleteMetallisation();
 
 
 private:
 
-    TableMetallisationModel* tableMeta;
-    
 };
 
 #endif // TABLEVIEWMETALLISATION_H

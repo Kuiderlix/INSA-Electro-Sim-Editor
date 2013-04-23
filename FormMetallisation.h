@@ -15,7 +15,6 @@ public:
     
 signals:
 
-    void metallisationValider(metallisation *);
     
 public slots:
 
