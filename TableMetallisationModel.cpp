@@ -128,7 +128,6 @@ void TableMetallisationModel::addElement(metallisation *element)
     beginInsertRows(QModelIndex(), count, count);
     listeMetallisation->addMetallisation(element);
     endInsertRows();
-    qDebug() << "ajout : " << listeMetallisation->GetNbMetallisation();
 }
 
 void TableMetallisationModel::removeElement(int i)

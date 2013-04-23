@@ -32,17 +32,35 @@ void TableViewMetallisation::keyPressEvent(QKeyEvent *event)
     }
 }
 
+/**
+ * @brief TableViewMetallisation::selectedIndexes
+ * Retourne la liste des lignes séléctionnés et trié sur le numéro de ligne
+ * @return
+ */
 QModelIndexList TableViewMetallisation::selectedIndexes() const
 {
     QModelIndexList list = this->QTableView::selectedIndexes();
     QModelIndexList::Iterator it = list.begin();
-    for (;it!=list.end();it++)
+    int row = -1;
+    for (;it!=list.end();)
     {
-        //effacer les item en trop
+        if (row == (*it).row())
+        {
+            it = list.erase(it);
+        }
+        else
+        {
+            row = (*it).row();
+            it++;
+        }
     }
+    qSort(list.begin(),list.end());
     return list;
 }
-
+/**
+ * @brief TableViewMetallisation::addNewMetallisation
+ *Créer un nouvel objet metallisation et ouvre la fenetre d'edition de l'objet
+ */
 void TableViewMetallisation::addNewMetallisation()
 {
     FormMetallisation * form = new FormMetallisation(new metallisation,FormMetallisation::NOUVEAU);
@@ -53,23 +71,21 @@ void TableViewMetallisation::addNewMetallisation()
 void TableViewMetallisation::editMetallisation()
 {
     QModelIndexList list = this->selectedIndexes();
-    for (int i=0;i<list.count()/tableMeta->columnCount();i++)
-    {
-        metallisation * metal = tableMeta->getMetallisations()->GetMetallisation(list.at(i*tableMeta->columnCount()).row());
-        FormMetallisation * form = new FormMetallisation(metal,FormMetallisation::MODIFIER);
-        form->show();
-    }
+    metallisation * metal = tableMeta->getMetallisations()->GetMetallisation(list.at(0).row());
+    FormMetallisation * form = new FormMetallisation(metal,FormMetallisation::MODIFIER);
+    form->show();
 }
-
+/**
+ * @brief TableViewMetallisation::deleteMetallisation
+ *Supprime les éléments séléctionnés
+ */
 void TableViewMetallisation::deleteMetallisation()
 {
     QModelIndexList list = this->selectedIndexes();
-    qDebug() << list.count();
     QModelIndexList::Iterator it = list.begin();
-    for (;it!=list.end();it++)
+    for (int i=0;it!=list.end();it++,i++)
     {
-        tableMeta->removeElement((*it).row());
+        tableMeta->removeElement((*it).row()-i);
     }
-
 }
 
