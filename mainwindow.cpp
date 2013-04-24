@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent)
     TableViewSonde * vueSonde = new TableViewSonde(parser.getBlocSonde());
     TableViewElementLocalise * vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
     TableViewPortExcitation * vuePortExci = new TableViewPortExcitation(parser.getBlocPortExcitation());
+    TableViewCartTempo * vueCartoTempo = new TableViewCartTempo(parser.getBlocCartoTempo());
+    TableViewSurfacePrelev * vueSurfacePrelev = new TableViewSurfacePrelev(parser.getBlocSurfacePrelev());
 
     QTabWidget * tabWidget = new QTabWidget();
     tabWidget->addTab(vueMetal, "Métallisations");
@@ -26,8 +28,8 @@ MainWindow::MainWindow(QWidget *parent)
     tabWidget->addTab(vueParal, "Parallelepipèdes");
     tabWidget->addTab(vuePortExci, "Ports Excitations");
     tabWidget->addTab(vueSonde, "Sondes");
-    tabWidget->addTab(new QPushButton("test4"), "Surfaces Prelevements");
-    tabWidget->addTab(new QPushButton("test4"), "Cartographies Temporelles");
+    tabWidget->addTab(vueSurfacePrelev, "Surfaces Prelevements");
+    tabWidget->addTab(vueCartoTempo, "Cartographies Temporelles");
     layoutTable->addWidget(tabWidget);
     tables->setLayout(layoutTable);
     layout->addWidget(tables);

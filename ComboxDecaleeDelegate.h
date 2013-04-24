@@ -8,7 +8,7 @@ class ComboxDecaleeDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
-    explicit ComboxDecaleeDelegate(QStringList list, QObject *parent = 0);
+    explicit ComboxDecaleeDelegate(QStringList list, int decalage=0, QObject *parent = 0);
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
 
@@ -24,6 +24,7 @@ public slots:
 
 private:
      QStringList list;
+     int decalage;
     
 };
 

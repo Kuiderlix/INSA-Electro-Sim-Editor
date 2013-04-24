@@ -48,5 +48,8 @@ void CoordonneeDelegate::setModelData(QWidget *editor, QAbstractItemModel *model
 void CoordonneeDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     Q_UNUSED(index);
-    editor->setGeometry(option.rect);
+    QRect rect;
+    rect = option.rect;
+    rect.setWidth(200);
+    editor->setGeometry(rect);
 }

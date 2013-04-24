@@ -10,6 +10,8 @@
 #include "TableViewSonde.h"
 #include "TableViewElementLocalise.h"
 #include "TableViewPortExcitation.h"
+#include "TableViewCartTempo.h"
+#include "TableViewSurfacePrelev.h"
 #include "DescriptionGeoWidget.h"
 #include "ParamSimuWidget.h"
 #include "ObjetFDTDWidget.h"

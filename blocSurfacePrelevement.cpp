@@ -29,15 +29,15 @@ void blocSurfacePrelevement::ecrire(){
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_surfaces_de_prelevement_au_total\n";
-    monEcriture << this->nbSurfaces << std::endl;
+    monEcriture << this->getNbElement() << std::endl;
     monEcriture << "Nombre_de_surfaces_de_prelevement_DG\n";
     monEcriture << this->nbSurfacesDG << std::endl;
     std::string ecriture(monEcriture.str());
     Ecriture::Ecrire(ecriture);
 
-    for(int i=0; i<this->nbSurfaces; i++){
-        surfacePrelevement temp = this->surfaces[i];
-        temp.ecrire(i+1);
+    for(int i=0; i<this->getNbElement(); i++){
+        surfacePrelevement* temp = this->GetSurface(i);
+        temp->ecrire(i+1);
     }
 
     Ecriture::Ecrire("\n");

@@ -9,42 +9,24 @@
 #define	BLOCCARTOGRAPHIETEMPORELLE_H
 
 #include "cartographieTemporelle.h"
-#include "blocConfiguration.h"
+#include "BlocElementBase.h"
 
 
-class blocCartographieTemporelle : public blocConfiguration{
+class blocCartographieTemporelle : public BlocElementBase{
 public:
     blocCartographieTemporelle();
     blocCartographieTemporelle(const blocCartographieTemporelle& orig);
     virtual ~blocCartographieTemporelle();
     
-    int GetNbCarto() const {
-        return nbCarto;
-    }
 
-    void SetNbCarto(int nbCarto) {
-        this->nbCarto = nbCarto;
-        cartos.resize(nbCarto);
-    }
     
-    void AddCarto(cartographieTemporelle carto){
-        cartos.push_back(carto);
-    }
-    
-    void SetCarto(int i, cartographieTemporelle carto){
-        if(i>nbCarto)return;
-        cartos[i]=carto;
-    }
-    
-    cartographieTemporelle GetCarto(int i){
-        return cartos[i];
+    cartographieTemporelle* GetCarto(int i){
+        return (cartographieTemporelle*)listElement.at(i);
     }
 
     void ecrire();
 
 private:
-    int nbCarto;
-    std::vector <cartographieTemporelle> cartos;
 };
 
 #endif	/* BLOCCARTOGRAPHIETEMPORELLE_H */

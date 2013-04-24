@@ -84,7 +84,11 @@ SOURCES += main.cpp\
     TableViewElementLocalise.cpp \
     ComboxDecaleeDelegate.cpp \
     TableModelPortExcitation.cpp \
-    TableViewPortExcitation.cpp
+    TableViewPortExcitation.cpp \
+    TableModelCartoTempo.cpp \
+    TableViewCartTempo.cpp \
+    TableModelSurfacePrelev.cpp \
+    TableViewSurfacePrelev.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -161,7 +165,11 @@ HEADERS  += mainwindow.h \
     TableViewElementLocalise.h \
     ComboxDecaleeDelegate.h \
     TableModelPortExcitation.h \
-    TableViewPortExcitation.h
+    TableViewPortExcitation.h \
+    TableModelCartoTempo.h \
+    TableViewCartTempo.h \
+    TableModelSurfacePrelev.h \
+    TableViewSurfacePrelev.h
 
 OTHER_FILES += \
     DATA1.ana \

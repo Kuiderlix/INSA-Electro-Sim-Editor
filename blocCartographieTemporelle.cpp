@@ -30,14 +30,14 @@ void blocCartographieTemporelle::ecrire(){
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_cartos_temporelles_: \n";
-    monEcriture << this->nbCarto << std::endl;
+    monEcriture << this->getNbElement() << std::endl;
 
     std::string ecriture(monEcriture.str());
     Ecriture::Ecrire(ecriture);
 
-    for(int i=0; i<this->nbCarto; i++){
-        cartographieTemporelle temp = this->cartos[i];
-        temp.ecrire(i+1);
+    for(int i=0; i<this->getNbElement(); i++){
+        cartographieTemporelle* temp = this->GetCarto(i);
+        temp->ecrire(i+1);
     }
 
     Ecriture::Ecrire("\n");

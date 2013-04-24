@@ -57,6 +57,8 @@ public:
     blocSonde * getBlocSonde() {return &sondes;}
     blocElementLocalise * getBlocElementLocalise() {return &elementLocalises;}
     blocPortExcitation * getBlocPortExcitation()  {return &portExcitations;}
+    blocCartographieTemporelle * getBlocCartoTempo() {return &cartographies;}
+    blocSurfacePrelevement * getBlocSurfacePrelev() {return &surfacePrelevements;}
 
 
 

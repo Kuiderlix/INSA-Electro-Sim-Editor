@@ -295,63 +295,63 @@ void Parser::scanSondes(){
 void Parser::scanCartographieTemporelle(){
     cout << "    scanCartographieTemporelle\n" << endl;
     int nbCartos = parserGetInt();
-    cartographies.SetNbCarto(nbCartos);
     
     int i;
     for(i=0; i<nbCartos; i++){
-        cartographieTemporelle temp;
+        cartographieTemporelle *temp;
         
         parserSautLigne();
-        temp.SetChampE(parserGetInt());
-        temp.SetChampH(parserGetInt());
-        temp.SetIterationDebut(parserGetInt());
-        temp.SetIterationFin(parserGetInt());
-        temp.SetIntervalle(parserGetInt());
+        temp->SetChampE(parserGetInt());
+        temp->SetChampH(parserGetInt());
+        temp->SetIterationDebut(parserGetInt());
+        temp->SetIterationFin(parserGetInt());
+        temp->SetIntervalle(parserGetInt());
         parserSautLigne();
         int y = parserGetInt();
         int x = parserGetInt();
         int z = parserGetInt();
-        temp.SetAvantGauche(x,y,z);
+        temp->SetAvantGauche(x,y,z);
         parserSautLigne();
         y = parserGetInt();
         x = parserGetInt();
         z = parserGetInt();
-        temp.SetArriereDroit(x,y,z);
+        temp->SetArriereDroit(x,y,z);
+        cartographies.addElement(temp);
     }
 }
 void Parser::scanSurfacePrelevement(){
     cout << "    scanSurfacePrelevement\n" << endl;
     int nbSurfaces = parserGetInt();
-    surfacePrelevements.SetNbSurfaces(nbSurfaces);
 
     surfacePrelevements.SetNbSurfacesDG(parserGetInt()); //Rajouté dernièrement. À vérifier !!
     
     int i;
     for(i=0; i<nbSurfaces; i++){
-        surfacePrelevement temp;
+        surfacePrelevement *temp = new surfacePrelevement;
         
         parserSautLigne();
-        temp.SetTypeSurface(parserGetInt());
-        temp.SetNomFichier(parserGetString());
-        if(temp.GetTypeSurface() == 2)
-            temp.SetInsideOutside(parserGetInt());
-        temp.SetNbFaces(parserGetInt()); //Rajouté dernièrement. À vérifier !!
+        temp->SetTypeSurface(parserGetInt());
+        temp->SetNomFichier(parserGetString());
+        if(temp->GetTypeSurface() == 2)
+            temp->SetInsideOutside(parserGetInt());
+        temp->SetNbFaces(parserGetInt()); //Rajouté dernièrement. À vérifier !!
         parserSautLigne();
         int y = parserGetInt();
         int x = parserGetInt();
         int z = parserGetInt();
-        temp.SetAvantGauche(x,y,z);
+        temp->SetAvantGauche(x,y,z);
         parserSautLigne();
         y = parserGetInt();
         x = parserGetInt();
         z = parserGetInt();
-        temp.SetArriereDroit(x,y,z);
-        if(temp.GetTypeSurface() == 2){
+        temp->SetArriereDroit(x,y,z);
+        if(temp->GetTypeSurface() == 2){
             parserSautLigne();
-            temp.SetCompressionLongueur(parserGetInt());
-            temp.SetCompressionLargeur(parserGetInt());
-            temp.SetCompressionHauteur(parserGetInt());
+            temp->SetCompressionLongueur(parserGetInt());
+            temp->SetCompressionLargeur(parserGetInt());
+            temp->SetCompressionHauteur(parserGetInt());
         }
+        surfacePrelevements.addElement(temp);
     }
 }
 void Parser::parseANA() {
@@ -504,7 +504,7 @@ void Parser::parseAVC(){
 void Parser::parse(){
     parseDSC();
     parseANA();
-    if(surfacePrelevements.GetNbSurfaces() == 1 && surfacePrelevements.GetSurface(0).GetTypeSurface() == 1)
+    if(surfacePrelevements.getNbElement() == 1 && surfacePrelevements.GetSurface(0)->GetTypeSurface() == 1)
         parsePTR();
     parseAVC();
     

@@ -5,8 +5,8 @@ TableViewElementLocalise::TableViewElementLocalise(blocElementLocalise *bloc, QW
 {
     this->setModel(new TableModelElementLocalise(bloc));
 
-    this->setItemDelegateForColumn(TableModelElementLocalise::Type,new ComboxDecaleeDelegate(QStringList() << "Résistance" << "Capacité" << "Self"));
-    this->setItemDelegateForColumn(TableModelElementLocalise::Direction,new ComboxDecaleeDelegate(QStringList() << "x" << "y" << "z"));
+    this->setItemDelegateForColumn(TableModelElementLocalise::Type,new ComboxDecaleeDelegate(QStringList() << "Résistance" << "Capacité" << "Self",1));
+    this->setItemDelegateForColumn(TableModelElementLocalise::Direction,new ComboxDecaleeDelegate(QStringList() << "x" << "y" << "z",1));
     this->setItemDelegateForColumn(TableModelElementLocalise::ArriereDroit,new CoordonneeDelegate());
     this->setItemDelegateForColumn(TableModelElementLocalise::AvantGauche,new CoordonneeDelegate());
 }

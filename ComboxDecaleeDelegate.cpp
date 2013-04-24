@@ -1,15 +1,20 @@
 #include "ComboxDecaleeDelegate.h"
 
-ComboxDecaleeDelegate::ComboxDecaleeDelegate(QStringList list, QObject *parent) :
+ComboxDecaleeDelegate::ComboxDecaleeDelegate(QStringList list,int decalage, QObject *parent) :
     QStyledItemDelegate(parent)
 {
     this->list = list;
+    this->decalage=decalage;
 }
 
 void ComboxDecaleeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
     painter->save();
-    int type = index.data().value<int>() - 1;
+    int type = index.data().value<int>() - decalage;
+    if (type<0)
+        type=0;
+    else if (type>list.count())
+        type=list.count()-1;
     QTextOption o;
     o.setAlignment(Qt::AlignLeft| Qt::AlignVCenter);
     painter->drawText(option.rect, list.at(type), o);
@@ -31,6 +36,10 @@ void ComboxDecaleeDelegate::setEditorData(QWidget *editor, const QModelIndex &in
     if (form)
     {
         int type = index.data().value<int>();
+        if (type<0)
+            type=0;
+        else if (type>list.count())
+            type=list.count()-1;
         form->setCurrentIndex (type-1);
     }
 }
@@ -41,7 +50,7 @@ void ComboxDecaleeDelegate::setModelData(QWidget *editor, QAbstractItemModel *mo
     if (editor)
     {
         QVariant var;
-        var.setValue<int>(form->currentIndex() + 1);
+        var.setValue<int>(form->currentIndex() + decalage);
         model->setData(index, var);
     }
 }
