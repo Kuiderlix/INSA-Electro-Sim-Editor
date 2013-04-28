@@ -45,3 +45,4 @@ void TableModel::initHeaders(QStringList l)
 {
     headers=l;
 }
+

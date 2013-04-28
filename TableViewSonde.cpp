@@ -3,7 +3,9 @@
 TableViewSonde::TableViewSonde(blocSonde *bloc, QWidget *parent) :
     TableView(parent)
 {
-    this->setModel(new TableModelSonde(bloc));
+    MySortFilterProxyModel * proxyModel = new MySortFilterProxyModel(this);
+    proxyModel->setSourceModel(new TableModelSonde(bloc));
+    this->setModel(proxyModel);
     this->setItemDelegateForColumn(TableModelSonde::ArriereDroit,new CoordonneeDelegate());
     this->setItemDelegateForColumn(TableModelSonde::AvantGauche,new CoordonneeDelegate());
     this->setItemDelegateForColumn(TableModelSonde::PointAppli,new CoordonneeDelegate());

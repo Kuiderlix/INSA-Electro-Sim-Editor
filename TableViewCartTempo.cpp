@@ -3,7 +3,9 @@
 TableViewCartTempo::TableViewCartTempo(blocCartographieTemporelle *bloc,QWidget *parent) :
     TableView(parent)
 {
-    this->setModel(new TableModelCartoTempo(bloc));
+    MySortFilterProxyModel * proxyModel = new MySortFilterProxyModel(this);
+    proxyModel->setSourceModel(new TableModelCartoTempo(bloc));
+    this->setModel(proxyModel);
     this->setItemDelegateForColumn(TableModelCartoTempo::AvantGauche,new CoordonneeDelegate());
     this->setItemDelegateForColumn(TableModelCartoTempo::ArriereDroit,new CoordonneeDelegate());
     this->resizeColumnToContents(TableModelCartoTempo::AvantGauche);

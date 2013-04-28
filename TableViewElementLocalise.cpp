@@ -3,8 +3,10 @@
 TableViewElementLocalise::TableViewElementLocalise(blocElementLocalise *bloc, QWidget *parent) :
     TableView(parent)
 {
-    this->setModel(new TableModelElementLocalise(bloc));
 
+    MySortFilterProxyModel * proxyModel = new MySortFilterProxyModel(this);
+    proxyModel->setSourceModel(new TableModelElementLocalise(bloc));
+    this->setModel(proxyModel);
     this->setItemDelegateForColumn(TableModelElementLocalise::Type,new ComboxDecaleeDelegate(QStringList() << "Résistance" << "Capacité" << "Self",1));
     this->setItemDelegateForColumn(TableModelElementLocalise::Direction,new ComboxDecaleeDelegate(QStringList() << "x" << "y" << "z",1));
     this->setItemDelegateForColumn(TableModelElementLocalise::ArriereDroit,new CoordonneeDelegate());

@@ -5,6 +5,7 @@ TableView::TableView(QWidget *parent) :
 {
     this->setSelectionBehavior(QAbstractItemView::SelectRows);
     this->setSelectionMode(QAbstractItemView::ExtendedSelection);
+    this->setSortingEnabled(true);
 
 
 

@@ -3,7 +3,9 @@
 TableViewPortExcitation::TableViewPortExcitation(blocPortExcitation *bloc,QWidget *parent) :
     TableView(parent)
 {
-    this->setModel(new TableModelPortExcitation(bloc));
+    MySortFilterProxyModel * proxyModel = new MySortFilterProxyModel(this);
+    proxyModel->setSourceModel(new TableModelPortExcitation(bloc));
+    this->setModel(proxyModel);
     this->setItemDelegateForColumn(TableModelPortExcitation::AvantGauche,new CoordonneeDelegate());
     this->setItemDelegateForColumn(TableModelPortExcitation::ArriereDroit,new CoordonneeDelegate());
 

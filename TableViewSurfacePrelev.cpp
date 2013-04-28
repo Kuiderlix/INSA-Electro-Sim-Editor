@@ -3,7 +3,9 @@
 TableViewSurfacePrelev::TableViewSurfacePrelev(blocSurfacePrelevement *bloc, QWidget *parent) :
     TableView(parent)
 {
-    this->setModel(new TableModelSurfacePrelev(bloc));
+    MySortFilterProxyModel * proxyModel = new MySortFilterProxyModel(this);
+    proxyModel->setSourceModel(new TableModelSurfacePrelev(bloc));
+    this->setModel(proxyModel);
     this->setItemDelegateForColumn(TableModelSurfacePrelev::AvantGauche,new CoordonneeDelegate());
     this->setItemDelegateForColumn(TableModelSurfacePrelev::ArriereDroit,new CoordonneeDelegate());
 
@@ -14,7 +16,6 @@ TableViewSurfacePrelev::TableViewSurfacePrelev(blocSurfacePrelevement *bloc, QWi
 
 void TableViewSurfacePrelev::addNewMetallisation()
 {
-    qDebug() << "test";
     FormSurfacePrelevement * form = new FormSurfacePrelevement(new surfacePrelevement,FormSurfacePrelevement::NOUVEAU);
     connect(form,SIGNAL(elementValidee(elementBase*)),((TableModel*)this->model()),SLOT(addElement(elementBase*)));
     connect(form,SIGNAL(elementValidee(elementBase*)),form,SLOT(accept()));

@@ -8,6 +8,7 @@
 #include <QHeaderView>
 #include <QDebug>
 #include "TableModel.h"
+#include "MySortFilterProxyModel.h"
 
 class TableView : public QTableView
 {
