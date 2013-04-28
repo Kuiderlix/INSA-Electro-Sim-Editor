@@ -11,11 +11,11 @@
 #include "blocConfiguration.h"
 
 
-class excitations : blocConfiguration{
+class ParamExcitations : public blocConfiguration{
 public:
-    excitations();
-    excitations(const excitations& orig);
-    virtual ~excitations();
+    ParamExcitations();
+    ParamExcitations(const ParamExcitations& orig);
+    virtual ~ParamExcitations();
     
     float GetFrequenceMax() const {
         return frequenceMax;

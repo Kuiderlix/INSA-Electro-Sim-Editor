@@ -14,6 +14,7 @@ TableViewSurfacePrelev::TableViewSurfacePrelev(blocSurfacePrelevement *bloc, QWi
 
 void TableViewSurfacePrelev::addNewMetallisation()
 {
+    qDebug() << "test";
     FormSurfacePrelevement * form = new FormSurfacePrelevement(new surfacePrelevement,FormSurfacePrelevement::NOUVEAU);
     connect(form,SIGNAL(elementValidee(elementBase*)),((TableModel*)this->model()),SLOT(addElement(elementBase*)));
     connect(form,SIGNAL(elementValidee(elementBase*)),form,SLOT(accept()));

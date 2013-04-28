@@ -25,10 +25,6 @@ FormCalculDirective::FormCalculDirective(calculDirectivite *calDir, QWidget *par
     pasPhiWidget->setValue(calDir->GetPasPhi());
     layout->addRow("pasPhi:",pasPhiWidget);
 
-
-    layout->addRow(new QPushButton("Valider"));
-
-
     layout->setAlignment(Qt::AlignTop);
     group->setLayout(layout);
     layoutPrincipal->addWidget(group);

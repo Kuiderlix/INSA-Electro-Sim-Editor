@@ -6,6 +6,7 @@ TableViewCartTempo::TableViewCartTempo(blocCartographieTemporelle *bloc,QWidget 
     this->setModel(new TableModelCartoTempo(bloc));
     this->setItemDelegateForColumn(TableModelCartoTempo::AvantGauche,new CoordonneeDelegate());
     this->setItemDelegateForColumn(TableModelCartoTempo::ArriereDroit,new CoordonneeDelegate());
+    this->resizeColumnToContents(TableModelCartoTempo::AvantGauche);
 }
 
 void TableViewCartTempo::addNewMetallisation()

@@ -59,3 +59,7 @@ FormCartographieTemporelle::FormCartographieTemporelle(cartographieTemporelle *c
 
 
 }
+
+void FormCartographieTemporelle::valider()
+{
+}

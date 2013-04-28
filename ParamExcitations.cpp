@@ -5,18 +5,18 @@
  * Created on February 26, 2013, 6:32 PM
  */
 
-#include "excitations.h"
+#include "ParamExcitations.h"
 
-excitations::excitations() {
+ParamExcitations::ParamExcitations() {
 }
 
-excitations::excitations(const excitations& orig) {
+ParamExcitations::ParamExcitations(const ParamExcitations& orig) {
 }
 
-excitations::~excitations() {
+ParamExcitations::~ParamExcitations() {
 }
 
-void excitations::ecrire(){
+void ParamExcitations::ecrire(){
     blocConfiguration bC = blocConfiguration(*this);
     bC.setHeader("[PARAMETRES_EXCITATION]");
     bC.setExtension(".ana");

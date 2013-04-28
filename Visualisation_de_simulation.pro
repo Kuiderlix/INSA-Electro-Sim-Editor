@@ -20,7 +20,6 @@ SOURCES += main.cpp\
     zonecentrale.cpp \
     point.cpp \
     parser.cpp \
-    blocAmplitude.cpp \
     blocCartographieTemporelle.cpp \
     blocConfiguration.cpp \
     blocEchantillonnage.cpp \
@@ -38,7 +37,6 @@ SOURCES += main.cpp\
     coordonnee.cpp \
     elementBase.cpp \
     elementLocalise.cpp \
-    excitations.cpp \
     formatStockage.cpp \
     metallisation.cpp \
     parallelepipede.cpp \
@@ -65,7 +63,6 @@ SOURCES += main.cpp\
     FormVolumeCalcul.cpp \
     FormParoi.cpp \
     FormAnalyseTempo.cpp \
-    FormExcitation.cpp \
     CalculChampsLointainWidget.cpp \
     FormCompressionHuygens.cpp \
     FormSonde.cpp \
@@ -88,7 +85,15 @@ SOURCES += main.cpp\
     TableModelCartoTempo.cpp \
     TableViewCartTempo.cpp \
     TableModelSurfacePrelev.cpp \
-    TableViewSurfacePrelev.cpp
+    TableViewSurfacePrelev.cpp \
+    FormChampLointain.cpp \
+    ParamAvanceWidget.cpp \
+    FormFormatStockage.cpp \
+    ParamExcitations.cpp \
+    FormParamExcitation.cpp \
+    Excitation.cpp \
+    FormExcitation.cpp \
+    FormEchantillonage.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -100,7 +105,6 @@ HEADERS  += mainwindow.h \
     constants.h \
     structures.h \
     parser.h \
-    blocAmplitude.h \
     blocCartographieTemporelle.h \
     blocConfiguration.h \
     blocEchantillonnage.h \
@@ -118,7 +122,6 @@ HEADERS  += mainwindow.h \
     coordonnee.h \
     elementBase.h \
     elementLocalise.h \
-    excitations.h \
     formatStockage.h \
     metallisation.h \
     parallelepipede.h \
@@ -146,7 +149,6 @@ HEADERS  += mainwindow.h \
     FormVolumeCalcul.h \
     FormParoi.h \
     FormAnalyseTempo.h \
-    FormExcitation.h \
     CalculChampsLointainWidget.h \
     FormCompressionHuygens.h \
     FormSonde.h \
@@ -169,7 +171,15 @@ HEADERS  += mainwindow.h \
     TableModelCartoTempo.h \
     TableViewCartTempo.h \
     TableModelSurfacePrelev.h \
-    TableViewSurfacePrelev.h
+    TableViewSurfacePrelev.h \
+    FormChampLointain.h \
+    ParamAvanceWidget.h \
+    FormFormatStockage.h \
+    ParamExcitations.h \
+    FormParamExcitation.h \
+    Excitation.h \
+    FormExcitation.h \
+    FormEchantillonage.h
 
 OTHER_FILES += \
     DATA1.ana \

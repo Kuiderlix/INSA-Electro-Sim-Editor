@@ -11,9 +11,9 @@ ParamSimuWidget::ParamSimuWidget(QWidget *parent) :
 
     FormAnalyseTempo * formAnaTempo = new FormAnalyseTempo(new analyseTemporelle());
 
-    FormExcitation * formExci = new FormExcitation(new excitations());
+    FormParamExcitation * formParamExci = new FormParamExcitation(new ParamExcitations());
 
-    layout->addWidget(formExci);
+    layout->addWidget(formParamExci);
     layout->addWidget(formAnaTempo);
     layout->addWidget(formPortExci);
 

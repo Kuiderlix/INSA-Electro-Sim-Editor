@@ -13,6 +13,7 @@ public:
 signals:
 
 public slots:
+    void valider();
 
     void manageFormulaire(int val);
     void actualiseFormulaire(int);

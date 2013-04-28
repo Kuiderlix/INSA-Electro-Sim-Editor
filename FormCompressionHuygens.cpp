@@ -27,7 +27,6 @@ FormCompressionHuygens::FormCompressionHuygens(compressionHuygens *compreHuy, QW
     layout->addRow("Facteur Multiplicatif:",facteurMultiWidget);
 
 
-    layout->addRow(new QPushButton("Valider"));
 
     layout->setAlignment(Qt::AlignTop);
 

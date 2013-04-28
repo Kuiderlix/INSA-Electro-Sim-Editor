@@ -14,6 +14,7 @@ public:
 signals:
     
 public slots:
+    void valider();
 
 private:
     elementLocalise * localise;

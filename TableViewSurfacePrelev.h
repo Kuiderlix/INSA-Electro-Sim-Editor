@@ -11,6 +11,7 @@
 
 class TableViewSurfacePrelev : public TableView
 {
+    Q_OBJECT
 public:
     explicit TableViewSurfacePrelev(blocSurfacePrelevement *bloc, QWidget *parent = 0);
 

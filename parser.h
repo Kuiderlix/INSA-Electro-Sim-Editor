@@ -23,7 +23,7 @@
 #include "blocParallelepipede.h"
 #include "blocElementLocalise.h"
 #include "pml.h"
-#include "excitations.h"
+#include "ParamExcitations.h"
 #include "analyseTemporelle.h"
 #include "blocPortExcitation.h"
 #include "cageExcitation.h"
@@ -31,7 +31,7 @@
 #include "blocCartographieTemporelle.h"
 #include "blocSurfacePrelevement.h"
 #include "champLointain.h"
-#include "blocAmplitude.h"
+#include "Excitation.h"
 #include "formatStockage.h"
 #include "blocEchantillonnage.h"
 #include "compressionHuygens.h"
@@ -139,7 +139,7 @@ private:
     /**>Variables récupérées .ANA *************************************************/
     /******************************************************************************/
     pml PML;
-    excitations excitation;
+    ParamExcitations excitation;
     analyseTemporelle analyseTemp;
     blocPortExcitation portExcitations;
     cageExcitation cage;
@@ -153,7 +153,7 @@ private:
     /******************************************************************************/
     /**>Variables récupérées .AVC *************************************************/
     /******************************************************************************/
-    blocAmplitude amplitudeV0;
+    Excitation amplitudeV0;
     formatStockage stockage;
     blocEchantillonnage facteurEchantillonnage;
     compressionHuygens compHuygens;

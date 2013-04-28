@@ -11,11 +11,11 @@
 #include "blocConfiguration.h"
 
 
-class blocAmplitude : public blocConfiguration{
+class Excitation : public blocConfiguration{
 public:
-    blocAmplitude();
-    blocAmplitude(const blocAmplitude& orig);
-    virtual ~blocAmplitude();
+    Excitation();
+    Excitation(const Excitation& orig);
+    virtual ~Excitation();
     
     float GetAmplitudeV0() const {
         return amplitudeV0;

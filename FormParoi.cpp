@@ -32,8 +32,6 @@ FormParoi::FormParoi(paroi *m_paroi, QWidget *parent) :
     layout->addRow("Axe Y:",axeYWidget);
 
 
-    layout->addRow(new QPushButton("Valider"));
-
 
     layout->setAlignment(Qt::AlignTop);
     groupGeo->setLayout(layout);

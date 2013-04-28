@@ -46,3 +46,7 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
     setLayout(layoutPrincipal);
 
 }
+
+void FormElementLocalise::valider()
+{
+}

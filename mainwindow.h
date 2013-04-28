@@ -15,6 +15,7 @@
 #include "DescriptionGeoWidget.h"
 #include "ParamSimuWidget.h"
 #include "ObjetFDTDWidget.h"
+#include "ParamAvanceWidget.h"
 #include "CalculChampsLointainWidget.h"
 
 /*

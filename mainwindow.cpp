@@ -83,7 +83,7 @@ void MainWindow::construireDockToolBox()
     toolbox->addItem(new ParamSimuWidget(), "Paramètres Simulation");
     toolbox->addItem(new ObjetFDTDWidget(), "Objets FDTD et DG-FDTD");
     toolbox->addItem(new CalculChampsLointainWidget(), "Calcul Champ Lointain");
-    toolbox->addItem(new QPushButton("test"), "Paramètres Avancés");
+    toolbox->addItem(new ParamAvanceWidget(), "Paramètres Avancés");
 
 
     dockLayout->addWidget(new QPushButton("Générer"));

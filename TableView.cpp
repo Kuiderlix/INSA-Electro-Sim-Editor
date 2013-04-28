@@ -6,6 +6,8 @@ TableView::TableView(QWidget *parent) :
     this->setSelectionBehavior(QAbstractItemView::SelectRows);
     this->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
+
+
 }
 void TableView::contextMenuEvent(QContextMenuEvent *e)
 {

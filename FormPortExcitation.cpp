@@ -81,3 +81,7 @@ FormPortExcitation::FormPortExcitation(portExcitation *port, int mode, QWidget *
     setLayout(layoutPrincipal);
 
 }
+
+void FormPortExcitation::valider()
+{
+}

@@ -108,6 +108,10 @@ FormCageExcitation::FormCageExcitation(cageExcitation *cageExci, int mode, QWidg
 
 }
 
+void FormCageExcitation::valider()
+{
+}
+
 void FormCageExcitation::manageFormulaire(int val)
 {
     if (val==3)

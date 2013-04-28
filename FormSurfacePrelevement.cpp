@@ -13,7 +13,7 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
     QFormLayout * layout = new QFormLayout;
 
     QComboBox * typeSurfaceWidget = new QComboBox();
-    typeSurfaceWidget->addItems(QStringList() << "1" << "2" << "3" << "4");
+    typeSurfaceWidget->addItems(QStringList() << "Huygens" << "Surface_de_prelevement_DG" << "Kirchhoff");
     layout->addRow("Type Surface:",typeSurfaceWidget);
     this->connect(typeSurfaceWidget, SIGNAL(currentIndexChanged(int)), this, SLOT(activeResteForm(int)));
 
@@ -52,6 +52,10 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
 
     setLayout(layoutPrincipal);
 
+}
+
+void FormSurfacePrelevement::valider()
+{
 }
 
 void FormSurfacePrelevement::activeResteForm(int val)

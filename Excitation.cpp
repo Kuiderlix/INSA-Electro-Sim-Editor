@@ -5,22 +5,22 @@
  * Created on March 4, 2013, 4:20 PM
  */
 
-#include "blocAmplitude.h"
+#include "Excitation.h"
 
-blocAmplitude::blocAmplitude() {
-    this->setHeader("[EXCITATION]");
+Excitation::Excitation() {
+    this->setHeader("[Excitation]");
     this->setExtension(".avc");
 }
 
-blocAmplitude::blocAmplitude(const blocAmplitude& orig) {
+Excitation::Excitation(const Excitation& orig) {
 }
 
-blocAmplitude::~blocAmplitude() {
+Excitation::~Excitation() {
 }
 
-void blocAmplitude::ecrire(){
+void Excitation::ecrire(){
     blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[EXCITATION]");
+    bC.setHeader("[Excitation]");
     bC.setExtension(".avc");
     bC.ecrire();
 

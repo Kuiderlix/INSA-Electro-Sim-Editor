@@ -68,7 +68,6 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
     layout->addRow(layoutCoord);
 
 
-    layout->addRow(new QPushButton("Valider"));
 
 
     layout->setAlignment(Qt::AlignTop);

@@ -5,6 +5,8 @@
 #include <QMenu>
 #include <QContextMenuEvent>
 #include <QKeyEvent>
+#include <QHeaderView>
+#include <QDebug>
 #include "TableModel.h"
 
 class TableView : public QTableView
