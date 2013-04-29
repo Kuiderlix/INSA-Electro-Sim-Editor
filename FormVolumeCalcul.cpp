@@ -19,6 +19,7 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
     longueurWidget->setValue(volCal->GetLongueur());
     layoutLongueur->addWidget(longueurWidget);
     layoutDimension->addLayout(layoutLongueur);
+    connect(longueurWidget,SIGNAL(valueChanged(double)),volCal,SLOT(SetLongueur(double)));
 
     QHBoxLayout * layoutLargeur = new QHBoxLayout;
     layoutLargeur->addWidget(new QLabel("Larg."));
@@ -27,6 +28,7 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
     largeurWidget->setValue(volCal->GetLargeur());
     layoutLargeur->addWidget(largeurWidget);
     layoutDimension->addLayout(layoutLargeur);
+    connect(largeurWidget,SIGNAL(valueChanged(double)),volCal,SLOT(SetLargeur(double)));
 
     QHBoxLayout * layoutHauteur = new QHBoxLayout;
     layoutHauteur->addWidget(new QLabel("Haut."));
@@ -35,6 +37,7 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
     hauteurWidget->setValue(volCal->GetHauteur());
     layoutHauteur->addWidget(hauteurWidget);
     layoutDimension->addLayout(layoutHauteur);
+    connect(hauteurWidget,SIGNAL(valueChanged(double)),volCal,SLOT(SetHauteur(double)));
 
     layout->addRow(layoutDimension);
 
@@ -43,27 +46,30 @@ FormVolumeCalcul::FormVolumeCalcul(volumeCalcul * volCal, QWidget *parent) :
 
     QHBoxLayout * layoutNbrY = new QHBoxLayout;
     layoutNbrY->addWidget(new QLabel("NbrY"));
-    QDoubleSpinBox * nbrYWidget = new QDoubleSpinBox();
+    QSpinBox * nbrYWidget = new QSpinBox();
     nbrYWidget->setMaximum(9999.9);
     nbrYWidget->setValue(volCal->GetNombreY());
     layoutNbrY->addWidget(nbrYWidget);
     layoutCoord->addLayout(layoutNbrY);
+    connect(nbrYWidget,SIGNAL(valueChanged(int)),volCal,SLOT(SetNombreY(int)));
 
     QHBoxLayout * layoutNbrX = new QHBoxLayout;
     layoutNbrX->addWidget(new QLabel("NbrX"));
-    QDoubleSpinBox * nbrXWidget = new QDoubleSpinBox();
+    QSpinBox * nbrXWidget = new QSpinBox();
     nbrXWidget->setMaximum(9999.9);
     nbrXWidget->setValue(volCal->GetNombreX());
     layoutNbrX->addWidget(nbrXWidget);
     layoutCoord->addLayout(layoutNbrX);
+    connect(nbrXWidget,SIGNAL(valueChanged(int)),volCal,SLOT(SetNombreX(int)));
 
     QHBoxLayout * layoutNbrZ = new QHBoxLayout;
     layoutNbrZ->addWidget(new QLabel("NbrZ"));
-    QDoubleSpinBox * nbrZWidget = new QDoubleSpinBox();
+    QSpinBox * nbrZWidget = new QSpinBox();
     nbrZWidget->setMaximum(9999.9);
     nbrZWidget->setValue(volCal->GetNombreZ());
     layoutNbrZ->addWidget(nbrZWidget);
     layoutCoord->addLayout(layoutNbrZ);
+    connect(nbrZWidget,SIGNAL(valueChanged(int)),volCal,SLOT(SetNombreZ(int)));
 
     layout->addRow(layoutCoord);
 

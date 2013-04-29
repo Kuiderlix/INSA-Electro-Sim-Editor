@@ -8,6 +8,7 @@ class FormCoordonnees : public QWidget
 {
     Q_OBJECT
 public:
+    explicit FormCoordonnees(QWidget *parent = 0);
     explicit FormCoordonnees(coordonnee coord,QWidget *parent = 0);
 
     void setCoordonnee(coordonnee c);

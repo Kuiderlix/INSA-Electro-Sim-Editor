@@ -19,7 +19,7 @@ public:
     metallisation(const metallisation& orig);
     virtual ~metallisation();
 
-    double GetConductivite() const {
+    float GetConductivite() const {
         return conductivite;
     }
 
@@ -29,7 +29,7 @@ public:
 
     void ecrire(int nb);
 private:
-    double conductivite;
+    float conductivite;
 
     static int nbMetal;
 

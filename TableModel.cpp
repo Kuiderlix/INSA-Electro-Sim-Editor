@@ -41,7 +41,7 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation, int ro
     return QAbstractTableModel::headerData(section, orientation, role);
 }
 
-void TableModel::initHeaders(QStringList l)
+void TableModel::initHeaders(const QStringList l)
 {
     headers=l;
 }

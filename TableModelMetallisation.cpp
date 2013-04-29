@@ -34,7 +34,7 @@ QVariant TableModelMetallisation::data(const QModelIndex &index, int role) const
         if (index.column() == Conductivite)
         {
             QVariant var(listeMetal->GetMetallisation(index.row())->GetConductivite());
-            return var;
+            return var.toDouble();
         }
         else if (index.column() == Coord1)
         {

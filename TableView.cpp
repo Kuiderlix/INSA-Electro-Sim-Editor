@@ -68,6 +68,6 @@ void TableView::deleteMetallisation()
     QModelIndexList::Iterator it = list.begin();
     for (int i=0;it!=list.end();it++,i++)
     {
-        ((TableModel*)this->model())->removeElement((*it).row()-i);
+        ((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel())->removeElement((*it).row()-i);
     }
 }

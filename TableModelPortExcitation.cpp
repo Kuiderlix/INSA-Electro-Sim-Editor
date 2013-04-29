@@ -41,7 +41,7 @@ QVariant TableModelPortExcitation::data(const QModelIndex &index, int role) cons
         }
         else if (index.column() == impedance)
         {
-          return QVariant(bloc->GetPortExcitation(index.row())->GetImpedance());
+          return QVariant(bloc->GetPortExcitation(index.row())->GetImpedance()).toDouble();
         }
         else if (index.column() == typeSource)
         {
@@ -49,11 +49,11 @@ QVariant TableModelPortExcitation::data(const QModelIndex &index, int role) cons
         }
         else if (index.column() == ponderationAmplitude)
         {
-        return QVariant(bloc->GetPortExcitation(index.row())->GetPonderationAmplitude());
+        return QVariant(bloc->GetPortExcitation(index.row())->GetPonderationAmplitude()).toDouble();
         }
         else if (index.column() == ponderationPhase)
         {
-        return QVariant(bloc->GetPortExcitation(index.row())->GetPonderationPhase());
+        return QVariant(bloc->GetPortExcitation(index.row())->GetPonderationPhase()).toDouble();
         }
         else if (index.column() == AvantGauche)
         {

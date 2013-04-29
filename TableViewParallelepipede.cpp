@@ -13,7 +13,7 @@ TableViewParallelepipede::TableViewParallelepipede(blocParallelepipede *blocPara
 void TableViewParallelepipede::addNewMetallisation()
 {
     FormParallelepipede * form = new FormParallelepipede(new parallelepipede,FormParallelepipede::NOUVEAU);
-    connect(form,SIGNAL(elementValidee(elementBase*)),((TableModel*)this->model()),SLOT(addElement(elementBase*)));
-    connect(form,SIGNAL(elementValidee(elementBase*)),form,SLOT(accept()));
+    connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));
+    connect(form,SIGNAL(elementValide(elementBase*)),form,SLOT(accept()));
     form->exec();
 }

@@ -11,7 +11,7 @@
 #include "blocConfiguration.h"
 
 
-class paroi : blocConfiguration {
+class paroi : public blocConfiguration {
 public:
     paroi();
     paroi(const paroi& orig);

@@ -32,5 +32,5 @@ void FormMetallisation::valider()
 {
     FormElementBase::valider();
     metal->SetConductivite(lineEditConductivite->value());
-    emit elementValidee(metal);
+    emit elementValide(metal);
 }

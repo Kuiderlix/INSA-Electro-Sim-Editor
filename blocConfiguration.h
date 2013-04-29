@@ -10,10 +10,12 @@
 
 #include <string>
 #include <sstream>
+#include <QObject>
 
 #include "Ecriture.h"
 
-class blocConfiguration {
+class blocConfiguration : public QObject {
+    Q_OBJECT
 public:
     blocConfiguration();
     blocConfiguration(const blocConfiguration& orig);

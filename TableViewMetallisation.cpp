@@ -19,8 +19,8 @@ TableViewMetallisation::TableViewMetallisation(blocMetallisation *blocMetal, QWi
 void TableViewMetallisation::addNewMetallisation()
 {
     FormMetallisation * form = new FormMetallisation(new metallisation,FormMetallisation::NOUVEAU);
-    connect(form,SIGNAL(elementValidee(elementBase*)),((TableModel*)this->model()),SLOT(addElement(elementBase*)));
-    connect(form,SIGNAL(elementValidee(elementBase*)),form,SLOT(accept()));
+    connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));
+    connect(form,SIGNAL(elementValide(elementBase*)),form,SLOT(accept()));
     form->exec();
 }
 

@@ -76,5 +76,5 @@ void FormSonde::valider()
 
     m_sonde->SetPointApplication(formPtAppli->getCoord());
 
-    emit elementValidee(m_sonde);
+    emit elementValide(m_sonde);
 }

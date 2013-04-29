@@ -16,7 +16,7 @@ public:
 
 signals:
 
-    void elementValidee(elementBase *);
+    void elementValide(elementBase *);
 public slots:
 
     virtual void valider();

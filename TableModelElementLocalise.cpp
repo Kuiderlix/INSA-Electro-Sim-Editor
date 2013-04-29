@@ -31,7 +31,7 @@ QVariant TableModelElementLocalise::data(const QModelIndex &index, int role) con
         }
         else if (index.column() == Valeur)
         {
-             return QVariant(bloc->GetElementLocalise(index.row())->GetValeur());
+             return QVariant(bloc->GetElementLocalise(index.row())->GetValeur()).toDouble();
         }
         else if (index.column() == Direction)
         {

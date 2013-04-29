@@ -17,6 +17,7 @@
 #include "ObjetFDTDWidget.h"
 #include "ParamAvanceWidget.h"
 #include "CalculChampsLointainWidget.h"
+#include "FilterWidget.h"
 
 /*
   Classe qui sert a affiché la fenêtre principale de l'application
@@ -33,7 +34,13 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+public slots:
+    void changeFilter();
+
 private:
+    MySortFilterProxyModel * currentModel;
+    FilterWidget * filterWidget;
+    QTabWidget * tabWidget;
     Parser parser;
     Visualisation3D * visualisation;
 };

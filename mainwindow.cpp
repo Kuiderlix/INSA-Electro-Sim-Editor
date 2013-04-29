@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     visualisation = new Visualisation3D(this);
     layout->addWidget(visualisation);
 
+
     QWidget *tables = new QWidget;
     QHBoxLayout *layoutTable = new QHBoxLayout;
 
@@ -22,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     TableViewCartTempo * vueCartoTempo = new TableViewCartTempo(parser.getBlocCartoTempo());
     TableViewSurfacePrelev * vueSurfacePrelev = new TableViewSurfacePrelev(parser.getBlocSurfacePrelev());
 
-    QTabWidget * tabWidget = new QTabWidget();
+    tabWidget = new QTabWidget();
     tabWidget->addTab(vueMetal, "Métallisations");
     tabWidget->addTab(vueElemLocal, "Elements Localises");
     tabWidget->addTab(vueParal, "Parallelepipèdes");
@@ -34,15 +35,37 @@ MainWindow::MainWindow(QWidget *parent)
     tables->setLayout(layoutTable);
     layout->addWidget(tables);
 
+
+    filterWidget = new FilterWidget;
+
+    layout->addWidget(filterWidget);
+
     QWidget *central = new QWidget();
     central->setLayout(layout);
 
     setCentralWidget(central);
+    currentModel = (MySortFilterProxyModel*)((TableView*)tabWidget->currentWidget())->model();
+    connect(filterWidget,SIGNAL(columnChanged(int)), currentModel,SLOT(setFilterKeyColumn(int)));
+    connect(filterWidget,SIGNAL(filterChanged(QString)), currentModel,SLOT(setFilterRegExp(QString)));
+    connect(tabWidget,SIGNAL(currentChanged(int)), this, SLOT(changeFilter()));
 }
 
 MainWindow::~MainWindow()
 {
     
+}
+
+void MainWindow::changeFilter()
+{
+    disconnect(filterWidget,SIGNAL(columnChanged(int)), currentModel,SLOT(setFilterKeyColumn(int)));
+    disconnect(filterWidget,SIGNAL(filterChanged(QString)), currentModel,SLOT(setFilterRegExp(QString)));
+    currentModel = (MySortFilterProxyModel*)((TableView*)tabWidget->currentWidget())->model();
+    connect(filterWidget,SIGNAL(columnChanged(int)), currentModel,SLOT(setFilterKeyColumn(int)));
+    connect(filterWidget,SIGNAL(filterChanged(QString)), currentModel,SLOT(setFilterRegExp(QString)));
+
+    TableModel* table = (TableModel*)currentModel->sourceModel();
+
+    filterWidget->setCurrentModel(table);
 }
 
 

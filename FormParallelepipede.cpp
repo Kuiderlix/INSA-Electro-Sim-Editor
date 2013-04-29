@@ -44,6 +44,6 @@ void FormParallelepipede::valider()
     paralle->SetConductivite(conductiviteWidget->value());
     paralle->SetPermitRelative(permitRelativeWidget->value());
     paralle->SetPermeRelative(permeRelativeWidget->value());
-    emit elementValidee(paralle);
+    emit elementValide(paralle);
 }
 

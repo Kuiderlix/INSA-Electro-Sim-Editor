@@ -11,66 +11,70 @@
 #include "blocConfiguration.h"
 
 
-class volumeCalcul : blocConfiguration {
+class volumeCalcul : public blocConfiguration {
+    Q_OBJECT
 public:
     volumeCalcul();
     volumeCalcul(const volumeCalcul& orig);
     virtual ~volumeCalcul();
 
-    float GetHauteur() const {
+
+    double GetHauteur() const {
         return hauteur;
     }
-
-    void SetHauteur(float hauteur) {
-        this->hauteur = hauteur;
-    }
-
-    float GetLargeur() const {
+    double GetLargeur() const {
         return largeur;
     }
-
-    void SetLargeur(float largeur) {
-        this->largeur = largeur;
-    }
-
-    float GetLongueur() const {
+    double GetLongueur() const {
         return longueur;
     }
-
-    void SetLongueur(float longueur) {
-        this->longueur = longueur;
-    }
-
     int GetNombreX() const {
         return nombreX;
     }
-
-    void SetNombreX(int nombreX) {
-        this->nombreX = nombreX;
-    }
-
     int GetNombreY() const {
         return nombreY;
     }
-
-    void SetNombreY(int nombreY) {
-        this->nombreY = nombreY;
-    }
-
     int GetNombreZ() const {
         return nombreZ;
     }
 
+
+signals:
+    void hauteurChanged();
+    void largeurChanged();
+    void longueurChanged();
+
+    void nbXChanged();
+    void nbYChanged();
+    void nbZChanged();
+
+public slots:
+
+    void SetHauteur(double hauteur) {
+        this->hauteur = hauteur; emit hauteurChanged();
+    }
+    void SetLargeur(double largeur) {
+        this->largeur = largeur; emit largeurChanged();
+    }
+    void SetLongueur(double longueur) {
+        this->longueur = longueur; emit longueurChanged();
+    }
+    void SetNombreX(int nombreX) {
+        this->nombreX = nombreX; emit nbXChanged();
+    }
+    void SetNombreY(int nombreY) {
+        this->nombreY = nombreY; emit nbYChanged();
+    }
     void SetNombreZ(int nombreZ) {
-        this->nombreZ = nombreZ;
+        this->nombreZ = nombreZ; emit nbZChanged();
     }
 
     void ecrire();
     
 private:
-    float longueur;
-    float largeur;
-    float hauteur;
+    double longueur;
+    double largeur;
+    double hauteur;
     int nombreY;
     int nombreX;
     int nombreZ;

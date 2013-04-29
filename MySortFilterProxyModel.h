@@ -11,10 +11,13 @@ public:
     explicit MySortFilterProxyModel(QObject *parent = 0);
 
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
     
 signals:
     
 public slots:
+
+    void setFilterKeyColumn(int column);
     
 };
 

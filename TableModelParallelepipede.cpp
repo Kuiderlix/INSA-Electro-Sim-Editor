@@ -26,17 +26,17 @@ QVariant TableModelParallelepipede::data(const QModelIndex &index, int role) con
         if (index.column() == PermitRelative)
         {
             QVariant var(bloc->getParallelepipede(index.row())->GetPermitRelative());
-            return var;
+            return var.toDouble();
         }
         else if (index.column() == PermeRelative)
         {
             QVariant var(bloc->getParallelepipede(index.row())->GetPermeRelative());
-            return var;
+            return var.toDouble();
         }
         else if (index.column() == Conductivite)
         {
             QVariant var(bloc->getParallelepipede(index.row())->GetConductivite());
-            return var;
+            return var.toDouble();
         }
         else if (index.column() == Coord1)
         {
