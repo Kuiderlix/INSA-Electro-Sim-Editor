@@ -15,7 +15,7 @@ public:
 
 
 public slots:
-    void addNewMetallisation();
+    void addNewElement();
 };
 
 #endif // TABLEVIEWSONDE_H

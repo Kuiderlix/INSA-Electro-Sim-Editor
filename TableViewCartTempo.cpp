@@ -11,7 +11,7 @@ TableViewCartTempo::TableViewCartTempo(blocCartographieTemporelle *bloc,QWidget 
     this->resizeColumnToContents(TableModelCartoTempo::AvantGauche);
 }
 
-void TableViewCartTempo::addNewMetallisation()
+void TableViewCartTempo::addNewElement()
 {
     FormCartographieTemporelle * form = new FormCartographieTemporelle(new cartographieTemporelle,FormCartographieTemporelle::NOUVEAU);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));

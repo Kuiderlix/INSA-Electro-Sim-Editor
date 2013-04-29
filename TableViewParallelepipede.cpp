@@ -10,7 +10,7 @@ TableViewParallelepipede::TableViewParallelepipede(blocParallelepipede *blocPara
     this->setItemDelegateForColumn(TableModelParallelepipede::Coord2,new CoordonneeDelegate());
 }
 
-void TableViewParallelepipede::addNewMetallisation()
+void TableViewParallelepipede::addNewElement()
 {
     FormParallelepipede * form = new FormParallelepipede(new parallelepipede,FormParallelepipede::NOUVEAU);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));

@@ -13,7 +13,7 @@ TableViewElementLocalise::TableViewElementLocalise(blocElementLocalise *bloc, QW
     this->setItemDelegateForColumn(TableModelElementLocalise::AvantGauche,new CoordonneeDelegate());
 }
 
-void TableViewElementLocalise::addNewMetallisation()
+void TableViewElementLocalise::addNewElement()
 {
     FormElementLocalise * form = new FormElementLocalise(new elementLocalise,FormElementLocalise::NOUVEAU);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));

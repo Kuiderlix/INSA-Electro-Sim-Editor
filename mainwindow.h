@@ -38,6 +38,7 @@ public slots:
     void changeFilter();
 
 private:
+    TableViewMetallisation * vueMetal;
     MySortFilterProxyModel * currentModel;
     FilterWidget * filterWidget;
     QTabWidget * tabWidget;

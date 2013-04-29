@@ -13,8 +13,8 @@ TableView::TableView(QWidget *parent) :
 void TableView::contextMenuEvent(QContextMenuEvent *e)
 {
     QMenu menu;
-    menu.addAction("Nouveau...",this,SLOT(addNewMetallisation()));
-    menu.addAction("Supprimer",this,SLOT(deleteMetallisation()));
+    menu.addAction("Nouveau...",this,SLOT(addNewElement()));
+    menu.addAction("Supprimer",this,SLOT(deleteElement()));
 
     menu.exec(e->globalPos());
 }
@@ -23,12 +23,12 @@ void TableView::keyPressEvent(QKeyEvent *event)
 {
     if (event->key() == Qt::Key_Delete)
     {
-        deleteMetallisation();
+        deleteElement();
     }
 }
 
 /**
- * @brief TableViewMetallisation::selectedIndexes
+ * @brief TableView::selectedIndexes
  * Retourne la liste des lignes séléctionnés et trié sur le numéro de ligne
  * @return
  */
@@ -53,21 +53,31 @@ QModelIndexList TableView::selectedIndexes() const
     return list;
 }
 
-void TableView::addNewMetallisation()
+TableModel *TableView::getSourceModel()
+{
+    return (TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel();
+}
+
+void TableView::addElement(elementBase * elem)
+{
+    getSourceModel()->addElement(elem);
+}
+
+void TableView::addNewElement()
 {
 }
 
 
 /**
- * @brief TableViewMetallisation::deleteMetallisation
+ * @brief TableView::deleteMetallisation
  *Supprime les éléments séléctionnés
  */
-void TableView::deleteMetallisation()
+void TableView::deleteElement()
 {
     QModelIndexList list = this->selectedIndexes();
     QModelIndexList::Iterator it = list.begin();
     for (int i=0;it!=list.end();it++,i++)
     {
-        ((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel())->removeElement((*it).row()-i);
+        getSourceModel()->removeElement((*it).row()-i);
     }
 }

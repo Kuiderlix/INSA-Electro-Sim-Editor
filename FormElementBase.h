@@ -30,6 +30,8 @@ public:
 protected:
     FormCoordonnees * formCoord1, *formCoord2;
 
+    virtual void reset();
+
 private:
     int mode;
     QPushButton * boutonValider;

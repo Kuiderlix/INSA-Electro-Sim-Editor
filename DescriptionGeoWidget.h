@@ -16,6 +16,10 @@ public:
     explicit DescriptionGeoWidget(Parser * parser, QWidget *parent = 0);
     
 signals:
+
+    void newMetalCreated(elementBase*);
+    void newParaCreated(elementBase*);
+    void newElemLocCreated(elementBase*);
     
 public slots:
 

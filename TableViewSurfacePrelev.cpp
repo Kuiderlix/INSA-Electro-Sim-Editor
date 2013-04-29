@@ -14,7 +14,7 @@ TableViewSurfacePrelev::TableViewSurfacePrelev(blocSurfacePrelevement *bloc, QWi
     this->setItemDelegateForColumn(TableModelSurfacePrelev::nbFace,new ComboxDecaleeDelegate(QStringList() << "5 Faces" << "6 Faces",5));
 }
 
-void TableViewSurfacePrelev::addNewMetallisation()
+void TableViewSurfacePrelev::addNewElement()
 {
     FormSurfacePrelevement * form = new FormSurfacePrelevement(new surfacePrelevement,FormSurfacePrelevement::NOUVEAU);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));

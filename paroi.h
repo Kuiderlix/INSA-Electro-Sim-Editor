@@ -9,44 +9,49 @@
 #define	PAROI_H
 
 #include "blocConfiguration.h"
+#include <QDebug>
 
 
 class paroi : public blocConfiguration {
+    Q_OBJECT
 public:
     paroi();
     paroi(const paroi& orig);
     virtual ~paroi();
-    
+
+
     int GetParoiInferieure() const {
         return paroiInferieure;
     }
-
-    void SetParoiInferieure(int paroiInferieure) {
-        this->paroiInferieure = paroiInferieure;
-    }
-
     int GetParoiSuperieure() const {
         return paroiSuperieure;
     }
-
-    void SetParoiSuperieure(int paroiSuperieure) {
-        this->paroiSuperieure = paroiSuperieure;
-    }
-
     int GetParoiX() const {
         return paroiX;
     }
-
-    void SetParoiX(int paroiX) {
-        this->paroiX = paroiX;
-    }
-
     int GetParoiY() const {
         return paroiY;
     }
 
+signals:
+    void paroiInfChanged();
+    void paroiSupChanged();
+    void paroiXChanged();
+    void paroiYChanged();
+
+public slots:
+
+    void SetParoiInferieure(int paroiInferieure) {
+        this->paroiInferieure = paroiInferieure; emit paroiInfChanged();
+    }
+    void SetParoiSuperieure(int paroiSuperieure) {
+        this->paroiSuperieure = paroiSuperieure; emit paroiSupChanged();
+    }
+    void SetParoiX(int paroiX) {
+        this->paroiX = paroiX; emit paroiXChanged();
+    }
     void SetParoiY(int paroiY) {
-        this->paroiY = paroiY;
+        this->paroiY = paroiY; emit paroiYChanged();
     }
 
     void ecrire();

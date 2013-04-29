@@ -14,7 +14,7 @@ TableViewPortExcitation::TableViewPortExcitation(blocPortExcitation *bloc,QWidge
     this->setItemDelegateForColumn(TableModelPortExcitation::typeSource,new ComboxDecaleeDelegate(QStringList() << "Tension" << "Courant"));
 }
 
-void TableViewPortExcitation::addNewMetallisation()
+void TableViewPortExcitation::addNewElement()
 {
     FormPortExcitation * form = new FormPortExcitation(new portExcitation,FormPortExcitation::NOUVEAU);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));

@@ -6,7 +6,6 @@ MainWindow::MainWindow(QWidget *parent)
     parser.parse();
 
     construireMenu();
-    construireDockToolBox();
     QVBoxLayout * layout = new QVBoxLayout();
     visualisation = new Visualisation3D(this);
     layout->addWidget(visualisation);
@@ -15,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *tables = new QWidget;
     QHBoxLayout *layoutTable = new QHBoxLayout;
 
-    TableViewMetallisation * vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
+    vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
     TableViewParallelepipede * vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
     TableViewSonde * vueSonde = new TableViewSonde(parser.getBlocSonde());
     TableViewElementLocalise * vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
@@ -39,6 +38,10 @@ MainWindow::MainWindow(QWidget *parent)
     filterWidget = new FilterWidget;
 
     layout->addWidget(filterWidget);
+
+
+
+    construireDockToolBox();
 
     QWidget *central = new QWidget();
     central->setLayout(layout);
@@ -100,9 +103,10 @@ void MainWindow::construireDockToolBox()
     QToolBox * toolbox = new QToolBox();
     toolbox->setMinimumWidth(300);
 
+    DescriptionGeoWidget * descGeo = new DescriptionGeoWidget(&parser);
+    connect(descGeo,SIGNAL(newMetalCreated(elementBase*)),vueMetal,SLOT(addElement(elementBase*)));
 
-
-    toolbox->addItem(new DescriptionGeoWidget(&parser), "Description Géométrique");
+    toolbox->addItem(descGeo, "Description Géométrique");
     toolbox->addItem(new ParamSimuWidget(), "Paramètres Simulation");
     toolbox->addItem(new ObjetFDTDWidget(), "Objets FDTD et DG-FDTD");
     toolbox->addItem(new CalculChampsLointainWidget(), "Calcul Champ Lointain");

@@ -16,7 +16,7 @@ public:
     explicit TableViewSurfacePrelev(blocSurfacePrelevement *bloc, QWidget *parent = 0);
 
 public slots:
-    void addNewMetallisation();
+    void addNewElement();
 };
 
 #endif // TABLEVIEWSURFACEPRELEV_H

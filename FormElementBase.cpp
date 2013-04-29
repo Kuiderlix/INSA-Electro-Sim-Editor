@@ -43,3 +43,9 @@ void FormElementBase::valider()
     element->SetAvantGauche(formCoord1->getCoord());
     element->SetArriereDroit(formCoord2->getCoord());
 }
+
+void FormElementBase::reset()
+{
+    formCoord1->setCoordonnee(coordonnee());
+    formCoord2->setCoordonnee(coordonnee());
+}

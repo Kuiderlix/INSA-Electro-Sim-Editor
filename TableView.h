@@ -21,11 +21,14 @@ public:
 
     QModelIndexList selectedIndexes() const;
 
+    TableModel * getSourceModel();
+
 signals:
     
 public slots:
-    void addNewMetallisation();
-    void deleteMetallisation();
+    void addElement(elementBase*);
+    void addNewElement();
+    void deleteElement();
 
 
 protected:

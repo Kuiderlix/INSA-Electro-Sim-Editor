@@ -21,6 +21,9 @@ public slots:
     void valider();
 
 private:
+
+    void reset();
+
     QDoubleSpinBox * lineEditConductivite;
     metallisation * metal;
     

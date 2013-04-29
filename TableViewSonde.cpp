@@ -11,7 +11,7 @@ TableViewSonde::TableViewSonde(blocSonde *bloc, QWidget *parent) :
     this->setItemDelegateForColumn(TableModelSonde::PointAppli,new CoordonneeDelegate());
 }
 
-void TableViewSonde::addNewMetallisation()
+void TableViewSonde::addNewElement()
 {
     FormSonde * form = new FormSonde(new sonde,FormSonde::NOUVEAU);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));
