@@ -49,3 +49,8 @@ void FormElementBase::reset()
     formCoord1->setCoordonnee(coordonnee());
     formCoord2->setCoordonnee(coordonnee());
 }
+
+void FormElementBase::setElement(elementBase * elem)
+{
+    this->element=elem;
+}

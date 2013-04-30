@@ -31,6 +31,7 @@ protected:
     FormCoordonnees * formCoord1, *formCoord2;
 
     virtual void reset();
+    void setElement(elementBase *);
 
 private:
     int mode;

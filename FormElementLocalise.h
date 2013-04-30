@@ -15,9 +15,14 @@ signals:
     
 public slots:
     void valider();
+    void reset();
 
 private:
     elementLocalise * localise;
+
+    QComboBox * typeWidget;
+    QDoubleSpinBox * valeurWidget;
+    QComboBox * directionWidget;
     
 };
 

@@ -15,9 +15,9 @@ MainWindow::MainWindow(QWidget *parent)
     QHBoxLayout *layoutTable = new QHBoxLayout;
 
     vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
-    TableViewParallelepipede * vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
+    vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
     TableViewSonde * vueSonde = new TableViewSonde(parser.getBlocSonde());
-    TableViewElementLocalise * vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
+    vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
     TableViewPortExcitation * vuePortExci = new TableViewPortExcitation(parser.getBlocPortExcitation());
     TableViewCartTempo * vueCartoTempo = new TableViewCartTempo(parser.getBlocCartoTempo());
     TableViewSurfacePrelev * vueSurfacePrelev = new TableViewSurfacePrelev(parser.getBlocSurfacePrelev());
@@ -105,6 +105,8 @@ void MainWindow::construireDockToolBox()
 
     DescriptionGeoWidget * descGeo = new DescriptionGeoWidget(&parser);
     connect(descGeo,SIGNAL(newMetalCreated(elementBase*)),vueMetal,SLOT(addElement(elementBase*)));
+    connect(descGeo,SIGNAL(newParaCreated(elementBase*)),vueParal,SLOT(addElement(elementBase*)));
+    connect(descGeo,SIGNAL(newElemLocCreated(elementBase*)),vueElemLocal,SLOT(addElement(elementBase*)));
 
     toolbox->addItem(descGeo, "Description Géométrique");
     toolbox->addItem(new ParamSimuWidget(), "Paramètres Simulation");

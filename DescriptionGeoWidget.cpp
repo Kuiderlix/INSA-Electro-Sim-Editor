@@ -8,8 +8,10 @@ DescriptionGeoWidget::DescriptionGeoWidget(Parser *parser, QWidget *parent) :
 
     FormMetallisation * formMetal = new FormMetallisation(new metallisation(), FormMetallisation::NOUVEAU);
     connect(formMetal,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newMetalCreated(elementBase*)));
+    connect(formMetal,SIGNAL(elementValide(elementBase*)),formMetal,SLOT(reset()));
     FormParallelepipede * formPara = new FormParallelepipede(new parallelepipede(), FormParallelepipede::NOUVEAU);
     connect(formPara,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newParaCreated(elementBase*)));
+    connect(formPara,SIGNAL(elementValide(elementBase*)),formPara,SLOT(reset()));
 
     FormVolumeCalcul * formVolCal = new FormVolumeCalcul(parser->getVolumeCalcul());
 
@@ -41,5 +43,7 @@ void DescriptionGeoWidget::openElementLocaliseWindows()
 {
     FormElementLocalise * win = new FormElementLocalise(new elementLocalise(), FormElementLocalise::NOUVEAU);
     connect(win,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newElemLocCreated(elementBase*)));
-    win->show();
+    connect(win,SIGNAL(elementValide(elementBase*)),win,SLOT(reset()));
+    connect(win,SIGNAL(elementValide(elementBase*)),win,SLOT(accept()));
+    win->exec();
 }

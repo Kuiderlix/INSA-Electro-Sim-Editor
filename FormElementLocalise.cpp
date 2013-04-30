@@ -13,7 +13,7 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
 
     QHBoxLayout * layoutType = new QHBoxLayout;
     layoutType->addWidget(new QLabel("Type:"));
-    QComboBox * typeWidget = new QComboBox();
+    typeWidget = new QComboBox();
     typeWidget->addItems(QStringList() << "Résistance" << "Capacité" << "Self");
     layoutType->addWidget(typeWidget);
     layout->addLayout(layoutType);
@@ -21,7 +21,7 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
 
     QHBoxLayout * layoutValeur = new QHBoxLayout;
     layoutValeur->addWidget(new QLabel("Valeur:"));
-    QDoubleSpinBox * valeurWidget = new QDoubleSpinBox();
+    valeurWidget = new QDoubleSpinBox();
     layoutValeur->addWidget(valeurWidget);
     layout->addLayout(layoutValeur);
 
@@ -29,7 +29,7 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
 
     QHBoxLayout * layoutDirection = new QHBoxLayout;
     layoutDirection->addWidget(new QLabel("Direction:"));
-    QComboBox * directionWidget = new QComboBox();
+    directionWidget = new QComboBox();
     directionWidget->addItems(QStringList() << "x" << "y" << "z");
     layoutDirection->addWidget(directionWidget);
     layout->addLayout(layoutDirection);
@@ -49,4 +49,19 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
 
 void FormElementLocalise::valider()
 {
+    FormElementBase::valider();
+    localise->SetDirection(directionWidget->currentIndex()+1);
+    localise->SetType(typeWidget->currentIndex()+1);
+    localise->SetValeur(valeurWidget->value());
+    emit elementValide(localise);
+}
+
+void FormElementLocalise::reset()
+{
+    FormElementBase::reset();
+    typeWidget->setCurrentIndex(0);
+    directionWidget->setCurrentIndex(0);
+    valeurWidget->setValue(0);
+    this->localise = new elementLocalise();
+    setElement(this->localise);
 }

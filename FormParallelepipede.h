@@ -15,6 +15,8 @@ signals:
 public slots:
     void valider();
 
+    void reset();
+
 
 private:
     parallelepipede * paralle;

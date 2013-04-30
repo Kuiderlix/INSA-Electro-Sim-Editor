@@ -47,3 +47,13 @@ void FormParallelepipede::valider()
     emit elementValide(paralle);
 }
 
+void FormParallelepipede::reset()
+{
+    FormElementBase::reset();
+    permitRelativeWidget->setValue(0);
+    permeRelativeWidget->setValue(0);
+    conductiviteWidget->setValue(0);
+    this->paralle = new parallelepipede();
+    setElement(this->paralle);
+}
+

@@ -39,6 +39,8 @@ public slots:
 
 private:
     TableViewMetallisation * vueMetal;
+    TableViewParallelepipede * vueParal;
+    TableViewElementLocalise * vueElemLocal;
     MySortFilterProxyModel * currentModel;
     FilterWidget * filterWidget;
     QTabWidget * tabWidget;

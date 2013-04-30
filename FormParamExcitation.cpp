@@ -23,7 +23,6 @@ FormParamExcitation::FormParamExcitation(ParamExcitations *excit, QWidget *paren
     layout->addRow("Type:", typeWidget);
 
 
-
     QDoubleSpinBox * freqSinusWidget = new QDoubleSpinBox();
     freqSinusWidget->setMaximum(9999.9);
     freqSinusWidget->setValue(excit->GetFrequenceSinus());

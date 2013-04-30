@@ -19,10 +19,10 @@ signals:
 public slots:
 
     void valider();
+    void reset();
 
 private:
 
-    void reset();
 
     QDoubleSpinBox * lineEditConductivite;
     metallisation * metal;
