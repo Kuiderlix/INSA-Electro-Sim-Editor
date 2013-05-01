@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
     TableViewSonde * vueSonde = new TableViewSonde(parser.getBlocSonde());
     vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
-    TableViewPortExcitation * vuePortExci = new TableViewPortExcitation(parser.getBlocPortExcitation());
+    vuePortExci = new TableViewPortExcitation(parser.getBlocPortExcitation());
     TableViewCartTempo * vueCartoTempo = new TableViewCartTempo(parser.getBlocCartoTempo());
     TableViewSurfacePrelev * vueSurfacePrelev = new TableViewSurfacePrelev(parser.getBlocSurfacePrelev());
 
@@ -108,8 +108,12 @@ void MainWindow::construireDockToolBox()
     connect(descGeo,SIGNAL(newParaCreated(elementBase*)),vueParal,SLOT(addElement(elementBase*)));
     connect(descGeo,SIGNAL(newElemLocCreated(elementBase*)),vueElemLocal,SLOT(addElement(elementBase*)));
 
+
+    ParamSimuWidget* paramSimu = new ParamSimuWidget();
+    connect(paramSimu,SIGNAL(newPortExcitationCreated(elementBase*)),vuePortExci,SLOT(addElement(elementBase*)));
+
     toolbox->addItem(descGeo, "Description Géométrique");
-    toolbox->addItem(new ParamSimuWidget(), "Paramètres Simulation");
+    toolbox->addItem(paramSimu, "Paramètres Simulation");
     toolbox->addItem(new ObjetFDTDWidget(), "Objets FDTD et DG-FDTD");
     toolbox->addItem(new CalculChampsLointainWidget(), "Calcul Champ Lointain");
     toolbox->addItem(new ParamAvanceWidget(), "Paramètres Avancés");

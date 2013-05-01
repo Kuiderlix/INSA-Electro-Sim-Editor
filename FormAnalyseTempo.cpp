@@ -14,14 +14,13 @@ FormAnalyseTempo::FormAnalyseTempo(analyseTemporelle *anaTempo, QWidget *parent)
     periodeWidget->setMaximum(9999.9);
     periodeWidget->setValue(anaTempo->GetPeriode());
     layout->addRow("Période:",periodeWidget);
+    connect(periodeWidget,SIGNAL(valueChanged(double)),anaTempo,SLOT(SetPeriode(double)));
 
     QDoubleSpinBox * tempsWidget = new QDoubleSpinBox();
     tempsWidget->setMaximum(9999.9);
     tempsWidget->setValue(anaTempo->GetTemps());
     layout->addRow("Temps:",tempsWidget);
-
-
-    layout->addRow(new QPushButton("Valider"));
+    connect(tempsWidget,SIGNAL(valueChanged(double)),anaTempo,SLOT(SetTemps(double)));
 
 
     layout->setAlignment(Qt::AlignTop);

@@ -12,42 +12,44 @@
 
 
 class ParamExcitations : public blocConfiguration{
+
+    Q_OBJECT
 public:
     ParamExcitations();
     ParamExcitations(const ParamExcitations& orig);
     virtual ~ParamExcitations();
-    
-    float GetFrequenceMax() const {
+
+    double GetFrequenceMax() const {
         return frequenceMax;
     }
 
-    void SetFrequenceMax(float frequenceMax) {
-        this->frequenceMax = frequenceMax;
-    }
-
-    float GetFrequenceSinus() const {
+    double GetFrequenceSinus() const {
         return frequenceSinus;
-    }
-
-    void SetFrequenceSinus(float frequenceSinus) {
-        this->frequenceSinus = frequenceSinus;
     }
 
     int GetType() const {
         return type;
     }
 
+public slots:
+    void SetFrequenceMax(double frequenceMax) {
+        this->frequenceMax = frequenceMax;
+    }
+    void SetFrequenceSinus(double frequenceSinus) {
+        this->frequenceSinus = frequenceSinus;
+    }
     void SetType(int type) {
         this->type = type;
     }
 
+
     void ecrire();
 
 private:
-    float frequenceMax;
+    double frequenceMax;
     int type;
     //SI type = 1
-    float frequenceSinus;
+    double frequenceSinus;
 
 };
 

@@ -41,6 +41,8 @@ private:
     TableViewMetallisation * vueMetal;
     TableViewParallelepipede * vueParal;
     TableViewElementLocalise * vueElemLocal;
+    TableViewPortExcitation * vuePortExci;
+
     MySortFilterProxyModel * currentModel;
     FilterWidget * filterWidget;
     QTabWidget * tabWidget;

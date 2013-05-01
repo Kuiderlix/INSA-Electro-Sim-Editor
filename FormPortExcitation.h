@@ -14,10 +14,20 @@ signals:
     
 public slots:
     void valider();
+    void reset();
 
 
 private:
     portExcitation * port;
+
+    QCheckBox * portActifWidget;
+    QCheckBox * portInfinitesimalWidget;
+    QComboBox * typePortWidget;
+    QComboBox * directionWidget;
+    QDoubleSpinBox * impedanceWidget;
+    QComboBox * typeSourceWidget;
+    QDoubleSpinBox * ponderationAmplitudeWidget;
+    QDoubleSpinBox * ponderationPhaseWidget;
     
 };
 

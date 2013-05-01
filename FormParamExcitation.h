@@ -14,6 +14,8 @@ signals:
     
 public slots:
 
+    void afficheSinus(int);
+
 private:
     ParamExcitations *excit;
     QWidget * formTypeSinus;

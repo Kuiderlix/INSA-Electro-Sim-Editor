@@ -8,6 +8,8 @@ ParamSimuWidget::ParamSimuWidget(QWidget *parent) :
     layout->setMargin(0);
 
     FormPortExcitation * formPortExci = new FormPortExcitation(new portExcitation(), FormPortExcitation::NOUVEAU);
+    connect(formPortExci,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newPortExcitationCreated(elementBase*)));
+    connect(formPortExci,SIGNAL(elementValide(elementBase*)),formPortExci,SLOT(reset()));
 
     FormAnalyseTempo * formAnaTempo = new FormAnalyseTempo(new analyseTemporelle());
 

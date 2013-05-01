@@ -12,32 +12,35 @@
 
 
 class analyseTemporelle : public blocConfiguration {
+    Q_OBJECT
 public:
     analyseTemporelle();
     analyseTemporelle(const analyseTemporelle& orig);
     virtual ~analyseTemporelle();
-    
-    float GetPeriode() const {
+
+    double GetPeriode() const {
         return periode;
     }
 
-    void SetPeriode(float periode) {
-        this->periode = periode;
-    }
-
-    float GetTemps() const {
+    double GetTemps() const {
         return temps;
     }
 
-    void SetTemps(float temps) {
+public slots:
+
+    void SetPeriode(double periode) {
+        this->periode = periode;
+    }
+
+    void SetTemps(double temps) {
         this->temps = temps;
     }
 
     void ecrire();
 
 private:
-    float periode;
-    float temps;
+    double periode;
+    double temps;
 
 };
 

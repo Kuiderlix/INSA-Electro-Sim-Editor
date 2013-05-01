@@ -14,7 +14,10 @@ public:
     
 signals:
     
+    void newPortExcitationCreated(elementBase*);
+
 public slots:
+
     
 };
 
