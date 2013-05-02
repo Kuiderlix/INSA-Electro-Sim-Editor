@@ -19,19 +19,19 @@ FormParoi::FormParoi(paroi *m_paroi, QWidget *parent) :
 
     QComboBox * superieurWidget = new QComboBox();
     superieurWidget->addItems(QStringList() << "MUR" << "PEC" << "FLOQUET" << "PML" << "PMC");
-    superieurWidget->setCurrentIndex(m_paroi->GetParoiInferieure());
+    superieurWidget->setCurrentIndex(m_paroi->GetParoiSuperieure());
     layout->addRow("Superieur:",superieurWidget);
     connect(superieurWidget,SIGNAL(currentIndexChanged(int)),m_paroi,SLOT(SetParoiSuperieure(int)));
 
     QComboBox * axeXWidget = new QComboBox();
     axeXWidget->addItems(QStringList() << "MUR" << "PEC" << "FLOQUET" << "PML" << "PMC");
-    axeXWidget->setCurrentIndex(m_paroi->GetParoiInferieure());
+    axeXWidget->setCurrentIndex(m_paroi->GetParoiX());
     layout->addRow("Axe X:",axeXWidget);
     connect(axeXWidget,SIGNAL(currentIndexChanged(int)),m_paroi,SLOT(SetParoiX(int)));
 
     QComboBox * axeYWidget = new QComboBox();
     axeYWidget->addItems(QStringList() << "MUR" << "PEC" << "FLOQUET" << "PML" << "PMC");
-    axeYWidget->setCurrentIndex(m_paroi->GetParoiInferieure());
+    axeYWidget->setCurrentIndex(m_paroi->GetParoiY());
     layout->addRow("Axe Y:",axeYWidget);
     connect(axeYWidget,SIGNAL(currentIndexChanged(int)),m_paroi,SLOT(SetParoiY(int)));
 

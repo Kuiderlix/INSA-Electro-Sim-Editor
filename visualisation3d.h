@@ -8,6 +8,7 @@
 #include "point.h"
 #include <vector>
 #include "volumeCalcul.h"
+#include <QList>
 
 using namespace std;
 
@@ -17,34 +18,45 @@ using namespace std;
 class Visualisation3D : public MyGLWidget
 {
     Q_OBJECT
-    public:
-        explicit Visualisation3D(volumeCalcul * volume,QWidget *parent = 0);
-        void initializeGL();
-        void resizeGL(int width, int height);
-        void paintGL();
-        void keyPressEvent(QKeyEvent *keyEvent); // gestion des touches préssées
-        /*
-           Méthodes de gestion de la souris
-        */
-        void mousePressEvent ( QMouseEvent * event );
-        void mouseMoveEvent ( QMouseEvent * event );
-        void mouseReleaseEvent ( QMouseEvent * event );
+public:
+    explicit Visualisation3D(volumeCalcul * volume,QWidget *parent = 0);
+    void initializeGL();
+    void resizeGL(int width, int height);
+    void paintGL();
+    void keyPressEvent(QKeyEvent *keyEvent); // gestion des touches préssées
+    /*
+       Méthodes de gestion de la souris
+    */
+    void mousePressEvent ( QMouseEvent * event );
+    void mouseMoveEvent ( QMouseEvent * event );
+    void mouseReleaseEvent ( QMouseEvent * event );
 
-        void wheelEvent ( QWheelEvent * event );
+    void wheelEvent ( QWheelEvent * event );
 
-        void dessineVolume();
+    void dessineVolumeCalcul();
 
-    public slots:
-        void ajoutElement(elementBase*elem);
-        void ajoutCube(Cube*);
+    Point coordonneeToPoint(coordonnee);
 
-    private:
-        volumeCalcul * volume;
-        Cube * volumeGl;
-        vector<Cube*> tabCubes;
-        double zoom;
-        double rotateX, rotateY;
-        Point depart, pointActuel, ecartPrecedent;
+    void ajoutListElement(QList<elementBase*>*);
+
+
+signals:
+    void zoomChanged(int);
+
+
+public slots:
+
+        void setZoom(int z);
+
+
+private:
+    volumeCalcul * volume;
+    Cube * volumeGl;
+    vector<Cube*> tabCubes;
+    QList<QList<elementBase*>* > listElement;
+    int zoom;
+    double rotateX, rotateY;
+    Point depart, pointActuel, ecartPrecedent;
 
 };
 

@@ -32,6 +32,8 @@ public:
         listElement.push_back(elem);
     }
 
+    QList<elementBase*> * getListElementPointer() {return &listElement;}
+
 protected:
 
     QList<elementBase*> listElement;

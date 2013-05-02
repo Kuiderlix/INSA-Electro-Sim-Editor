@@ -68,5 +68,48 @@ void Cube::dessineCube()
            glVertex3f(topLeftCorner.x,  bottomRightCorner.y, topLeftCorner.z);
            glVertex3f(topLeftCorner.x,  bottomRightCorner.y, bottomRightCorner.z);
 
-       glEnd();
+           glEnd();
+}
+
+void Cube::drawCube(Point topLeftCorner,Point bottomRightCorner)
+{
+    glBegin(GL_QUADS);
+            // Face Avant
+           glVertex3f(topLeftCorner.x,      topLeftCorner.y,        topLeftCorner.z);
+           glVertex3f(topLeftCorner.x,      bottomRightCorner.y,    topLeftCorner.z);
+           glVertex3f(bottomRightCorner.x,  bottomRightCorner.y,    topLeftCorner.z);
+           glVertex3f(bottomRightCorner.x,  topLeftCorner.y,        topLeftCorner.z);
+
+           // Face Arrière
+           glVertex3f(topLeftCorner.x,      topLeftCorner.y,        bottomRightCorner.z);
+           glVertex3f(topLeftCorner.x,      bottomRightCorner.y,    bottomRightCorner.z);
+           glVertex3f(bottomRightCorner.x,  bottomRightCorner.y,    bottomRightCorner.z);
+           glVertex3f(bottomRightCorner.x,  topLeftCorner.y,        bottomRightCorner.z);
+
+
+           // Face Bas
+           glVertex3f(bottomRightCorner.x,  topLeftCorner.y,     bottomRightCorner.z);
+           glVertex3f(bottomRightCorner.x,  topLeftCorner.y,     topLeftCorner.z);
+           glVertex3f(topLeftCorner.x,      topLeftCorner.y,     topLeftCorner.z);
+           glVertex3f(topLeftCorner.x,      topLeftCorner.y,     bottomRightCorner.z);
+
+           // Face Haut
+           glVertex3f(bottomRightCorner.x,  bottomRightCorner.y,    bottomRightCorner.z);
+           glVertex3f(topLeftCorner.x,      bottomRightCorner.y,    bottomRightCorner.z);
+           glVertex3f(topLeftCorner.x,      bottomRightCorner.y,    topLeftCorner.z);
+           glVertex3f(bottomRightCorner.x,  bottomRightCorner.y,    topLeftCorner.z);
+
+           // Face Gauche
+           glVertex3f(bottomRightCorner.x,  topLeftCorner.y,        bottomRightCorner.z);
+           glVertex3f(bottomRightCorner.x,  bottomRightCorner.y,    bottomRightCorner.z);
+           glVertex3f(bottomRightCorner.x,  bottomRightCorner.y,    topLeftCorner.z);
+           glVertex3f(bottomRightCorner.x,  topLeftCorner.y,        topLeftCorner.z);
+
+           // Face Droite
+           glVertex3f(topLeftCorner.x, topLeftCorner.y, bottomRightCorner.z);
+           glVertex3f(topLeftCorner.x, topLeftCorner.y, topLeftCorner.z);
+           glVertex3f(topLeftCorner.x,  bottomRightCorner.y, topLeftCorner.z);
+           glVertex3f(topLeftCorner.x,  bottomRightCorner.y, bottomRightCorner.z);
+
+           glEnd();
 }

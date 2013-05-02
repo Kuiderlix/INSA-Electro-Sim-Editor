@@ -8,9 +8,31 @@ MainWindow::MainWindow(QWidget *parent)
     construireMenu();
     QVBoxLayout * layout = new QVBoxLayout();
     visualisation = new Visualisation3D(parser.getVolumeCalcul(),this);
-    for (int i=0;i<parser.getBlocParallelepipede()->getNbElement();i++)
-        visualisation->ajoutElement(parser.getBlocParallelepipede()->getParallelepipede(i));
-    layout->addWidget(visualisation);
+    visualisation->ajoutListElement(parser.getBlocParallelepipede()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocMetallisations()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocCartoTempo()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocElementLocalise()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocSurfacePrelev()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocSonde()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocPortExcitation()->getListElementPointer());
+
+    QWidget * visuaWidget = new QWidget();
+    QHBoxLayout * layoutVisua = new QHBoxLayout;
+
+    layoutVisua->addWidget(visualisation);
+
+    QSlider * sliderZoom = new QSlider();
+    sliderZoom->setMinimum(10);
+    sliderZoom->setMaximum(300);
+    sliderZoom->setValue(100);
+    sliderZoom->setOrientation(Qt::Vertical);
+
+    connect(sliderZoom,SIGNAL(valueChanged(int)),visualisation,SLOT(setZoom(int)));
+    connect(visualisation,SIGNAL(zoomChanged(int)),sliderZoom,SLOT(setValue(int)));
+
+    layoutVisua->addWidget(sliderZoom);
+    visuaWidget->setLayout(layoutVisua);
+    layout->addWidget(visuaWidget);
 
 
     QWidget *tables = new QWidget;

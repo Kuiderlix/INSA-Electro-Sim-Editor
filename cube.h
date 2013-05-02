@@ -12,6 +12,8 @@ public:
 
     void dessineCube();
 
+    static void drawCube(Point topLeftCorner,Point bottomRightCorner);
+
 private:
     Point topLeftCorner, bottomRightCorner; // définition d'un cube avec les données des fichiers de config
 };

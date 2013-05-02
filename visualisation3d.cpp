@@ -10,11 +10,12 @@ Visualisation3D::Visualisation3D(volumeCalcul *volume, QWidget *parent)
 
     setFocusPolicy(Qt::ClickFocus);
     setCursor(QCursor(Qt::OpenHandCursor));
+    qsrand(458);
 }
 
 void Visualisation3D::initializeGL()
 {
-    zoom = -10.0;
+    zoom = 100;
     rotateX=0.0;
     rotateY=0.0;
 
@@ -33,8 +34,8 @@ void Visualisation3D::resizeGL(int width, int height)
     glViewport(0, 0, width, height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.001f, 10000.0f);
-    gluLookAt(0,0,volume->GetHauteur()*1.5,0,0,0,1,0,0);
+    gluPerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.00000001f, 10000.0f);
+    gluLookAt(0,0,100,0,0,0,1,0,0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
@@ -44,20 +45,30 @@ void Visualisation3D::paintGL()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // efface la surface pour refaire le rendu
     glLoadIdentity();
     glTranslatef(0.0f, 0.0f, 0.0f); // méthode de translation (x,y,z)
-    gluLookAt(0,0,zoom,0,0,0,1,0,0); // gestion de la caméra
+    gluLookAt(0,volume->GetHauteur()-zoom*15,0,0,0,0,1,0,0); // gestion de la caméra
     glRotatef(depart.y-pointActuel.y, 1.0, 0, 0); // rotation en x avec la souris
-    glRotatef(pointActuel.x-depart.x, 0, 1.0, 0);  //rotation en y avec la souris
+    glRotatef(pointActuel.x-depart.x, 0, 0, 1.0);  //rotation en y avec la souris
     glRotatef(rotateX, 1.0, 0, 0); // rotation en x avec le clavier
-    glRotatef(rotateY, 0, 1.0, 0);  //rotation en y avec le clavier
+    glRotatef(rotateY, 0, 0, 1.0);  //rotation en y avec le clavier
 
 
     glColor3f(0.0f, 0.0f, 0.0f);
-    dessineVolume();
+    dessineVolumeCalcul();
     glColor3f(1.0f, 0.0f, 0.0f);
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-    for (vector<Cube*>::iterator it = tabCubes.begin(); it!=tabCubes.end(); ++it) {
-        (*it)->dessineCube();
+
+    QList<QList<elementBase*>* >::Iterator it = listElement.begin();
+    for (;it!=listElement.end();it++)
+    {
+        QList<elementBase*>* list = *it;
+        QList<elementBase*>::Iterator it_l = list->begin();
+        for(;it_l!=list->end();it_l++)
+        {
+            elementBase * elem = (elementBase*) *it_l;
+            Cube::drawCube(coordonneeToPoint(elem->GetArriereDroit()),coordonneeToPoint(elem->GetAvantGauche()));
+        }
     }
+
 }
 
 void Visualisation3D::keyPressEvent(QKeyEvent *keyEvent)
@@ -106,46 +117,55 @@ void Visualisation3D::mouseReleaseEvent( QMouseEvent * event )
 
 void Visualisation3D::wheelEvent(QWheelEvent * event) // gestion de la molette de la souris
 {
-    int numDegrees = event->delta() / 8;
-    int numSteps = numDegrees / 15;
 
     if (event->orientation() == Qt::Horizontal) {
-     zoom-=numSteps;
+        if (zoom >= 20)
+            zoom-=10;
+        else
+            zoom=10;
     } else {
-     zoom+=numSteps;
+        if (zoom <= 290)
+            zoom+=10;
+        else
+            zoom=300;
     }
     event->accept();
+    emit zoomChanged(zoom);
 }
 
-void Visualisation3D::dessineVolume()
+void Visualisation3D::dessineVolumeCalcul()
 {
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     volumeGl->dessineCube();
 }
-
-void Visualisation3D::ajoutElement(elementBase * elem)
+/**
+ * @brief Visualisation3D::coordonneeToPoint
+ * Tranforme une coordonnee en un Point
+ * @param c la coordonnee a transformé
+ * @return le Point transformé
+ */
+Point Visualisation3D::coordonneeToPoint(coordonnee c)
 {
     double ratioX = volume->GetLargeur() / volume->GetNombreX();
     double ratioY = volume->GetLongueur() / volume->GetNombreY();
     double ratioZ = volume->GetHauteur() / volume->GetNombreZ();
-    coordonnee avantGauche = elem->GetAvantGauche();
-    coordonnee arriereDroit = elem->GetArriereDroit();
-    Point paG,paD;
 
-    paG.x=(avantGauche.GetX()*ratioX)-(volume->GetLargeur()/2);
-    paG.y=(avantGauche.GetY()*ratioY)-(volume->GetLongueur()/2);
-    paG.z=(avantGauche.GetZ()*ratioZ)-(volume->GetHauteur()/2);
+    Point point;
 
-    paD.x=(arriereDroit.GetX()*ratioX)-(volume->GetLargeur()/2);
-    paD.y=(arriereDroit.GetY()*ratioY)-(volume->GetLongueur()/2);
-    paD.z=(arriereDroit.GetZ()*ratioZ)-(volume->GetHauteur()/2);
+    point.x=(c.GetX()*ratioX)-(volume->GetLargeur()/2);
+    point.y=(c.GetY()*ratioY)-(volume->GetLongueur()/2);
+    point.z=(c.GetZ()*ratioZ)-(volume->GetHauteur()/2);
 
-    tabCubes.push_back(new Cube(paG,paD));
+    return point;
 }
 
-void Visualisation3D::ajoutCube(Cube *c)
+void Visualisation3D::ajoutListElement(QList<elementBase *> *l)
 {
-    tabCubes.push_back(c);
+    listElement.push_back(l);
 }
 
+void Visualisation3D::setZoom(int z)
+{
+    zoom = z;
+}
 
