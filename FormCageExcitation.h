@@ -14,15 +14,31 @@ signals:
 
 public slots:
     void valider();
+    void reset();
 
     void manageFormulaire(int val);
     void actualiseFormulaire(int);
 
 private:
+
+    void init();
+
     cageExcitation * cageExci;
+
     QSpinBox * nbFacesWidget;
     QComboBox * typeWidget;
     QWidget *formFace1, *formFaceDif1, *formType4;
+    QComboBox * insideOutsideWidget;
+    QComboBox * modeWidget;
+    QSpinBox * hauteurWidget;
+    QComboBox * sensPropaWidget;
+    FormCoordonnees* pointRefWidget;
+    QDoubleSpinBox * theta0Widget;
+    QDoubleSpinBox * phi0Widget;
+    QDoubleSpinBox * psi0Widget;
+    QDoubleSpinBox * modulationAmplitudeWidget;
+    QDoubleSpinBox * modulationPhaseWidget;
+    QLineEdit * nomFichierWidget;
 };
 
 #endif // FORMCAGEEXCITATION_H

@@ -14,8 +14,12 @@ signals:
     
 public slots:
     void valider();
+    void reset();
 
 private:
+
+    void init();
+
     sonde * m_sonde;
 
     QCheckBox * eXWidget;

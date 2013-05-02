@@ -15,7 +15,7 @@ DescriptionGeoWidget::DescriptionGeoWidget(Parser *parser, QWidget *parent) :
 
     FormVolumeCalcul * formVolCal = new FormVolumeCalcul(parser->getVolumeCalcul());
 
-    FormParoi * formParoi = new FormParoi(new paroi());
+    FormParoi * formParoi = new FormParoi(parser->getParoi());
 
     layout->addWidget(formVolCal);
     layout->addWidget(formParoi);

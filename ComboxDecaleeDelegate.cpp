@@ -15,8 +15,12 @@ void ComboxDecaleeDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
         type=0;
     else if (type>list.count())
         type=list.count()-1;
+
+    QStyleOptionViewItemV4 opt = option;
+    initStyleOption(&opt,index);
     QTextOption o;
     o.setAlignment(Qt::AlignLeft| Qt::AlignVCenter);
+    painter->setFont(option.font);
     painter->drawText(option.rect, list.at(type), o);
     painter->restore();
 }

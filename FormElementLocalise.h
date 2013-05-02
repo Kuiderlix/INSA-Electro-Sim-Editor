@@ -18,6 +18,9 @@ public slots:
     void reset();
 
 private:
+
+    void init();
+
     elementLocalise * localise;
 
     QComboBox * typeWidget;

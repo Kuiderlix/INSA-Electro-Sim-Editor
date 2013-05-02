@@ -5,11 +5,7 @@ TableModelPortExcitation::TableModelPortExcitation(BlocElementBase *bloc , QObje
 {
     this->bloc = (blocPortExcitation*)bloc;
     initHeaders(QStringList() << "Port Actif" << "Port Infinitesimal" << "Type" << "Direction" << "Impédance" << "Type Source" << "Ponderation Amplitude" << "Ponderation Phase" << "Avant Gauche" << "Arrière Droit");
-    for (int i=0;i<15;i++)
-    {
-        portExcitation *metal = new portExcitation();
-        bloc->addElement(metal);
-    }
+
 }
 
 QVariant TableModelPortExcitation::data(const QModelIndex &index, int role) const

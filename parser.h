@@ -14,6 +14,8 @@
 #include<math.h>
 #include<string.h>
 #include <iostream>
+#include <fstream>
+#include <limits>
 #include <list>
 #include "volumeCalcul.h"
 #include "paroi.h"
@@ -52,6 +54,8 @@ public:
     void parse();
 
     volumeCalcul * getVolumeCalcul() {return &volume;}
+    paroi * getParoi() {return &parois;}
+
     blocMetallisation * getBlocMetallisations() {return &metallisations;}
     blocParallelepipede * getBlocParallelepipede() {return &parallelepipedes;}
     blocSonde * getBlocSonde() {return &sondes;}
@@ -60,6 +64,17 @@ public:
     blocCartographieTemporelle * getBlocCartoTempo() {return &cartographies;}
     blocSurfacePrelevement * getBlocSurfacePrelev() {return &surfacePrelevements;}
 
+    pml * getPML() {return &PML;}
+    ParamExcitations* getParamExcitations() {return &excitation;}
+    analyseTemporelle* getAnalyseTempo() {return &analyseTemp;}
+    blocPortExcitation* getPortExcitations() {return &portExcitations;}
+    cageExcitation* getCageExcitation() {return &cage;}
+    champLointain * getChampLointain() {return &champlointain;}
+    Excitation* getExcitation() {return &amplitudeV0;}
+    formatStockage* getFormatStockage() {return &stockage;}
+    blocEchantillonnage* getBlocEchantillonnage() {return &facteurEchantillonnage;}
+    compressionHuygens* getCompressionHuygens() {return &compHuygens;}
+    calculDirectivite* getCalculDirective() {return &calculdirectivite;}
 
 
 private:
@@ -69,7 +84,7 @@ private:
     /******************************************************************************/
     void parserSautLigne();
     int parserGetInt();
-    float parserGetFloat();
+    double parserGetDouble();
     string parserGetString();
 
     /******************************************************************************/
@@ -123,7 +138,7 @@ private:
     /**>Variables Parser **********************************************************/
     /******************************************************************************/
     char nomfic[TAILLE_NOM_FICHIER];
-    FILE *fp;
+    ifstream fi;
     char chaine[TAILLE_CHAINE];
     //Numero du fichier à récupérer !
     int numstru;

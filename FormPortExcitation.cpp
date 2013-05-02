@@ -80,6 +80,8 @@ FormPortExcitation::FormPortExcitation(portExcitation *port, int mode, QWidget *
 
     setLayout(layoutPrincipal);
 
+    init();
+
 }
 
 void FormPortExcitation::valider()
@@ -99,15 +101,24 @@ void FormPortExcitation::valider()
 void FormPortExcitation::reset()
 {
     FormElementBase::reset();
-    portActifWidget->setChecked(false);
-    portInfinitesimalWidget->setChecked(false);
-    typePortWidget->setCurrentIndex(0);
-    directionWidget->setCurrentIndex(0);
-    impedanceWidget->setValue(0);
-    typeSourceWidget->setCurrentIndex(0);
-    ponderationAmplitudeWidget->setValue(0);
-    ponderationPhaseWidget->setValue(0);
 
     port = new portExcitation();
     setElement(port);
+
+    init();
+}
+
+void FormPortExcitation::init()
+{
+    FormElementBase::init();
+
+    portActifWidget->setChecked(port->IsPortActif());
+    portInfinitesimalWidget->setChecked(port->IsPortInfinitesimal());
+    typePortWidget->setCurrentIndex(port->GetTypePort());
+    directionWidget->setCurrentIndex(port->GetDirection());
+    impedanceWidget->setValue(port->GetImpedance());
+    typeSourceWidget->setCurrentIndex(port->GetTypeSource());
+    ponderationAmplitudeWidget->setValue(port->GetPonderationAmplitude());
+    ponderationPhaseWidget->setValue(port->GetPonderationPhase());
+
 }

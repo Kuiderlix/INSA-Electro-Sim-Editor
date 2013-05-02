@@ -14,10 +14,20 @@ signals:
     
 public slots:
     void valider();
+    void reset();
 
 
 private:
+
+    void init();
+
     cartographieTemporelle * carto;
+
+    QCheckBox * champsEWidget;
+    QCheckBox * champsHWidget;
+    QSpinBox * iterationDebutWidget;
+    QSpinBox * iterationFinWidget;
+    QSpinBox * intervalleWidget;
     
 };
 

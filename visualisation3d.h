@@ -4,8 +4,10 @@
 #include "myglwidget.h"
 #include <GL/glu.h>
 #include "cube.h"
+#include "elementBase.h"
 #include "point.h"
 #include <vector>
+#include "volumeCalcul.h"
 
 using namespace std;
 
@@ -16,7 +18,7 @@ class Visualisation3D : public MyGLWidget
 {
     Q_OBJECT
     public:
-        explicit Visualisation3D(QWidget *parent = 0);
+        explicit Visualisation3D(volumeCalcul * volume,QWidget *parent = 0);
         void initializeGL();
         void resizeGL(int width, int height);
         void paintGL();
@@ -30,10 +32,15 @@ class Visualisation3D : public MyGLWidget
 
         void wheelEvent ( QWheelEvent * event );
 
+        void dessineVolume();
+
     public slots:
-        void ajoutCube(Cube *);
+        void ajoutElement(elementBase*elem);
+        void ajoutCube(Cube*);
 
     private:
+        volumeCalcul * volume;
+        Cube * volumeGl;
         vector<Cube*> tabCubes;
         double zoom;
         double rotateX, rotateY;

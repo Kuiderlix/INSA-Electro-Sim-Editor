@@ -6,11 +6,7 @@ TableModelElementLocalise::TableModelElementLocalise(BlocElementBase *bloc, QObj
 {
     this->bloc = (blocElementLocalise*)bloc;
     initHeaders(QStringList() << "Type" << "Valeur" << "Direction" << "Avant Gauche" << "Arrière Droit");
-    for (int i=0;i<15;i++)
-    {
-        elementLocalise *metal = new elementLocalise();
-        bloc->addElement(metal);
-    }
+
 }
 
 QVariant TableModelElementLocalise::data(const QModelIndex &index, int role) const

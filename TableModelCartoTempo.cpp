@@ -5,11 +5,6 @@ TableModelCartoTempo::TableModelCartoTempo(BlocElementBase *bloc, QObject *paren
 {
     this->bloc = (blocCartographieTemporelle*)bloc;
     initHeaders(QStringList() << "champ E" << "champ H" << "Iteration Debut" << "Iteration Fin" << "Intervalle" << "Avant Gauche" << "Arrière Droit");
-    for (int i=0;i<15;i++)
-    {
-        cartographieTemporelle *metal = new cartographieTemporelle();
-        bloc->addElement(metal);
-    }
 }
 
 QVariant TableModelCartoTempo::data(const QModelIndex &index, int role) const

@@ -5,11 +5,7 @@ TableModelSonde::TableModelSonde(BlocElementBase *bloc, QObject *parent) :
 {
     this->bloc = (blocSonde*)bloc;
     initHeaders(QStringList() << "EX" << "EY" << "EZ" << "HX" << "HY" << "HZ" << "Point d'Application" << "Valeur au Centre" << "Avant Gauche" << "Arrière Droit");
-    for (int i=0;i<15;i++)
-    {
-        sonde *metal = new sonde();
-        bloc->addElement(metal);
-    }
+
 }
 
 QVariant TableModelSonde::data(const QModelIndex &index, int role) const

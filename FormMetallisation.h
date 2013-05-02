@@ -23,6 +23,8 @@ public slots:
 
 private:
 
+    void init();
+
 
     QDoubleSpinBox * lineEditConductivite;
     metallisation * metal;

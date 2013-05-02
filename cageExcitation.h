@@ -84,6 +84,9 @@ public:
     void SetPointReference(int x, int y, int z) {
         this->pointReference = coordonnee(x,y,z);
     }
+    void SetPointReference(coordonnee c) {
+        this->pointReference = c;
+    }
 
     float GetPsi0() const {
         return psi0;

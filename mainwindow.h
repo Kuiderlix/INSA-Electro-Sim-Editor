@@ -42,6 +42,9 @@ private:
     TableViewParallelepipede * vueParal;
     TableViewElementLocalise * vueElemLocal;
     TableViewPortExcitation * vuePortExci;
+    TableViewSonde * vueSonde;
+    TableViewCartTempo * vueCartoTempo;
+    TableViewSurfacePrelev * vueSurfacePrelev;
 
     MySortFilterProxyModel * currentModel;
     FilterWidget * filterWidget;

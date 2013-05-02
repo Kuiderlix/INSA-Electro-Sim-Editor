@@ -1,15 +1,15 @@
 #include "ParamAvanceWidget.h"
 
-ParamAvanceWidget::ParamAvanceWidget(QWidget *parent) :
+ParamAvanceWidget::ParamAvanceWidget(Parser *parser, QWidget *parent) :
     QWidget(parent)
 {
     QVBoxLayout * layout = new QVBoxLayout;
     layout->setMargin(0);
 
-    FormFormatStockage * formFormat = new FormFormatStockage(new formatStockage());
-    FormExcitation * formExci = new FormExcitation(new Excitation());
-    FormEchantillonage *formEchanti = new FormEchantillonage(new blocEchantillonnage());
-    FormPML * formPml = new FormPML(new pml());
+    FormFormatStockage * formFormat = new FormFormatStockage(parser->getFormatStockage());
+    FormExcitation * formExci = new FormExcitation(parser->getExcitation());
+    FormEchantillonage *formEchanti = new FormEchantillonage(parser->getBlocEchantillonnage());
+    FormPML * formPml = new FormPML(parser->getPML());
 
     layout->addWidget(formExci);
     layout->addWidget(formFormat);

@@ -5,12 +5,13 @@
 #include "FormCompressionHuygens.h"
 #include "FormCalculDirective.h"
 #include "FormChampLointain.h"
+#include "parser.h"
 
 class CalculChampsLointainWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CalculChampsLointainWidget(QWidget *parent = 0);
+    explicit CalculChampsLointainWidget(Parser* parser,QWidget *parent = 0);
     
 signals:
     

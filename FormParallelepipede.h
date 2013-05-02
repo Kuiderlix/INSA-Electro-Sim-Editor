@@ -19,6 +19,9 @@ public slots:
 
 
 private:
+
+    void init();
+
     parallelepipede * paralle;
     QDoubleSpinBox * permitRelativeWidget;
     QDoubleSpinBox * permeRelativeWidget;

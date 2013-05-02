@@ -5,11 +5,6 @@ TableModelMetallisation::TableModelMetallisation(BlocElementBase *bloc, QObject 
 {
     listeMetal = (blocMetallisation*)bloc;
     initHeaders(QStringList() << "Conductivité" << "Avant Gauche" << "Arrière Droit");
-    for (int i=0;i<15;i++)
-    {
-        metallisation *metal = new metallisation();
-        listeMetal->addElement(metal);
-    }
 
 }
 

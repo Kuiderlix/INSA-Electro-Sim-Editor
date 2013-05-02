@@ -50,6 +50,12 @@ void FormElementBase::reset()
     formCoord2->setCoordonnee(coordonnee());
 }
 
+void FormElementBase::init()
+{
+    formCoord1->setCoordonnee(element->GetAvantGauche());
+    formCoord2->setCoordonnee(element->GetArriereDroit());
+}
+
 void FormElementBase::setElement(elementBase * elem)
 {
     this->element=elem;

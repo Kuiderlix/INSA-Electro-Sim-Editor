@@ -18,6 +18,9 @@ public slots:
 
 
 private:
+
+    void init();
+
     portExcitation * port;
 
     QCheckBox * portActifWidget;

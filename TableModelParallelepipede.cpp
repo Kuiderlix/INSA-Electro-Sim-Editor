@@ -5,11 +5,7 @@ TableModelParallelepipede::TableModelParallelepipede(BlocElementBase *bloc , QOb
 {
     this->bloc = (blocParallelepipede*)bloc;
     initHeaders(QStringList() << "PermitRelative" << "PermeRelative" << "Conductivité" << "Avant Gauche" << "Arrière Droit");
-    for (int i=0;i<15;i++)
-    {
-        parallelepipede *metal = new parallelepipede();
-        bloc->addElement(metal);
-    }
+
 }
 
 QVariant TableModelParallelepipede::data(const QModelIndex &index, int role) const

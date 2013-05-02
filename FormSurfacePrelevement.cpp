@@ -12,13 +12,13 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
 
     QFormLayout * layout = new QFormLayout;
 
-    QComboBox * typeSurfaceWidget = new QComboBox();
+    typeSurfaceWidget = new QComboBox();
     typeSurfaceWidget->addItems(QStringList() << "Huygens" << "Surface_de_prelevement_DG" << "Kirchhoff");
     layout->addRow("Type Surface:",typeSurfaceWidget);
     this->connect(typeSurfaceWidget, SIGNAL(currentIndexChanged(int)), this, SLOT(activeResteForm(int)));
 
 
-    QLineEdit * nomFichierWidget = new QLineEdit();
+    nomFichierWidget = new QLineEdit();
     layout->addRow("Nom Fichier:",nomFichierWidget);
 
     resteForm = new QWidget();
@@ -26,16 +26,20 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
     QFormLayout * layoutResteForm = new QFormLayout;
     layoutResteForm->setMargin(0);
 
-    QSpinBox * insideOutsideWidget = new QSpinBox();
+    insideOutsideWidget = new QSpinBox();
     layoutResteForm->addRow("InsideOutside:",insideOutsideWidget);
 
-    QDoubleSpinBox * compressionLongueurWidget = new QDoubleSpinBox();
+    nbFacesWidget = new QComboBox();
+    nbFacesWidget->addItems(QStringList() << "5 Faces" << "6 Faces");
+    layoutResteForm->addRow("Nb faces:",nbFacesWidget);
+
+    compressionLongueurWidget = new QDoubleSpinBox();
     layoutResteForm->addRow("Compression Longueur:",compressionLongueurWidget);
 
-    QDoubleSpinBox * compressionLargeurWidget = new QDoubleSpinBox();
+    compressionLargeurWidget = new QDoubleSpinBox();
     layoutResteForm->addRow("Compression Largeur:",compressionLargeurWidget);
 
-    QDoubleSpinBox * compressionHauteurWidget = new QDoubleSpinBox();
+    compressionHauteurWidget = new QDoubleSpinBox();
     layoutResteForm->addRow("Compression Hauteur:",compressionHauteurWidget);
 
     resteForm->setLayout(layoutResteForm);
@@ -52,10 +56,32 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int
 
     setLayout(layoutPrincipal);
 
+
+    init();
+
 }
 
 void FormSurfacePrelevement::valider()
 {
+    FormElementBase::valider();
+
+    surface->SetTypeSurface(typeSurfaceWidget->currentIndex()+1);
+    surface->SetNomFichier(nomFichierWidget->text().toStdString());
+    surface->SetInsideOutside(insideOutsideWidget->value());
+    surface->SetNbFaces(nbFacesWidget->currentIndex()+5);
+    surface->SetCompressionHauteur(compressionHauteurWidget->value());
+    surface->SetCompressionLargeur(compressionLargeurWidget->value());
+    surface->SetCompressionLongueur(compressionLongueurWidget->value());
+
+    emit elementValide(surface);
+}
+
+void FormSurfacePrelevement::reset()
+{
+    FormElementBase::reset();
+    this->surface = new surfacePrelevement();
+    setElement(this->surface);
+    init();
 }
 
 void FormSurfacePrelevement::activeResteForm(int val)
@@ -68,4 +94,16 @@ void FormSurfacePrelevement::activeResteForm(int val)
     {
         resteForm->setVisible(false);
     }
+}
+
+void FormSurfacePrelevement::init()
+{
+    FormElementBase::init();
+    typeSurfaceWidget->setCurrentIndex(surface->GetTypeSurface()-1);
+    nomFichierWidget->setText(QString(surface->GetNomFichier().c_str()));
+    insideOutsideWidget->setValue(surface->GetInsideOutside());
+    nbFacesWidget->setCurrentIndex(surface->GetNbFaces()-5);
+    compressionLongueurWidget->setValue(surface->GetCompressionLongueur());
+    compressionLargeurWidget->setValue(surface->GetCompressionLargeur());
+    compressionHauteurWidget->setValue(surface->GetCompressionHauteur());
 }

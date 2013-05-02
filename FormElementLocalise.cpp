@@ -45,6 +45,8 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QW
 
     setLayout(layoutPrincipal);
 
+    init();
+
 }
 
 void FormElementLocalise::valider()
@@ -59,9 +61,15 @@ void FormElementLocalise::valider()
 void FormElementLocalise::reset()
 {
     FormElementBase::reset();
-    typeWidget->setCurrentIndex(0);
-    directionWidget->setCurrentIndex(0);
-    valeurWidget->setValue(0);
     this->localise = new elementLocalise();
     setElement(this->localise);
+    init();
+}
+
+void FormElementLocalise::init()
+{
+    FormElementBase::init();
+    typeWidget->setCurrentIndex(localise->GetType());
+    directionWidget->setCurrentIndex(localise->GetDirection());
+    valeurWidget->setValue(localise->GetValeur());
 }

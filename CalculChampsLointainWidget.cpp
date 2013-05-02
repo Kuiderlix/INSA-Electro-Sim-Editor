@@ -1,6 +1,6 @@
 #include "CalculChampsLointainWidget.h"
 
-CalculChampsLointainWidget::CalculChampsLointainWidget(QWidget *parent) :
+CalculChampsLointainWidget::CalculChampsLointainWidget(Parser *parser, QWidget *parent) :
     QWidget(parent)
 {
 
@@ -8,9 +8,9 @@ CalculChampsLointainWidget::CalculChampsLointainWidget(QWidget *parent) :
     QVBoxLayout * layout = new QVBoxLayout;
     layout->setMargin(0);
 
-    FormCompressionHuygens * formHuy = new FormCompressionHuygens(new compressionHuygens());
-    FormCalculDirective * formCal = new FormCalculDirective(new calculDirectivite());
-    FormChampLointain * formChLo = new FormChampLointain(new champLointain());
+    FormCompressionHuygens * formHuy = new FormCompressionHuygens(parser->getCompressionHuygens());
+    FormCalculDirective * formCal = new FormCalculDirective(parser->getCalculDirective());
+    FormChampLointain * formChLo = new FormChampLointain(parser->getChampLointain());
 
     layout->addWidget(formHuy);
     layout->addWidget(formCal);

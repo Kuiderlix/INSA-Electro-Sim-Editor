@@ -1,12 +1,23 @@
 #include "visualisation3d.h"
 
 
-Visualisation3D::Visualisation3D(QWidget *parent)
+Visualisation3D::Visualisation3D(volumeCalcul *volume, QWidget *parent)
     : MyGLWidget(parent)
 {
+    this->volume=volume;
+    this->volume->SetLargeur(240);
+    this->volume->SetHauteur(240);
+    this->volume->SetLongueur(240);
+
+    this->volume->SetNombreX(30);
+    this->volume->SetNombreY(30);
+    this->volume->SetNombreZ(30);
+
+
+    volumeGl = new Cube(Point(-240/2,-240/2,-240/2),Point(240/2,240/2,240/2));
+
     setFocusPolicy(Qt::ClickFocus);
     setCursor(QCursor(Qt::OpenHandCursor));
-    ajoutCube(new Cube(Point(-3,-3,-3),Point(3,3,3)));
 }
 
 void Visualisation3D::initializeGL()
@@ -16,7 +27,7 @@ void Visualisation3D::initializeGL()
     rotateY=0.0;
 
     glShadeModel(GL_SMOOTH);
-    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
     glClearDepth(1.0f);
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LEQUAL);
@@ -30,8 +41,8 @@ void Visualisation3D::resizeGL(int width, int height)
     glViewport(0, 0, width, height);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.1f, 100.0f);
-    gluLookAt(0,0,15,0,0,0,1,0,0);
+    gluPerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.001f, 10000.0f);
+    gluLookAt(0,0,250,0,0,0,1,0,0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
@@ -46,6 +57,8 @@ void Visualisation3D::paintGL()
     glRotatef(pointActuel.x-depart.x, 0, 1.0, 0);  //rotation en y avec la souris
     glRotatef(rotateX, 1.0, 0, 0); // rotation en x avec le clavier
     glRotatef(rotateY, 0, 1.0, 0);  //rotation en y avec le clavier
+
+    dessineVolume();
 
     for (vector<Cube*>::iterator it = tabCubes.begin(); it!=tabCubes.end(); ++it) {
         (*it)->dessineCube();
@@ -109,9 +122,21 @@ void Visualisation3D::wheelEvent(QWheelEvent * event) // gestion de la molette d
     event->accept();
 }
 
+void Visualisation3D::dessineVolume()
+{
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    volumeGl->dessineCube();
+}
 
-void Visualisation3D::ajoutCube(Cube * c)
+void Visualisation3D::ajoutElement(elementBase * elem)
+{
+
+    tabCubes.push_back(new Cube());
+}
+
+void Visualisation3D::ajoutCube(Cube *c)
 {
     tabCubes.push_back(c);
 }
+
 

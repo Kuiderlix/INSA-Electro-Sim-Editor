@@ -5,10 +5,27 @@ TableModelSurfacePrelev::TableModelSurfacePrelev(BlocElementBase *bloc,QObject *
 {
     this->bloc = (blocSurfacePrelevement*)bloc;
     initHeaders(QStringList() << "Type Surface" << "Nom Fichier" << "Inside/Outside" << "Nombre Faces" << "Compression Longueur" << "Compression Largeur" << "Compression Hauteur" << "Avant Gauche" << "Arrière Droit");
-    for (int i=0;i<15;i++)
+
+}
+
+Qt::ItemFlags TableModelSurfacePrelev::flags(const QModelIndex &index) const
+{
+    int row = index.row();
+    int column = index.column();
+    if (this->index(row,TypeSurface).data().toInt() == 2)
     {
-        surfacePrelevement *metal = new surfacePrelevement();
-        bloc->addElement(metal);
+        return Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled;
+    }
+    else
+    {
+        if (column>=2 && column <=6)
+        {
+            return Qt::ItemIsSelectable;
+        }
+        else
+        {
+            return Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled;
+        }
     }
 }
 

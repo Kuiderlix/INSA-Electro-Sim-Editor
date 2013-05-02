@@ -14,13 +14,24 @@ signals:
 
 public slots:
     void valider();
+    void reset();
 
     void activeResteForm(int val);
 
 private:
 
+    void init();
+
     surfacePrelevement * surface;
     QWidget * resteForm;
+
+    QComboBox * typeSurfaceWidget;
+    QLineEdit * nomFichierWidget;
+    QSpinBox * insideOutsideWidget;
+    QComboBox * nbFacesWidget;
+    QDoubleSpinBox * compressionLongueurWidget;
+    QDoubleSpinBox * compressionLargeurWidget;
+    QDoubleSpinBox * compressionHauteurWidget;
 };
 
 #endif // FORMSURFACEPRELEVEMENT_H

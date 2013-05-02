@@ -12,18 +12,11 @@ FormSonde::FormSonde(sonde *m_sonde, int mode, QWidget *parent) :
 
     QVBoxLayout * layout = new QVBoxLayout;
 
-
-
     QHBoxLayout * layoutActifE = new QHBoxLayout;
 
     eXWidget = new QCheckBox("ex");
-    eXWidget->setChecked(m_sonde->IsEx());
-
     eYWidget = new QCheckBox("ey");
-    eYWidget->setChecked(m_sonde->IsEy());
-
     eZWidget = new QCheckBox("ez");
-    eZWidget->setChecked(m_sonde->IsEz());
 
     layoutActifE->addWidget(eXWidget);
     layoutActifE->addWidget(eYWidget);
@@ -33,25 +26,19 @@ FormSonde::FormSonde(sonde *m_sonde, int mode, QWidget *parent) :
 
     QHBoxLayout * layoutActifH = new QHBoxLayout;
     hXWidget = new QCheckBox("hx");
-    hXWidget->setChecked(m_sonde->IsHx());
-
     hYWidget = new QCheckBox("hy");
-    hYWidget->setChecked(m_sonde->IsHy());
-
     hZWidget = new QCheckBox("hz");
-    hZWidget->setChecked(m_sonde->IsHz());
 
     layoutActifH->addWidget(hXWidget);
     layoutActifH->addWidget(hYWidget);
     layoutActifH->addWidget(hZWidget);
     layout->addLayout(layoutActifH);
 
-    formPtAppli = new FormCoordonnees(m_sonde->GetPointApplication());
+    formPtAppli = new FormCoordonnees();
     layout->addWidget(formPtAppli);
 
 
     valCentreWidget = new QCheckBox("Valeur au centre");
-    valCentreWidget->setChecked(m_sonde->IsValeurAuCentre());
     layout->addWidget(valCentreWidget);
 
     layout->addWidget(getWidgetElementBase());
@@ -59,6 +46,8 @@ FormSonde::FormSonde(sonde *m_sonde, int mode, QWidget *parent) :
     group->setLayout(layout);
     layoutPrincipal->addWidget(group);
     setLayout(layoutPrincipal);
+
+    init();
 }
 void FormSonde::valider()
 {
@@ -77,4 +66,28 @@ void FormSonde::valider()
     m_sonde->SetPointApplication(formPtAppli->getCoord());
 
     emit elementValide(m_sonde);
+}
+
+void FormSonde::reset()
+{
+    FormElementBase::reset();
+    this->m_sonde = new sonde();
+    setElement(m_sonde);
+    init();
+}
+
+void FormSonde::init()
+{
+    FormElementBase::init();
+    eXWidget->setChecked(m_sonde->IsEx());
+    eYWidget->setChecked(m_sonde->IsEy());
+    eZWidget->setChecked(m_sonde->IsEz());
+
+    hXWidget->setChecked(m_sonde->IsHx());
+    hYWidget->setChecked(m_sonde->IsHy());
+    hZWidget->setChecked(m_sonde->IsHz());
+
+    formPtAppli->setCoordonnee(m_sonde->GetPointApplication());
+
+    valCentreWidget->setChecked(m_sonde->IsValeurAuCentre());
 }

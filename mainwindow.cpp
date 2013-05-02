@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     construireMenu();
     QVBoxLayout * layout = new QVBoxLayout();
-    visualisation = new Visualisation3D(this);
+    visualisation = new Visualisation3D(parser.getVolumeCalcul(),this);
     layout->addWidget(visualisation);
 
 
@@ -16,19 +16,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
     vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
-    TableViewSonde * vueSonde = new TableViewSonde(parser.getBlocSonde());
+    vueSonde = new TableViewSonde(parser.getBlocSonde());
     vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
     vuePortExci = new TableViewPortExcitation(parser.getBlocPortExcitation());
-    TableViewCartTempo * vueCartoTempo = new TableViewCartTempo(parser.getBlocCartoTempo());
-    TableViewSurfacePrelev * vueSurfacePrelev = new TableViewSurfacePrelev(parser.getBlocSurfacePrelev());
+    vueCartoTempo = new TableViewCartTempo(parser.getBlocCartoTempo());
+    vueSurfacePrelev = new TableViewSurfacePrelev(parser.getBlocSurfacePrelev());
 
     tabWidget = new QTabWidget();
     tabWidget->addTab(vueMetal, "Métallisations");
-    tabWidget->addTab(vueElemLocal, "Elements Localises");
     tabWidget->addTab(vueParal, "Parallelepipèdes");
+    tabWidget->addTab(vueElemLocal, "Elements Localises");
     tabWidget->addTab(vuePortExci, "Ports Excitations");
-    tabWidget->addTab(vueSonde, "Sondes");
     tabWidget->addTab(vueSurfacePrelev, "Surfaces Prelevements");
+    tabWidget->addTab(vueSonde, "Sondes");
     tabWidget->addTab(vueCartoTempo, "Cartographies Temporelles");
     layoutTable->addWidget(tabWidget);
     tables->setLayout(layoutTable);
@@ -108,15 +108,19 @@ void MainWindow::construireDockToolBox()
     connect(descGeo,SIGNAL(newParaCreated(elementBase*)),vueParal,SLOT(addElement(elementBase*)));
     connect(descGeo,SIGNAL(newElemLocCreated(elementBase*)),vueElemLocal,SLOT(addElement(elementBase*)));
 
-
-    ParamSimuWidget* paramSimu = new ParamSimuWidget();
+    ParamSimuWidget* paramSimu = new ParamSimuWidget(&parser);
     connect(paramSimu,SIGNAL(newPortExcitationCreated(elementBase*)),vuePortExci,SLOT(addElement(elementBase*)));
+
+    ObjetFDTDWidget* objFDTD = new ObjetFDTDWidget(&parser);
+    connect(objFDTD,SIGNAL(newSondeCreated(elementBase*)),vueSonde,SLOT(addElement(elementBase*)));
+    connect(objFDTD,SIGNAL(newSurfacePrelCreated(elementBase*)),vueSurfacePrelev,SLOT(addElement(elementBase*)));
+    connect(objFDTD,SIGNAL(newCartoTempoCreated(elementBase*)),vueCartoTempo,SLOT(addElement(elementBase*)));
 
     toolbox->addItem(descGeo, "Description Géométrique");
     toolbox->addItem(paramSimu, "Paramètres Simulation");
-    toolbox->addItem(new ObjetFDTDWidget(), "Objets FDTD et DG-FDTD");
-    toolbox->addItem(new CalculChampsLointainWidget(), "Calcul Champ Lointain");
-    toolbox->addItem(new ParamAvanceWidget(), "Paramètres Avancés");
+    toolbox->addItem(objFDTD, "Objets FDTD et DG-FDTD");
+    toolbox->addItem(new CalculChampsLointainWidget(&parser), "Calcul Champ Lointain");
+    toolbox->addItem(new ParamAvanceWidget(&parser), "Paramètres Avancés");
 
 
     dockLayout->addWidget(new QPushButton("Générer"));
