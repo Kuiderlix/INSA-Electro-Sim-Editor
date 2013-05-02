@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
     construireMenu();
     QVBoxLayout * layout = new QVBoxLayout();
     visualisation = new Visualisation3D(parser.getVolumeCalcul(),this);
+    for (int i=0;i<parser.getBlocParallelepipede()->getNbElement();i++)
+        visualisation->ajoutElement(parser.getBlocParallelepipede()->getParallelepipede(i));
     layout->addWidget(visualisation);
 
 

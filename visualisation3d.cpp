@@ -5,16 +5,8 @@ Visualisation3D::Visualisation3D(volumeCalcul *volume, QWidget *parent)
     : MyGLWidget(parent)
 {
     this->volume=volume;
-    this->volume->SetLargeur(240);
-    this->volume->SetHauteur(240);
-    this->volume->SetLongueur(240);
 
-    this->volume->SetNombreX(30);
-    this->volume->SetNombreY(30);
-    this->volume->SetNombreZ(30);
-
-
-    volumeGl = new Cube(Point(-240/2,-240/2,-240/2),Point(240/2,240/2,240/2));
+    volumeGl = new Cube(Point(-volume->GetLargeur()/2,-volume->GetLongueur()/2,-volume->GetHauteur()/2),Point(volume->GetLargeur()/2,volume->GetLongueur()/2,volume->GetHauteur()/2));
 
     setFocusPolicy(Qt::ClickFocus);
     setCursor(QCursor(Qt::OpenHandCursor));
@@ -42,7 +34,7 @@ void Visualisation3D::resizeGL(int width, int height)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(45.0f, (GLfloat)width/(GLfloat)height, 0.001f, 10000.0f);
-    gluLookAt(0,0,250,0,0,0,1,0,0);
+    gluLookAt(0,0,volume->GetHauteur()*1.5,0,0,0,1,0,0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
@@ -58,8 +50,11 @@ void Visualisation3D::paintGL()
     glRotatef(rotateX, 1.0, 0, 0); // rotation en x avec le clavier
     glRotatef(rotateY, 0, 1.0, 0);  //rotation en y avec le clavier
 
-    dessineVolume();
 
+    glColor3f(0.0f, 0.0f, 0.0f);
+    dessineVolume();
+    glColor3f(1.0f, 0.0f, 0.0f);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     for (vector<Cube*>::iterator it = tabCubes.begin(); it!=tabCubes.end(); ++it) {
         (*it)->dessineCube();
     }
@@ -130,8 +125,22 @@ void Visualisation3D::dessineVolume()
 
 void Visualisation3D::ajoutElement(elementBase * elem)
 {
+    double ratioX = volume->GetLargeur() / volume->GetNombreX();
+    double ratioY = volume->GetLongueur() / volume->GetNombreY();
+    double ratioZ = volume->GetHauteur() / volume->GetNombreZ();
+    coordonnee avantGauche = elem->GetAvantGauche();
+    coordonnee arriereDroit = elem->GetArriereDroit();
+    Point paG,paD;
 
-    tabCubes.push_back(new Cube());
+    paG.x=(avantGauche.GetX()*ratioX)-(volume->GetLargeur()/2);
+    paG.y=(avantGauche.GetY()*ratioY)-(volume->GetLongueur()/2);
+    paG.z=(avantGauche.GetZ()*ratioZ)-(volume->GetHauteur()/2);
+
+    paD.x=(arriereDroit.GetX()*ratioX)-(volume->GetLargeur()/2);
+    paD.y=(arriereDroit.GetY()*ratioY)-(volume->GetLongueur()/2);
+    paD.z=(arriereDroit.GetZ()*ratioZ)-(volume->GetHauteur()/2);
+
+    tabCubes.push_back(new Cube(paG,paD));
 }
 
 void Visualisation3D::ajoutCube(Cube *c)

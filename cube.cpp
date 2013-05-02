@@ -32,8 +32,6 @@ void Cube::dessineCube()
    */
     glBegin(GL_QUADS);
             // Face Avant
-           glColor3f(0.0f, 0.0f, 0.0f);
-
            glVertex3f(topLeftCorner.x,      topLeftCorner.y,        topLeftCorner.z);
            glVertex3f(topLeftCorner.x,      bottomRightCorner.y,    topLeftCorner.z);
            glVertex3f(bottomRightCorner.x,  bottomRightCorner.y,    topLeftCorner.z);

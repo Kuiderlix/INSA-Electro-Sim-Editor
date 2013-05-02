@@ -2,7 +2,7 @@
 
 Parser::Parser()
 {
-    numstru = 1;
+    numstru = 9;
 }
 
 
@@ -13,7 +13,6 @@ void Parser::parserSautLigne(){
     //fscanf(fp, "%*s");
     char temp[100];
     fi >> temp;
-    cout << temp << endl;
 }
 int Parser::parserGetInt(){
     int temp;
@@ -24,7 +23,6 @@ int Parser::parserGetInt(){
 }
 double Parser::parserGetDouble(){
     double temp;
-    cout << "test" << endl;
     parserSautLigne();
     fi >> temp;
     //fscanf(fp, "%f", &temp);
