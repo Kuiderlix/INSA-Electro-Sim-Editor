@@ -13,6 +13,7 @@ FormEchantillonage::FormEchantillonage(blocEchantillonnage *echanti, QWidget *pa
 
     QSpinBox * facteurWidget = new QSpinBox();
     layout->addRow("Facteur:",facteurWidget);
+    connect(facteurWidget,SIGNAL(valueChanged(int)),echanti,SLOT(SetFacteurEchatillonnage(int)));
 
     layout->setAlignment(Qt::AlignTop);
 

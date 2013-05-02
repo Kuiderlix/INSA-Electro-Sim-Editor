@@ -12,7 +12,8 @@
 #include "blocConfiguration.h"
 
 
-class champLointain : blocConfiguration{
+class champLointain : public blocConfiguration{
+    Q_OBJECT
 public:
     champLointain();
     champLointain(const champLointain& orig);
@@ -21,70 +22,70 @@ public:
     bool IsCalculImage() const {
         return calculImage;
     }
+    double GetFrequenceMax() const {
+        return frequenceMax;
+    }
+    double GetFrequenceMin() const {
+        return frequenceMin;
+    }
+    int GetHauteurPlanMasse() const {
+        return hauteurPlanMasse;
+    }
+    coordonnee GetOrigineRepere() const {
+        return origineRepere;
+    }
+    int GetPasDiscrPhi() const {
+        return pasDiscrPhi;
+    }
+    int GetPasDiscrTeta() const {
+        return pasDiscrTeta;
+    }
+    double GetPasFrequence() const {
+        return pasFrequence;
+    }
+    std::string GetNomFichier() const {
+        return nomFichier;
+    }
+
+public slots:
 
     void SetCalculImage(bool calculImage) {
         this->calculImage = calculImage;
     }
-
-    float GetFrequenceMax() const {
-        return frequenceMax;
-    }
-
-    void SetFrequenceMax(float frequenceMax) {
+    void SetFrequenceMax(double frequenceMax) {
         this->frequenceMax = frequenceMax;
     }
 
-    float GetFrequenceMin() const {
-        return frequenceMin;
-    }
-
-    void SetFrequenceMin(float frequenceMin) {
+    void SetFrequenceMin(double frequenceMin) {
         this->frequenceMin = frequenceMin;
-    }
-
-    int GetHauteurPlanMasse() const {
-        return hauteurPlanMasse;
     }
 
     void SetHauteurPlanMasse(int hauteurPlanMasse) {
         this->hauteurPlanMasse = hauteurPlanMasse;
     }
 
-    coordonnee GetOrigineRepere() const {
-        return origineRepere;
-    }
-
     void SetOrigineRepere(int x, int y, int z) {
         this->origineRepere = coordonnee(x,y,z);
     }
-
-    int GetPasDiscrPhi() const {
-        return pasDiscrPhi;
+    void SetOrigineRepere(coordonnee c) {
+        this->origineRepere = c;
     }
+
 
     void SetPasDiscrPhi(int pasDiscrPhi) {
         this->pasDiscrPhi = pasDiscrPhi;
     }
 
-    int GetPasDiscrTeta() const {
-        return pasDiscrTeta;
-    }
 
     void SetPasDiscrTeta(int pasDiscrTeta) {
         this->pasDiscrTeta = pasDiscrTeta;
     }
 
-    float GetPasFrequence() const {
-        return pasFrequence;
-    }
 
-    void SetPasFrequence(float pasFrequence) {
+    void SetPasFrequence(double pasFrequence) {
         this->pasFrequence = pasFrequence;
     }
-    
-    std::string GetNomFichier() const {
-        return nomFichier;
-    }
+
 
     void SetNomFichier(std::string nomFichier) {
         this->nomFichier = nomFichier;
@@ -94,9 +95,9 @@ public:
 
 private:
     coordonnee origineRepere;
-    float frequenceMin;
-    float frequenceMax;
-    float pasFrequence;
+    double frequenceMin;
+    double frequenceMax;
+    double pasFrequence;
     bool calculImage;
     int hauteurPlanMasse;
     int pasDiscrTeta;

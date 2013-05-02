@@ -16,15 +16,19 @@ public:
     coordonnee getCoord();
     
 signals:
+    void coordonneeChanged(coordonnee);
     
 public slots:
 
-    void changeX(QString);
-    void changeY(QString);
-    void changeZ(QString);
+    void changeX(int);
+    void changeY(int);
+    void changeZ(int);
 
 
 private:
+
+    void init();
+
     coordonnee  coord;
 
     QSpinBox * champsX;

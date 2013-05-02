@@ -13,6 +13,7 @@ FormExcitation::FormExcitation(Excitation *excitation, QWidget *parent) :
 
     QDoubleSpinBox * amplitudeWidget = new QDoubleSpinBox();
     layout->addRow("Amplitude Vo:",amplitudeWidget);
+    connect(amplitudeWidget,SIGNAL(valueChanged(double)),excitation,SLOT(SetAmplitudeV0(double)));
 
     layout->setAlignment(Qt::AlignTop);
 

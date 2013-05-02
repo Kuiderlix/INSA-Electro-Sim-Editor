@@ -95,7 +95,8 @@ SOURCES += main.cpp\
     FormExcitation.cpp \
     FormEchantillonage.cpp \
     MySortFilterProxyModel.cpp \
-    FilterWidget.cpp
+    FilterWidget.cpp \
+    FormPML.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -183,7 +184,8 @@ HEADERS  += mainwindow.h \
     FormExcitation.h \
     FormEchantillonage.h \
     MySortFilterProxyModel.h \
-    FilterWidget.h
+    FilterWidget.h \
+    FormPML.h
 
 OTHER_FILES += \
     DATA1.ana \

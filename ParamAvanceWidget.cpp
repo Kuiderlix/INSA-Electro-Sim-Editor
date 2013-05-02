@@ -9,9 +9,11 @@ ParamAvanceWidget::ParamAvanceWidget(QWidget *parent) :
     FormFormatStockage * formFormat = new FormFormatStockage(new formatStockage());
     FormExcitation * formExci = new FormExcitation(new Excitation());
     FormEchantillonage *formEchanti = new FormEchantillonage(new blocEchantillonnage());
+    FormPML * formPml = new FormPML(new pml());
 
     layout->addWidget(formExci);
     layout->addWidget(formFormat);
+    layout->addWidget(formPml);
     layout->addWidget(formEchanti);
 
     setLayout(layout);

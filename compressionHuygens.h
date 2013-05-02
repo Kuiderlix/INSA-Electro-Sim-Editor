@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   compressionHuygens.h
  * Author: camille
  *
@@ -12,6 +12,7 @@
 
 
 class compressionHuygens : public blocConfiguration{
+    Q_OBJECT
 public:
     compressionHuygens();
     compressionHuygens(const compressionHuygens& orig);
@@ -20,29 +21,28 @@ public:
     int GetCompressionHauteur() const {
         return compressionHauteur;
     }
+    int GetCompressionLargeur() const {
+        return compressionLargeur;
+    }
+    int GetCompressionLongueur() const {
+        return compressionLongueur;
+    }
+    int GetFacteurMultiplicatif() const {
+        return facteurMultiplicatif;
+    }
+
+public slots:
 
     void SetCompressionHauteur(int compressionHauteur) {
         this->compressionHauteur = compressionHauteur;
-    }
-
-    int GetCompressionLargeur() const {
-        return compressionLargeur;
     }
 
     void SetCompressionLargeur(int compressionLargeur) {
         this->compressionLargeur = compressionLargeur;
     }
 
-    int GetCompressionLongueur() const {
-        return compressionLongueur;
-    }
-
     void SetCompressionLongueur(int compressionLongueur) {
         this->compressionLongueur = compressionLongueur;
-    }
-
-    int GetFacteurMultiplicatif() const {
-        return facteurMultiplicatif;
     }
 
     void SetFacteurMultiplicatif(int facteurMultiplicatif) {

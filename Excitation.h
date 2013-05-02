@@ -12,23 +12,26 @@
 
 
 class Excitation : public blocConfiguration{
+    Q_OBJECT
 public:
     Excitation();
     Excitation(const Excitation& orig);
     virtual ~Excitation();
     
-    float GetAmplitudeV0() const {
+    double GetAmplitudeV0() const {
         return amplitudeV0;
     }
 
-    void SetAmplitudeV0(float amplitudeV0) {
+public slots:
+
+    void SetAmplitudeV0(double amplitudeV0) {
         this->amplitudeV0 = amplitudeV0;
     }
 
     void ecrire();
     
 private:
-    float amplitudeV0;
+    double amplitudeV0;
 };
 
 #endif	/* BLOCAMPLITUDE_H */

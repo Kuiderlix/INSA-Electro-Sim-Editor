@@ -5,6 +5,7 @@
 #include "FormFormatStockage.h"
 #include "FormExcitation.h"
 #include "FormEchantillonage.h"
+#include "FormPML.h"
 
 class ParamAvanceWidget : public QWidget
 {

@@ -12,21 +12,24 @@
 
 
 class formatStockage : public blocConfiguration{
+    Q_OBJECT
 public:
     formatStockage();
     formatStockage(const formatStockage& orig);
     virtual ~formatStockage();
-    
+
     int GetFormat() const {
         return format;
     }
 
-    void SetFormat(int format) {
-        this->format = format;
-    }
-
     int GetFormatFichierPrelevement() const {
         return formatFichierPrelevement;
+    }
+
+public slots:
+
+    void SetFormat(int format) {
+        this->format = format;
     }
 
     void SetFormatFichierPrelevement(int formatFichierPrelevement) {

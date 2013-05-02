@@ -12,6 +12,7 @@
 
 
 class calculDirectivite : public blocConfiguration{
+    Q_OBJECT
 public:
     calculDirectivite();
     calculDirectivite(const calculDirectivite& orig);
@@ -20,21 +21,22 @@ public:
     bool IsCalcul() const {
         return calcul;
     }
+    int GetPasPhi() const {
+        return pasPhi;
+    }
+    int GetPasTheta() const {
+        return pasTheta;
+    }
+
+
+public slots:
 
     void SetCalcul(bool calcul) {
         this->calcul = calcul;
     }
 
-    int GetPasPhi() const {
-        return pasPhi;
-    }
-
     void SetPasPhi(int pasPhi) {
         this->pasPhi = pasPhi;
-    }
-
-    int GetPasTheta() const {
-        return pasTheta;
     }
 
     void SetPasTheta(int pasTheta) {

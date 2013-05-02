@@ -13,10 +13,12 @@ FormFormatStockage::FormFormatStockage(formatStockage *format, QWidget *parent) 
     QComboBox * formatWidget = new QComboBox();
     formatWidget->addItems(QStringList() << "binaire" << "texte");
     layout->addRow("Format:", formatWidget);
+    connect(formatWidget,SIGNAL(currentIndexChanged(int)),format,SLOT(SetFormat(int)));
 
     QComboBox * formatFichierPrelevementWidget = new QComboBox();
     formatFichierPrelevementWidget->addItems(QStringList() << "texte" << "binaire");
     layout->addRow("Format fichier prelevement:", formatFichierPrelevementWidget);
+    connect(formatFichierPrelevementWidget,SIGNAL(currentIndexChanged(int)),format,SLOT(SetFormatFichierPrelevement(int)));
 
     layout->setAlignment(Qt::AlignTop);
 

@@ -3,29 +3,7 @@
 FormCoordonnees::FormCoordonnees(QWidget *parent):
     QWidget(parent)
 {
-    QHBoxLayout * layout = new QHBoxLayout;
-    layout->setMargin(0);
-
-    champsX = new QSpinBox();
-    champsX->setValue(coord.GetX());
-    this->connect(champsX, SIGNAL(valueChanged(QString)), this, SLOT(changeX(QString)));
-
-    champsY = new QSpinBox();
-    champsY->setValue(coord.GetY());
-    this->connect(champsY, SIGNAL(valueChanged(QString)), this, SLOT(changeY(QString)));
-
-    champsZ = new QSpinBox();
-    champsZ->setValue(coord.GetZ());
-    this->connect(champsZ, SIGNAL(valueChanged(QString)), this, SLOT(changeZ(QString)));
-
-    layout->addWidget(new QLabel("x:"));
-    layout->addWidget(champsX);
-    layout->addWidget(new QLabel("y:"));
-    layout->addWidget(champsY);
-    layout->addWidget(new QLabel("z:"));
-    layout->addWidget(champsZ);
-
-    setLayout(layout);
+    init();
 
 }
 
@@ -33,29 +11,7 @@ FormCoordonnees::FormCoordonnees(coordonnee coord,QWidget *parent) :
     QWidget(parent)
 {
     this->coord=coord;
-    QHBoxLayout * layout = new QHBoxLayout;
-    layout->setMargin(0);
-
-    champsX = new QSpinBox();
-    champsX->setValue(coord.GetX());
-    this->connect(champsX, SIGNAL(valueChanged(QString)), this, SLOT(changeX(QString)));
-
-    champsY = new QSpinBox();
-    champsY->setValue(coord.GetY());
-    this->connect(champsY, SIGNAL(valueChanged(QString)), this, SLOT(changeY(QString)));
-
-    champsZ = new QSpinBox();
-    champsZ->setValue(coord.GetZ());
-    this->connect(champsZ, SIGNAL(valueChanged(QString)), this, SLOT(changeZ(QString)));
-
-    layout->addWidget(new QLabel("x:"));
-    layout->addWidget(champsX);
-    layout->addWidget(new QLabel("y:"));
-    layout->addWidget(champsY);
-    layout->addWidget(new QLabel("z:"));
-    layout->addWidget(champsZ);
-
-    setLayout(layout);
+    init();
 }
 
 void FormCoordonnees::setCoordonnee(coordonnee c)
@@ -71,18 +27,48 @@ coordonnee FormCoordonnees::getCoord()
     return coord;
 }
 
-void FormCoordonnees::changeX(QString v)
+void FormCoordonnees::changeX(int v)
 {
-    coord.SetX(v.toInt());
+    coord.SetX(v);
+    emit coordonneeChanged(coord);
 }
 
-void FormCoordonnees::changeY(QString v)
+void FormCoordonnees::changeY(int v)
 {
-    coord.SetY(v.toInt());
+    coord.SetY(v);
+    emit coordonneeChanged(coord);
 }
 
-void FormCoordonnees::changeZ(QString v)
+void FormCoordonnees::changeZ(int v)
 {
-    coord.SetZ(v.toInt());
+    coord.SetZ(v);
+    emit coordonneeChanged(coord);
+}
+
+void FormCoordonnees::init()
+{
+    QHBoxLayout * layout = new QHBoxLayout;
+    layout->setMargin(0);
+
+    champsX = new QSpinBox();
+    champsX->setValue(coord.GetX());
+    this->connect(champsX, SIGNAL(valueChanged(int)), this, SLOT(changeX(int)));
+
+    champsY = new QSpinBox();
+    champsY->setValue(coord.GetY());
+    this->connect(champsY, SIGNAL(valueChanged(int)), this, SLOT(changeY(int)));
+
+    champsZ = new QSpinBox();
+    champsZ->setValue(coord.GetZ());
+    this->connect(champsZ, SIGNAL(valueChanged(int)), this, SLOT(changeZ(int)));
+
+    layout->addWidget(new QLabel("x:"));
+    layout->addWidget(champsX);
+    layout->addWidget(new QLabel("y:"));
+    layout->addWidget(champsY);
+    layout->addWidget(new QLabel("z:"));
+    layout->addWidget(champsZ);
+
+    setLayout(layout);
 }
 

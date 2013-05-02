@@ -12,6 +12,8 @@
 
 
 class pml : public blocConfiguration{
+
+    Q_OBJECT
 public:
     pml();
     pml(const pml& orig);
@@ -21,31 +23,33 @@ public:
         return epaisseurCouche;
     }
 
-    void SetEpaisseurCouche(int epaisseurCouche) {
-        this->epaisseurCouche = epaisseurCouche;
-    }
-
-    float GetKMax() const {
+    double GetKMax() const {
         return kMax;
-    }
-
-    void SetKMax(float kMax) {
-        this->kMax = kMax;
     }
 
     int GetOrdreVariation() const {
         return ordreVariation;
     }
 
+    double GetSigmaMax() const {
+        return sigmaMax;
+    }
+
+public slots:
+
+    void SetEpaisseurCouche(int epaisseurCouche) {
+        this->epaisseurCouche = epaisseurCouche;
+    }
+
+    void SetKMax(double kMax) {
+        this->kMax = kMax;
+    }
+
     void SetOrdreVariation(int ordreVariation) {
         this->ordreVariation = ordreVariation;
     }
 
-    float GetSigmaMax() const {
-        return sigmaMax;
-    }
-
-    void SetSigmaMax(float sigmaMax) {
+    void SetSigmaMax(double sigmaMax) {
         this->sigmaMax = sigmaMax;
     }
 
@@ -54,8 +58,8 @@ public:
 private:
     int epaisseurCouche;
     int ordreVariation;
-    float sigmaMax;
-    float kMax;
+    double sigmaMax;
+    double kMax;
 
 };
 

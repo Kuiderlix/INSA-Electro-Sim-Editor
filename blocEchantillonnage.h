@@ -12,6 +12,7 @@
 
 
 class blocEchantillonnage : public blocConfiguration{
+    Q_OBJECT
 public:
     blocEchantillonnage();
     blocEchantillonnage(const blocEchantillonnage& orig);
@@ -20,6 +21,8 @@ public:
     int GetFacteurEchatillonnage() const {
         return facteurEchatillonnage;
     }
+
+public slots:
 
     void SetFacteurEchatillonnage(int facteurEchatillonnage) {
         this->facteurEchatillonnage = facteurEchatillonnage;
