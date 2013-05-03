@@ -7,6 +7,8 @@
 #include <QKeyEvent>
 #include <QHeaderView>
 #include <QDebug>
+#include <QColorDialog>
+#include "elementBase.h"
 #include "TableModel.h"
 #include "MySortFilterProxyModel.h"
 
@@ -29,6 +31,8 @@ public slots:
     void addElement(elementBase*);
     void addNewElement();
     void deleteElement();
+
+    void editColor();
 
 
 protected:

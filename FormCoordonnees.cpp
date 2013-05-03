@@ -51,14 +51,20 @@ void FormCoordonnees::init()
     layout->setMargin(0);
 
     champsX = new QSpinBox();
+    champsX->setMaximum(INT_MAX);
+    champsX->setMinimum(INT_MIN);
     champsX->setValue(coord.GetX());
     this->connect(champsX, SIGNAL(valueChanged(int)), this, SLOT(changeX(int)));
 
     champsY = new QSpinBox();
+    champsY->setMaximum(INT_MAX);
+    champsY->setMinimum(INT_MIN);
     champsY->setValue(coord.GetY());
     this->connect(champsY, SIGNAL(valueChanged(int)), this, SLOT(changeY(int)));
 
     champsZ = new QSpinBox();
+    champsZ->setMaximum(INT_MAX);
+    champsZ->setMinimum(INT_MIN);
     champsZ->setValue(coord.GetZ());
     this->connect(champsZ, SIGNAL(valueChanged(int)), this, SLOT(changeZ(int)));
 

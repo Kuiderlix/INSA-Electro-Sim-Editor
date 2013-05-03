@@ -3,6 +3,7 @@
 
 #include "blocConfiguration.h"
 #include "elementBase.h"
+#include <QColor>
 
 class BlocElementBase : public blocConfiguration
 {
@@ -35,7 +36,6 @@ public:
     QList<elementBase*> * getListElementPointer() {return &listElement;}
 
 protected:
-
     QList<elementBase*> listElement;
 
 };

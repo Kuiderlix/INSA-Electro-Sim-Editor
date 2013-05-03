@@ -27,7 +27,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
     void construireMenu();
-
+    void construireScene3D();
+    void construireToolBar();
+    void construireTableaux();
     void construireDockToolBox();
     
 public:
@@ -38,6 +40,9 @@ public slots:
     void changeFilter();
 
 private:
+
+    QVBoxLayout * layout;
+
     TableViewMetallisation * vueMetal;
     TableViewParallelepipede * vueParal;
     TableViewElementLocalise * vueElemLocal;

@@ -4,68 +4,17 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     parser.parse();
+    layout = new QVBoxLayout();
 
     construireMenu();
-    QVBoxLayout * layout = new QVBoxLayout();
-    visualisation = new Visualisation3D(parser.getVolumeCalcul(),this);
-    visualisation->ajoutListElement(parser.getBlocParallelepipede()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocMetallisations()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocCartoTempo()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocElementLocalise()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocSurfacePrelev()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocSonde()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocPortExcitation()->getListElementPointer());
 
-    QWidget * visuaWidget = new QWidget();
-    QHBoxLayout * layoutVisua = new QHBoxLayout;
+    construireScene3D();
 
-    layoutVisua->addWidget(visualisation);
-
-    QSlider * sliderZoom = new QSlider();
-    sliderZoom->setMinimum(10);
-    sliderZoom->setMaximum(300);
-    sliderZoom->setValue(100);
-    sliderZoom->setOrientation(Qt::Vertical);
-
-    connect(sliderZoom,SIGNAL(valueChanged(int)),visualisation,SLOT(setZoom(int)));
-    connect(visualisation,SIGNAL(zoomChanged(int)),sliderZoom,SLOT(setValue(int)));
-
-    layoutVisua->addWidget(sliderZoom);
-    visuaWidget->setLayout(layoutVisua);
-    layout->addWidget(visuaWidget);
-
-
-    QWidget *tables = new QWidget;
-    QHBoxLayout *layoutTable = new QHBoxLayout;
-
-    vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
-    vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
-    vueSonde = new TableViewSonde(parser.getBlocSonde());
-    vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
-    vuePortExci = new TableViewPortExcitation(parser.getBlocPortExcitation());
-    vueCartoTempo = new TableViewCartTempo(parser.getBlocCartoTempo());
-    vueSurfacePrelev = new TableViewSurfacePrelev(parser.getBlocSurfacePrelev());
-
-    tabWidget = new QTabWidget();
-    tabWidget->addTab(vueMetal, "Métallisations");
-    tabWidget->addTab(vueParal, "Parallelepipèdes");
-    tabWidget->addTab(vueElemLocal, "Elements Localises");
-    tabWidget->addTab(vuePortExci, "Ports Excitations");
-    tabWidget->addTab(vueSurfacePrelev, "Surfaces Prelevements");
-    tabWidget->addTab(vueSonde, "Sondes");
-    tabWidget->addTab(vueCartoTempo, "Cartographies Temporelles");
-    layoutTable->addWidget(tabWidget);
-    tables->setLayout(layoutTable);
-    layout->addWidget(tables);
-
-
-    filterWidget = new FilterWidget;
-
-    layout->addWidget(filterWidget);
-
-
+    construireTableaux();
 
     construireDockToolBox();
+
+    construireToolBar();
 
     QWidget *central = new QWidget();
     central->setLayout(layout);
@@ -111,8 +60,51 @@ void MainWindow::construireMenu()
     menuFichier->addAction(actionEnregistrerSous);
     menuFichier->addAction(actionQuitter);
 
-    QMenu *menuEdition = menuBar()->addMenu("&Edition");
-    QMenu *menuAffichage = menuBar()->addMenu("&Affichage");
+    QMenu *menuSimulation = menuBar()->addMenu("&Simulation");
+    QAction *actionGenerer = new QAction("&Générer", this);
+    menuSimulation->addAction(actionGenerer);
+
+
+    QMenu *menuScene3D = menuBar()->addMenu("&Scene 3D");
+    QAction *actionZoom11 = new QAction("&Zoom 1:1", this);
+    menuScene3D->addAction(actionZoom11);
+
+}
+
+void MainWindow::construireScene3D()
+{
+    visualisation = new Visualisation3D(parser.getVolumeCalcul(),this);
+    visualisation->ajoutListElement(parser.getBlocParallelepipede()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocMetallisations()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocCartoTempo()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocElementLocalise()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocSurfacePrelev()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocSonde()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocPortExcitation()->getListElementPointer());
+
+    QWidget * visuaWidget = new QWidget();
+    QHBoxLayout * layoutVisua = new QHBoxLayout;
+
+    layoutVisua->addWidget(visualisation);
+
+    QSlider * sliderZoom = new QSlider();
+    sliderZoom->setMinimum(-100);
+    sliderZoom->setMaximum(100);
+    sliderZoom->setValue(0);
+    sliderZoom->setOrientation(Qt::Vertical);
+
+    connect(sliderZoom,SIGNAL(valueChanged(int)),visualisation,SLOT(setZoom(int)));
+    connect(visualisation,SIGNAL(zoomChanged(int)),sliderZoom,SLOT(setValue(int)));
+
+    layoutVisua->addWidget(sliderZoom);
+    visuaWidget->setLayout(layoutVisua);
+    layout->addWidget(visuaWidget);
+}
+
+void MainWindow::construireToolBar()
+{
+    QToolBar * toolbar = this->addToolBar("ToolBar");
+
 }
 
 void MainWindow::construireDockToolBox()
@@ -153,3 +145,34 @@ void MainWindow::construireDockToolBox()
     dockToolbox->setLayout(dockLayout);
 }
 
+
+void MainWindow::construireTableaux()
+{
+    QWidget *tables = new QWidget;
+    QHBoxLayout *layoutTable = new QHBoxLayout;
+
+    vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
+    vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
+    vueSonde = new TableViewSonde(parser.getBlocSonde());
+    vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
+    vuePortExci = new TableViewPortExcitation(parser.getBlocPortExcitation());
+    vueCartoTempo = new TableViewCartTempo(parser.getBlocCartoTempo());
+    vueSurfacePrelev = new TableViewSurfacePrelev(parser.getBlocSurfacePrelev());
+
+    tabWidget = new QTabWidget();
+    tabWidget->addTab(vueMetal, "Métallisations");
+    tabWidget->addTab(vueParal, "Parallelepipèdes");
+    tabWidget->addTab(vueElemLocal, "Elements Localises");
+    tabWidget->addTab(vuePortExci, "Ports Excitations");
+    tabWidget->addTab(vueSurfacePrelev, "Surfaces Prelevements");
+    tabWidget->addTab(vueSonde, "Sondes");
+    tabWidget->addTab(vueCartoTempo, "Cartographies Temporelles");
+    layoutTable->addWidget(tabWidget);
+    tables->setLayout(layoutTable);
+    layout->addWidget(tables);
+
+
+    filterWidget = new FilterWidget;
+
+    layout->addWidget(filterWidget);
+}

@@ -19,6 +19,8 @@ public:
     void initHeaders(const QStringList l);
 
     QStringList getHeaders() const {return headers;}
+
+    elementBase * getElement(int row);
     
 signals:
 

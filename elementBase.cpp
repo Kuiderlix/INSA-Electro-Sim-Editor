@@ -9,6 +9,7 @@
 #include "Ecriture.h"
 
 elementBase::elementBase() {
+    couleur = QColor("red");
 }
 
 elementBase::elementBase(const elementBase& orig) {

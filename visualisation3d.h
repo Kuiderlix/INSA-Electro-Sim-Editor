@@ -51,8 +51,6 @@ public slots:
 
 private:
     volumeCalcul * volume;
-    Cube * volumeGl;
-    vector<Cube*> tabCubes;
     QList<QList<elementBase*>* > listElement;
     int zoom;
     double rotateX, rotateY;

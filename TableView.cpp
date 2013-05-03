@@ -15,6 +15,7 @@ void TableView::contextMenuEvent(QContextMenuEvent *e)
     QMenu menu;
     menu.addAction("Nouveau...",this,SLOT(addNewElement()));
     menu.addAction("Supprimer",this,SLOT(deleteElement()));
+    menu.addAction("Editer couleur",this,SLOT(editColor()));
 
     menu.exec(e->globalPos());
 }
@@ -79,5 +80,17 @@ void TableView::deleteElement()
     for (int i=0;it!=list.end();it++,i++)
     {
         getSourceModel()->removeElement((*it).row()-i);
+    }
+}
+
+void TableView::editColor()
+{
+    QModelIndexList list = this->selectedIndexes();
+    QModelIndexList::Iterator it = list.begin();
+
+    QColor newCouleur = QColorDialog::getColor(QColor("white"),this,"Couleur",QColorDialog::ShowAlphaChannel);
+    for (;it!=list.end();it++)
+    {
+        this->getSourceModel()->getElement((*it).row())->setCouleur(newCouleur);
     }
 }

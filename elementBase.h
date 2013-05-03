@@ -9,6 +9,7 @@
 #define	ELEMENTBASE_H
 
 #include "coordonnee.h"
+#include <QColor>
 
 
 class elementBase {
@@ -41,12 +42,29 @@ public:
         avantGauche=copie;
     }
 
+    QColor getCouleur() const
+    {
+        return couleur;
+    }
+
+    void setCouleur(QColor c)
+    {
+        couleur=c;
+    }
+    void setAlpha(int a)
+    {
+        couleur.setAlpha(a);
+    }
+
     void ecrireElementBase();
 
     bool operator==(elementBase const& b);
 
 
 protected:
+
+    QColor couleur;
+
     coordonnee avantGauche;
     coordonnee arriereDroit;
 
