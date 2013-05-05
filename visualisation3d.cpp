@@ -14,8 +14,11 @@ Visualisation3D::Visualisation3D(volumeCalcul *volume, QWidget *parent)
 void Visualisation3D::initializeGL()
 {
     zoom = 0;
-    rotateX=0.0;
-    rotateY=0.0;
+    xRot=0;
+    yRot=0;
+
+    xMov=0;
+    yMov=0;
 
     glShadeModel(GL_SMOOTH);
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
@@ -44,16 +47,17 @@ void Visualisation3D::paintGL()
     glLoadIdentity();
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glTranslatef(0.0f,0.0f, 0.0f); // méthode de translation (x,y,z)
+
+    glTranslatef(xMov,yMov, 0.0f); // méthode de translation (x,y,z)
+
     int ratioZoom = (volume->GetHauteur()*1.5) / 100;
     gluLookAt(0,(volume->GetHauteur()*1.5)-(zoom*ratioZoom),0,0,0,0,1,0,0); // gestion de la caméra
-    glRotatef(depart.y-pointActuel.y, 1.0, 0, 0); // rotation en x avec la souris
-    glRotatef(pointActuel.x-depart.x, 0, 0, 1.0);  //rotation en y avec la souris
-    glRotatef(rotateX, 1.0, 0, 0); // rotation en x avec le clavier
-    glRotatef(rotateY, 0, 0, 1.0);  //rotation en y avec le clavier
+
+    glRotated(-xRot / 16.0, 1.0, 0.0, 0.0);
+    glRotated(yRot / 16.0, 0.0, 0.0, 1.0);
 
 
-    glColor3ub(0,0,0);// couleur noir
+    qglColor(QColor("black"));
     dessineVolumeCalcul();
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     QList<QList<elementBase*>* >::Iterator it = listElement.begin();
@@ -64,7 +68,7 @@ void Visualisation3D::paintGL()
         for(;it_l!=list->end();it_l++)
         {
             elementBase * elem = (elementBase*) *it_l;
-            glColor4ub(elem->getCouleur().red(), elem->getCouleur().green(), elem->getCouleur().blue(),elem->getCouleur().alpha());
+            qglColor(elem->getCouleur());
             Cube::drawCube(coordonneeToPoint(elem->GetArriereDroit()),coordonneeToPoint(elem->GetAvantGauche()));
         }
     }
@@ -77,25 +81,21 @@ void Visualisation3D::keyPressEvent(QKeyEvent *keyEvent)
 {
     MyGLWidget::keyPressEvent(keyEvent);
 
+
     switch (keyEvent->key())
     {
     case Qt::Key_Up:
-        rotateX+=10;
+        setXRotation(xRot - 80);
         break;
     case Qt::Key_Down:
-        rotateX-=10;
+        setXRotation(xRot + 80);
         break;
     case Qt::Key_Left:
-        rotateY-=10;
+        setYRotation(yRot - 80);
         break;
     case Qt::Key_Right:
-        rotateY+=10;
+        setYRotation(yRot + 80);
         break;
-    case Qt::Key_C:
-        //setCursor(QCursor(Qt::SizeAllCursor));
-        break;
-    default:
-        setCursor(QCursor(Qt::OpenHandCursor));
     }
 
 }
@@ -103,27 +103,32 @@ void Visualisation3D::keyPressEvent(QKeyEvent *keyEvent)
 void Visualisation3D::mousePressEvent( QMouseEvent * event )
 {
     setCursor(QCursor(Qt::ClosedHandCursor)); // change le curseur qui on clique dessus
-    depart.x=ecartPrecedent.x+event->pos().x();
-    depart.y=ecartPrecedent.y+event->pos().y();
-    pointActuel.x=event->pos().x();
-    pointActuel.y=event->pos().y();
+    lastPos = event->pos();
 }
 void Visualisation3D::mouseMoveEvent( QMouseEvent * event )
 {
-    pointActuel.x=event->pos().x();
-    pointActuel.y=event->pos().y();
+    int dx = event->x() - lastPos.x();
+    int dy = event->y() - lastPos.y();
+
+    if (event->buttons() & Qt::LeftButton) {
+        setXRotation(xRot + 8 * dy);
+        setYRotation(yRot + 8 * dx);
+    } else if (event->buttons() & Qt::RightButton) {
+        xMov = xMov - 8 * dy;
+        yMov = yMov - 8 * dx;
+        updateGL();
+    }
+    lastPos = event->pos();
 }
 
 void Visualisation3D::mouseReleaseEvent( QMouseEvent * event )
 {
+    Q_UNUSED(event)
     setCursor(QCursor(Qt::OpenHandCursor)); // remet le curseur dans on état d'origine quand on relache le clic
-    ecartPrecedent.x=depart.x-pointActuel.x;
-    ecartPrecedent.y=depart.y-pointActuel.y;
 }
 
 void Visualisation3D::wheelEvent(QWheelEvent * event) // gestion de la molette de la souris
 {
-
     zoom += event->delta() / 12;
 
     if (zoom < -100)
@@ -134,6 +139,25 @@ void Visualisation3D::wheelEvent(QWheelEvent * event) // gestion de la molette d
     event->accept();
     emit zoomChanged(zoom);
 }
+
+void Visualisation3D::setXRotation(int angle)
+{
+    normalizeAngle(&angle);
+    if (angle != xRot) {
+        xRot = angle;
+        updateGL();
+    }
+}
+
+void Visualisation3D::setYRotation(int angle)
+{
+    normalizeAngle(&angle);
+    if (angle != yRot) {
+        yRot = angle;
+        updateGL();
+    }
+}
+
 
 void Visualisation3D::dessineVolumeCalcul()
 {
@@ -170,4 +194,10 @@ void Visualisation3D::setZoom(int z)
 {
     zoom = z;
 }
-
+void Visualisation3D::normalizeAngle(int *angle)
+{
+    while (*angle < 0)
+        *angle += 360 * 16;
+    while (*angle > 360 * 16)
+        *angle -= 360 * 16;
+}

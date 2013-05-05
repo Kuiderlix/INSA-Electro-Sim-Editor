@@ -8,9 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     construireMenu();
 
-    construireScene3D();
+    QSplitter * splitter = new QSplitter();
+    splitter->setOrientation(Qt::Vertical);
+    splitter->addWidget(construireScene3D());
+    splitter->addWidget(construireTableaux());
 
-    construireTableaux();
+    layout->addWidget(splitter);
 
     construireDockToolBox();
 
@@ -71,7 +74,7 @@ void MainWindow::construireMenu()
 
 }
 
-void MainWindow::construireScene3D()
+QWidget *MainWindow::construireScene3D()
 {
     visualisation = new Visualisation3D(parser.getVolumeCalcul(),this);
     visualisation->ajoutListElement(parser.getBlocParallelepipede()->getListElementPointer());
@@ -98,7 +101,9 @@ void MainWindow::construireScene3D()
 
     layoutVisua->addWidget(sliderZoom);
     visuaWidget->setLayout(layoutVisua);
-    layout->addWidget(visuaWidget);
+
+    return visuaWidget;
+
 }
 
 void MainWindow::construireToolBar()
@@ -146,10 +151,10 @@ void MainWindow::construireDockToolBox()
 }
 
 
-void MainWindow::construireTableaux()
+QWidget *MainWindow::construireTableaux()
 {
     QWidget *tables = new QWidget;
-    QHBoxLayout *layoutTable = new QHBoxLayout;
+    QVBoxLayout *layoutTable = new QVBoxLayout;
 
     vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
     vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
@@ -167,12 +172,14 @@ void MainWindow::construireTableaux()
     tabWidget->addTab(vueSurfacePrelev, "Surfaces Prelevements");
     tabWidget->addTab(vueSonde, "Sondes");
     tabWidget->addTab(vueCartoTempo, "Cartographies Temporelles");
-    layoutTable->addWidget(tabWidget);
-    tables->setLayout(layoutTable);
-    layout->addWidget(tables);
-
 
     filterWidget = new FilterWidget;
 
-    layout->addWidget(filterWidget);
+    layoutTable->addWidget(tabWidget);
+    layoutTable->addWidget(filterWidget);
+
+    tables->setLayout(layoutTable);
+
+    return tables;
+
 }

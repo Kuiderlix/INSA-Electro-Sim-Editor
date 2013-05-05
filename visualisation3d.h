@@ -39,6 +39,11 @@ public:
 
     void ajoutListElement(QList<elementBase*>*);
 
+    void setXRotation(int angle);
+    void setYRotation(int angle);
+
+    void normalizeAngle(int *angle);
+
 
 signals:
     void zoomChanged(int);
@@ -50,11 +55,18 @@ public slots:
 
 
 private:
+
     volumeCalcul * volume;
     QList<QList<elementBase*>* > listElement;
+
     int zoom;
-    double rotateX, rotateY;
-    Point depart, pointActuel, ecartPrecedent;
+    int xRot;
+    int yRot;
+
+    int xMov;
+    int yMov;
+
+    QPoint lastPos;
 
 };
 

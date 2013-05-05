@@ -27,9 +27,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
     void construireMenu();
-    void construireScene3D();
+    QWidget * construireScene3D();
     void construireToolBar();
-    void construireTableaux();
+    QWidget * construireTableaux();
     void construireDockToolBox();
     
 public:
