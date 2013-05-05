@@ -54,6 +54,30 @@ QModelIndexList TableView::selectedIndexes() const
     return list;
 }
 
+void TableView::selectionChanged(const QItemSelection &selected, const QItemSelection &deselected)
+{
+    QTableView::selectionChanged(selected,deselected);
+
+
+    //on change la couleur des éléments selectionnés
+    QModelIndexList list = selected.indexes();
+    QModelIndexList::Iterator it = list.begin();
+    for (int i=0;it!=list.end();it++,i++)
+    {
+        elementBase * elem = getSourceModel()->getElement((*it).row());
+        elem->invertColor();
+    }
+
+    // on restaure la couleur original des éléments désélectionnés
+    list = deselected.indexes();
+    it = list.begin();
+    for (int i=0;it!=list.end();it++,i++)
+    {
+        elementBase * elem = getSourceModel()->getElement((*it).row());
+        elem->invertColor();
+    }
+}
+
 TableModel *TableView::getSourceModel()
 {
     return (TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel();
@@ -92,5 +116,6 @@ void TableView::editColor()
     for (;it!=list.end();it++)
     {
         this->getSourceModel()->getElement((*it).row())->setCouleur(newCouleur);
+        this->getSourceModel()->getElement((*it).row())->invertColor();
     }
 }

@@ -61,6 +61,14 @@ public:
     bool operator==(elementBase const& b);
 
 
+    void invertColor()
+    {
+        couleur.setRed(255-couleur.red());
+        couleur.setBlue(255-couleur.blue());
+        couleur.setGreen(255-couleur.green());
+    }
+
+
 protected:
 
     QColor couleur;

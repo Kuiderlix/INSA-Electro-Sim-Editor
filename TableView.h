@@ -23,6 +23,8 @@ public:
 
     QModelIndexList selectedIndexes() const;
 
+    virtual void selectionChanged(const QItemSelection &selected,const QItemSelection &deselected);
+
     TableModel * getSourceModel();
 
 signals:
