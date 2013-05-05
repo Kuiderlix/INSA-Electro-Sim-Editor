@@ -56,6 +56,13 @@ private:
     QTabWidget * tabWidget;
     Parser parser;
     Visualisation3D * visualisation;
+
+
+    QAction *actionNouveau;
+    QAction *actionOuvrir;
+    QAction *actionEnregistrer;
+    QAction *actionGenerer;
+    QAction *actionZoom11;
 };
 
 #endif // MAINWINDOW_H

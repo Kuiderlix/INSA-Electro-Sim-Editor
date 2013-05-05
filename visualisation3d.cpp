@@ -9,16 +9,16 @@ Visualisation3D::Visualisation3D(volumeCalcul *volume, QWidget *parent)
     setFocusPolicy(Qt::ClickFocus);
     setCursor(QCursor(Qt::OpenHandCursor));
     qsrand(458);
+
+
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(reInit()));
+    connect(this, SIGNAL(stopTimer()), timer, SLOT(stop()));
 }
 
 void Visualisation3D::initializeGL()
 {
-    zoom = 0;
-    xRot=0;
-    yRot=0;
-
-    xMov=0;
-    yMov=0;
+    init();
 
     glShadeModel(GL_SMOOTH);
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
@@ -58,6 +58,7 @@ void Visualisation3D::paintGL()
 
 
     qglColor(QColor("black"));
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     dessineVolumeCalcul();
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     QList<QList<elementBase*>* >::Iterator it = listElement.begin();
@@ -97,6 +98,7 @@ void Visualisation3D::keyPressEvent(QKeyEvent *keyEvent)
         setYRotation(yRot + 80);
         break;
     }
+    emit stopTimer();
 
 }
 
@@ -104,6 +106,7 @@ void Visualisation3D::mousePressEvent( QMouseEvent * event )
 {
     setCursor(QCursor(Qt::ClosedHandCursor)); // change le curseur qui on clique dessus
     lastPos = event->pos();
+    emit stopTimer();
 }
 void Visualisation3D::mouseMoveEvent( QMouseEvent * event )
 {
@@ -161,7 +164,6 @@ void Visualisation3D::setYRotation(int angle)
 
 void Visualisation3D::dessineVolumeCalcul()
 {
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     Cube::drawCube(Point(-volume->GetLargeur()/2,-volume->GetLongueur()/2,-volume->GetHauteur()/2),Point(volume->GetLargeur()/2,volume->GetLongueur()/2,volume->GetHauteur()/2));
 }
 /**
@@ -194,10 +196,75 @@ void Visualisation3D::setZoom(int z)
 {
     zoom = z;
 }
+
+void Visualisation3D::init()
+{
+    zoom = 0;
+    xRot=0;
+    yRot=0;
+
+    xMov=0;
+    yMov=0;
+}
+
+void Visualisation3D::reInit()
+{
+
+    toZero(&zoom,5);
+    emit zoomChanged(zoom);
+    toZeroAngle(&xRot,80);
+    toZeroAngle(&yRot,80);
+    toZero(&xMov,80);
+    toZero(&yMov,80);
+
+
+    updateGL();
+
+    if (!zoom && !xRot && !yRot && !xMov && !yMov)
+        emit stopTimer();
+}
+
+void Visualisation3D::startToZoom11()
+{
+    timer->start(10);
+}
+
 void Visualisation3D::normalizeAngle(int *angle)
 {
     while (*angle < 0)
         *angle += 360 * 16;
     while (*angle > 360 * 16)
         *angle -= 360 * 16;
+}
+
+void Visualisation3D::toZero(int *var, int step)
+{
+    if (*var > 0)
+    {
+        *var -= step;
+        if (*var < 0)
+            *var = 0;
+    }
+    else if (*var < 0)
+    {
+        *var += step;
+        if (*var > 0)
+            *var = 0;
+    }
+}
+
+void Visualisation3D::toZeroAngle(int *angle, int step)
+{
+    if (*angle >= 360*8)
+    {
+        *angle += step;
+        if (*angle > 360 * 16)
+            *angle = 0;
+    }
+    else if (*angle < 360*8)
+    {
+        *angle -= step;
+        if (*angle < 0)
+            *angle = 0;
+    }
 }

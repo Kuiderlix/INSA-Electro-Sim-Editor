@@ -44,14 +44,25 @@ public:
 
     void normalizeAngle(int *angle);
 
+    void toZero(int * var, int step);
+    void toZeroAngle(int * angle, int step);
+    void init();
+
+
 
 signals:
     void zoomChanged(int);
+
+    void stopTimer();
 
 
 public slots:
 
         void setZoom(int z);
+
+        void reInit();
+
+        void startToZoom11();
 
 
 private:
@@ -67,6 +78,8 @@ private:
     int yMov;
 
     QPoint lastPos;
+
+    QTimer *timer;
 
 };
 

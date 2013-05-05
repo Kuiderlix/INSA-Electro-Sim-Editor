@@ -6,7 +6,6 @@ MainWindow::MainWindow(QWidget *parent)
     parser.parse();
     layout = new QVBoxLayout();
 
-    construireMenu();
 
     QSplitter * splitter = new QSplitter();
     splitter->setOrientation(Qt::Vertical);
@@ -17,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     construireDockToolBox();
 
+    construireMenu();
     construireToolBar();
 
     QWidget *central = new QWidget();
@@ -52,9 +52,9 @@ void MainWindow::construireMenu()
 {
     QMenu *menuFichier = menuBar()->addMenu("&Fichier");
 
-    QAction *actionNouveau = new QAction("&Nouveau", this);
-    QAction *actionOuvrir = new QAction("&Ouvrir", this);
-    QAction *actionEnregistrer = new QAction("&Enregistrer", this);
+    actionNouveau = new QAction("&Nouveau", this);
+    actionOuvrir = new QAction("&Ouvrir", this);
+    actionEnregistrer = new QAction("&Enregistrer", this);
     QAction *actionEnregistrerSous = new QAction("&Enregistrer sous ...", this);
     QAction *actionQuitter = new QAction("&Quitter", this);
     menuFichier->addAction(actionNouveau);
@@ -64,12 +64,13 @@ void MainWindow::construireMenu()
     menuFichier->addAction(actionQuitter);
 
     QMenu *menuSimulation = menuBar()->addMenu("&Simulation");
-    QAction *actionGenerer = new QAction("&Générer", this);
+    actionGenerer = new QAction("&Générer", this);
     menuSimulation->addAction(actionGenerer);
 
 
     QMenu *menuScene3D = menuBar()->addMenu("&Scene 3D");
-    QAction *actionZoom11 = new QAction("&Zoom 1:1", this);
+    actionZoom11 = new QAction("&Zoom 1:1", this);
+    connect(actionZoom11,SIGNAL(triggered()),visualisation,SLOT(startToZoom11()));
     menuScene3D->addAction(actionZoom11);
 
 }
@@ -109,6 +110,14 @@ QWidget *MainWindow::construireScene3D()
 void MainWindow::construireToolBar()
 {
     QToolBar * toolbar = this->addToolBar("ToolBar");
+
+    toolbar->addAction(actionNouveau);
+    toolbar->addAction(actionOuvrir);
+    toolbar->addAction(actionEnregistrer);
+    toolbar->addSeparator();
+    toolbar->addAction(actionGenerer);
+    toolbar->addSeparator();
+    toolbar->addAction(actionZoom11);
 
 }
 
