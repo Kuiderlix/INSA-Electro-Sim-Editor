@@ -61,18 +61,7 @@ void Visualisation3D::paintGL()
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     dessineVolumeCalcul();
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-    QList<QList<elementBase*>* >::Iterator it = listElement.begin();
-    for (;it!=listElement.end();it++)
-    {
-        QList<elementBase*>* list = *it;
-        QList<elementBase*>::Iterator it_l = list->begin();
-        for(;it_l!=list->end();it_l++)
-        {
-            elementBase * elem = (elementBase*) *it_l;
-            qglColor(elem->getCouleur());
-            Cube::drawCube(coordonneeToPoint(elem->GetArriereDroit()),coordonneeToPoint(elem->GetAvantGauche()));
-        }
-    }
+    dessineScene();
 
     glDisable(GL_BLEND);
 
@@ -117,8 +106,9 @@ void Visualisation3D::mouseMoveEvent( QMouseEvent * event )
         setXRotation(xRot + 8 * dy);
         setYRotation(yRot + 8 * dx);
     } else if (event->buttons() & Qt::RightButton) {
-        xMov = xMov - 8 * dy;
-        yMov = yMov - 8 * dx;
+        int ratioZoom = qAbs(8 + (-zoom/14));
+        xMov = xMov - ratioZoom * dy;
+        yMov = yMov - ratioZoom * dx;
         updateGL();
     }
     lastPos = event->pos();
@@ -166,6 +156,22 @@ void Visualisation3D::dessineVolumeCalcul()
 {
     Cube::drawCube(Point(-volume->GetLargeur()/2,-volume->GetLongueur()/2,-volume->GetHauteur()/2),Point(volume->GetLargeur()/2,volume->GetLongueur()/2,volume->GetHauteur()/2));
 }
+
+void Visualisation3D::dessineScene()
+{
+    QList<BlocElementBase* >::Iterator it = listElement.begin();
+    for (;it!=listElement.end();it++)
+    {
+        QList<elementBase*>* list = (*it)->getListElementPointer();
+        QList<elementBase*>::Iterator it_l = list->begin();
+        for(;it_l!=list->end();it_l++)
+        {
+            elementBase * elem = (elementBase*) *it_l;
+            qglColor(elem->getCouleur());
+            Cube::drawCube(coordonneeToPoint(elem->GetArriereDroit()),coordonneeToPoint(elem->GetAvantGauche()));
+        }
+    }
+}
 /**
  * @brief Visualisation3D::coordonneeToPoint
  * Tranforme une coordonnee en un Point
@@ -187,7 +193,7 @@ Point Visualisation3D::coordonneeToPoint(coordonnee c)
     return point;
 }
 
-void Visualisation3D::ajoutListElement(QList<elementBase *> *l)
+void Visualisation3D::ajoutListElement(BlocElementBase *l)
 {
     listElement.push_back(l);
 }

@@ -10,9 +10,10 @@
 
 #include "coordonnee.h"
 #include <QColor>
+#include <QObject>
 
 
-class elementBase {
+class elementBase{
 public:
     elementBase();
     elementBase(const elementBase& orig);
@@ -22,38 +23,13 @@ public:
         return arriereDroit;
     }
 
-    void SetArriereDroit(int x, int y, int z) {
-        this->arriereDroit = coordonnee(x,y,z);
-    }
-
-    void SetArriereDroit(coordonnee copie) {
-        arriereDroit=copie;
-    }
-
     coordonnee GetAvantGauche() const {
         return avantGauche;
-    }
-
-    void SetAvantGauche(int x, int y, int z) {
-        this->avantGauche = coordonnee(x,y,z);
-    }
-
-    void SetAvantGauche(coordonnee copie) {
-        avantGauche=copie;
     }
 
     QColor getCouleur() const
     {
         return couleur;
-    }
-
-    void setCouleur(QColor c)
-    {
-        couleur=c;
-    }
-    void setAlpha(int a)
-    {
-        couleur.setAlpha(a);
     }
 
     void ecrireElementBase();
@@ -67,6 +43,40 @@ public:
         couleur.setBlue(255-couleur.blue());
         couleur.setGreen(255-couleur.green());
     }
+
+    QColor getInvertColor()
+    {
+        QColor inv=couleur;
+        inv.setRed(255-inv.red());
+        inv.setBlue(255-inv.blue());
+        inv.setGreen(255-inv.green());
+        return inv;
+    }
+
+
+    void setCouleur(QColor c)
+    {
+        couleur=c;
+    }
+    void setAlpha(int a)
+    {
+        couleur.setAlpha(a);
+    }
+    void SetAvantGauche(int x, int y, int z) {
+        this->avantGauche = coordonnee(x,y,z);
+    }
+
+    void SetAvantGauche(coordonnee copie) {
+        avantGauche=copie;
+    }
+    void SetArriereDroit(int x, int y, int z) {
+        this->arriereDroit = coordonnee(x,y,z);
+    }
+
+    void SetArriereDroit(coordonnee copie) {
+        arriereDroit=copie;
+    }
+
 
 
 protected:

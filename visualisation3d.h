@@ -9,6 +9,7 @@
 #include <vector>
 #include "volumeCalcul.h"
 #include <QList>
+#include "BlocElementBase.h"
 
 using namespace std;
 
@@ -34,10 +35,11 @@ public:
     void wheelEvent ( QWheelEvent * event );
 
     void dessineVolumeCalcul();
+    void dessineScene();
 
     Point coordonneeToPoint(coordonnee);
 
-    void ajoutListElement(QList<elementBase*>*);
+    void ajoutListElement(BlocElementBase*);
 
     void setXRotation(int angle);
     void setYRotation(int angle);
@@ -68,7 +70,7 @@ public slots:
 private:
 
     volumeCalcul * volume;
-    QList<QList<elementBase*>* > listElement;
+    QList<BlocElementBase* > listElement;
 
     int zoom;
     int xRot;

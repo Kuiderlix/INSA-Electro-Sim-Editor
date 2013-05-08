@@ -112,10 +112,20 @@ void TableView::editColor()
     QModelIndexList list = this->selectedIndexes();
     QModelIndexList::Iterator it = list.begin();
 
-    QColor newCouleur = QColorDialog::getColor(QColor("white"),this,"Couleur",QColorDialog::ShowAlphaChannel);
-    for (;it!=list.end();it++)
+    elementBase* elemPrem = this->getSourceModel()->getElement((*it).row());
+    QColorDialog dial(elemPrem->getInvertColor(),this);
+
+    dial.setOptions(QColorDialog::ShowAlphaChannel);
+
+    int res = dial.exec();
+
+    if (res==QDialog::Accepted)
     {
-        this->getSourceModel()->getElement((*it).row())->setCouleur(newCouleur);
-        this->getSourceModel()->getElement((*it).row())->invertColor();
+        QColor newCouleur = dial.selectedColor();
+        for (;it!=list.end();it++)
+        {
+            this->getSourceModel()->getElement((*it).row())->setCouleur(newCouleur);
+            this->getSourceModel()->getElement((*it).row())->invertColor();
+        }
     }
 }

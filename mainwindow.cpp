@@ -78,13 +78,13 @@ void MainWindow::construireMenu()
 QWidget *MainWindow::construireScene3D()
 {
     visualisation = new Visualisation3D(parser.getVolumeCalcul(),this);
-    visualisation->ajoutListElement(parser.getBlocParallelepipede()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocMetallisations()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocCartoTempo()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocElementLocalise()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocSurfacePrelev()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocSonde()->getListElementPointer());
-    visualisation->ajoutListElement(parser.getBlocPortExcitation()->getListElementPointer());
+    visualisation->ajoutListElement(parser.getBlocParallelepipede());
+    visualisation->ajoutListElement(parser.getBlocMetallisations());
+    visualisation->ajoutListElement(parser.getBlocCartoTempo());
+    visualisation->ajoutListElement(parser.getBlocElementLocalise());
+    visualisation->ajoutListElement(parser.getBlocSurfacePrelev());
+    visualisation->ajoutListElement(parser.getBlocSonde());
+    visualisation->ajoutListElement(parser.getBlocPortExcitation());
 
     QWidget * visuaWidget = new QWidget();
     QHBoxLayout * layoutVisua = new QHBoxLayout;
