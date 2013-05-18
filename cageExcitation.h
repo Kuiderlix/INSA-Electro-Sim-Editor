@@ -17,8 +17,6 @@ class cageExcitation : public elementBase, public blocConfiguration{
 public:
     cageExcitation();
 
-    cageExcitation(const cageExcitation& orig);
-
     virtual ~cageExcitation();
     
     int GetHauteur() const {

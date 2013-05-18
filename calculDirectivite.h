@@ -15,7 +15,6 @@ class calculDirectivite : public blocConfiguration{
     Q_OBJECT
 public:
     calculDirectivite();
-    calculDirectivite(const calculDirectivite& orig);
     virtual ~calculDirectivite();
     
     bool IsCalcul() const {

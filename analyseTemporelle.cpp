@@ -8,10 +8,10 @@
 #include "analyseTemporelle.h"
 
 analyseTemporelle::analyseTemporelle() {
+    periode=0;
+    temps=0;
 }
 
-analyseTemporelle::analyseTemporelle(const analyseTemporelle& orig) {
-}
 
 analyseTemporelle::~analyseTemporelle() {
 }

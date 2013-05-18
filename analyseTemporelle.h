@@ -15,7 +15,6 @@ class analyseTemporelle : public blocConfiguration {
     Q_OBJECT
 public:
     analyseTemporelle();
-    analyseTemporelle(const analyseTemporelle& orig);
     virtual ~analyseTemporelle();
 
     double GetPeriode() const {

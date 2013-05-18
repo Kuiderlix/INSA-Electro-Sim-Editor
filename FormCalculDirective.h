@@ -4,6 +4,10 @@
 #include <QtWidgets>
 #include "calculDirectivite.h"
 
+/**
+ * Formulaire permettant de modifier l'objet calculDirectivite
+ * @brief The FormCalculDirective class
+ */
 class FormCalculDirective : public QWidget
 {
 public:

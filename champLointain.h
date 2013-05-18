@@ -16,7 +16,6 @@ class champLointain : public blocConfiguration{
     Q_OBJECT
 public:
     champLointain();
-    champLointain(const champLointain& orig);
     virtual ~champLointain();
     
     bool IsCalculImage() const {

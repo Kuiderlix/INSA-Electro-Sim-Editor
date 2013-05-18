@@ -16,7 +16,6 @@ class pml : public blocConfiguration{
     Q_OBJECT
 public:
     pml();
-    pml(const pml& orig);
     virtual ~pml();
     
     int GetEpaisseurCouche() const {

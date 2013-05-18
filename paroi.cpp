@@ -8,10 +8,12 @@
 #include "paroi.h"
 
 paroi::paroi() {
+    paroiInferieure=0;
+    paroiSuperieure=0;
+    paroiX=0;
+    paroiY=0;
 }
 
-paroi::paroi(const paroi& orig) {
-}
 
 paroi::~paroi() {
 }

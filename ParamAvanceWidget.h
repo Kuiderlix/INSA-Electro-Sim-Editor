@@ -6,13 +6,13 @@
 #include "FormExcitation.h"
 #include "FormEchantillonage.h"
 #include "FormPML.h"
-#include "parser.h"
+#include "Data.h"
 
 class ParamAvanceWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ParamAvanceWidget(Parser* parser,QWidget *parent = 0);
+    explicit ParamAvanceWidget(Data* data,QWidget *parent = 0);
     
 signals:
     

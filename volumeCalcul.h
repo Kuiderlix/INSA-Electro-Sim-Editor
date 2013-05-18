@@ -15,7 +15,6 @@ class volumeCalcul : public blocConfiguration {
     Q_OBJECT
 public:
     volumeCalcul();
-    volumeCalcul(const volumeCalcul& orig);
     virtual ~volumeCalcul();
 
 

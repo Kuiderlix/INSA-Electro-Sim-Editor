@@ -1,6 +1,6 @@
 #include "DescriptionGeoWidget.h"
 
-DescriptionGeoWidget::DescriptionGeoWidget(Parser *parser, QWidget *parent) :
+DescriptionGeoWidget::DescriptionGeoWidget(Data *data, QWidget *parent) :
     QWidget(parent)
 {
     QVBoxLayout * layout = new QVBoxLayout;
@@ -13,9 +13,9 @@ DescriptionGeoWidget::DescriptionGeoWidget(Parser *parser, QWidget *parent) :
     connect(formPara,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newParaCreated(elementBase*)));
     connect(formPara,SIGNAL(elementValide(elementBase*)),formPara,SLOT(reset()));
 
-    FormVolumeCalcul * formVolCal = new FormVolumeCalcul(parser->getVolumeCalcul());
+    FormVolumeCalcul * formVolCal = new FormVolumeCalcul(data->getVolumeCalcul());
 
-    FormParoi * formParoi = new FormParoi(parser->getParoi());
+    FormParoi * formParoi = new FormParoi(data->getParoi());
 
     layout->addWidget(formVolCal);
     layout->addWidget(formParoi);

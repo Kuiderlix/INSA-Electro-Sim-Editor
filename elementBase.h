@@ -12,7 +12,10 @@
 #include <QColor>
 #include <QObject>
 
-
+/**
+ * Cette classe représente un élement de base affichable dans la scène 3D et contenu dans un tableau
+ * @brief The elementBase class
+ */
 class elementBase{
 public:
     elementBase();

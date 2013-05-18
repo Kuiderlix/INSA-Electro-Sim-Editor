@@ -15,7 +15,6 @@ class compressionHuygens : public blocConfiguration{
     Q_OBJECT
 public:
     compressionHuygens();
-    compressionHuygens(const compressionHuygens& orig);
     virtual ~compressionHuygens();
     
     int GetCompressionHauteur() const {

@@ -5,13 +5,17 @@
 #include "FormCompressionHuygens.h"
 #include "FormCalculDirective.h"
 #include "FormChampLointain.h"
-#include "parser.h"
+#include "Data.h"
 
+/**
+ *
+ * @brief Cette classe représente le formulaire pour modifier un ChampsLointain
+ */
 class CalculChampsLointainWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CalculChampsLointainWidget(Parser* parser,QWidget *parent = 0);
+    explicit CalculChampsLointainWidget(Data* data,QWidget *parent = 0);
     
 signals:
     

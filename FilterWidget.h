@@ -5,6 +5,11 @@
 #include "TableModel.h"
 #include "FormCoordonnees.h"
 
+/**
+ * Ce widget est un formulaire qui permet de filtrer le tableau courant en
+ * fonction de sa colonne et d'une expression régulière
+ * @brief The FilterWidget class
+ */
 class FilterWidget : public QWidget
 {
     Q_OBJECT

@@ -5,13 +5,13 @@
 #include "FormPortExcitation.h"
 #include "FormAnalyseTempo.h"
 #include "FormParamExcitation.h"
-#include "parser.h"
+#include "Data.h"
 
 class ParamSimuWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ParamSimuWidget(Parser* parser, QWidget *parent = 0);
+    explicit ParamSimuWidget(Data* data, QWidget *parent = 0);
     
 signals:
     

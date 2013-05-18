@@ -4,6 +4,10 @@
 #include <QtWidgets>
 #include "analyseTemporelle.h"
 
+/**
+ * Formulaire de modification de l'objet analyseTemporelle
+ * @brief The FormAnalyseTempo class
+ */
 class FormAnalyseTempo : public QWidget
 {
 public:

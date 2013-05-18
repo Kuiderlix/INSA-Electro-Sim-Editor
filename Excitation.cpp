@@ -10,9 +10,8 @@
 Excitation::Excitation() {
     this->setHeader("[Excitation]");
     this->setExtension(".avc");
-}
 
-Excitation::Excitation(const Excitation& orig) {
+    amplitudeV0=0;
 }
 
 Excitation::~Excitation() {

@@ -7,11 +7,8 @@
 
 #include "metallisation.h"
 
-int metallisation::nbMetal = 0;
 metallisation::metallisation() {
-    conductivite=nbMetal++;
-    this->arriereDroit = coordonnee(1,2,3);
-    this->avantGauche = coordonnee(3,2,1);
+    conductivite=0;
 }
 
 metallisation::metallisation(const metallisation& orig) {

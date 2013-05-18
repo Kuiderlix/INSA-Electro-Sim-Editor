@@ -10,9 +10,13 @@
 champLointain::champLointain() {
     this->setHeader("[CALCUL_CHAMP_LOINTAIN]");
     this->setExtension(".ptr");
-}
-
-champLointain::champLointain(const champLointain& orig) {
+    frequenceMin=0;
+    frequenceMax=0;
+    pasFrequence=0;
+    calculImage=0;
+    hauteurPlanMasse=0;
+    pasDiscrTeta=0;
+    pasDiscrPhi=0;
 }
 
 champLointain::~champLointain() {

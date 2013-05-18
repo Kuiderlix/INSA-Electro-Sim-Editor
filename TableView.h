@@ -12,6 +12,10 @@
 #include "TableModel.h"
 #include "MySortFilterProxyModel.h"
 
+/**
+ * Cette classe sert de vue de base pour les tableaux de données.
+ * @brief The TableView class
+ */
 class TableView : public QTableView
 {
     Q_OBJECT
@@ -30,10 +34,27 @@ public:
 signals:
     
 public slots:
-    void addElement(elementBase*);
-    void addNewElement();
+    /**
+     * Ajoute un élément au tableau de données
+     * @brief addElement
+     */
+    void addElement(elementBase* e);
+    /**
+     * Fonction virtual qui est appelé quand l'utilisateur veut ajouter un nouveau élément avec le menu contextuel du tableau.
+     * Par défaut, cette fonction ne fait rien.
+     * @brief addNewElement
+     */
+    virtual void addNewElement();
+    /**
+     * Supprime un élément du tableau
+     * @brief deleteElement
+     */
     void deleteElement();
 
+    /**
+     * Ouvre la fenetre de dialogue pour changer de couleur les éléments séléctionnés.
+     * @brief editColor
+     */
     void editColor();
 
 

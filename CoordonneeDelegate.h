@@ -4,7 +4,10 @@
 #include <QStyledItemDelegate>
 #include "coordonnee.h"
 #include "FormCoordonnees.h"
-
+/**
+ * @brief Cette classe permet de personnalisé l'éditeur d'un tableau pour une certaines colonnes.
+ * Elle fourni un éditeur pour modifier une coordonnees. Cette éditeur est en faite un FormCoordonnees
+ */
 class CoordonneeDelegate : public QStyledItemDelegate
 {
 public:

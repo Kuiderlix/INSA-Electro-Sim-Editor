@@ -19,17 +19,40 @@
 #include "CalculChampsLointainWidget.h"
 #include "FilterWidget.h"
 
-/*
-  Classe qui sert a affiché la fenêtre principale de l'application
-*/
+/**
+ * @brief The MainWindow class
+ * Cette classe représente la fenêtre principale du logiciel.
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+    /**
+     * Construit les éléments du menu
+     * @brief construireMenu
+     */
     void construireMenu();
+    /**
+     * Construit la scene3D et renvoi le widget créé
+     * @brief construireScene3D
+     * @return le widget
+     */
     QWidget * construireScene3D();
+    /**
+     * Cronstruit et initialise la barre d'outil
+     * @brief construireToolBar
+     */
     void construireToolBar();
+    /**
+     * Construit les tableaux de données. L'initialisation des tableaux est aussi faite dans cette fonction.
+     * @brief construireTableaux
+     * @return
+     */
     QWidget * construireTableaux();
+    /**
+     * Construit la toolbox
+     * @brief construireDockToolBox
+     */
     void construireDockToolBox();
     
 public:
@@ -37,6 +60,11 @@ public:
     ~MainWindow();
 
 public slots:
+    /**
+     * Cette fonction est appelé dès que l'on change l'onglet courant ( et donc le tableau a affiché).
+     * Elle modifie les champs du filtre dans le Widget FilterWidget
+     * @brief changeFilter
+     */
     void changeFilter();
 
 private:
@@ -54,13 +82,15 @@ private:
     MySortFilterProxyModel * currentModel;
     FilterWidget * filterWidget;
     QTabWidget * tabWidget;
+
+    Data * data;
     Parser parser;
+
     Visualisation3D * visualisation;
 
 
     QAction *actionNouveau;
     QAction *actionOuvrir;
-    QAction *actionEnregistrer;
     QAction *actionGenerer;
     QAction *actionZoom11;
 };

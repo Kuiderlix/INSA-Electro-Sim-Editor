@@ -8,10 +8,20 @@
 #include "cageExcitation.h"
 
 cageExcitation::cageExcitation() : elementBase(), blocConfiguration() {
+
+    insideOutside=0;
+    nbFaces=0;
+    typeExcitation=0;
+    modeExcitation=0;
+    hauteur=0;
+    sensPropagation=0;
+    theta0=0;
+    phi0=0;
+    psi0=0;
+    modulationAmplitude=0;
+    modulationPhase=0;
 }
 
-cageExcitation::cageExcitation(const cageExcitation& orig) : elementBase(), blocConfiguration()  {
-}
 
 cageExcitation::~cageExcitation() {
 }

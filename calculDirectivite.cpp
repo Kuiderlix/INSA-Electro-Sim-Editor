@@ -10,9 +10,10 @@
 calculDirectivite::calculDirectivite() {
     this->setHeader("[CALCUL_DIRECTIVITE]");
     this->setExtension(".avc");
-}
 
-calculDirectivite::calculDirectivite(const calculDirectivite& orig) {
+    calcul=false;
+    pasTheta=0;
+    pasPhi=0;
 }
 
 calculDirectivite::~calculDirectivite() {

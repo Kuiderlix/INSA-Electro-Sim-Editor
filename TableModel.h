@@ -5,6 +5,9 @@
 #include <QStringList>
 #include "BlocElementBase.h"
 
+/**
+ * @brief Cette classe sert de model de base pour les éléments des tableaux.
+ */
 class TableModel : public QAbstractTableModel
 {
     Q_OBJECT
@@ -25,7 +28,15 @@ public:
 signals:
 
 public slots:
+    /**
+     * @brief ajout un élément à la fin du tableau
+     * @param element l'élément a ajouté
+     */
     void addElement(elementBase *element);
+    /**
+     * @brief supprime un élément du tableau
+     * @param i le numéro dans le tableau de l'élément à supprimé
+     */
     void removeElement(int i);
 
 private:

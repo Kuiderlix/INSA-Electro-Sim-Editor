@@ -15,7 +15,6 @@ class Excitation : public blocConfiguration{
     Q_OBJECT
 public:
     Excitation();
-    Excitation(const Excitation& orig);
     virtual ~Excitation();
     
     double GetAmplitudeV0() const {

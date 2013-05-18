@@ -4,6 +4,10 @@
 #include "FormElementBase.h"
 #include "cageExcitation.h"
 
+/**
+ * Formulaire permettant d'ajouter un objet cageExcitation
+ * @brief The FormCageExcitation class
+ */
 class FormCageExcitation : public FormElementBase
 {
     Q_OBJECT

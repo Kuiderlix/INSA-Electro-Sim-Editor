@@ -83,9 +83,9 @@ TableModel *TableView::getSourceModel()
     return (TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel();
 }
 
-void TableView::addElement(elementBase * elem)
+void TableView::addElement(elementBase * e)
 {
-    getSourceModel()->addElement(elem);
+    getSourceModel()->addElement(e);
 }
 
 void TableView::addNewElement()

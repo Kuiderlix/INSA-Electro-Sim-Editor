@@ -8,9 +8,10 @@
 #include "pml.h"
 
 pml::pml() {
-}
-
-pml::pml(const pml& orig) {
+    epaisseurCouche=0;
+    ordreVariation=0;
+    sigmaMax=0;
+    kMax=0;
 }
 
 pml::~pml() {

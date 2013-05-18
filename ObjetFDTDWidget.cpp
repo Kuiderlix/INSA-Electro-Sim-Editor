@@ -1,6 +1,6 @@
 #include "ObjetFDTDWidget.h"
 
-ObjetFDTDWidget::ObjetFDTDWidget(Parser *parser, QWidget *parent) :
+ObjetFDTDWidget::ObjetFDTDWidget(Data *data, QWidget *parent) :
     QWidget(parent)
 {
 
@@ -8,7 +8,7 @@ ObjetFDTDWidget::ObjetFDTDWidget(Parser *parser, QWidget *parent) :
     QVBoxLayout * layout = new QVBoxLayout;
     layout->setMargin(0);
 
-    FormCageExcitation * formCageExci = new FormCageExcitation(parser->getCageExcitation(), FormCageExcitation::NOUVEAU);
+    FormCageExcitation * formCageExci = new FormCageExcitation(data->getCageExcitation(), FormCageExcitation::NOUVEAU);
     connect(formCageExci,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newCageExcitationCreated(elementBase*)));
     connect(formCageExci,SIGNAL(elementValide(elementBase*)),formCageExci,SLOT(reset()));
 

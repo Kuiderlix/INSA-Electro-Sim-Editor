@@ -10,9 +10,12 @@
 #include <string>
 
 volumeCalcul::volumeCalcul() {
-}
-
-volumeCalcul::volumeCalcul(const volumeCalcul& orig) {
+    longueur=0;
+    largeur=0;
+    hauteur=0;
+    nombreX=0;
+    nombreY=0;
+    nombreZ=0;
 }
 
 volumeCalcul::~volumeCalcul() {

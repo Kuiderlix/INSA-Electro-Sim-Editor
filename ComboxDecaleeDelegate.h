@@ -4,6 +4,10 @@
 #include <QStyledItemDelegate>
 #include <QtWidgets>
 
+/**
+ * @brief Cette classe permet de personnalisé l'éditeur d'un tableau pour une certaines colonnes.
+ * Elle fourni un éditeur sous forme de liste déroulante.
+ */
 class ComboxDecaleeDelegate : public QStyledItemDelegate
 {
     Q_OBJECT

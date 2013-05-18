@@ -3,7 +3,9 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    parser.parse();
+
+    data = new Data(&parser);
+
     layout = new QVBoxLayout();
 
 
@@ -54,13 +56,9 @@ void MainWindow::construireMenu()
 
     actionNouveau = new QAction("&Nouveau", this);
     actionOuvrir = new QAction("&Ouvrir", this);
-    actionEnregistrer = new QAction("&Enregistrer", this);
-    QAction *actionEnregistrerSous = new QAction("&Enregistrer sous ...", this);
     QAction *actionQuitter = new QAction("&Quitter", this);
     menuFichier->addAction(actionNouveau);
     menuFichier->addAction(actionOuvrir);
-    menuFichier->addAction(actionEnregistrer);
-    menuFichier->addAction(actionEnregistrerSous);
     menuFichier->addAction(actionQuitter);
 
     QMenu *menuSimulation = menuBar()->addMenu("&Simulation");
@@ -77,14 +75,14 @@ void MainWindow::construireMenu()
 
 QWidget *MainWindow::construireScene3D()
 {
-    visualisation = new Visualisation3D(parser.getVolumeCalcul(),this);
-    visualisation->ajoutListElement(parser.getBlocParallelepipede());
-    visualisation->ajoutListElement(parser.getBlocMetallisations());
-    visualisation->ajoutListElement(parser.getBlocCartoTempo());
-    visualisation->ajoutListElement(parser.getBlocElementLocalise());
-    visualisation->ajoutListElement(parser.getBlocSurfacePrelev());
-    visualisation->ajoutListElement(parser.getBlocSonde());
-    visualisation->ajoutListElement(parser.getBlocPortExcitation());
+    visualisation = new Visualisation3D(data->getVolumeCalcul(),this);
+    visualisation->ajoutListElement(data->getBlocParallelepipede());
+    visualisation->ajoutListElement(data->getBlocMetallisations());
+    visualisation->ajoutListElement(data->getBlocCartoTempo());
+    visualisation->ajoutListElement(data->getBlocElementLocalise());
+    visualisation->ajoutListElement(data->getBlocSurfacePrelev());
+    visualisation->ajoutListElement(data->getBlocSonde());
+    visualisation->ajoutListElement(data->getBlocPortExcitation());
 
     QWidget * visuaWidget = new QWidget();
     QHBoxLayout * layoutVisua = new QHBoxLayout;
@@ -113,7 +111,6 @@ void MainWindow::construireToolBar()
 
     toolbar->addAction(actionNouveau);
     toolbar->addAction(actionOuvrir);
-    toolbar->addAction(actionEnregistrer);
     toolbar->addSeparator();
     toolbar->addAction(actionGenerer);
     toolbar->addSeparator();
@@ -133,15 +130,15 @@ void MainWindow::construireDockToolBox()
     QToolBox * toolbox = new QToolBox();
     toolbox->setMinimumWidth(300);
 
-    DescriptionGeoWidget * descGeo = new DescriptionGeoWidget(&parser);
+    DescriptionGeoWidget * descGeo = new DescriptionGeoWidget(data);
     connect(descGeo,SIGNAL(newMetalCreated(elementBase*)),vueMetal,SLOT(addElement(elementBase*)));
     connect(descGeo,SIGNAL(newParaCreated(elementBase*)),vueParal,SLOT(addElement(elementBase*)));
     connect(descGeo,SIGNAL(newElemLocCreated(elementBase*)),vueElemLocal,SLOT(addElement(elementBase*)));
 
-    ParamSimuWidget* paramSimu = new ParamSimuWidget(&parser);
+    ParamSimuWidget* paramSimu = new ParamSimuWidget(data);
     connect(paramSimu,SIGNAL(newPortExcitationCreated(elementBase*)),vuePortExci,SLOT(addElement(elementBase*)));
 
-    ObjetFDTDWidget* objFDTD = new ObjetFDTDWidget(&parser);
+    ObjetFDTDWidget* objFDTD = new ObjetFDTDWidget(data);
     connect(objFDTD,SIGNAL(newSondeCreated(elementBase*)),vueSonde,SLOT(addElement(elementBase*)));
     connect(objFDTD,SIGNAL(newSurfacePrelCreated(elementBase*)),vueSurfacePrelev,SLOT(addElement(elementBase*)));
     connect(objFDTD,SIGNAL(newCartoTempoCreated(elementBase*)),vueCartoTempo,SLOT(addElement(elementBase*)));
@@ -149,8 +146,8 @@ void MainWindow::construireDockToolBox()
     toolbox->addItem(descGeo, "Description Géométrique");
     toolbox->addItem(paramSimu, "Paramètres Simulation");
     toolbox->addItem(objFDTD, "Objets FDTD et DG-FDTD");
-    toolbox->addItem(new CalculChampsLointainWidget(&parser), "Calcul Champ Lointain");
-    toolbox->addItem(new ParamAvanceWidget(&parser), "Paramètres Avancés");
+    toolbox->addItem(new CalculChampsLointainWidget(data), "Calcul Champ Lointain");
+    toolbox->addItem(new ParamAvanceWidget(data), "Paramètres Avancés");
 
 
     dockLayout->addWidget(new QPushButton("Générer"));
@@ -165,13 +162,13 @@ QWidget *MainWindow::construireTableaux()
     QWidget *tables = new QWidget;
     QVBoxLayout *layoutTable = new QVBoxLayout;
 
-    vueMetal = new TableViewMetallisation(parser.getBlocMetallisations());
-    vueParal = new TableViewParallelepipede(parser.getBlocParallelepipede());
-    vueSonde = new TableViewSonde(parser.getBlocSonde());
-    vueElemLocal = new TableViewElementLocalise(parser.getBlocElementLocalise());
-    vuePortExci = new TableViewPortExcitation(parser.getBlocPortExcitation());
-    vueCartoTempo = new TableViewCartTempo(parser.getBlocCartoTempo());
-    vueSurfacePrelev = new TableViewSurfacePrelev(parser.getBlocSurfacePrelev());
+    vueMetal = new TableViewMetallisation(data->getBlocMetallisations());
+    vueParal = new TableViewParallelepipede(data->getBlocParallelepipede());
+    vueSonde = new TableViewSonde(data->getBlocSonde());
+    vueElemLocal = new TableViewElementLocalise(data->getBlocElementLocalise());
+    vuePortExci = new TableViewPortExcitation(data->getBlocPortExcitation());
+    vueCartoTempo = new TableViewCartTempo(data->getBlocCartoTempo());
+    vueSurfacePrelev = new TableViewSurfacePrelev(data->getBlocSurfacePrelev());
 
     tabWidget = new QTabWidget();
     tabWidget->addTab(vueMetal, "Métallisations");

@@ -10,9 +10,12 @@
 compressionHuygens::compressionHuygens() {
     this->setHeader("[COMPRESSION_HUYGENS]");
     this->setExtension(".avc");
-}
 
-compressionHuygens::compressionHuygens(const compressionHuygens& orig) {
+
+    compressionLongueur=0;
+    compressionLargeur=0;
+    compressionHauteur=0;
+    facteurMultiplicatif=0;
 }
 
 compressionHuygens::~compressionHuygens() {

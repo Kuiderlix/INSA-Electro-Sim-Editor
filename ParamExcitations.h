@@ -16,7 +16,6 @@ class ParamExcitations : public blocConfiguration{
     Q_OBJECT
 public:
     ParamExcitations();
-    ParamExcitations(const ParamExcitations& orig);
     virtual ~ParamExcitations();
 
     double GetFrequenceMax() const {

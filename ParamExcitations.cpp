@@ -8,10 +8,11 @@
 #include "ParamExcitations.h"
 
 ParamExcitations::ParamExcitations() {
+    frequenceMax=0;
+    frequenceSinus=0;
+    type=0;
 }
 
-ParamExcitations::ParamExcitations(const ParamExcitations& orig) {
-}
 
 ParamExcitations::~ParamExcitations() {
 }

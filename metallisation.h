@@ -31,8 +31,6 @@ public:
 private:
     float conductivite;
 
-    static int nbMetal;
-
 };
 
 

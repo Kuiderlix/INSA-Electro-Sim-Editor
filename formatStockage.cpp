@@ -10,9 +10,9 @@
 formatStockage::formatStockage() {
     this->setHeader("[FORMAT_STOCKAGE]");
     this->setExtension(".avc");
-}
 
-formatStockage::formatStockage(const formatStockage& orig) {
+    format=0;
+    formatFichierPrelevement=0;
 }
 
 formatStockage::~formatStockage() {

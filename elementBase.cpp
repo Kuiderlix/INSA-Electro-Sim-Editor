@@ -10,6 +10,8 @@
 
 elementBase::elementBase() {
     couleur = QColor("red");
+    this->arriereDroit = coordonnee(0,0,0);
+    this->avantGauche = coordonnee(0,0,0);
 }
 
 elementBase::elementBase(const elementBase& orig) {

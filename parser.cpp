@@ -41,19 +41,19 @@ string Parser::parserGetString(){
 /******************************************************************************/
 void Parser::scanVolumeDeCalcul(){
     cout << "    scanVolumeDeCalcul" << endl;
-    volume.SetLongueur(parserGetDouble());
-    volume.SetLargeur(parserGetDouble());
-    volume.SetHauteur(parserGetDouble());
-    volume.SetNombreY(parserGetInt());
-    volume.SetNombreX(parserGetInt());
-    volume.SetNombreZ(parserGetInt());
+    data->getVolumeCalcul()->SetLongueur(parserGetDouble());
+    data->getVolumeCalcul()->SetLargeur(parserGetDouble());
+    data->getVolumeCalcul()->SetHauteur(parserGetDouble());
+    data->getVolumeCalcul()->SetNombreY(parserGetInt());
+    data->getVolumeCalcul()->SetNombreX(parserGetInt());
+    data->getVolumeCalcul()->SetNombreZ(parserGetInt());
 }
 void Parser::scanTypeParoi(){
     cout << "    scanTypeParoi" << endl;
-    parois.SetParoiInferieure(parserGetInt());
-    parois.SetParoiSuperieure(parserGetInt());
-    parois.SetParoiX(parserGetInt());
-    parois.SetParoiY(parserGetInt());
+    data->getParoi()->SetParoiInferieure(parserGetInt());
+    data->getParoi()->SetParoiSuperieure(parserGetInt());
+    data->getParoi()->SetParoiX(parserGetInt());
+    data->getParoi()->SetParoiY(parserGetInt());
 }
 void Parser::scanMetallisation(){
     cout << "    scanMetallisation" << endl;
@@ -76,7 +76,7 @@ void Parser::scanMetallisation(){
         z = parserGetInt();
         temp->SetArriereDroit(x,y,z);
         
-        metallisations.addElement(temp);
+        data->getBlocMetallisations()->addElement(temp);
     }
 }
 void Parser::scanParallelepipedes(){
@@ -102,7 +102,7 @@ void Parser::scanParallelepipedes(){
         z = parserGetInt();
         temp->SetArriereDroit(x,y,z);
         
-        parallelepipedes.addElement(temp);
+        data->getBlocParallelepipede()->addElement(temp);
     }
 }
 void Parser::scanElementsLocalises(){
@@ -128,7 +128,7 @@ void Parser::scanElementsLocalises(){
         z = parserGetInt();
         temp->SetArriereDroit(x,y,z);
 
-        elementLocalises.addElement(temp);
+        data->getBlocElementLocalise()->addElement(temp);
     }
 }
 void Parser::parseDSC() {
@@ -171,23 +171,23 @@ void Parser::parseDSC() {
 /******************************************************************************/
 void Parser::scanPML(){
     cout << "    scanPML" << endl;
-    PML.SetEpaisseurCouche(parserGetInt());
-    PML.SetOrdreVariation(parserGetInt());
-    PML.SetSigmaMax(parserGetDouble());
-    PML.SetKMax(parserGetDouble());
+    data->getPML()->SetEpaisseurCouche(parserGetInt());
+    data->getPML()->SetOrdreVariation(parserGetInt());
+    data->getPML()->SetSigmaMax(parserGetDouble());
+    data->getPML()->SetKMax(parserGetDouble());
 }
 void Parser::scanParametreExcitation(){
     cout << "    scanParametreExcitation" << endl;
-    excitation.SetFrequenceMax(parserGetDouble());
+    data->getParamExcitations()->SetFrequenceMax(parserGetDouble());
     int typeExcitation = parserGetInt();
-    excitation.SetType(typeExcitation);
+    data->getParamExcitations()->SetType(typeExcitation);
     if(typeExcitation == 1)
-        excitation.SetFrequenceSinus(parserGetDouble());
+        data->getParamExcitations()->SetFrequenceSinus(parserGetDouble());
 }
 void Parser::scanAnalyseTemporelle(){
     cout << "    scanAnalyseTemporelle" << endl;
-    analyseTemp.SetPeriode(parserGetDouble());
-    analyseTemp.SetTemps(parserGetDouble());
+    data->getAnalyseTempo()->SetPeriode(parserGetDouble());
+    data->getAnalyseTempo()->SetTemps(parserGetDouble());
 }
 void Parser::scanPortExcitation(){
     cout << "    scanPortExcitation" << endl;
@@ -219,7 +219,7 @@ void Parser::scanPortExcitation(){
         temp->SetTypeSource(parserGetInt());
         temp->SetPonderationAmplitude(parserGetDouble());
         temp->SetPonderationPhase(parserGetDouble());
-        portExcitations.addElement(temp);
+        data->getBlocPortExcitation()->addElement(temp);
     }
 }
 void Parser::scanCageExcitation(){
@@ -235,41 +235,41 @@ void Parser::scanCageExcitation(){
         return; //On veut exactement une cage d'excitation.
     }
     parserSautLigne();
-    cage.SetInsideOutside(parserGetInt());
-    cage.SetNbFaces(parserGetInt());
-    cage.SetTypeExcitation(parserGetInt());
+    data->getCageExcitation()->SetInsideOutside(parserGetInt());
+    data->getCageExcitation()->SetNbFaces(parserGetInt());
+    data->getCageExcitation()->SetTypeExcitation(parserGetInt());
     
-    if(cage.GetNbFaces() == 1 && cage.GetTypeExcitation() <= 3){
-        cage.SetModeExcitation(parserGetInt());
-        cage.SetHauteur(parserGetInt());
-        cage.SetSensPropagation(parserGetInt());
+    if(data->getCageExcitation()->GetNbFaces() == 1 && data->getCageExcitation()->GetTypeExcitation() <= 3){
+        data->getCageExcitation()->SetModeExcitation(parserGetInt());
+        data->getCageExcitation()->SetHauteur(parserGetInt());
+        data->getCageExcitation()->SetSensPropagation(parserGetInt());
     } else {
-        if(cage.GetTypeExcitation() == 4)
-            cage.SetNomFichier(parserGetString());
+        if(data->getCageExcitation()->GetTypeExcitation() == 4)
+            data->getCageExcitation()->SetNomFichier(parserGetString());
         parserSautLigne();
         int y = parserGetInt();
         int x = parserGetInt();
         int z = parserGetInt();
-        cage.SetAvantGauche(x,y,z);
+        data->getCageExcitation()->SetAvantGauche(x,y,z);
         parserSautLigne();
         y = parserGetInt();
         x = parserGetInt();
         z = parserGetInt();
-        cage.SetArriereDroit(x,y,z);
-        if(cage.GetTypeExcitation() <= 3){
+        data->getCageExcitation()->SetArriereDroit(x,y,z);
+        if(data->getCageExcitation()->GetTypeExcitation() <= 3){
             parserSautLigne();
             y = parserGetInt();
             x = parserGetInt();
             z = parserGetInt();
-            cage.SetPointReference(x,y,z);
+            data->getCageExcitation()->SetPointReference(x,y,z);
             parserSautLigne();
-            cage.SetTheta0(parserGetDouble());
-            cage.SetPhi0(parserGetDouble());
-            cage.SetPsi0(parserGetDouble());
+            data->getCageExcitation()->SetTheta0(parserGetDouble());
+            data->getCageExcitation()->SetPhi0(parserGetDouble());
+            data->getCageExcitation()->SetPsi0(parserGetDouble());
         }
-        if(cage.GetTypeExcitation() == 4){
-            cage.SetModulationAmplitude(parserGetDouble());
-            cage.SetModulationPhase(parserGetDouble());
+        if(data->getCageExcitation()->GetTypeExcitation() == 4){
+            data->getCageExcitation()->SetModulationAmplitude(parserGetDouble());
+            data->getCageExcitation()->SetModulationPhase(parserGetDouble());
         }
     }
 }
@@ -295,7 +295,7 @@ void Parser::scanSondes(){
         temp->SetPointApplication(x,y,z);
         temp->SetValeurAuCentre(parserGetInt());
         
-        sondes.addElement(temp);
+        data->getBlocSonde()->addElement(temp);
     }
 }
 void Parser::scanCartographieTemporelle(){
@@ -322,14 +322,14 @@ void Parser::scanCartographieTemporelle(){
         x = parserGetInt();
         z = parserGetInt();
         temp->SetArriereDroit(x,y,z);
-        cartographies.addElement(temp);
+        data->getBlocCartoTempo()->addElement(temp);
     }
 }
 void Parser::scanSurfacePrelevement(){
     cout << "    scanSurfacePrelevement" << endl;
     int nbSurfaces = parserGetInt();
 
-    surfacePrelevements.SetNbSurfacesDG(parserGetInt()); //Rajouté dernièrement. À vérifier !!
+    data->getBlocSurfacePrelev()->SetNbSurfacesDG(parserGetInt()); //Rajouté dernièrement. À vérifier !!
     
     int i;
     for(i=0; i<nbSurfaces; i++){
@@ -357,7 +357,7 @@ void Parser::scanSurfacePrelevement(){
             temp->SetCompressionLargeur(parserGetInt());
             temp->SetCompressionHauteur(parserGetInt());
         }
-        surfacePrelevements.addElement(temp);
+        data->getBlocSurfacePrelev()->addElement(temp);
     }
 }
 void Parser::parseANA() {
@@ -367,9 +367,6 @@ void Parser::parseANA() {
     if (fi.is_open()) {
         cout << "** CHARGEMENT DE LA STRUCTURE DATA.ana **" << endl;
         cout << "*****************************************" << endl;
-
-        bool onde_plane_oblique = false;
-        int nbports_excitation = 0;
 
         do {
             fi.getline(chaine,100,'\n');
@@ -395,7 +392,6 @@ void Parser::parseANA() {
 
         } while (!fi.eof());
         fi.close();
-        //fclose(fp);
         cout << "**  FIN CHARGEMENT STRUCTURE DATA.ana  **" << endl;
         cout << "*****************************************" << endl;
     }
@@ -408,21 +404,21 @@ void Parser::scanChampLointain(){
     parserSautLigne();
     parserSautLigne();
     parserSautLigne();
-    champlointain.SetNomFichier(parserGetString());
+    data->getChampLointain()->SetNomFichier(parserGetString());
     parserSautLigne();
     int y = parserGetInt();
     int x = parserGetInt();
     int z = parserGetInt();
-    champlointain.SetOrigineRepere(x,y,z);
+    data->getChampLointain()->SetOrigineRepere(x,y,z);
     parserSautLigne();
-    champlointain.SetFrequenceMin(parserGetDouble());
-    champlointain.SetFrequenceMax(parserGetDouble());
-    champlointain.SetPasFrequence(parserGetDouble());
-    champlointain.SetCalculImage(parserGetInt());
-    champlointain.SetHauteurPlanMasse(parserGetInt());
+    data->getChampLointain()->SetFrequenceMin(parserGetDouble());
+    data->getChampLointain()->SetFrequenceMax(parserGetDouble());
+    data->getChampLointain()->SetPasFrequence(parserGetDouble());
+    data->getChampLointain()->SetCalculImage(parserGetInt());
+    data->getChampLointain()->SetHauteurPlanMasse(parserGetInt());
     parserSautLigne();
-    champlointain.SetPasDiscrTeta(parserGetInt());
-    champlointain.SetPasDiscrPhi(parserGetInt());
+    data->getChampLointain()->SetPasDiscrTeta(parserGetInt());
+    data->getChampLointain()->SetPasDiscrPhi(parserGetInt());
 }
 void Parser::parsePTR(){
     sprintf(nomfic, "DATA%d.ptr", numstru);
@@ -434,15 +430,11 @@ void Parser::parsePTR(){
 
         do {
             fi.getline(chaine,100,'\n');
-            //fgets(chaine, 100, fp);
-            //cout << "%s\n", chaine);
-
             if (!strcmp(chaine, "[CALCUL_CHAMP_LOINTAIN]"))
                 scanChampLointain();
         } while (!fi.eof());
 
         fi.close();
-        //fclose(fp);
         cout << "**  FIN CHARGEMENT STRUCTURE DATA.ptr  **" << endl;
         cout << "*****************************************" << endl;
     }
@@ -452,30 +444,30 @@ void Parser::parsePTR(){
 /******************************************************************************/
 void Parser::scanExcitation(){
     cout << "    scanExcitation" << endl;
-    amplitudeV0.SetAmplitudeV0(parserGetDouble());
+    data->getExcitation()->SetAmplitudeV0(parserGetDouble());
 }
 void Parser::scanFormatStockage(){
     cout << "    scanFormatStockage" << endl;
-    stockage.SetFormat(parserGetInt());
-    stockage.SetFormatFichierPrelevement(parserGetInt());
+    data->getFormatStockage()->SetFormat(parserGetInt());
+    data->getFormatStockage()->SetFormatFichierPrelevement(parserGetInt());
 }
 void Parser::scanEchantillonnage(){
     cout << "    scanEchantillonnage" << endl;
-    facteurEchantillonnage.SetFacteurEchatillonnage(parserGetInt());
+    data->getBlocEchantillonnage()->SetFacteurEchatillonnage(parserGetInt());
 }
 void Parser::scanCompressionHuygens(){
     cout << "    scanCompressionHuygens" << endl;
     parserSautLigne();
-    compHuygens.SetCompressionLongueur(parserGetInt());
-    compHuygens.SetCompressionLargeur(parserGetInt());
-    compHuygens.SetCompressionHauteur(parserGetInt());
-    compHuygens.SetFacteurMultiplicatif(parserGetInt());
+    data->getCompressionHuygens()->SetCompressionLongueur(parserGetInt());
+    data->getCompressionHuygens()->SetCompressionLargeur(parserGetInt());
+    data->getCompressionHuygens()->SetCompressionHauteur(parserGetInt());
+    data->getCompressionHuygens()->SetFacteurMultiplicatif(parserGetInt());
 }
 void Parser::scanCalculDirectivite(){
     cout << "    scanCalculDirectivite" << endl;
-    calculdirectivite.SetCalcul(parserGetInt());
-    calculdirectivite.SetPasTheta(parserGetInt());
-    calculdirectivite.SetPasPhi(parserGetInt());
+    data->getCalculDirective()->SetCalcul(parserGetInt());
+    data->getCalculDirective()->SetPasTheta(parserGetInt());
+    data->getCalculDirective()->SetPasPhi(parserGetInt());
 }
 void Parser::parseAVC(){
     sprintf(nomfic, "DATA%d.avc\0", numstru);
@@ -487,8 +479,6 @@ void Parser::parseAVC(){
 
         do {
             fi.getline(chaine,100,'\n');
-            //fgets(chaine, 100, fp);
-            //cout << "%s\n", chaine);
 
             if (!strcmp(chaine, "[EXCITATION]"))
                 scanExcitation();
@@ -503,7 +493,6 @@ void Parser::parseAVC(){
         } while (!fi.eof());
 
         fi.close();
-        //fclose(fp);
         cout << "**  FIN CHARGEMENT STRUCTURE DATA.avc  **" << endl;
         cout << "*****************************************" << endl;
     }
@@ -512,34 +501,12 @@ void Parser::parseAVC(){
 /**>Fonction principale *******************************************************/
 /******************************************************************************/
 
-void Parser::parse(){
+void Parser::parse(Data * data){
+    this->data=data;
     parseDSC();
     parseANA();
-    if(surfacePrelevements.getNbElement() == 1 && surfacePrelevements.GetSurface(0)->GetTypeSurface() == 1)
+    if(data->getBlocSurfacePrelev()->getNbElement() == 1 && data->getBlocSurfacePrelev()->GetSurface(0)->GetTypeSurface() == 1)
         parsePTR();
     parseAVC();
-    
-    cout << volume.GetHauteur() << " " << volume.GetLargeur() << " " << volume.GetLongueur() << endl;
-    cout << volume.GetNombreY() << " " << volume.GetNombreX() << " " << volume.GetNombreZ() << endl;
-/*
-    //On réécrit tout pour vérifier.
-    volume.ecrire();
-    parois.ecrire();
-    metallisations.ecrire();
-    parallelepipedes.ecrire();
-    elementLocalises.ecrire();
-    PML.ecrire();
-    excitation.ecrire();
-    analyseTemp.ecrire();
-    portExcitations.ecrire();
-    cage.ecrire();
-    sondes.ecrire();
-    cartographies.ecrire();
-    surfacePrelevements.ecrire();
-    champlointain.ecrire();
-    amplitudeV0.ecrire();
-    stockage.ecrire();
-    facteurEchantillonnage.ecrire();
-    compHuygens.ecrire();
-    calculdirectivite.ecrire();*/
+
 }

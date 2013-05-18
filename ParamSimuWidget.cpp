@@ -1,6 +1,6 @@
 #include "ParamSimuWidget.h"
 
-ParamSimuWidget::ParamSimuWidget(Parser *parser, QWidget *parent) :
+ParamSimuWidget::ParamSimuWidget(Data *data, QWidget *parent) :
     QWidget(parent)
 {
 
@@ -11,9 +11,9 @@ ParamSimuWidget::ParamSimuWidget(Parser *parser, QWidget *parent) :
     connect(formPortExci,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newPortExcitationCreated(elementBase*)));
     connect(formPortExci,SIGNAL(elementValide(elementBase*)),formPortExci,SLOT(reset()));
 
-    FormAnalyseTempo * formAnaTempo = new FormAnalyseTempo(parser->getAnalyseTempo());
+    FormAnalyseTempo * formAnaTempo = new FormAnalyseTempo(data->getAnalyseTempo());
 
-    FormParamExcitation * formParamExci = new FormParamExcitation(parser->getParamExcitations());
+    FormParamExcitation * formParamExci = new FormParamExcitation(data->getParamExcitations());
 
     layout->addWidget(formParamExci);
     layout->addWidget(formAnaTempo);

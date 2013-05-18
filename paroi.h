@@ -16,7 +16,6 @@ class paroi : public blocConfiguration {
     Q_OBJECT
 public:
     paroi();
-    paroi(const paroi& orig);
     virtual ~paroi();
 
 

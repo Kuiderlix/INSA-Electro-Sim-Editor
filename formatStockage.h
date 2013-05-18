@@ -15,7 +15,6 @@ class formatStockage : public blocConfiguration{
     Q_OBJECT
 public:
     formatStockage();
-    formatStockage(const formatStockage& orig);
     virtual ~formatStockage();
 
     int GetFormat() const {

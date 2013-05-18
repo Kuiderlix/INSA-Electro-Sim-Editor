@@ -11,6 +11,9 @@ Visualisation3D::Visualisation3D(volumeCalcul *volume, QWidget *parent)
     qsrand(458);
 
 
+    couleurVolume = QColor("black");
+
+
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(reInit()));
     connect(this, SIGNAL(stopTimer()), timer, SLOT(stop()));
@@ -57,14 +60,13 @@ void Visualisation3D::paintGL()
     glRotated(yRot / 16.0, 0.0, 0.0, 1.0);
 
 
-    qglColor(QColor("black"));
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     dessineVolumeCalcul();
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     dessineScene();
 
-    glDisable(GL_BLEND);
 
+    glDisable(GL_BLEND);
 }
 
 void Visualisation3D::keyPressEvent(QKeyEvent *keyEvent)
@@ -154,16 +156,17 @@ void Visualisation3D::setYRotation(int angle)
 
 void Visualisation3D::dessineVolumeCalcul()
 {
+    qglColor(couleurVolume);
     Cube::drawCube(Point(-volume->GetLargeur()/2,-volume->GetLongueur()/2,-volume->GetHauteur()/2),Point(volume->GetLargeur()/2,volume->GetLongueur()/2,volume->GetHauteur()/2));
 }
 
 void Visualisation3D::dessineScene()
 {
-    QList<BlocElementBase* >::Iterator it = listElement.begin();
+    it = listElement.begin();
     for (;it!=listElement.end();it++)
     {
-        QList<elementBase*>* list = (*it)->getListElementPointer();
-        QList<elementBase*>::Iterator it_l = list->begin();
+        list = (*it)->getListElementPointer();
+        it_l = list->begin();
         for(;it_l!=list->end();it_l++)
         {
             elementBase * elem = (elementBase*) *it_l;

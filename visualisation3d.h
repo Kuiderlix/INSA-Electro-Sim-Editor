@@ -83,6 +83,12 @@ private:
 
     QTimer *timer;
 
+    QColor couleurVolume;
+
+    QList<BlocElementBase* >::Iterator it;
+    QList<elementBase*>* list;
+    QList<elementBase*>::Iterator it_l;
+
 };
 
 #endif // VISUALISATION3D_H
