@@ -10,17 +10,17 @@ FormCalculDirective::FormCalculDirective(calculDirectivite *calDir, QWidget *par
 
     QFormLayout * layout = new QFormLayout;
 
-    QCheckBox * calculHWidget = new QCheckBox();
+    calculHWidget = new QCheckBox();
     layout->addRow("Calcul:",calculHWidget);
     connect(calculHWidget,SIGNAL(clicked(bool)),calDir,SLOT(SetCalcul(bool)));
 
-    QSpinBox * pasThetaWidget = new QSpinBox();
+    pasThetaWidget = new QSpinBox();
     pasThetaWidget->setMaximum(9999);
     pasThetaWidget->setValue(calDir->GetPasTheta());
     layout->addRow("pasTheta:",pasThetaWidget);
     connect(pasThetaWidget,SIGNAL(valueChanged(int)),calDir,SLOT(SetPasTheta(int)));
 
-    QSpinBox * pasPhiWidget = new QSpinBox();
+    pasPhiWidget = new QSpinBox();
     pasPhiWidget->setMaximum(9999);
     pasPhiWidget->setValue(calDir->GetPasPhi());
     layout->addRow("pasPhi:",pasPhiWidget);
@@ -31,4 +31,16 @@ FormCalculDirective::FormCalculDirective(calculDirectivite *calDir, QWidget *par
     layoutPrincipal->addWidget(group);
     setLayout(layoutPrincipal);
 
+    init();
+
+}
+
+void FormCalculDirective::init()
+{
+    calculHWidget->setChecked(calDir->IsCalcul());
+    connect(calculHWidget,SIGNAL(clicked(bool)),calDir,SLOT(SetCalcul(bool)));
+    pasThetaWidget->setValue(calDir->GetPasTheta());
+    connect(pasThetaWidget,SIGNAL(valueChanged(int)),calDir,SLOT(SetPasTheta(int)));
+    pasPhiWidget->setValue(calDir->GetPasPhi());
+    connect(pasPhiWidget,SIGNAL(valueChanged(int)),calDir,SLOT(SetPasPhi(int)));
 }

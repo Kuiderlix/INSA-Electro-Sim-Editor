@@ -11,10 +11,14 @@
 #include "Ecriture.h"
 
 surfacePrelevement::surfacePrelevement() {
+    typeSurface=0;
+    insideOutside=0;
+    nbFaces=0;
+    compressionLongueur=0;
+    compressionLargeur=0;
+    compressionHauteur=0;
 }
 
-surfacePrelevement::surfacePrelevement(const surfacePrelevement& orig) {
-}
 
 surfacePrelevement::~surfacePrelevement() {
 }

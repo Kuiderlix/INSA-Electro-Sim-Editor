@@ -12,21 +12,21 @@ FormCompressionHuygens::FormCompressionHuygens(compressionHuygens *compreHuy, QW
 
     QFormLayout * layout = new QFormLayout;
 
-    QSpinBox * compLongWidget = new QSpinBox();
+    compLongWidget = new QSpinBox();
     layout->addRow("Compression Longueur:",compLongWidget);
     connect(compLongWidget,SIGNAL(valueChanged(int)),compreHuy,SLOT(SetCompressionLongueur(int)));
 
-    QSpinBox * compLargWidget = new QSpinBox();
+    compLargWidget = new QSpinBox();
     layout->addRow("Compression Largeur:",compLargWidget);
     connect(compLargWidget,SIGNAL(valueChanged(int)),compreHuy,SLOT(SetCompressionLargeur(int)));
 
 
-    QSpinBox * compHautWidget = new QSpinBox();
+    compHautWidget = new QSpinBox();
     layout->addRow("Compression Hauteur:",compHautWidget);
     connect(compHautWidget,SIGNAL(valueChanged(int)),compreHuy,SLOT(SetCompressionHauteur(int)));
 
 
-    QSpinBox * facteurMultiWidget = new QSpinBox();
+    facteurMultiWidget = new QSpinBox();
     layout->addRow("Facteur Multiplicatif:",facteurMultiWidget);
     connect(facteurMultiWidget,SIGNAL(valueChanged(int)),compreHuy,SLOT(SetFacteurMultiplicatif(int)));
 
@@ -40,5 +40,22 @@ FormCompressionHuygens::FormCompressionHuygens(compressionHuygens *compreHuy, QW
 
     setLayout(layoutPrincipal);
 
+    init();
 
+
+}
+
+void FormCompressionHuygens::init()
+{
+    compLongWidget->setValue(compreHuy->GetCompressionLongueur());
+    connect(compLongWidget,SIGNAL(valueChanged(int)),compreHuy,SLOT(SetCompressionLongueur(int)));
+
+    compLargWidget->setValue(compreHuy->GetCompressionLargeur());
+    connect(compLargWidget,SIGNAL(valueChanged(int)),compreHuy,SLOT(SetCompressionLargeur(int)));
+
+    compHautWidget->setValue(compreHuy->GetCompressionHauteur());
+    connect(compHautWidget,SIGNAL(valueChanged(int)),compreHuy,SLOT(SetCompressionHauteur(int)));
+
+    facteurMultiWidget->setValue(compreHuy->GetFacteurMultiplicatif());
+    connect(facteurMultiWidget,SIGNAL(valueChanged(int)),compreHuy,SLOT(SetFacteurMultiplicatif(int)));
 }

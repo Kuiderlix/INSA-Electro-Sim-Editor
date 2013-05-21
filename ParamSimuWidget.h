@@ -5,19 +5,28 @@
 #include "FormPortExcitation.h"
 #include "FormAnalyseTempo.h"
 #include "FormParamExcitation.h"
-#include "Data.h"
+#include "ToolBoxWidget.h"
 
-class ParamSimuWidget : public QWidget
+class ParamSimuWidget : public ToolBoxWidget
 {
     Q_OBJECT
 public:
     explicit ParamSimuWidget(Data* data, QWidget *parent = 0);
+
+
+    void init();
     
 signals:
     
     void newPortExcitationCreated(elementBase*);
 
 public slots:
+
+
+private:
+
+    FormAnalyseTempo * formAnaTempo;
+    FormParamExcitation * formParamExci;
 
     
 };

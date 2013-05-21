@@ -23,20 +23,19 @@ blocCartographieTemporelle::~blocCartographieTemporelle() {
 
 void blocCartographieTemporelle::ecrire(){
 
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[CARTOGRAPHIES_TEMPORELLES]");
-    bC.setExtension(".ana");
-    bC.ecrire();
+    setHeader("[CARTOGRAPHIES_TEMPORELLES]");
+    setExtension(".ana");
+    blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_cartos_temporelles_: \n";
     monEcriture << this->getNbElement() << std::endl;
 
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+    Ecriture::Ecrire(monEcriture.str());
 
+    cartographieTemporelle* temp;
     for(int i=0; i<this->getNbElement(); i++){
-        cartographieTemporelle* temp = this->GetCarto(i);
+        temp = this->GetCarto(i);
         temp->ecrire(i+1);
     }
 

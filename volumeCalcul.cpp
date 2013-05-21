@@ -22,11 +22,10 @@ volumeCalcul::~volumeCalcul() {
 }
 
 void volumeCalcul::ecrire(){
-    
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[VOLUME_DE_CALCUL]");
-    bC.setExtension(".dsc");
-    bC.ecrire();
+
+    setHeader("[VOLUME_DE_CALCUL]");
+    setExtension(".dsc");
+    blocConfiguration::ecrire();
 
     
     std::ostringstream monEcriture;
@@ -42,9 +41,8 @@ void volumeCalcul::ecrire(){
     monEcriture << this->nombreX << std::endl;
     monEcriture << "Nombre_de_cellules_sur_la_hauteur_z:\n";
     monEcriture << this->nombreZ << std::endl;
-    
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+
+    Ecriture::Ecrire(monEcriture.str());
 
     Ecriture::Ecrire("\n");
 }

@@ -37,6 +37,11 @@ public:
      */
     void parse(Data *data);
 
+    void setNumFichier(int num)
+    {
+        numstru=num;
+    }
+
 private:
 
     /******************************************************************************/

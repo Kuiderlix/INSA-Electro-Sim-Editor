@@ -15,7 +15,6 @@
 class sonde : public elementBase{
 public:
     sonde();
-    sonde(const sonde& orig);
     virtual ~sonde();
     
     bool IsEx() const {

@@ -14,7 +14,6 @@
 class portExcitation : public elementBase{
 public:
     portExcitation();
-    portExcitation(const portExcitation& orig);
     virtual ~portExcitation();
     
     int GetDirection() const {

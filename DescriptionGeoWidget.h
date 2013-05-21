@@ -7,18 +7,22 @@
 #include "FormVolumeCalcul.h"
 #include "FormElementLocalise.h"
 #include "FormParoi.h"
-#include "Data.h"
+#include "ToolBoxWidget.h"
 
 /**
  * @brief Cette classe représente un widget qui se trouve dans la toolbox.
  * Il agit en faite comme un conteneur des autres formulaire de la meme catégorie.
  */
-class DescriptionGeoWidget : public QWidget
+class DescriptionGeoWidget : public ToolBoxWidget
 {
     Q_OBJECT
 public:
     explicit DescriptionGeoWidget(Data * data, QWidget *parent = 0);
-    
+
+    /**
+     * @brief Initialise les formulaire avec les valeurs de l'objet Data
+     */
+    void init();
 signals:
 
     /**
@@ -40,6 +44,11 @@ public slots:
      * @brief Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise
      */
     void openElementLocaliseWindows();
+
+
+private:
+    FormVolumeCalcul * formVolCal;
+    FormParoi * formParoi;
     
 };
 

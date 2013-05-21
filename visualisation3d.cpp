@@ -54,6 +54,8 @@ void Visualisation3D::paintGL()
     glTranslatef(xMov,yMov, 0.0f); // méthode de translation (x,y,z)
 
     int ratioZoom = (volume->GetHauteur()*1.5) / 100;
+    if (ratioZoom < 1)
+        ratioZoom=1;
     gluLookAt(0,(volume->GetHauteur()*1.5)-(zoom*ratioZoom),0,0,0,0,1,0,0); // gestion de la caméra
 
     glRotated(-xRot / 16.0, 1.0, 0.0, 0.0);

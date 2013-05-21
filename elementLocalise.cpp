@@ -13,6 +13,7 @@
 elementLocalise::elementLocalise() {
     type=1;
     direction=1;
+    valeur=0;
 }
 
 elementLocalise::elementLocalise(const elementLocalise& orig) {

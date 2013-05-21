@@ -1,8 +1,9 @@
 #include "DescriptionGeoWidget.h"
 
 DescriptionGeoWidget::DescriptionGeoWidget(Data *data, QWidget *parent) :
-    QWidget(parent)
+    ToolBoxWidget(data,parent)
 {
+
     QVBoxLayout * layout = new QVBoxLayout;
     layout->setMargin(0);
 
@@ -13,9 +14,9 @@ DescriptionGeoWidget::DescriptionGeoWidget(Data *data, QWidget *parent) :
     connect(formPara,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newParaCreated(elementBase*)));
     connect(formPara,SIGNAL(elementValide(elementBase*)),formPara,SLOT(reset()));
 
-    FormVolumeCalcul * formVolCal = new FormVolumeCalcul(data->getVolumeCalcul());
+    formVolCal = new FormVolumeCalcul(data->getVolumeCalcul());
 
-    FormParoi * formParoi = new FormParoi(data->getParoi());
+    formParoi = new FormParoi(data->getParoi());
 
     layout->addWidget(formVolCal);
     layout->addWidget(formParoi);
@@ -37,6 +38,8 @@ DescriptionGeoWidget::DescriptionGeoWidget(Data *data, QWidget *parent) :
 
 
     setLayout(layout);
+
+    init();
 }
 
 void DescriptionGeoWidget::openElementLocaliseWindows()
@@ -46,4 +49,11 @@ void DescriptionGeoWidget::openElementLocaliseWindows()
     connect(win,SIGNAL(elementValide(elementBase*)),win,SLOT(reset()));
     connect(win,SIGNAL(elementValide(elementBase*)),win,SLOT(accept()));
     win->exec();
+}
+
+
+void DescriptionGeoWidget::init()
+{
+    formVolCal->setVolumeCalcul(data->getVolumeCalcul());
+    formParoi->setParoi(data->getParoi());
 }

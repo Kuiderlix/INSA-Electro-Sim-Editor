@@ -81,6 +81,16 @@ public:
      */
     void init();
 
+    void setVolumeCalcul(volumeCalcul * vol)
+    {
+        this->volume=vol;
+    }
+
+    void clearScene()
+    {
+        listElement.clear();
+    }
+
 
 
 signals:

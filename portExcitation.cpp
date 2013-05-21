@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   portExcitation.cpp
  * Author: camille
  * 
@@ -11,13 +11,17 @@
 #include "Ecriture.h"
 
 portExcitation::portExcitation() {
-    typePort=1;
-    direction=1;
-    typeSource=1;
+
+    portActif=false;
+    portInfinitesimal=false;
+    typePort=0;
+    direction=0;
+    impedance=0;
+    typeSource=0;
+    ponderationAmplitude=0;
+    ponderationPhase=0;
 }
 
-portExcitation::portExcitation(const portExcitation& orig) {
-}
 
 portExcitation::~portExcitation() {
 }

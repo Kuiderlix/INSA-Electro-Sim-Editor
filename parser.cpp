@@ -2,7 +2,7 @@
 
 Parser::Parser()
 {
-    numstru = 9;
+    numstru = 1;
 }
 
 

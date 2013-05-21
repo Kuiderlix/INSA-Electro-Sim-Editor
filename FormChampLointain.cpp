@@ -12,35 +12,35 @@ FormChampLointain::FormChampLointain(champLointain *champ, QWidget *parent) :
 
     QFormLayout * layout = new QFormLayout;
 
-    FormCoordonnees * origineRepereWidget = new FormCoordonnees(champ->GetOrigineRepere());
+    origineRepereWidget = new FormCoordonnees(champ->GetOrigineRepere());
     layout->addRow("Origine Repère:",origineRepereWidget);
     connect(origineRepereWidget,SIGNAL(coordonneeChanged(coordonnee)),champ,SLOT(SetOrigineRepere(coordonnee)));
 
-    QDoubleSpinBox * frequenceMinWidget = new QDoubleSpinBox();
+    frequenceMinWidget = new QDoubleSpinBox();
     layout->addRow("Fréquence Min:",frequenceMinWidget);
     connect(frequenceMinWidget,SIGNAL(valueChanged(double)),champ,SLOT(SetFrequenceMin(double)));
 
-    QDoubleSpinBox * frequenceMaxWidget = new QDoubleSpinBox();
+    frequenceMaxWidget = new QDoubleSpinBox();
     layout->addRow("Fréquence Max:",frequenceMaxWidget);
     connect(frequenceMaxWidget,SIGNAL(valueChanged(double)),champ,SLOT(SetFrequenceMax(double)));
 
-    QDoubleSpinBox * frequencePasWidget = new QDoubleSpinBox();
+    frequencePasWidget = new QDoubleSpinBox();
     layout->addRow("Pas Fréquence:",frequencePasWidget);
     connect(frequencePasWidget,SIGNAL(valueChanged(double)),champ,SLOT(SetPasFrequence(double)));
 
-    QCheckBox * calculImageWidget = new QCheckBox();
+    calculImageWidget = new QCheckBox();
     layout->addRow("Calcul Image:",calculImageWidget);
     connect(calculImageWidget,SIGNAL(clicked(bool)),champ,SLOT(SetCalculImage(bool)));
 
-    QSpinBox * hauteurPlanMasseWidget = new QSpinBox();
+    hauteurPlanMasseWidget = new QSpinBox();
     layout->addRow("Hauteur plan masse:",hauteurPlanMasseWidget);
     connect(hauteurPlanMasseWidget,SIGNAL(valueChanged(int)),champ,SLOT(SetHauteurPlanMasse(int)));
 
-    QSpinBox * pasDiscrTetaWidget = new QSpinBox();
+    pasDiscrTetaWidget = new QSpinBox();
     layout->addRow("Pas Discr Teta:",pasDiscrTetaWidget);
     connect(pasDiscrTetaWidget,SIGNAL(valueChanged(int)),champ,SLOT(SetPasDiscrTeta(int)));
 
-    QSpinBox * pasDiscrPhiWidget = new QSpinBox();
+    pasDiscrPhiWidget = new QSpinBox();
     layout->addRow("Pas Discr Phi:",pasDiscrPhiWidget);
     connect(pasDiscrPhiWidget,SIGNAL(valueChanged(int)),champ,SLOT(SetPasDiscrPhi(int)));
 
@@ -53,4 +53,31 @@ FormChampLointain::FormChampLointain(champLointain *champ, QWidget *parent) :
 
     setLayout(layoutPrincipal);
 
+}
+
+void FormChampLointain::init()
+{
+    origineRepereWidget->setCoordonnee(champ->GetOrigineRepere());
+    connect(origineRepereWidget,SIGNAL(coordonneeChanged(coordonnee)),champ,SLOT(SetOrigineRepere(coordonnee)));
+
+    frequenceMinWidget->setValue(champ->GetFrequenceMin());
+    connect(frequenceMinWidget,SIGNAL(valueChanged(double)),champ,SLOT(SetFrequenceMin(double)));
+
+    frequenceMaxWidget->setValue(champ->GetFrequenceMax());
+    connect(frequenceMaxWidget,SIGNAL(valueChanged(double)),champ,SLOT(SetFrequenceMax(double)));
+
+    frequencePasWidget->setValue(champ->GetPasFrequence());
+    connect(frequencePasWidget,SIGNAL(valueChanged(double)),champ,SLOT(SetPasFrequence(double)));
+
+    calculImageWidget->setChecked(champ->IsCalculImage());
+    connect(calculImageWidget,SIGNAL(clicked(bool)),champ,SLOT(SetCalculImage(bool)));
+
+    hauteurPlanMasseWidget->setValue(champ->GetHauteurPlanMasse());
+    connect(hauteurPlanMasseWidget,SIGNAL(valueChanged(int)),champ,SLOT(SetHauteurPlanMasse(int)));
+
+    pasDiscrPhiWidget->setValue(champ->GetPasDiscrPhi());
+    connect(pasDiscrTetaWidget,SIGNAL(valueChanged(int)),champ,SLOT(SetPasDiscrTeta(int)));
+
+    pasDiscrTetaWidget->setValue(champ->GetPasDiscrTeta());
+    connect(pasDiscrPhiWidget,SIGNAL(valueChanged(int)),champ,SLOT(SetPasDiscrPhi(int)));
 }

@@ -11,10 +11,15 @@
 #include "Ecriture.h"
 
 sonde::sonde() {
+    ex=false;
+    ey=false;
+    ez=false;
+    hx=false;
+    hy=false;
+    hz=false;
+    valeurAuCentre=false;
 }
 
-sonde::sonde(const sonde& orig) {
-}
 
 sonde::~sonde() {
 }

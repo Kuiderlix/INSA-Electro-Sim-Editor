@@ -18,6 +18,8 @@
 #include "ParamAvanceWidget.h"
 #include "CalculChampsLointainWidget.h"
 #include "FilterWidget.h"
+#include "FormNouveau.h"
+#include "FormOuvrir.h"
 
 /**
  * @brief The MainWindow class
@@ -54,6 +56,9 @@ class MainWindow : public QMainWindow
      * @brief construireDockToolBox
      */
     void construireDockToolBox();
+
+
+    void init();
     
 public:
     MainWindow(QWidget *parent = 0);
@@ -66,6 +71,16 @@ public slots:
      * @brief changeFilter
      */
     void changeFilter();
+
+    /**
+     * @brief initialise l'interface graphique avec des données vierges
+     */
+    void nouvelleSimulation();
+
+    /**
+     * @brief Charge les fichiers de configuration et initialise l'interface graphique
+     */
+    void ouvrirSimulation();
 
 private:
 
@@ -87,6 +102,12 @@ private:
     Parser parser;
 
     Visualisation3D * visualisation;
+
+    DescriptionGeoWidget * descGeo;
+    ParamSimuWidget* paramSimu;
+    ObjetFDTDWidget* objFDTD;
+    CalculChampsLointainWidget* calculChWidget;
+    ParamAvanceWidget* paramAvcWidget;
 
 
     QAction *actionNouveau;

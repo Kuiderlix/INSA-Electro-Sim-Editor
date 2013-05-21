@@ -97,7 +97,10 @@ SOURCES += main.cpp\
     MySortFilterProxyModel.cpp \
     FilterWidget.cpp \
     FormPML.cpp \
-    Data.cpp
+    Data.cpp \
+    FormOuvrir.cpp \
+    FormNouveau.cpp \
+    ToolBoxWidget.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -187,7 +190,10 @@ HEADERS  += mainwindow.h \
     MySortFilterProxyModel.h \
     FilterWidget.h \
     FormPML.h \
-    Data.h
+    Data.h \
+    FormOuvrir.h \
+    FormNouveau.h \
+    ToolBoxWidget.h
 
 OTHER_FILES += \
     DATA1.ana \

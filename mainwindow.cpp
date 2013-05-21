@@ -29,6 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(filterWidget,SIGNAL(columnChanged(int)), currentModel,SLOT(setFilterKeyColumn(int)));
     connect(filterWidget,SIGNAL(filterChanged(QString)), currentModel,SLOT(setFilterRegExp(QString)));
     connect(tabWidget,SIGNAL(currentChanged(int)), this, SLOT(changeFilter()));
+
+
+    init();
 }
 
 MainWindow::~MainWindow()
@@ -49,25 +52,59 @@ void MainWindow::changeFilter()
     filterWidget->setCurrentModel(table);
 }
 
+void MainWindow::nouvelleSimulation()
+{
+    FormNouveau * win = new FormNouveau(this);
+    int result = win->exec();
+
+    if (result == QDialog::Accepted)
+    {
+        delete data;
+        data=new Data();
+        init();
+    }
+    delete win;
+}
+
+void MainWindow::ouvrirSimulation()
+{
+    FormOuvrir * win = new FormOuvrir(this);
+    int result = win->exec();
+    if (result == QDialog::Accepted)
+    {
+        delete data;
+        parser.setNumFichier(win->getNum());
+        data=new Data(&parser);
+        init();
+    }
+    delete win;
+}
+
 
 void MainWindow::construireMenu()
 {
     QMenu *menuFichier = menuBar()->addMenu("&Fichier");
 
-    actionNouveau = new QAction("&Nouveau", this);
-    actionOuvrir = new QAction("&Ouvrir", this);
-    QAction *actionQuitter = new QAction("&Quitter", this);
+    actionNouveau = new QAction(QIcon("icon/nouveau.png"),"&Nouveau", this);
+    actionNouveau->setShortcuts(QKeySequence::New);
+    connect(actionNouveau,SIGNAL(triggered()),this,SLOT(nouvelleSimulation()));
+    actionOuvrir = new QAction(QIcon("icon/ouvrir.png"),"&Ouvrir", this);
+    actionOuvrir->setShortcuts(QKeySequence::Open);
+    connect(actionOuvrir,SIGNAL(triggered()),this,SLOT(ouvrirSimulation()));
+    QAction *actionQuitter = new QAction(QIcon("icon/quitter.png"),"&Quitter", this);
+    actionQuitter->setShortcuts(QKeySequence::Quit);
+    connect(actionQuitter,SIGNAL(triggered()),this,SLOT(close()));
     menuFichier->addAction(actionNouveau);
     menuFichier->addAction(actionOuvrir);
     menuFichier->addAction(actionQuitter);
 
     QMenu *menuSimulation = menuBar()->addMenu("&Simulation");
-    actionGenerer = new QAction("&Générer", this);
+    actionGenerer = new QAction(QIcon("icon/generer.png"),"&Générer", this);
     menuSimulation->addAction(actionGenerer);
 
 
     QMenu *menuScene3D = menuBar()->addMenu("&Scene 3D");
-    actionZoom11 = new QAction("&Zoom 1:1", this);
+    actionZoom11 = new QAction(QIcon("icon/initScene.png"),"&Zoom 1:1", this);
     connect(actionZoom11,SIGNAL(triggered()),visualisation,SLOT(startToZoom11()));
     menuScene3D->addAction(actionZoom11);
 
@@ -130,30 +167,64 @@ void MainWindow::construireDockToolBox()
     QToolBox * toolbox = new QToolBox();
     toolbox->setMinimumWidth(300);
 
-    DescriptionGeoWidget * descGeo = new DescriptionGeoWidget(data);
+    descGeo = new DescriptionGeoWidget(data);
     connect(descGeo,SIGNAL(newMetalCreated(elementBase*)),vueMetal,SLOT(addElement(elementBase*)));
     connect(descGeo,SIGNAL(newParaCreated(elementBase*)),vueParal,SLOT(addElement(elementBase*)));
     connect(descGeo,SIGNAL(newElemLocCreated(elementBase*)),vueElemLocal,SLOT(addElement(elementBase*)));
 
-    ParamSimuWidget* paramSimu = new ParamSimuWidget(data);
+    paramSimu = new ParamSimuWidget(data);
     connect(paramSimu,SIGNAL(newPortExcitationCreated(elementBase*)),vuePortExci,SLOT(addElement(elementBase*)));
 
-    ObjetFDTDWidget* objFDTD = new ObjetFDTDWidget(data);
+    objFDTD = new ObjetFDTDWidget(data);
     connect(objFDTD,SIGNAL(newSondeCreated(elementBase*)),vueSonde,SLOT(addElement(elementBase*)));
     connect(objFDTD,SIGNAL(newSurfacePrelCreated(elementBase*)),vueSurfacePrelev,SLOT(addElement(elementBase*)));
     connect(objFDTD,SIGNAL(newCartoTempoCreated(elementBase*)),vueCartoTempo,SLOT(addElement(elementBase*)));
 
+    calculChWidget = new CalculChampsLointainWidget(data);
+    paramAvcWidget = new ParamAvanceWidget(data);
+
     toolbox->addItem(descGeo, "Description Géométrique");
     toolbox->addItem(paramSimu, "Paramètres Simulation");
     toolbox->addItem(objFDTD, "Objets FDTD et DG-FDTD");
-    toolbox->addItem(new CalculChampsLointainWidget(data), "Calcul Champ Lointain");
-    toolbox->addItem(new ParamAvanceWidget(data), "Paramètres Avancés");
+    toolbox->addItem(calculChWidget, "Calcul Champ Lointain");
+    toolbox->addItem(paramAvcWidget, "Paramètres Avancés");
 
 
-    dockLayout->addWidget(new QPushButton("Générer"));
+    dockLayout->addWidget(new QPushButton(QIcon("icon/generer.png"),"Générer"));
     dockLayout->addWidget(toolbox);
 
     dockToolbox->setLayout(dockLayout);
+}
+
+void MainWindow::init()
+{
+    //initialisation des données de la vue
+    visualisation->clearScene();
+    visualisation->init();
+    visualisation->setVolumeCalcul(data->getVolumeCalcul());
+    visualisation->ajoutListElement(data->getBlocParallelepipede());
+    visualisation->ajoutListElement(data->getBlocMetallisations());
+    visualisation->ajoutListElement(data->getBlocCartoTempo());
+    visualisation->ajoutListElement(data->getBlocElementLocalise());
+    visualisation->ajoutListElement(data->getBlocSurfacePrelev());
+    visualisation->ajoutListElement(data->getBlocSonde());
+    visualisation->ajoutListElement(data->getBlocPortExcitation());
+
+    //initialisation des données des tableaux
+    vueMetal->setSourceModel(new TableModelMetallisation(data->getBlocMetallisations()));
+    vueParal->setSourceModel(new TableModelParallelepipede(data->getBlocParallelepipede()));
+    vueSonde->setSourceModel(new TableModelSonde(data->getBlocSonde()));
+    vueElemLocal->setSourceModel(new TableModelElementLocalise(data->getBlocElementLocalise()));
+    vuePortExci->setSourceModel(new TableModelPortExcitation(data->getBlocPortExcitation()));
+    vueCartoTempo->setSourceModel(new TableModelCartoTempo(data->getBlocCartoTempo()));
+    vueSurfacePrelev->setSourceModel(new TableModelSurfacePrelev(data->getBlocSurfacePrelev()));
+
+    //initialisation des formulaires de la toolbox
+    descGeo->setData(data);
+    paramSimu->setData(data);
+    objFDTD->setData(data);
+    calculChWidget->setData(data);
+    paramAvcWidget->setData(data);
 }
 
 

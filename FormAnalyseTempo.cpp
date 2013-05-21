@@ -9,16 +9,13 @@ FormAnalyseTempo::FormAnalyseTempo(analyseTemporelle *anaTempo, QWidget *parent)
 
     QFormLayout * layout = new QFormLayout;
 
-
-    QDoubleSpinBox * periodeWidget = new QDoubleSpinBox();
-    periodeWidget->setMaximum(9999.9);
-    periodeWidget->setValue(anaTempo->GetPeriode());
+    periodeWidget = new QDoubleSpinBox();
+    periodeWidget->setMaximum(INT_MAX);
     layout->addRow("Période:",periodeWidget);
     connect(periodeWidget,SIGNAL(valueChanged(double)),anaTempo,SLOT(SetPeriode(double)));
 
-    QDoubleSpinBox * tempsWidget = new QDoubleSpinBox();
-    tempsWidget->setMaximum(9999.9);
-    tempsWidget->setValue(anaTempo->GetTemps());
+    tempsWidget = new QDoubleSpinBox();
+    tempsWidget->setMaximum(INT_MAX);
     layout->addRow("Temps:",tempsWidget);
     connect(tempsWidget,SIGNAL(valueChanged(double)),anaTempo,SLOT(SetTemps(double)));
 
@@ -27,4 +24,15 @@ FormAnalyseTempo::FormAnalyseTempo(analyseTemporelle *anaTempo, QWidget *parent)
     groupGeo->setLayout(layout);
     layoutPrincipal->addWidget(groupGeo);
     setLayout(layoutPrincipal);
+
+    init();
+}
+
+void FormAnalyseTempo::init()
+{
+    periodeWidget->setValue(anaTempo->GetPeriode());
+    connect(periodeWidget,SIGNAL(valueChanged(double)),anaTempo,SLOT(SetPeriode(double)));
+
+    tempsWidget->setValue(anaTempo->GetTemps());
+    connect(tempsWidget,SIGNAL(valueChanged(double)),anaTempo,SLOT(SetTemps(double)));
 }

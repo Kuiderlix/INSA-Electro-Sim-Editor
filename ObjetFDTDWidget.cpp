@@ -1,7 +1,7 @@
 #include "ObjetFDTDWidget.h"
 
 ObjetFDTDWidget::ObjetFDTDWidget(Data *data, QWidget *parent) :
-    QWidget(parent)
+    ToolBoxWidget(data,parent)
 {
 
 
@@ -39,6 +39,10 @@ ObjetFDTDWidget::ObjetFDTDWidget(Data *data, QWidget *parent) :
     layout->addWidget(widgetAvance);
 
     setLayout(layout);
+}
+
+void ObjetFDTDWidget::init()
+{
 }
 
 void ObjetFDTDWidget::openCartoTempoWindows()

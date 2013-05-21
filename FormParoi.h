@@ -9,6 +9,14 @@ class FormParoi : public QWidget
     Q_OBJECT
 public:
     explicit FormParoi(paroi* m_paroi, QWidget *parent = 0);
+
+    void setParoi(paroi * p)
+    {
+        m_paroi=p;
+        init();
+    }
+
+    void init();
     
 signals:
     
@@ -17,6 +25,11 @@ public slots:
 
 private:
     paroi* m_paroi;
+
+    QComboBox * inferieurWidget;
+    QComboBox * superieurWidget;
+    QComboBox * axeXWidget;
+    QComboBox * axeYWidget;
     
 };
 

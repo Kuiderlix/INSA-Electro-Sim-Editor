@@ -6,17 +6,25 @@
 #include "FormExcitation.h"
 #include "FormEchantillonage.h"
 #include "FormPML.h"
-#include "Data.h"
+#include "ToolBoxWidget.h"
 
-class ParamAvanceWidget : public QWidget
+class ParamAvanceWidget : public ToolBoxWidget
 {
     Q_OBJECT
 public:
     explicit ParamAvanceWidget(Data* data,QWidget *parent = 0);
+
+    void init();
     
 signals:
     
 public slots:
+
+private:
+    FormFormatStockage * formFormat;
+    FormExcitation * formExci;
+    FormEchantillonage *formEchanti;
+    FormPML * formPml;
     
 };
 

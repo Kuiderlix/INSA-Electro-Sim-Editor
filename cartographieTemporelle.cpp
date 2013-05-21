@@ -11,6 +11,11 @@
 #include "Ecriture.h"
 
 cartographieTemporelle::cartographieTemporelle() {
+    champE=false;
+    champH=false;
+    iterationDebut=0;
+    iterationFin=0;
+    intervalle=0;
 }
 
 cartographieTemporelle::cartographieTemporelle(const cartographieTemporelle& orig) {
@@ -33,8 +38,8 @@ void cartographieTemporelle::ecrire(int nb){
     monEcriture << this->iterationFin << std::endl;
     monEcriture << "Intervalle_d_enregistrement_____:\n";
     monEcriture << this->intervalle << std::endl;
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+
+    Ecriture::Ecrire(monEcriture.str());
 
     //Les coordonnées
     this->ecrireElementBase();

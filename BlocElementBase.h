@@ -71,7 +71,7 @@ public:
      */
     QList<elementBase*>* getListElementPointer()
     {
-        return listElement;
+        return &listElement;
     }
 
 protected:

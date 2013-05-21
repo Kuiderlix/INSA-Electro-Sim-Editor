@@ -11,7 +11,7 @@ FormEchantillonage::FormEchantillonage(blocEchantillonnage *echanti, QWidget *pa
 
     QFormLayout * layout = new QFormLayout;
 
-    QSpinBox * facteurWidget = new QSpinBox();
+    facteurWidget = new QSpinBox();
     layout->addRow("Facteur:",facteurWidget);
     connect(facteurWidget,SIGNAL(valueChanged(int)),echanti,SLOT(SetFacteurEchatillonnage(int)));
 
@@ -22,4 +22,12 @@ FormEchantillonage::FormEchantillonage(blocEchantillonnage *echanti, QWidget *pa
     layoutPrincipal->addWidget(group);
 
     setLayout(layoutPrincipal);
+
+    init();
+}
+
+void FormEchantillonage::init()
+{
+    facteurWidget->setValue(echanti->GetFacteurEchatillonnage());
+    connect(facteurWidget,SIGNAL(valueChanged(int)),echanti,SLOT(SetFacteurEchatillonnage(int)));
 }

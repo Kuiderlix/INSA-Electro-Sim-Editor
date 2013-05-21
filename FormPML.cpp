@@ -9,19 +9,19 @@ FormPML::FormPML(pml *m_pml, QWidget *parent) :
 
     QFormLayout * layout = new QFormLayout;
 
-    QSpinBox * epaisseurCoucheWidget = new QSpinBox();
+    epaisseurCoucheWidget = new QSpinBox();
     layout->addRow("Epaisseur Couche:",epaisseurCoucheWidget);
     connect(epaisseurCoucheWidget,SIGNAL(valueChanged(int)),m_pml,SLOT(SetEpaisseurCouche(int)));
 
-    QSpinBox * ordreVariationWidget = new QSpinBox();
+    ordreVariationWidget = new QSpinBox();
     layout->addRow("Ordre variation:",ordreVariationWidget);
     connect(ordreVariationWidget,SIGNAL(valueChanged(int)),m_pml,SLOT(SetOrdreVariation(int)));
 
-    QDoubleSpinBox * sigmaMaxWidget = new QDoubleSpinBox();
+    sigmaMaxWidget = new QDoubleSpinBox();
     layout->addRow("Sigma Max:",sigmaMaxWidget);
     connect(sigmaMaxWidget,SIGNAL(valueChanged(double)),m_pml,SLOT(SetSigmaMax(double)));
 
-    QDoubleSpinBox * kMaxWidget = new QDoubleSpinBox();
+    kMaxWidget = new QDoubleSpinBox();
     layout->addRow("k Max:",kMaxWidget);
     connect(kMaxWidget,SIGNAL(valueChanged(double)),m_pml,SLOT(SetKMax(double)));
 
@@ -32,4 +32,18 @@ FormPML::FormPML(pml *m_pml, QWidget *parent) :
     layoutPrincipal->addWidget(group);
 
     setLayout(layoutPrincipal);
+
+    init();
+}
+
+void FormPML::init()
+{
+    epaisseurCoucheWidget->setValue(m_pml->GetEpaisseurCouche());
+    connect(epaisseurCoucheWidget,SIGNAL(valueChanged(int)),m_pml,SLOT(SetEpaisseurCouche(int)));
+    ordreVariationWidget->setValue(m_pml->GetOrdreVariation());
+    connect(ordreVariationWidget,SIGNAL(valueChanged(int)),m_pml,SLOT(SetOrdreVariation(int)));
+    sigmaMaxWidget->setValue(m_pml->GetSigmaMax());
+    connect(sigmaMaxWidget,SIGNAL(valueChanged(double)),m_pml,SLOT(SetSigmaMax(double)));
+    kMaxWidget->setValue(m_pml->GetKMax());
+    connect(kMaxWidget,SIGNAL(valueChanged(double)),m_pml,SLOT(SetKMax(double)));
 }

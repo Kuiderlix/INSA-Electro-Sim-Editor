@@ -11,16 +11,14 @@ FormParamExcitation::FormParamExcitation(ParamExcitations *excit, QWidget *paren
 
     QFormLayout * layout = new QFormLayout;
 
-    QDoubleSpinBox * frequenceMaxWidget = new QDoubleSpinBox();
+    frequenceMaxWidget = new QDoubleSpinBox();
     frequenceMaxWidget->setMaximum(9999.9);
-    frequenceMaxWidget->setValue(excit->GetFrequenceMax());
     layout->addRow("Frequence Max:", frequenceMaxWidget);
     connect(frequenceMaxWidget,SIGNAL(valueChanged(double)),excit,SLOT(SetFrequenceMax(double)));
 
 
-    QComboBox * typeWidget = new QComboBox();
+    typeWidget = new QComboBox();
     typeWidget->addItems(QStringList() << "Gaussienne" << "Gaussienne modulant un sinus");
-    typeWidget->setCurrentIndex(excit->GetType());
     layout->addRow("Type:", typeWidget);
     connect(typeWidget,SIGNAL(currentIndexChanged(int)),excit,SLOT(SetType(int)));
     connect(typeWidget,SIGNAL(currentIndexChanged(int)),this,SLOT(afficheSinus(int)));
@@ -29,9 +27,8 @@ FormParamExcitation::FormParamExcitation(ParamExcitations *excit, QWidget *paren
     formTypeSinus->setVisible(false);
     QFormLayout * layoutSinus = new QFormLayout;
     layoutSinus->setMargin(0);
-    QDoubleSpinBox * freqSinusWidget = new QDoubleSpinBox();
+    freqSinusWidget = new QDoubleSpinBox();
     freqSinusWidget->setMaximum(9999.9);
-    freqSinusWidget->setValue(excit->GetFrequenceSinus());
     layoutSinus->addRow("Frequence Sinus:", freqSinusWidget);
     connect(freqSinusWidget,SIGNAL(valueChanged(double)),excit,SLOT(SetFrequenceSinus(double)));
 
@@ -48,6 +45,20 @@ FormParamExcitation::FormParamExcitation(ParamExcitations *excit, QWidget *paren
 
     setLayout(layoutPrincipal);
 
+    init();
+
+}
+
+void FormParamExcitation::init()
+{
+    freqSinusWidget->setValue(excit->GetFrequenceSinus());
+    connect(freqSinusWidget,SIGNAL(valueChanged(double)),excit,SLOT(SetFrequenceSinus(double)));
+
+    typeWidget->setCurrentIndex(excit->GetType());
+    connect(typeWidget,SIGNAL(currentIndexChanged(int)),excit,SLOT(SetType(int)));
+
+    frequenceMaxWidget->setValue(excit->GetFrequenceMax());
+    connect(frequenceMaxWidget,SIGNAL(valueChanged(double)),excit,SLOT(SetFrequenceMax(double)));
 }
 
 void FormParamExcitation::afficheSinus(int i)

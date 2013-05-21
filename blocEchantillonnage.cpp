@@ -10,6 +10,8 @@
 blocEchantillonnage::blocEchantillonnage() {
     this->setHeader("[ECHANTILLONNAGE]");
     this->setExtension(".avc");
+
+    facteurEchatillonnage=0;
 }
 
 blocEchantillonnage::blocEchantillonnage(const blocEchantillonnage& orig) {

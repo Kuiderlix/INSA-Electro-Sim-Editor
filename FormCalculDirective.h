@@ -13,9 +13,21 @@ class FormCalculDirective : public QWidget
 public:
     FormCalculDirective(calculDirectivite * calDir, QWidget * parent=0);
 
+    void setCaculDirective(calculDirectivite * c)
+    {
+        calDir=c;
+        init();
+    }
+
+    void init();
+
 
 private:
     calculDirectivite * calDir;
+
+    QCheckBox * calculHWidget;
+    QSpinBox * pasThetaWidget;
+    QSpinBox * pasPhiWidget;
 };
 
 #endif // FORMCALCULDIRECTIVE_H

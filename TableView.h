@@ -48,6 +48,14 @@ public:
      */
     TableModel * getSourceModel();
 
+    void setSourceModel(TableModel * m)
+    {
+        MySortFilterProxyModel * proxyModel = new MySortFilterProxyModel(this);
+        proxyModel->setSourceModel(m);
+        this->setModel(proxyModel);
+    }
+
+
 signals:
     
 public slots:

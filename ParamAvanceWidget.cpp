@@ -1,15 +1,15 @@
 #include "ParamAvanceWidget.h"
 
 ParamAvanceWidget::ParamAvanceWidget(Data *data, QWidget *parent) :
-    QWidget(parent)
+    ToolBoxWidget(data,parent)
 {
     QVBoxLayout * layout = new QVBoxLayout;
     layout->setMargin(0);
 
-    FormFormatStockage * formFormat = new FormFormatStockage(data->getFormatStockage());
-    FormExcitation * formExci = new FormExcitation(data->getExcitation());
-    FormEchantillonage *formEchanti = new FormEchantillonage(data->getBlocEchantillonnage());
-    FormPML * formPml = new FormPML(data->getPML());
+    formFormat = new FormFormatStockage(data->getFormatStockage());
+    formExci = new FormExcitation(data->getExcitation());
+    formEchanti = new FormEchantillonage(data->getBlocEchantillonnage());
+    formPml = new FormPML(data->getPML());
 
     layout->addWidget(formExci);
     layout->addWidget(formFormat);
@@ -17,4 +17,14 @@ ParamAvanceWidget::ParamAvanceWidget(Data *data, QWidget *parent) :
     layout->addWidget(formEchanti);
 
     setLayout(layout);
+
+    init();
+}
+
+void ParamAvanceWidget::init()
+{
+    formFormat->setFormatStockage(data->getFormatStockage());
+    formExci->setExcitation(data->getExcitation());
+    formEchanti->setEchantillonnage(data->getBlocEchantillonnage());
+    formPml->setPML(data->getPML());
 }

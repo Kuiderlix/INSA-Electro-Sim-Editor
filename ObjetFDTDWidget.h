@@ -6,13 +6,15 @@
 #include "FormCageExcitation.h"
 #include "FormSonde.h"
 #include "FormCartographieTemporelle.h"
-#include "Data.h"
+#include "ToolBoxWidget.h"
 
-class ObjetFDTDWidget : public QWidget
+class ObjetFDTDWidget : public ToolBoxWidget
 {
     Q_OBJECT
 public:
     explicit ObjetFDTDWidget(Data* data,QWidget *parent = 0);
+
+    void init();
     
 signals:
 

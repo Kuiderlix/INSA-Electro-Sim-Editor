@@ -45,6 +45,5 @@ void coordonnee::ecrire(){
     monEcriture << "Sur_la_hauteur_z_(en_cellules):\n";
     monEcriture << this->GetZ() << std::endl;
 
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+    Ecriture::Ecrire(monEcriture.str());
 }

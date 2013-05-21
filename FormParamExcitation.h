@@ -9,6 +9,14 @@ class FormParamExcitation : public QWidget
     Q_OBJECT
 public:
     explicit FormParamExcitation(ParamExcitations *excit,QWidget *parent = 0);
+
+    void setParamExcit(ParamExcitations* ex)
+    {
+        excit=ex;
+        init();
+    }
+
+    void init();
     
 signals:
     
@@ -19,6 +27,10 @@ public slots:
 private:
     ParamExcitations *excit;
     QWidget * formTypeSinus;
+
+    QDoubleSpinBox * frequenceMaxWidget;
+    QComboBox * typeWidget;
+    QDoubleSpinBox * freqSinusWidget;
     
 };
 
