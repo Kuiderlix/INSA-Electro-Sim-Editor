@@ -1,0 +1,31 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classbloc_configuration.html" title="blocConfiguration" alt="" coords="5,379,128,408"/>
+<area shape="rect" id="node3" href="$classanalyse_temporelle.html" title="analyseTemporelle" alt="" coords="189,59,320,88"/>
+<area shape="rect" id="node5" href="$classbloc_echantillonnage.html" title="blocEchantillonnage" alt="" coords="185,112,324,141"/>
+<area shape="rect" id="node7" href="$class_bloc_element_base.html" title="Représente une liste d&#39;elementBase." alt="" coords="192,165,317,195"/>
+<area shape="rect" id="node23" href="$classcage_excitation.html" title="cageExcitation" alt="" coords="201,699,308,728"/>
+<area shape="rect" id="node25" href="$classcalcul_directivite.html" title="calculDirectivite" alt="" coords="197,219,312,248"/>
+<area shape="rect" id="node27" href="$classchamp_lointain.html" title="champLointain" alt="" coords="201,272,308,301"/>
+<area shape="rect" id="node29" href="$classcompression_huygens.html" title="compressionHuygens" alt="" coords="181,325,328,355"/>
+<area shape="rect" id="node31" href="$class_excitation.html" title="Excitation" alt="" coords="215,379,295,408"/>
+<area shape="rect" id="node33" href="$classformat_stockage.html" title="formatStockage" alt="" coords="197,432,312,461"/>
+<area shape="rect" id="node35" href="$class_param_excitations.html" title="ParamExcitations" alt="" coords="192,485,317,515"/>
+<area shape="rect" id="node37" href="$classparoi.html" title="paroi" alt="" coords="229,539,280,568"/>
+<area shape="rect" id="node39" href="$classpml.html" title="pml" alt="" coords="233,592,276,621"/>
+<area shape="rect" id="node41" href="$classvolume_calcul.html" title="volumeCalcul" alt="" coords="204,645,305,675"/>
+<area shape="rect" id="node9" href="$classbloc_cartographie_temporelle.html" title="blocCartographieTemporelle" alt="" coords="381,5,565,35"/>
+<area shape="rect" id="node11" href="$classbloc_element_localise.html" title="blocElementLocalise" alt="" coords="403,59,544,88"/>
+<area shape="rect" id="node13" href="$classbloc_metallisation.html" title="blocMetallisation" alt="" coords="415,112,532,141"/>
+<area shape="rect" id="node15" href="$classbloc_parallelepipede.html" title="blocParallelepipede" alt="" coords="407,165,540,195"/>
+<area shape="rect" id="node17" href="$classbloc_port_excitation.html" title="blocPortExcitation" alt="" coords="409,219,537,248"/>
+<area shape="rect" id="node19" href="$classbloc_sonde.html" title="blocSonde" alt="" coords="432,272,515,301"/>
+<area shape="rect" id="node21" href="$classbloc_surface_prelevement.html" title="blocSurfacePrelevement" alt="" coords="392,325,555,355"/>
+<area shape="rect" id="node42" href="$classelement_base.html" title="The elementBase class." alt="" coords="17,885,116,915"/>
+<area shape="rect" id="node45" href="$classcartographie_temporelle.html" title="cartographieTemporelle" alt="" coords="176,752,333,781"/>
+<area shape="rect" id="node47" href="$classelement_localise.html" title="elementLocalise" alt="" coords="197,805,312,835"/>
+<area shape="rect" id="node49" href="$classmetallisation.html" title="metallisation" alt="" coords="208,859,301,888"/>
+<area shape="rect" id="node51" href="$classparallelepipede.html" title="parallelepipede" alt="" coords="201,912,308,941"/>
+<area shape="rect" id="node53" href="$classport_excitation.html" title="portExcitation" alt="" coords="204,965,305,995"/>
+<area shape="rect" id="node55" href="$classsonde.html" title="sonde" alt="" coords="227,1019,283,1048"/>
+<area shape="rect" id="node57" href="$classsurface_prelevement.html" title="surfacePrelevement" alt="" coords="185,1072,324,1101"/>
+</map>

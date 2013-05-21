@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classbloc_configuration.html#ac0dbb1162b30839212652e536adff583" title="blocConfiguration::blocConfiguration" alt="" coords="203,5,435,35"/>
+<area shape="rect" id="node5" href="$classbloc_configuration.html#a63b192a92a7fe72c6291a46709fb9980" title="blocConfiguration::setHeader" alt="" coords="224,59,413,88"/>
+<area shape="rect" id="node7" href="$classbloc_configuration.html#a1ac80f484e8c86e06aa76ba82c88747f" title="blocConfiguration::setExtension" alt="" coords="216,112,421,141"/>
+<area shape="rect" id="node9" href="$classbloc_configuration.html#ae5a50a8a47c6df65813f9d5b0fb1e81e" title="blocConfiguration::ecrire" alt="" coords="237,165,400,195"/>
+<area shape="rect" id="node15" href="$class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d" title="Ecriture::Ecrire" alt="" coords="748,243,857,272"/>
+<area shape="rect" id="node18" href="$classelement_base.html#ab3c14b9c85e93e6974f14f7bd269a972" title="elementBase::ecrireElementBase" alt="" coords="211,295,427,324"/>
+<area shape="rect" id="node23" href="$classcoordonnee.html#a9fe12cd131d8451a8ed209b6c9b87de4" title="coordonnee::ecrire" alt="" coords="523,427,651,456"/>
+<area shape="rect" id="node34" href="$classcage_excitation.html#a9db59c5403b5d925495297c49c49cd26" title="cageExcitation::GetPointReference" alt="" coords="205,399,432,428"/>
+<area shape="rect" id="node11" href="$class_ecriture.html#ac9087740a3180e555553e57cc14c8472" title="Ecriture::SetNomFichier" alt="" coords="505,61,668,91"/>
+<area shape="rect" id="node13" href="$classbloc_configuration.html#a92ec8552be03741436b912bd72e024b9" title="blocConfiguration::getHeader" alt="" coords="492,115,681,144"/>
+<area shape="rect" id="node21" href="$classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="484,320,689,349"/>
+<area shape="rect" id="node32" href="$classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="491,373,683,403"/>
+<area shape="rect" id="node25" href="$classcoordonnee.html#a0b666a5d352f1135ad8904e5193b0213" title="coordonnee::GetY" alt="" coords="740,373,865,403"/>
+<area shape="rect" id="node27" href="$classcoordonnee.html#ac8be7ac37670f09a7e0a0e9c4440d2d8" title="coordonnee::GetX" alt="" coords="740,427,865,456"/>
+<area shape="rect" id="node29" href="$classcoordonnee.html#a4d5c88a3e93cc8eed5b848d18541b137" title="coordonnee::GetZ" alt="" coords="740,480,865,509"/>
+</map>

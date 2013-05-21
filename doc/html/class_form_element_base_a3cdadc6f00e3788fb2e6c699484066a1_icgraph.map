@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="300,5,487,35"/>
+<area shape="rect" id="node5" href="$class_form_cartographie_temporelle.html#afc2f84be3c4e838d3eb62a796496419e" title="FormCartographieTemporelle::valider" alt="" coords="276,59,511,88"/>
+<area shape="rect" id="node7" href="$class_form_element_localise.html#a6c198a2aa3d0dd2e03b467a3705dab66" title="FormElementLocalise::valider" alt="" coords="296,112,491,141"/>
+<area shape="rect" id="node9" href="$class_form_metallisation.html#a27b0d969ccdbfe5838183031c19f5ffa" title="FormMetallisation::valider" alt="" coords="308,165,479,195"/>
+<area shape="rect" id="node11" href="$class_form_parallelepipede.html#abd710cd021fa61cb97d28505ad4de88e" title="FormParallelepipede::valider" alt="" coords="300,219,487,248"/>
+<area shape="rect" id="node13" href="$class_form_port_excitation.html#a2648212510cbaaddd5eaf84fdb509020" title="FormPortExcitation::valider" alt="" coords="304,272,483,301"/>
+<area shape="rect" id="node15" href="$class_form_sonde.html#ac93ed66150037d5aa7beb7ba49522dbf" title="FormSonde::valider" alt="" coords="327,325,460,355"/>
+<area shape="rect" id="node17" href="$class_form_surface_prelevement.html#ad504e31d7655fdad9e41349cec1a3014" title="FormSurfacePrelevement::valider" alt="" coords="285,379,501,408"/>
+</map>

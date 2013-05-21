@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classcage_excitation.html" title="cageExcitation" alt="" coords="177,5,284,35"/>
+<area shape="rect" id="node5" href="$classcartographie_temporelle.html" title="cartographieTemporelle" alt="" coords="152,59,309,88"/>
+<area shape="rect" id="node7" href="$classelement_localise.html" title="elementLocalise" alt="" coords="173,112,288,141"/>
+<area shape="rect" id="node9" href="$classmetallisation.html" title="metallisation" alt="" coords="184,165,277,195"/>
+<area shape="rect" id="node11" href="$classparallelepipede.html" title="parallelepipede" alt="" coords="177,219,284,248"/>
+<area shape="rect" id="node13" href="$classport_excitation.html" title="portExcitation" alt="" coords="180,272,281,301"/>
+<area shape="rect" id="node15" href="$classsonde.html" title="sonde" alt="" coords="203,325,259,355"/>
+<area shape="rect" id="node17" href="$classsurface_prelevement.html" title="surfacePrelevement" alt="" coords="161,379,300,408"/>
+</map>

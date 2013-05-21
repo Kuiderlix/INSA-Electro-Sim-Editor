@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_form_cage_excitation.html#ab3f9470767991ad7f809a1cfe8652f6f" title="FormCageExcitation::actualiseFormulaire" alt="" coords="329,5,591,35"/>
+<area shape="rect" id="node5" href="$class_form_cage_excitation.html#ae7c35793cb47093cae36561e40f6a03e" title="FormCageExcitation::manageFormulaire" alt="" coords="645,31,901,60"/>
+<area shape="rect" id="node8" href="$classcage_excitation.html#a9db59c5403b5d925495297c49c49cd26" title="cageExcitation::GetPointReference" alt="" coords="347,109,573,139"/>
+<area shape="rect" id="node10" href="$class_form_element_base.html#a10b8d2ffbc930360abdf6edc9d87f206" title="FormElementBase::getWidgetElementBase" alt="" coords="323,163,597,192"/>
+<area shape="rect" id="node12" href="$classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="671,109,876,139"/>
+<area shape="rect" id="node14" href="$classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="677,163,869,192"/>
+<area shape="rect" id="node16" href="$class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473" title="FormElementBase::valider" alt="" coords="685,216,861,245"/>
+<area shape="rect" id="node18" href="$classelement_base.html#a230935c8e0e713878651c9f6877bc5db" title="elementBase::SetAvantGauche" alt="" coords="949,163,1155,192"/>
+<area shape="rect" id="node20" href="$class_form_coordonnees.html#a9f4cdc23ad453c0d8249aaf72f1832d0" title="FormCoordonnees::getCoord" alt="" coords="957,216,1147,245"/>
+<area shape="rect" id="node22" href="$classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5" title="elementBase::SetArriereDroit" alt="" coords="956,269,1148,299"/>
+</map>

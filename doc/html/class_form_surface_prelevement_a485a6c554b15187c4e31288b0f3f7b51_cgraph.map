@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_form_surface_prelevement.html#ac0bae9071d0a1f89697330ef560795d1" title="FormSurfacePrelevement::activeResteForm" alt="" coords="383,5,660,35"/>
+<area shape="rect" id="node5" href="$class_form_element_base.html#a10b8d2ffbc930360abdf6edc9d87f206" title="FormElementBase::getWidgetElementBase" alt="" coords="384,59,659,88"/>
+<area shape="rect" id="node7" href="$classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="711,5,916,35"/>
+<area shape="rect" id="node9" href="$classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="717,59,909,88"/>
+<area shape="rect" id="node11" href="$class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473" title="FormElementBase::valider" alt="" coords="725,112,901,141"/>
+<area shape="rect" id="node13" href="$classelement_base.html#a230935c8e0e713878651c9f6877bc5db" title="elementBase::SetAvantGauche" alt="" coords="965,59,1171,88"/>
+<area shape="rect" id="node15" href="$class_form_coordonnees.html#a9f4cdc23ad453c0d8249aaf72f1832d0" title="FormCoordonnees::getCoord" alt="" coords="973,112,1163,141"/>
+<area shape="rect" id="node17" href="$classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5" title="elementBase::SetArriereDroit" alt="" coords="972,165,1164,195"/>
+</map>

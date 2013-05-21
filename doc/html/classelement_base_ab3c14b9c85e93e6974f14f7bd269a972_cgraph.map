@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d" title="Ecriture::Ecrire" alt="" coords="535,5,644,35"/>
+<area shape="rect" id="node5" href="$classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="271,57,476,87"/>
+<area shape="rect" id="node7" href="$classcoordonnee.html#a9fe12cd131d8451a8ed209b6c9b87de4" title="coordonnee::ecrire" alt="" coords="309,111,437,140"/>
+<area shape="rect" id="node16" href="$classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="277,164,469,193"/>
+<area shape="rect" id="node9" href="$classcoordonnee.html#a0b666a5d352f1135ad8904e5193b0213" title="coordonnee::GetY" alt="" coords="527,59,652,88"/>
+<area shape="rect" id="node11" href="$classcoordonnee.html#ac8be7ac37670f09a7e0a0e9c4440d2d8" title="coordonnee::GetX" alt="" coords="527,112,652,141"/>
+<area shape="rect" id="node13" href="$classcoordonnee.html#a4d5c88a3e93cc8eed5b848d18541b137" title="coordonnee::GetZ" alt="" coords="527,165,652,195"/>
+</map>

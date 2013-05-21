@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classbloc_configuration.html#ac0dbb1162b30839212652e536adff583" title="blocConfiguration::blocConfiguration" alt="" coords="208,5,440,35"/>
+<area shape="rect" id="node5" href="$classbloc_configuration.html#a63b192a92a7fe72c6291a46709fb9980" title="blocConfiguration::setHeader" alt="" coords="229,59,419,88"/>
+<area shape="rect" id="node7" href="$classbloc_configuration.html#a1ac80f484e8c86e06aa76ba82c88747f" title="blocConfiguration::setExtension" alt="" coords="221,112,427,141"/>
+<area shape="rect" id="node9" href="$classbloc_configuration.html#ae5a50a8a47c6df65813f9d5b0fb1e81e" title="blocConfiguration::ecrire" alt="" coords="243,165,405,195"/>
+<area shape="rect" id="node15" href="$class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d" title="Ecriture::Ecrire" alt="" coords="529,217,639,247"/>
+<area shape="rect" id="node11" href="$class_ecriture.html#ac9087740a3180e555553e57cc14c8472" title="Ecriture::SetNomFichier" alt="" coords="503,111,665,140"/>
+<area shape="rect" id="node13" href="$classbloc_configuration.html#a92ec8552be03741436b912bd72e024b9" title="blocConfiguration::getHeader" alt="" coords="489,164,679,193"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_table_model.html#ab178835fec98d6de650fc9001b0961d7" title="Retourne un élément contenu dans le tableau au rang row." alt="" coords="253,32,416,61"/>
+<area shape="rect" id="node5" href="$class_table_view.html#aa86cb90655c1c45257ded6eda49b25b4" title="Change la couleur des éléments séléctionnés." alt="" coords="464,5,659,35"/>
+<area shape="rect" id="node7" href="$class_table_view.html#afb5e78e3b616b91b3241dbbe800001be" title="Ouvre une fenetre de dialogue pour changer de couleur les éléments séléctionnés. La couleur choisi se..." alt="" coords="491,59,632,88"/>
+<area shape="rect" id="node9" href="$class_table_view.html#a88eb58ffc2872030e3aac8807b5c7876" title="affiche un menu contextuel" alt="" coords="707,59,907,88"/>
+</map>

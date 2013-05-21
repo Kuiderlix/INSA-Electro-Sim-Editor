@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_table_view.html#a88389099271e680744373a84e018802f" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="253,5,440,35"/>
+<area shape="rect" id="node5" href="$class_table_view.html#ac1869a3d711496b781332aacd3947c62" title="Supprime un élément du model." alt="" coords="260,59,433,88"/>
+<area shape="rect" id="node15" href="$class_table_view.html#afb5e78e3b616b91b3241dbbe800001be" title="Ouvre une fenetre de dialogue pour changer de couleur les éléments séléctionnés. La couleur choisi se..." alt="" coords="276,112,417,141"/>
+<area shape="rect" id="node7" href="$class_table_view.html#aa0cfc1a932ec8d4de97f161b82fe6822" title="Modifie la liste des éléments séléctionnés pour prendre en compte seulement les lignes." alt="" coords="489,59,676,88"/>
+<area shape="rect" id="node9" href="$class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="491,112,675,141"/>
+<area shape="rect" id="node11" href="$class_table_model.html#a86d229acad67e32bc5769d9eb3c23bf9" title="supprime un élément du tableau" alt="" coords="489,5,676,35"/>
+<area shape="rect" id="node13" href="$class_bloc_element_base.html#a539ee46c7714d2ee9168dd4e21fb8e66" title="Supprime l&#39;élément elem du tableau." alt="" coords="727,5,951,35"/>
+<area shape="rect" id="node19" href="$class_table_model.html#ab178835fec98d6de650fc9001b0961d7" title="Retourne un élément contenu dans le tableau au rang row." alt="" coords="501,165,664,195"/>
+<area shape="rect" id="node23" href="$classelement_base.html#ae7c7dc9276872623416ba89d50eb3753" title="elementBase::getInvertColor" alt="" coords="489,219,676,248"/>
+<area shape="rect" id="node21" href="$class_bloc_element_base.html#a3b18c87309337fcf0a28bf371c91d010" title="Retourne un elementBase contenu à l&#39;indice i." alt="" coords="739,165,939,195"/>
+</map>

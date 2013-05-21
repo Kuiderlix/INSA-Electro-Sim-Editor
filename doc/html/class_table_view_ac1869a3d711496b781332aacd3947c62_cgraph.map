@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_table_view.html#aa0cfc1a932ec8d4de97f161b82fe6822" title="Modifie la liste des éléments séléctionnés pour prendre en compte seulement les lignes." alt="" coords="231,5,417,35"/>
+<area shape="rect" id="node5" href="$class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="232,59,416,88"/>
+<area shape="rect" id="node7" href="$class_table_model.html#a86d229acad67e32bc5769d9eb3c23bf9" title="supprime un élément du tableau" alt="" coords="231,112,417,141"/>
+<area shape="rect" id="node9" href="$class_bloc_element_base.html#a539ee46c7714d2ee9168dd4e21fb8e66" title="Supprime l&#39;élément elem du tableau." alt="" coords="468,112,692,141"/>
+</map>

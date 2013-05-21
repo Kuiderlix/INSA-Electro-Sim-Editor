@@ -1,0 +1,17 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$_table_view_8h.html" title="TableView.h" alt="" coords="633,83,727,112"/>
+<area shape="rect" id="node56" href="$_table_model_metallisation_8h.html" title="TableModelMetallisation.h" alt="" coords="123,83,296,112"/>
+<area shape="rect" id="node58" href="$bloc_metallisation_8h.html" title="blocMetallisation.h" alt="" coords="5,160,136,189"/>
+<area shape="rect" id="node69" href="$_coordonnee_delegate_8h.html" title="CoordonneeDelegate.h" alt="" coords="1240,237,1395,267"/>
+<area shape="rect" id="node80" href="$_form_metallisation_8h.html" title="FormMetallisation.h" alt="" coords="1391,160,1527,189"/>
+<area shape="rect" id="node17" href="$element_base_8h.html" title="elementBase.h" alt="" coords="799,315,908,344"/>
+<area shape="rect" id="node29" href="$_table_model_8h.html" title="TableModel.h" alt="" coords="160,160,259,189"/>
+<area shape="rect" id="node51" href="$_my_sort_filter_proxy_model_8h.html" title="MySortFilterProxyModel.h" alt="" coords="1067,160,1240,189"/>
+<area shape="rect" id="node19" href="$coordonnee_8h.html" title="coordonnee.h" alt="" coords="975,392,1073,421"/>
+<area shape="rect" id="node35" href="$_bloc_element_base_8h.html" title="BlocElementBase.h" alt="" coords="141,237,277,267"/>
+<area shape="rect" id="node37" href="$bloc_configuration_8h.html" title="blocConfiguration.h" alt="" coords="547,315,680,344"/>
+<area shape="rect" id="node44" href="$_ecriture_8h.html" title="Ecriture.h" alt="" coords="484,392,561,421"/>
+<area shape="rect" id="node61" href="$metallisation_8h.html" title="metallisation.h" alt="" coords="880,237,987,267"/>
+<area shape="rect" id="node74" href="$_form_coordonnees_8h.html" title="FormCoordonnees.h" alt="" coords="1341,315,1480,344"/>
+<area shape="rect" id="node84" href="$_form_element_base_8h.html" title="FormElementBase.h" alt="" coords="1419,237,1560,267"/>
+</map>

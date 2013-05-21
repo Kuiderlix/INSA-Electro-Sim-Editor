@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_table_view.html#ac1869a3d711496b781332aacd3947c62" title="Supprime un élément du model." alt="" coords="244,32,417,61"/>
+<area shape="rect" id="node5" href="$class_table_view.html#a88eb58ffc2872030e3aac8807b5c7876" title="affiche un menu contextuel" alt="" coords="467,5,667,35"/>
+<area shape="rect" id="node7" href="$class_table_view.html#a2e0936ef41e6ebe795662601ad6e78dd" title="Gère les entrées au clavier. Cette fonction appelle simplement la fonction de suppression des élément..." alt="" coords="477,59,656,88"/>
+</map>
