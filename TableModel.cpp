@@ -48,6 +48,6 @@ void TableModel::initHeaders(const QStringList l)
 
 elementBase *TableModel::getElement(int row)
 {
-    return listeElement->getListElementPointer()->at(row);
+    return listeElement->getElement(row);
 }
 

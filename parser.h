@@ -23,15 +23,18 @@ using namespace std;
 #define TAILLE_NOM_FICHIER 10
 #define TAILLE_CHAINE 100
 
-
+/**
+ * @brief Le parser de fichier de configuration
+ */
 class Parser {
 public:
 
     Parser();
 
-    /******************************************************************************/
-    /**>Fonction principale *******************************************************/
-    /******************************************************************************/
+    /**
+     * @brief Fonction principale. Elle démarre le parsing.
+     * @param data Le conteneur des données récupérées.
+     */
     void parse(Data *data);
 
 private:

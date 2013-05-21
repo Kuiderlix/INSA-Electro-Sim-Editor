@@ -10,9 +10,8 @@
 #include "Data.h"
 
 /**
- * Cette classe représente un widget qui se trouve dans la toolbox.
+ * @brief Cette classe représente un widget qui se trouve dans la toolbox.
  * Il agit en faite comme un conteneur des autres formulaire de la meme catégorie.
- * @brief The DescriptionGeoWidget class
  */
 class DescriptionGeoWidget : public QWidget
 {
@@ -23,26 +22,22 @@ public:
 signals:
 
     /**
-     * Ce signal est émis quand un nouvelle objet metallisation est créé
-     * @brief newMetalCreated
+     * @brief Ce signal est émis quand un nouvelle objet metallisation est créé
      */
     void newMetalCreated(elementBase*);
     /**
-     * Ce signal est émis quand un nouvelle objet parallelepipede est créé
-     * @brief newParaCreated
+     * @brief Ce signal est émis quand un nouvelle objet parallelepipede est créé
      */
     void newParaCreated(elementBase*);
     /**
-     * Ce signal est émis quand un nouvelle objet elementLocalise est créé
-     * @brief newElemLocCreated
+     * @brief Ce signal est émis quand un nouvelle objet elementLocalise est créé
      */
     void newElemLocCreated(elementBase*);
     
 public slots:
 
     /**
-     * Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise
-     * @brief openElementLocaliseWindows
+     * @brief Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise
      */
     void openElementLocaliseWindows();
     

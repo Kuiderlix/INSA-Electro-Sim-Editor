@@ -23,7 +23,9 @@
 #include "calculDirectivite.h"
 
 class Parser;
-
+/**
+ * @brief Contient toutes les données utiles pour la simulation.
+ */
 class Data
 {
 public:

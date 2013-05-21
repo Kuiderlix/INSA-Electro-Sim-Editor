@@ -19,11 +19,25 @@ public:
     Qt::ItemFlags flags(const QModelIndex &index) const;
     QVariant headerData ( int section, Qt::Orientation orientation, int role = Qt::DisplayRole ) const;
 
+    /**
+     * @brief Initialise les entetes du tableau
+     * @param l la liste des entetes
+     */
     void initHeaders(const QStringList l);
 
+    /**
+     * @brief Retourne la liste des entetes du tableau
+     * @return
+     */
     QStringList getHeaders() const {return headers;}
 
+    /**
+     * @brief Retourne un élément contenu dans le tableau au rang row
+     * @param row
+     * @return l'élément à l'indice row
+     */
     elementBase * getElement(int row);
+
     
 signals:
 
@@ -40,7 +54,13 @@ public slots:
     void removeElement(int i);
 
 private:
+    /**
+     * @brief La liste des éléments du tableau
+     */
     BlocElementBase * listeElement;
+    /**
+     * @brief La liste des entetes du tableau
+     */
     QStringList headers;
     
 };

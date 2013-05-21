@@ -175,12 +175,7 @@ void Visualisation3D::dessineScene()
         }
     }
 }
-/**
- * @brief Visualisation3D::coordonneeToPoint
- * Tranforme une coordonnee en un Point
- * @param c la coordonnee a transformé
- * @return le Point transformé
- */
+
 Point Visualisation3D::coordonneeToPoint(coordonnee c)
 {
     double ratioX = volume->GetLargeur() / volume->GetNombreX();
