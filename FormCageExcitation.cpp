@@ -10,7 +10,8 @@ FormCageExcitation::FormCageExcitation(cageExcitation *cageExci, int mode, QWidg
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
     QGroupBox * groupGeo = new QGroupBox("Cage Excitation");
     groupGeo->setCheckable(true);
-    groupGeo->setChecked(false);
+    groupGeo->setChecked(cageExci->isCreate());
+    connect(groupGeo,SIGNAL(toggled(bool)),cageExci,SLOT(setCreate(bool)));
 
     QFormLayout * layout = new QFormLayout;
 

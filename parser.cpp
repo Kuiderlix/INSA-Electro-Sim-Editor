@@ -226,6 +226,7 @@ void Parser::scanPortExcitation(){
 }
 void Parser::scanCageExcitation(){
     cout << "    scanCageExcitation" << endl;
+    data->getCageExcitation()->setCreate(false);
     int nbCages = parserGetInt();
     if(nbCages > 1){
         cout << "*****************************************" << endl;
@@ -236,6 +237,9 @@ void Parser::scanCageExcitation(){
     if(nbCages < 1){
         return; //On veut exactement une cage d'excitation.
     }
+
+    data->getCageExcitation()->setCreate(true);
+
     parserSautLigne();
     data->getCageExcitation()->SetInsideOutside(parserGetInt());
     data->getCageExcitation()->SetNbFaces(parserGetInt());

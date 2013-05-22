@@ -8,6 +8,8 @@
 #include "cageExcitation.h"
 
 cageExcitation::cageExcitation() : elementBase(), blocConfiguration() {
+    create = false;
+
 
     insideOutside=0;
     nbFaces=0;

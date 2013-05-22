@@ -10,6 +10,7 @@ FormElementBase::FormElementBase(elementBase *element, int mode, QWidget *parent
 QWidget *FormElementBase::getWidgetElementBase()
 {
     QWidget * conteneur = new QWidget(this);
+
     QVBoxLayout * layout = new QVBoxLayout;
     layout->setMargin(0);
 

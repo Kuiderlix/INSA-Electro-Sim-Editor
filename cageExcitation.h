@@ -14,6 +14,7 @@
 #include <string>
 
 class cageExcitation : public elementBase, public blocConfiguration{
+    Q_OBJECT
 public:
     cageExcitation();
 
@@ -128,7 +129,22 @@ public:
 
     void ecrire();
 
+
+    bool isCreate()
+    {
+        return create;
+    }
+
+public slots:
+    void setCreate(bool c)
+    {
+        create=c;
+    }
+
+
 private:
+    bool create;
+
     int insideOutside;
     int nbFaces;
     int typeExcitation;

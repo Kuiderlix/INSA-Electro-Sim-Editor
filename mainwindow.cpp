@@ -3,10 +3,6 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-
-
-
-
     data = new Data(&parser);
 
     layout = new QVBoxLayout();
@@ -128,13 +124,6 @@ void MainWindow::construireMenu()
 QWidget *MainWindow::construireScene3D()
 {
     visualisation = new Visualisation3D(data->getVolumeCalcul(),this);
-    visualisation->ajoutListElement(data->getBlocParallelepipede());
-    visualisation->ajoutListElement(data->getBlocMetallisations());
-    visualisation->ajoutListElement(data->getBlocCartoTempo());
-    visualisation->ajoutListElement(data->getBlocElementLocalise());
-    visualisation->ajoutListElement(data->getBlocSurfacePrelev());
-    visualisation->ajoutListElement(data->getBlocSonde());
-    visualisation->ajoutListElement(data->getBlocPortExcitation());
 
     QWidget * visuaWidget = new QWidget();
     QHBoxLayout * layoutVisua = new QHBoxLayout;
@@ -224,6 +213,10 @@ void MainWindow::init()
     visualisation->ajoutListElement(data->getBlocSurfacePrelev());
     visualisation->ajoutListElement(data->getBlocSonde());
     visualisation->ajoutListElement(data->getBlocPortExcitation());
+
+    BlocElementBase * baseCageExci = new BlocElementBase();
+    baseCageExci->addElement(data->getCageExcitation());
+    visualisation->ajoutListElement(baseCageExci);
 
     //initialisation des données des tableaux
     vueMetal->setSourceModel(new TableModelMetallisation(data->getBlocMetallisations()));
