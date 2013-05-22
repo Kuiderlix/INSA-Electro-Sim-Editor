@@ -100,7 +100,8 @@ SOURCES += main.cpp\
     Data.cpp \
     FormOuvrir.cpp \
     FormNouveau.cpp \
-    ToolBoxWidget.cpp
+    ToolBoxWidget.cpp \
+    FormSettings.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -193,7 +194,8 @@ HEADERS  += mainwindow.h \
     Data.h \
     FormOuvrir.h \
     FormNouveau.h \
-    ToolBoxWidget.h
+    ToolBoxWidget.h \
+    FormSettings.h
 
 OTHER_FILES += \
     DATA1.ana \

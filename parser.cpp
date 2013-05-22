@@ -132,9 +132,11 @@ void Parser::scanElementsLocalises(){
     }
 }
 void Parser::parseDSC() {
-    sprintf(nomfic, "DATA%d.dsc\0", numstru);
-    cout << nomfic << endl;
-    fi.open(nomfic);
+
+    QString nomFichier;
+    nomFichier = emplacementFichier + "/DATA"+QString::number(numstru)+".dsc";
+
+    fi.open(nomFichier.toStdString().c_str());
     if (fi.is_open()) {
         cout << "** CHARGEMENT DE LA STRUCTURE DATA.dsc **" << endl;
         cout << "*****************************************" << endl;
@@ -361,9 +363,11 @@ void Parser::scanSurfacePrelevement(){
     }
 }
 void Parser::parseANA() {
-    sprintf(nomfic, "DATA%d.ana", numstru);
-    cout << nomfic << endl;
-    fi.open(nomfic);
+
+    QString nomFichier;
+    nomFichier = emplacementFichier + "/DATA"+QString::number(numstru)+".ana";
+
+    fi.open(nomFichier.toStdString().c_str());
     if (fi.is_open()) {
         cout << "** CHARGEMENT DE LA STRUCTURE DATA.ana **" << endl;
         cout << "*****************************************" << endl;
@@ -421,9 +425,10 @@ void Parser::scanChampLointain(){
     data->getChampLointain()->SetPasDiscrPhi(parserGetInt());
 }
 void Parser::parsePTR(){
-    sprintf(nomfic, "DATA%d.ptr", numstru);
-    cout << nomfic << endl;
-    fi.open(nomfic, ifstream::in);
+    QString nomFichier;
+    nomFichier = emplacementFichier + "/DATA"+QString::number(numstru)+".ptr";
+
+    fi.open(nomFichier.toStdString().c_str());
     if (fi.is_open()) {
         cout << "** CHARGEMENT DE LA STRUCTURE DATA.ptr **" << endl;
         cout << "*****************************************" << endl;
@@ -470,9 +475,10 @@ void Parser::scanCalculDirectivite(){
     data->getCalculDirective()->SetPasPhi(parserGetInt());
 }
 void Parser::parseAVC(){
-    sprintf(nomfic, "DATA%d.avc\0", numstru);
-    cout << nomfic << endl;
-    fi.open(nomfic);
+    QString nomFichier;
+    nomFichier = emplacementFichier + "/DATA"+QString::number(numstru)+".avc";
+
+    fi.open(nomFichier.toStdString().c_str());
     if (fi.is_open()) {
         cout << "** CHARGEMENT DE LA STRUCTURE DATA.avc **" << endl;
         cout << "*****************************************" << endl;
@@ -502,6 +508,9 @@ void Parser::parseAVC(){
 /******************************************************************************/
 
 void Parser::parse(Data * data){
+    QSettings settings("INSAProj", "EditSimuIETR");
+    emplacementFichier=settings.value("PathSimu",QCoreApplication::applicationDirPath()).toString();
+    qDebug() << emplacementFichier;
     this->data=data;
     parseDSC();
     parseANA();

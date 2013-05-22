@@ -17,13 +17,14 @@ public:
 signals:
     
 public slots:
-
+    void testFichierExistant(int n);
     void setNum(int i);
 
 private:
     int num;
 
     QSpinBox * nbrSimu;
+    QLabel * labelFichierExist;
 
     QPushButton * validerBouton, * annulerBouton;
     

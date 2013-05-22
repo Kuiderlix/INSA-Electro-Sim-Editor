@@ -20,6 +20,7 @@
 #include "FilterWidget.h"
 #include "FormNouveau.h"
 #include "FormOuvrir.h"
+#include "FormSettings.h"
 
 /**
  * @brief The MainWindow class
@@ -82,6 +83,11 @@ public slots:
      */
     void ouvrirSimulation();
 
+    /**
+     * @brief Ouvre la fenetre des paramètres du logiciel
+     */
+    void ouvreParametres();
+
 private:
 
     QVBoxLayout * layout;
@@ -114,6 +120,7 @@ private:
     QAction *actionOuvrir;
     QAction *actionGenerer;
     QAction *actionZoom11;
+    QAction *actionParametre;
 };
 
 #endif // MAINWINDOW_H

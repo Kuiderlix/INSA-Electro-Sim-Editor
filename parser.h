@@ -17,6 +17,8 @@
 #include <fstream>
 #include <limits>
 #include <list>
+#include <QSettings>
+#include <QCoreApplication>
 #include "Data.h"
 using namespace std;
 
@@ -40,6 +42,16 @@ public:
     void setNumFichier(int num)
     {
         numstru=num;
+    }
+
+    QString getEmplacementFichier()
+    {
+        return emplacementFichier;
+    }
+
+    void setEmplacementFichier(QString e)
+    {
+        emplacementFichier=e;
     }
 
 private:
@@ -107,6 +119,8 @@ private:
     char chaine[TAILLE_CHAINE];
     //Numero du fichier à récupérer !
     int numstru;
+
+    QString emplacementFichier;
 
     Data* data;
 

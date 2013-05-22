@@ -4,6 +4,9 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
 
+
+
+
     data = new Data(&parser);
 
     layout = new QVBoxLayout();
@@ -80,6 +83,13 @@ void MainWindow::ouvrirSimulation()
     delete win;
 }
 
+void MainWindow::ouvreParametres()
+{
+    FormSettings * win = new FormSettings(this);
+    win->exec();
+
+}
+
 
 void MainWindow::construireMenu()
 {
@@ -107,6 +117,11 @@ void MainWindow::construireMenu()
     actionZoom11 = new QAction(QIcon("icon/initScene.png"),"&Zoom 1:1", this);
     connect(actionZoom11,SIGNAL(triggered()),visualisation,SLOT(startToZoom11()));
     menuScene3D->addAction(actionZoom11);
+
+    QMenu *menuOption = menuBar()->addMenu("&Options");
+    actionParametre = new QAction(QIcon("icon/settings.png"),"&Paramètres", this);
+    connect(actionParametre,SIGNAL(triggered()),this,SLOT(ouvreParametres()));
+    menuOption->addAction(actionParametre);
 
 }
 
