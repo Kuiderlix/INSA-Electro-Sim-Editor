@@ -10,7 +10,9 @@
 
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable formatStockage d'une simulation
+ */
 class formatStockage : public blocConfiguration{
     Q_OBJECT
 public:

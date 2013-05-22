@@ -1,3 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_my_sort_filter_proxy_model.html" title="MySortFilterProxyModel" alt="" coords="5,5,168,35"/>
+<area shape="rect" id="node1" href="$class_my_g_l_widget.html" title="Cette classe sert de base à la classe qui affiche le rendu en 3D avec OpenGL." alt="" coords="5,5,104,35"/>
+<area shape="rect" id="node3" href="$class_visualisation3_d.html" title="Affiche et gère la scène 3D." alt="" coords="153,5,265,35"/>
 </map>

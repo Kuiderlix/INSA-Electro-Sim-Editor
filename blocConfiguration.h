@@ -14,6 +14,9 @@
 
 #include "Ecriture.h"
 
+/**
+ * @brief Classe de base pour les données de configuration d'une simulation
+ */
 class blocConfiguration : public QObject {
     Q_OBJECT
 public:

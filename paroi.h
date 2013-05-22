@@ -11,7 +11,9 @@
 #include "blocConfiguration.h"
 #include <QDebug>
 
-
+/**
+ * @brief Cette classe représente la variable paroi d'une simulation
+ */
 class paroi : public blocConfiguration {
     Q_OBJECT
 public:

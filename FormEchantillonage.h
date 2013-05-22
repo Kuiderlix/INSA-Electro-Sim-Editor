@@ -3,7 +3,9 @@
 
 #include <QtWidgets>
 #include "blocEchantillonnage.h"
-
+/**
+ * @brief Cette classe fournit un formulaire pour modifier l'objet blocEchantillonnage
+ */
 class FormEchantillonage : public QWidget
 {
     Q_OBJECT

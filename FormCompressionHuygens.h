@@ -4,7 +4,9 @@
 #include <QtWidgets>
 #include "compressionHuygens.h"
 
-
+/**
+ * @brief Cette classe fournit un formulaire pour modifier l'objet compressionHuygens
+ */
 class FormCompressionHuygens : public QWidget
 {
     Q_OBJECT

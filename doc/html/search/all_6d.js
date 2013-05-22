@@ -9,7 +9,6 @@ var searchData=
   ['metallisation',['metallisation',['../classmetallisation.html',1,'metallisation'],['../classmetallisation.html#a8ca2f0ef50a41eac93f7f1e5deb803c1',1,'metallisation::metallisation()'],['../classmetallisation.html#a4617b2d230a8c587ac590c3d8b800efe',1,'metallisation::metallisation(const metallisation &amp;orig)']]],
   ['metallisation_2ecpp',['metallisation.cpp',['../metallisation_8cpp.html',1,'']]],
   ['metallisation_2eh',['metallisation.h',['../metallisation_8h.html',1,'']]],
-  ['modifier',['MODIFIER',['../class_form_element_base.html#a648c888eb5f5565ce592b04ec5673cc7',1,'FormElementBase']]],
   ['mousemoveevent',['mouseMoveEvent',['../class_visualisation3_d.html#a5c035372cab97e243e1329945c888bad',1,'Visualisation3D']]],
   ['mousepressevent',['mousePressEvent',['../class_visualisation3_d.html#a63a1333b9a78335f9b8854b88d200365',1,'Visualisation3D']]],
   ['mousereleaseevent',['mouseReleaseEvent',['../class_visualisation3_d.html#a9a00ce0da21f7b3987c81770dd225a46',1,'Visualisation3D']]],

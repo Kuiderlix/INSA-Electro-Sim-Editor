@@ -11,7 +11,9 @@
 #include "coordonnee.h"
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable champLointain d'une simulation
+ */
 class champLointain : public blocConfiguration{
     Q_OBJECT
 public:

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: FormElementLocalise Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: FormElementLocalise Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,20 +85,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="FormElementLocalise" --><!-- doxytag: inherits="FormElementBase" -->
+<p>Formulaire permettant d'ajouter un nouvelle objet <a class="el" href="classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a> dans la scène 3D.  
+ <a href="class_form_element_localise.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_form_element_localise_8h_source.html">FormElementLocalise.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for FormElementLocalise:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_form_element_localise__inherit__graph.png" border="0" usemap="#_form_element_localise_inherit__map" alt="Inheritance graph"/></div>
 <map name="_form_element_localise_inherit__map" id="_form_element_localise_inherit__map">
-<area shape="rect" id="node2" href="class_form_element_base.html" title="FormElementBase" alt="" coords="13,5,144,35"/></map>
+<area shape="rect" id="node2" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase." alt="" coords="13,5,144,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for FormElementLocalise:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_form_element_localise__coll__graph.png" border="0" usemap="#_form_element_localise_coll__map" alt="Collaboration graph"/></div>
 <map name="_form_element_localise_coll__map" id="_form_element_localise_coll__map">
-<area shape="rect" id="node2" href="class_form_element_base.html" title="FormElementBase" alt="" coords="13,117,144,147"/><area shape="rect" id="node4" href="class_form_coordonnees.html" title="FormCoordonnees" alt="" coords="15,5,143,35"/></map>
+<area shape="rect" id="node2" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase." alt="" coords="52,117,183,147"/><area shape="rect" id="node4" href="class_color_picker.html" title="Cette classe est un widget sous forme de bouton qui permet de sélectionner une couleur dans une boite..." alt="" coords="5,5,96,35"/><area shape="rect" id="node6" href="class_form_coordonnees.html" title="Cette classe fournit un widget pour modifier l&#39;objet coordonnee." alt="" coords="120,5,248,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_form_element_localise-members.html">List of all members.</a></p>
@@ -106,30 +109,27 @@ Collaboration diagram for FormElementLocalise:</div>
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_element_localise.html#a6c198a2aa3d0dd2e03b467a3705dab66">valider</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l'<a class="el" href="classelement_base.html" title="The elementBase class.">elementBase</a> et émet le signal <a class="el" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="Ce signal est émis quand le bouton valider est pressé. Cela signifie que l&#39;elementBase a bien était m...">elementValide(elementBase *)</a>.  <a href="#a6c198a2aa3d0dd2e03b467a3705dab66"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_element_localise.html#ac6d1ec7dc409893287929ed011c78984">reset</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Place des valeurs par défaut dans le formulaire.  <a href="#ac6d1ec7dc409893287929ed011c78984"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_element_localise.html#aa35f13db6e1191861e5d02dbe9cb97df">FormElementLocalise</a> (<a class="el" href="classelement_localise.html">elementLocalise</a> *localise, int mode, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_element_localise.html#a596ffefb77e3f33dfd101f8829a8f9c1">FormElementLocalise</a> (<a class="el" href="classelement_localise.html">elementLocalise</a> *localise, QWidget *parent=0)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_form_element_localise_8h_source.html#l00008">8</a> of file <a class="el" href="_form_element_localise_8h_source.html">FormElementLocalise.h</a>.</p>
+<div class="textblock"><p>Formulaire permettant d'ajouter un nouvelle objet <a class="el" href="classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a> dans la scène 3D. </p>
+
+<p>Definition at line <a class="el" href="_form_element_localise_8h_source.html#l00011">11</a> of file <a class="el" href="_form_element_localise_8h_source.html">FormElementLocalise.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aa35f13db6e1191861e5d02dbe9cb97df"></a><!-- doxytag: member="FormElementLocalise::FormElementLocalise" ref="aa35f13db6e1191861e5d02dbe9cb97df" args="(elementLocalise *localise, int mode, QWidget *parent=0)" -->
+<a class="anchor" id="a596ffefb77e3f33dfd101f8829a8f9c1"></a><!-- doxytag: member="FormElementLocalise::FormElementLocalise" ref="a596ffefb77e3f33dfd101f8829a8f9c1" args="(elementLocalise *localise, QWidget *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form_element_localise.html#aa35f13db6e1191861e5d02dbe9cb97df">FormElementLocalise::FormElementLocalise</a> </td>
+          <td class="memname"><a class="el" href="class_form_element_localise.html#a596ffefb77e3f33dfd101f8829a8f9c1">FormElementLocalise::FormElementLocalise</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classelement_localise.html">elementLocalise</a> *&#160;</td>
           <td class="paramname"><em>localise</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -148,15 +148,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_form_element_localise_8cpp_source.html#l00003">3</a> of file <a class="el" href="_form_element_localise_8cpp_source.html">FormElementLocalise.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_element_localise_aa35f13db6e1191861e5d02dbe9cb97df_cgraph.png" border="0" usemap="#class_form_element_localise_aa35f13db6e1191861e5d02dbe9cb97df_cgraph" alt=""/></div>
-<map name="class_form_element_localise_aa35f13db6e1191861e5d02dbe9cb97df_cgraph" id="class_form_element_localise_aa35f13db6e1191861e5d02dbe9cb97df_cgraph">
-<area shape="rect" id="node3" href="class_form_element_base.html#a10b8d2ffbc930360abdf6edc9d87f206" title="FormElementBase::getWidgetElementBase" alt="" coords="336,59,611,88"/><area shape="rect" id="node5" href="classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="660,5,865,35"/><area shape="rect" id="node7" href="classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="667,59,859,88"/><area shape="rect" id="node9" href="class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473" title="FormElementBase::valider" alt="" coords="675,112,851,141"/><area shape="rect" id="node11" href="classelement_base.html#a230935c8e0e713878651c9f6877bc5db" title="elementBase::SetAvantGauche" alt="" coords="915,59,1120,88"/><area shape="rect" id="node13" href="class_form_coordonnees.html#a9f4cdc23ad453c0d8249aaf72f1832d0" title="FormCoordonnees::getCoord" alt="" coords="923,112,1112,141"/><area shape="rect" id="node15" href="classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5" title="elementBase::SetArriereDroit" alt="" coords="921,165,1113,195"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -174,18 +165,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
+<p>Place des valeurs par défaut dans le formulaire. </p>
+
 <p>Reimplemented from <a class="el" href="class_form_element_base.html#aadcbfd4f27ca45f6329d0ff5b1608d82">FormElementBase</a>.</p>
 
 <p>Definition at line <a class="el" href="_form_element_localise_8cpp_source.html#l00061">61</a> of file <a class="el" href="_form_element_localise_8cpp_source.html">FormElementLocalise.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_element_localise_ac6d1ec7dc409893287929ed011c78984_cgraph.png" border="0" usemap="#class_form_element_localise_ac6d1ec7dc409893287929ed011c78984_cgraph" alt=""/></div>
-<map name="class_form_element_localise_ac6d1ec7dc409893287929ed011c78984_cgraph" id="class_form_element_localise_ac6d1ec7dc409893287929ed011c78984_cgraph">
-<area shape="rect" id="node3" href="class_form_element_base.html#a0fc624d18ff6d8780f715a52a2f184f1" title="FormElementBase::setElement" alt="" coords="241,5,444,35"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -203,18 +187,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
+<p>Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l'<a class="el" href="classelement_base.html" title="The elementBase class.">elementBase</a> et émet le signal <a class="el" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="Ce signal est émis quand le bouton valider est pressé. Cela signifie que l&#39;elementBase a bien était m...">elementValide(elementBase *)</a>. </p>
+
 <p>Reimplemented from <a class="el" href="class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473">FormElementBase</a>.</p>
 
 <p>Definition at line <a class="el" href="_form_element_localise_8cpp_source.html#l00052">52</a> of file <a class="el" href="_form_element_localise_8cpp_source.html">FormElementLocalise.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_element_localise_a6c198a2aa3d0dd2e03b467a3705dab66_cgraph.png" border="0" usemap="#class_form_element_localise_a6c198a2aa3d0dd2e03b467a3705dab66_cgraph" alt=""/></div>
-<map name="class_form_element_localise_a6c198a2aa3d0dd2e03b467a3705dab66_cgraph" id="class_form_element_localise_a6c198a2aa3d0dd2e03b467a3705dab66_cgraph">
-<area shape="rect" id="node3" href="classelement_localise.html#ad8384c947a2f9ceaa54d70916f16c6f0" title="elementLocalise::SetDirection" alt="" coords="261,5,456,35"/><area shape="rect" id="node5" href="classelement_localise.html#a174e4016c054e97d89000f930b18f1c8" title="elementLocalise::SetType" alt="" coords="272,59,445,88"/><area shape="rect" id="node7" href="classelement_localise.html#a49c8fb8d18edbd752b97b5b8030a4456" title="elementLocalise::SetValeur" alt="" coords="268,112,449,141"/><area shape="rect" id="node9" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="FormElementBase::elementValide" alt="" coords="249,165,468,195"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -240,7 +217,7 @@ Here is the call graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

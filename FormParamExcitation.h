@@ -4,6 +4,9 @@
 #include <QtWidgets>
 #include "ParamExcitations.h"
 
+/**
+ * @brief Cette classe fournit un formulaire pour modifier l'objet ParamExcitations
+ */
 class FormParamExcitation : public QWidget
 {
     Q_OBJECT

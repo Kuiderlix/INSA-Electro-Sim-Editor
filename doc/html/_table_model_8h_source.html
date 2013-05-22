@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/TableModel.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/TableModel.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -102,20 +102,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00032"></a><a class="code" href="class_table_model.html#a07c42edc6949abb72642562f1adfdd2a">00032</a>     QStringList <a class="code" href="class_table_model.html#a07c42edc6949abb72642562f1adfdd2a" title="Retourne la liste des entetes du tableau.">getHeaders</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> headers;}
 <a name="l00033"></a>00033 
 <a name="l00039"></a>00039     <a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a> * <a class="code" href="class_table_model.html#ab178835fec98d6de650fc9001b0961d7" title="Retourne un élément contenu dans le tableau au rang row.">getElement</a>(<span class="keywordtype">int</span> row);
-<a name="l00040"></a>00040     
-<a name="l00041"></a>00041 signals:
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043 <span class="keyword">public</span> slots:
-<a name="l00048"></a>00048     <span class="keywordtype">void</span> <a class="code" href="class_table_model.html#a268112fa5a3ff754af82fe52de881e9f" title="ajout un élément à la fin du tableau">addElement</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a> *element);
-<a name="l00053"></a>00053     <span class="keywordtype">void</span> <a class="code" href="class_table_model.html#a86d229acad67e32bc5769d9eb3c23bf9" title="supprime un élément du tableau">removeElement</a>(<span class="keywordtype">int</span> i);
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 <span class="keyword">private</span>:
-<a name="l00059"></a>00059     <a class="code" href="class_bloc_element_base.html" title="Représente une liste d&#39;elementBase.">BlocElementBase</a> * listeElement;
-<a name="l00063"></a>00063     QStringList headers;
-<a name="l00064"></a>00064     
-<a name="l00065"></a>00065 };
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067 <span class="preprocessor">#endif // TABLEMODEL_H</span>
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041     
+<a name="l00042"></a>00042 signals:
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="keyword">public</span> slots:
+<a name="l00049"></a>00049     <span class="keywordtype">void</span> <a class="code" href="class_table_model.html#a268112fa5a3ff754af82fe52de881e9f" title="ajout un élément à la fin du tableau">addElement</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a> *element);
+<a name="l00054"></a>00054     <span class="keywordtype">void</span> <a class="code" href="class_table_model.html#a86d229acad67e32bc5769d9eb3c23bf9" title="supprime un élément du tableau">removeElement</a>(<span class="keywordtype">int</span> i);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="keyword">private</span>:
+<a name="l00060"></a>00060     <a class="code" href="class_bloc_element_base.html" title="Représente une liste d&#39;elementBase.">BlocElementBase</a> * listeElement;
+<a name="l00064"></a>00064     QStringList headers;
+<a name="l00065"></a>00065     
+<a name="l00066"></a>00066 };
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 <span class="preprocessor">#endif // TABLEMODEL_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -134,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

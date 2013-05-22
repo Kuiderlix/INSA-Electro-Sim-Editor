@@ -5,8 +5,7 @@
 #include "cageExcitation.h"
 
 /**
- * Formulaire permettant d'ajouter un objet cageExcitation
- * @brief The FormCageExcitation class
+ * @brief Formulaire permettant d'ajouter un objet cageExcitation
  */
 class FormCageExcitation : public FormElementBase
 {

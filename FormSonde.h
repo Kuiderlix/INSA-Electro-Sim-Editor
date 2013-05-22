@@ -4,6 +4,9 @@
 #include "FormElementBase.h"
 #include "sonde.h"
 
+/**
+ * @brief Formulaire permettant d'ajouter un nouvelle objet sonde dans la scène 3D
+ */
 class FormSonde : public FormElementBase
 {
     Q_OBJECT

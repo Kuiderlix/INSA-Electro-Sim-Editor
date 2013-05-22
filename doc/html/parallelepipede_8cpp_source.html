@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/parallelepipede.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/parallelepipede.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -92,34 +92,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_ecriture_8h.html">Ecriture.h</a>&quot;</span>
 <a name="l00012"></a>00012 
 <a name="l00013"></a><a class="code" href="classparallelepipede.html#a37d1d235430cfaf0cc0c27f6c55fa6a1">00013</a> <a class="code" href="classparallelepipede.html#a37d1d235430cfaf0cc0c27f6c55fa6a1">parallelepipede::parallelepipede</a>() {
-<a name="l00014"></a>00014     conductivite=2;
-<a name="l00015"></a>00015     permitRelative=8;
-<a name="l00016"></a>00016     permeRelative=4;
-<a name="l00017"></a>00017     this-&gt;<a class="code" href="classelement_base.html#a906afa7053c7cfcef6785c1ff6793c01">arriereDroit</a> = <a class="code" href="classcoordonnee.html">coordonnee</a>(1,2,3);
-<a name="l00018"></a>00018     this-&gt;<a class="code" href="classelement_base.html#a18b9fcd2caa74c02e64ef5f09eab7518">avantGauche</a> = <a class="code" href="classcoordonnee.html">coordonnee</a>(3,2,1);
-<a name="l00019"></a>00019 }
-<a name="l00020"></a>00020 
-<a name="l00021"></a><a class="code" href="classparallelepipede.html#a45340227d0195d2a60e06a9b3c128ef2">00021</a> <a class="code" href="classparallelepipede.html#a37d1d235430cfaf0cc0c27f6c55fa6a1">parallelepipede::parallelepipede</a>(<span class="keyword">const</span> <a class="code" href="classparallelepipede.html">parallelepipede</a>&amp; orig) {
-<a name="l00022"></a>00022 }
-<a name="l00023"></a>00023 
-<a name="l00024"></a><a class="code" href="classparallelepipede.html#a7235dc60d52b13cc45441046a8742c5c">00024</a> <a class="code" href="classparallelepipede.html#a7235dc60d52b13cc45441046a8742c5c">parallelepipede::~parallelepipede</a>() {
-<a name="l00025"></a>00025 }
+<a name="l00014"></a>00014     conductivite=0;
+<a name="l00015"></a>00015     permitRelative=0;
+<a name="l00016"></a>00016     permeRelative=0;
+<a name="l00017"></a>00017 }
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="classparallelepipede.html#a45340227d0195d2a60e06a9b3c128ef2">00019</a> <a class="code" href="classparallelepipede.html#a37d1d235430cfaf0cc0c27f6c55fa6a1">parallelepipede::parallelepipede</a>(<span class="keyword">const</span> <a class="code" href="classparallelepipede.html" title="Cette classe représente la variable parallelepipede d&#39;une simulation.">parallelepipede</a>&amp; orig) {
+<a name="l00020"></a>00020 }
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="classparallelepipede.html#a7235dc60d52b13cc45441046a8742c5c">00022</a> <a class="code" href="classparallelepipede.html#a7235dc60d52b13cc45441046a8742c5c">parallelepipede::~parallelepipede</a>() {
+<a name="l00023"></a>00023 }
+<a name="l00024"></a>00024 
+<a name="l00025"></a><a class="code" href="classparallelepipede.html#a0db71f6ac28cb02d63a0eb45f0bc9dac">00025</a> <span class="keywordtype">void</span> <a class="code" href="classparallelepipede.html#a0db71f6ac28cb02d63a0eb45f0bc9dac">parallelepipede::ecrire</a>(<span class="keywordtype">int</span> nb){
 <a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="classparallelepipede.html#a0db71f6ac28cb02d63a0eb45f0bc9dac">00027</a> <span class="keywordtype">void</span> <a class="code" href="classparallelepipede.html#a0db71f6ac28cb02d63a0eb45f0bc9dac">parallelepipede::ecrire</a>(<span class="keywordtype">int</span> nb){
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029     std::ostringstream monEcriture;
-<a name="l00030"></a>00030     monEcriture &lt;&lt; <span class="stringliteral">&quot;parallelepipede_numero_&quot;</span> &lt;&lt; nb &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-<a name="l00031"></a>00031     monEcriture &lt;&lt; <span class="stringliteral">&quot;Permittivite_relative:\n&quot;</span>;
-<a name="l00032"></a>00032     monEcriture &lt;&lt; this-&gt;permitRelative &lt;&lt; std::endl;
-<a name="l00033"></a>00033     monEcriture &lt;&lt; <span class="stringliteral">&quot;Permeabilite_relative:\n&quot;</span>;
-<a name="l00034"></a>00034     monEcriture &lt;&lt; this-&gt;permeRelative &lt;&lt; std::endl;
-<a name="l00035"></a>00035     monEcriture &lt;&lt; <span class="stringliteral">&quot;Conductivite:\n&quot;</span>;
-<a name="l00036"></a>00036     monEcriture &lt;&lt; this-&gt;conductivite &lt;&lt; std::endl;
-<a name="l00037"></a>00037     std::string ecriture(monEcriture.str());
-<a name="l00038"></a>00038     <a class="code" href="class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d">Ecriture::Ecrire</a>(ecriture);
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040     this-&gt;<a class="code" href="classelement_base.html#ab3c14b9c85e93e6974f14f7bd269a972">ecrireElementBase</a>();
-<a name="l00041"></a>00041 }
+<a name="l00027"></a>00027     std::ostringstream monEcriture;
+<a name="l00028"></a>00028     monEcriture &lt;&lt; <span class="stringliteral">&quot;parallelepipede_numero_&quot;</span> &lt;&lt; nb &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00029"></a>00029     monEcriture &lt;&lt; <span class="stringliteral">&quot;Permittivite_relative:\n&quot;</span>;
+<a name="l00030"></a>00030     monEcriture &lt;&lt; this-&gt;permitRelative &lt;&lt; std::endl;
+<a name="l00031"></a>00031     monEcriture &lt;&lt; <span class="stringliteral">&quot;Permeabilite_relative:\n&quot;</span>;
+<a name="l00032"></a>00032     monEcriture &lt;&lt; this-&gt;permeRelative &lt;&lt; std::endl;
+<a name="l00033"></a>00033     monEcriture &lt;&lt; <span class="stringliteral">&quot;Conductivite:\n&quot;</span>;
+<a name="l00034"></a>00034     monEcriture &lt;&lt; this-&gt;conductivite &lt;&lt; std::endl;
+<a name="l00035"></a>00035     std::string ecriture(monEcriture.str());
+<a name="l00036"></a>00036     <a class="code" href="class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d">Ecriture::Ecrire</a>(ecriture);
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     this-&gt;<a class="code" href="classelement_base.html#ab3c14b9c85e93e6974f14f7bd269a972">ecrireElementBase</a>();
+<a name="l00039"></a>00039 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -138,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

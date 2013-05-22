@@ -3,6 +3,9 @@
 
 #include <QtWidgets>
 
+/**
+ * @brief Cette classe est le formulaire pour modifier les paramètres du logiciel
+ */
 class FormSettings : public QDialog
 {
     Q_OBJECT

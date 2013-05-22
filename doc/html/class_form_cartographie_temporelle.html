@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: FormCartographieTemporelle Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: FormCartographieTemporelle Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,20 +85,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="FormCartographieTemporelle" --><!-- doxytag: inherits="FormElementBase" -->
+<p>Formulaire permettant d'ajouter un nouvelle objet <a class="el" href="classcartographie_temporelle.html" title="Cette classe représente la variable cartographieTemporelle d&#39;une simulation.">cartographieTemporelle</a> dans la scène 3D.  
+ <a href="class_form_cartographie_temporelle.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_form_cartographie_temporelle_8h_source.html">FormCartographieTemporelle.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for FormCartographieTemporelle:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_form_cartographie_temporelle__inherit__graph.png" border="0" usemap="#_form_cartographie_temporelle_inherit__map" alt="Inheritance graph"/></div>
 <map name="_form_cartographie_temporelle_inherit__map" id="_form_cartographie_temporelle_inherit__map">
-<area shape="rect" id="node2" href="class_form_element_base.html" title="FormElementBase" alt="" coords="35,5,165,35"/></map>
+<area shape="rect" id="node2" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase." alt="" coords="35,5,165,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for FormCartographieTemporelle:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_form_cartographie_temporelle__coll__graph.png" border="0" usemap="#_form_cartographie_temporelle_coll__map" alt="Collaboration graph"/></div>
 <map name="_form_cartographie_temporelle_coll__map" id="_form_cartographie_temporelle_coll__map">
-<area shape="rect" id="node2" href="class_form_element_base.html" title="FormElementBase" alt="" coords="35,117,165,147"/><area shape="rect" id="node4" href="class_form_coordonnees.html" title="FormCoordonnees" alt="" coords="36,5,164,35"/></map>
+<area shape="rect" id="node2" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase." alt="" coords="52,117,183,147"/><area shape="rect" id="node4" href="class_color_picker.html" title="Cette classe est un widget sous forme de bouton qui permet de sélectionner une couleur dans une boite..." alt="" coords="5,5,96,35"/><area shape="rect" id="node6" href="class_form_coordonnees.html" title="Cette classe fournit un widget pour modifier l&#39;objet coordonnee." alt="" coords="120,5,248,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_form_cartographie_temporelle-members.html">List of all members.</a></p>
@@ -106,30 +109,27 @@ Collaboration diagram for FormCartographieTemporelle:</div>
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_cartographie_temporelle.html#afc2f84be3c4e838d3eb62a796496419e">valider</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l'<a class="el" href="classelement_base.html" title="The elementBase class.">elementBase</a> et émet le signal <a class="el" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="Ce signal est émis quand le bouton valider est pressé. Cela signifie que l&#39;elementBase a bien était m...">elementValide(elementBase *)</a>.  <a href="#afc2f84be3c4e838d3eb62a796496419e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_cartographie_temporelle.html#a2024630743108c130bf19f3fde670813">reset</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Place des valeurs par défaut dans le formulaire.  <a href="#a2024630743108c130bf19f3fde670813"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_cartographie_temporelle.html#a22edbd8c1b1b819a237ea32d6eed705a">FormCartographieTemporelle</a> (<a class="el" href="classcartographie_temporelle.html">cartographieTemporelle</a> *carto, int mode, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_cartographie_temporelle.html#a9a36b177315a19ddea04c64b6f5857c9">FormCartographieTemporelle</a> (<a class="el" href="classcartographie_temporelle.html">cartographieTemporelle</a> *carto, QWidget *parent=0)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_form_cartographie_temporelle_8h_source.html#l00007">7</a> of file <a class="el" href="_form_cartographie_temporelle_8h_source.html">FormCartographieTemporelle.h</a>.</p>
+<div class="textblock"><p>Formulaire permettant d'ajouter un nouvelle objet <a class="el" href="classcartographie_temporelle.html" title="Cette classe représente la variable cartographieTemporelle d&#39;une simulation.">cartographieTemporelle</a> dans la scène 3D. </p>
+
+<p>Definition at line <a class="el" href="_form_cartographie_temporelle_8h_source.html#l00010">10</a> of file <a class="el" href="_form_cartographie_temporelle_8h_source.html">FormCartographieTemporelle.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a22edbd8c1b1b819a237ea32d6eed705a"></a><!-- doxytag: member="FormCartographieTemporelle::FormCartographieTemporelle" ref="a22edbd8c1b1b819a237ea32d6eed705a" args="(cartographieTemporelle *carto, int mode, QWidget *parent=0)" -->
+<a class="anchor" id="a9a36b177315a19ddea04c64b6f5857c9"></a><!-- doxytag: member="FormCartographieTemporelle::FormCartographieTemporelle" ref="a9a36b177315a19ddea04c64b6f5857c9" args="(cartographieTemporelle *carto, QWidget *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form_cartographie_temporelle.html#a22edbd8c1b1b819a237ea32d6eed705a">FormCartographieTemporelle::FormCartographieTemporelle</a> </td>
+          <td class="memname"><a class="el" href="class_form_cartographie_temporelle.html#a9a36b177315a19ddea04c64b6f5857c9">FormCartographieTemporelle::FormCartographieTemporelle</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classcartographie_temporelle.html">cartographieTemporelle</a> *&#160;</td>
           <td class="paramname"><em>carto</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -148,15 +148,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_form_cartographie_temporelle_8cpp_source.html#l00003">3</a> of file <a class="el" href="_form_cartographie_temporelle_8cpp_source.html">FormCartographieTemporelle.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_cartographie_temporelle_a22edbd8c1b1b819a237ea32d6eed705a_cgraph.png" border="0" usemap="#class_form_cartographie_temporelle_a22edbd8c1b1b819a237ea32d6eed705a_cgraph" alt=""/></div>
-<map name="class_form_cartographie_temporelle_a22edbd8c1b1b819a237ea32d6eed705a_cgraph" id="class_form_cartographie_temporelle_a22edbd8c1b1b819a237ea32d6eed705a_cgraph">
-<area shape="rect" id="node3" href="class_form_element_base.html#a10b8d2ffbc930360abdf6edc9d87f206" title="FormElementBase::getWidgetElementBase" alt="" coords="421,59,696,88"/><area shape="rect" id="node5" href="classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="745,5,951,35"/><area shape="rect" id="node7" href="classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="752,59,944,88"/><area shape="rect" id="node9" href="class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473" title="FormElementBase::valider" alt="" coords="760,112,936,141"/><area shape="rect" id="node11" href="classelement_base.html#a230935c8e0e713878651c9f6877bc5db" title="elementBase::SetAvantGauche" alt="" coords="1000,59,1205,88"/><area shape="rect" id="node13" href="class_form_coordonnees.html#a9f4cdc23ad453c0d8249aaf72f1832d0" title="FormCoordonnees::getCoord" alt="" coords="1008,112,1197,141"/><area shape="rect" id="node15" href="classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5" title="elementBase::SetArriereDroit" alt="" coords="1007,165,1199,195"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -174,18 +165,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
+<p>Place des valeurs par défaut dans le formulaire. </p>
+
 <p>Reimplemented from <a class="el" href="class_form_element_base.html#aadcbfd4f27ca45f6329d0ff5b1608d82">FormElementBase</a>.</p>
 
 <p>Definition at line <a class="el" href="_form_cartographie_temporelle_8cpp_source.html#l00074">74</a> of file <a class="el" href="_form_cartographie_temporelle_8cpp_source.html">FormCartographieTemporelle.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_cartographie_temporelle_a2024630743108c130bf19f3fde670813_cgraph.png" border="0" usemap="#class_form_cartographie_temporelle_a2024630743108c130bf19f3fde670813_cgraph" alt=""/></div>
-<map name="class_form_cartographie_temporelle_a2024630743108c130bf19f3fde670813_cgraph" id="class_form_cartographie_temporelle_a2024630743108c130bf19f3fde670813_cgraph">
-<area shape="rect" id="node3" href="class_form_element_base.html#a0fc624d18ff6d8780f715a52a2f184f1" title="FormElementBase::setElement" alt="" coords="281,5,484,35"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -203,18 +187,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
+<p>Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l'<a class="el" href="classelement_base.html" title="The elementBase class.">elementBase</a> et émet le signal <a class="el" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="Ce signal est émis quand le bouton valider est pressé. Cela signifie que l&#39;elementBase a bien était m...">elementValide(elementBase *)</a>. </p>
+
 <p>Reimplemented from <a class="el" href="class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473">FormElementBase</a>.</p>
 
 <p>Definition at line <a class="el" href="_form_cartographie_temporelle_8cpp_source.html#l00063">63</a> of file <a class="el" href="_form_cartographie_temporelle_8cpp_source.html">FormCartographieTemporelle.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_cartographie_temporelle_afc2f84be3c4e838d3eb62a796496419e_cgraph.png" border="0" usemap="#class_form_cartographie_temporelle_afc2f84be3c4e838d3eb62a796496419e_cgraph" alt=""/></div>
-<map name="class_form_cartographie_temporelle_afc2f84be3c4e838d3eb62a796496419e_cgraph" id="class_form_cartographie_temporelle_afc2f84be3c4e838d3eb62a796496419e_cgraph">
-<area shape="rect" id="node3" href="classcartographie_temporelle.html#aeb18e011ad8f9d7ddad85ec8c180cf65" title="cartographieTemporelle::SetChampE" alt="" coords="307,5,541,35"/><area shape="rect" id="node5" href="classcartographie_temporelle.html#a72e0a794c7a298a171f0437428110df8" title="cartographieTemporelle::SetChampH" alt="" coords="305,59,543,88"/><area shape="rect" id="node7" href="classcartographie_temporelle.html#ac6f81f96d0c07908d7545fa89aef4fd2" title="cartographieTemporelle::SetIterationDebut" alt="" coords="291,112,557,141"/><area shape="rect" id="node9" href="classcartographie_temporelle.html#ad670f3e23fca7d5b4eed24edf4c6f2be" title="cartographieTemporelle::SetIterationFin" alt="" coords="299,165,549,195"/><area shape="rect" id="node11" href="classcartographie_temporelle.html#a14507b09e7d59260186015faaeb29780" title="cartographieTemporelle::SetIntervalle" alt="" coords="305,219,543,248"/><area shape="rect" id="node13" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="FormElementBase::elementValide" alt="" coords="315,272,533,301"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -240,7 +217,7 @@ Here is the call graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

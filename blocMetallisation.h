@@ -11,7 +11,9 @@
 #include "BlocElementBase.h"
 #include "metallisation.h"
 #include <QDebug>
-
+/**
+ * @brief Cette classe représente une liste de metallisation
+ */
 class blocMetallisation : public BlocElementBase{
 public:
     blocMetallisation();

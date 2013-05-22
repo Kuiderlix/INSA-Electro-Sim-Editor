@@ -10,7 +10,9 @@
 
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable ParamExcitations d'une simulation
+ */
 class ParamExcitations : public blocConfiguration{
 
     Q_OBJECT

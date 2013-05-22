@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormCalculDirective.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormCalculDirective.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,17 +85,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QtWidgets&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="calcul_directivite_8h.html">calculDirectivite.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00011"></a><a class="code" href="class_form_calcul_directive.html">00011</a> <span class="keyword">class </span><a class="code" href="class_form_calcul_directive.html" title="The FormCalculDirective class.">FormCalculDirective</a> : <span class="keyword">public</span> QWidget
-<a name="l00012"></a>00012 {
-<a name="l00013"></a>00013 <span class="keyword">public</span>:
-<a name="l00014"></a>00014     <a class="code" href="class_form_calcul_directive.html#a7a61bf139eabfbf0cfa2e55770d89c82">FormCalculDirective</a>(<a class="code" href="classcalcul_directivite.html">calculDirectivite</a> * calDir, QWidget * parent=0);
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 <span class="keyword">private</span>:
-<a name="l00018"></a>00018     <a class="code" href="classcalcul_directivite.html">calculDirectivite</a> * calDir;
-<a name="l00019"></a>00019 };
+<a name="l00010"></a><a class="code" href="class_form_calcul_directive.html">00010</a> <span class="keyword">class </span><a class="code" href="class_form_calcul_directive.html" title="Formulaire permettant de modifier l&#39;objet calculDirectivite.">FormCalculDirective</a> : <span class="keyword">public</span> QWidget
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012 <span class="keyword">public</span>:
+<a name="l00013"></a>00013     <a class="code" href="class_form_calcul_directive.html#a7a61bf139eabfbf0cfa2e55770d89c82">FormCalculDirective</a>(<a class="code" href="classcalcul_directivite.html" title="Cette classe représente la variable calculDirectivite d&#39;une simulation.">calculDirectivite</a> * calDir, QWidget * parent=0);
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="class_form_calcul_directive.html#aa06777f7a278b9f071e67450a0ecb5fe">00015</a>     <span class="keywordtype">void</span> <a class="code" href="class_form_calcul_directive.html#aa06777f7a278b9f071e67450a0ecb5fe">setCaculDirective</a>(<a class="code" href="classcalcul_directivite.html" title="Cette classe représente la variable calculDirectivite d&#39;une simulation.">calculDirectivite</a> * c)
+<a name="l00016"></a>00016     {
+<a name="l00017"></a>00017         calDir=c;
+<a name="l00018"></a>00018         <a class="code" href="class_form_calcul_directive.html#a05f8bff35424b3438c59270044e0999e">init</a>();
+<a name="l00019"></a>00019     }
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#endif // FORMCALCULDIRECTIVE_H</span>
+<a name="l00021"></a>00021     <span class="keywordtype">void</span> <a class="code" href="class_form_calcul_directive.html#a05f8bff35424b3438c59270044e0999e">init</a>();
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="keyword">private</span>:
+<a name="l00025"></a>00025     <a class="code" href="classcalcul_directivite.html" title="Cette classe représente la variable calculDirectivite d&#39;une simulation.">calculDirectivite</a> * calDir;
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027     QCheckBox * calculHWidget;
+<a name="l00028"></a>00028     QSpinBox * pasThetaWidget;
+<a name="l00029"></a>00029     QSpinBox * pasPhiWidget;
+<a name="l00030"></a>00030 };
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="preprocessor">#endif // FORMCALCULDIRECTIVE_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -114,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

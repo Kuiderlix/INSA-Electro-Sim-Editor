@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_param_excitations.html#a95fdf115404e1dc04005d0838abbac35" title="ParamExcitations::GetFrequenceMax" alt="" coords="340,5,580,35"/>
-<area shape="rect" id="node5" href="$class_param_excitations.html#a42d6cf75bfad68620ab269bf26b52475" title="ParamExcitations::GetType" alt="" coords="369,59,551,88"/>
-<area shape="rect" id="node7" href="$class_form_param_excitation.html#ad3e0b0879e9f8f6ed0ac2dd1ce02ed31" title="FormParamExcitation::afficheSinus" alt="" coords="347,112,573,141"/>
-<area shape="rect" id="node9" href="$class_param_excitations.html#a3e879c6d5a1afde77b35ed41969e9605" title="ParamExcitations::GetFrequenceSinus" alt="" coords="336,165,584,195"/>
-</map>

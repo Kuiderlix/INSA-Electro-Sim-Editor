@@ -5,6 +5,9 @@
 #include "metallisation.h"
 #include "FormElementBase.h"
 
+/**
+ * @brief Formulaire permettant d'ajouter un nouvelle objet metallisation dans la scène 3D
+ */
 class FormMetallisation : public FormElementBase
 {
     Q_OBJECT

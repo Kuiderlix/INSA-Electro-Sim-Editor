@@ -11,6 +11,9 @@
 #include "blocConfiguration.h"
 
 
+/**
+ * @brief Cette classe représente la variable volumeCalcul d'une simulation
+ */
 class volumeCalcul : public blocConfiguration {
     Q_OBJECT
 public:

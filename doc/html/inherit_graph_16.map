@@ -1,11 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_form_element_base.html" title="FormElementBase" alt="" coords="5,192,136,221"/>
-<area shape="rect" id="node3" href="$class_form_cage_excitation.html" title="The FormCageExcitation class." alt="" coords="209,5,351,35"/>
-<area shape="rect" id="node5" href="$class_form_cartographie_temporelle.html" title="FormCartographieTemporelle" alt="" coords="185,59,375,88"/>
-<area shape="rect" id="node7" href="$class_form_element_localise.html" title="FormElementLocalise" alt="" coords="207,112,353,141"/>
-<area shape="rect" id="node9" href="$class_form_metallisation.html" title="FormMetallisation" alt="" coords="217,165,343,195"/>
-<area shape="rect" id="node11" href="$class_form_parallelepipede.html" title="FormParallelepipede" alt="" coords="211,219,349,248"/>
-<area shape="rect" id="node13" href="$class_form_port_excitation.html" title="FormPortExcitation" alt="" coords="213,272,347,301"/>
-<area shape="rect" id="node15" href="$class_form_sonde.html" title="FormSonde" alt="" coords="236,325,324,355"/>
-<area shape="rect" id="node17" href="$class_form_surface_prelevement.html" title="FormSurfacePrelevement" alt="" coords="195,379,365,408"/>
+<area shape="rect" id="node1" href="$class_form_excitation.html" title="Cette classe fournit un formulaire pour modifier l&#39;objet Excitation." alt="" coords="7,5,116,35"/>
 </map>

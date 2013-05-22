@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormVolumeCalcul.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormVolumeCalcul.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -84,22 +84,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;QtWidgets&gt;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="volume_calcul_8h.html">volumeCalcul.h</a>&quot;</span>
-<a name="l00006"></a><a class="code" href="class_form_volume_calcul.html">00006</a> <span class="keyword">class </span><a class="code" href="class_form_volume_calcul.html">FormVolumeCalcul</a> : <span class="keyword">public</span> QWidget
-<a name="l00007"></a>00007 {
-<a name="l00008"></a>00008     Q_OBJECT
-<a name="l00009"></a>00009 <span class="keyword">public</span>:
-<a name="l00010"></a>00010     <span class="keyword">explicit</span> <a class="code" href="class_form_volume_calcul.html#ad11ed5892c082f1b12fc2b82c7f81de6">FormVolumeCalcul</a>(<a class="code" href="classvolume_calcul.html">volumeCalcul</a> * volCal, QWidget *parent = 0);
-<a name="l00011"></a>00011     
-<a name="l00012"></a>00012 signals:
-<a name="l00013"></a>00013     
-<a name="l00014"></a>00014 <span class="keyword">public</span> slots:
+<a name="l00006"></a>00006 
+<a name="l00010"></a><a class="code" href="class_form_volume_calcul.html">00010</a> <span class="keyword">class </span><a class="code" href="class_form_volume_calcul.html" title="Cette classe fournit un formulaire pour modifier l&#39;objet volumeCalcul.">FormVolumeCalcul</a> : <span class="keyword">public</span> QWidget
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012     Q_OBJECT
+<a name="l00013"></a>00013 <span class="keyword">public</span>:
+<a name="l00014"></a>00014     <span class="keyword">explicit</span> <a class="code" href="class_form_volume_calcul.html#ad11ed5892c082f1b12fc2b82c7f81de6">FormVolumeCalcul</a>(<a class="code" href="classvolume_calcul.html" title="Cette classe représente la variable volumeCalcul d&#39;une simulation.">volumeCalcul</a> * volCal, QWidget *parent = 0);
 <a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="keyword">private</span>:
-<a name="l00017"></a>00017     <a class="code" href="classvolume_calcul.html">volumeCalcul</a> * volCal;
-<a name="l00018"></a>00018     
-<a name="l00019"></a>00019 };
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 <span class="preprocessor">#endif // FORMVOLUMECALCUL_H</span>
+<a name="l00016"></a><a class="code" href="class_form_volume_calcul.html#acc9ed3b3b18ff18fd68d6a49cdb591a0">00016</a>     <span class="keywordtype">void</span> <a class="code" href="class_form_volume_calcul.html#acc9ed3b3b18ff18fd68d6a49cdb591a0">setVolumeCalcul</a>(<a class="code" href="classvolume_calcul.html" title="Cette classe représente la variable volumeCalcul d&#39;une simulation.">volumeCalcul</a> * vol)
+<a name="l00017"></a>00017     {
+<a name="l00018"></a>00018         volCal=vol;
+<a name="l00019"></a>00019         <a class="code" href="class_form_volume_calcul.html#a93535dc3ffe9f2f8949e506ff4fe4200">init</a>();
+<a name="l00020"></a>00020     }
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022     <span class="keywordtype">void</span> <a class="code" href="class_form_volume_calcul.html#a93535dc3ffe9f2f8949e506ff4fe4200">init</a>();
+<a name="l00023"></a>00023     
+<a name="l00024"></a>00024 signals:
+<a name="l00025"></a>00025     
+<a name="l00026"></a>00026 <span class="keyword">public</span> slots:
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keyword">private</span>:
+<a name="l00029"></a>00029     <a class="code" href="classvolume_calcul.html" title="Cette classe représente la variable volumeCalcul d&#39;une simulation.">volumeCalcul</a> * volCal;
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     QDoubleSpinBox * longueurWidget;
+<a name="l00032"></a>00032     QDoubleSpinBox * largeurWidget;
+<a name="l00033"></a>00033     QDoubleSpinBox * hauteurWidget;
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035     QSpinBox * nbrYWidget;
+<a name="l00036"></a>00036     QSpinBox * nbrXWidget;
+<a name="l00037"></a>00037     QSpinBox * nbrZWidget;
+<a name="l00038"></a>00038     
+<a name="l00039"></a>00039 };
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 <span class="preprocessor">#endif // FORMVOLUMECALCUL_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -118,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

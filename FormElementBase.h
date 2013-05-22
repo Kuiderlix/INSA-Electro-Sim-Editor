@@ -43,7 +43,13 @@ public slots:
 protected:
     FormCoordonnees * formCoord1, *formCoord2;
 
+    /**
+     * @brief Place des valeurs par défaut dans le formulaire
+     */
     virtual void reset();
+    /**
+     * @brief Initialise le formulaire avec les données de l'objet elementBase
+     */
     virtual void init();
     /**
      * @brief Modifie l'elementBase que contient le formulaire

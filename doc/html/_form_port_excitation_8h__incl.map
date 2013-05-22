@@ -1,7 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_form_element_base_8h.html" title="FormElementBase.h" alt="" coords="64,83,205,112"/>
-<area shape="rect" id="node23" href="$port_excitation_8h.html" title="portExcitation.h" alt="" coords="229,83,341,112"/>
-<area shape="rect" id="node7" href="$_form_coordonnees_8h.html" title="FormCoordonnees.h" alt="" coords="67,160,205,189"/>
-<area shape="rect" id="node16" href="$element_base_8h.html" title="elementBase.h" alt="" coords="229,160,339,189"/>
-<area shape="rect" id="node10" href="$coordonnee_8h.html" title="coordonnee.h" alt="" coords="121,237,220,267"/>
+<area shape="rect" id="node3" href="$_form_element_base_8h.html" title="FormElementBase.h" alt="" coords="505,83,647,112"/>
+<area shape="rect" id="node33" href="$port_excitation_8h.html" title="portExcitation.h" alt="" coords="671,83,783,112"/>
+<area shape="rect" id="node7" href="$_form_coordonnees_8h.html" title="FormCoordonnees.h" alt="" coords="509,160,648,189"/>
+<area shape="rect" id="node16" href="$element_base_8h.html" title="elementBase.h" alt="" coords="672,160,781,189"/>
+<area shape="rect" id="node23" href="$_color_picker_8h.html" title="ColorPicker.h" alt="" coords="220,160,321,189"/>
+<area shape="rect" id="node10" href="$coordonnee_8h.html" title="coordonnee.h" alt="" coords="573,237,672,267"/>
 </map>

@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_visualisation3_d.html#a045d4334c44deb71af16e8f279567c55" title="Visualisation3D::setXRotation" alt="" coords="264,5,461,35"/>
-<area shape="rect" id="node9" href="$class_visualisation3_d.html#a9437daaa81f04ad97fe89df22f828bbe" title="Visualisation3D::setYRotation" alt="" coords="264,59,461,88"/>
-<area shape="rect" id="node5" href="$class_visualisation3_d.html#add2c9ed3cb438ff871371aebacc2ac9f" title="Visualisation3D::keyPressEvent" alt="" coords="517,5,728,35"/>
-<area shape="rect" id="node7" href="$class_visualisation3_d.html#a5c035372cab97e243e1329945c888bad" title="Visualisation3D::mouseMoveEvent" alt="" coords="509,59,736,88"/>
-</map>

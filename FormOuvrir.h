@@ -3,6 +3,9 @@
 
 #include <QtWidgets>
 
+/**
+ * @brief Cette classe est le formulaire pour ouvrir une nouvelle simulation
+ */
 class FormOuvrir : public QDialog
 {
     Q_OBJECT

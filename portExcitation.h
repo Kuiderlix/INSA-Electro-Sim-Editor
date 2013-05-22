@@ -10,7 +10,9 @@
 
 #include "elementBase.h"
 
-
+/**
+ * @brief Cette classe représente la variable portExcitation d'une simulation
+ */
 class portExcitation : public elementBase{
 public:
     portExcitation();

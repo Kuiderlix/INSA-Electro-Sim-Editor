@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: ParamSimuWidget Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: ParamSimuWidget Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -84,8 +84,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ParamSimuWidget Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ParamSimuWidget" -->
+<!-- doxytag: class="ParamSimuWidget" --><!-- doxytag: inherits="ToolBoxWidget" -->
+<p>Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur des autres formulaire de la meme catégorie.  
+ <a href="class_param_simu_widget.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_param_simu_widget_8h_source.html">ParamSimuWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ParamSimuWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_param_simu_widget__inherit__graph.png" border="0" usemap="#_param_simu_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="_param_simu_widget_inherit__map" id="_param_simu_widget_inherit__map">
+<area shape="rect" id="node2" href="class_tool_box_widget.html" title="Classe de base pour les widgets conteneurs de la ToolBox." alt="" coords="16,5,125,35"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ParamSimuWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_param_simu_widget__coll__graph.png" border="0" usemap="#_param_simu_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="_param_simu_widget_coll__map" id="_param_simu_widget_coll__map">
+<area shape="rect" id="node2" href="class_tool_box_widget.html" title="Classe de base pour les widgets conteneurs de la ToolBox." alt="" coords="16,101,125,131"/><area shape="rect" id="node4" href="class_data.html" title="Contient toutes les données utiles pour la simulation." alt="" coords="45,5,96,35"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_param_simu_widget-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -94,11 +111,13 @@ Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_param_simu_widget.html#a17c85ee42fce00312aef96c1b00bfd22">newPortExcitationCreated</a> (<a class="el" href="classelement_base.html">elementBase</a> *)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_param_simu_widget.html#a73f16d3f3332b6c81f2af479a5907362">ParamSimuWidget</a> (<a class="el" href="class_data.html">Data</a> *data, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_param_simu_widget.html#a73f16d3f3332b6c81f2af479a5907362">ParamSimuWidget</a> (<a class="el" href="class_data.html">Data</a> *<a class="el" href="class_tool_box_widget.html#ac2ee04ba2afd2ce91d0d95c30519e586">data</a>, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_param_simu_widget.html#ab7a06e8ad9fbf06eb06ec741f30bbaa7">init</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_param_simu_widget_8h_source.html#l00010">10</a> of file <a class="el" href="_param_simu_widget_8h_source.html">ParamSimuWidget.h</a>.</p>
+<div class="textblock"><p>Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur des autres formulaire de la meme catégorie. </p>
+
+<p>Definition at line <a class="el" href="_param_simu_widget_8h_source.html#l00014">14</a> of file <a class="el" href="_param_simu_widget_8h_source.html">ParamSimuWidget.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a73f16d3f3332b6c81f2af479a5907362"></a><!-- doxytag: member="ParamSimuWidget::ParamSimuWidget" ref="a73f16d3f3332b6c81f2af479a5907362" args="(Data *data, QWidget *parent=0)" -->
 <div class="memitem">
@@ -127,18 +146,29 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_param_simu_widget_8cpp_source.html#l00003">3</a> of file <a class="el" href="_param_simu_widget_8cpp_source.html">ParamSimuWidget.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_param_simu_widget_a73f16d3f3332b6c81f2af479a5907362_cgraph.png" border="0" usemap="#class_param_simu_widget_a73f16d3f3332b6c81f2af479a5907362_cgraph" alt=""/></div>
-<map name="class_param_simu_widget_a73f16d3f3332b6c81f2af479a5907362_cgraph" id="class_param_simu_widget_a73f16d3f3332b6c81f2af479a5907362_cgraph">
-<area shape="rect" id="node3" href="class_param_simu_widget.html#a17c85ee42fce00312aef96c1b00bfd22" title="ParamSimuWidget::newPortExcitationCreated" alt="" coords="301,5,592,35"/><area shape="rect" id="node5" href="class_data.html#a60b95e0ffd5c6bde5297b7aaf81c1487" title="Data::getAnalyseTempo" alt="" coords="365,59,528,88"/><area shape="rect" id="node7" href="class_data.html#ac0ba89e3d5222ac22fdb6163a6f42b41" title="Data::getParamExcitations" alt="" coords="357,112,536,141"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ab7a06e8ad9fbf06eb06ec741f30bbaa7"></a><!-- doxytag: member="ParamSimuWidget::init" ref="ab7a06e8ad9fbf06eb06ec741f30bbaa7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_param_simu_widget.html#ab7a06e8ad9fbf06eb06ec741f30bbaa7">ParamSimuWidget::init</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_tool_box_widget.html#aa43ef2f3ba3e32674be18d0f995676d1">ToolBoxWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="_param_simu_widget_8cpp_source.html#l00026">26</a> of file <a class="el" href="_param_simu_widget_8cpp_source.html">ParamSimuWidget.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a17c85ee42fce00312aef96c1b00bfd22"></a><!-- doxytag: member="ParamSimuWidget::newPortExcitationCreated" ref="a17c85ee42fce00312aef96c1b00bfd22" args="(elementBase *)" -->
 <div class="memitem">
 <div class="memproto">
@@ -153,15 +183,6 @@ Here is the call graph for this function:</div>
       </table>
 </div>
 <div class="memdoc">
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_param_simu_widget_a17c85ee42fce00312aef96c1b00bfd22_icgraph.png" border="0" usemap="#class_param_simu_widget_a17c85ee42fce00312aef96c1b00bfd22_icgraph" alt=""/></div>
-<map name="class_param_simu_widget_a17c85ee42fce00312aef96c1b00bfd22_icgraph" id="class_param_simu_widget_a17c85ee42fce00312aef96c1b00bfd22_icgraph">
-<area shape="rect" id="node3" href="class_param_simu_widget.html#a73f16d3f3332b6c81f2af479a5907362" title="ParamSimuWidget::ParamSimuWidget" alt="" coords="344,5,592,35"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -187,7 +208,7 @@ Here is the caller graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

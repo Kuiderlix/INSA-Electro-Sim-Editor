@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormChampLointain.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormChampLointain.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_form_champ_lointain_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="_form_champ_lointain_8h.html">FormChampLointain.h</a>&quot;</span>
 <a name="l00002"></a>00002 
-<a name="l00003"></a><a class="code" href="class_form_champ_lointain.html#a7062f67e5a529b8c58e4c0551438a6bf">00003</a> <a class="code" href="class_form_champ_lointain.html#a7062f67e5a529b8c58e4c0551438a6bf">FormChampLointain::FormChampLointain</a>(<a class="code" href="classchamp_lointain.html">champLointain</a> *champ, QWidget *parent) :
+<a name="l00003"></a><a class="code" href="class_form_champ_lointain.html#a7062f67e5a529b8c58e4c0551438a6bf">00003</a> <a class="code" href="class_form_champ_lointain.html#a7062f67e5a529b8c58e4c0551438a6bf">FormChampLointain::FormChampLointain</a>(<a class="code" href="classchamp_lointain.html" title="Cette classe représente la variable champLointain d&#39;une simulation.">champLointain</a> *champ, QWidget *parent) :
 <a name="l00004"></a>00004     QWidget(parent)
 <a name="l00005"></a>00005 {
 <a name="l00006"></a>00006     this-&gt;champ=champ;
@@ -93,35 +93,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013     QFormLayout * layout = <span class="keyword">new</span> QFormLayout;
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015     <a class="code" href="class_form_coordonnees.html">FormCoordonnees</a> * origineRepereWidget = <span class="keyword">new</span> <a class="code" href="class_form_coordonnees.html">FormCoordonnees</a>(champ-&gt;<a class="code" href="classchamp_lointain.html#a06b9e21f2a65e1b722cf7f86ad76ea3a">GetOrigineRepere</a>());
+<a name="l00015"></a>00015     origineRepereWidget = <span class="keyword">new</span> <a class="code" href="class_form_coordonnees.html" title="Cette classe fournit un widget pour modifier l&#39;objet coordonnee.">FormCoordonnees</a>(champ-&gt;<a class="code" href="classchamp_lointain.html#a06b9e21f2a65e1b722cf7f86ad76ea3a">GetOrigineRepere</a>());
 <a name="l00016"></a>00016     layout-&gt;addRow(<span class="stringliteral">&quot;Origine Repère:&quot;</span>,origineRepereWidget);
-<a name="l00017"></a>00017     connect(origineRepereWidget,SIGNAL(coordonneeChanged(<a class="code" href="classcoordonnee.html">coordonnee</a>)),champ,SLOT(SetOrigineRepere(<a class="code" href="classcoordonnee.html">coordonnee</a>)));
+<a name="l00017"></a>00017     connect(origineRepereWidget,SIGNAL(coordonneeChanged(<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>)),champ,SLOT(SetOrigineRepere(<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>)));
 <a name="l00018"></a>00018 
-<a name="l00019"></a>00019     QDoubleSpinBox * frequenceMinWidget = <span class="keyword">new</span> QDoubleSpinBox();
+<a name="l00019"></a>00019     frequenceMinWidget = <span class="keyword">new</span> QDoubleSpinBox();
 <a name="l00020"></a>00020     layout-&gt;addRow(<span class="stringliteral">&quot;Fréquence Min:&quot;</span>,frequenceMinWidget);
 <a name="l00021"></a>00021     connect(frequenceMinWidget,SIGNAL(valueChanged(<span class="keywordtype">double</span>)),champ,SLOT(SetFrequenceMin(<span class="keywordtype">double</span>)));
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023     QDoubleSpinBox * frequenceMaxWidget = <span class="keyword">new</span> QDoubleSpinBox();
+<a name="l00023"></a>00023     frequenceMaxWidget = <span class="keyword">new</span> QDoubleSpinBox();
 <a name="l00024"></a>00024     layout-&gt;addRow(<span class="stringliteral">&quot;Fréquence Max:&quot;</span>,frequenceMaxWidget);
 <a name="l00025"></a>00025     connect(frequenceMaxWidget,SIGNAL(valueChanged(<span class="keywordtype">double</span>)),champ,SLOT(SetFrequenceMax(<span class="keywordtype">double</span>)));
 <a name="l00026"></a>00026 
-<a name="l00027"></a>00027     QDoubleSpinBox * frequencePasWidget = <span class="keyword">new</span> QDoubleSpinBox();
+<a name="l00027"></a>00027     frequencePasWidget = <span class="keyword">new</span> QDoubleSpinBox();
 <a name="l00028"></a>00028     layout-&gt;addRow(<span class="stringliteral">&quot;Pas Fréquence:&quot;</span>,frequencePasWidget);
 <a name="l00029"></a>00029     connect(frequencePasWidget,SIGNAL(valueChanged(<span class="keywordtype">double</span>)),champ,SLOT(SetPasFrequence(<span class="keywordtype">double</span>)));
 <a name="l00030"></a>00030 
-<a name="l00031"></a>00031     QCheckBox * calculImageWidget = <span class="keyword">new</span> QCheckBox();
+<a name="l00031"></a>00031     calculImageWidget = <span class="keyword">new</span> QCheckBox();
 <a name="l00032"></a>00032     layout-&gt;addRow(<span class="stringliteral">&quot;Calcul Image:&quot;</span>,calculImageWidget);
 <a name="l00033"></a>00033     connect(calculImageWidget,SIGNAL(clicked(<span class="keywordtype">bool</span>)),champ,SLOT(SetCalculImage(<span class="keywordtype">bool</span>)));
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035     QSpinBox * hauteurPlanMasseWidget = <span class="keyword">new</span> QSpinBox();
+<a name="l00035"></a>00035     hauteurPlanMasseWidget = <span class="keyword">new</span> QSpinBox();
 <a name="l00036"></a>00036     layout-&gt;addRow(<span class="stringliteral">&quot;Hauteur plan masse:&quot;</span>,hauteurPlanMasseWidget);
 <a name="l00037"></a>00037     connect(hauteurPlanMasseWidget,SIGNAL(valueChanged(<span class="keywordtype">int</span>)),champ,SLOT(SetHauteurPlanMasse(<span class="keywordtype">int</span>)));
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039     QSpinBox * pasDiscrTetaWidget = <span class="keyword">new</span> QSpinBox();
+<a name="l00039"></a>00039     pasDiscrTetaWidget = <span class="keyword">new</span> QSpinBox();
 <a name="l00040"></a>00040     layout-&gt;addRow(<span class="stringliteral">&quot;Pas Discr Teta:&quot;</span>,pasDiscrTetaWidget);
 <a name="l00041"></a>00041     connect(pasDiscrTetaWidget,SIGNAL(valueChanged(<span class="keywordtype">int</span>)),champ,SLOT(SetPasDiscrTeta(<span class="keywordtype">int</span>)));
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043     QSpinBox * pasDiscrPhiWidget = <span class="keyword">new</span> QSpinBox();
+<a name="l00043"></a>00043     pasDiscrPhiWidget = <span class="keyword">new</span> QSpinBox();
 <a name="l00044"></a>00044     layout-&gt;addRow(<span class="stringliteral">&quot;Pas Discr Phi:&quot;</span>,pasDiscrPhiWidget);
 <a name="l00045"></a>00045     connect(pasDiscrPhiWidget,SIGNAL(valueChanged(<span class="keywordtype">int</span>)),champ,SLOT(SetPasDiscrPhi(<span class="keywordtype">int</span>)));
 <a name="l00046"></a>00046 
@@ -135,6 +135,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00054"></a>00054     setLayout(layoutPrincipal);
 <a name="l00055"></a>00055 
 <a name="l00056"></a>00056 }
+<a name="l00057"></a>00057 
+<a name="l00058"></a><a class="code" href="class_form_champ_lointain.html#a75626d0984919625989ce0506eccf330">00058</a> <span class="keywordtype">void</span> <a class="code" href="class_form_champ_lointain.html#a75626d0984919625989ce0506eccf330">FormChampLointain::init</a>()
+<a name="l00059"></a>00059 {
+<a name="l00060"></a>00060     origineRepereWidget-&gt;<a class="code" href="class_form_coordonnees.html#a8a37a10a26f8552dd2cf818c011b85f8">setCoordonnee</a>(champ-&gt;<a class="code" href="classchamp_lointain.html#a06b9e21f2a65e1b722cf7f86ad76ea3a">GetOrigineRepere</a>());
+<a name="l00061"></a>00061     connect(origineRepereWidget,SIGNAL(coordonneeChanged(<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>)),champ,SLOT(SetOrigineRepere(<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>)));
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063     frequenceMinWidget-&gt;setValue(champ-&gt;<a class="code" href="classchamp_lointain.html#a355d666e8667621c823d9e4187593f3d">GetFrequenceMin</a>());
+<a name="l00064"></a>00064     connect(frequenceMinWidget,SIGNAL(valueChanged(<span class="keywordtype">double</span>)),champ,SLOT(SetFrequenceMin(<span class="keywordtype">double</span>)));
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066     frequenceMaxWidget-&gt;setValue(champ-&gt;<a class="code" href="classchamp_lointain.html#ad66d3c22428a8cfdd5e50aa62749eef6">GetFrequenceMax</a>());
+<a name="l00067"></a>00067     connect(frequenceMaxWidget,SIGNAL(valueChanged(<span class="keywordtype">double</span>)),champ,SLOT(SetFrequenceMax(<span class="keywordtype">double</span>)));
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069     frequencePasWidget-&gt;setValue(champ-&gt;<a class="code" href="classchamp_lointain.html#a802785cd654c9d86088dc3f1d20b85e1">GetPasFrequence</a>());
+<a name="l00070"></a>00070     connect(frequencePasWidget,SIGNAL(valueChanged(<span class="keywordtype">double</span>)),champ,SLOT(SetPasFrequence(<span class="keywordtype">double</span>)));
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072     calculImageWidget-&gt;setChecked(champ-&gt;<a class="code" href="classchamp_lointain.html#ae9f14904151d87b8f358c3b1346aea62">IsCalculImage</a>());
+<a name="l00073"></a>00073     connect(calculImageWidget,SIGNAL(clicked(<span class="keywordtype">bool</span>)),champ,SLOT(SetCalculImage(<span class="keywordtype">bool</span>)));
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075     hauteurPlanMasseWidget-&gt;setValue(champ-&gt;<a class="code" href="classchamp_lointain.html#aa02862ad5d06c13469c8b62f72640767">GetHauteurPlanMasse</a>());
+<a name="l00076"></a>00076     connect(hauteurPlanMasseWidget,SIGNAL(valueChanged(<span class="keywordtype">int</span>)),champ,SLOT(SetHauteurPlanMasse(<span class="keywordtype">int</span>)));
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078     pasDiscrPhiWidget-&gt;setValue(champ-&gt;<a class="code" href="classchamp_lointain.html#a13c9916177ab3a7f6e5cb77f7155e469">GetPasDiscrPhi</a>());
+<a name="l00079"></a>00079     connect(pasDiscrTetaWidget,SIGNAL(valueChanged(<span class="keywordtype">int</span>)),champ,SLOT(SetPasDiscrTeta(<span class="keywordtype">int</span>)));
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081     pasDiscrTetaWidget-&gt;setValue(champ-&gt;<a class="code" href="classchamp_lointain.html#a69f38b54826d60a243da5880b6a5286d">GetPasDiscrTeta</a>());
+<a name="l00082"></a>00082     connect(pasDiscrPhiWidget,SIGNAL(valueChanged(<span class="keywordtype">int</span>)),champ,SLOT(SetPasDiscrPhi(<span class="keywordtype">int</span>)));
+<a name="l00083"></a>00083 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -153,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

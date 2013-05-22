@@ -10,7 +10,9 @@
 
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable calculDirectivite d'une simulation
+ */
 class calculDirectivite : public blocConfiguration{
     Q_OBJECT
 public:

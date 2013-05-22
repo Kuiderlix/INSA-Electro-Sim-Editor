@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/TableViewCartTempo.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/TableViewCartTempo.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -81,10 +81,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_table_view_cart_tempo_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="_table_view_cart_tempo_8h.html">TableViewCartTempo.h</a>&quot;</span>
 <a name="l00002"></a>00002 
-<a name="l00003"></a><a class="code" href="class_table_view_cart_tempo.html#a88542b59936dc11d0d165f65f5237799">00003</a> <a class="code" href="class_table_view_cart_tempo.html#a88542b59936dc11d0d165f65f5237799">TableViewCartTempo::TableViewCartTempo</a>(<a class="code" href="classbloc_cartographie_temporelle.html">blocCartographieTemporelle</a> *bloc,QWidget *parent) :
+<a name="l00003"></a><a class="code" href="class_table_view_cart_tempo.html#a88542b59936dc11d0d165f65f5237799">00003</a> <a class="code" href="class_table_view_cart_tempo.html#a88542b59936dc11d0d165f65f5237799">TableViewCartTempo::TableViewCartTempo</a>(<a class="code" href="classbloc_cartographie_temporelle.html" title="Cette classe représente une liste de cartographieTemporelle.">blocCartographieTemporelle</a> *bloc,QWidget *parent) :
 <a name="l00004"></a>00004     <a class="code" href="class_table_view.html" title="Cette classe sert de vue de base pour les tableaux de données. Elle affiche les données contenu dans ...">TableView</a>(parent)
 <a name="l00005"></a>00005 {
-<a name="l00006"></a>00006     <a class="code" href="class_my_sort_filter_proxy_model.html">MySortFilterProxyModel</a> * proxyModel = <span class="keyword">new</span> <a class="code" href="class_my_sort_filter_proxy_model.html">MySortFilterProxyModel</a>(<span class="keyword">this</span>);
+<a name="l00006"></a>00006     <a class="code" href="class_my_sort_filter_proxy_model.html" title="Cette classe permet de personnalisé le tri et le filtrage dans les listes.">MySortFilterProxyModel</a> * proxyModel = <span class="keyword">new</span> <a class="code" href="class_my_sort_filter_proxy_model.html" title="Cette classe permet de personnalisé le tri et le filtrage dans les listes.">MySortFilterProxyModel</a>(<span class="keyword">this</span>);
 <a name="l00007"></a>00007     proxyModel-&gt;setSourceModel(<span class="keyword">new</span> <a class="code" href="class_table_model_carto_tempo.html">TableModelCartoTempo</a>(bloc));
 <a name="l00008"></a>00008     this-&gt;setModel(proxyModel);
 <a name="l00009"></a>00009     this-&gt;setItemDelegateForColumn(<a class="code" href="class_table_model_carto_tempo.html#ad1b34723a7382f28d5f2ee4de9bb4863ac08d6aef2423354a609c4a8a4c312575">TableModelCartoTempo::AvantGauche</a>,<span class="keyword">new</span> <a class="code" href="class_coordonnee_delegate.html" title="Cette classe permet de personnalisé l&#39;éditeur d&#39;un tableau pour une certaines colonnes. Elle fourni un éditeur pour modifier une coordonnees. Cette éditeur est en faite un FormCoordonnees.">CoordonneeDelegate</a>());
@@ -94,8 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a>00013 
 <a name="l00014"></a><a class="code" href="class_table_view_cart_tempo.html#aa960896b77de4620668413b88aa60de1">00014</a> <span class="keywordtype">void</span> <a class="code" href="class_table_view_cart_tempo.html#aa960896b77de4620668413b88aa60de1" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont...">TableViewCartTempo::addNewElement</a>()
 <a name="l00015"></a>00015 {
-<a name="l00016"></a>00016     <a class="code" href="class_form_cartographie_temporelle.html">FormCartographieTemporelle</a> * form = <span class="keyword">new</span> <a class="code" href="class_form_cartographie_temporelle.html">FormCartographieTemporelle</a>(<span class="keyword">new</span> <a class="code" href="classcartographie_temporelle.html">cartographieTemporelle</a>,<a class="code" href="class_form_element_base.html#a407b9c360b109a4948af0965cbb4c9ab">FormCartographieTemporelle::NOUVEAU</a>);
-<a name="l00017"></a>00017     connect(form,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),((<a class="code" href="class_table_model.html" title="Cette classe sert de model de base pour les éléments des tableaux.">TableModel</a>*)((<a class="code" href="class_my_sort_filter_proxy_model.html">MySortFilterProxyModel</a>*)this-&gt;model())-&gt;sourceModel()),SLOT(<a class="code" href="class_table_view.html#ae8e2fcfd6769e96634180f82d7d65ccb" title="Ajoute un élément au model.">addElement</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00016"></a>00016     <a class="code" href="class_form_cartographie_temporelle.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet cartographieTemporelle dans la scène 3D...">FormCartographieTemporelle</a> * form = <span class="keyword">new</span> <a class="code" href="class_form_cartographie_temporelle.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet cartographieTemporelle dans la scène 3D...">FormCartographieTemporelle</a>(<span class="keyword">new</span> <a class="code" href="classcartographie_temporelle.html" title="Cette classe représente la variable cartographieTemporelle d&#39;une simulation.">cartographieTemporelle</a>);
+<a name="l00017"></a>00017     connect(form,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),((<a class="code" href="class_table_model.html" title="Cette classe sert de model de base pour les éléments des tableaux.">TableModel</a>*)((<a class="code" href="class_my_sort_filter_proxy_model.html" title="Cette classe permet de personnalisé le tri et le filtrage dans les listes.">MySortFilterProxyModel</a>*)this-&gt;model())-&gt;sourceModel()),SLOT(<a class="code" href="class_table_view.html#ae8e2fcfd6769e96634180f82d7d65ccb" title="Ajoute un élément au model.">addElement</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)));
 <a name="l00018"></a>00018     connect(form,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),form,SLOT(accept()));
 <a name="l00019"></a>00019     form-&gt;exec();
 <a name="l00020"></a>00020 }
@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

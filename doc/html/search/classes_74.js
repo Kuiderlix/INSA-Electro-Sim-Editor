@@ -15,5 +15,6 @@ var searchData=
   ['tableviewparallelepipede',['TableViewParallelepipede',['../class_table_view_parallelepipede.html',1,'']]],
   ['tableviewportexcitation',['TableViewPortExcitation',['../class_table_view_port_excitation.html',1,'']]],
   ['tableviewsonde',['TableViewSonde',['../class_table_view_sonde.html',1,'']]],
-  ['tableviewsurfaceprelev',['TableViewSurfacePrelev',['../class_table_view_surface_prelev.html',1,'']]]
+  ['tableviewsurfaceprelev',['TableViewSurfacePrelev',['../class_table_view_surface_prelev.html',1,'']]],
+  ['toolboxwidget',['ToolBoxWidget',['../class_tool_box_widget.html',1,'']]]
 ];

@@ -10,6 +10,10 @@
 #include <QVariant>
 #include <QString>
 
+/**
+ * @brief Cette classe représente une coordonnee en 3 dimensions.
+ * Elle sert d'unité de position dans la scène 3D.
+ */
 class coordonnee {
 public:
     coordonnee();

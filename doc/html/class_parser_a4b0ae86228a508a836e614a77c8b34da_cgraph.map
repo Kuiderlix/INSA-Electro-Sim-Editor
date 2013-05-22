@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_data.html#adef5a353076143ac15f0a6e45346d756" title="Data::getBlocSurfacePrelev" alt="" coords="184,5,368,35"/>
-<area shape="rect" id="node5" href="$class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste." alt="" coords="168,59,384,88"/>
-<area shape="rect" id="node7" href="$classbloc_surface_prelevement.html#af4e671e4078bebde10ab1d05bc621c12" title="blocSurfacePrelevement::GetSurface" alt="" coords="157,112,395,141"/>
-<area shape="rect" id="node9" href="$classsurface_prelevement.html#a21255a16dcb21a9b1b977f3a5eda7e68" title="surfacePrelevement::GetTypeSurface" alt="" coords="156,165,396,195"/>
-</map>

@@ -11,7 +11,9 @@
 #include "surfacePrelevement.h"
 #include "BlocElementBase.h"
 
-
+/**
+ * @brief Cette classe représente une liste de surfacePrelevement
+ */
 class blocSurfacePrelevement : public BlocElementBase{
 public:
     blocSurfacePrelevement();

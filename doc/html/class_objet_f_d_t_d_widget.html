@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: ObjetFDTDWidget Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: ObjetFDTDWidget Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,8 +85,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ObjetFDTDWidget Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ObjetFDTDWidget" -->
+<!-- doxytag: class="ObjetFDTDWidget" --><!-- doxytag: inherits="ToolBoxWidget" -->
+<p>Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur des autres formulaire de la meme catégorie.  
+ <a href="class_objet_f_d_t_d_widget.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_objet_f_d_t_d_widget_8h_source.html">ObjetFDTDWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ObjetFDTDWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_objet_f_d_t_d_widget__inherit__graph.png" border="0" usemap="#_objet_f_d_t_d_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="_objet_f_d_t_d_widget_inherit__map" id="_objet_f_d_t_d_widget_inherit__map">
+<area shape="rect" id="node2" href="class_tool_box_widget.html" title="Classe de base pour les widgets conteneurs de la ToolBox." alt="" coords="16,5,125,35"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ObjetFDTDWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_objet_f_d_t_d_widget__coll__graph.png" border="0" usemap="#_objet_f_d_t_d_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="_objet_f_d_t_d_widget_coll__map" id="_objet_f_d_t_d_widget_coll__map">
+<area shape="rect" id="node2" href="class_tool_box_widget.html" title="Classe de base pour les widgets conteneurs de la ToolBox." alt="" coords="16,101,125,131"/><area shape="rect" id="node4" href="class_data.html" title="Contient toutes les données utiles pour la simulation." alt="" coords="45,5,96,35"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_objet_f_d_t_d_widget-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -97,15 +114,16 @@ Public Slots</h2></td></tr>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet_f_d_t_d_widget.html#a90c9fe930d600a4762e4d3590b04294b">newSondeCreated</a> (<a class="el" href="classelement_base.html">elementBase</a> *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet_f_d_t_d_widget.html#a412e2dc675ff994c5d9d486e5ea7364b">newSurfacePrelCreated</a> (<a class="el" href="classelement_base.html">elementBase</a> *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet_f_d_t_d_widget.html#abf25ce9ff26463a3edc069884301cde1">newCageExcitationCreated</a> (<a class="el" href="classelement_base.html">elementBase</a> *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet_f_d_t_d_widget.html#ae88fdb149c811d61191ac0fa3df749d7">newCartoTempoCreated</a> (<a class="el" href="classelement_base.html">elementBase</a> *)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet_f_d_t_d_widget.html#a2041d1eceff08563fba8f9a72194cf4a">ObjetFDTDWidget</a> (<a class="el" href="class_data.html">Data</a> *data, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet_f_d_t_d_widget.html#a2041d1eceff08563fba8f9a72194cf4a">ObjetFDTDWidget</a> (<a class="el" href="class_data.html">Data</a> *<a class="el" href="class_tool_box_widget.html#ac2ee04ba2afd2ce91d0d95c30519e586">data</a>, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_objet_f_d_t_d_widget.html#a22ee11105e74a0564d79b3cc763c6cfd">init</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_objet_f_d_t_d_widget_8h_source.html#l00011">11</a> of file <a class="el" href="_objet_f_d_t_d_widget_8h_source.html">ObjetFDTDWidget.h</a>.</p>
+<div class="textblock"><p>Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur des autres formulaire de la meme catégorie. </p>
+
+<p>Definition at line <a class="el" href="_objet_f_d_t_d_widget_8h_source.html#l00015">15</a> of file <a class="el" href="_objet_f_d_t_d_widget_8h_source.html">ObjetFDTDWidget.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2041d1eceff08563fba8f9a72194cf4a"></a><!-- doxytag: member="ObjetFDTDWidget::ObjetFDTDWidget" ref="a2041d1eceff08563fba8f9a72194cf4a" args="(Data *data, QWidget *parent=0)" -->
 <div class="memitem">
@@ -134,41 +152,26 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_objet_f_d_t_d_widget_8cpp_source.html#l00003">3</a> of file <a class="el" href="_objet_f_d_t_d_widget_8cpp_source.html">ObjetFDTDWidget.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_objet_f_d_t_d_widget_a2041d1eceff08563fba8f9a72194cf4a_cgraph.png" border="0" usemap="#class_objet_f_d_t_d_widget_a2041d1eceff08563fba8f9a72194cf4a_cgraph" alt=""/></div>
-<map name="class_objet_f_d_t_d_widget_a2041d1eceff08563fba8f9a72194cf4a_cgraph" id="class_objet_f_d_t_d_widget_a2041d1eceff08563fba8f9a72194cf4a_cgraph">
-<area shape="rect" id="node3" href="class_data.html#aa5816e4319d30f4abbb3679318ac6144" title="Data::getCageExcitation" alt="" coords="368,5,533,35"/><area shape="rect" id="node5" href="class_objet_f_d_t_d_widget.html#abf25ce9ff26463a3edc069884301cde1" title="ObjetFDTDWidget::newCageExcitationCreated" alt="" coords="303,59,599,88"/><area shape="rect" id="node7" href="class_objet_f_d_t_d_widget.html#a412e2dc675ff994c5d9d486e5ea7364b" title="ObjetFDTDWidget::newSurfacePrelCreated" alt="" coords="313,112,588,141"/><area shape="rect" id="node9" href="class_objet_f_d_t_d_widget.html#a90c9fe930d600a4762e4d3590b04294b" title="ObjetFDTDWidget::newSondeCreated" alt="" coords="328,165,573,195"/><area shape="rect" id="node11" href="class_objet_f_d_t_d_widget.html#af3b85471ec89217e2e64017e3c8c5474" title="ObjetFDTDWidget::openCartoTempoWindows" alt="" coords="305,219,596,248"/><area shape="rect" id="node13" href="class_objet_f_d_t_d_widget.html#ae88fdb149c811d61191ac0fa3df749d7" title="ObjetFDTDWidget::newCartoTempoCreated" alt="" coords="648,219,928,248"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="abf25ce9ff26463a3edc069884301cde1"></a><!-- doxytag: member="ObjetFDTDWidget::newCageExcitationCreated" ref="abf25ce9ff26463a3edc069884301cde1" args="(elementBase *)" -->
+<a class="anchor" id="a22ee11105e74a0564d79b3cc763c6cfd"></a><!-- doxytag: member="ObjetFDTDWidget::init" ref="a22ee11105e74a0564d79b3cc763c6cfd" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_objet_f_d_t_d_widget.html#abf25ce9ff26463a3edc069884301cde1">ObjetFDTDWidget::newCageExcitationCreated</a> </td>
+          <td class="memname">void <a class="el" href="class_objet_f_d_t_d_widget.html#a22ee11105e74a0564d79b3cc763c6cfd">ObjetFDTDWidget::init</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classelement_base.html">elementBase</a> *&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [signal]</code></td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_objet_f_d_t_d_widget_abf25ce9ff26463a3edc069884301cde1_icgraph.png" border="0" usemap="#class_objet_f_d_t_d_widget_abf25ce9ff26463a3edc069884301cde1_icgraph" alt=""/></div>
-<map name="class_objet_f_d_t_d_widget_abf25ce9ff26463a3edc069884301cde1_icgraph" id="class_objet_f_d_t_d_widget_abf25ce9ff26463a3edc069884301cde1_icgraph">
-<area shape="rect" id="node3" href="class_objet_f_d_t_d_widget.html#a2041d1eceff08563fba8f9a72194cf4a" title="ObjetFDTDWidget::ObjetFDTDWidget" alt="" coords="353,5,599,35"/></map>
-</div>
-</p>
+<p>Implements <a class="el" href="class_tool_box_widget.html#aa43ef2f3ba3e32674be18d0f995676d1">ToolBoxWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="_objet_f_d_t_d_widget_8cpp_source.html#l00042">42</a> of file <a class="el" href="_objet_f_d_t_d_widget_8cpp_source.html">ObjetFDTDWidget.cpp</a>.</p>
 
 </div>
 </div>
@@ -187,15 +190,6 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_objet_f_d_t_d_widget_ae88fdb149c811d61191ac0fa3df749d7_icgraph.png" border="0" usemap="#class_objet_f_d_t_d_widget_ae88fdb149c811d61191ac0fa3df749d7_icgraph" alt=""/></div>
-<map name="class_objet_f_d_t_d_widget_ae88fdb149c811d61191ac0fa3df749d7_icgraph" id="class_objet_f_d_t_d_widget_ae88fdb149c811d61191ac0fa3df749d7_icgraph">
-<area shape="rect" id="node3" href="class_objet_f_d_t_d_widget.html#af3b85471ec89217e2e64017e3c8c5474" title="ObjetFDTDWidget::openCartoTempoWindows" alt="" coords="335,5,625,35"/><area shape="rect" id="node5" href="class_objet_f_d_t_d_widget.html#a2041d1eceff08563fba8f9a72194cf4a" title="ObjetFDTDWidget::ObjetFDTDWidget" alt="" coords="676,5,921,35"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a90c9fe930d600a4762e4d3590b04294b"></a><!-- doxytag: member="ObjetFDTDWidget::newSondeCreated" ref="a90c9fe930d600a4762e4d3590b04294b" args="(elementBase *)" -->
@@ -212,15 +206,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div>
 <div class="memdoc">
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_objet_f_d_t_d_widget_a90c9fe930d600a4762e4d3590b04294b_icgraph.png" border="0" usemap="#class_objet_f_d_t_d_widget_a90c9fe930d600a4762e4d3590b04294b_icgraph" alt=""/></div>
-<map name="class_objet_f_d_t_d_widget_a90c9fe930d600a4762e4d3590b04294b_icgraph" id="class_objet_f_d_t_d_widget_a90c9fe930d600a4762e4d3590b04294b_icgraph">
-<area shape="rect" id="node3" href="class_objet_f_d_t_d_widget.html#a2041d1eceff08563fba8f9a72194cf4a" title="ObjetFDTDWidget::ObjetFDTDWidget" alt="" coords="300,5,545,35"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -239,15 +224,6 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_objet_f_d_t_d_widget_a412e2dc675ff994c5d9d486e5ea7364b_icgraph.png" border="0" usemap="#class_objet_f_d_t_d_widget_a412e2dc675ff994c5d9d486e5ea7364b_icgraph" alt=""/></div>
-<map name="class_objet_f_d_t_d_widget_a412e2dc675ff994c5d9d486e5ea7364b_icgraph" id="class_objet_f_d_t_d_widget_a412e2dc675ff994c5d9d486e5ea7364b_icgraph">
-<area shape="rect" id="node3" href="class_objet_f_d_t_d_widget.html#a2041d1eceff08563fba8f9a72194cf4a" title="ObjetFDTDWidget::ObjetFDTDWidget" alt="" coords="332,5,577,35"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="af3b85471ec89217e2e64017e3c8c5474"></a><!-- doxytag: member="ObjetFDTDWidget::openCartoTempoWindows" ref="af3b85471ec89217e2e64017e3c8c5474" args="()" -->
@@ -264,25 +240,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_objet_f_d_t_d_widget_8cpp_source.html#l00044">44</a> of file <a class="el" href="_objet_f_d_t_d_widget_8cpp_source.html">ObjetFDTDWidget.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_objet_f_d_t_d_widget_af3b85471ec89217e2e64017e3c8c5474_cgraph.png" border="0" usemap="#class_objet_f_d_t_d_widget_af3b85471ec89217e2e64017e3c8c5474_cgraph" alt=""/></div>
-<map name="class_objet_f_d_t_d_widget_af3b85471ec89217e2e64017e3c8c5474_cgraph" id="class_objet_f_d_t_d_widget_af3b85471ec89217e2e64017e3c8c5474_cgraph">
-<area shape="rect" id="node3" href="class_objet_f_d_t_d_widget.html#ae88fdb149c811d61191ac0fa3df749d7" title="ObjetFDTDWidget::newCartoTempoCreated" alt="" coords="347,5,627,35"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_objet_f_d_t_d_widget_af3b85471ec89217e2e64017e3c8c5474_icgraph.png" border="0" usemap="#class_objet_f_d_t_d_widget_af3b85471ec89217e2e64017e3c8c5474_icgraph" alt=""/></div>
-<map name="class_objet_f_d_t_d_widget_af3b85471ec89217e2e64017e3c8c5474_icgraph" id="class_objet_f_d_t_d_widget_af3b85471ec89217e2e64017e3c8c5474_icgraph">
-<area shape="rect" id="node3" href="class_objet_f_d_t_d_widget.html#a2041d1eceff08563fba8f9a72194cf4a" title="ObjetFDTDWidget::ObjetFDTDWidget" alt="" coords="348,5,593,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="_objet_f_d_t_d_widget_8cpp_source.html#l00047">47</a> of file <a class="el" href="_objet_f_d_t_d_widget_8cpp_source.html">ObjetFDTDWidget.cpp</a>.</p>
 
 </div>
 </div>
@@ -308,7 +266,7 @@ Here is the caller graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

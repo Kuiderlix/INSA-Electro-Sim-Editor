@@ -4,6 +4,9 @@
 #include <QtWidgets>
 #include "formatStockage.h"
 
+/**
+ * @brief Cette classe fournit un formulaire pour modifier l'objet formatStockage
+ */
 class FormFormatStockage : public QWidget
 {
     Q_OBJECT

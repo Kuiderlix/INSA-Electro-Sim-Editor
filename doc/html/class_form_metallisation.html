@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: FormMetallisation Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: FormMetallisation Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,20 +85,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="FormMetallisation" --><!-- doxytag: inherits="FormElementBase" -->
+<p>Formulaire permettant d'ajouter un nouvelle objet metallisation dans la scène 3D.  
+ <a href="class_form_metallisation.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_form_metallisation_8h_source.html">FormMetallisation.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for FormMetallisation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_form_metallisation__inherit__graph.png" border="0" usemap="#_form_metallisation_inherit__map" alt="Inheritance graph"/></div>
 <map name="_form_metallisation_inherit__map" id="_form_metallisation_inherit__map">
-<area shape="rect" id="node2" href="class_form_element_base.html" title="FormElementBase" alt="" coords="5,5,136,35"/></map>
+<area shape="rect" id="node2" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase." alt="" coords="5,5,136,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for FormMetallisation:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_form_metallisation__coll__graph.png" border="0" usemap="#_form_metallisation_coll__map" alt="Collaboration graph"/></div>
 <map name="_form_metallisation_coll__map" id="_form_metallisation_coll__map">
-<area shape="rect" id="node2" href="class_form_element_base.html" title="FormElementBase" alt="" coords="5,117,136,147"/><area shape="rect" id="node4" href="class_form_coordonnees.html" title="FormCoordonnees" alt="" coords="7,5,135,35"/></map>
+<area shape="rect" id="node2" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase." alt="" coords="52,117,183,147"/><area shape="rect" id="node4" href="class_color_picker.html" title="Cette classe est un widget sous forme de bouton qui permet de sélectionner une couleur dans une boite..." alt="" coords="5,5,96,35"/><area shape="rect" id="node6" href="class_form_coordonnees.html" title="Cette classe fournit un widget pour modifier l&#39;objet coordonnee." alt="" coords="120,5,248,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_form_metallisation-members.html">List of all members.</a></p>
@@ -106,31 +109,28 @@ Collaboration diagram for FormMetallisation:</div>
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_metallisation.html#a27b0d969ccdbfe5838183031c19f5ffa">valider</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l'<a class="el" href="classelement_base.html" title="The elementBase class.">elementBase</a> et émet le signal <a class="el" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="Ce signal est émis quand le bouton valider est pressé. Cela signifie que l&#39;elementBase a bien était m...">elementValide(elementBase *)</a>.  <a href="#a27b0d969ccdbfe5838183031c19f5ffa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_metallisation.html#ab406e97059f8f5e37db30dc164a5fade">reset</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Place des valeurs par défaut dans le formulaire.  <a href="#ab406e97059f8f5e37db30dc164a5fade"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_metallisation.html#a20eda13bf3097047b6b19b7d67130e1c">FormMetallisation</a> (<a class="el" href="classmetallisation.html">metallisation</a> *metal, int mode, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_metallisation.html#a03b771f84f938a1290ec3b892bfb8678">FormMetallisation</a> (<a class="el" href="classmetallisation.html">metallisation</a> *metal, QWidget *parent=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmetallisation.html">metallisation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_metallisation.html#a79f344fdd9100dc451bf46470a5933a7">getMetallisation</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_form_metallisation_8h_source.html#l00008">8</a> of file <a class="el" href="_form_metallisation_8h_source.html">FormMetallisation.h</a>.</p>
+<div class="textblock"><p>Formulaire permettant d'ajouter un nouvelle objet metallisation dans la scène 3D. </p>
+
+<p>Definition at line <a class="el" href="_form_metallisation_8h_source.html#l00011">11</a> of file <a class="el" href="_form_metallisation_8h_source.html">FormMetallisation.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a20eda13bf3097047b6b19b7d67130e1c"></a><!-- doxytag: member="FormMetallisation::FormMetallisation" ref="a20eda13bf3097047b6b19b7d67130e1c" args="(metallisation *metal, int mode, QWidget *parent=0)" -->
+<a class="anchor" id="a03b771f84f938a1290ec3b892bfb8678"></a><!-- doxytag: member="FormMetallisation::FormMetallisation" ref="a03b771f84f938a1290ec3b892bfb8678" args="(metallisation *metal, QWidget *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form_metallisation.html#a20eda13bf3097047b6b19b7d67130e1c">FormMetallisation::FormMetallisation</a> </td>
+          <td class="memname"><a class="el" href="class_form_metallisation.html#a03b771f84f938a1290ec3b892bfb8678">FormMetallisation::FormMetallisation</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classmetallisation.html">metallisation</a> *&#160;</td>
           <td class="paramname"><em>metal</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -148,15 +148,6 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="_form_metallisation_8cpp_source.html#l00003">3</a> of file <a class="el" href="_form_metallisation_8cpp_source.html">FormMetallisation.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_metallisation_a20eda13bf3097047b6b19b7d67130e1c_cgraph.png" border="0" usemap="#class_form_metallisation_a20eda13bf3097047b6b19b7d67130e1c_cgraph" alt=""/></div>
-<map name="class_form_metallisation_a20eda13bf3097047b6b19b7d67130e1c_cgraph" id="class_form_metallisation_a20eda13bf3097047b6b19b7d67130e1c_cgraph">
-<area shape="rect" id="node3" href="class_form_element_base.html#a10b8d2ffbc930360abdf6edc9d87f206" title="FormElementBase::getWidgetElementBase" alt="" coords="291,59,565,88"/><area shape="rect" id="node5" href="classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="615,5,820,35"/><area shape="rect" id="node7" href="classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="621,59,813,88"/><area shape="rect" id="node9" href="class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473" title="FormElementBase::valider" alt="" coords="629,112,805,141"/><area shape="rect" id="node11" href="classelement_base.html#a230935c8e0e713878651c9f6877bc5db" title="elementBase::SetAvantGauche" alt="" coords="869,59,1075,88"/><area shape="rect" id="node13" href="class_form_coordonnees.html#a9f4cdc23ad453c0d8249aaf72f1832d0" title="FormCoordonnees::getCoord" alt="" coords="877,112,1067,141"/><area shape="rect" id="node15" href="classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5" title="elementBase::SetArriereDroit" alt="" coords="876,165,1068,195"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -191,18 +182,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
+<p>Place des valeurs par défaut dans le formulaire. </p>
+
 <p>Reimplemented from <a class="el" href="class_form_element_base.html#aadcbfd4f27ca45f6329d0ff5b1608d82">FormElementBase</a>.</p>
 
 <p>Definition at line <a class="el" href="_form_metallisation_8cpp_source.html#l00039">39</a> of file <a class="el" href="_form_metallisation_8cpp_source.html">FormMetallisation.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_metallisation_ab406e97059f8f5e37db30dc164a5fade_cgraph.png" border="0" usemap="#class_form_metallisation_ab406e97059f8f5e37db30dc164a5fade_cgraph" alt=""/></div>
-<map name="class_form_metallisation_ab406e97059f8f5e37db30dc164a5fade_cgraph" id="class_form_metallisation_ab406e97059f8f5e37db30dc164a5fade_cgraph">
-<area shape="rect" id="node3" href="class_form_element_base.html#a0fc624d18ff6d8780f715a52a2f184f1" title="FormElementBase::setElement" alt="" coords="217,5,420,35"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -220,18 +204,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
+<p>Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l'<a class="el" href="classelement_base.html" title="The elementBase class.">elementBase</a> et émet le signal <a class="el" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="Ce signal est émis quand le bouton valider est pressé. Cela signifie que l&#39;elementBase a bien était m...">elementValide(elementBase *)</a>. </p>
+
 <p>Reimplemented from <a class="el" href="class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473">FormElementBase</a>.</p>
 
 <p>Definition at line <a class="el" href="_form_metallisation_8cpp_source.html#l00032">32</a> of file <a class="el" href="_form_metallisation_8cpp_source.html">FormMetallisation.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_metallisation_a27b0d969ccdbfe5838183031c19f5ffa_cgraph.png" border="0" usemap="#class_form_metallisation_a27b0d969ccdbfe5838183031c19f5ffa_cgraph" alt=""/></div>
-<map name="class_form_metallisation_a27b0d969ccdbfe5838183031c19f5ffa_cgraph" id="class_form_metallisation_a27b0d969ccdbfe5838183031c19f5ffa_cgraph">
-<area shape="rect" id="node3" href="classmetallisation.html#a48670fbbf60460df7abc88b2e8a34ef8" title="metallisation::SetConductivite" alt="" coords="237,5,432,35"/><area shape="rect" id="node5" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="FormElementBase::elementValide" alt="" coords="225,59,444,88"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -257,7 +234,7 @@ Here is the call graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

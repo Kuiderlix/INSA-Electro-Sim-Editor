@@ -3,6 +3,10 @@
 
 #include <QtWidgets>
 #include "volumeCalcul.h"
+
+/**
+ * @brief Cette classe fournit un formulaire pour modifier l'objet volumeCalcul
+ */
 class FormVolumeCalcul : public QWidget
 {
     Q_OBJECT

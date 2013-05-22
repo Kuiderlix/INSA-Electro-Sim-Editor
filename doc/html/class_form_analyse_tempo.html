@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: FormAnalyseTempo Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: FormAnalyseTempo Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -94,10 +94,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_analyse_tempo.html#a0a008d751dbcd2f1757ef7d943ebb973">FormAnalyseTempo</a> (<a class="el" href="classanalyse_temporelle.html">analyseTemporelle</a> *anaTempo, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_analyse_tempo.html#aeae505cd89fe04c5be6c22140385a3c6">setAnalyseTempo</a> (<a class="el" href="classanalyse_temporelle.html">analyseTemporelle</a> *temp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_analyse_tempo.html#a51e1de72be7a7d87f49fe813a9433b3d">init</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_form_analyse_tempo.html" title="The FormAnalyseTempo class.">FormAnalyseTempo</a> class. </p>
-<p><a class="el" href="class_formulaire.html">Formulaire</a> de modification de l'objet <a class="el" href="classanalyse_temporelle.html">analyseTemporelle</a> </p>
+<p>Formulaire de modification de l'objet <a class="el" href="classanalyse_temporelle.html" title="Cette classe représente la variable analyseTemporelle d&#39;une simulation.">analyseTemporelle</a> </p>
 
 <p>Definition at line <a class="el" href="_form_analyse_tempo_8h_source.html#l00011">11</a> of file <a class="el" href="_form_analyse_tempo_8h_source.html">FormAnalyseTempo.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -128,14 +130,43 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_form_analyse_tempo_8cpp_source.html#l00003">3</a> of file <a class="el" href="_form_analyse_tempo_8cpp_source.html">FormAnalyseTempo.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_analyse_tempo_a0a008d751dbcd2f1757ef7d943ebb973_cgraph.png" border="0" usemap="#class_form_analyse_tempo_a0a008d751dbcd2f1757ef7d943ebb973_cgraph" alt=""/></div>
-<map name="class_form_analyse_tempo_a0a008d751dbcd2f1757ef7d943ebb973_cgraph" id="class_form_analyse_tempo_a0a008d751dbcd2f1757ef7d943ebb973_cgraph">
-<area shape="rect" id="node3" href="classanalyse_temporelle.html#a1f5f5fd4c4dd1996c3e62b0483be68c5" title="analyseTemporelle::GetPeriode" alt="" coords="319,5,521,35"/><area shape="rect" id="node5" href="classanalyse_temporelle.html#ab968cf7c2da79b012e1251a1c05ed724" title="analyseTemporelle::GetTemps" alt="" coords="320,59,520,88"/></map>
 </div>
-</p>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a51e1de72be7a7d87f49fe813a9433b3d"></a><!-- doxytag: member="FormAnalyseTempo::init" ref="a51e1de72be7a7d87f49fe813a9433b3d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_form_analyse_tempo.html#a51e1de72be7a7d87f49fe813a9433b3d">FormAnalyseTempo::init</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_form_analyse_tempo_8cpp_source.html#l00031">31</a> of file <a class="el" href="_form_analyse_tempo_8cpp_source.html">FormAnalyseTempo.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeae505cd89fe04c5be6c22140385a3c6"></a><!-- doxytag: member="FormAnalyseTempo::setAnalyseTempo" ref="aeae505cd89fe04c5be6c22140385a3c6" args="(analyseTemporelle *temp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_form_analyse_tempo.html#aeae505cd89fe04c5be6c22140385a3c6">FormAnalyseTempo::setAnalyseTempo</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classanalyse_temporelle.html">analyseTemporelle</a> *&#160;</td>
+          <td class="paramname"><em>temp</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_form_analyse_tempo_8h_source.html#l00016">16</a> of file <a class="el" href="_form_analyse_tempo_8h_source.html">FormAnalyseTempo.h</a>.</p>
 
 </div>
 </div>
@@ -161,7 +192,7 @@ Here is the call graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

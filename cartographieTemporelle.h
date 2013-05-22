@@ -10,7 +10,9 @@
 
 #include "elementBase.h"
 
-
+/**
+ * @brief Cette classe représente la variable cartographieTemporelle d'une simulation
+ */
 class cartographieTemporelle : public elementBase{
 public:
     cartographieTemporelle();

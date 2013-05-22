@@ -8,6 +8,10 @@
 #include "FormPML.h"
 #include "ToolBoxWidget.h"
 
+/**
+ * @brief Cette classe représente un widget qui se trouve dans la toolbox.
+ * Il agit en faite comme un conteneur des autres formulaire de la meme catégorie.
+ */
 class ParamAvanceWidget : public ToolBoxWidget
 {
     Q_OBJECT

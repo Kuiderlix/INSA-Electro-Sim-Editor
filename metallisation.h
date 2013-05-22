@@ -12,7 +12,9 @@
 #include "elementBase.h"
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable metallisation d'une simulation
+ */
 class metallisation : public elementBase{
 public:
     metallisation();

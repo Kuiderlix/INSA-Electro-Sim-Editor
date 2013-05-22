@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: FormPML Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: FormPML Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -84,6 +84,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="FormPML" -->
+<p>Cette classe fournit un formulaire pour modifier l'objet pml.  
+ <a href="class_form_p_m_l.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_form_p_m_l_8h_source.html">FormPML.h</a>&gt;</code></p>
 
 <p><a href="class_form_p_m_l-members.html">List of all members.</a></p>
@@ -91,10 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_p_m_l.html#aa4243c387f2118f664c17a50181d0203">FormPML</a> (<a class="el" href="classpml.html">pml</a> *m_pml, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_p_m_l.html#aae35ab420ba2e126dd4327379467f712">setPML</a> (<a class="el" href="classpml.html">pml</a> *p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_p_m_l.html#a1848bb2e98ffbd5b6c43cfcff3e28c1c">init</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_form_p_m_l_8h_source.html#l00007">7</a> of file <a class="el" href="_form_p_m_l_8h_source.html">FormPML.h</a>.</p>
+<div class="textblock"><p>Cette classe fournit un formulaire pour modifier l'objet pml. </p>
+
+<p>Definition at line <a class="el" href="_form_p_m_l_8h_source.html#l00010">10</a> of file <a class="el" href="_form_p_m_l_8h_source.html">FormPML.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa4243c387f2118f664c17a50181d0203"></a><!-- doxytag: member="FormPML::FormPML" ref="aa4243c387f2118f664c17a50181d0203" args="(pml *m_pml, QWidget *parent=0)" -->
 <div class="memitem">
@@ -125,6 +131,44 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a1848bb2e98ffbd5b6c43cfcff3e28c1c"></a><!-- doxytag: member="FormPML::init" ref="a1848bb2e98ffbd5b6c43cfcff3e28c1c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_form_p_m_l.html#a1848bb2e98ffbd5b6c43cfcff3e28c1c">FormPML::init</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_form_p_m_l_8cpp_source.html#l00039">39</a> of file <a class="el" href="_form_p_m_l_8cpp_source.html">FormPML.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae35ab420ba2e126dd4327379467f712"></a><!-- doxytag: member="FormPML::setPML" ref="aae35ab420ba2e126dd4327379467f712" args="(pml *p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_form_p_m_l.html#aae35ab420ba2e126dd4327379467f712">FormPML::setPML</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpml.html">pml</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_form_p_m_l_8h_source.html#l00016">16</a> of file <a class="el" href="_form_p_m_l_8h_source.html">FormPML.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/kuiderlix/Prog/cpp/pskl-etprat/<a class="el" href="_form_p_m_l_8h_source.html">FormPML.h</a></li>
 <li>/home/kuiderlix/Prog/cpp/pskl-etprat/<a class="el" href="_form_p_m_l_8cpp_source.html">FormPML.cpp</a></li>
@@ -147,7 +191,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classbloc_surface_prelevement.html#a556b0d8331e2d792e8e64428f2980089" title="blocSurfacePrelevement::ecrire" alt="" coords="305,5,508,35"/>
-<area shape="rect" id="node5" href="$class_parser.html#a4b0ae86228a508a836e614a77c8b34da" title="Fonction principale. Elle démarre le parsing." alt="" coords="357,59,456,88"/>
-<area shape="rect" id="node9" href="$class_table_model_surface_prelev.html#a712df7cd9da919256d5afc5113910114" title="TableModelSurfacePrelev::data" alt="" coords="305,112,508,141"/>
-<area shape="rect" id="node13" href="$class_table_model_surface_prelev.html#ab5049471e356fceb385da0fd02e18bf0" title="TableModelSurfacePrelev::setData" alt="" coords="295,165,519,195"/>
-<area shape="rect" id="node7" href="$class_data.html#a7a0c8bb71ce1c395b1f5e3899ba08327" title="Data::Data" alt="" coords="629,59,715,88"/>
-<area shape="rect" id="node11" href="$class_table_model_surface_prelev.html#a85dc26417c3605d95e3444a305a727c4" title="TableModelSurfacePrelev::flags" alt="" coords="569,112,775,141"/>
-</map>

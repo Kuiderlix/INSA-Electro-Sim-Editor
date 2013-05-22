@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_table_view.html#aa0cfc1a932ec8d4de97f161b82fe6822" title="Modifie la liste des éléments séléctionnés pour prendre en compte seulement les lignes." alt="" coords="199,5,385,35"/>
-<area shape="rect" id="node5" href="$class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="200,59,384,88"/>
-<area shape="rect" id="node7" href="$class_table_model.html#ab178835fec98d6de650fc9001b0961d7" title="Retourne un élément contenu dans le tableau au rang row." alt="" coords="211,112,373,141"/>
-<area shape="rect" id="node11" href="$classelement_base.html#ae7c7dc9276872623416ba89d50eb3753" title="elementBase::getInvertColor" alt="" coords="199,165,385,195"/>
-<area shape="rect" id="node9" href="$class_bloc_element_base.html#a3b18c87309337fcf0a28bf371c91d010" title="Retourne un elementBase contenu à l&#39;indice i." alt="" coords="435,112,635,141"/>
-</map>

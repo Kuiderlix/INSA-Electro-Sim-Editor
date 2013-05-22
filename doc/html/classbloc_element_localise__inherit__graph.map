@@ -1,4 +1,4 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$class_bloc_element_base.html" title="Représente une liste d&#39;elementBase." alt="" coords="13,83,139,112"/>
-<area shape="rect" id="node4" href="$classbloc_configuration.html" title="blocConfiguration" alt="" coords="15,5,137,35"/>
+<area shape="rect" id="node4" href="$classbloc_configuration.html" title="Classe de base pour les données de configuration d&#39;une simulation." alt="" coords="15,5,137,35"/>
 </map>

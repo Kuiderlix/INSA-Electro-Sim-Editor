@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/blocPortExcitation.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/blocPortExcitation.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a><a class="code" href="classbloc_port_excitation.html#a2619aca99003aedeebd16f40894fae00">00012</a> <a class="code" href="classbloc_port_excitation.html#a2619aca99003aedeebd16f40894fae00">blocPortExcitation::blocPortExcitation</a>() {
 <a name="l00013"></a>00013 }
 <a name="l00014"></a>00014 
-<a name="l00015"></a><a class="code" href="classbloc_port_excitation.html#a876f6e6c065ddf4a1a7ff6411fd662e1">00015</a> <a class="code" href="classbloc_port_excitation.html#a2619aca99003aedeebd16f40894fae00">blocPortExcitation::blocPortExcitation</a>(<span class="keyword">const</span> <a class="code" href="classbloc_port_excitation.html">blocPortExcitation</a>&amp; orig) {
+<a name="l00015"></a><a class="code" href="classbloc_port_excitation.html#a876f6e6c065ddf4a1a7ff6411fd662e1">00015</a> <a class="code" href="classbloc_port_excitation.html#a2619aca99003aedeebd16f40894fae00">blocPortExcitation::blocPortExcitation</a>(<span class="keyword">const</span> <a class="code" href="classbloc_port_excitation.html" title="Cette classe représente une liste de portExcitation.">blocPortExcitation</a>&amp; orig) {
 <a name="l00016"></a>00016 }
 <a name="l00017"></a>00017 
 <a name="l00018"></a><a class="code" href="classbloc_port_excitation.html#aa50bf431394bf910891e5ad0fc3983b1">00018</a> <a class="code" href="classbloc_port_excitation.html#aa50bf431394bf910891e5ad0fc3983b1">blocPortExcitation::~blocPortExcitation</a>() {
@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a>00020 
 <a name="l00021"></a><a class="code" href="classbloc_port_excitation.html#a507065ed4ee579f1ddf662d83e159082">00021</a> <span class="keywordtype">void</span> <a class="code" href="classbloc_port_excitation.html#a507065ed4ee579f1ddf662d83e159082">blocPortExcitation::ecrire</a>(){
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023     <a class="code" href="classbloc_configuration.html">blocConfiguration</a> bC = <a class="code" href="classbloc_configuration.html#ac0dbb1162b30839212652e536adff583">blocConfiguration</a>(*<span class="keyword">this</span>);
+<a name="l00023"></a>00023     <a class="code" href="classbloc_configuration.html" title="Classe de base pour les données de configuration d&#39;une simulation.">blocConfiguration</a> bC = <a class="code" href="classbloc_configuration.html#ac0dbb1162b30839212652e536adff583">blocConfiguration</a>(*<span class="keyword">this</span>);
 <a name="l00024"></a>00024     bC.<a class="code" href="classbloc_configuration.html#a63b192a92a7fe72c6291a46709fb9980">setHeader</a>(<span class="stringliteral">&quot;[PORTS_EXCITATION]&quot;</span>);
 <a name="l00025"></a>00025     bC.<a class="code" href="classbloc_configuration.html#a1ac80f484e8c86e06aa76ba82c88747f">setExtension</a>(<span class="stringliteral">&quot;.ana&quot;</span>);
 <a name="l00026"></a>00026     bC.<a class="code" href="classbloc_configuration.html#ae5a50a8a47c6df65813f9d5b0fb1e81e">ecrire</a>();
@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033     <a class="code" href="class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d">Ecriture::Ecrire</a>(ecriture);
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035     <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;this-&gt;<a class="code" href="class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste.">getNbElement</a>(); i++){
-<a name="l00036"></a>00036         <a class="code" href="classport_excitation.html">portExcitation</a>* temp = this-&gt;<a class="code" href="classbloc_port_excitation.html#a49f1a99c7f60094df5a5b0eacaa63bfa">GetPortExcitation</a>(i);
+<a name="l00036"></a>00036         <a class="code" href="classport_excitation.html" title="Cette classe représente la variable portExcitation d&#39;une simulation.">portExcitation</a>* temp = this-&gt;<a class="code" href="classbloc_port_excitation.html#a49f1a99c7f60094df5a5b0eacaa63bfa">GetPortExcitation</a>(i);
 <a name="l00037"></a>00037         temp-&gt;<a class="code" href="classport_excitation.html#a5a94e1435ab7444c61ee89f96f781bcc">ecrire</a>(i+1);
 <a name="l00038"></a>00038     }
 <a name="l00039"></a>00039 
@@ -138,7 +138,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:36 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

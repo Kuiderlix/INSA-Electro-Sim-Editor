@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: ParamAvanceWidget Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: ParamAvanceWidget Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -83,18 +83,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ParamAvanceWidget Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ParamAvanceWidget" -->
+<!-- doxytag: class="ParamAvanceWidget" --><!-- doxytag: inherits="ToolBoxWidget" -->
+<p>Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur des autres formulaire de la meme catégorie.  
+ <a href="class_param_avance_widget.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_param_avance_widget_8h_source.html">ParamAvanceWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ParamAvanceWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_param_avance_widget__inherit__graph.png" border="0" usemap="#_param_avance_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="_param_avance_widget_inherit__map" id="_param_avance_widget_inherit__map">
+<area shape="rect" id="node2" href="class_tool_box_widget.html" title="Classe de base pour les widgets conteneurs de la ToolBox." alt="" coords="23,5,132,35"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ParamAvanceWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_param_avance_widget__coll__graph.png" border="0" usemap="#_param_avance_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="_param_avance_widget_coll__map" id="_param_avance_widget_coll__map">
+<area shape="rect" id="node2" href="class_tool_box_widget.html" title="Classe de base pour les widgets conteneurs de la ToolBox." alt="" coords="23,101,132,131"/><area shape="rect" id="node4" href="class_data.html" title="Contient toutes les données utiles pour la simulation." alt="" coords="52,5,103,35"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_param_avance_widget-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_param_avance_widget.html#a427b93b792ad2b69e32f0eec4840c473">ParamAvanceWidget</a> (<a class="el" href="class_data.html">Data</a> *data, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_param_avance_widget.html#a427b93b792ad2b69e32f0eec4840c473">ParamAvanceWidget</a> (<a class="el" href="class_data.html">Data</a> *<a class="el" href="class_tool_box_widget.html#ac2ee04ba2afd2ce91d0d95c30519e586">data</a>, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_param_avance_widget.html#aa41ced8ed167d515b8d600aa0ecdf581">init</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_param_avance_widget_8h_source.html#l00011">11</a> of file <a class="el" href="_param_avance_widget_8h_source.html">ParamAvanceWidget.h</a>.</p>
+<div class="textblock"><p>Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur des autres formulaire de la meme catégorie. </p>
+
+<p>Definition at line <a class="el" href="_param_avance_widget_8h_source.html#l00015">15</a> of file <a class="el" href="_param_avance_widget_8h_source.html">ParamAvanceWidget.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a427b93b792ad2b69e32f0eec4840c473"></a><!-- doxytag: member="ParamAvanceWidget::ParamAvanceWidget" ref="a427b93b792ad2b69e32f0eec4840c473" args="(Data *data, QWidget *parent=0)" -->
 <div class="memitem">
@@ -123,14 +142,26 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_param_avance_widget_8cpp_source.html#l00003">3</a> of file <a class="el" href="_param_avance_widget_8cpp_source.html">ParamAvanceWidget.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_param_avance_widget_a427b93b792ad2b69e32f0eec4840c473_cgraph.png" border="0" usemap="#class_param_avance_widget_a427b93b792ad2b69e32f0eec4840c473_cgraph" alt=""/></div>
-<map name="class_param_avance_widget_a427b93b792ad2b69e32f0eec4840c473_cgraph" id="class_param_avance_widget_a427b93b792ad2b69e32f0eec4840c473_cgraph">
-<area shape="rect" id="node3" href="class_data.html#a2da00311dda30f72122368e2e5b813d2" title="Data::getFormatStockage" alt="" coords="343,5,513,35"/><area shape="rect" id="node5" href="class_data.html#a7f02ae1d4a9111c097553c882a73c93f" title="Data::getExcitation" alt="" coords="361,59,495,88"/><area shape="rect" id="node7" href="class_data.html#ad9c6b61575daf7abc40b1d04aa43cdfc" title="Data::getBlocEchantillonnage" alt="" coords="331,112,525,141"/><area shape="rect" id="node9" href="class_data.html#a21fba04b0e26f921562678acea12741f" title="Data::getPML" alt="" coords="377,165,479,195"/></map>
 </div>
-</p>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aa41ced8ed167d515b8d600aa0ecdf581"></a><!-- doxytag: member="ParamAvanceWidget::init" ref="aa41ced8ed167d515b8d600aa0ecdf581" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_param_avance_widget.html#aa41ced8ed167d515b8d600aa0ecdf581">ParamAvanceWidget::init</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_tool_box_widget.html#aa43ef2f3ba3e32674be18d0f995676d1">ToolBoxWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="_param_avance_widget_8cpp_source.html#l00024">24</a> of file <a class="el" href="_param_avance_widget_8cpp_source.html">ParamAvanceWidget.cpp</a>.</p>
 
 </div>
 </div>
@@ -156,7 +187,7 @@ Here is the call graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

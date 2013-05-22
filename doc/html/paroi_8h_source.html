@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/paroi.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/paroi.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -92,60 +92,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="bloc_configuration_8h.html">blocConfiguration.h</a>&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &lt;QDebug&gt;</span>
 <a name="l00013"></a>00013 
-<a name="l00014"></a>00014 
-<a name="l00015"></a><a class="code" href="classparoi.html">00015</a> <span class="keyword">class </span><a class="code" href="classparoi.html">paroi</a> : <span class="keyword">public</span> <a class="code" href="classbloc_configuration.html">blocConfiguration</a> {
-<a name="l00016"></a>00016     Q_OBJECT
-<a name="l00017"></a>00017 <span class="keyword">public</span>:
-<a name="l00018"></a>00018     <a class="code" href="classparoi.html#a80d3d6a282f9ab71eabcdf0dffb2dd1c">paroi</a>();
-<a name="l00019"></a>00019     <span class="keyword">virtual</span> <a class="code" href="classparoi.html#ad80e31fa67c14c26ea5c55d963245159">~paroi</a>();
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="classparoi.html#a0ca4ab82762a5220bfb8ef9f3be8d0d0">00022</a>     <span class="keywordtype">int</span> <a class="code" href="classparoi.html#a0ca4ab82762a5220bfb8ef9f3be8d0d0">GetParoiInferieure</a>()<span class="keyword"> const </span>{
-<a name="l00023"></a>00023         <span class="keywordflow">return</span> paroiInferieure;
-<a name="l00024"></a>00024     }
-<a name="l00025"></a><a class="code" href="classparoi.html#a63c5e64a8f08449b90af0ca4b931e948">00025</a>     <span class="keywordtype">int</span> <a class="code" href="classparoi.html#a63c5e64a8f08449b90af0ca4b931e948">GetParoiSuperieure</a>()<span class="keyword"> const </span>{
-<a name="l00026"></a>00026         <span class="keywordflow">return</span> paroiSuperieure;
-<a name="l00027"></a>00027     }
-<a name="l00028"></a><a class="code" href="classparoi.html#a03c778fd25921ad0a480e31591af1239">00028</a>     <span class="keywordtype">int</span> <a class="code" href="classparoi.html#a03c778fd25921ad0a480e31591af1239">GetParoiX</a>()<span class="keyword"> const </span>{
-<a name="l00029"></a>00029         <span class="keywordflow">return</span> paroiX;
-<a name="l00030"></a>00030     }
-<a name="l00031"></a><a class="code" href="classparoi.html#a84b33e21bcc9032847cbd856d5315d66">00031</a>     <span class="keywordtype">int</span> <a class="code" href="classparoi.html#a84b33e21bcc9032847cbd856d5315d66">GetParoiY</a>()<span class="keyword"> const </span>{
-<a name="l00032"></a>00032         <span class="keywordflow">return</span> paroiY;
-<a name="l00033"></a>00033     }
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 signals:
-<a name="l00036"></a>00036     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a891f8ca3856861e1a4e5e06ba5205517">paroiInfChanged</a>();
-<a name="l00037"></a>00037     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a2ba26a8b27e53752524899a326354489">paroiSupChanged</a>();
-<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a9962257e2716dc71532ec7d99fd255d3">paroiXChanged</a>();
-<a name="l00039"></a>00039     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a7a4e7746e39ea81e93499a9b8f3502df">paroiYChanged</a>();
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="keyword">public</span> slots:
+<a name="l00017"></a><a class="code" href="classparoi.html">00017</a> <span class="keyword">class </span><a class="code" href="classparoi.html" title="Cette classe représente la variable paroi d&#39;une simulation.">paroi</a> : <span class="keyword">public</span> <a class="code" href="classbloc_configuration.html" title="Classe de base pour les données de configuration d&#39;une simulation.">blocConfiguration</a> {
+<a name="l00018"></a>00018     Q_OBJECT
+<a name="l00019"></a>00019 <span class="keyword">public</span>:
+<a name="l00020"></a>00020     <a class="code" href="classparoi.html#a80d3d6a282f9ab71eabcdf0dffb2dd1c">paroi</a>();
+<a name="l00021"></a>00021     <span class="keyword">virtual</span> <a class="code" href="classparoi.html#ad80e31fa67c14c26ea5c55d963245159">~paroi</a>();
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="classparoi.html#a0ca4ab82762a5220bfb8ef9f3be8d0d0">00024</a>     <span class="keywordtype">int</span> <a class="code" href="classparoi.html#a0ca4ab82762a5220bfb8ef9f3be8d0d0">GetParoiInferieure</a>()<span class="keyword"> const </span>{
+<a name="l00025"></a>00025         <span class="keywordflow">return</span> paroiInferieure;
+<a name="l00026"></a>00026     }
+<a name="l00027"></a><a class="code" href="classparoi.html#a63c5e64a8f08449b90af0ca4b931e948">00027</a>     <span class="keywordtype">int</span> <a class="code" href="classparoi.html#a63c5e64a8f08449b90af0ca4b931e948">GetParoiSuperieure</a>()<span class="keyword"> const </span>{
+<a name="l00028"></a>00028         <span class="keywordflow">return</span> paroiSuperieure;
+<a name="l00029"></a>00029     }
+<a name="l00030"></a><a class="code" href="classparoi.html#a03c778fd25921ad0a480e31591af1239">00030</a>     <span class="keywordtype">int</span> <a class="code" href="classparoi.html#a03c778fd25921ad0a480e31591af1239">GetParoiX</a>()<span class="keyword"> const </span>{
+<a name="l00031"></a>00031         <span class="keywordflow">return</span> paroiX;
+<a name="l00032"></a>00032     }
+<a name="l00033"></a><a class="code" href="classparoi.html#a84b33e21bcc9032847cbd856d5315d66">00033</a>     <span class="keywordtype">int</span> <a class="code" href="classparoi.html#a84b33e21bcc9032847cbd856d5315d66">GetParoiY</a>()<span class="keyword"> const </span>{
+<a name="l00034"></a>00034         <span class="keywordflow">return</span> paroiY;
+<a name="l00035"></a>00035     }
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 signals:
+<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a891f8ca3856861e1a4e5e06ba5205517">paroiInfChanged</a>();
+<a name="l00039"></a>00039     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a2ba26a8b27e53752524899a326354489">paroiSupChanged</a>();
+<a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a9962257e2716dc71532ec7d99fd255d3">paroiXChanged</a>();
+<a name="l00041"></a>00041     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a7a4e7746e39ea81e93499a9b8f3502df">paroiYChanged</a>();
 <a name="l00042"></a>00042 
-<a name="l00043"></a><a class="code" href="classparoi.html#a55abcc193810b34c33881a19adb15d70">00043</a>     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a55abcc193810b34c33881a19adb15d70">SetParoiInferieure</a>(<span class="keywordtype">int</span> paroiInferieure) {
-<a name="l00044"></a>00044         this-&gt;paroiInferieure = paroiInferieure; emit <a class="code" href="classparoi.html#a891f8ca3856861e1a4e5e06ba5205517">paroiInfChanged</a>();
-<a name="l00045"></a>00045     }
-<a name="l00046"></a><a class="code" href="classparoi.html#a68bb14aec7630fe1a7be4e3e157aef3e">00046</a>     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a68bb14aec7630fe1a7be4e3e157aef3e">SetParoiSuperieure</a>(<span class="keywordtype">int</span> paroiSuperieure) {
-<a name="l00047"></a>00047         this-&gt;paroiSuperieure = paroiSuperieure; emit <a class="code" href="classparoi.html#a2ba26a8b27e53752524899a326354489">paroiSupChanged</a>();
-<a name="l00048"></a>00048     }
-<a name="l00049"></a><a class="code" href="classparoi.html#a738b09fde1116d4b56bd981ca576a215">00049</a>     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a738b09fde1116d4b56bd981ca576a215">SetParoiX</a>(<span class="keywordtype">int</span> paroiX) {
-<a name="l00050"></a>00050         this-&gt;paroiX = paroiX; emit <a class="code" href="classparoi.html#a9962257e2716dc71532ec7d99fd255d3">paroiXChanged</a>();
-<a name="l00051"></a>00051     }
-<a name="l00052"></a><a class="code" href="classparoi.html#aa0fc7c9f10155ce862f6707e1ddfba52">00052</a>     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#aa0fc7c9f10155ce862f6707e1ddfba52">SetParoiY</a>(<span class="keywordtype">int</span> paroiY) {
-<a name="l00053"></a>00053         this-&gt;paroiY = paroiY; emit <a class="code" href="classparoi.html#a7a4e7746e39ea81e93499a9b8f3502df">paroiYChanged</a>();
-<a name="l00054"></a>00054     }
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#ab3e878c747944b83e844ba96501fafab">ecrire</a>();
+<a name="l00043"></a>00043 <span class="keyword">public</span> slots:
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="classparoi.html#a55abcc193810b34c33881a19adb15d70">00045</a>     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a55abcc193810b34c33881a19adb15d70">SetParoiInferieure</a>(<span class="keywordtype">int</span> paroiInferieure) {
+<a name="l00046"></a>00046         this-&gt;paroiInferieure = paroiInferieure; emit <a class="code" href="classparoi.html#a891f8ca3856861e1a4e5e06ba5205517">paroiInfChanged</a>();
+<a name="l00047"></a>00047     }
+<a name="l00048"></a><a class="code" href="classparoi.html#a68bb14aec7630fe1a7be4e3e157aef3e">00048</a>     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a68bb14aec7630fe1a7be4e3e157aef3e">SetParoiSuperieure</a>(<span class="keywordtype">int</span> paroiSuperieure) {
+<a name="l00049"></a>00049         this-&gt;paroiSuperieure = paroiSuperieure; emit <a class="code" href="classparoi.html#a2ba26a8b27e53752524899a326354489">paroiSupChanged</a>();
+<a name="l00050"></a>00050     }
+<a name="l00051"></a><a class="code" href="classparoi.html#a738b09fde1116d4b56bd981ca576a215">00051</a>     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#a738b09fde1116d4b56bd981ca576a215">SetParoiX</a>(<span class="keywordtype">int</span> paroiX) {
+<a name="l00052"></a>00052         this-&gt;paroiX = paroiX; emit <a class="code" href="classparoi.html#a9962257e2716dc71532ec7d99fd255d3">paroiXChanged</a>();
+<a name="l00053"></a>00053     }
+<a name="l00054"></a><a class="code" href="classparoi.html#aa0fc7c9f10155ce862f6707e1ddfba52">00054</a>     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#aa0fc7c9f10155ce862f6707e1ddfba52">SetParoiY</a>(<span class="keywordtype">int</span> paroiY) {
+<a name="l00055"></a>00055         this-&gt;paroiY = paroiY; emit <a class="code" href="classparoi.html#a7a4e7746e39ea81e93499a9b8f3502df">paroiYChanged</a>();
+<a name="l00056"></a>00056     }
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058 <span class="keyword">private</span>:
-<a name="l00059"></a>00059     <span class="keywordtype">int</span> paroiInferieure;
-<a name="l00060"></a>00060     <span class="keywordtype">int</span> paroiSuperieure;
-<a name="l00061"></a>00061     <span class="keywordtype">int</span> paroiX;
-<a name="l00062"></a>00062     <span class="keywordtype">int</span> paroiY;
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064 };
+<a name="l00058"></a>00058     <span class="keywordtype">void</span> <a class="code" href="classparoi.html#ab3e878c747944b83e844ba96501fafab">ecrire</a>();
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="keyword">private</span>:
+<a name="l00061"></a>00061     <span class="keywordtype">int</span> paroiInferieure;
+<a name="l00062"></a>00062     <span class="keywordtype">int</span> paroiSuperieure;
+<a name="l00063"></a>00063     <span class="keywordtype">int</span> paroiX;
+<a name="l00064"></a>00064     <span class="keywordtype">int</span> paroiY;
 <a name="l00065"></a>00065 
-<a name="l00066"></a>00066 <span class="preprocessor">#endif  </span><span class="comment">/* PAROI_H */</span>
+<a name="l00066"></a>00066 };
 <a name="l00067"></a>00067 
+<a name="l00068"></a>00068 <span class="preprocessor">#endif  </span><span class="comment">/* PAROI_H */</span>
+<a name="l00069"></a>00069 
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -164,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

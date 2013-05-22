@@ -13,6 +13,9 @@
 #include "blocConfiguration.h"
 #include <string>
 
+/**
+ * @brief Cette classe représente la variable cageExcitations d'une simulation
+ */
 class cageExcitation : public elementBase, public blocConfiguration{
 public:
     cageExcitation();

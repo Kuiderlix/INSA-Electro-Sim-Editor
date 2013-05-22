@@ -1,4 +1,4 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$classelement_base.html" title="The elementBase class." alt="" coords="35,117,133,147"/>
-<area shape="rect" id="node4" href="$classcoordonnee.html" title="coordonnee" alt="" coords="40,5,128,35"/>
+<area shape="rect" id="node4" href="$classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3..." alt="" coords="40,5,128,35"/>
 </map>

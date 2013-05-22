@@ -4,6 +4,9 @@
 #include <QWidget>
 #include "Data.h"
 
+/**
+ * @brief Classe de base pour les widgets conteneurs de la ToolBox
+ */
 class ToolBoxWidget : public QWidget
 {
     Q_OBJECT

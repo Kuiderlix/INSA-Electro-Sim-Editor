@@ -4,6 +4,9 @@
 #include "FormElementBase.h"
 #include "parallelepipede.h"
 
+/**
+ * @brief Formulaire permettant d'ajouter un nouvelle objet parallelepipede dans la scène 3D
+ */
 class FormParallelepipede : public FormElementBase
 {
     Q_OBJECT

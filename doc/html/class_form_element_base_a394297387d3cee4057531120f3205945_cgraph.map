@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_form_coordonnees.html#a8a37a10a26f8552dd2cf818c011b85f8" title="FormCoordonnees::setCoordonnee" alt="" coords="209,59,433,88"/>
-<area shape="rect" id="node11" href="$classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="219,112,424,141"/>
-<area shape="rect" id="node13" href="$classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="225,165,417,195"/>
-<area shape="rect" id="node5" href="$classcoordonnee.html#ac8be7ac37670f09a7e0a0e9c4440d2d8" title="coordonnee::GetX" alt="" coords="484,5,609,35"/>
-<area shape="rect" id="node7" href="$classcoordonnee.html#a0b666a5d352f1135ad8904e5193b0213" title="coordonnee::GetY" alt="" coords="484,59,609,88"/>
-<area shape="rect" id="node9" href="$classcoordonnee.html#a4d5c88a3e93cc8eed5b848d18541b137" title="coordonnee::GetZ" alt="" coords="484,112,609,141"/>
-</map>

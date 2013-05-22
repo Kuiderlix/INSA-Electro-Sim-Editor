@@ -1,18 +1,19 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_table_view_8h.html" title="TableView.h" alt="" coords="491,83,584,112"/>
-<area shape="rect" id="node56" href="$bloc_element_localise_8h.html" title="blocElementLocalise.h" alt="" coords="1184,160,1336,189"/>
-<area shape="rect" id="node62" href="$_table_model_element_localise_8h.html" title="TableModelElementLocalise.h" alt="" coords="1159,83,1353,112"/>
-<area shape="rect" id="node66" href="$_form_element_localise_8h.html" title="FormElementLocalise.h" alt="" coords="1363,160,1520,189"/>
-<area shape="rect" id="node80" href="$_coordonnee_delegate_8h.html" title="CoordonneeDelegate.h" alt="" coords="1632,237,1787,267"/>
-<area shape="rect" id="node86" href="$_combox_decalee_delegate_8h.html" title="ComboxDecaleeDelegate.h" alt="" coords="1811,237,1992,267"/>
-<area shape="rect" id="node17" href="$element_base_8h.html" title="elementBase.h" alt="" coords="1117,315,1227,344"/>
-<area shape="rect" id="node29" href="$_table_model_8h.html" title="TableModel.h" alt="" coords="987,160,1085,189"/>
-<area shape="rect" id="node51" href="$_my_sort_filter_proxy_model_8h.html" title="MySortFilterProxyModel.h" alt="" coords="789,160,963,189"/>
-<area shape="rect" id="node19" href="$coordonnee_8h.html" title="coordonnee.h" alt="" coords="1260,392,1359,421"/>
-<area shape="rect" id="node35" href="$_bloc_element_base_8h.html" title="BlocElementBase.h" alt="" coords="1061,237,1197,267"/>
-<area shape="rect" id="node37" href="$bloc_configuration_8h.html" title="blocConfiguration.h" alt="" coords="859,315,992,344"/>
-<area shape="rect" id="node44" href="$_ecriture_8h.html" title="Ecriture.h" alt="" coords="789,392,867,421"/>
-<area shape="rect" id="node58" href="$element_localise_8h.html" title="elementLocalise.h" alt="" coords="1221,237,1347,267"/>
-<area shape="rect" id="node70" href="$_form_element_base_8h.html" title="FormElementBase.h" alt="" coords="1371,237,1512,267"/>
-<area shape="rect" id="node74" href="$_form_coordonnees_8h.html" title="FormCoordonnees.h" alt="" coords="1479,315,1617,344"/>
+<area shape="rect" id="node3" href="$_table_view_8h.html" title="TableView.h" alt="" coords="751,83,844,112"/>
+<area shape="rect" id="node56" href="$bloc_element_localise_8h.html" title="blocElementLocalise.h" alt="" coords="5,160,157,189"/>
+<area shape="rect" id="node62" href="$_table_model_element_localise_8h.html" title="TableModelElementLocalise.h" alt="" coords="133,83,328,112"/>
+<area shape="rect" id="node66" href="$_form_element_localise_8h.html" title="FormElementLocalise.h" alt="" coords="1004,83,1161,112"/>
+<area shape="rect" id="node89" href="$_coordonnee_delegate_8h.html" title="CoordonneeDelegate.h" alt="" coords="1743,160,1897,189"/>
+<area shape="rect" id="node95" href="$_combox_decalee_delegate_8h.html" title="ComboxDecaleeDelegate.h" alt="" coords="1525,160,1707,189"/>
+<area shape="rect" id="node17" href="$element_base_8h.html" title="elementBase.h" alt="" coords="692,315,801,344"/>
+<area shape="rect" id="node29" href="$_table_model_8h.html" title="TableModel.h" alt="" coords="181,160,280,189"/>
+<area shape="rect" id="node51" href="$_my_sort_filter_proxy_model_8h.html" title="MySortFilterProxyModel.h" alt="" coords="1016,160,1189,189"/>
+<area shape="rect" id="node19" href="$coordonnee_8h.html" title="coordonnee.h" alt="" coords="1385,392,1484,421"/>
+<area shape="rect" id="node35" href="$_bloc_element_base_8h.html" title="BlocElementBase.h" alt="" coords="163,237,299,267"/>
+<area shape="rect" id="node37" href="$bloc_configuration_8h.html" title="blocConfiguration.h" alt="" coords="205,315,339,344"/>
+<area shape="rect" id="node44" href="$_ecriture_8h.html" title="Ecriture.h" alt="" coords="331,392,408,421"/>
+<area shape="rect" id="node58" href="$element_localise_8h.html" title="elementLocalise.h" alt="" coords="784,237,909,267"/>
+<area shape="rect" id="node70" href="$_form_element_base_8h.html" title="FormElementBase.h" alt="" coords="1360,160,1501,189"/>
+<area shape="rect" id="node74" href="$_form_coordonnees_8h.html" title="FormCoordonnees.h" alt="" coords="1596,237,1735,267"/>
+<area shape="rect" id="node79" href="$_color_picker_8h.html" title="ColorPicker.h" alt="" coords="1369,237,1471,267"/>
 </map>

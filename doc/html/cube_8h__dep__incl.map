@@ -1,12 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$cube_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/cube.cpp" alt="" coords="5,83,293,112"/>
-<area shape="rect" id="node5" href="$formulaire_8h.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/formulaire.h" alt="" coords="317,83,619,112"/>
-<area shape="rect" id="node9" href="$visualisation3d_8h.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/visualisation3d.h" alt="" coords="732,83,1063,112"/>
-<area shape="rect" id="node7" href="$formulaire_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/formulaire.cpp" alt="" coords="219,160,536,189"/>
-<area shape="rect" id="node11" href="$mainwindow_8h.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/mainwindow.h" alt="" coords="560,160,877,189"/>
-<area shape="rect" id="node17" href="$visualisation3d_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/visualisation3d.cpp" alt="" coords="901,160,1248,189"/>
-<area shape="rect" id="node19" href="$zonecentrale_8h.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/zonecentrale.h" alt="" coords="1272,160,1592,189"/>
-<area shape="rect" id="node13" href="$main_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/main.cpp" alt="" coords="408,237,696,267"/>
-<area shape="rect" id="node15" href="$mainwindow_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/mainwindow.cpp" alt="" coords="720,237,1051,267"/>
-<area shape="rect" id="node21" href="$zonecentrale_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/zonecentrale.cpp" alt="" coords="1265,237,1599,267"/>
+<area shape="rect" id="node3" href="$cube_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/cube.cpp" alt="" coords="17,83,305,112"/>
+<area shape="rect" id="node5" href="$visualisation3d_8h.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/visualisation3d.h" alt="" coords="329,83,660,112"/>
+<area shape="rect" id="node7" href="$mainwindow_8h.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/mainwindow.h" alt="" coords="157,160,475,189"/>
+<area shape="rect" id="node13" href="$visualisation3d_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/visualisation3d.cpp" alt="" coords="499,160,845,189"/>
+<area shape="rect" id="node9" href="$main_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/main.cpp" alt="" coords="5,237,293,267"/>
+<area shape="rect" id="node11" href="$mainwindow_8cpp.html" title="/home/kuiderlix/Prog/cpp/pskl&#45;etprat/mainwindow.cpp" alt="" coords="317,237,648,267"/>
 </map>

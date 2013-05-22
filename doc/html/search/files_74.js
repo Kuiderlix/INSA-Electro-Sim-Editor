@@ -31,5 +31,7 @@ var searchData=
   ['tableviewsonde_2ecpp',['TableViewSonde.cpp',['../_table_view_sonde_8cpp.html',1,'']]],
   ['tableviewsonde_2eh',['TableViewSonde.h',['../_table_view_sonde_8h.html',1,'']]],
   ['tableviewsurfaceprelev_2ecpp',['TableViewSurfacePrelev.cpp',['../_table_view_surface_prelev_8cpp.html',1,'']]],
-  ['tableviewsurfaceprelev_2eh',['TableViewSurfacePrelev.h',['../_table_view_surface_prelev_8h.html',1,'']]]
+  ['tableviewsurfaceprelev_2eh',['TableViewSurfacePrelev.h',['../_table_view_surface_prelev_8h.html',1,'']]],
+  ['toolboxwidget_2ecpp',['ToolBoxWidget.cpp',['../_tool_box_widget_8cpp.html',1,'']]],
+  ['toolboxwidget_2eh',['ToolBoxWidget.h',['../_tool_box_widget_8h.html',1,'']]]
 ];
