@@ -5,6 +5,9 @@
 #include "champLointain.h"
 #include "FormCoordonnees.h"
 
+/**
+ * @brief Cette classe fournit un formulaire pour modifier l'objet champLointain
+ */
 class FormChampLointain : public QWidget
 {
     Q_OBJECT

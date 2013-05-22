@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_table_model_carto_tempo.html#a6e71944ee54c60026b69a031a6b0b19a" title="TableModelCartoTempo::setData" alt="" coords="267,5,480,35"/>
-<area shape="rect" id="node5" href="$class_table_model_element_localise.html#a3cdfd8e7c3c6bb74725c79daf0d69ed7" title="TableModelElementLocalise::setData" alt="" coords="255,59,492,88"/>
-<area shape="rect" id="node7" href="$class_table_model_metallisation.html#a042bdd2ebaa13d20e2a16c3597866506" title="TableModelMetallisation::setData" alt="" coords="265,112,481,141"/>
-<area shape="rect" id="node9" href="$class_table_model_parallelepipede.html#a7af7e9629ba1c773203de8f73be84f02" title="TableModelParallelepipede::setData" alt="" coords="259,165,488,195"/>
-<area shape="rect" id="node11" href="$class_table_model_port_excitation.html#a9074656c6189dee055657783fa33b2a5" title="TableModelPortExcitation::setData" alt="" coords="261,219,485,248"/>
-<area shape="rect" id="node13" href="$class_table_model_sonde.html#aa2e23ba8562cabb036447d9807ed59ec" title="TableModelSonde::setData" alt="" coords="284,272,463,301"/>
-<area shape="rect" id="node15" href="$class_table_model_surface_prelev.html#ab5049471e356fceb385da0fd02e18bf0" title="TableModelSurfacePrelev::setData" alt="" coords="261,325,485,355"/>
-</map>

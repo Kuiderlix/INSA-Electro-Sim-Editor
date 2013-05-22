@@ -11,7 +11,9 @@
 #include "elementBase.h"
 #include <string>
 
-
+/**
+ * @brief Cette classe représente la variable surfacePrelevement d'une simulation
+ */
 class surfacePrelevement : public elementBase{
 public:
     surfacePrelevement();

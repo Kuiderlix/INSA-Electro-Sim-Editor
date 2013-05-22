@@ -11,7 +11,9 @@
 #include "elementBase.h"
 #include "coordonnee.h"
 
-
+/**
+ * @brief Cette classe représente la variable sonde d'une simulation
+ */
 class sonde : public elementBase{
 public:
     sonde();

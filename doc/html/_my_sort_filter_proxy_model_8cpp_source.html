@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/MySortFilterProxyModel.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/MySortFilterProxyModel.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -93,8 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013     <span class="keywordflow">if</span> (leftData.type()==QVariant::UserType)
 <a name="l00014"></a>00014     {
-<a name="l00015"></a>00015         <a class="code" href="classcoordonnee.html">coordonnee</a> leftCoord = leftData.value&lt;<a class="code" href="classcoordonnee.html">coordonnee</a>&gt;();
-<a name="l00016"></a>00016         <a class="code" href="classcoordonnee.html">coordonnee</a> rightCoord = rightData.value&lt;<a class="code" href="classcoordonnee.html">coordonnee</a>&gt;();
+<a name="l00015"></a>00015         <a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> leftCoord = leftData.value&lt;<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
+<a name="l00016"></a>00016         <a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> rightCoord = rightData.value&lt;<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
 <a name="l00017"></a>00017         <span class="keywordflow">return</span> QString::localeAwareCompare(leftCoord.<a class="code" href="classcoordonnee.html#afc68e120b6b69e2a9a6de4ecf5c9c2c2">toQString</a>(), rightCoord.toQString()) &lt; 0;
 <a name="l00018"></a>00018     }
 <a name="l00019"></a>00019     <span class="keywordflow">else</span>
@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035     <span class="keywordflow">if</span> (index.data().type()==QVariant::UserType)
 <a name="l00036"></a>00036     {
-<a name="l00037"></a>00037         <a class="code" href="classcoordonnee.html">coordonnee</a> coord = index.data().value&lt;<a class="code" href="classcoordonnee.html">coordonnee</a>&gt;();
+<a name="l00037"></a>00037         <a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> coord = index.data().value&lt;<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
 <a name="l00038"></a>00038         <span class="keywordflow">return</span> coord.<a class="code" href="classcoordonnee.html#afc68e120b6b69e2a9a6de4ecf5c9c2c2">toQString</a>().contains(filterRegExp());
 <a name="l00039"></a>00039     }
 <a name="l00040"></a>00040     <span class="keywordflow">else</span>
@@ -141,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

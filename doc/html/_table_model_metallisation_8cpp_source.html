@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/TableModelMetallisation.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/TableModelMetallisation.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a><a class="code" href="class_table_model_metallisation.html#a310a5e0fa801f7238b0992add01b69a5">00003</a> <a class="code" href="class_table_model_metallisation.html#a310a5e0fa801f7238b0992add01b69a5">TableModelMetallisation::TableModelMetallisation</a>(<a class="code" href="class_bloc_element_base.html" title="Représente une liste d&#39;elementBase.">BlocElementBase</a> *bloc, QObject *parent) :
 <a name="l00004"></a>00004     <a class="code" href="class_table_model.html" title="Cette classe sert de model de base pour les éléments des tableaux.">TableModel</a>(bloc,parent)
 <a name="l00005"></a>00005 {
-<a name="l00006"></a>00006     listeMetal = (<a class="code" href="classbloc_metallisation.html">blocMetallisation</a>*)bloc;
+<a name="l00006"></a>00006     listeMetal = (<a class="code" href="classbloc_metallisation.html" title="Cette classe représente une liste de metallisation.">blocMetallisation</a>*)bloc;
 <a name="l00007"></a>00007     <a class="code" href="class_table_model.html#a7ded8d5b09f264752bcede7388803bef" title="Initialise les entetes du tableau.">initHeaders</a>(QStringList() &lt;&lt; <span class="stringliteral">&quot;Conductivité&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avant Gauche&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Arrière Droit&quot;</span>);
 <a name="l00008"></a>00008 
 <a name="l00009"></a>00009 }
@@ -141,19 +141,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00060"></a>00060     {
 <a name="l00061"></a>00061     <span class="keywordflow">case</span> Qt::DisplayRole:
 <a name="l00062"></a>00062     <span class="keywordflow">case</span> Qt::EditRole:
-<a name="l00063"></a>00063         <a class="code" href="classmetallisation.html">metallisation</a> * met = listeMetal-&gt;<a class="code" href="classbloc_metallisation.html#a4c841fae4c8bc037eba75bc0778fa71f">GetMetallisation</a>(index.row());
+<a name="l00063"></a>00063         <a class="code" href="classmetallisation.html" title="Cette classe représente la variable metallisation d&#39;une simulation.">metallisation</a> * met = listeMetal-&gt;<a class="code" href="classbloc_metallisation.html#a4c841fae4c8bc037eba75bc0778fa71f">GetMetallisation</a>(index.row());
 <a name="l00064"></a>00064         <span class="keywordflow">if</span> (index.column() == <a class="code" href="class_table_model_metallisation.html#af290ccb6a0a8776fd1c463a92c22d2cfa4b06ce8b348679b4e5be7effb803bd8d">Conductivite</a>)
 <a name="l00065"></a>00065         {
 <a name="l00066"></a>00066             met-&gt;<a class="code" href="classmetallisation.html#a48670fbbf60460df7abc88b2e8a34ef8">SetConductivite</a>(value.toFloat());
 <a name="l00067"></a>00067         }
 <a name="l00068"></a>00068         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="class_table_model_metallisation.html#af290ccb6a0a8776fd1c463a92c22d2cfa8d2c1824ac0d9cab345272ae6f6e5dbe">Coord1</a>)
 <a name="l00069"></a>00069         {
-<a name="l00070"></a>00070             <a class="code" href="classcoordonnee.html">coordonnee</a> c = value.value&lt;<a class="code" href="classcoordonnee.html">coordonnee</a>&gt;();
+<a name="l00070"></a>00070             <a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> c = value.value&lt;<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
 <a name="l00071"></a>00071             met-&gt;<a class="code" href="classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(c);
 <a name="l00072"></a>00072         }
 <a name="l00073"></a>00073         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="class_table_model_metallisation.html#af290ccb6a0a8776fd1c463a92c22d2cfa503ed925f039790cbe45c66ba9cc9d8d">Coord2</a>)
 <a name="l00074"></a>00074         {
-<a name="l00075"></a>00075             <a class="code" href="classcoordonnee.html">coordonnee</a> c = value.value&lt;<a class="code" href="classcoordonnee.html">coordonnee</a>&gt;();
+<a name="l00075"></a>00075             <a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> c = value.value&lt;<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
 <a name="l00076"></a>00076             met-&gt;<a class="code" href="classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(c);
 <a name="l00077"></a>00077         }
 <a name="l00078"></a>00078         listeMetal-&gt;<a class="code" href="class_bloc_element_base.html#aa745734b1a3e63508f97ca89baf40715" title="Remplace l&#39;élément à l&#39;indice i par elem.">setElement</a>(index.row(),met);
@@ -184,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

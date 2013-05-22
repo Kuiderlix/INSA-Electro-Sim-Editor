@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classvolume_calcul.html#afe5224cf7c26211a001061b89e05d14a" title="volumeCalcul::GetLongueur" alt="" coords="309,5,491,35"/>
-<area shape="rect" id="node5" href="$classvolume_calcul.html#a8fff237e85f76d9363ca40ef661ad89c" title="volumeCalcul::GetLargeur" alt="" coords="313,59,487,88"/>
-<area shape="rect" id="node7" href="$classvolume_calcul.html#ac355d534c9901feb9c9038a3a088614a" title="volumeCalcul::GetHauteur" alt="" coords="312,112,488,141"/>
-<area shape="rect" id="node9" href="$classvolume_calcul.html#aa5cc18055c0f5fabed5a8abe4395c3fd" title="volumeCalcul::GetNombreY" alt="" coords="308,165,492,195"/>
-<area shape="rect" id="node11" href="$classvolume_calcul.html#a5d8f4f104687ef14e9e311d4f4048eb5" title="volumeCalcul::GetNombreX" alt="" coords="308,219,492,248"/>
-<area shape="rect" id="node13" href="$classvolume_calcul.html#a573638e1e1bc1296fcefd53a2c044ca7" title="volumeCalcul::GetNombreZ" alt="" coords="308,272,492,301"/>
-</map>

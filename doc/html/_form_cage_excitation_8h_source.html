@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormCageExcitation.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormCageExcitation.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,44 +85,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="_form_element_base_8h.html">FormElementBase.h</a>&quot;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="cage_excitation_8h.html">cageExcitation.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00011"></a><a class="code" href="class_form_cage_excitation.html">00011</a> <span class="keyword">class </span><a class="code" href="class_form_cage_excitation.html" title="The FormCageExcitation class.">FormCageExcitation</a> : <span class="keyword">public</span> <a class="code" href="class_form_element_base.html">FormElementBase</a>
-<a name="l00012"></a>00012 {
-<a name="l00013"></a>00013     Q_OBJECT
-<a name="l00014"></a>00014 <span class="keyword">public</span>:
-<a name="l00015"></a>00015     <span class="keyword">explicit</span> <a class="code" href="class_form_cage_excitation.html#a78b0985bac4141a38ab1888f93682167">FormCageExcitation</a>(<a class="code" href="classcage_excitation.html">cageExcitation</a> * cageExci, <span class="keywordtype">int</span> mode, QWidget *parent = 0);
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017 signals:
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 <span class="keyword">public</span> slots:
-<a name="l00020"></a>00020     <span class="keywordtype">void</span> <a class="code" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f">valider</a>();
-<a name="l00021"></a>00021     <span class="keywordtype">void</span> <a class="code" href="class_form_cage_excitation.html#ab55cd6bbd6838b5b1151e03d3a874ec5">reset</a>();
+<a name="l00010"></a><a class="code" href="class_form_cage_excitation.html">00010</a> <span class="keyword">class </span><a class="code" href="class_form_cage_excitation.html" title="Formulaire permettant d&#39;ajouter un objet cageExcitation.">FormCageExcitation</a> : <span class="keyword">public</span> <a class="code" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase.">FormElementBase</a>
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012     Q_OBJECT
+<a name="l00013"></a>00013 <span class="keyword">public</span>:
+<a name="l00014"></a>00014     <span class="keyword">explicit</span> <a class="code" href="class_form_cage_excitation.html#ae4768e9fb7b7daa5dbad084012c1a5cb">FormCageExcitation</a>(<a class="code" href="classcage_excitation.html" title="Cette classe représente la variable cageExcitations d&#39;une simulation.">cageExcitation</a> * cageExci, QWidget *parent = 0);
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="class_form_cage_excitation.html#adcc4fcc8bbd69edce7a8604cdb4096bd">00016</a>     <span class="keywordtype">void</span> <a class="code" href="class_form_cage_excitation.html#adcc4fcc8bbd69edce7a8604cdb4096bd">setCageExcitation</a>(<a class="code" href="classcage_excitation.html" title="Cette classe représente la variable cageExcitations d&#39;une simulation.">cageExcitation</a> * c)
+<a name="l00017"></a>00017     {
+<a name="l00018"></a>00018         <a class="code" href="class_form_element_base.html#a0fc624d18ff6d8780f715a52a2f184f1" title="Modifie l&#39;elementBase que contient le formulaire.">setElement</a>(c);
+<a name="l00019"></a>00019         cageExci=c;
+<a name="l00020"></a>00020         init();
+<a name="l00021"></a>00021     }
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023     <span class="keywordtype">void</span> <a class="code" href="class_form_cage_excitation.html#ae7c35793cb47093cae36561e40f6a03e">manageFormulaire</a>(<span class="keywordtype">int</span> val);
-<a name="l00024"></a>00024     <span class="keywordtype">void</span> <a class="code" href="class_form_cage_excitation.html#ab3f9470767991ad7f809a1cfe8652f6f">actualiseFormulaire</a>(<span class="keywordtype">int</span>);
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="keyword">private</span>:
+<a name="l00023"></a>00023 signals:
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="keyword">public</span> slots:
+<a name="l00026"></a>00026     <span class="keywordtype">void</span> <a class="code" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l&#39;elemen...">valider</a>();
 <a name="l00027"></a>00027 
-<a name="l00028"></a>00028     <span class="keywordtype">void</span> init();
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030     <a class="code" href="classcage_excitation.html">cageExcitation</a> * cageExci;
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032     QSpinBox * nbFacesWidget;
-<a name="l00033"></a>00033     QComboBox * typeWidget;
-<a name="l00034"></a>00034     QWidget *formFace1, *formFaceDif1, *formType4;
-<a name="l00035"></a>00035     QComboBox * insideOutsideWidget;
-<a name="l00036"></a>00036     QComboBox * modeWidget;
-<a name="l00037"></a>00037     QSpinBox * hauteurWidget;
-<a name="l00038"></a>00038     QComboBox * sensPropaWidget;
-<a name="l00039"></a>00039     <a class="code" href="class_form_coordonnees.html">FormCoordonnees</a>* pointRefWidget;
-<a name="l00040"></a>00040     QDoubleSpinBox * theta0Widget;
-<a name="l00041"></a>00041     QDoubleSpinBox * phi0Widget;
-<a name="l00042"></a>00042     QDoubleSpinBox * psi0Widget;
-<a name="l00043"></a>00043     QDoubleSpinBox * modulationAmplitudeWidget;
-<a name="l00044"></a>00044     QDoubleSpinBox * modulationPhaseWidget;
-<a name="l00045"></a>00045     QLineEdit * nomFichierWidget;
-<a name="l00046"></a>00046 };
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 <span class="preprocessor">#endif // FORMCAGEEXCITATION_H</span>
+<a name="l00028"></a>00028     <span class="keywordtype">void</span> <a class="code" href="class_form_cage_excitation.html#ae7c35793cb47093cae36561e40f6a03e">manageFormulaire</a>(<span class="keywordtype">int</span> val);
+<a name="l00029"></a>00029     <span class="keywordtype">void</span> <a class="code" href="class_form_cage_excitation.html#ab3f9470767991ad7f809a1cfe8652f6f">actualiseFormulaire</a>(<span class="keywordtype">int</span>);
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     <span class="keywordtype">void</span> <a class="code" href="class_form_cage_excitation.html#ad9bf0203451bf3fb4ee41056aa7948b4">changeCreate</a>(<span class="keywordtype">bool</span>);
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 <span class="keyword">private</span>:
+<a name="l00034"></a>00034     <span class="keywordtype">void</span> init();
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037     <a class="code" href="classcage_excitation.html" title="Cette classe représente la variable cageExcitations d&#39;une simulation.">cageExcitation</a> * cageExci;
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039     QGroupBox * group;
+<a name="l00040"></a>00040     QSpinBox * nbFacesWidget;
+<a name="l00041"></a>00041     QComboBox * typeWidget;
+<a name="l00042"></a>00042     QWidget *formFace1, *formFaceDif1, *formType4;
+<a name="l00043"></a>00043     QComboBox * insideOutsideWidget;
+<a name="l00044"></a>00044     QComboBox * modeWidget;
+<a name="l00045"></a>00045     QSpinBox * hauteurWidget;
+<a name="l00046"></a>00046     QComboBox * sensPropaWidget;
+<a name="l00047"></a>00047     <a class="code" href="class_form_coordonnees.html" title="Cette classe fournit un widget pour modifier l&#39;objet coordonnee.">FormCoordonnees</a>* pointRefWidget;
+<a name="l00048"></a>00048     QDoubleSpinBox * theta0Widget;
+<a name="l00049"></a>00049     QDoubleSpinBox * phi0Widget;
+<a name="l00050"></a>00050     QDoubleSpinBox * psi0Widget;
+<a name="l00051"></a>00051     QDoubleSpinBox * modulationAmplitudeWidget;
+<a name="l00052"></a>00052     QDoubleSpinBox * modulationPhaseWidget;
+<a name="l00053"></a>00053     QLineEdit * nomFichierWidget;
+<a name="l00054"></a>00054 };
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="preprocessor">#endif // FORMCAGEEXCITATION_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -141,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

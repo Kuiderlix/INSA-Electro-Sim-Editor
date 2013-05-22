@@ -4,6 +4,9 @@
 #include <QtWidgets>
 #include "coordonnee.h"
 
+/**
+ * @brief Cette classe fournit un widget pour modifier l'objet coordonnee
+ */
 class FormCoordonnees : public QWidget
 {
     Q_OBJECT

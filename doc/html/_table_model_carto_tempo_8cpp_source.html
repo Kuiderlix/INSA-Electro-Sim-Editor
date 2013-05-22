@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/TableModelCartoTempo.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/TableModelCartoTempo.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a><a class="code" href="class_table_model_carto_tempo.html#acf88e9a973b501bac9a4221ee1dad3e8">00003</a> <a class="code" href="class_table_model_carto_tempo.html#acf88e9a973b501bac9a4221ee1dad3e8">TableModelCartoTempo::TableModelCartoTempo</a>(<a class="code" href="class_bloc_element_base.html" title="Représente une liste d&#39;elementBase.">BlocElementBase</a> *bloc, QObject *parent) :
 <a name="l00004"></a>00004     <a class="code" href="class_table_model.html" title="Cette classe sert de model de base pour les éléments des tableaux.">TableModel</a>(bloc,parent)
 <a name="l00005"></a>00005 {
-<a name="l00006"></a>00006     this-&gt;bloc = (<a class="code" href="classbloc_cartographie_temporelle.html">blocCartographieTemporelle</a>*)bloc;
+<a name="l00006"></a>00006     this-&gt;bloc = (<a class="code" href="classbloc_cartographie_temporelle.html" title="Cette classe représente une liste de cartographieTemporelle.">blocCartographieTemporelle</a>*)bloc;
 <a name="l00007"></a>00007     <a class="code" href="class_table_model.html#a7ded8d5b09f264752bcede7388803bef" title="Initialise les entetes du tableau.">initHeaders</a>(QStringList() &lt;&lt; <span class="stringliteral">&quot;champ E&quot;</span> &lt;&lt; <span class="stringliteral">&quot;champ H&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Iteration Debut&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Iteration Fin&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Intervalle&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avant Gauche&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Arrière Droit&quot;</span>);
 <a name="l00008"></a>00008 }
 <a name="l00009"></a>00009 
@@ -153,7 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00072"></a>00072     {
 <a name="l00073"></a>00073     <span class="keywordflow">case</span> Qt::DisplayRole:
 <a name="l00074"></a>00074     <span class="keywordflow">case</span> Qt::EditRole:
-<a name="l00075"></a>00075         <a class="code" href="classcartographie_temporelle.html">cartographieTemporelle</a> * elem = bloc-&gt;<a class="code" href="classbloc_cartographie_temporelle.html#abebde35f857eedaa1bfe4a5cd4db84fd">GetCarto</a>(index.row());
+<a name="l00075"></a>00075         <a class="code" href="classcartographie_temporelle.html" title="Cette classe représente la variable cartographieTemporelle d&#39;une simulation.">cartographieTemporelle</a> * elem = bloc-&gt;<a class="code" href="classbloc_cartographie_temporelle.html#abebde35f857eedaa1bfe4a5cd4db84fd">GetCarto</a>(index.row());
 <a name="l00076"></a>00076 
 <a name="l00077"></a>00077         <span class="keywordflow">if</span> (index.column() == <a class="code" href="class_table_model_carto_tempo.html#ad1b34723a7382f28d5f2ee4de9bb4863a1fea1bbb433f104b3fc999ece5e74525">champE</a>)
 <a name="l00078"></a>00078         {
@@ -177,12 +177,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00096"></a>00096         }
 <a name="l00097"></a>00097         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="class_table_model_carto_tempo.html#ad1b34723a7382f28d5f2ee4de9bb4863ac08d6aef2423354a609c4a8a4c312575">AvantGauche</a>)
 <a name="l00098"></a>00098         {
-<a name="l00099"></a>00099             <a class="code" href="classcoordonnee.html">coordonnee</a> c = value.value&lt;<a class="code" href="classcoordonnee.html">coordonnee</a>&gt;();
+<a name="l00099"></a>00099             <a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> c = value.value&lt;<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
 <a name="l00100"></a>00100             elem-&gt;<a class="code" href="classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(c);
 <a name="l00101"></a>00101         }
 <a name="l00102"></a>00102         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="class_table_model_carto_tempo.html#ad1b34723a7382f28d5f2ee4de9bb4863a44f9d3733b004411f7ad7e7c78af0958">ArriereDroit</a>)
 <a name="l00103"></a>00103         {
-<a name="l00104"></a>00104             <a class="code" href="classcoordonnee.html">coordonnee</a> c = value.value&lt;<a class="code" href="classcoordonnee.html">coordonnee</a>&gt;();
+<a name="l00104"></a>00104             <a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> c = value.value&lt;<a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
 <a name="l00105"></a>00105             elem-&gt;<a class="code" href="classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(c);
 <a name="l00106"></a>00106         }
 <a name="l00107"></a>00107 
@@ -212,7 +212,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

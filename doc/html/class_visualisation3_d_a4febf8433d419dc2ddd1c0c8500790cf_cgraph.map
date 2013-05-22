@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_cube.html#aefc3e94ce495885aaecab7cd7e342ade" title="Cube::drawCube" alt="" coords="333,5,453,35"/>
-<area shape="rect" id="node5" href="$classvolume_calcul.html#a8fff237e85f76d9363ca40ef661ad89c" title="volumeCalcul::GetLargeur" alt="" coords="307,59,480,88"/>
-<area shape="rect" id="node7" href="$classvolume_calcul.html#afe5224cf7c26211a001061b89e05d14a" title="volumeCalcul::GetLongueur" alt="" coords="303,112,484,141"/>
-<area shape="rect" id="node9" href="$classvolume_calcul.html#ac355d534c9901feb9c9038a3a088614a" title="volumeCalcul::GetHauteur" alt="" coords="305,165,481,195"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste." alt="" coords="272,5,488,35"/>
-<area shape="rect" id="node5" href="$classbloc_metallisation.html#a4c841fae4c8bc037eba75bc0778fa71f" title="blocMetallisation::GetMetallisation" alt="" coords="269,59,491,88"/>
-<area shape="rect" id="node7" href="$classmetallisation.html#a48670fbbf60460df7abc88b2e8a34ef8" title="metallisation::SetConductivite" alt="" coords="283,112,477,141"/>
-<area shape="rect" id="node9" href="$classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5" title="elementBase::SetArriereDroit" alt="" coords="284,165,476,195"/>
-<area shape="rect" id="node11" href="$classelement_base.html#a230935c8e0e713878651c9f6877bc5db" title="elementBase::SetAvantGauche" alt="" coords="277,219,483,248"/>
-<area shape="rect" id="node13" href="$class_bloc_element_base.html#aa745734b1a3e63508f97ca89baf40715" title="Remplace l&#39;élément à l&#39;indice i par elem." alt="" coords="280,272,480,301"/>
-</map>

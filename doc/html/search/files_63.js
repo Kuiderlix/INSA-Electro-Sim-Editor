@@ -10,6 +10,8 @@ var searchData=
   ['cartographietemporelle_2eh',['cartographieTemporelle.h',['../cartographie_temporelle_8h.html',1,'']]],
   ['champlointain_2ecpp',['champLointain.cpp',['../champ_lointain_8cpp.html',1,'']]],
   ['champlointain_2eh',['champLointain.h',['../champ_lointain_8h.html',1,'']]],
+  ['colorpicker_2ecpp',['ColorPicker.cpp',['../_color_picker_8cpp.html',1,'']]],
+  ['colorpicker_2eh',['ColorPicker.h',['../_color_picker_8h.html',1,'']]],
   ['comboxdecaleedelegate_2ecpp',['ComboxDecaleeDelegate.cpp',['../_combox_decalee_delegate_8cpp.html',1,'']]],
   ['comboxdecaleedelegate_2eh',['ComboxDecaleeDelegate.h',['../_combox_decalee_delegate_8h.html',1,'']]],
   ['compressionhuygens_2ecpp',['compressionHuygens.cpp',['../compression_huygens_8cpp.html',1,'']]],

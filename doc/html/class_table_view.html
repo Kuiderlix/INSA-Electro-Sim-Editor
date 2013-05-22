@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: TableView Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: TableView Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -122,6 +122,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la couleur des éléments séléctionnés.  <a href="#aa86cb90655c1c45257ded6eda49b25b4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_table_model.html">TableModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8">getSourceModel</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le model associé.  <a href="#af410b7e3a69630e4f3ddaec84584eeb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_table_view.html#a3d7a702453c23bb00e609d71a13c7f67">setSourceModel</a> (<a class="el" href="class_table_model.html">TableModel</a> *m)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Cette classe sert de vue de base pour les tableaux de données. Elle affiche les données contenu dans son model sous forme de tableau. </p>
@@ -173,24 +174,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_table_view_8cpp_source.html#l00086">86</a> of file <a class="el" href="_table_view_8cpp_source.html">TableView.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_ae8e2fcfd6769e96634180f82d7d65ccb_cgraph.png" border="0" usemap="#class_table_view_ae8e2fcfd6769e96634180f82d7d65ccb_cgraph" alt=""/></div>
-<map name="class_table_view_ae8e2fcfd6769e96634180f82d7d65ccb_cgraph" id="class_table_view_ae8e2fcfd6769e96634180f82d7d65ccb_cgraph">
-<area shape="rect" id="node3" href="class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="215,5,399,35"/><area shape="rect" id="node5" href="class_table_model.html#a268112fa5a3ff754af82fe52de881e9f" title="ajout un élément à la fin du tableau" alt="" coords="224,59,389,88"/><area shape="rect" id="node7" href="class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste." alt="" coords="449,32,665,61"/><area shape="rect" id="node9" href="class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste." alt="" coords="456,85,659,115"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_ae8e2fcfd6769e96634180f82d7d65ccb_icgraph.png" border="0" usemap="#class_table_view_ae8e2fcfd6769e96634180f82d7d65ccb_icgraph" alt=""/></div>
-<map name="class_table_view_ae8e2fcfd6769e96634180f82d7d65ccb_icgraph" id="class_table_view_ae8e2fcfd6769e96634180f82d7d65ccb_icgraph">
-<area shape="rect" id="node3" href="class_table_view_cart_tempo.html#aa960896b77de4620668413b88aa60de1" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="229,5,480,35"/><area shape="rect" id="node5" href="class_table_view_element_localise.html#aea2be5af6d544883f0f016b64e5662be" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="213,59,496,88"/><area shape="rect" id="node7" href="class_table_view_metallisation.html#a3a0b2cbfabd50d11db956bf660d0dd07" title="TableViewMetallisation::addNewMetallisation Créer un nouvel objet metallisation et ouvre la fenetre d..." alt="" coords="225,112,484,141"/><area shape="rect" id="node9" href="class_table_view_parallelepipede.html#ada7c089cbd5d5b8d218879706d0018c9" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="217,165,492,195"/><area shape="rect" id="node11" href="class_table_view_port_excitation.html#af86425e414a4671b88458ea7407d20f3" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="220,219,489,248"/><area shape="rect" id="node13" href="class_table_view_sonde.html#a5b9fb6b7ea45c1080b23bdee892f8bf1" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="243,272,467,301"/><area shape="rect" id="node15" href="class_table_view_surface_prelev.html#a0a7e33760a27f20306c30d556890e6e6" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="220,325,489,355"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a88389099271e680744373a84e018802f"></a><!-- doxytag: member="TableView::addNewElement" ref="a88389099271e680744373a84e018802f" args="()" -->
@@ -213,15 +196,6 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_table_view_8cpp_source.html#l00091">91</a> of file <a class="el" href="_table_view_8cpp_source.html">TableView.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_a88389099271e680744373a84e018802f_icgraph.png" border="0" usemap="#class_table_view_a88389099271e680744373a84e018802f_icgraph" alt=""/></div>
-<map name="class_table_view_a88389099271e680744373a84e018802f_icgraph" id="class_table_view_a88389099271e680744373a84e018802f_icgraph">
-<area shape="rect" id="node3" href="class_table_view.html#a88eb58ffc2872030e3aac8807b5c7876" title="affiche un menu contextuel" alt="" coords="240,5,440,35"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a88eb58ffc2872030e3aac8807b5c7876"></a><!-- doxytag: member="TableView::contextMenuEvent" ref="a88eb58ffc2872030e3aac8807b5c7876" args="(QContextMenuEvent *e)" -->
@@ -242,15 +216,6 @@ Here is the caller graph for this function:</div>
 <p>affiche un menu contextuel </p>
 
 <p>Definition at line <a class="el" href="_table_view_8cpp_source.html#l00013">13</a> of file <a class="el" href="_table_view_8cpp_source.html">TableView.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_a88eb58ffc2872030e3aac8807b5c7876_cgraph.png" border="0" usemap="#class_table_view_a88eb58ffc2872030e3aac8807b5c7876_cgraph" alt=""/></div>
-<map name="class_table_view_a88eb58ffc2872030e3aac8807b5c7876_cgraph" id="class_table_view_a88eb58ffc2872030e3aac8807b5c7876_cgraph">
-<area shape="rect" id="node3" href="class_table_view.html#a88389099271e680744373a84e018802f" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="253,5,440,35"/><area shape="rect" id="node5" href="class_table_view.html#ac1869a3d711496b781332aacd3947c62" title="Supprime un élément du model." alt="" coords="260,59,433,88"/><area shape="rect" id="node15" href="class_table_view.html#afb5e78e3b616b91b3241dbbe800001be" title="Ouvre une fenetre de dialogue pour changer de couleur les éléments séléctionnés. La couleur choisi se..." alt="" coords="276,112,417,141"/><area shape="rect" id="node7" href="class_table_view.html#aa0cfc1a932ec8d4de97f161b82fe6822" title="Modifie la liste des éléments séléctionnés pour prendre en compte seulement les lignes." alt="" coords="489,59,676,88"/><area shape="rect" id="node9" href="class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="491,112,675,141"/><area shape="rect" id="node11" href="class_table_model.html#a86d229acad67e32bc5769d9eb3c23bf9" title="supprime un élément du tableau" alt="" coords="489,5,676,35"/><area shape="rect" id="node13" href="class_bloc_element_base.html#a539ee46c7714d2ee9168dd4e21fb8e66" title="Supprime l&#39;élément elem du tableau." alt="" coords="727,5,951,35"/><area shape="rect" id="node19" href="class_table_model.html#ab178835fec98d6de650fc9001b0961d7" title="Retourne un élément contenu dans le tableau au rang row." alt="" coords="501,165,664,195"/><area shape="rect" id="node23" href="classelement_base.html#ae7c7dc9276872623416ba89d50eb3753" title="elementBase::getInvertColor" alt="" coords="489,219,676,248"/><area shape="rect" id="node21" href="class_bloc_element_base.html#a3b18c87309337fcf0a28bf371c91d010" title="Retourne un elementBase contenu à l&#39;indice i." alt="" coords="739,165,939,195"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -273,24 +238,6 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_table_view_8cpp_source.html#l00100">100</a> of file <a class="el" href="_table_view_8cpp_source.html">TableView.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_ac1869a3d711496b781332aacd3947c62_cgraph.png" border="0" usemap="#class_table_view_ac1869a3d711496b781332aacd3947c62_cgraph" alt=""/></div>
-<map name="class_table_view_ac1869a3d711496b781332aacd3947c62_cgraph" id="class_table_view_ac1869a3d711496b781332aacd3947c62_cgraph">
-<area shape="rect" id="node3" href="class_table_view.html#aa0cfc1a932ec8d4de97f161b82fe6822" title="Modifie la liste des éléments séléctionnés pour prendre en compte seulement les lignes." alt="" coords="231,5,417,35"/><area shape="rect" id="node5" href="class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="232,59,416,88"/><area shape="rect" id="node7" href="class_table_model.html#a86d229acad67e32bc5769d9eb3c23bf9" title="supprime un élément du tableau" alt="" coords="231,112,417,141"/><area shape="rect" id="node9" href="class_bloc_element_base.html#a539ee46c7714d2ee9168dd4e21fb8e66" title="Supprime l&#39;élément elem du tableau." alt="" coords="468,112,692,141"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_ac1869a3d711496b781332aacd3947c62_icgraph.png" border="0" usemap="#class_table_view_ac1869a3d711496b781332aacd3947c62_icgraph" alt=""/></div>
-<map name="class_table_view_ac1869a3d711496b781332aacd3947c62_icgraph" id="class_table_view_ac1869a3d711496b781332aacd3947c62_icgraph">
-<area shape="rect" id="node3" href="class_table_view.html#a88eb58ffc2872030e3aac8807b5c7876" title="affiche un menu contextuel" alt="" coords="229,5,429,35"/><area shape="rect" id="node5" href="class_table_view.html#a2e0936ef41e6ebe795662601ad6e78dd" title="Gère les entrées au clavier. Cette fonction appelle simplement la fonction de suppression des élément..." alt="" coords="240,59,419,88"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="afb5e78e3b616b91b3241dbbe800001be"></a><!-- doxytag: member="TableView::editColor" ref="afb5e78e3b616b91b3241dbbe800001be" args="()" -->
@@ -310,24 +257,6 @@ Here is the caller graph for this function:</div>
 <p>Ouvre une fenetre de dialogue pour changer de couleur les éléments séléctionnés. La couleur choisi sera appliquée à tous les éléments séléctionnés. </p>
 
 <p>Definition at line <a class="el" href="_table_view_8cpp_source.html#l00110">110</a> of file <a class="el" href="_table_view_8cpp_source.html">TableView.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_afb5e78e3b616b91b3241dbbe800001be_cgraph.png" border="0" usemap="#class_table_view_afb5e78e3b616b91b3241dbbe800001be_cgraph" alt=""/></div>
-<map name="class_table_view_afb5e78e3b616b91b3241dbbe800001be_cgraph" id="class_table_view_afb5e78e3b616b91b3241dbbe800001be_cgraph">
-<area shape="rect" id="node3" href="class_table_view.html#aa0cfc1a932ec8d4de97f161b82fe6822" title="Modifie la liste des éléments séléctionnés pour prendre en compte seulement les lignes." alt="" coords="199,5,385,35"/><area shape="rect" id="node5" href="class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="200,59,384,88"/><area shape="rect" id="node7" href="class_table_model.html#ab178835fec98d6de650fc9001b0961d7" title="Retourne un élément contenu dans le tableau au rang row." alt="" coords="211,112,373,141"/><area shape="rect" id="node11" href="classelement_base.html#ae7c7dc9276872623416ba89d50eb3753" title="elementBase::getInvertColor" alt="" coords="199,165,385,195"/><area shape="rect" id="node9" href="class_bloc_element_base.html#a3b18c87309337fcf0a28bf371c91d010" title="Retourne un elementBase contenu à l&#39;indice i." alt="" coords="435,112,635,141"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_afb5e78e3b616b91b3241dbbe800001be_icgraph.png" border="0" usemap="#class_table_view_afb5e78e3b616b91b3241dbbe800001be_icgraph" alt=""/></div>
-<map name="class_table_view_afb5e78e3b616b91b3241dbbe800001be_icgraph" id="class_table_view_afb5e78e3b616b91b3241dbbe800001be_icgraph">
-<area shape="rect" id="node3" href="class_table_view.html#a88eb58ffc2872030e3aac8807b5c7876" title="affiche un menu contextuel" alt="" coords="197,5,397,35"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -350,15 +279,6 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_table_view_8cpp_source.html#l00081">81</a> of file <a class="el" href="_table_view_8cpp_source.html">TableView.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_af410b7e3a69630e4f3ddaec84584eeb8_icgraph.png" border="0" usemap="#class_table_view_af410b7e3a69630e4f3ddaec84584eeb8_icgraph" alt=""/></div>
-<map name="class_table_view_af410b7e3a69630e4f3ddaec84584eeb8_icgraph" id="class_table_view_af410b7e3a69630e4f3ddaec84584eeb8_icgraph">
-<area shape="rect" id="node3" href="class_table_view.html#aa86cb90655c1c45257ded6eda49b25b4" title="Change la couleur des éléments séléctionnés." alt="" coords="240,88,435,117"/><area shape="rect" id="node5" href="class_table_view.html#ae8e2fcfd6769e96634180f82d7d65ccb" title="Ajoute un élément au model." alt="" coords="257,192,417,221"/><area shape="rect" id="node11" href="class_table_view_metallisation.html#a3a0b2cbfabd50d11db956bf660d0dd07" title="TableViewMetallisation::addNewMetallisation Créer un nouvel objet metallisation et ouvre la fenetre d..." alt="" coords="495,5,753,35"/><area shape="rect" id="node21" href="class_table_view.html#ac1869a3d711496b781332aacd3947c62" title="Supprime un élément du model." alt="" coords="251,379,424,408"/><area shape="rect" id="node27" href="class_table_view.html#afb5e78e3b616b91b3241dbbe800001be" title="Ouvre une fenetre de dialogue pour changer de couleur les éléments séléctionnés. La couleur choisi se..." alt="" coords="267,272,408,301"/><area shape="rect" id="node7" href="class_table_view_cart_tempo.html#aa960896b77de4620668413b88aa60de1" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="499,59,749,88"/><area shape="rect" id="node9" href="class_table_view_element_localise.html#aea2be5af6d544883f0f016b64e5662be" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="483,112,765,141"/><area shape="rect" id="node13" href="class_table_view_parallelepipede.html#ada7c089cbd5d5b8d218879706d0018c9" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="487,165,761,195"/><area shape="rect" id="node15" href="class_table_view_port_excitation.html#af86425e414a4671b88458ea7407d20f3" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="489,219,759,248"/><area shape="rect" id="node17" href="class_table_view_sonde.html#a5b9fb6b7ea45c1080b23bdee892f8bf1" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="512,272,736,301"/><area shape="rect" id="node19" href="class_table_view_surface_prelev.html#a0a7e33760a27f20306c30d556890e6e6" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont..." alt="" coords="489,325,759,355"/><area shape="rect" id="node23" href="class_table_view.html#a88eb58ffc2872030e3aac8807b5c7876" title="affiche un menu contextuel" alt="" coords="524,379,724,408"/><area shape="rect" id="node25" href="class_table_view.html#a2e0936ef41e6ebe795662601ad6e78dd" title="Gère les entrées au clavier. Cette fonction appelle simplement la fonction de suppression des élément..." alt="" coords="535,432,713,461"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a2e0936ef41e6ebe795662601ad6e78dd"></a><!-- doxytag: member="TableView::keyPressEvent" ref="a2e0936ef41e6ebe795662601ad6e78dd" args="(QKeyEvent *event)" -->
@@ -379,15 +299,6 @@ Here is the caller graph for this function:</div>
 <p>Gère les entrées au clavier. Cette fonction appelle simplement la fonction de suppression des éléments quand la touche SUPPR est enfoncée. </p>
 
 <p>Definition at line <a class="el" href="_table_view_8cpp_source.html#l00023">23</a> of file <a class="el" href="_table_view_8cpp_source.html">TableView.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_a2e0936ef41e6ebe795662601ad6e78dd_cgraph.png" border="0" usemap="#class_table_view_a2e0936ef41e6ebe795662601ad6e78dd_cgraph" alt=""/></div>
-<map name="class_table_view_a2e0936ef41e6ebe795662601ad6e78dd_cgraph" id="class_table_view_a2e0936ef41e6ebe795662601ad6e78dd_cgraph">
-<area shape="rect" id="node3" href="class_table_view.html#ac1869a3d711496b781332aacd3947c62" title="Supprime un élément du model." alt="" coords="236,59,409,88"/><area shape="rect" id="node5" href="class_table_view.html#aa0cfc1a932ec8d4de97f161b82fe6822" title="Modifie la liste des éléments séléctionnés pour prendre en compte seulement les lignes." alt="" coords="460,5,647,35"/><area shape="rect" id="node7" href="class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="461,59,645,88"/><area shape="rect" id="node9" href="class_table_model.html#a86d229acad67e32bc5769d9eb3c23bf9" title="supprime un élément du tableau" alt="" coords="460,112,647,141"/><area shape="rect" id="node11" href="class_bloc_element_base.html#a539ee46c7714d2ee9168dd4e21fb8e66" title="Supprime l&#39;élément elem du tableau." alt="" coords="697,112,921,141"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -412,15 +323,6 @@ Here is the call graph for this function:</div>
 </dd></dl>
 
 <p>Definition at line <a class="el" href="_table_view_8cpp_source.html#l00036">36</a> of file <a class="el" href="_table_view_8cpp_source.html">TableView.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_aa0cfc1a932ec8d4de97f161b82fe6822_icgraph.png" border="0" usemap="#class_table_view_aa0cfc1a932ec8d4de97f161b82fe6822_icgraph" alt=""/></div>
-<map name="class_table_view_aa0cfc1a932ec8d4de97f161b82fe6822_icgraph" id="class_table_view_aa0cfc1a932ec8d4de97f161b82fe6822_icgraph">
-<area shape="rect" id="node3" href="class_table_view.html#ac1869a3d711496b781332aacd3947c62" title="Supprime un élément du model." alt="" coords="241,59,415,88"/><area shape="rect" id="node9" href="class_table_view.html#afb5e78e3b616b91b3241dbbe800001be" title="Ouvre une fenetre de dialogue pour changer de couleur les éléments séléctionnés. La couleur choisi se..." alt="" coords="257,5,399,35"/><area shape="rect" id="node5" href="class_table_view.html#a88eb58ffc2872030e3aac8807b5c7876" title="affiche un menu contextuel" alt="" coords="464,5,664,35"/><area shape="rect" id="node7" href="class_table_view.html#a2e0936ef41e6ebe795662601ad6e78dd" title="Gère les entrées au clavier. Cette fonction appelle simplement la fonction de suppression des élément..." alt="" coords="475,59,653,88"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -453,14 +355,24 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_table_view_8cpp_source.html#l00057">57</a> of file <a class="el" href="_table_view_8cpp_source.html">TableView.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_table_view_aa86cb90655c1c45257ded6eda49b25b4_cgraph.png" border="0" usemap="#class_table_view_aa86cb90655c1c45257ded6eda49b25b4_cgraph" alt=""/></div>
-<map name="class_table_view_aa86cb90655c1c45257ded6eda49b25b4_cgraph" id="class_table_view_aa86cb90655c1c45257ded6eda49b25b4_cgraph">
-<area shape="rect" id="node3" href="class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="249,5,433,35"/><area shape="rect" id="node5" href="class_table_model.html#ab178835fec98d6de650fc9001b0961d7" title="Retourne un élément contenu dans le tableau au rang row." alt="" coords="260,59,423,88"/><area shape="rect" id="node9" href="classelement_base.html#acb2b347954f2507fbfc005a989972b7d" title="elementBase::invertColor" alt="" coords="257,112,425,141"/><area shape="rect" id="node7" href="class_bloc_element_base.html#a3b18c87309337fcf0a28bf371c91d010" title="Retourne un elementBase contenu à l&#39;indice i." alt="" coords="483,59,683,88"/></map>
 </div>
-</p>
+</div>
+<a class="anchor" id="a3d7a702453c23bb00e609d71a13c7f67"></a><!-- doxytag: member="TableView::setSourceModel" ref="a3d7a702453c23bb00e609d71a13c7f67" args="(TableModel *m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_table_view.html#a3d7a702453c23bb00e609d71a13c7f67">TableView::setSourceModel</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_table_model.html">TableModel</a> *&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_table_view_8h_source.html#l00051">51</a> of file <a class="el" href="_table_view_8h_source.html">TableView.h</a>.</p>
 
 </div>
 </div>
@@ -486,7 +398,7 @@ Here is the call graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

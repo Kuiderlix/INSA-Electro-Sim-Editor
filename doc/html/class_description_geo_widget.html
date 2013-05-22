@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: DescriptionGeoWidget Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: DescriptionGeoWidget Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,18 +85,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">DescriptionGeoWidget Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="DescriptionGeoWidget" -->
+<!-- doxytag: class="DescriptionGeoWidget" --><!-- doxytag: inherits="ToolBoxWidget" -->
 <p>Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur des autres formulaire de la meme catégorie.  
  <a href="class_description_geo_widget.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_description_geo_widget_8h_source.html">DescriptionGeoWidget.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for DescriptionGeoWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_description_geo_widget__inherit__graph.png" border="0" usemap="#_description_geo_widget_inherit__map" alt="Inheritance graph"/></div>
+<map name="_description_geo_widget_inherit__map" id="_description_geo_widget_inherit__map">
+<area shape="rect" id="node2" href="class_tool_box_widget.html" title="Classe de base pour les widgets conteneurs de la ToolBox." alt="" coords="27,5,136,35"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for DescriptionGeoWidget:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_description_geo_widget__coll__graph.png" border="0" usemap="#_description_geo_widget_coll__map" alt="Collaboration graph"/></div>
+<map name="_description_geo_widget_coll__map" id="_description_geo_widget_coll__map">
+<area shape="rect" id="node2" href="class_tool_box_widget.html" title="Classe de base pour les widgets conteneurs de la ToolBox." alt="" coords="27,101,136,131"/><area shape="rect" id="node4" href="class_data.html" title="Contient toutes les données utiles pour la simulation." alt="" coords="56,5,107,35"/></map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_description_geo_widget-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e">openElementLocaliseWindows</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction ouvre un formulaire pour ajouter un objet <a class="el" href="classelement_localise.html">elementLocalise</a>.  <a href="#a3cb0ed1547f6f2f96badbd61f6376e6e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction ouvre un formulaire pour ajouter un objet <a class="el" href="classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a>.  <a href="#a3cb0ed1547f6f2f96badbd61f6376e6e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="signals"></a>
 Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_description_geo_widget.html#a3d9a73e2ea7680ce833f9aff60b2b641">newMetalCreated</a> (<a class="el" href="classelement_base.html">elementBase</a> *)</td></tr>
@@ -104,10 +118,12 @@ Signals</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_description_geo_widget.html#af3b28ca7fd197c5f6cda6dbd1ae08747">newParaCreated</a> (<a class="el" href="classelement_base.html">elementBase</a> *)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce signal est émis quand un nouvelle objet parallelepipede est créé  <a href="#af3b28ca7fd197c5f6cda6dbd1ae08747"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_description_geo_widget.html#ac993d4e58252d53df211459ee110988b">newElemLocCreated</a> (<a class="el" href="classelement_base.html">elementBase</a> *)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce signal est émis quand un nouvelle objet <a class="el" href="classelement_localise.html">elementLocalise</a> est créé  <a href="#ac993d4e58252d53df211459ee110988b"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce signal est émis quand un nouvelle objet <a class="el" href="classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a> est créé  <a href="#ac993d4e58252d53df211459ee110988b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_description_geo_widget.html#ad7a8b44fa2b77318bde95fcce4b5bce0">DescriptionGeoWidget</a> (<a class="el" href="class_data.html">Data</a> *data, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_description_geo_widget.html#ad7a8b44fa2b77318bde95fcce4b5bce0">DescriptionGeoWidget</a> (<a class="el" href="class_data.html">Data</a> *<a class="el" href="class_tool_box_widget.html#ac2ee04ba2afd2ce91d0d95c30519e586">data</a>, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_description_geo_widget.html#a6e444262d4e8c3f17c644dae3fc696e4">init</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise les formulaire avec les valeurs de l'objet <a class="el" href="class_data.html" title="Contient toutes les données utiles pour la simulation.">Data</a>.  <a href="#a6e444262d4e8c3f17c644dae3fc696e4"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur des autres formulaire de la meme catégorie. </p>
@@ -141,18 +157,31 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_description_geo_widget_8cpp_source.html#l00003">3</a> of file <a class="el" href="_description_geo_widget_8cpp_source.html">DescriptionGeoWidget.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_description_geo_widget_ad7a8b44fa2b77318bde95fcce4b5bce0_cgraph.png" border="0" usemap="#class_description_geo_widget_ad7a8b44fa2b77318bde95fcce4b5bce0_cgraph" alt=""/></div>
-<map name="class_description_geo_widget_ad7a8b44fa2b77318bde95fcce4b5bce0_cgraph" id="class_description_geo_widget_ad7a8b44fa2b77318bde95fcce4b5bce0_cgraph">
-<area shape="rect" id="node3" href="class_description_geo_widget.html#a3d9a73e2ea7680ce833f9aff60b2b641" title="Ce signal est émis quand un nouvelle objet metallisation est créé" alt="" coords="385,5,647,35"/><area shape="rect" id="node5" href="class_description_geo_widget.html#af3b28ca7fd197c5f6cda6dbd1ae08747" title="Ce signal est émis quand un nouvelle objet parallelepipede est créé" alt="" coords="387,59,645,88"/><area shape="rect" id="node7" href="class_data.html#a860188d3872c8bedab5bcd56c7a1a8be" title="Data::getVolumeCalcul" alt="" coords="437,112,595,141"/><area shape="rect" id="node9" href="class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b" title="Data::getParoi" alt="" coords="463,165,569,195"/><area shape="rect" id="node11" href="class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e" title="Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise." alt="" coords="347,219,685,248"/><area shape="rect" id="node13" href="class_description_geo_widget.html#ac993d4e58252d53df211459ee110988b" title="Ce signal est émis quand un nouvelle objet elementLocalise est créé" alt="" coords="733,219,1016,248"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a6e444262d4e8c3f17c644dae3fc696e4"></a><!-- doxytag: member="DescriptionGeoWidget::init" ref="a6e444262d4e8c3f17c644dae3fc696e4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_description_geo_widget.html#a6e444262d4e8c3f17c644dae3fc696e4">DescriptionGeoWidget::init</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initialise les formulaire avec les valeurs de l'objet <a class="el" href="class_data.html" title="Contient toutes les données utiles pour la simulation.">Data</a>. </p>
+
+<p>Implements <a class="el" href="class_tool_box_widget.html#aa43ef2f3ba3e32674be18d0f995676d1">ToolBoxWidget</a>.</p>
+
+<p>Definition at line <a class="el" href="_description_geo_widget_8cpp_source.html#l00055">55</a> of file <a class="el" href="_description_geo_widget_8cpp_source.html">DescriptionGeoWidget.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ac993d4e58252d53df211459ee110988b"></a><!-- doxytag: member="DescriptionGeoWidget::newElemLocCreated" ref="ac993d4e58252d53df211459ee110988b" args="(elementBase *)" -->
 <div class="memitem">
 <div class="memproto">
@@ -168,16 +197,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Ce signal est émis quand un nouvelle objet <a class="el" href="classelement_localise.html">elementLocalise</a> est créé </p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_description_geo_widget_ac993d4e58252d53df211459ee110988b_icgraph.png" border="0" usemap="#class_description_geo_widget_ac993d4e58252d53df211459ee110988b_icgraph" alt=""/></div>
-<map name="class_description_geo_widget_ac993d4e58252d53df211459ee110988b_icgraph" id="class_description_geo_widget_ac993d4e58252d53df211459ee110988b_icgraph">
-<area shape="rect" id="node3" href="class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e" title="Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise." alt="" coords="336,5,675,35"/><area shape="rect" id="node5" href="class_description_geo_widget.html#ad7a8b44fa2b77318bde95fcce4b5bce0" title="DescriptionGeoWidget::DescriptionGeoWidget" alt="" coords="724,5,1015,35"/></map>
-</div>
-</p>
+<p>Ce signal est émis quand un nouvelle objet <a class="el" href="classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a> est créé </p>
 
 </div>
 </div>
@@ -198,15 +218,6 @@ Here is the caller graph for this function:</div>
 
 <p>Ce signal est émis quand un nouvelle objet metallisation est créé </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_description_geo_widget_a3d9a73e2ea7680ce833f9aff60b2b641_icgraph.png" border="0" usemap="#class_description_geo_widget_a3d9a73e2ea7680ce833f9aff60b2b641_icgraph" alt=""/></div>
-<map name="class_description_geo_widget_a3d9a73e2ea7680ce833f9aff60b2b641_icgraph" id="class_description_geo_widget_a3d9a73e2ea7680ce833f9aff60b2b641_icgraph">
-<area shape="rect" id="node3" href="class_description_geo_widget.html#ad7a8b44fa2b77318bde95fcce4b5bce0" title="DescriptionGeoWidget::DescriptionGeoWidget" alt="" coords="319,5,609,35"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="af3b28ca7fd197c5f6cda6dbd1ae08747"></a><!-- doxytag: member="DescriptionGeoWidget::newParaCreated" ref="af3b28ca7fd197c5f6cda6dbd1ae08747" args="(elementBase *)" -->
@@ -226,15 +237,6 @@ Here is the caller graph for this function:</div>
 
 <p>Ce signal est émis quand un nouvelle objet parallelepipede est créé </p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_description_geo_widget_af3b28ca7fd197c5f6cda6dbd1ae08747_icgraph.png" border="0" usemap="#class_description_geo_widget_af3b28ca7fd197c5f6cda6dbd1ae08747_icgraph" alt=""/></div>
-<map name="class_description_geo_widget_af3b28ca7fd197c5f6cda6dbd1ae08747_icgraph" id="class_description_geo_widget_af3b28ca7fd197c5f6cda6dbd1ae08747_icgraph">
-<area shape="rect" id="node3" href="class_description_geo_widget.html#ad7a8b44fa2b77318bde95fcce4b5bce0" title="DescriptionGeoWidget::DescriptionGeoWidget" alt="" coords="313,5,604,35"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a3cb0ed1547f6f2f96badbd61f6376e6e"></a><!-- doxytag: member="DescriptionGeoWidget::openElementLocaliseWindows" ref="a3cb0ed1547f6f2f96badbd61f6376e6e" args="()" -->
@@ -251,27 +253,9 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Cette fonction ouvre un formulaire pour ajouter un objet <a class="el" href="classelement_localise.html">elementLocalise</a>. </p>
+<p>Cette fonction ouvre un formulaire pour ajouter un objet <a class="el" href="classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a>. </p>
 
-<p>Definition at line <a class="el" href="_description_geo_widget_8cpp_source.html#l00042">42</a> of file <a class="el" href="_description_geo_widget_8cpp_source.html">DescriptionGeoWidget.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_description_geo_widget_a3cb0ed1547f6f2f96badbd61f6376e6e_cgraph.png" border="0" usemap="#class_description_geo_widget_a3cb0ed1547f6f2f96badbd61f6376e6e_cgraph" alt=""/></div>
-<map name="class_description_geo_widget_a3cb0ed1547f6f2f96badbd61f6376e6e_cgraph" id="class_description_geo_widget_a3cb0ed1547f6f2f96badbd61f6376e6e_cgraph">
-<area shape="rect" id="node3" href="class_description_geo_widget.html#ac993d4e58252d53df211459ee110988b" title="Ce signal est émis quand un nouvelle objet elementLocalise est créé" alt="" coords="392,5,675,35"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_description_geo_widget_a3cb0ed1547f6f2f96badbd61f6376e6e_icgraph.png" border="0" usemap="#class_description_geo_widget_a3cb0ed1547f6f2f96badbd61f6376e6e_icgraph" alt=""/></div>
-<map name="class_description_geo_widget_a3cb0ed1547f6f2f96badbd61f6376e6e_icgraph" id="class_description_geo_widget_a3cb0ed1547f6f2f96badbd61f6376e6e_icgraph">
-<area shape="rect" id="node3" href="class_description_geo_widget.html#ad7a8b44fa2b77318bde95fcce4b5bce0" title="DescriptionGeoWidget::DescriptionGeoWidget" alt="" coords="393,5,684,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="_description_geo_widget_8cpp_source.html#l00045">45</a> of file <a class="el" href="_description_geo_widget_8cpp_source.html">DescriptionGeoWidget.cpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +281,7 @@ Here is the caller graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

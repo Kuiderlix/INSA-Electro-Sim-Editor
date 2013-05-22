@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/portExcitation.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/portExcitation.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/portExcitation.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="port_excitation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/* </span>
+<a href="port_excitation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
 <a name="l00002"></a>00002 <span class="comment"> * File:   portExcitation.cpp</span>
 <a name="l00003"></a>00003 <span class="comment"> * Author: camille</span>
 <a name="l00004"></a>00004 <span class="comment"> * </span>
@@ -92,49 +92,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_ecriture_8h.html">Ecriture.h</a>&quot;</span>
 <a name="l00012"></a>00012 
 <a name="l00013"></a><a class="code" href="classport_excitation.html#ae52db89d1b5796e37120ce584b5f30e1">00013</a> <a class="code" href="classport_excitation.html#ae52db89d1b5796e37120ce584b5f30e1">portExcitation::portExcitation</a>() {
-<a name="l00014"></a>00014     typePort=1;
-<a name="l00015"></a>00015     direction=1;
-<a name="l00016"></a>00016     typeSource=1;
-<a name="l00017"></a>00017 }
-<a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="classport_excitation.html#af0f4fa46b7a2723330d95a66bf330242">00019</a> <a class="code" href="classport_excitation.html#ae52db89d1b5796e37120ce584b5f30e1">portExcitation::portExcitation</a>(<span class="keyword">const</span> <a class="code" href="classport_excitation.html">portExcitation</a>&amp; orig) {
-<a name="l00020"></a>00020 }
-<a name="l00021"></a>00021 
-<a name="l00022"></a><a class="code" href="classport_excitation.html#ae01aa6770e6c6d713493e2be319ca2d7">00022</a> <a class="code" href="classport_excitation.html#ae01aa6770e6c6d713493e2be319ca2d7">portExcitation::~portExcitation</a>() {
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015     portActif=<span class="keyword">false</span>;
+<a name="l00016"></a>00016     portInfinitesimal=<span class="keyword">false</span>;
+<a name="l00017"></a>00017     typePort=0;
+<a name="l00018"></a>00018     direction=0;
+<a name="l00019"></a>00019     impedance=0;
+<a name="l00020"></a>00020     typeSource=0;
+<a name="l00021"></a>00021     ponderationAmplitude=0;
+<a name="l00022"></a>00022     ponderationPhase=0;
 <a name="l00023"></a>00023 }
 <a name="l00024"></a>00024 
-<a name="l00025"></a><a class="code" href="classport_excitation.html#a5a94e1435ab7444c61ee89f96f781bcc">00025</a> <span class="keywordtype">void</span> <a class="code" href="classport_excitation.html#a5a94e1435ab7444c61ee89f96f781bcc">portExcitation::ecrire</a>(<span class="keywordtype">int</span> nb){
-<a name="l00026"></a>00026 
-<a name="l00027"></a>00027     std::ostringstream monEcriture;
-<a name="l00028"></a>00028     monEcriture &lt;&lt; <span class="stringliteral">&quot;Port_d&#39;excitation_numero_&quot;</span> &lt;&lt; nb &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-<a name="l00029"></a>00029     monEcriture &lt;&lt; <span class="stringliteral">&quot;Port_actif_OUI&gt;1_NON&gt;0:\n&quot;</span>;
-<a name="l00030"></a>00030     monEcriture &lt;&lt; ((int)this-&gt;portActif) &lt;&lt; std::endl;
-<a name="l00031"></a>00031     monEcriture &lt;&lt; <span class="stringliteral">&quot;Port_infinitésimal_OUI&gt;1_NON&gt;0\n&quot;</span>;
-<a name="l00032"></a>00032     monEcriture &lt;&lt; ((int)this-&gt;portInfinitesimal) &lt;&lt; std::endl;
-<a name="l00033"></a>00033     <span class="keywordflow">if</span>(this-&gt;portInfinitesimal){
-<a name="l00034"></a>00034         monEcriture &lt;&lt; <span class="stringliteral">&quot;Port_type_Magnétique&gt;1_Electrique&gt;2\n&quot;</span>;
-<a name="l00035"></a>00035         monEcriture &lt;&lt; this-&gt;typePort &lt;&lt; std::endl;
-<a name="l00036"></a>00036     }
-<a name="l00037"></a>00037     monEcriture &lt;&lt; <span class="stringliteral">&quot;Direction_1&gt;x_2&gt;y_3&gt;z\n&quot;</span>;
-<a name="l00038"></a>00038     monEcriture &lt;&lt; this-&gt;direction &lt;&lt; std::endl;
-<a name="l00039"></a>00039     std::string ecriture(monEcriture.str());
-<a name="l00040"></a>00040     <a class="code" href="class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d">Ecriture::Ecrire</a>(ecriture);
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042     <span class="comment">//Les coordonnées</span>
-<a name="l00043"></a>00043     this-&gt;<a class="code" href="classelement_base.html#ab3c14b9c85e93e6974f14f7bd269a972">ecrireElementBase</a>();
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045     std::ostringstream finEcriture;
-<a name="l00046"></a>00046     finEcriture &lt;&lt; <span class="stringliteral">&quot;Impedance_de_la_source_(en_Ohm):\n&quot;</span>;
-<a name="l00047"></a>00047     finEcriture &lt;&lt; this-&gt;impedance &lt;&lt; std::endl;
-<a name="l00048"></a>00048     finEcriture &lt;&lt; <span class="stringliteral">&quot;Source_de_tension&gt;1_Source_de_courant:\n&quot;</span>;
-<a name="l00049"></a>00049     finEcriture &lt;&lt; this-&gt;typeSource &lt;&lt; std::endl;
-<a name="l00050"></a>00050     finEcriture &lt;&lt; <span class="stringliteral">&quot;Ponderation_amplitude_(coefficient_multiplicatif):\n&quot;</span>;
-<a name="l00051"></a>00051     finEcriture &lt;&lt; this-&gt;ponderationAmplitude &lt;&lt; std::endl;
-<a name="l00052"></a>00052     finEcriture &lt;&lt; <span class="stringliteral">&quot;Ponderation_phase_(retard_temporel_en_s):\n&quot;</span>;
-<a name="l00053"></a>00053     finEcriture &lt;&lt; this-&gt;ponderationPhase &lt;&lt; std::endl;
-<a name="l00054"></a>00054     std::string ecritureFin(finEcriture.str());
-<a name="l00055"></a>00055     Ecriture::Ecrire(ecritureFin);
-<a name="l00056"></a>00056 }
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="classport_excitation.html#ae01aa6770e6c6d713493e2be319ca2d7">00026</a> <a class="code" href="classport_excitation.html#ae01aa6770e6c6d713493e2be319ca2d7">portExcitation::~portExcitation</a>() {
+<a name="l00027"></a>00027 }
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="classport_excitation.html#a5a94e1435ab7444c61ee89f96f781bcc">00029</a> <span class="keywordtype">void</span> <a class="code" href="classport_excitation.html#a5a94e1435ab7444c61ee89f96f781bcc">portExcitation::ecrire</a>(<span class="keywordtype">int</span> nb){
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     std::ostringstream monEcriture;
+<a name="l00032"></a>00032     monEcriture &lt;&lt; <span class="stringliteral">&quot;Port_d&#39;excitation_numero_&quot;</span> &lt;&lt; nb &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<a name="l00033"></a>00033     monEcriture &lt;&lt; <span class="stringliteral">&quot;Port_actif_OUI&gt;1_NON&gt;0:\n&quot;</span>;
+<a name="l00034"></a>00034     monEcriture &lt;&lt; ((int)this-&gt;portActif) &lt;&lt; std::endl;
+<a name="l00035"></a>00035     monEcriture &lt;&lt; <span class="stringliteral">&quot;Port_infinitésimal_OUI&gt;1_NON&gt;0\n&quot;</span>;
+<a name="l00036"></a>00036     monEcriture &lt;&lt; ((int)this-&gt;portInfinitesimal) &lt;&lt; std::endl;
+<a name="l00037"></a>00037     <span class="keywordflow">if</span>(this-&gt;portInfinitesimal){
+<a name="l00038"></a>00038         monEcriture &lt;&lt; <span class="stringliteral">&quot;Port_type_Magnétique&gt;1_Electrique&gt;2\n&quot;</span>;
+<a name="l00039"></a>00039         monEcriture &lt;&lt; this-&gt;typePort &lt;&lt; std::endl;
+<a name="l00040"></a>00040     }
+<a name="l00041"></a>00041     monEcriture &lt;&lt; <span class="stringliteral">&quot;Direction_1&gt;x_2&gt;y_3&gt;z\n&quot;</span>;
+<a name="l00042"></a>00042     monEcriture &lt;&lt; this-&gt;direction &lt;&lt; std::endl;
+<a name="l00043"></a>00043     std::string ecriture(monEcriture.str());
+<a name="l00044"></a>00044     <a class="code" href="class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d">Ecriture::Ecrire</a>(ecriture);
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046     <span class="comment">//Les coordonnées</span>
+<a name="l00047"></a>00047     this-&gt;<a class="code" href="classelement_base.html#ab3c14b9c85e93e6974f14f7bd269a972">ecrireElementBase</a>();
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049     std::ostringstream finEcriture;
+<a name="l00050"></a>00050     finEcriture &lt;&lt; <span class="stringliteral">&quot;Impedance_de_la_source_(en_Ohm):\n&quot;</span>;
+<a name="l00051"></a>00051     finEcriture &lt;&lt; this-&gt;impedance &lt;&lt; std::endl;
+<a name="l00052"></a>00052     finEcriture &lt;&lt; <span class="stringliteral">&quot;Source_de_tension&gt;1_Source_de_courant:\n&quot;</span>;
+<a name="l00053"></a>00053     finEcriture &lt;&lt; this-&gt;typeSource &lt;&lt; std::endl;
+<a name="l00054"></a>00054     finEcriture &lt;&lt; <span class="stringliteral">&quot;Ponderation_amplitude_(coefficient_multiplicatif):\n&quot;</span>;
+<a name="l00055"></a>00055     finEcriture &lt;&lt; this-&gt;ponderationAmplitude &lt;&lt; std::endl;
+<a name="l00056"></a>00056     finEcriture &lt;&lt; <span class="stringliteral">&quot;Ponderation_phase_(retard_temporel_en_s):\n&quot;</span>;
+<a name="l00057"></a>00057     finEcriture &lt;&lt; this-&gt;ponderationPhase &lt;&lt; std::endl;
+<a name="l00058"></a>00058     std::string ecritureFin(finEcriture.str());
+<a name="l00059"></a>00059     Ecriture::Ecrire(ecritureFin);
+<a name="l00060"></a>00060 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -153,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

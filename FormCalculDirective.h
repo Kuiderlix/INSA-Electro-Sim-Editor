@@ -5,8 +5,7 @@
 #include "calculDirectivite.h"
 
 /**
- * Formulaire permettant de modifier l'objet calculDirectivite
- * @brief The FormCalculDirective class
+ * @brief Formulaire permettant de modifier l'objet calculDirectivite
  */
 class FormCalculDirective : public QWidget
 {

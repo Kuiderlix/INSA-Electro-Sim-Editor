@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormCartographieTemporelle.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormCartographieTemporelle.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,34 +85,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="_form_element_base_8h.html">FormElementBase.h</a>&quot;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="cartographie_temporelle_8h.html">cartographieTemporelle.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00007"></a><a class="code" href="class_form_cartographie_temporelle.html">00007</a> <span class="keyword">class </span><a class="code" href="class_form_cartographie_temporelle.html">FormCartographieTemporelle</a> : <span class="keyword">public</span> <a class="code" href="class_form_element_base.html">FormElementBase</a>
-<a name="l00008"></a>00008 {
-<a name="l00009"></a>00009     Q_OBJECT
-<a name="l00010"></a>00010 <span class="keyword">public</span>:
-<a name="l00011"></a>00011     <span class="keyword">explicit</span> <a class="code" href="class_form_cartographie_temporelle.html#a22edbd8c1b1b819a237ea32d6eed705a">FormCartographieTemporelle</a>(<a class="code" href="classcartographie_temporelle.html">cartographieTemporelle</a> * carto, <span class="keywordtype">int</span> mode, QWidget *parent = 0);
-<a name="l00012"></a>00012     
-<a name="l00013"></a>00013 signals:
-<a name="l00014"></a>00014     
-<a name="l00015"></a>00015 <span class="keyword">public</span> slots:
-<a name="l00016"></a>00016     <span class="keywordtype">void</span> <a class="code" href="class_form_cartographie_temporelle.html#afc2f84be3c4e838d3eb62a796496419e">valider</a>();
-<a name="l00017"></a>00017     <span class="keywordtype">void</span> <a class="code" href="class_form_cartographie_temporelle.html#a2024630743108c130bf19f3fde670813">reset</a>();
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 <span class="keyword">private</span>:
+<a name="l00010"></a><a class="code" href="class_form_cartographie_temporelle.html">00010</a> <span class="keyword">class </span><a class="code" href="class_form_cartographie_temporelle.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet cartographieTemporelle dans la scène 3D...">FormCartographieTemporelle</a> : <span class="keyword">public</span> <a class="code" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase.">FormElementBase</a>
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012     Q_OBJECT
+<a name="l00013"></a>00013 <span class="keyword">public</span>:
+<a name="l00014"></a>00014     <span class="keyword">explicit</span> <a class="code" href="class_form_cartographie_temporelle.html#a9a36b177315a19ddea04c64b6f5857c9">FormCartographieTemporelle</a>(<a class="code" href="classcartographie_temporelle.html" title="Cette classe représente la variable cartographieTemporelle d&#39;une simulation.">cartographieTemporelle</a> * carto, QWidget *parent = 0);
+<a name="l00015"></a>00015     
+<a name="l00016"></a>00016 signals:
+<a name="l00017"></a>00017     
+<a name="l00018"></a>00018 <span class="keyword">public</span> slots:
+<a name="l00019"></a>00019     <span class="keywordtype">void</span> <a class="code" href="class_form_cartographie_temporelle.html#afc2f84be3c4e838d3eb62a796496419e" title="Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l&#39;elemen...">valider</a>();
+<a name="l00020"></a>00020     <span class="keywordtype">void</span> <a class="code" href="class_form_cartographie_temporelle.html#a2024630743108c130bf19f3fde670813" title="Place des valeurs par défaut dans le formulaire.">reset</a>();
 <a name="l00021"></a>00021 
-<a name="l00022"></a>00022     <span class="keywordtype">void</span> init();
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024     <a class="code" href="classcartographie_temporelle.html">cartographieTemporelle</a> * carto;
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026     QCheckBox * champsEWidget;
-<a name="l00027"></a>00027     QCheckBox * champsHWidget;
-<a name="l00028"></a>00028     QSpinBox * iterationDebutWidget;
-<a name="l00029"></a>00029     QSpinBox * iterationFinWidget;
-<a name="l00030"></a>00030     QSpinBox * intervalleWidget;
-<a name="l00031"></a>00031     
-<a name="l00032"></a>00032 };
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="preprocessor">#endif // FORMCARTOGRAPHIETEMPORELLE_H</span>
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 <span class="keyword">private</span>:
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025     <span class="keywordtype">void</span> init();
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027     <a class="code" href="classcartographie_temporelle.html" title="Cette classe représente la variable cartographieTemporelle d&#39;une simulation.">cartographieTemporelle</a> * carto;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029     QCheckBox * champsEWidget;
+<a name="l00030"></a>00030     QCheckBox * champsHWidget;
+<a name="l00031"></a>00031     QSpinBox * iterationDebutWidget;
+<a name="l00032"></a>00032     QSpinBox * iterationFinWidget;
+<a name="l00033"></a>00033     QSpinBox * intervalleWidget;
+<a name="l00034"></a>00034     
+<a name="l00035"></a>00035 };
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 <span class="preprocessor">#endif // FORMCARTOGRAPHIETEMPORELLE_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -131,7 +131,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

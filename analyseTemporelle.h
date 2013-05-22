@@ -10,7 +10,9 @@
 
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable analyseTemporelle d'une simulation
+ */
 class analyseTemporelle : public blocConfiguration {
     Q_OBJECT
 public:

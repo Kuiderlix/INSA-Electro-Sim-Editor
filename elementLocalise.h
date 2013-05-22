@@ -10,7 +10,9 @@
 
 #include "elementBase.h"
 
-
+/**
+ * @brief Cette classe représente la variable elementLocalise d'une simulation
+ */
 class elementLocalise : public elementBase{
 public:
     elementLocalise();

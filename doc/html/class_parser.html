@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: Parser Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: Parser Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -96,11 +96,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a12234f6cd36b61af4b50c94a179422c1">Parser</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a4b0ae86228a508a836e614a77c8b34da">parse</a> (<a class="el" href="class_data.html">Data</a> *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction principale. Elle démarre le parsing.  <a href="#a4b0ae86228a508a836e614a77c8b34da"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#af822f72540d96ffc5a460165c74782be">setNumFichier</a> (int num)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a9a26a7c6a4cafec07288b65f1fb9c2c9">getEmplacementFichier</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_parser.html#a0a0a1dbc2b695a106074810eca846500">setEmplacementFichier</a> (QString e)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Le parser de fichier de configuration. </p>
 
-<p>Definition at line <a class="el" href="parser_8h_source.html#l00029">29</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
+<p>Definition at line <a class="el" href="parser_8h_source.html#l00031">31</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a12234f6cd36b61af4b50c94a179422c1"></a><!-- doxytag: member="Parser::Parser" ref="a12234f6cd36b61af4b50c94a179422c1" args="()" -->
 <div class="memitem">
@@ -121,6 +124,24 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a9a26a7c6a4cafec07288b65f1fb9c2c9"></a><!-- doxytag: member="Parser::getEmplacementFichier" ref="a9a26a7c6a4cafec07288b65f1fb9c2c9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString <a class="el" href="class_parser.html#a9a26a7c6a4cafec07288b65f1fb9c2c9">Parser::getEmplacementFichier</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="parser_8h_source.html#l00047">47</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a4b0ae86228a508a836e614a77c8b34da"></a><!-- doxytag: member="Parser::parse" ref="a4b0ae86228a508a836e614a77c8b34da" args="(Data *data)" -->
 <div class="memitem">
 <div class="memproto">
@@ -145,25 +166,45 @@ Public Member Functions</h2></td></tr>
 </dl>
 <p>&gt;Fonction principale </p>
 
-<p>Definition at line <a class="el" href="parser_8cpp_source.html#l00504">504</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
+<p>Definition at line <a class="el" href="parser_8cpp_source.html#l00514">514</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_parser_a4b0ae86228a508a836e614a77c8b34da_cgraph.png" border="0" usemap="#class_parser_a4b0ae86228a508a836e614a77c8b34da_cgraph" alt=""/></div>
-<map name="class_parser_a4b0ae86228a508a836e614a77c8b34da_cgraph" id="class_parser_a4b0ae86228a508a836e614a77c8b34da_cgraph">
-<area shape="rect" id="node3" href="class_data.html#adef5a353076143ac15f0a6e45346d756" title="Data::getBlocSurfacePrelev" alt="" coords="184,5,368,35"/><area shape="rect" id="node5" href="class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste." alt="" coords="168,59,384,88"/><area shape="rect" id="node7" href="classbloc_surface_prelevement.html#af4e671e4078bebde10ab1d05bc621c12" title="blocSurfacePrelevement::GetSurface" alt="" coords="157,112,395,141"/><area shape="rect" id="node9" href="classsurface_prelevement.html#a21255a16dcb21a9b1b977f3a5eda7e68" title="surfacePrelevement::GetTypeSurface" alt="" coords="156,165,396,195"/></map>
 </div>
-</p>
+</div>
+<a class="anchor" id="a0a0a1dbc2b695a106074810eca846500"></a><!-- doxytag: member="Parser::setEmplacementFichier" ref="a0a0a1dbc2b695a106074810eca846500" args="(QString e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_parser.html#a0a0a1dbc2b695a106074810eca846500">Parser::setEmplacementFichier</a> </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_parser_a4b0ae86228a508a836e614a77c8b34da_icgraph.png" border="0" usemap="#class_parser_a4b0ae86228a508a836e614a77c8b34da_icgraph" alt=""/></div>
-<map name="class_parser_a4b0ae86228a508a836e614a77c8b34da_icgraph" id="class_parser_a4b0ae86228a508a836e614a77c8b34da_icgraph">
-<area shape="rect" id="node3" href="class_data.html#a7a0c8bb71ce1c395b1f5e3899ba08327" title="Data::Data" alt="" coords="156,5,241,35"/></map>
+<p>Definition at line <a class="el" href="parser_8h_source.html#l00052">52</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
+
 </div>
-</p>
+</div>
+<a class="anchor" id="af822f72540d96ffc5a460165c74782be"></a><!-- doxytag: member="Parser::setNumFichier" ref="af822f72540d96ffc5a460165c74782be" args="(int num)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_parser.html#af822f72540d96ffc5a460165c74782be">Parser::setNumFichier</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="parser_8h_source.html#l00042">42</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
 
 </div>
 </div>
@@ -189,7 +230,7 @@ Here is the caller graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

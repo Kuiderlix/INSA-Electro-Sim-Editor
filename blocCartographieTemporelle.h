@@ -11,7 +11,9 @@
 #include "cartographieTemporelle.h"
 #include "BlocElementBase.h"
 
-
+/**
+ * @brief Cette classe représente une liste de cartographieTemporelle
+ */
 class blocCartographieTemporelle : public BlocElementBase{
 public:
     blocCartographieTemporelle();

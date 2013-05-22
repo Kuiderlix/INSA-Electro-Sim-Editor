@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/volumeCalcul.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/volumeCalcul.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -92,76 +92,76 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="bloc_configuration_8h.html">blocConfiguration.h</a>&quot;</span>
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="classvolume_calcul.html">00014</a> <span class="keyword">class </span><a class="code" href="classvolume_calcul.html">volumeCalcul</a> : <span class="keyword">public</span> <a class="code" href="classbloc_configuration.html">blocConfiguration</a> {
-<a name="l00015"></a>00015     Q_OBJECT
-<a name="l00016"></a>00016 <span class="keyword">public</span>:
-<a name="l00017"></a>00017     <a class="code" href="classvolume_calcul.html#a774518a5185ead3e21e262b8dd6224a8">volumeCalcul</a>();
-<a name="l00018"></a>00018     <span class="keyword">virtual</span> <a class="code" href="classvolume_calcul.html#aa0567bce46e14fe52f4c3bedfdb4252e">~volumeCalcul</a>();
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 
-<a name="l00021"></a><a class="code" href="classvolume_calcul.html#ac355d534c9901feb9c9038a3a088614a">00021</a>     <span class="keywordtype">double</span> <a class="code" href="classvolume_calcul.html#ac355d534c9901feb9c9038a3a088614a">GetHauteur</a>()<span class="keyword"> const </span>{
-<a name="l00022"></a>00022         <span class="keywordflow">return</span> hauteur;
-<a name="l00023"></a>00023     }
-<a name="l00024"></a><a class="code" href="classvolume_calcul.html#a8fff237e85f76d9363ca40ef661ad89c">00024</a>     <span class="keywordtype">double</span> <a class="code" href="classvolume_calcul.html#a8fff237e85f76d9363ca40ef661ad89c">GetLargeur</a>()<span class="keyword"> const </span>{
-<a name="l00025"></a>00025         <span class="keywordflow">return</span> largeur;
+<a name="l00017"></a><a class="code" href="classvolume_calcul.html">00017</a> <span class="keyword">class </span><a class="code" href="classvolume_calcul.html" title="Cette classe représente la variable volumeCalcul d&#39;une simulation.">volumeCalcul</a> : <span class="keyword">public</span> <a class="code" href="classbloc_configuration.html" title="Classe de base pour les données de configuration d&#39;une simulation.">blocConfiguration</a> {
+<a name="l00018"></a>00018     Q_OBJECT
+<a name="l00019"></a>00019 <span class="keyword">public</span>:
+<a name="l00020"></a>00020     <a class="code" href="classvolume_calcul.html#a774518a5185ead3e21e262b8dd6224a8">volumeCalcul</a>();
+<a name="l00021"></a>00021     <span class="keyword">virtual</span> <a class="code" href="classvolume_calcul.html#aa0567bce46e14fe52f4c3bedfdb4252e">~volumeCalcul</a>();
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="classvolume_calcul.html#ac355d534c9901feb9c9038a3a088614a">00024</a>     <span class="keywordtype">double</span> <a class="code" href="classvolume_calcul.html#ac355d534c9901feb9c9038a3a088614a">GetHauteur</a>()<span class="keyword"> const </span>{
+<a name="l00025"></a>00025         <span class="keywordflow">return</span> hauteur;
 <a name="l00026"></a>00026     }
-<a name="l00027"></a><a class="code" href="classvolume_calcul.html#afe5224cf7c26211a001061b89e05d14a">00027</a>     <span class="keywordtype">double</span> <a class="code" href="classvolume_calcul.html#afe5224cf7c26211a001061b89e05d14a">GetLongueur</a>()<span class="keyword"> const </span>{
-<a name="l00028"></a>00028         <span class="keywordflow">return</span> longueur;
+<a name="l00027"></a><a class="code" href="classvolume_calcul.html#a8fff237e85f76d9363ca40ef661ad89c">00027</a>     <span class="keywordtype">double</span> <a class="code" href="classvolume_calcul.html#a8fff237e85f76d9363ca40ef661ad89c">GetLargeur</a>()<span class="keyword"> const </span>{
+<a name="l00028"></a>00028         <span class="keywordflow">return</span> largeur;
 <a name="l00029"></a>00029     }
-<a name="l00030"></a><a class="code" href="classvolume_calcul.html#a5d8f4f104687ef14e9e311d4f4048eb5">00030</a>     <span class="keywordtype">int</span> <a class="code" href="classvolume_calcul.html#a5d8f4f104687ef14e9e311d4f4048eb5">GetNombreX</a>()<span class="keyword"> const </span>{
-<a name="l00031"></a>00031         <span class="keywordflow">return</span> nombreX;
+<a name="l00030"></a><a class="code" href="classvolume_calcul.html#afe5224cf7c26211a001061b89e05d14a">00030</a>     <span class="keywordtype">double</span> <a class="code" href="classvolume_calcul.html#afe5224cf7c26211a001061b89e05d14a">GetLongueur</a>()<span class="keyword"> const </span>{
+<a name="l00031"></a>00031         <span class="keywordflow">return</span> longueur;
 <a name="l00032"></a>00032     }
-<a name="l00033"></a><a class="code" href="classvolume_calcul.html#aa5cc18055c0f5fabed5a8abe4395c3fd">00033</a>     <span class="keywordtype">int</span> <a class="code" href="classvolume_calcul.html#aa5cc18055c0f5fabed5a8abe4395c3fd">GetNombreY</a>()<span class="keyword"> const </span>{
-<a name="l00034"></a>00034         <span class="keywordflow">return</span> nombreY;
+<a name="l00033"></a><a class="code" href="classvolume_calcul.html#a5d8f4f104687ef14e9e311d4f4048eb5">00033</a>     <span class="keywordtype">int</span> <a class="code" href="classvolume_calcul.html#a5d8f4f104687ef14e9e311d4f4048eb5">GetNombreX</a>()<span class="keyword"> const </span>{
+<a name="l00034"></a>00034         <span class="keywordflow">return</span> nombreX;
 <a name="l00035"></a>00035     }
-<a name="l00036"></a><a class="code" href="classvolume_calcul.html#a573638e1e1bc1296fcefd53a2c044ca7">00036</a>     <span class="keywordtype">int</span> <a class="code" href="classvolume_calcul.html#a573638e1e1bc1296fcefd53a2c044ca7">GetNombreZ</a>()<span class="keyword"> const </span>{
-<a name="l00037"></a>00037         <span class="keywordflow">return</span> nombreZ;
+<a name="l00036"></a><a class="code" href="classvolume_calcul.html#aa5cc18055c0f5fabed5a8abe4395c3fd">00036</a>     <span class="keywordtype">int</span> <a class="code" href="classvolume_calcul.html#aa5cc18055c0f5fabed5a8abe4395c3fd">GetNombreY</a>()<span class="keyword"> const </span>{
+<a name="l00037"></a>00037         <span class="keywordflow">return</span> nombreY;
 <a name="l00038"></a>00038     }
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041 signals:
-<a name="l00042"></a>00042     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a84cdb73d60842314daeaa7b68ace3d10">hauteurChanged</a>();
-<a name="l00043"></a>00043     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a08d1b523e94490c5378a7310fc3d2586">largeurChanged</a>();
-<a name="l00044"></a>00044     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a9c2b2b4c4c481b66b8447bdb3dea2be3">longueurChanged</a>();
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a876b3231ae68b64af9cb47577a04ddf7">nbXChanged</a>();
-<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a470cf610a24ead1815f70d798783d402">nbYChanged</a>();
-<a name="l00048"></a>00048     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a3cb85a837b6b12640195badc7fc84957">nbZChanged</a>();
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050 <span class="keyword">public</span> slots:
-<a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="classvolume_calcul.html#a865ae33cb21449828371e6452d58b19c">00052</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a865ae33cb21449828371e6452d58b19c">SetHauteur</a>(<span class="keywordtype">double</span> hauteur) {
-<a name="l00053"></a>00053         this-&gt;hauteur = hauteur; emit <a class="code" href="classvolume_calcul.html#a84cdb73d60842314daeaa7b68ace3d10">hauteurChanged</a>();
-<a name="l00054"></a>00054     }
-<a name="l00055"></a><a class="code" href="classvolume_calcul.html#ac6ae8566dfa665a635b84e79b432c48f">00055</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#ac6ae8566dfa665a635b84e79b432c48f">SetLargeur</a>(<span class="keywordtype">double</span> largeur) {
-<a name="l00056"></a>00056         this-&gt;largeur = largeur; emit <a class="code" href="classvolume_calcul.html#a08d1b523e94490c5378a7310fc3d2586">largeurChanged</a>();
+<a name="l00039"></a><a class="code" href="classvolume_calcul.html#a573638e1e1bc1296fcefd53a2c044ca7">00039</a>     <span class="keywordtype">int</span> <a class="code" href="classvolume_calcul.html#a573638e1e1bc1296fcefd53a2c044ca7">GetNombreZ</a>()<span class="keyword"> const </span>{
+<a name="l00040"></a>00040         <span class="keywordflow">return</span> nombreZ;
+<a name="l00041"></a>00041     }
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 signals:
+<a name="l00045"></a>00045     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a84cdb73d60842314daeaa7b68ace3d10">hauteurChanged</a>();
+<a name="l00046"></a>00046     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a08d1b523e94490c5378a7310fc3d2586">largeurChanged</a>();
+<a name="l00047"></a>00047     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a9c2b2b4c4c481b66b8447bdb3dea2be3">longueurChanged</a>();
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a876b3231ae68b64af9cb47577a04ddf7">nbXChanged</a>();
+<a name="l00050"></a>00050     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a470cf610a24ead1815f70d798783d402">nbYChanged</a>();
+<a name="l00051"></a>00051     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a3cb85a837b6b12640195badc7fc84957">nbZChanged</a>();
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="keyword">public</span> slots:
+<a name="l00054"></a>00054 
+<a name="l00055"></a><a class="code" href="classvolume_calcul.html#a865ae33cb21449828371e6452d58b19c">00055</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a865ae33cb21449828371e6452d58b19c">SetHauteur</a>(<span class="keywordtype">double</span> hauteur) {
+<a name="l00056"></a>00056         this-&gt;hauteur = hauteur; emit <a class="code" href="classvolume_calcul.html#a84cdb73d60842314daeaa7b68ace3d10">hauteurChanged</a>();
 <a name="l00057"></a>00057     }
-<a name="l00058"></a><a class="code" href="classvolume_calcul.html#a6b3f21f39d02d0cee68f8ef5802644bb">00058</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a6b3f21f39d02d0cee68f8ef5802644bb">SetLongueur</a>(<span class="keywordtype">double</span> longueur) {
-<a name="l00059"></a>00059         this-&gt;longueur = longueur; emit <a class="code" href="classvolume_calcul.html#a9c2b2b4c4c481b66b8447bdb3dea2be3">longueurChanged</a>();
+<a name="l00058"></a><a class="code" href="classvolume_calcul.html#ac6ae8566dfa665a635b84e79b432c48f">00058</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#ac6ae8566dfa665a635b84e79b432c48f">SetLargeur</a>(<span class="keywordtype">double</span> largeur) {
+<a name="l00059"></a>00059         this-&gt;largeur = largeur; emit <a class="code" href="classvolume_calcul.html#a08d1b523e94490c5378a7310fc3d2586">largeurChanged</a>();
 <a name="l00060"></a>00060     }
-<a name="l00061"></a><a class="code" href="classvolume_calcul.html#ad6f44d0df7283cbabf46919659992878">00061</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#ad6f44d0df7283cbabf46919659992878">SetNombreX</a>(<span class="keywordtype">int</span> nombreX) {
-<a name="l00062"></a>00062         this-&gt;nombreX = nombreX; emit <a class="code" href="classvolume_calcul.html#a876b3231ae68b64af9cb47577a04ddf7">nbXChanged</a>();
+<a name="l00061"></a><a class="code" href="classvolume_calcul.html#a6b3f21f39d02d0cee68f8ef5802644bb">00061</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a6b3f21f39d02d0cee68f8ef5802644bb">SetLongueur</a>(<span class="keywordtype">double</span> longueur) {
+<a name="l00062"></a>00062         this-&gt;longueur = longueur; emit <a class="code" href="classvolume_calcul.html#a9c2b2b4c4c481b66b8447bdb3dea2be3">longueurChanged</a>();
 <a name="l00063"></a>00063     }
-<a name="l00064"></a><a class="code" href="classvolume_calcul.html#a098d5a86596ac80642dba9f5c3eacd16">00064</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a098d5a86596ac80642dba9f5c3eacd16">SetNombreY</a>(<span class="keywordtype">int</span> nombreY) {
-<a name="l00065"></a>00065         this-&gt;nombreY = nombreY; emit <a class="code" href="classvolume_calcul.html#a470cf610a24ead1815f70d798783d402">nbYChanged</a>();
+<a name="l00064"></a><a class="code" href="classvolume_calcul.html#ad6f44d0df7283cbabf46919659992878">00064</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#ad6f44d0df7283cbabf46919659992878">SetNombreX</a>(<span class="keywordtype">int</span> nombreX) {
+<a name="l00065"></a>00065         this-&gt;nombreX = nombreX; emit <a class="code" href="classvolume_calcul.html#a876b3231ae68b64af9cb47577a04ddf7">nbXChanged</a>();
 <a name="l00066"></a>00066     }
-<a name="l00067"></a><a class="code" href="classvolume_calcul.html#a7ad8083a65e22f58890a5bee86cbe97f">00067</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a7ad8083a65e22f58890a5bee86cbe97f">SetNombreZ</a>(<span class="keywordtype">int</span> nombreZ) {
-<a name="l00068"></a>00068         this-&gt;nombreZ = nombreZ; emit <a class="code" href="classvolume_calcul.html#a3cb85a837b6b12640195badc7fc84957">nbZChanged</a>();
+<a name="l00067"></a><a class="code" href="classvolume_calcul.html#a098d5a86596ac80642dba9f5c3eacd16">00067</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a098d5a86596ac80642dba9f5c3eacd16">SetNombreY</a>(<span class="keywordtype">int</span> nombreY) {
+<a name="l00068"></a>00068         this-&gt;nombreY = nombreY; emit <a class="code" href="classvolume_calcul.html#a470cf610a24ead1815f70d798783d402">nbYChanged</a>();
 <a name="l00069"></a>00069     }
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#ac5c4519081e28918bad031341996301f">ecrire</a>();
-<a name="l00072"></a>00072     
-<a name="l00073"></a>00073 <span class="keyword">private</span>:
-<a name="l00074"></a>00074     <span class="keywordtype">double</span> longueur;
-<a name="l00075"></a>00075     <span class="keywordtype">double</span> largeur;
-<a name="l00076"></a>00076     <span class="keywordtype">double</span> hauteur;
-<a name="l00077"></a>00077     <span class="keywordtype">int</span> nombreY;
-<a name="l00078"></a>00078     <span class="keywordtype">int</span> nombreX;
-<a name="l00079"></a>00079     <span class="keywordtype">int</span> nombreZ;
-<a name="l00080"></a>00080 };
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082 <span class="preprocessor">#endif  </span><span class="comment">/* VOLUMECALCUL_H */</span>
-<a name="l00083"></a>00083 
+<a name="l00070"></a><a class="code" href="classvolume_calcul.html#a7ad8083a65e22f58890a5bee86cbe97f">00070</a>     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#a7ad8083a65e22f58890a5bee86cbe97f">SetNombreZ</a>(<span class="keywordtype">int</span> nombreZ) {
+<a name="l00071"></a>00071         this-&gt;nombreZ = nombreZ; emit <a class="code" href="classvolume_calcul.html#a3cb85a837b6b12640195badc7fc84957">nbZChanged</a>();
+<a name="l00072"></a>00072     }
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074     <span class="keywordtype">void</span> <a class="code" href="classvolume_calcul.html#ac5c4519081e28918bad031341996301f">ecrire</a>();
+<a name="l00075"></a>00075     
+<a name="l00076"></a>00076 <span class="keyword">private</span>:
+<a name="l00077"></a>00077     <span class="keywordtype">double</span> longueur;
+<a name="l00078"></a>00078     <span class="keywordtype">double</span> largeur;
+<a name="l00079"></a>00079     <span class="keywordtype">double</span> hauteur;
+<a name="l00080"></a>00080     <span class="keywordtype">int</span> nombreY;
+<a name="l00081"></a>00081     <span class="keywordtype">int</span> nombreX;
+<a name="l00082"></a>00082     <span class="keywordtype">int</span> nombreZ;
+<a name="l00083"></a>00083 };
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 <span class="preprocessor">#endif  </span><span class="comment">/* VOLUMECALCUL_H */</span>
+<a name="l00086"></a>00086 
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -180,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

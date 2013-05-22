@@ -11,7 +11,9 @@
 #include "BlocElementBase.h"
 #include "portExcitation.h"
 
-
+/**
+ * @brief Cette classe représente une liste de portExcitation
+ */
 class blocPortExcitation : public BlocElementBase{
 public:
     blocPortExcitation();

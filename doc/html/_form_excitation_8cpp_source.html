@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormExcitation.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/FormExcitation.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -81,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_form_excitation_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="_form_excitation_8h.html">FormExcitation.h</a>&quot;</span>
 <a name="l00002"></a>00002 
-<a name="l00003"></a><a class="code" href="class_form_excitation.html#a9f234003b7f4e7e4f7657752925f4de4">00003</a> <a class="code" href="class_form_excitation.html#a9f234003b7f4e7e4f7657752925f4de4">FormExcitation::FormExcitation</a>(<a class="code" href="class_excitation.html">Excitation</a> *excitation, QWidget *parent) :
+<a name="l00003"></a><a class="code" href="class_form_excitation.html#a9f234003b7f4e7e4f7657752925f4de4">00003</a> <a class="code" href="class_form_excitation.html#a9f234003b7f4e7e4f7657752925f4de4">FormExcitation::FormExcitation</a>(<a class="code" href="class_excitation.html" title="Cette classe représente la variable Excitation d&#39;une simulation.">Excitation</a> *excitation, QWidget *parent) :
 <a name="l00004"></a>00004     QWidget(parent)
 <a name="l00005"></a>00005 {
 <a name="l00006"></a>00006     this-&gt;excitation=excitation;
@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 
 <a name="l00012"></a>00012     QFormLayout * layout = <span class="keyword">new</span> QFormLayout;
 <a name="l00013"></a>00013 
-<a name="l00014"></a>00014     QDoubleSpinBox * amplitudeWidget = <span class="keyword">new</span> QDoubleSpinBox();
+<a name="l00014"></a>00014     amplitudeWidget = <span class="keyword">new</span> QDoubleSpinBox();
 <a name="l00015"></a>00015     layout-&gt;addRow(<span class="stringliteral">&quot;Amplitude Vo:&quot;</span>,amplitudeWidget);
 <a name="l00016"></a>00016     connect(amplitudeWidget,SIGNAL(valueChanged(<span class="keywordtype">double</span>)),excitation,SLOT(SetAmplitudeV0(<span class="keywordtype">double</span>)));
 <a name="l00017"></a>00017 
@@ -103,7 +103,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022     layoutPrincipal-&gt;addWidget(group);
 <a name="l00023"></a>00023 
 <a name="l00024"></a>00024     setLayout(layoutPrincipal);
-<a name="l00025"></a>00025 }
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026     <a class="code" href="class_form_excitation.html#a524d064da766546afab19bf2de9f8f65">init</a>();
+<a name="l00027"></a>00027 }
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="class_form_excitation.html#a524d064da766546afab19bf2de9f8f65">00029</a> <span class="keywordtype">void</span> <a class="code" href="class_form_excitation.html#a524d064da766546afab19bf2de9f8f65">FormExcitation::init</a>()
+<a name="l00030"></a>00030 {
+<a name="l00031"></a>00031     amplitudeWidget-&gt;setValue(excitation-&gt;<a class="code" href="class_excitation.html#a56c705525fac19332b2e021a2d3c35e3">GetAmplitudeV0</a>());
+<a name="l00032"></a>00032     connect(amplitudeWidget,SIGNAL(valueChanged(<span class="keywordtype">double</span>)),excitation,SLOT(SetAmplitudeV0(<span class="keywordtype">double</span>)));
+<a name="l00033"></a>00033 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -122,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

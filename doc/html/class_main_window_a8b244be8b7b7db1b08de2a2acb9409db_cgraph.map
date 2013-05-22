@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_main_window.html#a436cf1b9ee9f8fa518343492a87f5fd0" title="changeFilter" alt="" coords="235,32,411,61"/>
-<area shape="rect" id="node5" href="$class_filter_widget.html#a1c90c4c1bb3485031ecae5207d9ca586" title="FilterWidget::setCurrentModel" alt="" coords="460,32,655,61"/>
-<area shape="rect" id="node7" href="$class_filter_widget.html#aea7e9e1eb34aac0dcdd6642102b40b55" title="FilterWidget::setListCombox" alt="" coords="705,5,892,35"/>
-<area shape="rect" id="node9" href="$class_table_model.html#a07c42edc6949abb72642562f1adfdd2a" title="Retourne la liste des entetes du tableau." alt="" coords="717,59,880,88"/>
-</map>

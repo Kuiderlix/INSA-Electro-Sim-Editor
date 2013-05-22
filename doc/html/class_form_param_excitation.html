@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: FormParamExcitation Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: FormParamExcitation Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,6 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="FormParamExcitation" -->
+<p>Cette classe fournit un formulaire pour modifier l'objet <a class="el" href="class_param_excitations.html" title="Cette classe représente la variable ParamExcitations d&#39;une simulation.">ParamExcitations</a>.  
+ <a href="class_form_param_excitation.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_form_param_excitation_8h_source.html">FormParamExcitation.h</a>&gt;</code></p>
 
 <p><a href="class_form_param_excitation-members.html">List of all members.</a></p>
@@ -95,10 +98,13 @@ Public Slots</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_param_excitation.html#a24a8f3bb772594aa7ec248e4f5ce06bf">FormParamExcitation</a> (<a class="el" href="class_param_excitations.html">ParamExcitations</a> *excit, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_param_excitation.html#ab591f0cd4a82d7af82f69f3847f6684d">setParamExcit</a> (<a class="el" href="class_param_excitations.html">ParamExcitations</a> *ex)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_param_excitation.html#a8a2046fb13bda0da449b60b02c60e951">init</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_form_param_excitation_8h_source.html#l00007">7</a> of file <a class="el" href="_form_param_excitation_8h_source.html">FormParamExcitation.h</a>.</p>
+<div class="textblock"><p>Cette classe fournit un formulaire pour modifier l'objet <a class="el" href="class_param_excitations.html" title="Cette classe représente la variable ParamExcitations d&#39;une simulation.">ParamExcitations</a>. </p>
+
+<p>Definition at line <a class="el" href="_form_param_excitation_8h_source.html#l00010">10</a> of file <a class="el" href="_form_param_excitation_8h_source.html">FormParamExcitation.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a24a8f3bb772594aa7ec248e4f5ce06bf"></a><!-- doxytag: member="FormParamExcitation::FormParamExcitation" ref="a24a8f3bb772594aa7ec248e4f5ce06bf" args="(ParamExcitations *excit, QWidget *parent=0)" -->
 <div class="memitem">
@@ -127,15 +133,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_form_param_excitation_8cpp_source.html#l00003">3</a> of file <a class="el" href="_form_param_excitation_8cpp_source.html">FormParamExcitation.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_param_excitation_a24a8f3bb772594aa7ec248e4f5ce06bf_cgraph.png" border="0" usemap="#class_form_param_excitation_a24a8f3bb772594aa7ec248e4f5ce06bf_cgraph" alt=""/></div>
-<map name="class_form_param_excitation_a24a8f3bb772594aa7ec248e4f5ce06bf_cgraph" id="class_form_param_excitation_a24a8f3bb772594aa7ec248e4f5ce06bf_cgraph">
-<area shape="rect" id="node3" href="class_param_excitations.html#a95fdf115404e1dc04005d0838abbac35" title="ParamExcitations::GetFrequenceMax" alt="" coords="340,5,580,35"/><area shape="rect" id="node5" href="class_param_excitations.html#a42d6cf75bfad68620ab269bf26b52475" title="ParamExcitations::GetType" alt="" coords="369,59,551,88"/><area shape="rect" id="node7" href="class_form_param_excitation.html#ad3e0b0879e9f8f6ed0ac2dd1ce02ed31" title="FormParamExcitation::afficheSinus" alt="" coords="347,112,573,141"/><area shape="rect" id="node9" href="class_param_excitations.html#a3e879c6d5a1afde77b35ed41969e9605" title="ParamExcitations::GetFrequenceSinus" alt="" coords="336,165,584,195"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
@@ -154,16 +151,44 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_form_param_excitation_8cpp_source.html#l00053">53</a> of file <a class="el" href="_form_param_excitation_8cpp_source.html">FormParamExcitation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_form_param_excitation_8cpp_source.html#l00064">64</a> of file <a class="el" href="_form_param_excitation_8cpp_source.html">FormParamExcitation.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_param_excitation_ad3e0b0879e9f8f6ed0ac2dd1ce02ed31_icgraph.png" border="0" usemap="#class_form_param_excitation_ad3e0b0879e9f8f6ed0ac2dd1ce02ed31_icgraph" alt=""/></div>
-<map name="class_form_param_excitation_ad3e0b0879e9f8f6ed0ac2dd1ce02ed31_icgraph" id="class_form_param_excitation_ad3e0b0879e9f8f6ed0ac2dd1ce02ed31_icgraph">
-<area shape="rect" id="node3" href="class_form_param_excitation.html#a24a8f3bb772594aa7ec248e4f5ce06bf" title="FormParamExcitation::FormParamExcitation" alt="" coords="283,5,565,35"/></map>
 </div>
-</p>
+</div>
+<a class="anchor" id="a8a2046fb13bda0da449b60b02c60e951"></a><!-- doxytag: member="FormParamExcitation::init" ref="a8a2046fb13bda0da449b60b02c60e951" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_form_param_excitation.html#a8a2046fb13bda0da449b60b02c60e951">FormParamExcitation::init</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_form_param_excitation_8cpp_source.html#l00052">52</a> of file <a class="el" href="_form_param_excitation_8cpp_source.html">FormParamExcitation.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab591f0cd4a82d7af82f69f3847f6684d"></a><!-- doxytag: member="FormParamExcitation::setParamExcit" ref="ab591f0cd4a82d7af82f69f3847f6684d" args="(ParamExcitations *ex)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_form_param_excitation.html#ab591f0cd4a82d7af82f69f3847f6684d">FormParamExcitation::setParamExcit</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_param_excitations.html">ParamExcitations</a> *&#160;</td>
+          <td class="paramname"><em>ex</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_form_param_excitation_8h_source.html#l00016">16</a> of file <a class="el" href="_form_param_excitation_8h_source.html">FormParamExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -189,7 +214,7 @@ Here is the caller graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -1,10 +1,11 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_form_metallisation_8h.html" title="FormMetallisation.h" alt="" coords="119,83,255,112"/>
-<area shape="rect" id="node7" href="$metallisation_8h.html" title="metallisation.h" alt="" coords="307,160,413,189"/>
-<area shape="rect" id="node34" href="$_form_element_base_8h.html" title="FormElementBase.h" alt="" coords="116,160,257,189"/>
-<area shape="rect" id="node9" href="$coordonnee_8h.html" title="coordonnee.h" alt="" coords="224,315,323,344"/>
-<area shape="rect" id="node15" href="$element_base_8h.html" title="elementBase.h" alt="" coords="331,237,440,267"/>
-<area shape="rect" id="node22" href="$bloc_configuration_8h.html" title="blocConfiguration.h" alt="" coords="472,237,605,267"/>
-<area shape="rect" id="node29" href="$_ecriture_8h.html" title="Ecriture.h" alt="" coords="576,315,653,344"/>
-<area shape="rect" id="node37" href="$_form_coordonnees_8h.html" title="FormCoordonnees.h" alt="" coords="117,237,256,267"/>
+<area shape="rect" id="node3" href="$_form_metallisation_8h.html" title="FormMetallisation.h" alt="" coords="509,83,645,112"/>
+<area shape="rect" id="node7" href="$metallisation_8h.html" title="metallisation.h" alt="" coords="351,160,457,189"/>
+<area shape="rect" id="node34" href="$_form_element_base_8h.html" title="FormElementBase.h" alt="" coords="507,160,648,189"/>
+<area shape="rect" id="node9" href="$coordonnee_8h.html" title="coordonnee.h" alt="" coords="429,315,528,344"/>
+<area shape="rect" id="node15" href="$element_base_8h.html" title="elementBase.h" alt="" coords="300,237,409,267"/>
+<area shape="rect" id="node22" href="$bloc_configuration_8h.html" title="blocConfiguration.h" alt="" coords="125,237,259,267"/>
+<area shape="rect" id="node29" href="$_ecriture_8h.html" title="Ecriture.h" alt="" coords="5,315,83,344"/>
+<area shape="rect" id="node37" href="$_form_coordonnees_8h.html" title="FormCoordonnees.h" alt="" coords="484,237,623,267"/>
+<area shape="rect" id="node42" href="$_color_picker_8h.html" title="ColorPicker.h" alt="" coords="800,237,901,267"/>
 </map>

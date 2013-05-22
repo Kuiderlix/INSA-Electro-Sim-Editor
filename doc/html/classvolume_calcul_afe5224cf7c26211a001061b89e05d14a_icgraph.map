@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_form_volume_calcul.html#ad11ed5892c082f1b12fc2b82c7f81de6" title="FormVolumeCalcul::FormVolumeCalcul" alt="" coords="239,5,489,35"/>
-<area shape="rect" id="node5" href="$class_visualisation3_d.html#a4febf8433d419dc2ddd1c0c8500790cf" title="Desinne dans la scène le volume de calcul." alt="" coords="540,56,785,85"/>
-<area shape="rect" id="node9" href="$class_visualisation3_d.html#a147e848c9feb19a3a7a918c500f30247" title="Tranforme une coordonnee en un Point." alt="" coords="248,109,480,139"/>
-<area shape="rect" id="node7" href="$class_visualisation3_d.html#a681ea2567d150fc05b478a5164633f4d" title="Visualisation3D::paintGL" alt="" coords="836,83,1001,112"/>
-<area shape="rect" id="node11" href="$class_visualisation3_d.html#a199ae5525e92a728e43ea9d616ffdc54" title="Dessine dans la scène tout les éléments du scénario." alt="" coords="561,109,764,139"/>
-</map>

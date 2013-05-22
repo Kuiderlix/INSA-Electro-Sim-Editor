@@ -10,7 +10,9 @@
 
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable pml d'une simulation
+ */
 class pml : public blocConfiguration{
 
     Q_OBJECT

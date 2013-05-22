@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/coordonnee.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/coordonnee.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00021"></a>00021     this-&gt;z = z;
 <a name="l00022"></a>00022 }
 <a name="l00023"></a>00023 
-<a name="l00024"></a><a class="code" href="classcoordonnee.html#a3dbe23aeb65ec34907b2a5e613715791">00024</a> <a class="code" href="classcoordonnee.html#a4c26bd8c4645c1df0640c039d4db26c5">coordonnee::coordonnee</a>(<span class="keyword">const</span> <a class="code" href="classcoordonnee.html">coordonnee</a>&amp; orig) {
+<a name="l00024"></a><a class="code" href="classcoordonnee.html#a3dbe23aeb65ec34907b2a5e613715791">00024</a> <a class="code" href="classcoordonnee.html#a4c26bd8c4645c1df0640c039d4db26c5">coordonnee::coordonnee</a>(<span class="keyword">const</span> <a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&amp; orig) {
 <a name="l00025"></a>00025     this-&gt;x = orig.x;
 <a name="l00026"></a>00026     this-&gt;y = orig.y;
 <a name="l00027"></a>00027     this-&gt;z = orig.z;
@@ -111,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00030"></a><a class="code" href="classcoordonnee.html#ac0487f6d359e2ec0d405b7d4508f9e03">00030</a> <a class="code" href="classcoordonnee.html#ac0487f6d359e2ec0d405b7d4508f9e03">coordonnee::~coordonnee</a>() {
 <a name="l00031"></a>00031 }
 <a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="classcoordonnee.html#a3e138fc72f052cd786b2fbb60973e0c8">00033</a> <span class="keywordtype">bool</span> <a class="code" href="classcoordonnee.html#a3e138fc72f052cd786b2fbb60973e0c8">coordonnee::operator ==</a>(<span class="keyword">const</span> <a class="code" href="classcoordonnee.html">coordonnee</a> &amp;b)
+<a name="l00033"></a><a class="code" href="classcoordonnee.html#a3e138fc72f052cd786b2fbb60973e0c8">00033</a> <span class="keywordtype">bool</span> <a class="code" href="classcoordonnee.html#a3e138fc72f052cd786b2fbb60973e0c8">coordonnee::operator ==</a>(<span class="keyword">const</span> <a class="code" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> &amp;b)
 <a name="l00034"></a>00034 {
 <a name="l00035"></a>00035     <span class="keywordflow">return</span> this-&gt;x==b.x &amp;&amp; this-&gt;y==b.y &amp;&amp; this-&gt;z==b.z;;
 <a name="l00036"></a>00036 }
@@ -126,9 +126,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00045"></a>00045     monEcriture &lt;&lt; <span class="stringliteral">&quot;Sur_la_hauteur_z_(en_cellules):\n&quot;</span>;
 <a name="l00046"></a>00046     monEcriture &lt;&lt; this-&gt;<a class="code" href="classcoordonnee.html#a4d5c88a3e93cc8eed5b848d18541b137">GetZ</a>() &lt;&lt; std::endl;
 <a name="l00047"></a>00047 
-<a name="l00048"></a>00048     std::string ecriture(monEcriture.str());
-<a name="l00049"></a>00049     <a class="code" href="class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d">Ecriture::Ecrire</a>(ecriture);
-<a name="l00050"></a>00050 }
+<a name="l00048"></a>00048     <a class="code" href="class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d">Ecriture::Ecrire</a>(monEcriture.str());
+<a name="l00049"></a>00049 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -147,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

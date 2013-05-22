@@ -11,6 +11,9 @@
 #include "elementLocalise.h"
 #include "BlocElementBase.h"
 
+/**
+ * @brief Cette classe représente une liste de elementLocalise
+ */
 class blocElementLocalise : public BlocElementBase{
 public:
     blocElementLocalise();

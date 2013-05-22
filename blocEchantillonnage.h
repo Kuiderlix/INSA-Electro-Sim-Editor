@@ -10,7 +10,9 @@
 
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable echantillonnage d'une simulation
+ */
 class blocEchantillonnage : public blocConfiguration{
     Q_OBJECT
 public:

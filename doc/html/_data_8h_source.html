@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/Data.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/Data.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -111,58 +111,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00033"></a>00033     <a class="code" href="class_data.html#af11f741cb7f587e2e495452a8905a22a">Data</a>(<a class="code" href="class_parser.html" title="Le parser de fichier de configuration.">Parser</a> * p);
 <a name="l00034"></a>00034 
 <a name="l00035"></a>00035 
-<a name="l00036"></a><a class="code" href="class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">00036</a>     <a class="code" href="classvolume_calcul.html">volumeCalcul</a> * <a class="code" href="class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>() {<span class="keywordflow">return</span> &amp;volume;}
-<a name="l00037"></a><a class="code" href="class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">00037</a>     <a class="code" href="classparoi.html">paroi</a> * <a class="code" href="class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">getParoi</a>() {<span class="keywordflow">return</span> &amp;parois;}
+<a name="l00036"></a><a class="code" href="class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">00036</a>     <a class="code" href="classvolume_calcul.html" title="Cette classe représente la variable volumeCalcul d&#39;une simulation.">volumeCalcul</a> * <a class="code" href="class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>() {<span class="keywordflow">return</span> &amp;volume;}
+<a name="l00037"></a><a class="code" href="class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">00037</a>     <a class="code" href="classparoi.html" title="Cette classe représente la variable paroi d&#39;une simulation.">paroi</a> * <a class="code" href="class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">getParoi</a>() {<span class="keywordflow">return</span> &amp;parois;}
 <a name="l00038"></a>00038 
-<a name="l00039"></a><a class="code" href="class_data.html#af369e09227942e048bc40183d05392d7">00039</a>     <a class="code" href="classbloc_metallisation.html">blocMetallisation</a> * <a class="code" href="class_data.html#af369e09227942e048bc40183d05392d7">getBlocMetallisations</a>() {<span class="keywordflow">return</span> &amp;metallisations;}
-<a name="l00040"></a><a class="code" href="class_data.html#aabdc820f5e1024034bedf46bb9afed6c">00040</a>     <a class="code" href="classbloc_parallelepipede.html">blocParallelepipede</a> * <a class="code" href="class_data.html#aabdc820f5e1024034bedf46bb9afed6c">getBlocParallelepipede</a>() {<span class="keywordflow">return</span> &amp;parallelepipedes;}
-<a name="l00041"></a><a class="code" href="class_data.html#a3f936063413710ec567b8a64bbcd9108">00041</a>     <a class="code" href="classbloc_sonde.html">blocSonde</a> * <a class="code" href="class_data.html#a3f936063413710ec567b8a64bbcd9108">getBlocSonde</a>() {<span class="keywordflow">return</span> &amp;sondes;}
-<a name="l00042"></a><a class="code" href="class_data.html#ad8bbac9c9bc359f9e3bc768f1b44a97e">00042</a>     <a class="code" href="classbloc_element_localise.html">blocElementLocalise</a> * <a class="code" href="class_data.html#ad8bbac9c9bc359f9e3bc768f1b44a97e">getBlocElementLocalise</a>() {<span class="keywordflow">return</span> &amp;elementLocalises;}
-<a name="l00043"></a><a class="code" href="class_data.html#a12c82e6b0c7a114166943d10ce5c534e">00043</a>     <a class="code" href="classbloc_port_excitation.html">blocPortExcitation</a> * <a class="code" href="class_data.html#a12c82e6b0c7a114166943d10ce5c534e">getBlocPortExcitation</a>()  {<span class="keywordflow">return</span> &amp;portExcitations;}
-<a name="l00044"></a><a class="code" href="class_data.html#a04e1d1b1217693b42133d584dfbf5b71">00044</a>     <a class="code" href="classbloc_cartographie_temporelle.html">blocCartographieTemporelle</a> * <a class="code" href="class_data.html#a04e1d1b1217693b42133d584dfbf5b71">getBlocCartoTempo</a>() {<span class="keywordflow">return</span> &amp;cartographies;}
-<a name="l00045"></a><a class="code" href="class_data.html#adef5a353076143ac15f0a6e45346d756">00045</a>     <a class="code" href="classbloc_surface_prelevement.html">blocSurfacePrelevement</a> * <a class="code" href="class_data.html#adef5a353076143ac15f0a6e45346d756">getBlocSurfacePrelev</a>() {<span class="keywordflow">return</span> &amp;surfacePrelevements;}
+<a name="l00039"></a><a class="code" href="class_data.html#af369e09227942e048bc40183d05392d7">00039</a>     <a class="code" href="classbloc_metallisation.html" title="Cette classe représente une liste de metallisation.">blocMetallisation</a> * <a class="code" href="class_data.html#af369e09227942e048bc40183d05392d7">getBlocMetallisations</a>() {<span class="keywordflow">return</span> &amp;metallisations;}
+<a name="l00040"></a><a class="code" href="class_data.html#aabdc820f5e1024034bedf46bb9afed6c">00040</a>     <a class="code" href="classbloc_parallelepipede.html" title="Cette classe représente une liste de parallelepipede.">blocParallelepipede</a> * <a class="code" href="class_data.html#aabdc820f5e1024034bedf46bb9afed6c">getBlocParallelepipede</a>() {<span class="keywordflow">return</span> &amp;parallelepipedes;}
+<a name="l00041"></a><a class="code" href="class_data.html#a3f936063413710ec567b8a64bbcd9108">00041</a>     <a class="code" href="classbloc_sonde.html" title="Cette classe représente une liste de sonde.">blocSonde</a> * <a class="code" href="class_data.html#a3f936063413710ec567b8a64bbcd9108">getBlocSonde</a>() {<span class="keywordflow">return</span> &amp;sondes;}
+<a name="l00042"></a><a class="code" href="class_data.html#ad8bbac9c9bc359f9e3bc768f1b44a97e">00042</a>     <a class="code" href="classbloc_element_localise.html" title="Cette classe représente une liste de elementLocalise.">blocElementLocalise</a> * <a class="code" href="class_data.html#ad8bbac9c9bc359f9e3bc768f1b44a97e">getBlocElementLocalise</a>() {<span class="keywordflow">return</span> &amp;elementLocalises;}
+<a name="l00043"></a><a class="code" href="class_data.html#a12c82e6b0c7a114166943d10ce5c534e">00043</a>     <a class="code" href="classbloc_port_excitation.html" title="Cette classe représente une liste de portExcitation.">blocPortExcitation</a> * <a class="code" href="class_data.html#a12c82e6b0c7a114166943d10ce5c534e">getBlocPortExcitation</a>()  {<span class="keywordflow">return</span> &amp;portExcitations;}
+<a name="l00044"></a><a class="code" href="class_data.html#a04e1d1b1217693b42133d584dfbf5b71">00044</a>     <a class="code" href="classbloc_cartographie_temporelle.html" title="Cette classe représente une liste de cartographieTemporelle.">blocCartographieTemporelle</a> * <a class="code" href="class_data.html#a04e1d1b1217693b42133d584dfbf5b71">getBlocCartoTempo</a>() {<span class="keywordflow">return</span> &amp;cartographies;}
+<a name="l00045"></a><a class="code" href="class_data.html#adef5a353076143ac15f0a6e45346d756">00045</a>     <a class="code" href="classbloc_surface_prelevement.html" title="Cette classe représente une liste de surfacePrelevement.">blocSurfacePrelevement</a> * <a class="code" href="class_data.html#adef5a353076143ac15f0a6e45346d756">getBlocSurfacePrelev</a>() {<span class="keywordflow">return</span> &amp;surfacePrelevements;}
 <a name="l00046"></a>00046 
-<a name="l00047"></a><a class="code" href="class_data.html#a21fba04b0e26f921562678acea12741f">00047</a>     <a class="code" href="classpml.html">pml</a> * <a class="code" href="class_data.html#a21fba04b0e26f921562678acea12741f">getPML</a>() {<span class="keywordflow">return</span> &amp;PML;}
-<a name="l00048"></a><a class="code" href="class_data.html#ac0ba89e3d5222ac22fdb6163a6f42b41">00048</a>     <a class="code" href="class_param_excitations.html">ParamExcitations</a>* <a class="code" href="class_data.html#ac0ba89e3d5222ac22fdb6163a6f42b41">getParamExcitations</a>() {<span class="keywordflow">return</span> &amp;excitation;}
-<a name="l00049"></a><a class="code" href="class_data.html#a60b95e0ffd5c6bde5297b7aaf81c1487">00049</a>     <a class="code" href="classanalyse_temporelle.html">analyseTemporelle</a>* <a class="code" href="class_data.html#a60b95e0ffd5c6bde5297b7aaf81c1487">getAnalyseTempo</a>() {<span class="keywordflow">return</span> &amp;analyseTemp;}
-<a name="l00050"></a><a class="code" href="class_data.html#a0a63ddd1b57de7297a268090deb6912d">00050</a>     <a class="code" href="classbloc_port_excitation.html">blocPortExcitation</a>* <a class="code" href="class_data.html#a0a63ddd1b57de7297a268090deb6912d">getPortExcitations</a>() {<span class="keywordflow">return</span> &amp;portExcitations;}
-<a name="l00051"></a><a class="code" href="class_data.html#aa5816e4319d30f4abbb3679318ac6144">00051</a>     <a class="code" href="classcage_excitation.html">cageExcitation</a>* <a class="code" href="class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>() {<span class="keywordflow">return</span> &amp;cage;}
-<a name="l00052"></a><a class="code" href="class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">00052</a>     <a class="code" href="classchamp_lointain.html">champLointain</a> * <a class="code" href="class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>() {<span class="keywordflow">return</span> &amp;champlointain;}
-<a name="l00053"></a><a class="code" href="class_data.html#a7f02ae1d4a9111c097553c882a73c93f">00053</a>     <a class="code" href="class_excitation.html">Excitation</a>* <a class="code" href="class_data.html#a7f02ae1d4a9111c097553c882a73c93f">getExcitation</a>() {<span class="keywordflow">return</span> &amp;amplitudeV0;}
-<a name="l00054"></a><a class="code" href="class_data.html#a2da00311dda30f72122368e2e5b813d2">00054</a>     <a class="code" href="classformat_stockage.html">formatStockage</a>* <a class="code" href="class_data.html#a2da00311dda30f72122368e2e5b813d2">getFormatStockage</a>() {<span class="keywordflow">return</span> &amp;stockage;}
-<a name="l00055"></a><a class="code" href="class_data.html#ad9c6b61575daf7abc40b1d04aa43cdfc">00055</a>     <a class="code" href="classbloc_echantillonnage.html">blocEchantillonnage</a>* <a class="code" href="class_data.html#ad9c6b61575daf7abc40b1d04aa43cdfc">getBlocEchantillonnage</a>() {<span class="keywordflow">return</span> &amp;facteurEchantillonnage;}
-<a name="l00056"></a><a class="code" href="class_data.html#ae00c2260f46fb8cadc1e70d0a1efd598">00056</a>     <a class="code" href="classcompression_huygens.html">compressionHuygens</a>* <a class="code" href="class_data.html#ae00c2260f46fb8cadc1e70d0a1efd598">getCompressionHuygens</a>() {<span class="keywordflow">return</span> &amp;compHuygens;}
-<a name="l00057"></a><a class="code" href="class_data.html#a845852df9db88d4acbabeb77e1d41970">00057</a>     <a class="code" href="classcalcul_directivite.html">calculDirectivite</a>* <a class="code" href="class_data.html#a845852df9db88d4acbabeb77e1d41970">getCalculDirective</a>() {<span class="keywordflow">return</span> &amp;calculdirectivite;}
+<a name="l00047"></a><a class="code" href="class_data.html#a21fba04b0e26f921562678acea12741f">00047</a>     <a class="code" href="classpml.html" title="Cette classe représente la variable pml d&#39;une simulation.">pml</a> * <a class="code" href="class_data.html#a21fba04b0e26f921562678acea12741f">getPML</a>() {<span class="keywordflow">return</span> &amp;PML;}
+<a name="l00048"></a><a class="code" href="class_data.html#ac0ba89e3d5222ac22fdb6163a6f42b41">00048</a>     <a class="code" href="class_param_excitations.html" title="Cette classe représente la variable ParamExcitations d&#39;une simulation.">ParamExcitations</a>* <a class="code" href="class_data.html#ac0ba89e3d5222ac22fdb6163a6f42b41">getParamExcitations</a>() {<span class="keywordflow">return</span> &amp;excitation;}
+<a name="l00049"></a><a class="code" href="class_data.html#a60b95e0ffd5c6bde5297b7aaf81c1487">00049</a>     <a class="code" href="classanalyse_temporelle.html" title="Cette classe représente la variable analyseTemporelle d&#39;une simulation.">analyseTemporelle</a>* <a class="code" href="class_data.html#a60b95e0ffd5c6bde5297b7aaf81c1487">getAnalyseTempo</a>() {<span class="keywordflow">return</span> &amp;analyseTemp;}
+<a name="l00050"></a><a class="code" href="class_data.html#a0a63ddd1b57de7297a268090deb6912d">00050</a>     <a class="code" href="classbloc_port_excitation.html" title="Cette classe représente une liste de portExcitation.">blocPortExcitation</a>* <a class="code" href="class_data.html#a0a63ddd1b57de7297a268090deb6912d">getPortExcitations</a>() {<span class="keywordflow">return</span> &amp;portExcitations;}
+<a name="l00051"></a><a class="code" href="class_data.html#aa5816e4319d30f4abbb3679318ac6144">00051</a>     <a class="code" href="classcage_excitation.html" title="Cette classe représente la variable cageExcitations d&#39;une simulation.">cageExcitation</a>* <a class="code" href="class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>() {<span class="keywordflow">return</span> &amp;cage;}
+<a name="l00052"></a><a class="code" href="class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">00052</a>     <a class="code" href="classchamp_lointain.html" title="Cette classe représente la variable champLointain d&#39;une simulation.">champLointain</a> * <a class="code" href="class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>() {<span class="keywordflow">return</span> &amp;champlointain;}
+<a name="l00053"></a><a class="code" href="class_data.html#a7f02ae1d4a9111c097553c882a73c93f">00053</a>     <a class="code" href="class_excitation.html" title="Cette classe représente la variable Excitation d&#39;une simulation.">Excitation</a>* <a class="code" href="class_data.html#a7f02ae1d4a9111c097553c882a73c93f">getExcitation</a>() {<span class="keywordflow">return</span> &amp;amplitudeV0;}
+<a name="l00054"></a><a class="code" href="class_data.html#a2da00311dda30f72122368e2e5b813d2">00054</a>     <a class="code" href="classformat_stockage.html" title="Cette classe représente la variable formatStockage d&#39;une simulation.">formatStockage</a>* <a class="code" href="class_data.html#a2da00311dda30f72122368e2e5b813d2">getFormatStockage</a>() {<span class="keywordflow">return</span> &amp;stockage;}
+<a name="l00055"></a><a class="code" href="class_data.html#ad9c6b61575daf7abc40b1d04aa43cdfc">00055</a>     <a class="code" href="classbloc_echantillonnage.html" title="Cette classe représente la variable echantillonnage d&#39;une simulation.">blocEchantillonnage</a>* <a class="code" href="class_data.html#ad9c6b61575daf7abc40b1d04aa43cdfc">getBlocEchantillonnage</a>() {<span class="keywordflow">return</span> &amp;facteurEchantillonnage;}
+<a name="l00056"></a><a class="code" href="class_data.html#ae00c2260f46fb8cadc1e70d0a1efd598">00056</a>     <a class="code" href="classcompression_huygens.html" title="Cette classe représente la variable compressionHuygens d&#39;une simulation.">compressionHuygens</a>* <a class="code" href="class_data.html#ae00c2260f46fb8cadc1e70d0a1efd598">getCompressionHuygens</a>() {<span class="keywordflow">return</span> &amp;compHuygens;}
+<a name="l00057"></a><a class="code" href="class_data.html#a845852df9db88d4acbabeb77e1d41970">00057</a>     <a class="code" href="classcalcul_directivite.html" title="Cette classe représente la variable calculDirectivite d&#39;une simulation.">calculDirectivite</a>* <a class="code" href="class_data.html#a845852df9db88d4acbabeb77e1d41970">getCalculDirective</a>() {<span class="keywordflow">return</span> &amp;calculdirectivite;}
 <a name="l00058"></a>00058 
 <a name="l00059"></a>00059 
 <a name="l00060"></a>00060 <span class="keyword">private</span>:
 <a name="l00061"></a>00061     <span class="comment">/******************************************************************************/</span>
 <a name="l00063"></a>00063     <span class="comment">/******************************************************************************/</span>
-<a name="l00064"></a>00064     <a class="code" href="classvolume_calcul.html">volumeCalcul</a> volume;
-<a name="l00065"></a>00065     <a class="code" href="classparoi.html">paroi</a> parois;
-<a name="l00066"></a>00066     <a class="code" href="classbloc_metallisation.html">blocMetallisation</a> metallisations;
-<a name="l00067"></a>00067     <a class="code" href="classbloc_parallelepipede.html">blocParallelepipede</a> parallelepipedes;
-<a name="l00068"></a>00068     <a class="code" href="classbloc_element_localise.html">blocElementLocalise</a> elementLocalises;
+<a name="l00064"></a>00064     <a class="code" href="classvolume_calcul.html" title="Cette classe représente la variable volumeCalcul d&#39;une simulation.">volumeCalcul</a> volume;
+<a name="l00065"></a>00065     <a class="code" href="classparoi.html" title="Cette classe représente la variable paroi d&#39;une simulation.">paroi</a> parois;
+<a name="l00066"></a>00066     <a class="code" href="classbloc_metallisation.html" title="Cette classe représente une liste de metallisation.">blocMetallisation</a> metallisations;
+<a name="l00067"></a>00067     <a class="code" href="classbloc_parallelepipede.html" title="Cette classe représente une liste de parallelepipede.">blocParallelepipede</a> parallelepipedes;
+<a name="l00068"></a>00068     <a class="code" href="classbloc_element_localise.html" title="Cette classe représente une liste de elementLocalise.">blocElementLocalise</a> elementLocalises;
 <a name="l00069"></a>00069     <span class="comment">/******************************************************************************/</span>
 <a name="l00071"></a>00071     <span class="comment">/******************************************************************************/</span>
-<a name="l00072"></a>00072     <a class="code" href="classpml.html">pml</a> PML;
-<a name="l00073"></a>00073     <a class="code" href="class_param_excitations.html">ParamExcitations</a> excitation;
-<a name="l00074"></a>00074     <a class="code" href="classanalyse_temporelle.html">analyseTemporelle</a> analyseTemp;
-<a name="l00075"></a>00075     <a class="code" href="classbloc_port_excitation.html">blocPortExcitation</a> portExcitations;
-<a name="l00076"></a>00076     <a class="code" href="classcage_excitation.html">cageExcitation</a> cage;
-<a name="l00077"></a>00077     <a class="code" href="classbloc_sonde.html">blocSonde</a> sondes;
-<a name="l00078"></a>00078     <a class="code" href="classbloc_cartographie_temporelle.html">blocCartographieTemporelle</a> cartographies;
-<a name="l00079"></a>00079     <a class="code" href="classbloc_surface_prelevement.html">blocSurfacePrelevement</a> surfacePrelevements;
+<a name="l00072"></a>00072     <a class="code" href="classpml.html" title="Cette classe représente la variable pml d&#39;une simulation.">pml</a> PML;
+<a name="l00073"></a>00073     <a class="code" href="class_param_excitations.html" title="Cette classe représente la variable ParamExcitations d&#39;une simulation.">ParamExcitations</a> excitation;
+<a name="l00074"></a>00074     <a class="code" href="classanalyse_temporelle.html" title="Cette classe représente la variable analyseTemporelle d&#39;une simulation.">analyseTemporelle</a> analyseTemp;
+<a name="l00075"></a>00075     <a class="code" href="classbloc_port_excitation.html" title="Cette classe représente une liste de portExcitation.">blocPortExcitation</a> portExcitations;
+<a name="l00076"></a>00076     <a class="code" href="classcage_excitation.html" title="Cette classe représente la variable cageExcitations d&#39;une simulation.">cageExcitation</a> cage;
+<a name="l00077"></a>00077     <a class="code" href="classbloc_sonde.html" title="Cette classe représente une liste de sonde.">blocSonde</a> sondes;
+<a name="l00078"></a>00078     <a class="code" href="classbloc_cartographie_temporelle.html" title="Cette classe représente une liste de cartographieTemporelle.">blocCartographieTemporelle</a> cartographies;
+<a name="l00079"></a>00079     <a class="code" href="classbloc_surface_prelevement.html" title="Cette classe représente une liste de surfacePrelevement.">blocSurfacePrelevement</a> surfacePrelevements;
 <a name="l00080"></a>00080     <span class="comment">/******************************************************************************/</span>
 <a name="l00082"></a>00082     <span class="comment">/******************************************************************************/</span>
-<a name="l00083"></a>00083     <a class="code" href="classchamp_lointain.html">champLointain</a> champlointain;
+<a name="l00083"></a>00083     <a class="code" href="classchamp_lointain.html" title="Cette classe représente la variable champLointain d&#39;une simulation.">champLointain</a> champlointain;
 <a name="l00084"></a>00084     <span class="comment">/******************************************************************************/</span>
 <a name="l00086"></a>00086     <span class="comment">/******************************************************************************/</span>
-<a name="l00087"></a>00087     <a class="code" href="class_excitation.html">Excitation</a> amplitudeV0;
-<a name="l00088"></a>00088     <a class="code" href="classformat_stockage.html">formatStockage</a> stockage;
-<a name="l00089"></a>00089     <a class="code" href="classbloc_echantillonnage.html">blocEchantillonnage</a> facteurEchantillonnage;
-<a name="l00090"></a>00090     <a class="code" href="classcompression_huygens.html">compressionHuygens</a> compHuygens;
-<a name="l00091"></a>00091     <a class="code" href="classcalcul_directivite.html">calculDirectivite</a> calculdirectivite;
+<a name="l00087"></a>00087     <a class="code" href="class_excitation.html" title="Cette classe représente la variable Excitation d&#39;une simulation.">Excitation</a> amplitudeV0;
+<a name="l00088"></a>00088     <a class="code" href="classformat_stockage.html" title="Cette classe représente la variable formatStockage d&#39;une simulation.">formatStockage</a> stockage;
+<a name="l00089"></a>00089     <a class="code" href="classbloc_echantillonnage.html" title="Cette classe représente la variable echantillonnage d&#39;une simulation.">blocEchantillonnage</a> facteurEchantillonnage;
+<a name="l00090"></a>00090     <a class="code" href="classcompression_huygens.html" title="Cette classe représente la variable compressionHuygens d&#39;une simulation.">compressionHuygens</a> compHuygens;
+<a name="l00091"></a>00091     <a class="code" href="classcalcul_directivite.html" title="Cette classe représente la variable calculDirectivite d&#39;une simulation.">calculDirectivite</a> calculdirectivite;
 <a name="l00092"></a>00092 };
 <a name="l00093"></a>00093 
 <a name="l00094"></a>00094 <span class="preprocessor">#endif // DATA_H</span>
@@ -184,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

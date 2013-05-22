@@ -12,7 +12,9 @@
 #include "parallelepipede.h"
 #include <vector>
 
-
+/**
+ * @brief Cette classe représente une liste de parallelepipede
+ */
 class blocParallelepipede : public BlocElementBase{
 public:
     blocParallelepipede();

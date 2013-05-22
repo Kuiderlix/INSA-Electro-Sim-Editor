@@ -4,6 +4,9 @@
 #include "FormElementBase.h"
 #include "cartographieTemporelle.h"
 
+/**
+ * @brief Formulaire permettant d'ajouter un nouvelle objet cartographieTemporelle dans la scène 3D
+ */
 class FormCartographieTemporelle : public FormElementBase
 {
     Q_OBJECT

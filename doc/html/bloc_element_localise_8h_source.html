@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/blocElementLocalise.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/blocElementLocalise.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -92,23 +92,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="element_localise_8h.html">elementLocalise.h</a>&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="_bloc_element_base_8h.html">BlocElementBase.h</a>&quot;</span>
 <a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="classbloc_element_localise.html">00014</a> <span class="keyword">class </span><a class="code" href="classbloc_element_localise.html">blocElementLocalise</a> : <span class="keyword">public</span> <a class="code" href="class_bloc_element_base.html" title="Représente une liste d&#39;elementBase.">BlocElementBase</a>{
-<a name="l00015"></a>00015 <span class="keyword">public</span>:
-<a name="l00016"></a>00016     <a class="code" href="classbloc_element_localise.html#a58decde05c9da3e1ae7357fd2fc90c21">blocElementLocalise</a>();
-<a name="l00017"></a>00017     <a class="code" href="classbloc_element_localise.html#a58decde05c9da3e1ae7357fd2fc90c21">blocElementLocalise</a>(<span class="keyword">const</span> <a class="code" href="classbloc_element_localise.html">blocElementLocalise</a>&amp; orig);
-<a name="l00018"></a>00018     <span class="keyword">virtual</span> <a class="code" href="classbloc_element_localise.html#a5a23c0401f83d22300a8c904216d75c2">~blocElementLocalise</a>();
-<a name="l00019"></a>00019 
-<a name="l00020"></a><a class="code" href="classbloc_element_localise.html#aec6d203bda3ecf5adff26bd4f955a6ea">00020</a>     <a class="code" href="classelement_localise.html">elementLocalise</a>* <a class="code" href="classbloc_element_localise.html#aec6d203bda3ecf5adff26bd4f955a6ea">GetElementLocalise</a>(<span class="keywordtype">int</span> i){
-<a name="l00021"></a>00021         <span class="keywordflow">return</span> (<a class="code" href="classelement_localise.html">elementLocalise</a>*)<a class="code" href="class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>.at(i);
-<a name="l00022"></a>00022     }
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024     <span class="keywordtype">void</span> <a class="code" href="classbloc_element_localise.html#ae9da4c09eacef52eb82b7fadaa63947c">ecrire</a>();
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="keyword">private</span>:
-<a name="l00027"></a>00027 };
+<a name="l00017"></a><a class="code" href="classbloc_element_localise.html">00017</a> <span class="keyword">class </span><a class="code" href="classbloc_element_localise.html" title="Cette classe représente une liste de elementLocalise.">blocElementLocalise</a> : <span class="keyword">public</span> <a class="code" href="class_bloc_element_base.html" title="Représente une liste d&#39;elementBase.">BlocElementBase</a>{
+<a name="l00018"></a>00018 <span class="keyword">public</span>:
+<a name="l00019"></a>00019     <a class="code" href="classbloc_element_localise.html#a58decde05c9da3e1ae7357fd2fc90c21">blocElementLocalise</a>();
+<a name="l00020"></a>00020     <a class="code" href="classbloc_element_localise.html#a58decde05c9da3e1ae7357fd2fc90c21">blocElementLocalise</a>(<span class="keyword">const</span> <a class="code" href="classbloc_element_localise.html" title="Cette classe représente une liste de elementLocalise.">blocElementLocalise</a>&amp; orig);
+<a name="l00021"></a>00021     <span class="keyword">virtual</span> <a class="code" href="classbloc_element_localise.html#a5a23c0401f83d22300a8c904216d75c2">~blocElementLocalise</a>();
+<a name="l00022"></a>00022 
+<a name="l00023"></a><a class="code" href="classbloc_element_localise.html#aec6d203bda3ecf5adff26bd4f955a6ea">00023</a>     <a class="code" href="classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a>* <a class="code" href="classbloc_element_localise.html#aec6d203bda3ecf5adff26bd4f955a6ea">GetElementLocalise</a>(<span class="keywordtype">int</span> i){
+<a name="l00024"></a>00024         <span class="keywordflow">return</span> (<a class="code" href="classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a>*)<a class="code" href="class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>.at(i);
+<a name="l00025"></a>00025     }
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027     <span class="keywordtype">void</span> <a class="code" href="classbloc_element_localise.html#ae9da4c09eacef52eb82b7fadaa63947c">ecrire</a>();
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#endif  </span><span class="comment">/* BLOCELEMENTLOCALISE_H */</span>
-<a name="l00030"></a>00030 
+<a name="l00029"></a>00029 <span class="keyword">private</span>:
+<a name="l00030"></a>00030 };
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="preprocessor">#endif  </span><span class="comment">/* BLOCELEMENTLOCALISE_H */</span>
+<a name="l00033"></a>00033 
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:36 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

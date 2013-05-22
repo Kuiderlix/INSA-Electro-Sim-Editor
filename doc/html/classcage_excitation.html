@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: cageExcitation Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: cageExcitation Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -84,20 +84,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="cageExcitation" --><!-- doxytag: inherits="elementBase,blocConfiguration" -->
+<p>Cette classe représente la variable cageExcitations d'une simulation.  
+ <a href="classcage_excitation.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for cageExcitation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcage_excitation__inherit__graph.png" border="0" usemap="#cage_excitation_inherit__map" alt="Inheritance graph"/></div>
 <map name="cage_excitation_inherit__map" id="cage_excitation_inherit__map">
-<area shape="rect" id="node2" href="classelement_base.html" title="The elementBase class." alt="" coords="5,5,104,35"/><area shape="rect" id="node4" href="classbloc_configuration.html" title="blocConfiguration" alt="" coords="128,5,251,35"/></map>
+<area shape="rect" id="node2" href="classelement_base.html" title="The elementBase class." alt="" coords="5,5,104,35"/><area shape="rect" id="node4" href="classbloc_configuration.html" title="Classe de base pour les données de configuration d&#39;une simulation." alt="" coords="128,5,251,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for cageExcitation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcage_excitation__coll__graph.png" border="0" usemap="#cage_excitation_coll__map" alt="Collaboration graph"/></div>
 <map name="cage_excitation_coll__map" id="cage_excitation_coll__map">
-<area shape="rect" id="node2" href="classelement_base.html" title="The elementBase class." alt="" coords="5,117,104,147"/><area shape="rect" id="node4" href="classcoordonnee.html" title="coordonnee" alt="" coords="11,5,99,35"/><area shape="rect" id="node6" href="classbloc_configuration.html" title="blocConfiguration" alt="" coords="128,117,251,147"/></map>
+<area shape="rect" id="node2" href="classelement_base.html" title="The elementBase class." alt="" coords="5,117,104,147"/><area shape="rect" id="node4" href="classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3..." alt="" coords="11,5,99,35"/><area shape="rect" id="node6" href="classbloc_configuration.html" title="Classe de base pour les données de configuration d&#39;une simulation." alt="" coords="128,117,251,147"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="classcage_excitation-members.html">List of all members.</a></p>
@@ -134,10 +137,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcage_excitation.html#a80cda1e7d7c7e94528fa62ce32caa258">GetNomFichier</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcage_excitation.html#a6139fea0d3458652710c70fb76a18b0e">SetNomFichier</a> (std::string nomFichier)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcage_excitation.html#ab2b851d089a808f4585c86ce1962ae64">ecrire</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcage_excitation.html#a551ab2837b7f1569d220e8da782e1a9f">isCreate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcage_excitation.html#a63ae900dff2c329dd0855cb09ab77184">setCreate</a> (bool c)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00016">16</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<div class="textblock"><p>Cette classe représente la variable cageExcitations d'une simulation. </p>
+
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00019">19</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a86e04e53b2cb8e282faf1f14a905ac8a"></a><!-- doxytag: member="cageExcitation::cageExcitation" ref="a86e04e53b2cb8e282faf1f14a905ac8a" args="()" -->
 <div class="memitem">
@@ -171,7 +177,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8cpp_source.html#l00026">26</a> of file <a class="el" href="cage_excitation_8cpp_source.html">cageExcitation.cpp</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8cpp_source.html#l00030">30</a> of file <a class="el" href="cage_excitation_8cpp_source.html">cageExcitation.cpp</a>.</p>
 
 </div>
 </div>
@@ -192,16 +198,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classbloc_configuration.html#ae5a50a8a47c6df65813f9d5b0fb1e81e">blocConfiguration</a>.</p>
 
-<p>Definition at line <a class="el" href="cage_excitation_8cpp_source.html#l00029">29</a> of file <a class="el" href="cage_excitation_8cpp_source.html">cageExcitation.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_ab2b851d089a808f4585c86ce1962ae64_cgraph.png" border="0" usemap="#classcage_excitation_ab2b851d089a808f4585c86ce1962ae64_cgraph" alt=""/></div>
-<map name="classcage_excitation_ab2b851d089a808f4585c86ce1962ae64_cgraph" id="classcage_excitation_ab2b851d089a808f4585c86ce1962ae64_cgraph">
-<area shape="rect" id="node3" href="classbloc_configuration.html#ac0dbb1162b30839212652e536adff583" title="blocConfiguration::blocConfiguration" alt="" coords="203,5,435,35"/><area shape="rect" id="node5" href="classbloc_configuration.html#a63b192a92a7fe72c6291a46709fb9980" title="blocConfiguration::setHeader" alt="" coords="224,59,413,88"/><area shape="rect" id="node7" href="classbloc_configuration.html#a1ac80f484e8c86e06aa76ba82c88747f" title="blocConfiguration::setExtension" alt="" coords="216,112,421,141"/><area shape="rect" id="node9" href="classbloc_configuration.html#ae5a50a8a47c6df65813f9d5b0fb1e81e" title="blocConfiguration::ecrire" alt="" coords="237,165,400,195"/><area shape="rect" id="node15" href="class_ecriture.html#a41d739b5f1d02c7bc2ddeb390d5a6a1d" title="Ecriture::Ecrire" alt="" coords="748,243,857,272"/><area shape="rect" id="node18" href="classelement_base.html#ab3c14b9c85e93e6974f14f7bd269a972" title="elementBase::ecrireElementBase" alt="" coords="211,295,427,324"/><area shape="rect" id="node23" href="classcoordonnee.html#a9fe12cd131d8451a8ed209b6c9b87de4" title="coordonnee::ecrire" alt="" coords="523,427,651,456"/><area shape="rect" id="node34" href="classcage_excitation.html#a9db59c5403b5d925495297c49c49cd26" title="cageExcitation::GetPointReference" alt="" coords="205,399,432,428"/><area shape="rect" id="node11" href="class_ecriture.html#ac9087740a3180e555553e57cc14c8472" title="Ecriture::SetNomFichier" alt="" coords="505,61,668,91"/><area shape="rect" id="node13" href="classbloc_configuration.html#a92ec8552be03741436b912bd72e024b9" title="blocConfiguration::getHeader" alt="" coords="492,115,681,144"/><area shape="rect" id="node21" href="classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="484,320,689,349"/><area shape="rect" id="node32" href="classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="491,373,683,403"/><area shape="rect" id="node25" href="classcoordonnee.html#a0b666a5d352f1135ad8904e5193b0213" title="coordonnee::GetY" alt="" coords="740,373,865,403"/><area shape="rect" id="node27" href="classcoordonnee.html#ac8be7ac37670f09a7e0a0e9c4440d2d8" title="coordonnee::GetX" alt="" coords="740,427,865,456"/><area shape="rect" id="node29" href="classcoordonnee.html#a4d5c88a3e93cc8eed5b848d18541b137" title="coordonnee::GetZ" alt="" coords="740,480,865,509"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8cpp_source.html#l00033">33</a> of file <a class="el" href="cage_excitation_8cpp_source.html">cageExcitation.cpp</a>.</p>
 
 </div>
 </div>
@@ -219,7 +216,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00022">22</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00025">25</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -237,7 +234,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00030">30</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00033">33</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -255,7 +252,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00038">38</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00041">41</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -273,7 +270,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00046">46</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00049">49</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -291,7 +288,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00054">54</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00057">57</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -309,7 +306,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00062">62</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00065">65</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -327,7 +324,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00121">121</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00124">124</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -345,7 +342,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00070">70</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00073">73</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -363,16 +360,7 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00078">78</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_a9db59c5403b5d925495297c49c49cd26_icgraph.png" border="0" usemap="#classcage_excitation_a9db59c5403b5d925495297c49c49cd26_icgraph" alt=""/></div>
-<map name="classcage_excitation_a9db59c5403b5d925495297c49c49cd26_icgraph" id="classcage_excitation_a9db59c5403b5d925495297c49c49cd26_icgraph">
-<area shape="rect" id="node3" href="classcage_excitation.html#ab2b851d089a808f4585c86ce1962ae64" title="cageExcitation::ecrire" alt="" coords="341,5,488,35"/><area shape="rect" id="node5" href="class_form_cage_excitation.html#a78b0985bac4141a38ab1888f93682167" title="FormCageExcitation::FormCageExcitation" alt="" coords="281,59,548,88"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00081">81</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -390,7 +378,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00089">89</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00092">92</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -408,7 +396,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00097">97</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00100">100</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -426,7 +414,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00105">105</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00108">108</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -444,7 +432,44 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00113">113</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00116">116</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a551ab2837b7f1569d220e8da782e1a9f"></a><!-- doxytag: member="cageExcitation::isCreate" ref="a551ab2837b7f1569d220e8da782e1a9f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classcage_excitation.html#a551ab2837b7f1569d220e8da782e1a9f">cageExcitation::isCreate</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00135">135</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a63ae900dff2c329dd0855cb09ab77184"></a><!-- doxytag: member="cageExcitation::setCreate" ref="a63ae900dff2c329dd0855cb09ab77184" args="(bool c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcage_excitation.html#a63ae900dff2c329dd0855cb09ab77184">cageExcitation::setCreate</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00140">140</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -463,16 +488,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00026">26</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_a0cfdb6ebc9b4c8d18f3591b8d0d2a45b_icgraph.png" border="0" usemap="#classcage_excitation_a0cfdb6ebc9b4c8d18f3591b8d0d2a45b_icgraph" alt=""/></div>
-<map name="classcage_excitation_a0cfdb6ebc9b4c8d18f3591b8d0d2a45b_icgraph" id="classcage_excitation_a0cfdb6ebc9b4c8d18f3591b8d0d2a45b_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="237,5,424,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00029">29</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -491,16 +507,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00034">34</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_a1f6c40f3bbb2dbce71dc925c04e8f47e_icgraph.png" border="0" usemap="#classcage_excitation_a1f6c40f3bbb2dbce71dc925c04e8f47e_icgraph" alt=""/></div>
-<map name="classcage_excitation_a1f6c40f3bbb2dbce71dc925c04e8f47e_icgraph" id="classcage_excitation_a1f6c40f3bbb2dbce71dc925c04e8f47e_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="269,5,456,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00037">37</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -519,16 +526,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00042">42</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_a5d0e3efe8f2079d9253d2b0c1198cc9e_icgraph.png" border="0" usemap="#classcage_excitation_a5d0e3efe8f2079d9253d2b0c1198cc9e_icgraph" alt=""/></div>
-<map name="classcage_excitation_a5d0e3efe8f2079d9253d2b0c1198cc9e_icgraph" id="classcage_excitation_a5d0e3efe8f2079d9253d2b0c1198cc9e_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="280,5,467,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00045">45</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -547,16 +545,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00050">50</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_aa6a3f41c5c38bb99f4b303bdd9ecfb20_icgraph.png" border="0" usemap="#classcage_excitation_aa6a3f41c5c38bb99f4b303bdd9ecfb20_icgraph" alt=""/></div>
-<map name="classcage_excitation_aa6a3f41c5c38bb99f4b303bdd9ecfb20_icgraph" id="classcage_excitation_aa6a3f41c5c38bb99f4b303bdd9ecfb20_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="312,5,499,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00053">53</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -575,16 +564,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00058">58</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_a8c097220df3b7cd5fd4bbecdcd264a68_icgraph.png" border="0" usemap="#classcage_excitation_a8c097220df3b7cd5fd4bbecdcd264a68_icgraph" alt=""/></div>
-<map name="classcage_excitation_a8c097220df3b7cd5fd4bbecdcd264a68_icgraph" id="classcage_excitation_a8c097220df3b7cd5fd4bbecdcd264a68_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="291,5,477,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00061">61</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -603,16 +583,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00066">66</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_ab50be72e1778214884939f2d0f93bef8_icgraph.png" border="0" usemap="#classcage_excitation_ab50be72e1778214884939f2d0f93bef8_icgraph" alt=""/></div>
-<map name="classcage_excitation_ab50be72e1778214884939f2d0f93bef8_icgraph" id="classcage_excitation_ab50be72e1778214884939f2d0f93bef8_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="243,5,429,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00069">69</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -631,16 +602,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00125">125</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_a6139fea0d3458652710c70fb76a18b0e_icgraph.png" border="0" usemap="#classcage_excitation_a6139fea0d3458652710c70fb76a18b0e_icgraph" alt=""/></div>
-<map name="classcage_excitation_a6139fea0d3458652710c70fb76a18b0e_icgraph" id="classcage_excitation_a6139fea0d3458652710c70fb76a18b0e_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="256,5,443,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00128">128</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -659,16 +621,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00074">74</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_abf44214ab01b24453b7758a1b2aab0ae_icgraph.png" border="0" usemap="#classcage_excitation_abf44214ab01b24453b7758a1b2aab0ae_icgraph" alt=""/></div>
-<map name="classcage_excitation_abf44214ab01b24453b7758a1b2aab0ae_icgraph" id="classcage_excitation_abf44214ab01b24453b7758a1b2aab0ae_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="216,5,403,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00077">77</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -703,16 +656,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00082">82</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_acc63cd21bbde2f7d6c44041c2c0e6abb_icgraph.png" border="0" usemap="#classcage_excitation_acc63cd21bbde2f7d6c44041c2c0e6abb_icgraph" alt=""/></div>
-<map name="classcage_excitation_acc63cd21bbde2f7d6c44041c2c0e6abb_icgraph" id="classcage_excitation_acc63cd21bbde2f7d6c44041c2c0e6abb_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="280,5,467,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00085">85</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -731,7 +675,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00085">85</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00088">88</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -750,16 +694,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00093">93</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_aed76273f7e58cd7bf8c91bbe8665c4fe_icgraph.png" border="0" usemap="#classcage_excitation_aed76273f7e58cd7bf8c91bbe8665c4fe_icgraph" alt=""/></div>
-<map name="classcage_excitation_aed76273f7e58cd7bf8c91bbe8665c4fe_icgraph" id="classcage_excitation_aed76273f7e58cd7bf8c91bbe8665c4fe_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="216,5,403,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00096">96</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -778,16 +713,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00101">101</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_a149cca3314b3a6d8473c172e1f419ef5_icgraph.png" border="0" usemap="#classcage_excitation_a149cca3314b3a6d8473c172e1f419ef5_icgraph" alt=""/></div>
-<map name="classcage_excitation_a149cca3314b3a6d8473c172e1f419ef5_icgraph" id="classcage_excitation_a149cca3314b3a6d8473c172e1f419ef5_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="288,5,475,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00104">104</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -806,16 +732,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00109">109</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_acca2e157a6b8a8c0b245fc5912c0bd66_icgraph.png" border="0" usemap="#classcage_excitation_acca2e157a6b8a8c0b245fc5912c0bd66_icgraph" alt=""/></div>
-<map name="classcage_excitation_acca2e157a6b8a8c0b245fc5912c0bd66_icgraph" id="classcage_excitation_acca2e157a6b8a8c0b245fc5912c0bd66_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="229,5,416,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00112">112</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -834,16 +751,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00117">117</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classcage_excitation_ab742fae2153a478251f0a11ca157d822_icgraph.png" border="0" usemap="#classcage_excitation_ab742fae2153a478251f0a11ca157d822_icgraph" alt=""/></div>
-<map name="classcage_excitation_ab742fae2153a478251f0a11ca157d822_icgraph" id="classcage_excitation_ab742fae2153a478251f0a11ca157d822_icgraph">
-<area shape="rect" id="node3" href="class_form_cage_excitation.html#ae105f7d5da831df78d0ccde525fda79f" title="FormCageExcitation::valider" alt="" coords="277,5,464,35"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="cage_excitation_8h_source.html#l00120">120</a> of file <a class="el" href="cage_excitation_8h_source.html">cageExcitation.h</a>.</p>
 
 </div>
 </div>
@@ -869,7 +777,7 @@ Here is the caller graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

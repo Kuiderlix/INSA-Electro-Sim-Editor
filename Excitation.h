@@ -10,7 +10,9 @@
 
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable Excitation d'une simulation
+ */
 class Excitation : public blocConfiguration{
     Q_OBJECT
 public:

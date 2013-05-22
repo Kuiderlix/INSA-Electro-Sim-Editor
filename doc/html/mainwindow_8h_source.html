@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/mainwindow.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/mainwindow.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -99,53 +99,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00018"></a>00018 <span class="preprocessor">#include &quot;<a class="code" href="_param_avance_widget_8h.html">ParamAvanceWidget.h</a>&quot;</span>
 <a name="l00019"></a>00019 <span class="preprocessor">#include &quot;<a class="code" href="_calcul_champs_lointain_widget_8h.html">CalculChampsLointainWidget.h</a>&quot;</span>
 <a name="l00020"></a>00020 <span class="preprocessor">#include &quot;<a class="code" href="_filter_widget_8h.html">FilterWidget.h</a>&quot;</span>
-<a name="l00021"></a>00021 
-<a name="l00026"></a><a class="code" href="class_main_window.html">00026</a> <span class="keyword">class </span><a class="code" href="class_main_window.html" title="The MainWindow class Cette classe représente la fenêtre principale du logiciel.">MainWindow</a> : <span class="keyword">public</span> QMainWindow
-<a name="l00027"></a>00027 {
-<a name="l00028"></a>00028     Q_OBJECT
-<a name="l00029"></a>00029 
-<a name="l00034"></a>00034     <span class="keywordtype">void</span> construireMenu();
-<a name="l00040"></a>00040     QWidget * construireScene3D();
-<a name="l00045"></a>00045     <span class="keywordtype">void</span> construireToolBar();
-<a name="l00051"></a>00051     QWidget * construireTableaux();
-<a name="l00056"></a>00056     <span class="keywordtype">void</span> construireDockToolBox();
-<a name="l00057"></a>00057     
-<a name="l00058"></a>00058 <span class="keyword">public</span>:
-<a name="l00059"></a>00059     <a class="code" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a>(QWidget *parent = 0);
-<a name="l00060"></a>00060     <a class="code" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();
+<a name="l00021"></a>00021 <span class="preprocessor">#include &quot;<a class="code" href="_form_nouveau_8h.html">FormNouveau.h</a>&quot;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="_form_ouvrir_8h.html">FormOuvrir.h</a>&quot;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="_form_settings_8h.html">FormSettings.h</a>&quot;</span>
+<a name="l00024"></a>00024 
+<a name="l00029"></a><a class="code" href="class_main_window.html">00029</a> <span class="keyword">class </span><a class="code" href="class_main_window.html" title="The MainWindow class Cette classe représente la fenêtre principale du logiciel.">MainWindow</a> : <span class="keyword">public</span> QMainWindow
+<a name="l00030"></a>00030 {
+<a name="l00031"></a>00031     Q_OBJECT
+<a name="l00032"></a>00032 
+<a name="l00037"></a>00037     <span class="keywordtype">void</span> construireMenu();
+<a name="l00043"></a>00043     QWidget * construireScene3D();
+<a name="l00048"></a>00048     <span class="keywordtype">void</span> construireToolBar();
+<a name="l00054"></a>00054     QWidget * construireTableaux();
+<a name="l00059"></a>00059     <span class="keywordtype">void</span> construireDockToolBox();
+<a name="l00060"></a>00060 
 <a name="l00061"></a>00061 
-<a name="l00062"></a>00062 <span class="keyword">public</span> slots:
-<a name="l00068"></a>00068     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a436cf1b9ee9f8fa518343492a87f5fd0" title="changeFilter">changeFilter</a>();
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070 <span class="keyword">private</span>:
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072     QVBoxLayout * layout;
-<a name="l00073"></a>00073 
-<a name="l00074"></a>00074     <a class="code" href="class_table_view_metallisation.html">TableViewMetallisation</a> * vueMetal;
-<a name="l00075"></a>00075     <a class="code" href="class_table_view_parallelepipede.html">TableViewParallelepipede</a> * vueParal;
-<a name="l00076"></a>00076     <a class="code" href="class_table_view_element_localise.html">TableViewElementLocalise</a> * vueElemLocal;
-<a name="l00077"></a>00077     <a class="code" href="class_table_view_port_excitation.html">TableViewPortExcitation</a> * vuePortExci;
-<a name="l00078"></a>00078     <a class="code" href="class_table_view_sonde.html">TableViewSonde</a> * vueSonde;
-<a name="l00079"></a>00079     <a class="code" href="class_table_view_cart_tempo.html">TableViewCartTempo</a> * vueCartoTempo;
-<a name="l00080"></a>00080     <a class="code" href="class_table_view_surface_prelev.html">TableViewSurfacePrelev</a> * vueSurfacePrelev;
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082     <a class="code" href="class_my_sort_filter_proxy_model.html">MySortFilterProxyModel</a> * currentModel;
-<a name="l00083"></a>00083     <a class="code" href="class_filter_widget.html" title="The FilterWidget class.">FilterWidget</a> * filterWidget;
-<a name="l00084"></a>00084     QTabWidget * tabWidget;
+<a name="l00062"></a>00062     <span class="keywordtype">void</span> init();
+<a name="l00063"></a>00063     
+<a name="l00064"></a>00064 <span class="keyword">public</span>:
+<a name="l00065"></a>00065     <a class="code" href="class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow</a>(QWidget *parent = 0);
+<a name="l00066"></a>00066     <a class="code" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 <span class="keyword">public</span> slots:
+<a name="l00074"></a>00074     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a436cf1b9ee9f8fa518343492a87f5fd0" title="changeFilter">changeFilter</a>();
+<a name="l00075"></a>00075 
+<a name="l00079"></a>00079     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#ad6c10e67ce2635fc4ccd20d9853a7fe5" title="initialise l&#39;interface graphique avec des données vierges">nouvelleSimulation</a>();
+<a name="l00080"></a>00080 
+<a name="l00084"></a>00084     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#ad0f5d940e30ab44019990e0d350398b1" title="Charge les fichiers de configuration et initialise l&#39;interface graphique.">ouvrirSimulation</a>();
 <a name="l00085"></a>00085 
-<a name="l00086"></a>00086     <a class="code" href="class_data.html" title="Contient toutes les données utiles pour la simulation.">Data</a> * data;
-<a name="l00087"></a>00087     <a class="code" href="class_parser.html" title="Le parser de fichier de configuration.">Parser</a> parser;
-<a name="l00088"></a>00088 
-<a name="l00089"></a>00089     <a class="code" href="class_visualisation3_d.html" title="Affiche et gère la scène 3D.">Visualisation3D</a> * visualisation;
+<a name="l00089"></a>00089     <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a401d3a98ce66fa433a6564b864edfae9" title="Ouvre la fenetre des paramètres du logiciel.">ouvreParametres</a>();
 <a name="l00090"></a>00090 
-<a name="l00091"></a>00091 
-<a name="l00092"></a>00092     QAction *actionNouveau;
-<a name="l00093"></a>00093     QAction *actionOuvrir;
-<a name="l00094"></a>00094     QAction *actionGenerer;
-<a name="l00095"></a>00095     QAction *actionZoom11;
-<a name="l00096"></a>00096 };
-<a name="l00097"></a>00097 
-<a name="l00098"></a>00098 <span class="preprocessor">#endif // MAINWINDOW_H</span>
+<a name="l00091"></a>00091 <span class="keyword">private</span>:
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093     QVBoxLayout * layout;
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095     <a class="code" href="class_table_view_metallisation.html">TableViewMetallisation</a> * vueMetal;
+<a name="l00096"></a>00096     <a class="code" href="class_table_view_parallelepipede.html">TableViewParallelepipede</a> * vueParal;
+<a name="l00097"></a>00097     <a class="code" href="class_table_view_element_localise.html">TableViewElementLocalise</a> * vueElemLocal;
+<a name="l00098"></a>00098     <a class="code" href="class_table_view_port_excitation.html">TableViewPortExcitation</a> * vuePortExci;
+<a name="l00099"></a>00099     <a class="code" href="class_table_view_sonde.html">TableViewSonde</a> * vueSonde;
+<a name="l00100"></a>00100     <a class="code" href="class_table_view_cart_tempo.html">TableViewCartTempo</a> * vueCartoTempo;
+<a name="l00101"></a>00101     <a class="code" href="class_table_view_surface_prelev.html">TableViewSurfacePrelev</a> * vueSurfacePrelev;
+<a name="l00102"></a>00102 
+<a name="l00103"></a>00103     <a class="code" href="class_my_sort_filter_proxy_model.html" title="Cette classe permet de personnalisé le tri et le filtrage dans les listes.">MySortFilterProxyModel</a> * currentModel;
+<a name="l00104"></a>00104     <a class="code" href="class_filter_widget.html" title="The FilterWidget class.">FilterWidget</a> * filterWidget;
+<a name="l00105"></a>00105     QTabWidget * tabWidget;
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107     <a class="code" href="class_data.html" title="Contient toutes les données utiles pour la simulation.">Data</a> * data;
+<a name="l00108"></a>00108     <a class="code" href="class_parser.html" title="Le parser de fichier de configuration.">Parser</a> parser;
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110     <a class="code" href="class_visualisation3_d.html" title="Affiche et gère la scène 3D.">Visualisation3D</a> * visualisation;
+<a name="l00111"></a>00111 
+<a name="l00112"></a>00112     <a class="code" href="class_description_geo_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ...">DescriptionGeoWidget</a> * descGeo;
+<a name="l00113"></a>00113     <a class="code" href="class_param_simu_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ...">ParamSimuWidget</a>* paramSimu;
+<a name="l00114"></a>00114     <a class="code" href="class_objet_f_d_t_d_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ...">ObjetFDTDWidget</a>* objFDTD;
+<a name="l00115"></a>00115     <a class="code" href="class_calcul_champs_lointain_widget.html" title="Cette classe représente le formulaire pour modifier un ChampsLointain.">CalculChampsLointainWidget</a>* calculChWidget;
+<a name="l00116"></a>00116     <a class="code" href="class_param_avance_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ...">ParamAvanceWidget</a>* paramAvcWidget;
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119     QAction *actionNouveau;
+<a name="l00120"></a>00120     QAction *actionOuvrir;
+<a name="l00121"></a>00121     QAction *actionGenerer;
+<a name="l00122"></a>00122     QAction *actionZoom11;
+<a name="l00123"></a>00123     QAction *actionParametre;
+<a name="l00124"></a>00124 };
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126 <span class="preprocessor">#endif // MAINWINDOW_H</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -164,7 +183,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

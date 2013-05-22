@@ -4,6 +4,9 @@
 #include <QSortFilterProxyModel>
 #include "coordonnee.h"
 
+/**
+ * @brief Cette classe permet de personnalisé le tri et le filtrage dans les listes
+ */
 class MySortFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT

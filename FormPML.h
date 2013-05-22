@@ -4,6 +4,9 @@
 #include <QtWidgets>
 #include "pml.h"
 
+/**
+ * @brief Cette classe fournit un formulaire pour modifier l'objet pml
+ */
 class FormPML : public QWidget
 {
     Q_OBJECT

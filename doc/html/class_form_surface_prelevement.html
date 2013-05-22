@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: FormSurfacePrelevement Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: FormSurfacePrelevement Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -85,20 +85,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="FormSurfacePrelevement" --><!-- doxytag: inherits="FormElementBase" -->
+<p>Formulaire permettant d'ajouter un nouvelle objet <a class="el" href="classsurface_prelevement.html" title="Cette classe représente la variable surfacePrelevement d&#39;une simulation.">surfacePrelevement</a> dans la scène 3D.  
+ <a href="class_form_surface_prelevement.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_form_surface_prelevement_8h_source.html">FormSurfacePrelevement.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for FormSurfacePrelevement:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_form_surface_prelevement__inherit__graph.png" border="0" usemap="#_form_surface_prelevement_inherit__map" alt="Inheritance graph"/></div>
 <map name="_form_surface_prelevement_inherit__map" id="_form_surface_prelevement_inherit__map">
-<area shape="rect" id="node2" href="class_form_element_base.html" title="FormElementBase" alt="" coords="25,5,156,35"/></map>
+<area shape="rect" id="node2" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase." alt="" coords="25,5,156,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for FormSurfacePrelevement:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_form_surface_prelevement__coll__graph.png" border="0" usemap="#_form_surface_prelevement_coll__map" alt="Collaboration graph"/></div>
 <map name="_form_surface_prelevement_coll__map" id="_form_surface_prelevement_coll__map">
-<area shape="rect" id="node2" href="class_form_element_base.html" title="FormElementBase" alt="" coords="25,117,156,147"/><area shape="rect" id="node4" href="class_form_coordonnees.html" title="FormCoordonnees" alt="" coords="27,5,155,35"/></map>
+<area shape="rect" id="node2" href="class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase." alt="" coords="52,117,183,147"/><area shape="rect" id="node4" href="class_color_picker.html" title="Cette classe est un widget sous forme de bouton qui permet de sélectionner une couleur dans une boite..." alt="" coords="5,5,96,35"/><area shape="rect" id="node6" href="class_form_coordonnees.html" title="Cette classe fournit un widget pour modifier l&#39;objet coordonnee." alt="" coords="120,5,248,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_form_surface_prelevement-members.html">List of all members.</a></p>
@@ -106,31 +109,28 @@ Collaboration diagram for FormSurfacePrelevement:</div>
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_surface_prelevement.html#ad504e31d7655fdad9e41349cec1a3014">valider</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l'<a class="el" href="classelement_base.html" title="The elementBase class.">elementBase</a> et émet le signal <a class="el" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="Ce signal est émis quand le bouton valider est pressé. Cela signifie que l&#39;elementBase a bien était m...">elementValide(elementBase *)</a>.  <a href="#ad504e31d7655fdad9e41349cec1a3014"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_surface_prelevement.html#aee5d510299994e90cba4ed3852491fd2">reset</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Place des valeurs par défaut dans le formulaire.  <a href="#aee5d510299994e90cba4ed3852491fd2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_surface_prelevement.html#ac0bae9071d0a1f89697330ef560795d1">activeResteForm</a> (int val)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_surface_prelevement.html#a485a6c554b15187c4e31288b0f3f7b51">FormSurfacePrelevement</a> (<a class="el" href="classsurface_prelevement.html">surfacePrelevement</a> *surface, int mode, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_surface_prelevement.html#adfe8681e53ca39c001cd43639da06db8">FormSurfacePrelevement</a> (<a class="el" href="classsurface_prelevement.html">surfacePrelevement</a> *surface, QWidget *parent=0)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_form_surface_prelevement_8h_source.html#l00007">7</a> of file <a class="el" href="_form_surface_prelevement_8h_source.html">FormSurfacePrelevement.h</a>.</p>
+<div class="textblock"><p>Formulaire permettant d'ajouter un nouvelle objet <a class="el" href="classsurface_prelevement.html" title="Cette classe représente la variable surfacePrelevement d&#39;une simulation.">surfacePrelevement</a> dans la scène 3D. </p>
+
+<p>Definition at line <a class="el" href="_form_surface_prelevement_8h_source.html#l00010">10</a> of file <a class="el" href="_form_surface_prelevement_8h_source.html">FormSurfacePrelevement.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a485a6c554b15187c4e31288b0f3f7b51"></a><!-- doxytag: member="FormSurfacePrelevement::FormSurfacePrelevement" ref="a485a6c554b15187c4e31288b0f3f7b51" args="(surfacePrelevement *surface, int mode, QWidget *parent=0)" -->
+<a class="anchor" id="adfe8681e53ca39c001cd43639da06db8"></a><!-- doxytag: member="FormSurfacePrelevement::FormSurfacePrelevement" ref="adfe8681e53ca39c001cd43639da06db8" args="(surfacePrelevement *surface, QWidget *parent=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form_surface_prelevement.html#a485a6c554b15187c4e31288b0f3f7b51">FormSurfacePrelevement::FormSurfacePrelevement</a> </td>
+          <td class="memname"><a class="el" href="class_form_surface_prelevement.html#adfe8681e53ca39c001cd43639da06db8">FormSurfacePrelevement::FormSurfacePrelevement</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classsurface_prelevement.html">surfacePrelevement</a> *&#160;</td>
           <td class="paramname"><em>surface</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>mode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -148,15 +148,6 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Definition at line <a class="el" href="_form_surface_prelevement_8cpp_source.html#l00003">3</a> of file <a class="el" href="_form_surface_prelevement_8cpp_source.html">FormSurfacePrelevement.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_surface_prelevement_a485a6c554b15187c4e31288b0f3f7b51_cgraph.png" border="0" usemap="#class_form_surface_prelevement_a485a6c554b15187c4e31288b0f3f7b51_cgraph" alt=""/></div>
-<map name="class_form_surface_prelevement_a485a6c554b15187c4e31288b0f3f7b51_cgraph" id="class_form_surface_prelevement_a485a6c554b15187c4e31288b0f3f7b51_cgraph">
-<area shape="rect" id="node3" href="class_form_surface_prelevement.html#ac0bae9071d0a1f89697330ef560795d1" title="FormSurfacePrelevement::activeResteForm" alt="" coords="383,5,660,35"/><area shape="rect" id="node5" href="class_form_element_base.html#a10b8d2ffbc930360abdf6edc9d87f206" title="FormElementBase::getWidgetElementBase" alt="" coords="384,59,659,88"/><area shape="rect" id="node7" href="classelement_base.html#acc7a843ec52ab4c5104d9a55234473f1" title="elementBase::GetAvantGauche" alt="" coords="711,5,916,35"/><area shape="rect" id="node9" href="classelement_base.html#a541ae94922f907d99c69361c9814e749" title="elementBase::GetArriereDroit" alt="" coords="717,59,909,88"/><area shape="rect" id="node11" href="class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473" title="FormElementBase::valider" alt="" coords="725,112,901,141"/><area shape="rect" id="node13" href="classelement_base.html#a230935c8e0e713878651c9f6877bc5db" title="elementBase::SetAvantGauche" alt="" coords="965,59,1171,88"/><area shape="rect" id="node15" href="class_form_coordonnees.html#a9f4cdc23ad453c0d8249aaf72f1832d0" title="FormCoordonnees::getCoord" alt="" coords="973,112,1163,141"/><area shape="rect" id="node17" href="classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5" title="elementBase::SetArriereDroit" alt="" coords="972,165,1164,195"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -178,15 +169,6 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_form_surface_prelevement_8cpp_source.html#l00087">87</a> of file <a class="el" href="_form_surface_prelevement_8cpp_source.html">FormSurfacePrelevement.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_surface_prelevement_ac0bae9071d0a1f89697330ef560795d1_icgraph.png" border="0" usemap="#class_form_surface_prelevement_ac0bae9071d0a1f89697330ef560795d1_icgraph" alt=""/></div>
-<map name="class_form_surface_prelevement_ac0bae9071d0a1f89697330ef560795d1_icgraph" id="class_form_surface_prelevement_ac0bae9071d0a1f89697330ef560795d1_icgraph">
-<area shape="rect" id="node3" href="class_form_surface_prelevement.html#a485a6c554b15187c4e31288b0f3f7b51" title="FormSurfacePrelevement::FormSurfacePrelevement" alt="" coords="335,5,660,35"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="aee5d510299994e90cba4ed3852491fd2"></a><!-- doxytag: member="FormSurfacePrelevement::reset" ref="aee5d510299994e90cba4ed3852491fd2" args="()" -->
@@ -203,18 +185,11 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
+<p>Place des valeurs par défaut dans le formulaire. </p>
+
 <p>Reimplemented from <a class="el" href="class_form_element_base.html#aadcbfd4f27ca45f6329d0ff5b1608d82">FormElementBase</a>.</p>
 
 <p>Definition at line <a class="el" href="_form_surface_prelevement_8cpp_source.html#l00079">79</a> of file <a class="el" href="_form_surface_prelevement_8cpp_source.html">FormSurfacePrelevement.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_surface_prelevement_aee5d510299994e90cba4ed3852491fd2_cgraph.png" border="0" usemap="#class_form_surface_prelevement_aee5d510299994e90cba4ed3852491fd2_cgraph" alt=""/></div>
-<map name="class_form_surface_prelevement_aee5d510299994e90cba4ed3852491fd2_cgraph" id="class_form_surface_prelevement_aee5d510299994e90cba4ed3852491fd2_cgraph">
-<area shape="rect" id="node3" href="class_form_element_base.html#a0fc624d18ff6d8780f715a52a2f184f1" title="FormElementBase::setElement" alt="" coords="263,5,465,35"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -232,18 +207,11 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
+<p>Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l'<a class="el" href="classelement_base.html" title="The elementBase class.">elementBase</a> et émet le signal <a class="el" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="Ce signal est émis quand le bouton valider est pressé. Cela signifie que l&#39;elementBase a bien était m...">elementValide(elementBase *)</a>. </p>
+
 <p>Reimplemented from <a class="el" href="class_form_element_base.html#a45524a3c1acb4bfe8d76f2cf1830e473">FormElementBase</a>.</p>
 
 <p>Definition at line <a class="el" href="_form_surface_prelevement_8cpp_source.html#l00064">64</a> of file <a class="el" href="_form_surface_prelevement_8cpp_source.html">FormSurfacePrelevement.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_surface_prelevement_ad504e31d7655fdad9e41349cec1a3014_cgraph.png" border="0" usemap="#class_form_surface_prelevement_ad504e31d7655fdad9e41349cec1a3014_cgraph" alt=""/></div>
-<map name="class_form_surface_prelevement_ad504e31d7655fdad9e41349cec1a3014_cgraph" id="class_form_surface_prelevement_ad504e31d7655fdad9e41349cec1a3014_cgraph">
-<area shape="rect" id="node3" href="classsurface_prelevement.html#a8d0a0c12d2ceb62f347f4a0d01322cf0" title="surfacePrelevement::SetTypeSurface" alt="" coords="297,5,537,35"/><area shape="rect" id="node5" href="classsurface_prelevement.html#a2ce1a6d93e78b2d7252837db51b1b972" title="surfacePrelevement::SetNomFichier" alt="" coords="301,59,533,88"/><area shape="rect" id="node7" href="classsurface_prelevement.html#a1effb0f0a97f91cb2f07a1278bee3ba9" title="surfacePrelevement::SetInsideOutside" alt="" coords="295,112,540,141"/><area shape="rect" id="node9" href="classsurface_prelevement.html#a9e58af0961fb198ae09841d1ee97fae2" title="surfacePrelevement::SetNbFaces" alt="" coords="308,165,527,195"/><area shape="rect" id="node11" href="classsurface_prelevement.html#ab4511e3ef0f46a32115d9f0ae78db280" title="surfacePrelevement::SetCompressionHauteur" alt="" coords="273,219,561,248"/><area shape="rect" id="node13" href="classsurface_prelevement.html#a6a3a8872cf4ad755ddd985bbe58a4638" title="surfacePrelevement::SetCompressionLargeur" alt="" coords="275,272,560,301"/><area shape="rect" id="node15" href="classsurface_prelevement.html#aa34efed94b458bf57984a00003159412" title="surfacePrelevement::SetCompressionLongueur" alt="" coords="269,325,565,355"/><area shape="rect" id="node17" href="class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="FormElementBase::elementValide" alt="" coords="308,379,527,408"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -269,7 +237,7 @@ Here is the call graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

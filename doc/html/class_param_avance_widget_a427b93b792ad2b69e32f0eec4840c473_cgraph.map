@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_data.html#a2da00311dda30f72122368e2e5b813d2" title="Data::getFormatStockage" alt="" coords="343,5,513,35"/>
-<area shape="rect" id="node5" href="$class_data.html#a7f02ae1d4a9111c097553c882a73c93f" title="Data::getExcitation" alt="" coords="361,59,495,88"/>
-<area shape="rect" id="node7" href="$class_data.html#ad9c6b61575daf7abc40b1d04aa43cdfc" title="Data::getBlocEchantillonnage" alt="" coords="331,112,525,141"/>
-<area shape="rect" id="node9" href="$class_data.html#a21fba04b0e26f921562678acea12741f" title="Data::getPML" alt="" coords="377,165,479,195"/>
-</map>

@@ -5,6 +5,9 @@
 #include "FormElementBase.h"
 #include "elementLocalise.h"
 
+/**
+ * @brief Formulaire permettant d'ajouter un nouvelle objet elementLocalise dans la scène 3D
+ */
 class FormElementLocalise : public FormElementBase
 {
     Q_OBJECT

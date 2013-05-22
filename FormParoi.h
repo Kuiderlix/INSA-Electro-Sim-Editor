@@ -4,6 +4,9 @@
 #include <QtWidgets>
 #include "paroi.h"
 
+/**
+ * @brief Cette classe fournit un formulaire pour modifier l'objet paroi
+ */
 class FormParoi : public QWidget
 {
     Q_OBJECT

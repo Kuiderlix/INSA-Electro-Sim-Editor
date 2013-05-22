@@ -4,6 +4,9 @@
 #include <QtWidgets>
 #include "Excitation.h"
 
+/**
+ * @brief Cette classe fournit un formulaire pour modifier l'objet Excitation
+ */
 class FormExcitation : public QWidget
 {
     Q_OBJECT

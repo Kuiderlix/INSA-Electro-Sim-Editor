@@ -10,7 +10,9 @@
 
 #include "blocConfiguration.h"
 
-
+/**
+ * @brief Cette classe représente la variable compressionHuygens d'une simulation
+ */
 class compressionHuygens : public blocConfiguration{
     Q_OBJECT
 public:

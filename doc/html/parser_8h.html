@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/parser.h File Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/parser.h File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -90,13 +90,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;fstream&gt;</code><br/>
 <code>#include &lt;limits&gt;</code><br/>
 <code>#include &lt;list&gt;</code><br/>
+<code>#include &lt;QSettings&gt;</code><br/>
+<code>#include &lt;QCoreApplication&gt;</code><br/>
 <code>#include &quot;<a class="el" href="_data_8h_source.html">Data.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for parser.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8h__incl.png" border="0" usemap="#_2home_2kuiderlix_2_prog_2cpp_2pskl-etprat_2parser_8h" alt=""/></div>
 <map name="_2home_2kuiderlix_2_prog_2cpp_2pskl-etprat_2parser_8h" id="_2home_2kuiderlix_2_prog_2cpp_2pskl-etprat_2parser_8h">
-<area shape="rect" id="node19" href="_data_8h.html" title="Data.h" alt="" coords="1423,83,1484,112"/><area shape="rect" id="node21" href="volume_calcul_8h.html" title="volumeCalcul.h" alt="" coords="2103,237,2215,267"/><area shape="rect" id="node35" href="paroi_8h.html" title="paroi.h" alt="" coords="1491,160,1552,189"/><area shape="rect" id="node40" href="metallisation_8h.html" title="metallisation.h" alt="" coords="1276,237,1383,267"/><area shape="rect" id="node55" href="bloc_metallisation_8h.html" title="blocMetallisation.h" alt="" coords="1285,160,1416,189"/><area shape="rect" id="node64" href="parallelepipede_8h.html" title="parallelepipede.h" alt="" coords="961,237,1079,267"/><area shape="rect" id="node68" href="bloc_parallelepipede_8h.html" title="blocParallelepipede.h" alt="" coords="819,160,963,189"/><area shape="rect" id="node74" href="bloc_element_localise_8h.html" title="blocElementLocalise.h" alt="" coords="261,160,413,189"/><area shape="rect" id="node80" href="pml_8h.html" title="pml.h" alt="" coords="2244,237,2297,267"/><area shape="rect" id="node83" href="_param_excitations_8h.html" title="ParamExcitations.h" alt="" coords="2324,237,2460,267"/><area shape="rect" id="node86" href="analyse_temporelle_8h.html" title="analyseTemporelle.h" alt="" coords="2432,160,2573,189"/><area shape="rect" id="node89" href="bloc_port_excitation_8h.html" title="blocPortExcitation.h" alt="" coords="437,160,576,189"/><area shape="rect" id="node95" href="cage_excitation_8h.html" title="cageExcitation.h" alt="" coords="1407,237,1524,267"/><area shape="rect" id="node101" href="bloc_sonde_8h.html" title="blocSonde.h" alt="" coords="144,160,237,189"/><area shape="rect" id="node108" href="bloc_cartographie_temporelle_8h.html" title="blocCartographieTemporelle.h" alt="" coords="600,160,795,189"/><area shape="rect" id="node114" href="bloc_surface_prelevement_8h.html" title="blocSurfacePrelevement.h" alt="" coords="987,160,1160,189"/><area shape="rect" id="node121" href="champ_lointain_8h.html" title="champLointain.h" alt="" coords="1641,237,1759,267"/><area shape="rect" id="node125" href="_excitation_8h.html" title="Excitation.h" alt="" coords="2597,160,2688,189"/><area shape="rect" id="node128" href="format_stockage_8h.html" title="formatStockage.h" alt="" coords="1627,160,1752,189"/><area shape="rect" id="node131" href="bloc_echantillonnage_8h.html" title="blocEchantillonnage.h" alt="" coords="1776,160,1925,189"/><area shape="rect" id="node134" href="compression_huygens_8h.html" title="compressionHuygens.h" alt="" coords="1949,160,2107,189"/><area shape="rect" id="node137" href="calcul_directivite_8h.html" title="calculDirectivite.h" alt="" coords="2131,160,2256,189"/><area shape="rect" id="node23" href="bloc_configuration_8h.html" title="blocConfiguration.h" alt="" coords="1780,315,1913,344"/><area shape="rect" id="node31" href="_ecriture_8h.html" title="Ecriture.h" alt="" coords="1351,392,1428,421"/><area shape="rect" id="node42" href="coordonnee_8h.html" title="coordonnee.h" alt="" coords="1031,392,1129,421"/><area shape="rect" id="node48" href="element_base_8h.html" title="elementBase.h" alt="" coords="795,315,904,344"/><area shape="rect" id="node57" href="_bloc_element_base_8h.html" title="BlocElementBase.h" alt="" coords="527,237,663,267"/><area shape="rect" id="node76" href="element_localise_8h.html" title="elementLocalise.h" alt="" coords="241,237,367,267"/><area shape="rect" id="node92" href="port_excitation_8h.html" title="portExcitation.h" alt="" coords="391,237,503,267"/><area shape="rect" id="node104" href="sonde_8h.html" title="sonde.h" alt="" coords="151,237,217,267"/><area shape="rect" id="node110" href="cartographie_temporelle_8h.html" title="cartographieTemporelle.h" alt="" coords="687,237,855,267"/><area shape="rect" id="node116" href="surface_prelevement_8h.html" title="surfacePrelevement.h" alt="" coords="1103,237,1252,267"/></map>
+<area shape="rect" id="node23" href="_data_8h.html" title="Data.h" alt="" coords="1509,83,1571,112"/><area shape="rect" id="node25" href="volume_calcul_8h.html" title="volumeCalcul.h" alt="" coords="2421,237,2533,267"/><area shape="rect" id="node39" href="paroi_8h.html" title="paroi.h" alt="" coords="1544,160,1605,189"/><area shape="rect" id="node44" href="metallisation_8h.html" title="metallisation.h" alt="" coords="1411,237,1517,267"/><area shape="rect" id="node57" href="bloc_metallisation_8h.html" title="blocMetallisation.h" alt="" coords="1339,160,1469,189"/><area shape="rect" id="node65" href="parallelepipede_8h.html" title="parallelepipede.h" alt="" coords="144,237,261,267"/><area shape="rect" id="node69" href="bloc_parallelepipede_8h.html" title="blocParallelepipede.h" alt="" coords="299,160,443,189"/><area shape="rect" id="node75" href="bloc_element_localise_8h.html" title="blocElementLocalise.h" alt="" coords="965,160,1117,189"/><area shape="rect" id="node81" href="pml_8h.html" title="pml.h" alt="" coords="2569,237,2623,267"/><area shape="rect" id="node84" href="_param_excitations_8h.html" title="ParamExcitations.h" alt="" coords="2653,237,2789,267"/><area shape="rect" id="node87" href="analyse_temporelle_8h.html" title="analyseTemporelle.h" alt="" coords="1680,160,1821,189"/><area shape="rect" id="node90" href="bloc_port_excitation_8h.html" title="blocPortExcitation.h" alt="" coords="803,160,941,189"/><area shape="rect" id="node96" href="cage_excitation_8h.html" title="cageExcitation.h" alt="" coords="1635,237,1752,267"/><area shape="rect" id="node102" href="bloc_sonde_8h.html" title="blocSonde.h" alt="" coords="467,160,560,189"/><area shape="rect" id="node109" href="bloc_cartographie_temporelle_8h.html" title="blocCartographieTemporelle.h" alt="" coords="584,160,779,189"/><area shape="rect" id="node115" href="bloc_surface_prelevement_8h.html" title="blocSurfacePrelevement.h" alt="" coords="1141,160,1315,189"/><area shape="rect" id="node122" href="champ_lointain_8h.html" title="champLointain.h" alt="" coords="285,237,403,267"/><area shape="rect" id="node126" href="_excitation_8h.html" title="Excitation.h" alt="" coords="1845,160,1936,189"/><area shape="rect" id="node129" href="format_stockage_8h.html" title="formatStockage.h" alt="" coords="1960,160,2085,189"/><area shape="rect" id="node132" href="bloc_echantillonnage_8h.html" title="blocEchantillonnage.h" alt="" coords="2109,160,2259,189"/><area shape="rect" id="node135" href="compression_huygens_8h.html" title="compressionHuygens.h" alt="" coords="2283,160,2440,189"/><area shape="rect" id="node138" href="calcul_directivite_8h.html" title="calculDirectivite.h" alt="" coords="2464,160,2589,189"/><area shape="rect" id="node27" href="bloc_configuration_8h.html" title="blocConfiguration.h" alt="" coords="1793,315,1927,344"/><area shape="rect" id="node35" href="_ecriture_8h.html" title="Ecriture.h" alt="" coords="1709,392,1787,421"/><area shape="rect" id="node46" href="coordonnee_8h.html" title="coordonnee.h" alt="" coords="833,392,932,421"/><area shape="rect" id="node52" href="element_base_8h.html" title="elementBase.h" alt="" coords="941,315,1051,344"/><area shape="rect" id="node59" href="_bloc_element_base_8h.html" title="BlocElementBase.h" alt="" coords="928,237,1064,267"/><area shape="rect" id="node77" href="element_localise_8h.html" title="elementLocalise.h" alt="" coords="1088,237,1213,267"/><area shape="rect" id="node93" href="port_excitation_8h.html" title="portExcitation.h" alt="" coords="792,237,904,267"/><area shape="rect" id="node105" href="sonde_8h.html" title="sonde.h" alt="" coords="509,237,576,267"/><area shape="rect" id="node111" href="cartographie_temporelle_8h.html" title="cartographieTemporelle.h" alt="" coords="600,237,768,267"/><area shape="rect" id="node117" href="surface_prelevement_8h.html" title="surfacePrelevement.h" alt="" coords="1237,237,1387,267"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -129,7 +131,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="parser_8h_source.html#l00024">24</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
+<p>Definition at line <a class="el" href="parser_8h_source.html#l00026">26</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
 
 </div>
 </div>
@@ -144,7 +146,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="parser_8h_source.html#l00023">23</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
+<p>Definition at line <a class="el" href="parser_8h_source.html#l00025">25</a> of file <a class="el" href="parser_8h_source.html">parser.h</a>.</p>
 
 </div>
 </div>
@@ -166,7 +168,7 @@ Defines</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

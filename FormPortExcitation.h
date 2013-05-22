@@ -4,6 +4,9 @@
 #include "FormElementBase.h"
 #include "portExcitation.h"
 
+/**
+ * @brief Formulaire permettant d'ajouter un nouvelle objet portExcitation dans la scène 3D
+ */
 class FormPortExcitation : public FormElementBase
 {
     Q_OBJECT

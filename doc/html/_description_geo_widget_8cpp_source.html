@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/DescriptionGeoWidget.cpp Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/DescriptionGeoWidget.cpp Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -82,52 +82,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="_description_geo_widget_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="_description_geo_widget_8h.html">DescriptionGeoWidget.h</a>&quot;</span>
 <a name="l00002"></a>00002 
 <a name="l00003"></a><a class="code" href="class_description_geo_widget.html#ad7a8b44fa2b77318bde95fcce4b5bce0">00003</a> <a class="code" href="class_description_geo_widget.html#ad7a8b44fa2b77318bde95fcce4b5bce0">DescriptionGeoWidget::DescriptionGeoWidget</a>(<a class="code" href="class_data.html" title="Contient toutes les données utiles pour la simulation.">Data</a> *data, QWidget *parent) :
-<a name="l00004"></a>00004     QWidget(parent)
+<a name="l00004"></a>00004     <a class="code" href="class_tool_box_widget.html" title="Classe de base pour les widgets conteneurs de la ToolBox.">ToolBoxWidget</a>(data,parent)
 <a name="l00005"></a>00005 {
-<a name="l00006"></a>00006     QVBoxLayout * layout = <span class="keyword">new</span> QVBoxLayout;
-<a name="l00007"></a>00007     layout-&gt;setMargin(0);
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009     <a class="code" href="class_form_metallisation.html">FormMetallisation</a> * formMetal = <span class="keyword">new</span> <a class="code" href="class_form_metallisation.html">FormMetallisation</a>(<span class="keyword">new</span> <a class="code" href="classmetallisation.html">metallisation</a>(), <a class="code" href="class_form_element_base.html#a407b9c360b109a4948af0965cbb4c9ab">FormMetallisation::NOUVEAU</a>);
-<a name="l00010"></a>00010     connect(formMetal,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),<span class="keyword">this</span>,SIGNAL(<a class="code" href="class_description_geo_widget.html#a3d9a73e2ea7680ce833f9aff60b2b641" title="Ce signal est émis quand un nouvelle objet metallisation est créé">newMetalCreated</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)));
-<a name="l00011"></a>00011     connect(formMetal,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),formMetal,SLOT(reset()));
-<a name="l00012"></a>00012     <a class="code" href="class_form_parallelepipede.html">FormParallelepipede</a> * formPara = <span class="keyword">new</span> <a class="code" href="class_form_parallelepipede.html">FormParallelepipede</a>(<span class="keyword">new</span> <a class="code" href="classparallelepipede.html">parallelepipede</a>(), <a class="code" href="class_form_element_base.html#a407b9c360b109a4948af0965cbb4c9ab">FormParallelepipede::NOUVEAU</a>);
-<a name="l00013"></a>00013     connect(formPara,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),<span class="keyword">this</span>,SIGNAL(<a class="code" href="class_description_geo_widget.html#af3b28ca7fd197c5f6cda6dbd1ae08747" title="Ce signal est émis quand un nouvelle objet parallelepipede est créé">newParaCreated</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)));
-<a name="l00014"></a>00014     connect(formPara,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),formPara,SLOT(reset()));
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016     <a class="code" href="class_form_volume_calcul.html">FormVolumeCalcul</a> * formVolCal = <span class="keyword">new</span> <a class="code" href="class_form_volume_calcul.html">FormVolumeCalcul</a>(data-&gt;<a class="code" href="class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>());
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018     <a class="code" href="class_form_paroi.html">FormParoi</a> * formParoi = <span class="keyword">new</span> <a class="code" href="class_form_paroi.html">FormParoi</a>(data-&gt;<a class="code" href="class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">getParoi</a>());
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020     layout-&gt;addWidget(formVolCal);
-<a name="l00021"></a>00021     layout-&gt;addWidget(formParoi);
-<a name="l00022"></a>00022     layout-&gt;addWidget(formMetal);
-<a name="l00023"></a>00023     layout-&gt;addWidget(formPara);
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025     QHBoxLayout * layoutAvance = <span class="keyword">new</span> QHBoxLayout;
-<a name="l00026"></a>00026     layoutAvance-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Element Localisé&quot;</span>));
-<a name="l00027"></a>00027     QPushButton * boutonAvance = <span class="keyword">new</span> QPushButton(<span class="stringliteral">&quot;+&quot;</span>);
-<a name="l00028"></a>00028     layoutAvance-&gt;addWidget(boutonAvance);
-<a name="l00029"></a>00029     this-&gt;connect(boutonAvance, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e" title="Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise.">openElementLocaliseWindows</a>()));
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031     QWidget * widgetAvance = <span class="keyword">new</span> QWidget();
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033     widgetAvance-&gt;setLayout(layoutAvance);
-<a name="l00034"></a>00034 
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007     QVBoxLayout * layout = <span class="keyword">new</span> QVBoxLayout;
+<a name="l00008"></a>00008     layout-&gt;setMargin(0);
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010     <a class="code" href="class_form_metallisation.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet metallisation dans la scène 3D.">FormMetallisation</a> * formMetal = <span class="keyword">new</span> <a class="code" href="class_form_metallisation.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet metallisation dans la scène 3D.">FormMetallisation</a>(<span class="keyword">new</span> <a class="code" href="classmetallisation.html" title="Cette classe représente la variable metallisation d&#39;une simulation.">metallisation</a>());
+<a name="l00011"></a>00011     connect(formMetal,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),<span class="keyword">this</span>,SIGNAL(<a class="code" href="class_description_geo_widget.html#a3d9a73e2ea7680ce833f9aff60b2b641" title="Ce signal est émis quand un nouvelle objet metallisation est créé">newMetalCreated</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00012"></a>00012     connect(formMetal,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),formMetal,SLOT(reset()));
+<a name="l00013"></a>00013     <a class="code" href="class_form_parallelepipede.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet parallelepipede dans la scène 3D.">FormParallelepipede</a> * formPara = <span class="keyword">new</span> <a class="code" href="class_form_parallelepipede.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet parallelepipede dans la scène 3D.">FormParallelepipede</a>(<span class="keyword">new</span> <a class="code" href="classparallelepipede.html" title="Cette classe représente la variable parallelepipede d&#39;une simulation.">parallelepipede</a>());
+<a name="l00014"></a>00014     connect(formPara,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),<span class="keyword">this</span>,SIGNAL(<a class="code" href="class_description_geo_widget.html#af3b28ca7fd197c5f6cda6dbd1ae08747" title="Ce signal est émis quand un nouvelle objet parallelepipede est créé">newParaCreated</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00015"></a>00015     connect(formPara,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),formPara,SLOT(reset()));
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017     formVolCal = <span class="keyword">new</span> <a class="code" href="class_form_volume_calcul.html" title="Cette classe fournit un formulaire pour modifier l&#39;objet volumeCalcul.">FormVolumeCalcul</a>(data-&gt;<a class="code" href="class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>());
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019     formParoi = <span class="keyword">new</span> <a class="code" href="class_form_paroi.html" title="Cette classe fournit un formulaire pour modifier l&#39;objet paroi.">FormParoi</a>(data-&gt;<a class="code" href="class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">getParoi</a>());
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021     layout-&gt;addWidget(formVolCal);
+<a name="l00022"></a>00022     layout-&gt;addWidget(formParoi);
+<a name="l00023"></a>00023     layout-&gt;addWidget(formMetal);
+<a name="l00024"></a>00024     layout-&gt;addWidget(formPara);
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026     QHBoxLayout * layoutAvance = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00027"></a>00027     layoutAvance-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Element Localisé&quot;</span>));
+<a name="l00028"></a>00028     QPushButton * boutonAvance = <span class="keyword">new</span> QPushButton(<span class="stringliteral">&quot;+&quot;</span>);
+<a name="l00029"></a>00029     layoutAvance-&gt;addWidget(boutonAvance);
+<a name="l00030"></a>00030     this-&gt;connect(boutonAvance, SIGNAL(clicked()), <span class="keyword">this</span>, SLOT(<a class="code" href="class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e" title="Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise.">openElementLocaliseWindows</a>()));
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032     QWidget * widgetAvance = <span class="keyword">new</span> QWidget();
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034     widgetAvance-&gt;setLayout(layoutAvance);
 <a name="l00035"></a>00035 
-<a name="l00036"></a>00036     layout-&gt;addWidget(widgetAvance);
-<a name="l00037"></a>00037 
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037     layout-&gt;addWidget(widgetAvance);
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039     setLayout(layout);
-<a name="l00040"></a>00040 }
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     setLayout(layout);
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e">00042</a> <span class="keywordtype">void</span> <a class="code" href="class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e" title="Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise.">DescriptionGeoWidget::openElementLocaliseWindows</a>()
-<a name="l00043"></a>00043 {
-<a name="l00044"></a>00044     <a class="code" href="class_form_element_localise.html">FormElementLocalise</a> * win = <span class="keyword">new</span> <a class="code" href="class_form_element_localise.html">FormElementLocalise</a>(<span class="keyword">new</span> <a class="code" href="classelement_localise.html">elementLocalise</a>(), <a class="code" href="class_form_element_base.html#a407b9c360b109a4948af0965cbb4c9ab">FormElementLocalise::NOUVEAU</a>);
-<a name="l00045"></a>00045     connect(win,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),<span class="keyword">this</span>,SIGNAL(<a class="code" href="class_description_geo_widget.html#ac993d4e58252d53df211459ee110988b" title="Ce signal est émis quand un nouvelle objet elementLocalise est créé">newElemLocCreated</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)));
-<a name="l00046"></a>00046     connect(win,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),win,SLOT(reset()));
-<a name="l00047"></a>00047     connect(win,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),win,SLOT(accept()));
-<a name="l00048"></a>00048     win-&gt;exec();
-<a name="l00049"></a>00049 }
+<a name="l00042"></a>00042     <a class="code" href="class_description_geo_widget.html#a6e444262d4e8c3f17c644dae3fc696e4" title="Initialise les formulaire avec les valeurs de l&#39;objet Data.">init</a>();
+<a name="l00043"></a>00043 }
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e">00045</a> <span class="keywordtype">void</span> <a class="code" href="class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e" title="Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise.">DescriptionGeoWidget::openElementLocaliseWindows</a>()
+<a name="l00046"></a>00046 {
+<a name="l00047"></a>00047     <a class="code" href="class_form_element_localise.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet elementLocalise dans la scène 3D.">FormElementLocalise</a> * win = <span class="keyword">new</span> <a class="code" href="class_form_element_localise.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet elementLocalise dans la scène 3D.">FormElementLocalise</a>(<span class="keyword">new</span> <a class="code" href="classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a>());
+<a name="l00048"></a>00048     connect(win,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),<span class="keyword">this</span>,SIGNAL(<a class="code" href="class_description_geo_widget.html#ac993d4e58252d53df211459ee110988b" title="Ce signal est émis quand un nouvelle objet elementLocalise est créé">newElemLocCreated</a>(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00049"></a>00049     connect(win,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),win,SLOT(reset()));
+<a name="l00050"></a>00050     connect(win,SIGNAL(elementValide(<a class="code" href="classelement_base.html" title="The elementBase class.">elementBase</a>*)),win,SLOT(accept()));
+<a name="l00051"></a>00051     win-&gt;exec();
+<a name="l00052"></a>00052 }
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 
+<a name="l00055"></a><a class="code" href="class_description_geo_widget.html#a6e444262d4e8c3f17c644dae3fc696e4">00055</a> <span class="keywordtype">void</span> <a class="code" href="class_description_geo_widget.html#a6e444262d4e8c3f17c644dae3fc696e4" title="Initialise les formulaire avec les valeurs de l&#39;objet Data.">DescriptionGeoWidget::init</a>()
+<a name="l00056"></a>00056 {
+<a name="l00057"></a>00057     formVolCal-&gt;<a class="code" href="class_form_volume_calcul.html#acc9ed3b3b18ff18fd68d6a49cdb591a0">setVolumeCalcul</a>(<a class="code" href="class_tool_box_widget.html#ac2ee04ba2afd2ce91d0d95c30519e586">data</a>-&gt;<a class="code" href="class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>());
+<a name="l00058"></a>00058     formParoi-&gt;<a class="code" href="class_form_paroi.html#a30c404f2f6f6b6d16b27eae8d917bcaa">setParoi</a>(<a class="code" href="class_tool_box_widget.html#ac2ee04ba2afd2ce91d0d95c30519e586">data</a>-&gt;<a class="code" href="class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">getParoi</a>());
+<a name="l00059"></a>00059 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -146,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

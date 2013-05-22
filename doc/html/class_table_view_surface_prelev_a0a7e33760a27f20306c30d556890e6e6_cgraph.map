@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_table_view.html#ae8e2fcfd6769e96634180f82d7d65ccb" title="Ajoute un élément au model." alt="" coords="323,32,483,61"/>
-<area shape="rect" id="node5" href="$class_table_view.html#af410b7e3a69630e4f3ddaec84584eeb8" title="Retourne le model associé." alt="" coords="532,5,716,35"/>
-<area shape="rect" id="node7" href="$class_table_model.html#a268112fa5a3ff754af82fe52de881e9f" title="ajout un élément à la fin du tableau" alt="" coords="541,59,707,88"/>
-<area shape="rect" id="node9" href="$class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste." alt="" coords="767,32,983,61"/>
-<area shape="rect" id="node11" href="$class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste." alt="" coords="773,85,976,115"/>
-</map>

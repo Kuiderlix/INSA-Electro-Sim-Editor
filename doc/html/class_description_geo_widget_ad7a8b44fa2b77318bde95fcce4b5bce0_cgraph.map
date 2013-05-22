@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_description_geo_widget.html#a3d9a73e2ea7680ce833f9aff60b2b641" title="Ce signal est émis quand un nouvelle objet metallisation est créé" alt="" coords="385,5,647,35"/>
-<area shape="rect" id="node5" href="$class_description_geo_widget.html#af3b28ca7fd197c5f6cda6dbd1ae08747" title="Ce signal est émis quand un nouvelle objet parallelepipede est créé" alt="" coords="387,59,645,88"/>
-<area shape="rect" id="node7" href="$class_data.html#a860188d3872c8bedab5bcd56c7a1a8be" title="Data::getVolumeCalcul" alt="" coords="437,112,595,141"/>
-<area shape="rect" id="node9" href="$class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b" title="Data::getParoi" alt="" coords="463,165,569,195"/>
-<area shape="rect" id="node11" href="$class_description_geo_widget.html#a3cb0ed1547f6f2f96badbd61f6376e6e" title="Cette fonction ouvre un formulaire pour ajouter un objet elementLocalise." alt="" coords="347,219,685,248"/>
-<area shape="rect" id="node13" href="$class_description_geo_widget.html#ac993d4e58252d53df211459ee110988b" title="Ce signal est émis quand un nouvelle objet elementLocalise est créé" alt="" coords="733,219,1016,248"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_data.html#aa5816e4319d30f4abbb3679318ac6144" title="Data::getCageExcitation" alt="" coords="368,5,533,35"/>
-<area shape="rect" id="node5" href="$class_objet_f_d_t_d_widget.html#abf25ce9ff26463a3edc069884301cde1" title="ObjetFDTDWidget::newCageExcitationCreated" alt="" coords="303,59,599,88"/>
-<area shape="rect" id="node7" href="$class_objet_f_d_t_d_widget.html#a412e2dc675ff994c5d9d486e5ea7364b" title="ObjetFDTDWidget::newSurfacePrelCreated" alt="" coords="313,112,588,141"/>
-<area shape="rect" id="node9" href="$class_objet_f_d_t_d_widget.html#a90c9fe930d600a4762e4d3590b04294b" title="ObjetFDTDWidget::newSondeCreated" alt="" coords="328,165,573,195"/>
-<area shape="rect" id="node11" href="$class_objet_f_d_t_d_widget.html#af3b85471ec89217e2e64017e3c8c5474" title="ObjetFDTDWidget::openCartoTempoWindows" alt="" coords="305,219,596,248"/>
-<area shape="rect" id="node13" href="$class_objet_f_d_t_d_widget.html#ae88fdb149c811d61191ac0fa3df749d7" title="ObjetFDTDWidget::newCartoTempoCreated" alt="" coords="648,219,928,248"/>
-</map>

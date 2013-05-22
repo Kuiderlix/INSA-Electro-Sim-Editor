@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: FormVolumeCalcul Class Reference</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: FormVolumeCalcul Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -84,6 +84,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="FormVolumeCalcul" -->
+<p>Cette classe fournit un formulaire pour modifier l'objet <a class="el" href="classvolume_calcul.html" title="Cette classe représente la variable volumeCalcul d&#39;une simulation.">volumeCalcul</a>.  
+ <a href="class_form_volume_calcul.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_form_volume_calcul_8h_source.html">FormVolumeCalcul.h</a>&gt;</code></p>
 
 <p><a href="class_form_volume_calcul-members.html">List of all members.</a></p>
@@ -91,10 +94,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_volume_calcul.html#ad11ed5892c082f1b12fc2b82c7f81de6">FormVolumeCalcul</a> (<a class="el" href="classvolume_calcul.html">volumeCalcul</a> *volCal, QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_volume_calcul.html#acc9ed3b3b18ff18fd68d6a49cdb591a0">setVolumeCalcul</a> (<a class="el" href="classvolume_calcul.html">volumeCalcul</a> *vol)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form_volume_calcul.html#a93535dc3ffe9f2f8949e506ff4fe4200">init</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_form_volume_calcul_8h_source.html#l00006">6</a> of file <a class="el" href="_form_volume_calcul_8h_source.html">FormVolumeCalcul.h</a>.</p>
+<div class="textblock"><p>Cette classe fournit un formulaire pour modifier l'objet <a class="el" href="classvolume_calcul.html" title="Cette classe représente la variable volumeCalcul d&#39;une simulation.">volumeCalcul</a>. </p>
+
+<p>Definition at line <a class="el" href="_form_volume_calcul_8h_source.html#l00010">10</a> of file <a class="el" href="_form_volume_calcul_8h_source.html">FormVolumeCalcul.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad11ed5892c082f1b12fc2b82c7f81de6"></a><!-- doxytag: member="FormVolumeCalcul::FormVolumeCalcul" ref="ad11ed5892c082f1b12fc2b82c7f81de6" args="(volumeCalcul *volCal, QWidget *parent=0)" -->
 <div class="memitem">
@@ -123,14 +129,43 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_form_volume_calcul_8cpp_source.html#l00003">3</a> of file <a class="el" href="_form_volume_calcul_8cpp_source.html">FormVolumeCalcul.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_form_volume_calcul_ad11ed5892c082f1b12fc2b82c7f81de6_cgraph.png" border="0" usemap="#class_form_volume_calcul_ad11ed5892c082f1b12fc2b82c7f81de6_cgraph" alt=""/></div>
-<map name="class_form_volume_calcul_ad11ed5892c082f1b12fc2b82c7f81de6_cgraph" id="class_form_volume_calcul_ad11ed5892c082f1b12fc2b82c7f81de6_cgraph">
-<area shape="rect" id="node3" href="classvolume_calcul.html#afe5224cf7c26211a001061b89e05d14a" title="volumeCalcul::GetLongueur" alt="" coords="309,5,491,35"/><area shape="rect" id="node5" href="classvolume_calcul.html#a8fff237e85f76d9363ca40ef661ad89c" title="volumeCalcul::GetLargeur" alt="" coords="313,59,487,88"/><area shape="rect" id="node7" href="classvolume_calcul.html#ac355d534c9901feb9c9038a3a088614a" title="volumeCalcul::GetHauteur" alt="" coords="312,112,488,141"/><area shape="rect" id="node9" href="classvolume_calcul.html#aa5cc18055c0f5fabed5a8abe4395c3fd" title="volumeCalcul::GetNombreY" alt="" coords="308,165,492,195"/><area shape="rect" id="node11" href="classvolume_calcul.html#a5d8f4f104687ef14e9e311d4f4048eb5" title="volumeCalcul::GetNombreX" alt="" coords="308,219,492,248"/><area shape="rect" id="node13" href="classvolume_calcul.html#a573638e1e1bc1296fcefd53a2c044ca7" title="volumeCalcul::GetNombreZ" alt="" coords="308,272,492,301"/></map>
 </div>
-</p>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a93535dc3ffe9f2f8949e506ff4fe4200"></a><!-- doxytag: member="FormVolumeCalcul::init" ref="a93535dc3ffe9f2f8949e506ff4fe4200" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_form_volume_calcul.html#a93535dc3ffe9f2f8949e506ff4fe4200">FormVolumeCalcul::init</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_form_volume_calcul_8cpp_source.html#l00080">80</a> of file <a class="el" href="_form_volume_calcul_8cpp_source.html">FormVolumeCalcul.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc9ed3b3b18ff18fd68d6a49cdb591a0"></a><!-- doxytag: member="FormVolumeCalcul::setVolumeCalcul" ref="acc9ed3b3b18ff18fd68d6a49cdb591a0" args="(volumeCalcul *vol)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_form_volume_calcul.html#acc9ed3b3b18ff18fd68d6a49cdb591a0">FormVolumeCalcul::setVolumeCalcul</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classvolume_calcul.html">volumeCalcul</a> *&#160;</td>
+          <td class="paramname"><em>vol</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_form_volume_calcul_8h_source.html#l00016">16</a> of file <a class="el" href="_form_volume_calcul_8h_source.html">FormVolumeCalcul.h</a>.</p>
 
 </div>
 </div>
@@ -156,7 +191,7 @@ Here is the call graph for this function:</div>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:54 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:37 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

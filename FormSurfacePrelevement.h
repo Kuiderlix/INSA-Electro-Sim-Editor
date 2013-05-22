@@ -4,6 +4,9 @@
 #include "FormElementBase.h"
 #include "surfacePrelevement.h"
 
+/**
+ * @brief Formulaire permettant d'ajouter un nouvelle objet surfacePrelevement dans la scène 3D
+ */
 class FormSurfacePrelevement : public FormElementBase
 {
     Q_OBJECT

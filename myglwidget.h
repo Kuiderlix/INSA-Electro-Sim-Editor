@@ -3,8 +3,8 @@
 
 #include <QtOpenGL>
 #include <QGLWidget>
-/*
-Cette classe sert de base à la classe qui affiche le rendu en 3D avec OpenGL
+/**
+@brief Cette classe sert de base à la classe qui affiche le rendu en 3D avec OpenGL
 */
 class MyGLWidget : public QGLWidget
 {

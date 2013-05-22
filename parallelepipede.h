@@ -11,6 +11,9 @@
 #include "coordonnee.h"
 #include "elementBase.h"
 
+/**
+ * @brief Cette classe représente la variable parallelepipede d'une simulation
+ */
 class parallelepipede : public elementBase {
 public:
     parallelepipede();

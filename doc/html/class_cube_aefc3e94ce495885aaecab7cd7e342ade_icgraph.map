@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_visualisation3_d.html#a4febf8433d419dc2ddd1c0c8500790cf" title="Desinne dans la scène le volume de calcul." alt="" coords="175,5,420,35"/>
-<area shape="rect" id="node7" href="$class_visualisation3_d.html#a199ae5525e92a728e43ea9d616ffdc54" title="Dessine dans la scène tout les éléments du scénario." alt="" coords="196,59,399,88"/>
-<area shape="rect" id="node5" href="$class_visualisation3_d.html#a681ea2567d150fc05b478a5164633f4d" title="Visualisation3D::paintGL" alt="" coords="471,32,636,61"/>
-</map>

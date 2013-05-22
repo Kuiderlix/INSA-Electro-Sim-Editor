@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_visualisation3_d.html#a822fb87f261f76184bd7919262bf01c2" title="Fait tendre la variable var vers 0 avec un pas de step à chaque appel. Exemple: si var=50 et step = 1..." alt="" coords="229,5,387,35"/>
-<area shape="rect" id="node5" href="$class_visualisation3_d.html#af9fca7788688e7655b73145300ff4e51" title="Signal émis quand le zoom change." alt="" coords="205,59,411,88"/>
-<area shape="rect" id="node7" href="$class_visualisation3_d.html#a1cadb4b0652032bfefd6bdd5572cf075" title="Meme fonction que toZero() mais appliqué à un angle." alt="" coords="213,112,403,141"/>
-<area shape="rect" id="node9" href="$class_visualisation3_d.html#ae91630ede3ff9dcabe0d83f1f5d70606" title="Signal émis quand le timer doit s&#39;arreter." alt="" coords="219,165,397,195"/>
-</map>

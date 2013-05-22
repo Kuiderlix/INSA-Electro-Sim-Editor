@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Editeur de simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/analyseTemporelle.h Source File</title>
+<title>Editeur de configuration pour simulation éléctromagnétique: /home/kuiderlix/Prog/cpp/pskl-etprat/analyseTemporelle.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Editeur de simulation éléctromagnétique
+   <div id="projectname">Editeur de configuration pour simulation éléctromagnétique
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   
+   <div id="projectbrief">Développement d&#39;un GUI pour un logiciel de simulation electromagnétique</div>
   </td>
   
   
@@ -91,41 +91,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="bloc_configuration_8h.html">blocConfiguration.h</a>&quot;</span>
 <a name="l00012"></a>00012 
-<a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="classanalyse_temporelle.html">00014</a> <span class="keyword">class </span><a class="code" href="classanalyse_temporelle.html">analyseTemporelle</a> : <span class="keyword">public</span> <a class="code" href="classbloc_configuration.html">blocConfiguration</a> {
-<a name="l00015"></a>00015     Q_OBJECT
-<a name="l00016"></a>00016 <span class="keyword">public</span>:
-<a name="l00017"></a>00017     <a class="code" href="classanalyse_temporelle.html#a0470b91d6c8b3743e0ef65fc683a5c6c">analyseTemporelle</a>();
-<a name="l00018"></a>00018     <span class="keyword">virtual</span> <a class="code" href="classanalyse_temporelle.html#aedf8883480d5dc91d0af7bd09e439ab9">~analyseTemporelle</a>();
-<a name="l00019"></a>00019 
-<a name="l00020"></a><a class="code" href="classanalyse_temporelle.html#a1f5f5fd4c4dd1996c3e62b0483be68c5">00020</a>     <span class="keywordtype">double</span> <a class="code" href="classanalyse_temporelle.html#a1f5f5fd4c4dd1996c3e62b0483be68c5">GetPeriode</a>()<span class="keyword"> const </span>{
-<a name="l00021"></a>00021         <span class="keywordflow">return</span> periode;
-<a name="l00022"></a>00022     }
-<a name="l00023"></a>00023 
-<a name="l00024"></a><a class="code" href="classanalyse_temporelle.html#ab968cf7c2da79b012e1251a1c05ed724">00024</a>     <span class="keywordtype">double</span> <a class="code" href="classanalyse_temporelle.html#ab968cf7c2da79b012e1251a1c05ed724">GetTemps</a>()<span class="keyword"> const </span>{
-<a name="l00025"></a>00025         <span class="keywordflow">return</span> temps;
-<a name="l00026"></a>00026     }
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 <span class="keyword">public</span> slots:
+<a name="l00016"></a><a class="code" href="classanalyse_temporelle.html">00016</a> <span class="keyword">class </span><a class="code" href="classanalyse_temporelle.html" title="Cette classe représente la variable analyseTemporelle d&#39;une simulation.">analyseTemporelle</a> : <span class="keyword">public</span> <a class="code" href="classbloc_configuration.html" title="Classe de base pour les données de configuration d&#39;une simulation.">blocConfiguration</a> {
+<a name="l00017"></a>00017     Q_OBJECT
+<a name="l00018"></a>00018 <span class="keyword">public</span>:
+<a name="l00019"></a>00019     <a class="code" href="classanalyse_temporelle.html#a0470b91d6c8b3743e0ef65fc683a5c6c">analyseTemporelle</a>();
+<a name="l00020"></a>00020     <span class="keyword">virtual</span> <a class="code" href="classanalyse_temporelle.html#aedf8883480d5dc91d0af7bd09e439ab9">~analyseTemporelle</a>();
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="classanalyse_temporelle.html#a1f5f5fd4c4dd1996c3e62b0483be68c5">00022</a>     <span class="keywordtype">double</span> <a class="code" href="classanalyse_temporelle.html#a1f5f5fd4c4dd1996c3e62b0483be68c5">GetPeriode</a>()<span class="keyword"> const </span>{
+<a name="l00023"></a>00023         <span class="keywordflow">return</span> periode;
+<a name="l00024"></a>00024     }
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="classanalyse_temporelle.html#ab968cf7c2da79b012e1251a1c05ed724">00026</a>     <span class="keywordtype">double</span> <a class="code" href="classanalyse_temporelle.html#ab968cf7c2da79b012e1251a1c05ed724">GetTemps</a>()<span class="keyword"> const </span>{
+<a name="l00027"></a>00027         <span class="keywordflow">return</span> temps;
+<a name="l00028"></a>00028     }
 <a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="classanalyse_temporelle.html#a410b14edc3a0b6ca3ed6a9a9c7e78b92">00030</a>     <span class="keywordtype">void</span> <a class="code" href="classanalyse_temporelle.html#a410b14edc3a0b6ca3ed6a9a9c7e78b92">SetPeriode</a>(<span class="keywordtype">double</span> periode) {
-<a name="l00031"></a>00031         this-&gt;periode = periode;
-<a name="l00032"></a>00032     }
-<a name="l00033"></a>00033 
-<a name="l00034"></a><a class="code" href="classanalyse_temporelle.html#acec9ff5c5c14e65bc796aa24bb589c24">00034</a>     <span class="keywordtype">void</span> <a class="code" href="classanalyse_temporelle.html#acec9ff5c5c14e65bc796aa24bb589c24">SetTemps</a>(<span class="keywordtype">double</span> temps) {
-<a name="l00035"></a>00035         this-&gt;temps = temps;
-<a name="l00036"></a>00036     }
-<a name="l00037"></a>00037 
-<a name="l00038"></a>00038     <span class="keywordtype">void</span> <a class="code" href="classanalyse_temporelle.html#ae88000b0df00f333df42236fd0b9bc07">ecrire</a>();
+<a name="l00030"></a>00030 <span class="keyword">public</span> slots:
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="classanalyse_temporelle.html#a410b14edc3a0b6ca3ed6a9a9c7e78b92">00032</a>     <span class="keywordtype">void</span> <a class="code" href="classanalyse_temporelle.html#a410b14edc3a0b6ca3ed6a9a9c7e78b92">SetPeriode</a>(<span class="keywordtype">double</span> periode) {
+<a name="l00033"></a>00033         this-&gt;periode = periode;
+<a name="l00034"></a>00034     }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="classanalyse_temporelle.html#acec9ff5c5c14e65bc796aa24bb589c24">00036</a>     <span class="keywordtype">void</span> <a class="code" href="classanalyse_temporelle.html#acec9ff5c5c14e65bc796aa24bb589c24">SetTemps</a>(<span class="keywordtype">double</span> temps) {
+<a name="l00037"></a>00037         this-&gt;temps = temps;
+<a name="l00038"></a>00038     }
 <a name="l00039"></a>00039 
-<a name="l00040"></a>00040 <span class="keyword">private</span>:
-<a name="l00041"></a>00041     <span class="keywordtype">double</span> periode;
-<a name="l00042"></a>00042     <span class="keywordtype">double</span> temps;
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044 };
+<a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="classanalyse_temporelle.html#ae88000b0df00f333df42236fd0b9bc07">ecrire</a>();
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="keyword">private</span>:
+<a name="l00043"></a>00043     <span class="keywordtype">double</span> periode;
+<a name="l00044"></a>00044     <span class="keywordtype">double</span> temps;
 <a name="l00045"></a>00045 
-<a name="l00046"></a>00046 <span class="preprocessor">#endif  </span><span class="comment">/* ANAYSETEMPORELLE_H */</span>
+<a name="l00046"></a>00046 };
 <a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="preprocessor">#endif  </span><span class="comment">/* ANAYSETEMPORELLE_H */</span>
+<a name="l00049"></a>00049 
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -144,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 20 2013 15:19:53 for Editeur de simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 22 2013 18:53:36 for Editeur de configuration pour simulation éléctromagnétique by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

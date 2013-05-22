@@ -1,10 +1,11 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$_form_cage_excitation_8h.html" title="FormCageExcitation.h" alt="" coords="188,83,340,112"/>
-<area shape="rect" id="node5" href="$_form_element_base_8h.html" title="FormElementBase.h" alt="" coords="95,160,236,189"/>
-<area shape="rect" id="node25" href="$cage_excitation_8h.html" title="cageExcitation.h" alt="" coords="283,160,400,189"/>
-<area shape="rect" id="node9" href="$_form_coordonnees_8h.html" title="FormCoordonnees.h" alt="" coords="73,237,212,267"/>
-<area shape="rect" id="node18" href="$element_base_8h.html" title="elementBase.h" alt="" coords="287,237,396,267"/>
-<area shape="rect" id="node12" href="$coordonnee_8h.html" title="coordonnee.h" alt="" coords="135,315,233,344"/>
-<area shape="rect" id="node29" href="$bloc_configuration_8h.html" title="blocConfiguration.h" alt="" coords="420,237,553,267"/>
-<area shape="rect" id="node36" href="$_ecriture_8h.html" title="Ecriture.h" alt="" coords="436,315,513,344"/>
+<area shape="rect" id="node3" href="$_form_cage_excitation_8h.html" title="FormCageExcitation.h" alt="" coords="539,83,691,112"/>
+<area shape="rect" id="node5" href="$_form_element_base_8h.html" title="FormElementBase.h" alt="" coords="445,160,587,189"/>
+<area shape="rect" id="node35" href="$cage_excitation_8h.html" title="cageExcitation.h" alt="" coords="656,160,773,189"/>
+<area shape="rect" id="node9" href="$_form_coordonnees_8h.html" title="FormCoordonnees.h" alt="" coords="447,237,585,267"/>
+<area shape="rect" id="node18" href="$element_base_8h.html" title="elementBase.h" alt="" coords="660,237,769,267"/>
+<area shape="rect" id="node25" href="$_color_picker_8h.html" title="ColorPicker.h" alt="" coords="221,237,323,267"/>
+<area shape="rect" id="node12" href="$coordonnee_8h.html" title="coordonnee.h" alt="" coords="573,315,672,344"/>
+<area shape="rect" id="node39" href="$bloc_configuration_8h.html" title="blocConfiguration.h" alt="" coords="884,237,1017,267"/>
+<area shape="rect" id="node46" href="$_ecriture_8h.html" title="Ecriture.h" alt="" coords="988,315,1065,344"/>
 </map>

@@ -11,7 +11,9 @@
 #include "BlocElementBase.h"
 #include "sonde.h"
 
-
+/**
+ * @brief Cette classe représente une liste de sonde
+ */
 class blocSonde : public BlocElementBase{
 public:
     blocSonde();

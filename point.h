@@ -1,6 +1,10 @@
 #ifndef POINT_H
 #define POINT_H
 
+/**
+ * @brief Cette classe représente un point dans un espace en 3D.
+ * Elle est utilisé pour afficher les Cube dans la vue 3D.
+ */
 class Point
 {
 public:

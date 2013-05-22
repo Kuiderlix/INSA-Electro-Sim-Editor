@@ -15,13 +15,15 @@ var searchData=
   ['formexcitation',['FormExcitation',['../class_form_excitation.html',1,'']]],
   ['formformatstockage',['FormFormatStockage',['../class_form_format_stockage.html',1,'']]],
   ['formmetallisation',['FormMetallisation',['../class_form_metallisation.html',1,'']]],
+  ['formnouveau',['FormNouveau',['../class_form_nouveau.html',1,'']]],
+  ['formouvrir',['FormOuvrir',['../class_form_ouvrir.html',1,'']]],
   ['formparallelepipede',['FormParallelepipede',['../class_form_parallelepipede.html',1,'']]],
   ['formparamexcitation',['FormParamExcitation',['../class_form_param_excitation.html',1,'']]],
   ['formparoi',['FormParoi',['../class_form_paroi.html',1,'']]],
   ['formpml',['FormPML',['../class_form_p_m_l.html',1,'']]],
   ['formportexcitation',['FormPortExcitation',['../class_form_port_excitation.html',1,'']]],
+  ['formsettings',['FormSettings',['../class_form_settings.html',1,'']]],
   ['formsonde',['FormSonde',['../class_form_sonde.html',1,'']]],
   ['formsurfaceprelevement',['FormSurfacePrelevement',['../class_form_surface_prelevement.html',1,'']]],
-  ['formulaire',['Formulaire',['../class_formulaire.html',1,'']]],
   ['formvolumecalcul',['FormVolumeCalcul',['../class_form_volume_calcul.html',1,'']]]
 ];

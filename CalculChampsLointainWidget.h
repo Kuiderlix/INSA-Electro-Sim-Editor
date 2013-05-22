@@ -17,6 +17,9 @@ class CalculChampsLointainWidget : public ToolBoxWidget
 public:
     explicit CalculChampsLointainWidget(Data* data,QWidget *parent = 0);
 
+    /**
+     * @brief Cette fonction initialise les formulaires avec les données
+     */
     void init();
     
 signals:
