@@ -19,3 +19,4 @@ Ecriture::~Ecriture() {
 bool Ecriture::opened = false;
 std::string Ecriture::nomFichier = "";
 FILE* Ecriture::fp;
+int Ecriture::numstru = 1;

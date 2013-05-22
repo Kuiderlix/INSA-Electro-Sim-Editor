@@ -88,6 +88,8 @@ public slots:
      */
     void ouvreParametres();
 
+    void ecrire();
+
 private:
 
     QVBoxLayout * layout;

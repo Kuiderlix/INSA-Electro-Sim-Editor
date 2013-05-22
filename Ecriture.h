@@ -10,6 +10,7 @@
 
 #include <string>
 #include <stdio.h>
+#include <sstream>
 
 class Ecriture {
 public:
@@ -21,7 +22,12 @@ public:
         return Ecriture::nomFichier;
     }
 
-    static void SetNomFichier(std::string nomFichier) {
+    static void SetNomFichier(std::string extension) {
+
+        std::ostringstream nom;
+        nom << "DATA" << Ecriture::numstru << extension;
+        std::string nomFichier = nom.str();
+
         if(nomFichier == Ecriture::nomFichier)return;
         
         Ecriture::nomFichier = nomFichier;
@@ -38,11 +44,16 @@ public:
         const char* c = s.c_str();
         fputs(c, Ecriture::fp);
     }
+
+    static void setNumStru(int num){
+        Ecriture::numstru = num;
+    }
     
 private:
     static FILE *fp;
     static std::string nomFichier;
     static bool opened;
+    static int numstru;
 };
 #endif	/* ECRITURE_H */
 

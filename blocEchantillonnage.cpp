@@ -21,16 +21,12 @@ blocEchantillonnage::~blocEchantillonnage() {
 }
 
 void blocEchantillonnage::ecrire(){
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[ECHANTILLONNAGE]");
-    bC.setExtension(".avc");
-    bC.ecrire();
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Facteur_multiplicatif_pour_le_nombre_d_echantillons_preleves:\n";
     monEcriture << this->facteurEchatillonnage << std::endl;
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+    Ecriture::Ecrire(monEcriture.str());
 
     Ecriture::Ecrire("\n");
 }

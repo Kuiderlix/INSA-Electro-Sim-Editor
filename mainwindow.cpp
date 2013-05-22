@@ -86,6 +86,11 @@ void MainWindow::ouvreParametres()
 
 }
 
+void MainWindow::ecrire()
+{
+    data->ecrire(parser.getNumStru());
+}
+
 
 void MainWindow::construireMenu()
 {
@@ -106,6 +111,7 @@ void MainWindow::construireMenu()
 
     QMenu *menuSimulation = menuBar()->addMenu("&Simulation");
     actionGenerer = new QAction(QIcon("icon/generer.png"),"&Générer", this);
+    connect(actionGenerer,SIGNAL(triggered()),this,SLOT(ecrire()));
     menuSimulation->addAction(actionGenerer);
 
 

@@ -56,6 +56,7 @@ public:
     compressionHuygens* getCompressionHuygens() {return &compHuygens;}
     calculDirectivite* getCalculDirective() {return &calculdirectivite;}
 
+    void ecrire(int numstru);
 
 private:
     /******************************************************************************/

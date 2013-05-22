@@ -36,10 +36,11 @@ public:
     
     void ecrire(){
         std::ostringstream name;
-        name << "DATA1" << this->extension << "s"; //TODO: retirer ce s une fois terminé.
+        name << this->extension << "s"; //TODO: retirer ce s une fois terminé.
         Ecriture::SetNomFichier(name.str());
 
         Ecriture::Ecrire(this->getHeader());
+        Ecriture::Ecrire("\n");
     }
 
     

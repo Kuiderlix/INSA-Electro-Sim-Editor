@@ -62,7 +62,7 @@ void cageExcitation::ecrire(){
 
         if(this->typeExcitation == 4){
             monEcriture << "Nom_du_fichier\n";
-            monEcriture << this->nomFichier;
+            monEcriture << this->nomFichier << std::endl;
         }
 
         std::string ecriture(monEcriture.str()); //Du coup on écrit aussi dans le else

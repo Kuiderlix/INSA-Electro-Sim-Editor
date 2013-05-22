@@ -523,3 +523,8 @@ void Parser::parse(Data * data){
     parseAVC();
 
 }
+
+int Parser::getNumStru()
+{
+    return this->numstru;
+}
