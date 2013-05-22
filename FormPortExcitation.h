@@ -8,7 +8,7 @@ class FormPortExcitation : public FormElementBase
 {
     Q_OBJECT
 public:
-    explicit FormPortExcitation(portExcitation * port,int mode,QWidget *parent = 0);
+    explicit FormPortExcitation(portExcitation * port,QWidget *parent = 0);
     
 signals:
     

@@ -22,6 +22,8 @@ cageExcitation::cageExcitation() : elementBase(), blocConfiguration() {
     psi0=0;
     modulationAmplitude=0;
     modulationPhase=0;
+
+    nomFichier="";
 }
 
 

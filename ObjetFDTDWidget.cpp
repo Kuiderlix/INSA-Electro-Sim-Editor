@@ -8,14 +8,12 @@ ObjetFDTDWidget::ObjetFDTDWidget(Data *data, QWidget *parent) :
     QVBoxLayout * layout = new QVBoxLayout;
     layout->setMargin(0);
 
-    FormCageExcitation * formCageExci = new FormCageExcitation(data->getCageExcitation(), FormCageExcitation::NOUVEAU);
-    connect(formCageExci,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newCageExcitationCreated(elementBase*)));
-    connect(formCageExci,SIGNAL(elementValide(elementBase*)),formCageExci,SLOT(reset()));
+    formCageExci = new FormCageExcitation(data->getCageExcitation());
 
-    FormSurfacePrelevement * formSurfacePrel = new FormSurfacePrelevement(new surfacePrelevement(), FormSurfacePrelevement::NOUVEAU);
+    FormSurfacePrelevement * formSurfacePrel = new FormSurfacePrelevement(new surfacePrelevement());
     connect(formSurfacePrel,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newSurfacePrelCreated(elementBase*)));
     connect(formSurfacePrel,SIGNAL(elementValide(elementBase*)),formSurfacePrel,SLOT(reset()));
-    FormSonde * formSonde = new FormSonde(new sonde(), FormSonde::NOUVEAU);
+    FormSonde * formSonde = new FormSonde(new sonde());
     connect(formSonde,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newSondeCreated(elementBase*)));
     connect(formSonde,SIGNAL(elementValide(elementBase*)),formSonde,SLOT(reset()));
 
@@ -43,11 +41,12 @@ ObjetFDTDWidget::ObjetFDTDWidget(Data *data, QWidget *parent) :
 
 void ObjetFDTDWidget::init()
 {
+    formCageExci->setCageExcitation(data->getCageExcitation());
 }
 
 void ObjetFDTDWidget::openCartoTempoWindows()
 {
-    FormCartographieTemporelle * win = new FormCartographieTemporelle(new cartographieTemporelle(), FormCartographieTemporelle::NOUVEAU);
+    FormCartographieTemporelle * win = new FormCartographieTemporelle(new cartographieTemporelle());
     connect(win,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newCartoTempoCreated(elementBase*)));
     connect(win,SIGNAL(elementValide(elementBase*)),win,SLOT(reset()));
     win->show();

@@ -15,7 +15,7 @@ TableViewElementLocalise::TableViewElementLocalise(blocElementLocalise *bloc, QW
 
 void TableViewElementLocalise::addNewElement()
 {
-    FormElementLocalise * form = new FormElementLocalise(new elementLocalise,FormElementLocalise::NOUVEAU);
+    FormElementLocalise * form = new FormElementLocalise(new elementLocalise);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));
     connect(form,SIGNAL(elementValide(elementBase*)),form,SLOT(accept()));
     form->exec();

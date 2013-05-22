@@ -20,12 +20,14 @@ signals:
 
     void newSondeCreated(elementBase*);
     void newSurfacePrelCreated(elementBase*);
-    void newCageExcitationCreated(elementBase*);
     void newCartoTempoCreated(elementBase*);
     
 public slots:
 
     void openCartoTempoWindows();
+
+private:
+    FormCageExcitation * formCageExci;
     
 };
 

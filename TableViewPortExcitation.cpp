@@ -16,7 +16,7 @@ TableViewPortExcitation::TableViewPortExcitation(blocPortExcitation *bloc,QWidge
 
 void TableViewPortExcitation::addNewElement()
 {
-    FormPortExcitation * form = new FormPortExcitation(new portExcitation,FormPortExcitation::NOUVEAU);
+    FormPortExcitation * form = new FormPortExcitation(new portExcitation);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));
     connect(form,SIGNAL(elementValide(elementBase*)),form,SLOT(accept()));
     form->exec();

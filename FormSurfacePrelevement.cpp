@@ -1,7 +1,7 @@
 #include "FormSurfacePrelevement.h"
 
-FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, int mode, QWidget* parent) :
-    FormElementBase(surface,mode,parent)
+FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, QWidget* parent) :
+    FormElementBase(surface,parent)
 {
     this->surface=surface;
 

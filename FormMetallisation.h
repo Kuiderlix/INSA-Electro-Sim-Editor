@@ -9,7 +9,7 @@ class FormMetallisation : public FormElementBase
 {
     Q_OBJECT
 public:
-    explicit FormMetallisation(metallisation* metal,int mode,QWidget *parent = 0);
+    explicit FormMetallisation(metallisation* metal,QWidget *parent = 0);
 
     metallisation * getMetallisation();
     

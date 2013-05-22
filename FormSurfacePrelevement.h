@@ -8,7 +8,7 @@ class FormSurfacePrelevement : public FormElementBase
 {
     Q_OBJECT
 public:
-    FormSurfacePrelevement(surfacePrelevement * surface, int mode, QWidget* parent=0);
+    FormSurfacePrelevement(surfacePrelevement * surface, QWidget* parent=0);
 
 signals:
 

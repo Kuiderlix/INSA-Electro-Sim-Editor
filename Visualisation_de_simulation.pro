@@ -101,7 +101,8 @@ SOURCES += main.cpp\
     FormOuvrir.cpp \
     FormNouveau.cpp \
     ToolBoxWidget.cpp \
-    FormSettings.cpp
+    FormSettings.cpp \
+    ColorPicker.cpp
 
 HEADERS  += mainwindow.h \
     myglwidget.h \
@@ -195,7 +196,8 @@ HEADERS  += mainwindow.h \
     FormOuvrir.h \
     FormNouveau.h \
     ToolBoxWidget.h \
-    FormSettings.h
+    FormSettings.h \
+    ColorPicker.h
 
 OTHER_FILES += \
     DATA1.ana \

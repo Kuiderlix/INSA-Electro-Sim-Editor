@@ -1,7 +1,7 @@
 #include "FormSonde.h"
 
-FormSonde::FormSonde(sonde *m_sonde, int mode, QWidget *parent) :
-    FormElementBase(m_sonde,mode,parent)
+FormSonde::FormSonde(sonde *m_sonde, QWidget *parent) :
+    FormElementBase(m_sonde,parent)
 {
 
     this->m_sonde=m_sonde;

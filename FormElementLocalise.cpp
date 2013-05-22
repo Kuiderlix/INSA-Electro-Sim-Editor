@@ -1,7 +1,7 @@
 #include "FormElementLocalise.h"
 
-FormElementLocalise::FormElementLocalise(elementLocalise *localise, int mode, QWidget *parent) :
-    FormElementBase(localise,mode,parent)
+FormElementLocalise::FormElementLocalise(elementLocalise *localise, QWidget *parent) :
+    FormElementBase(localise,parent)
 {
     this->localise=localise;
 

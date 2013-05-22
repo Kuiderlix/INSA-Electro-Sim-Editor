@@ -12,23 +12,32 @@ class FormCageExcitation : public FormElementBase
 {
     Q_OBJECT
 public:
-    explicit FormCageExcitation(cageExcitation * cageExci, int mode, QWidget *parent = 0);
+    explicit FormCageExcitation(cageExcitation * cageExci, QWidget *parent = 0);
+
+    void setCageExcitation(cageExcitation * c)
+    {
+        setElement(c);
+        cageExci=c;
+        init();
+    }
 
 signals:
 
 public slots:
     void valider();
-    void reset();
 
     void manageFormulaire(int val);
     void actualiseFormulaire(int);
 
-private:
+    void changeCreate(bool);
 
+private:
     void init();
+
 
     cageExcitation * cageExci;
 
+    QGroupBox * group;
     QSpinBox * nbFacesWidget;
     QComboBox * typeWidget;
     QWidget *formFace1, *formFaceDif1, *formType4;

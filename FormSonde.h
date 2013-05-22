@@ -8,7 +8,7 @@ class FormSonde : public FormElementBase
 {
     Q_OBJECT
 public:
-    explicit FormSonde(sonde * m_sonde, int mode ,QWidget *parent = 0);
+    explicit FormSonde(sonde * m_sonde ,QWidget *parent = 0);
     
 signals:
     

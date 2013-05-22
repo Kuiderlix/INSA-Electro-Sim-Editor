@@ -16,7 +16,7 @@ TableViewSurfacePrelev::TableViewSurfacePrelev(blocSurfacePrelevement *bloc, QWi
 
 void TableViewSurfacePrelev::addNewElement()
 {
-    FormSurfacePrelevement * form = new FormSurfacePrelevement(new surfacePrelevement,FormSurfacePrelevement::NOUVEAU);
+    FormSurfacePrelevement * form = new FormSurfacePrelevement(new surfacePrelevement);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));
     connect(form,SIGNAL(elementValide(elementBase*)),form,SLOT(accept()));
     form->exec();

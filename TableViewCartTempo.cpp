@@ -13,7 +13,7 @@ TableViewCartTempo::TableViewCartTempo(blocCartographieTemporelle *bloc,QWidget 
 
 void TableViewCartTempo::addNewElement()
 {
-    FormCartographieTemporelle * form = new FormCartographieTemporelle(new cartographieTemporelle,FormCartographieTemporelle::NOUVEAU);
+    FormCartographieTemporelle * form = new FormCartographieTemporelle(new cartographieTemporelle);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));
     connect(form,SIGNAL(elementValide(elementBase*)),form,SLOT(accept()));
     form->exec();

@@ -6,7 +6,7 @@ ParamSimuWidget::ParamSimuWidget(Data *data, QWidget *parent) :
     QVBoxLayout * layout = new QVBoxLayout;
     layout->setMargin(0);
 
-    FormPortExcitation * formPortExci = new FormPortExcitation(new portExcitation(), FormPortExcitation::NOUVEAU);
+    FormPortExcitation * formPortExci = new FormPortExcitation(new portExcitation());
     connect(formPortExci,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newPortExcitationCreated(elementBase*)));
     connect(formPortExci,SIGNAL(elementValide(elementBase*)),formPortExci,SLOT(reset()));
 

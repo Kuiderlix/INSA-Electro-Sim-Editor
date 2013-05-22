@@ -1,7 +1,7 @@
 #include "FormPortExcitation.h"
 
-FormPortExcitation::FormPortExcitation(portExcitation *port, int mode, QWidget *parent) :
-    FormElementBase(port,mode,parent)
+FormPortExcitation::FormPortExcitation(portExcitation *port, QWidget *parent) :
+    FormElementBase(port,parent)
 {
     this->port=port;
 

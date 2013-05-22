@@ -2,16 +2,16 @@
 
 
 
-FormCageExcitation::FormCageExcitation(cageExcitation *cageExci, int mode, QWidget *parent) :
-    FormElementBase(cageExci,mode,parent)
+FormCageExcitation::FormCageExcitation(cageExcitation *cageExci, QWidget *parent) :
+    FormElementBase(cageExci,parent)
 {
     this->cageExci=cageExci;
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
-    QGroupBox * groupGeo = new QGroupBox("Cage Excitation");
-    groupGeo->setCheckable(true);
-    groupGeo->setChecked(cageExci->isCreate());
-    connect(groupGeo,SIGNAL(toggled(bool)),cageExci,SLOT(setCreate(bool)));
+    group = new QGroupBox("Cage Excitation");
+    group->setCheckable(true);
+    group->setChecked(cageExci->isCreate());
+    connect(group,SIGNAL(toggled(bool)),this,SLOT(changeCreate(bool)));
 
     QFormLayout * layout = new QFormLayout;
 
@@ -85,11 +85,16 @@ FormCageExcitation::FormCageExcitation(cageExcitation *cageExci, int mode, QWidg
 
     layout->addRow(getWidgetElementBase());
 
+    if (this->cageExci->isCreate())
+    {
+        boutonValider->setText("Modifier");
+    }
+
     layout->setAlignment(Qt::AlignTop);
 
-    groupGeo->setLayout(layout);
+    group->setLayout(layout);
 
-    layoutPrincipal->addWidget(groupGeo);
+    layoutPrincipal->addWidget(group);
 
     setLayout(layoutPrincipal);
 
@@ -101,6 +106,7 @@ FormCageExcitation::FormCageExcitation(cageExcitation *cageExci, int mode, QWidg
 void FormCageExcitation::valider()
 {
     FormElementBase::valider();
+    cageExci->setCreate(true);
     cageExci->SetTypeExcitation(typeWidget->currentIndex());
     cageExci->SetNbFaces(nbFacesWidget->value());
     cageExci->SetInsideOutside(insideOutsideWidget->currentIndex());
@@ -115,15 +121,8 @@ void FormCageExcitation::valider()
     cageExci->SetModulationPhase(modulationPhaseWidget->value());
     cageExci->SetNomFichier(nomFichierWidget->text().toStdString());
 
-    emit elementValide(this->cageExci);
-}
+    boutonValider->setText("Modifier");
 
-void FormCageExcitation::reset()
-{
-    FormElementBase::reset();
-    this->cageExci = new cageExcitation();
-    setElement(this->cageExci);
-    init();
 }
 
 void FormCageExcitation::manageFormulaire(int val)
@@ -156,9 +155,15 @@ void FormCageExcitation::actualiseFormulaire(int val)
     manageFormulaire(typeWidget->currentIndex());
 }
 
+void FormCageExcitation::changeCreate(bool c)
+{
+    this->cageExci->setCreate(c);
+}
+
 void FormCageExcitation::init()
 {
     FormElementBase::init();
+    group->setChecked(cageExci->isCreate());
     nbFacesWidget->setValue(cageExci->GetNbFaces());
     typeWidget->setCurrentIndex(cageExci->GetTypeExcitation());
     insideOutsideWidget->setCurrentIndex(cageExci->GetInsideOutside());

@@ -17,7 +17,7 @@ TableViewMetallisation::TableViewMetallisation(blocMetallisation *blocMetal, QWi
  */
 void TableViewMetallisation::addNewElement()
 {
-    FormMetallisation * form = new FormMetallisation(new metallisation,FormMetallisation::NOUVEAU);
+    FormMetallisation * form = new FormMetallisation(new metallisation);
     connect(form,SIGNAL(elementValide(elementBase*)),getSourceModel(),SLOT(addElement(elementBase*)));
     connect(form,SIGNAL(elementValide(elementBase*)),form,SLOT(accept()));
     form->exec();

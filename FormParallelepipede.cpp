@@ -1,7 +1,7 @@
 #include "FormParallelepipede.h"
 
-FormParallelepipede::FormParallelepipede(parallelepipede *paralle, int mode, QWidget *parent) :
-    FormElementBase(paralle,mode,parent)
+FormParallelepipede::FormParallelepipede(parallelepipede *paralle, QWidget *parent) :
+    FormElementBase(paralle,parent)
 {
     this->paralle=paralle;
 

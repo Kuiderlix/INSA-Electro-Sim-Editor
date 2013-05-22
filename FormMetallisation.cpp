@@ -1,7 +1,7 @@
 #include "FormMetallisation.h"
 
-FormMetallisation::FormMetallisation(metallisation* metal,int mode, QWidget *parent) :
-    FormElementBase(metal,mode,parent)
+FormMetallisation::FormMetallisation(metallisation* metal, QWidget *parent) :
+    FormElementBase(metal,parent)
 {
     this->metal=metal;
 

@@ -11,7 +11,7 @@
 #include "Ecriture.h"
 
 surfacePrelevement::surfacePrelevement() {
-    typeSurface=0;
+    typeSurface=1;
     insideOutside=0;
     nbFaces=0;
     compressionLongueur=0;

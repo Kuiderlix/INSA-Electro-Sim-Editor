@@ -13,7 +13,7 @@ TableViewSonde::TableViewSonde(blocSonde *bloc, QWidget *parent) :
 
 void TableViewSonde::addNewElement()
 {
-    FormSonde * form = new FormSonde(new sonde,FormSonde::NOUVEAU);
+    FormSonde * form = new FormSonde(new sonde);
     connect(form,SIGNAL(elementValide(elementBase*)),((TableModel*)((MySortFilterProxyModel*)this->model())->sourceModel()),SLOT(addElement(elementBase*)));
     connect(form,SIGNAL(elementValide(elementBase*)),form,SLOT(accept()));
     form->exec();

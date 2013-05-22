@@ -14,7 +14,6 @@
 #include <string>
 
 class cageExcitation : public elementBase, public blocConfiguration{
-    Q_OBJECT
 public:
     cageExcitation();
 
@@ -135,7 +134,6 @@ public:
         return create;
     }
 
-public slots:
     void setCreate(bool c)
     {
         create=c;

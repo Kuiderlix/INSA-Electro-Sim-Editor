@@ -8,7 +8,7 @@ class FormCartographieTemporelle : public FormElementBase
 {
     Q_OBJECT
 public:
-    explicit FormCartographieTemporelle(cartographieTemporelle * carto, int mode, QWidget *parent = 0);
+    explicit FormCartographieTemporelle(cartographieTemporelle * carto, QWidget *parent = 0);
     
 signals:
     

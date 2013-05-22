@@ -1,7 +1,7 @@
 #include "FormCartographieTemporelle.h"
 
-FormCartographieTemporelle::FormCartographieTemporelle(cartographieTemporelle *carto, int mode, QWidget *parent) :
-    FormElementBase(carto,mode,parent)
+FormCartographieTemporelle::FormCartographieTemporelle(cartographieTemporelle *carto, QWidget *parent) :
+    FormElementBase(carto,parent)
 {
     this->carto=carto;
 

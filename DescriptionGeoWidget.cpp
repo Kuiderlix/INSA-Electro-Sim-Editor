@@ -7,10 +7,10 @@ DescriptionGeoWidget::DescriptionGeoWidget(Data *data, QWidget *parent) :
     QVBoxLayout * layout = new QVBoxLayout;
     layout->setMargin(0);
 
-    FormMetallisation * formMetal = new FormMetallisation(new metallisation(), FormMetallisation::NOUVEAU);
+    FormMetallisation * formMetal = new FormMetallisation(new metallisation());
     connect(formMetal,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newMetalCreated(elementBase*)));
     connect(formMetal,SIGNAL(elementValide(elementBase*)),formMetal,SLOT(reset()));
-    FormParallelepipede * formPara = new FormParallelepipede(new parallelepipede(), FormParallelepipede::NOUVEAU);
+    FormParallelepipede * formPara = new FormParallelepipede(new parallelepipede());
     connect(formPara,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newParaCreated(elementBase*)));
     connect(formPara,SIGNAL(elementValide(elementBase*)),formPara,SLOT(reset()));
 
@@ -44,7 +44,7 @@ DescriptionGeoWidget::DescriptionGeoWidget(Data *data, QWidget *parent) :
 
 void DescriptionGeoWidget::openElementLocaliseWindows()
 {
-    FormElementLocalise * win = new FormElementLocalise(new elementLocalise(), FormElementLocalise::NOUVEAU);
+    FormElementLocalise * win = new FormElementLocalise(new elementLocalise());
     connect(win,SIGNAL(elementValide(elementBase*)),this,SIGNAL(newElemLocCreated(elementBase*)));
     connect(win,SIGNAL(elementValide(elementBase*)),win,SLOT(reset()));
     connect(win,SIGNAL(elementValide(elementBase*)),win,SLOT(accept()));
