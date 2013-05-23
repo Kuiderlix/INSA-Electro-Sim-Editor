@@ -24,10 +24,15 @@ void ColorPicker::paintEvent(QPaintEvent * e)
 
 void ColorPicker::ouvreColorDialog()
 {
-    QColor newCouleur = QColorDialog::getColor(couleur,this,"",QColorDialog::ShowAlphaChannel);
-    if (newCouleur != couleur)
+    QColorDialog dial(couleur,this);
+
+    dial.setOptions(QColorDialog::ShowAlphaChannel);
+
+    int res = dial.exec();
+
+    if (res==QDialog::Accepted)
     {
-        emit colorChanged(newCouleur);
-        couleur=newCouleur;
+        couleur = dial.selectedColor();
+        emit colorChanged(couleur);
     }
 }

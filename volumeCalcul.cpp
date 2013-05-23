@@ -25,7 +25,7 @@ void volumeCalcul::ecrire(){
 
     setHeader("[VOLUME_DE_CALCUL]");
     setExtension(".dsc");
-    blocConfiguration::ecrire();
+    this->blocConfiguration::ecrire();
 
     
     std::ostringstream monEcriture;

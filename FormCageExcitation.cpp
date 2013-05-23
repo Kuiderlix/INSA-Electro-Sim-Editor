@@ -107,7 +107,7 @@ void FormCageExcitation::valider()
 {
     FormElementBase::valider();
     cageExci->setCreate(true);
-    cageExci->SetTypeExcitation(typeWidget->currentIndex());
+    cageExci->SetTypeExcitation(typeWidget->currentIndex()+1);
     cageExci->SetNbFaces(nbFacesWidget->value());
     cageExci->SetInsideOutside(insideOutsideWidget->currentIndex());
     cageExci->SetModeExcitation(modeWidget->currentIndex());
@@ -165,7 +165,7 @@ void FormCageExcitation::init()
     FormElementBase::init();
     group->setChecked(cageExci->isCreate());
     nbFacesWidget->setValue(cageExci->GetNbFaces());
-    typeWidget->setCurrentIndex(cageExci->GetTypeExcitation());
+    typeWidget->setCurrentIndex(cageExci->GetTypeExcitation()-1);
     insideOutsideWidget->setCurrentIndex(cageExci->GetInsideOutside());
     modeWidget->setCurrentIndex(cageExci->GetModeExcitation());
     hauteurWidget->setValue(cageExci->GetHauteur());

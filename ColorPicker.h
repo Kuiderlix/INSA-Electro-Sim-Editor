@@ -34,14 +34,14 @@ public:
 signals:
 
     /**
-     * @brief Ce signal est émis quand la couleur a changé
+     * @brief Ce signal est émis quand la couleur change
      */
     void colorChanged(QColor);
     
 public slots:
     /**
      * @brief Cette fonction ouvre la boite de dialogue pour changer de couleur et met à jour la couleur courante.
-     * Elle émet le signal colorChanged(QColor)
+     *
      */
     void ouvreColorDialog();
 
