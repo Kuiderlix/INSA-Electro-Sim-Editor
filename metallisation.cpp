@@ -7,11 +7,8 @@
 
 #include "metallisation.h"
 
-metallisation::metallisation() {
+metallisation::metallisation() : elementBase() {
     conductivite=0;
-}
-
-metallisation::metallisation(const metallisation& orig) {
 }
 
 metallisation::~metallisation() {

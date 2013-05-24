@@ -14,25 +14,21 @@ blocSonde::blocSonde() {
     this->setExtension(".ana");
 }
 
-blocSonde::blocSonde(const blocSonde& orig) {
-}
 
 blocSonde::~blocSonde() {
 }
 
 void blocSonde::ecrire(){
 
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[SONDES]");
-    bC.setExtension(".ana");
-    bC.ecrire();
+    setHeader("[SONDES]");
+    setExtension(".ana");
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_sondes:\n";
     monEcriture << this->getNbElement() << std::endl;
 
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+    Ecriture::Ecrire(monEcriture.str());
 
     for(int i=0; i<this->getNbElement(); i++){
         sonde* temp = this->GetSonde(i);

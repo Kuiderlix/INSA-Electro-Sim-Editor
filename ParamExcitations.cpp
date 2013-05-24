@@ -18,10 +18,10 @@ ParamExcitations::~ParamExcitations() {
 }
 
 void ParamExcitations::ecrire(){
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[PARAMETRES_EXCITATION]");
-    bC.setExtension(".ana");
-    bC.ecrire();
+
+    setHeader("[PARAMETRES_EXCITATION]");
+    setExtension(".ana");
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Frequence_maximale_de_la_bande_d'analyse_(en_GHz):\n";

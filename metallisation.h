@@ -18,7 +18,6 @@
 class metallisation : public elementBase{
 public:
     metallisation();
-    metallisation(const metallisation& orig);
     virtual ~metallisation();
 
     float GetConductivite() const {

@@ -3,6 +3,9 @@
 FormNouveau::FormNouveau(QWidget *parent) :
     QDialog(parent)
 {
+
+    num=0;
+
     QSettings settings("INSAProj", "EditSimuIETR");
 
     QVBoxLayout * layout = new QVBoxLayout();
@@ -17,6 +20,7 @@ FormNouveau::FormNouveau(QWidget *parent) :
     QFormLayout * layoutForm = new QFormLayout();
     nbrSimu = new QSpinBox();
     connect(nbrSimu,SIGNAL(valueChanged(int)),this,SLOT(testFichierExistant(int)));
+    connect(nbrSimu,SIGNAL(valueChanged(int)),this,SLOT(setNum(int)));
     layoutForm->addRow("N°", nbrSimu);
 
     layoutGroup->addLayout(layoutForm);
@@ -62,4 +66,9 @@ void FormNouveau::testFichierExistant(int n)
     {
         labelFichierExist->setText("");
     }
+}
+
+void FormNouveau::setNum(int i)
+{
+    num=i;
 }

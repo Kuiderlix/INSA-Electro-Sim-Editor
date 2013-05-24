@@ -32,7 +32,7 @@ coordonnee::~coordonnee() {
 
 bool coordonnee::operator ==(const coordonnee &b)
 {
-    return this->x==b.x && this->y==b.y && this->z==b.z;;
+    return this->x==b.x && this->y==b.y && this->z==b.z;
 }
 
 void coordonnee::ecrire(){

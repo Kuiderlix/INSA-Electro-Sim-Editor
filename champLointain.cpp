@@ -24,10 +24,9 @@ champLointain::~champLointain() {
 
 void champLointain::ecrire(){
 
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[CALCUL_CHAMP_LOINTAIN]");
-    bC.setExtension(".ptr");
-    bC.ecrire();
+    setHeader("[CALCUL_CHAMP_LOINTAIN]");
+    setExtension(".ptr");
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_surfaces_de_Huygens\n";

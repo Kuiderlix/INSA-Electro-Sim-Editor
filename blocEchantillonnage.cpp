@@ -7,15 +7,13 @@
 
 #include "blocEchantillonnage.h"
 
-blocEchantillonnage::blocEchantillonnage() {
+blocEchantillonnage::blocEchantillonnage() : blocConfiguration() {
     this->setHeader("[ECHANTILLONNAGE]");
     this->setExtension(".avc");
 
     facteurEchatillonnage=0;
 }
 
-blocEchantillonnage::blocEchantillonnage(const blocEchantillonnage& orig) {
-}
 
 blocEchantillonnage::~blocEchantillonnage() {
 }

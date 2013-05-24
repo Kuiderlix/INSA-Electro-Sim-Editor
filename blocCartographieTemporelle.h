@@ -17,7 +17,6 @@
 class blocCartographieTemporelle : public BlocElementBase{
 public:
     blocCartographieTemporelle();
-    blocCartographieTemporelle(const blocCartographieTemporelle& orig);
     virtual ~blocCartographieTemporelle();
     
 

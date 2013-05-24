@@ -21,7 +21,6 @@ class blocConfiguration : public QObject {
     Q_OBJECT
 public:
     blocConfiguration();
-    blocConfiguration(const blocConfiguration& orig);
     virtual ~blocConfiguration();
     
     std::string getHeader() const {
@@ -39,7 +38,7 @@ public:
     
     void ecrire(){
         std::ostringstream name;
-        name << this->extension << "s"; //TODO: retirer ce s une fois terminé.
+        name << this->extension;
         Ecriture::SetNomFichier(name.str());
 
         Ecriture::Ecrire(this->getHeader());

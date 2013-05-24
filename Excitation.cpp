@@ -18,10 +18,10 @@ Excitation::~Excitation() {
 }
 
 void Excitation::ecrire(){
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[Excitation]");
-    bC.setExtension(".avc");
-    bC.ecrire();
+
+    setHeader("[Excitation]");
+    setExtension(".avc");
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Amplitude_V0:\n";

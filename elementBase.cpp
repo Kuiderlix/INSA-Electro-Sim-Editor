@@ -14,8 +14,6 @@ elementBase::elementBase() {
     this->avantGauche = coordonnee(0,0,0);
 }
 
-elementBase::elementBase(const elementBase& orig) {
-}
 
 elementBase::~elementBase() {
 }
@@ -30,5 +28,5 @@ void elementBase::ecrireElementBase(){
 
 bool elementBase::operator==(elementBase const &b)
 {
-    return this->arriereDroit==b.arriereDroit & this->avantGauche == b.avantGauche;
+    return (this->arriereDroit==b.arriereDroit) && (this->avantGauche == b.avantGauche);
 }

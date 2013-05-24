@@ -15,9 +15,6 @@ blocCartographieTemporelle::blocCartographieTemporelle() {
     this->setExtension(".ana");
 }
 
-blocCartographieTemporelle::blocCartographieTemporelle(const blocCartographieTemporelle& orig) {
-}
-
 blocCartographieTemporelle::~blocCartographieTemporelle() {
 }
 

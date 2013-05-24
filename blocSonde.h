@@ -17,7 +17,6 @@
 class blocSonde : public BlocElementBase{
 public:
     blocSonde();
-    blocSonde(const blocSonde& orig);
     virtual ~blocSonde();
     
 

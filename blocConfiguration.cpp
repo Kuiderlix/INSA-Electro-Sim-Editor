@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   blocConfiguration.cpp
  * Author: camille
  * 
@@ -7,11 +7,9 @@
 
 #include "blocConfiguration.h"
 
-blocConfiguration::blocConfiguration() {
+blocConfiguration::blocConfiguration() : QObject() {
 }
 
-blocConfiguration::blocConfiguration(const blocConfiguration& orig) {
-}
 
 blocConfiguration::~blocConfiguration() {
 }

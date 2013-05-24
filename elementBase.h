@@ -19,7 +19,6 @@
 class elementBase{
 public:
     elementBase();
-    elementBase(const elementBase& orig);
     virtual ~elementBase();
 
     coordonnee GetArriereDroit() const {

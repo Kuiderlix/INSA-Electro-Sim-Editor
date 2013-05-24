@@ -9,10 +9,7 @@
 
 #include "blocMetallisation.h"
 
-blocMetallisation::blocMetallisation() {
-}
-
-blocMetallisation::blocMetallisation(const blocMetallisation& orig) {
+blocMetallisation::blocMetallisation() : BlocElementBase() {
 }
 
 blocMetallisation::~blocMetallisation() {
@@ -20,12 +17,10 @@ blocMetallisation::~blocMetallisation() {
 
 void blocMetallisation::ecrire(){
 
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[METALLISATIONS]");
-    bC.setExtension(".dsc");
-    bC.ecrire();
+    setHeader("[METALLISATIONS]");
+    setExtension(".dsc");
+    this->blocConfiguration::ecrire();
 
-    //blocConfiguration::ecrire();
 
 
     std::ostringstream monEcriture;

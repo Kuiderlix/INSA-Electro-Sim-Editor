@@ -18,9 +18,6 @@ cartographieTemporelle::cartographieTemporelle() {
     intervalle=0;
 }
 
-cartographieTemporelle::cartographieTemporelle(const cartographieTemporelle& orig) {
-}
-
 cartographieTemporelle::~cartographieTemporelle() {
 }
 

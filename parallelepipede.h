@@ -17,7 +17,6 @@
 class parallelepipede : public elementBase {
 public:
     parallelepipede();
-    parallelepipede(const parallelepipede& orig);
     virtual ~parallelepipede();
     
     float GetConductivite() const {

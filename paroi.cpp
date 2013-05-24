@@ -19,11 +19,10 @@ paroi::~paroi() {
 }
 
 void paroi::ecrire(){
-    
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[TYPE_PAROIS_0>Mur_1>PEC_2>FLOQUET_3>PML_4>PMC]");
-    bC.setExtension(".dsc");
-    bC.ecrire();
+
+    setHeader("[TYPE_PAROIS_0>Mur_1>PEC_2>FLOQUET_3>PML_4>PMC]");
+    setExtension(".dsc");
+    this->blocConfiguration::ecrire();
 
     
     std::ostringstream monEcriture;
@@ -35,9 +34,8 @@ void paroi::ecrire(){
     monEcriture << this->paroiX << std::endl;
     monEcriture << "Paroi_y=0_y=ymax:\n";
     monEcriture << this->paroiY << std::endl;
-    
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+
+    Ecriture::Ecrire(monEcriture.str());
 
     Ecriture::Ecrire("\n");
 }

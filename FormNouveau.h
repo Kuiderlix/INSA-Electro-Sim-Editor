@@ -12,14 +12,20 @@ class FormNouveau : public QDialog
 public:
     explicit FormNouveau(QWidget *parent = 0);
 
+    int getNum()
+    {
+        return num;
+    }
     
 signals:
     
 public slots:
 
     void testFichierExistant(int n);
+    void setNum(int i);
 
 private:
+    int num;
     QSpinBox * nbrSimu;
 
     QLabel * labelFichierExist;

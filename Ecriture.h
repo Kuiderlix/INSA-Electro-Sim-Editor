@@ -11,13 +11,12 @@
 #include <string>
 #include <stdio.h>
 #include <sstream>
+#include <QSettings>
+#include <QCoreApplication>
 
 class Ecriture {
 public:
-    Ecriture();
-    Ecriture(const Ecriture& orig);
-    virtual ~Ecriture();
-    
+
     std::string GetNomFichier() const {
         return Ecriture::nomFichier;
     }
@@ -32,10 +31,14 @@ public:
         
         Ecriture::nomFichier = nomFichier;
         if(Ecriture::opened)fclose(fp);
+
+
+        QSettings settings("INSAProj", "EditSimuIETR");
+        std::string path=settings.value("PathSimu",QCoreApplication::applicationDirPath()).toString().toStdString();
+
+        std::string nf = path + "/" + Ecriture::nomFichier;
         
-        const char* nf = Ecriture::nomFichier.c_str();
-        
-        if ((Ecriture::fp = fopen(nf, "w+")) != NULL) {
+        if ((Ecriture::fp = fopen(nf.c_str(), "w+")) != NULL) {
             Ecriture::opened = true;
         }
     }
@@ -48,7 +51,7 @@ public:
     static void setNumStru(int num){
         Ecriture::numstru = num;
     }
-    
+
 private:
     static FILE *fp;
     static std::string nomFichier;

@@ -10,25 +10,20 @@
 blocParallelepipede::blocParallelepipede() {
 }
 
-blocParallelepipede::blocParallelepipede(const blocParallelepipede& orig) {
-}
-
 blocParallelepipede::~blocParallelepipede() {
 }
 
 void blocParallelepipede::ecrire(){
 
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[PARALLELEPIPEDES_MATERIAUX]");
-    bC.setExtension(".dsc");
-    bC.ecrire();
+    setHeader("[PARALLELEPIPEDES_MATERIAUX]");
+    setExtension(".dsc");
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_parallelepipedes:\n";
     monEcriture << this->getNbElement() << std::endl;
 
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+    Ecriture::Ecrire(monEcriture.str());
 
     for(int i=0; i<this->getNbElement(); i++){
         parallelepipede *temp = this->getParallelepipede(i);

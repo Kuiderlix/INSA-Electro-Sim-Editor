@@ -16,7 +16,6 @@
 class cartographieTemporelle : public elementBase{
 public:
     cartographieTemporelle();
-    cartographieTemporelle(const cartographieTemporelle& orig);
     virtual ~cartographieTemporelle();
     
     bool IsChampE() const {

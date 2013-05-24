@@ -27,6 +27,8 @@ void ComboxDecaleeDelegate::paint(QPainter *painter, const QStyleOptionViewItem 
 
 QWidget *ComboxDecaleeDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
+    Q_UNUSED(option);
+    Q_UNUSED(index);
     QComboBox * typeWidget = new QComboBox(parent);
     typeWidget->addItems(list);
     typeWidget->setAutoFillBackground(true);

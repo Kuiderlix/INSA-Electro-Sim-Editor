@@ -17,7 +17,6 @@
 class blocElementLocalise : public BlocElementBase{
 public:
     blocElementLocalise();
-    blocElementLocalise(const blocElementLocalise& orig);
     virtual ~blocElementLocalise();
 
     elementLocalise* GetElementLocalise(int i){

@@ -17,7 +17,6 @@
 class blocMetallisation : public BlocElementBase{
 public:
     blocMetallisation();
-    blocMetallisation(const blocMetallisation& orig);
     virtual ~blocMetallisation();
 
     metallisation* GetMetallisation(int i){

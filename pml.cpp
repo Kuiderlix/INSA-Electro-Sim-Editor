@@ -19,10 +19,9 @@ pml::~pml() {
 
 void pml::ecrire(){
 
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[PML]");
-    bC.setExtension(".ana");
-    bC.ecrire();
+    setHeader("[PML]");
+    setExtension(".ana");
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Epaisseur_de_la_couche_(en_cellules):\n";
@@ -34,8 +33,7 @@ void pml::ecrire(){
     monEcriture << "K_max:\n";
     monEcriture << this->kMax << std::endl;
 
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+    Ecriture::Ecrire(monEcriture.str());
 
     Ecriture::Ecrire("\n");
 }

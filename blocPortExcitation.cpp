@@ -12,25 +12,20 @@
 blocPortExcitation::blocPortExcitation() {
 }
 
-blocPortExcitation::blocPortExcitation(const blocPortExcitation& orig) {
-}
-
 blocPortExcitation::~blocPortExcitation() {
 }
 
 void blocPortExcitation::ecrire(){
 
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[PORTS_EXCITATION]");
-    bC.setExtension(".ana");
-    bC.ecrire();
+    setHeader("[PORTS_EXCITATION]");
+    setExtension(".ana");
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_ports_d_excitation:\n";
     monEcriture << this->getNbElement() << std::endl;
 
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+    Ecriture::Ecrire(monEcriture.str());
 
     for(int i=0; i<this->getNbElement(); i++){
         portExcitation* temp = this->GetPortExcitation(i);

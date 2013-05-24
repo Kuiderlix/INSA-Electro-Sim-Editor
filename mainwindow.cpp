@@ -60,6 +60,7 @@ void MainWindow::nouvelleSimulation()
     {
         delete data;
         data=new Data();
+        parser.setNumFichier(win->getNum());
         init();
     }
     delete win;
@@ -199,8 +200,9 @@ void MainWindow::construireDockToolBox()
     toolbox->addItem(calculChWidget, "Calcul Champ Lointain");
     toolbox->addItem(paramAvcWidget, "Paramètres Avancés");
 
-
-    dockLayout->addWidget(new QPushButton(QIcon("icon/generer.png"),"Générer"));
+    QPushButton * boutonGenerer = new QPushButton(QIcon("icon/generer.png"),"Générer");
+    connect(boutonGenerer,SIGNAL(clicked()),this,SLOT(ecrire()));
+    dockLayout->addWidget(boutonGenerer);
     dockLayout->addWidget(toolbox);
 
     dockToolbox->setLayout(dockLayout);

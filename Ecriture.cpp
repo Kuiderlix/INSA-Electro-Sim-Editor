@@ -7,14 +7,6 @@
 
 #include "Ecriture.h"
 
-Ecriture::Ecriture() {
-}
-
-Ecriture::Ecriture(const Ecriture& orig) {
-}
-
-Ecriture::~Ecriture() {
-}
 
 bool Ecriture::opened = false;
 std::string Ecriture::nomFichier = "";

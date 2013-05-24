@@ -16,8 +16,6 @@ elementLocalise::elementLocalise() {
     valeur=0;
 }
 
-elementLocalise::elementLocalise(const elementLocalise& orig) {
-}
 
 elementLocalise::~elementLocalise() {
 }

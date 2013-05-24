@@ -111,7 +111,7 @@ void Parser::scanElementsLocalises(){
     
     int i;
     for(i=0; i<nbElements; i++){
-        elementLocalise *temp;
+        elementLocalise *temp=new elementLocalise;
         
         parserSautLigne();
         temp->SetType(parserGetInt());
@@ -197,7 +197,7 @@ void Parser::scanPortExcitation(){
     
     int i;
     for(i=0; i<nbPorts; i++){
-        portExcitation* temp;
+        portExcitation* temp = new portExcitation;
         
         parserSautLigne();
         temp->SetPortActif(parserGetInt());
@@ -310,7 +310,7 @@ void Parser::scanCartographieTemporelle(){
     
     int i;
     for(i=0; i<nbCartos; i++){
-        cartographieTemporelle *temp;
+        cartographieTemporelle *temp = new cartographieTemporelle();
         
         parserSautLigne();
         temp->SetChampE(parserGetInt());

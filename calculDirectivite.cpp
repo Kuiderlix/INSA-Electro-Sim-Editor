@@ -20,10 +20,10 @@ calculDirectivite::~calculDirectivite() {
 }
 
 void calculDirectivite::ecrire(){
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[CALCUL_DIRECTIVITE]");
-    bC.setExtension(".avc");
-    bC.ecrire();
+
+    setHeader("[CALCUL_DIRECTIVITE]");
+    setExtension(".avc");
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Calcul_de_la_directivite_0>Non_1>Oui\n";
@@ -32,8 +32,8 @@ void calculDirectivite::ecrire(){
     monEcriture << this->pasTheta << std::endl;
     monEcriture << "Pas_de_discretisation_selon_phi_(en_degres):\n";
     monEcriture << this->pasPhi << std::endl;
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+
+    Ecriture::Ecrire(monEcriture.str());
 
     Ecriture::Ecrire("\n");
 }

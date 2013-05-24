@@ -15,8 +15,6 @@ blocElementLocalise::blocElementLocalise() {
     this->setExtension(".dsc");
 }
 
-blocElementLocalise::blocElementLocalise(const blocElementLocalise& orig) {
-}
 
 blocElementLocalise::~blocElementLocalise() {
 }

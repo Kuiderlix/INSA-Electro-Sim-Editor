@@ -17,7 +17,6 @@
 class blocPortExcitation : public BlocElementBase{
 public:
     blocPortExcitation();
-    blocPortExcitation(const blocPortExcitation& orig);
     virtual ~blocPortExcitation();
 
     

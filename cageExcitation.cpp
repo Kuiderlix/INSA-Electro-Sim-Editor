@@ -32,10 +32,9 @@ cageExcitation::~cageExcitation() {
 
 void cageExcitation::ecrire(){
 
-    blocConfiguration bC = blocConfiguration(*this);
-    bC.setHeader("[CAGES_EXCITATION]");
-    bC.setExtension(".ana");
-    bC.ecrire();
+    setHeader("[CAGES_EXCITATION]");
+    setExtension(".ana");
+    this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;
     monEcriture << "Nombre_de_cages_d_excitation:\n";

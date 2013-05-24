@@ -18,6 +18,8 @@ void CoordonneeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &op
 
 QWidget *CoordonneeDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
+    Q_UNUSED(option);
+    Q_UNUSED(index);
     FormCoordonnees *formCoord = new FormCoordonnees(coordonnee(),parent);
     formCoord->setAutoFillBackground(true);
     formCoord->layout()->setMargin(0);

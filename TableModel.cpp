@@ -9,6 +9,7 @@ TableModel::TableModel(BlocElementBase *bloc, QObject *parent) :
 
 Qt::ItemFlags TableModel::flags(const QModelIndex &index) const
 {
+    Q_UNUSED(index);
     return Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled;
 }
 

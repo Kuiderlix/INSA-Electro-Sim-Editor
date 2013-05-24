@@ -18,7 +18,6 @@
 class blocParallelepipede : public BlocElementBase{
 public:
     blocParallelepipede();
-    blocParallelepipede(const blocParallelepipede& orig);
     virtual ~blocParallelepipede();
     
 

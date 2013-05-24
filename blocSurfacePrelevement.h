@@ -17,7 +17,6 @@
 class blocSurfacePrelevement : public BlocElementBase{
 public:
     blocSurfacePrelevement();
-    blocSurfacePrelevement(const blocSurfacePrelevement& orig);
     virtual ~blocSurfacePrelevement();
 
     int GetNbSurfacesDG() const {

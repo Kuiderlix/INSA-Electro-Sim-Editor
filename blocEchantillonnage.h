@@ -17,7 +17,6 @@ class blocEchantillonnage : public blocConfiguration{
     Q_OBJECT
 public:
     blocEchantillonnage();
-    blocEchantillonnage(const blocEchantillonnage& orig);
     virtual ~blocEchantillonnage();
     
     int GetFacteurEchatillonnage() const {

@@ -3,6 +3,8 @@
 FormOuvrir::FormOuvrir(QWidget *parent) :
     QDialog(parent)
 {
+    num=0;
+
     QSettings settings("INSAProj", "EditSimuIETR");
     QVBoxLayout * layout = new QVBoxLayout();
 

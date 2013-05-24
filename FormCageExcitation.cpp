@@ -152,6 +152,7 @@ void FormCageExcitation::manageFormulaire(int val)
 
 void FormCageExcitation::actualiseFormulaire(int val)
 {
+    Q_UNUSED(val);
     manageFormulaire(typeWidget->currentIndex());
 }
 

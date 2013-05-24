@@ -16,8 +16,6 @@ parallelepipede::parallelepipede() {
     permeRelative=0;
 }
 
-parallelepipede::parallelepipede(const parallelepipede& orig) {
-}
 
 parallelepipede::~parallelepipede() {
 }

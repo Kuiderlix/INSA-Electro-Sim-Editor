@@ -16,7 +16,6 @@
 class elementLocalise : public elementBase{
 public:
     elementLocalise();
-    elementLocalise(const elementLocalise& orig);
     virtual ~elementLocalise();
     
     int GetDirection() const {
