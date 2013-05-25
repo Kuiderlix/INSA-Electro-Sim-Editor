@@ -66,6 +66,7 @@ void Visualisation3D::paintGL()
     dessineVolumeCalcul();
     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
     dessineScene();
+    dessineCageExcitation();
 
 
     glDisable(GL_BLEND);
@@ -176,6 +177,16 @@ void Visualisation3D::dessineScene()
             Cube::drawCube(coordonneeToPoint(elem->GetArriereDroit()),coordonneeToPoint(elem->GetAvantGauche()));
         }
     }
+}
+
+void Visualisation3D::dessineCageExcitation()
+{
+    if (cageExcit->isCreate())
+    {
+        qglColor(cageExcit->getCouleur());
+        Cube::drawCube(coordonneeToPoint(cageExcit->GetArriereDroit()),coordonneeToPoint(cageExcit->GetAvantGauche()));
+    }
+
 }
 
 Point Visualisation3D::coordonneeToPoint(coordonnee c)

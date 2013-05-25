@@ -10,6 +10,7 @@
 #include "volumeCalcul.h"
 #include <QList>
 #include "BlocElementBase.h"
+#include "cageExcitation.h"
 
 using namespace std;
 
@@ -44,6 +45,11 @@ public:
      * @brief Dessine dans la scène tout les éléments du scénario
      */
     void dessineScene();
+    /**
+     * @brief Dessine la cage d'excitation du scénario de simulation s'elle existe.
+     * La cage s'affiche par défault en transparence.
+     */
+    void dessineCageExcitation();
 
     /**
      * @brief Tranforme une coordonnee en un Point
@@ -81,11 +87,20 @@ public:
      */
     void init();
 
+
     void setVolumeCalcul(volumeCalcul * vol)
     {
         this->volume=vol;
     }
 
+    void setCageExcitation(cageExcitation * c)
+    {
+        cageExcit=c;
+    }
+
+    /**
+     * @brief Vide la scène
+     */
     void clearScene()
     {
         listElement.clear();
@@ -126,6 +141,12 @@ private:
      * @brief Le volume de calcul de la scène
      */
     volumeCalcul * volume;
+
+    /**
+     * @brief La cage d'excitation de la simulation
+     */
+    cageExcitation * cageExcit;
+
     /**
      * @brief Une liste de pointeur sur des listes d'éléments.
      *Ces éléments seront affichés dans la scène.

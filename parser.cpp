@@ -10,30 +10,56 @@ Parser::Parser()
 /**>Fonctions Parser **********************************************************/
 /******************************************************************************/
 void Parser::parserSautLigne(){
-    //fscanf(fp, "%*s");
     char temp[100];
-    fi >> temp;
+    try
+    {
+        fi >> temp;
+    }
+    catch(std::exception e)
+    {
+        std::cout << e.what()<< std::endl;
+    }
 }
 int Parser::parserGetInt(){
-    int temp;
-    parserSautLigne();
-    fi >> temp;
-    //fscanf(fp, "%i", &temp);
+    int temp=0;
+    try
+    {
+        parserSautLigne();
+        fi >> temp;
+    }
+    catch(std::exception e)
+    {
+        std::cout << e.what()<< std::endl;
+    }
     return temp;
 }
 double Parser::parserGetDouble(){
-    double temp;
-    parserSautLigne();
-    fi >> temp;
-    //fscanf(fp, "%f", &temp);
+    double temp=0;
+    try
+    {
+        parserSautLigne();
+        fi >> temp;
+    }
+    catch(std::exception e)
+    {
+        std::cout << e.what()<< std::endl;
+    }
     return temp;
 }
 string Parser::parserGetString(){
-    char temp[TAILLE_CHAINE];
-    parserSautLigne();
-    fi >> temp;
-    //fscanf(fp, "%s", temp);
-    std::string retour = std::string(temp);
+    std::string retour;
+    try
+    {
+        char temp[TAILLE_CHAINE];
+        parserSautLigne();
+        fi >> temp;
+        retour = std::string(temp);
+    }
+    catch(std::exception e)
+    {
+        std::cout << e.what()<< std::endl;
+    }
+
     return retour;
 }
 /******************************************************************************/
@@ -143,7 +169,6 @@ void Parser::parseDSC() {
 
         do {
             fi.getline(chaine,100,'\n');
-            //fgets(chaine, 100, fp);
             cout << chaine << endl << endl;
 
             /*
@@ -163,7 +188,6 @@ void Parser::parseDSC() {
 
         } while (!fi.eof());
         fi.close();
-        //fclose(fp);
         cout << "**  FIN CHARGEMENT STRUCTURE DATA.dsc  **" << endl;
         cout << "*****************************************" << endl;
     }
@@ -378,9 +402,6 @@ void Parser::parseANA() {
 
         do {
             fi.getline(chaine,100,'\n');
-            //fgets(chaine, 100, fp);
-            //cout << "%s\n", chaine);
-
             if (!strcmp(chaine, "[PML]"))
                 scanPML();
             if (!strcmp(chaine, "[PARAMETRES_EXCITATION]"))
@@ -514,7 +535,6 @@ void Parser::parseAVC(){
 void Parser::parse(Data * data){
     QSettings settings("INSAProj", "EditSimuIETR");
     emplacementFichier=settings.value("PathSimu",QCoreApplication::applicationDirPath()).toString();
-    qDebug() << emplacementFichier;
     this->data=data;
     parseDSC();
     parseANA();

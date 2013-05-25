@@ -3,7 +3,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    data = new Data(&parser);
+    data = new Data();
 
     layout = new QVBoxLayout();
 
@@ -214,6 +214,7 @@ void MainWindow::init()
     visualisation->clearScene();
     visualisation->init();
     visualisation->setVolumeCalcul(data->getVolumeCalcul());
+    visualisation->setCageExcitation(data->getCageExcitation());
     visualisation->ajoutListElement(data->getBlocParallelepipede());
     visualisation->ajoutListElement(data->getBlocMetallisations());
     visualisation->ajoutListElement(data->getBlocCartoTempo());
@@ -221,10 +222,6 @@ void MainWindow::init()
     visualisation->ajoutListElement(data->getBlocSurfacePrelev());
     visualisation->ajoutListElement(data->getBlocSonde());
     visualisation->ajoutListElement(data->getBlocPortExcitation());
-
-    BlocElementBase * baseCageExci = new BlocElementBase();
-    baseCageExci->addElement(data->getCageExcitation());
-    visualisation->ajoutListElement(baseCageExci);
 
     //initialisation des données des tableaux
     vueMetal->setSourceModel(new TableModelMetallisation(data->getBlocMetallisations()));

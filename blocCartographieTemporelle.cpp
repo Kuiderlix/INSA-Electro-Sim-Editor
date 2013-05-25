@@ -11,8 +11,7 @@
 #include "cartographieTemporelle.h"
 
 blocCartographieTemporelle::blocCartographieTemporelle() {
-    this->setHeader("[CARTOGRAPHIES_TEMPORELLES]");
-    this->setExtension(".ana");
+
 }
 
 blocCartographieTemporelle::~blocCartographieTemporelle() {

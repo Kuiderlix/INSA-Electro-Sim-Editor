@@ -17,6 +17,7 @@ surfacePrelevement::surfacePrelevement() {
     compressionLongueur=0;
     compressionLargeur=0;
     compressionHauteur=0;
+    nomFichier="no_file";
 }
 
 
@@ -25,11 +26,8 @@ surfacePrelevement::~surfacePrelevement() {
 
 void surfacePrelevement::ecrire(int type){
 
-    //Etablissons le type :
-    std::string Stype = (type == 1) ? "Huygens" : ((type == 2) ? "DG" : "Kirchoff");
-
     std::ostringstream monEcriture;
-    monEcriture << "Surface_de_prelevement_" << Stype << "\n";
+    monEcriture << "Surface_de_prelevement_numero_" << type << "\n";
     monEcriture << "Type_de_surface_1>Huygens_2>Surface_de_prelevement_DG_3>Kirchhoff\n";
     monEcriture << this->typeSurface << std::endl;
     monEcriture << "Nom_du_fichier\n";
@@ -40,8 +38,7 @@ void surfacePrelevement::ecrire(int type){
     }
     monEcriture << "Nombre_de_faces_:\n";
     monEcriture << this->nbFaces << std::endl;
-    std::string ecriture(monEcriture.str());
-    Ecriture::Ecrire(ecriture);
+    Ecriture::Ecrire(monEcriture.str());
 
     this->ecrireElementBase();
 
@@ -54,8 +51,7 @@ void surfacePrelevement::ecrire(int type){
         finEcriture << this->compressionLargeur << std::endl;
         finEcriture << "Sur_la_hauteur_(en_cellules),_un_diviseur_de_??\n";
         finEcriture << this->compressionHauteur << std::endl;
-        std::string ecritureFin(finEcriture.str());
-        Ecriture::Ecrire(ecritureFin);
+        Ecriture::Ecrire(finEcriture.str());
     }
 
 }

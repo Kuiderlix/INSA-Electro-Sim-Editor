@@ -28,8 +28,7 @@ public:
     }
 
     void setHeader(std::string header) {
-        this->header.reserve(header.length());
-        this->header.append(header);
+        this->header = header;
     }
     
     void setExtension(std::string extension) {

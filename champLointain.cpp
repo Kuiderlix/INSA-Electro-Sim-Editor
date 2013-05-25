@@ -8,8 +8,6 @@
 #include "champLointain.h"
 
 champLointain::champLointain() {
-    this->setHeader("[CALCUL_CHAMP_LOINTAIN]");
-    this->setExtension(".ptr");
     frequenceMin=0;
     frequenceMax=0;
     pasFrequence=0;

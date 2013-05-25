@@ -8,9 +8,6 @@
 #include "calculDirectivite.h"
 
 calculDirectivite::calculDirectivite() {
-    this->setHeader("[CALCUL_DIRECTIVITE]");
-    this->setExtension(".avc");
-
     calcul=false;
     pasTheta=0;
     pasPhi=0;

@@ -8,9 +8,6 @@
 #include "Excitation.h"
 
 Excitation::Excitation() {
-    this->setHeader("[Excitation]");
-    this->setExtension(".avc");
-
     amplitudeV0=0;
 }
 

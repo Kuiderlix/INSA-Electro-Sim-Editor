@@ -8,8 +8,6 @@
 #include "blocEchantillonnage.h"
 
 blocEchantillonnage::blocEchantillonnage() : blocConfiguration() {
-    this->setHeader("[ECHANTILLONNAGE]");
-    this->setExtension(".avc");
 
     facteurEchatillonnage=0;
 }
@@ -19,6 +17,8 @@ blocEchantillonnage::~blocEchantillonnage() {
 }
 
 void blocEchantillonnage::ecrire(){
+    this->setHeader("[ECHANTILLONNAGE]");
+    this->setExtension(".avc");
     this->blocConfiguration::ecrire();
 
     std::ostringstream monEcriture;

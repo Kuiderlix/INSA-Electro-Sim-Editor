@@ -10,8 +10,6 @@
 #include "blocSurfacePrelevement.h"
 
 blocSurfacePrelevement::blocSurfacePrelevement() {
-    this->setHeader("[SURFACES_DE_PRELEVEMENT]");
-    this->setExtension(".ana");
 }
 
 

@@ -8,10 +8,6 @@
 #include "compressionHuygens.h"
 
 compressionHuygens::compressionHuygens() {
-    this->setHeader("[COMPRESSION_HUYGENS]");
-    this->setExtension(".avc");
-
-
     compressionLongueur=0;
     compressionLargeur=0;
     compressionHauteur=0;
