@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Editeur de configuration pour simulation électromagnétique:  Fichier source de /home/kuiderlix/Prog/cpp/pskl-etprat/analyseTemporelle.h</title>
+
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editeur de configuration pour simulation électromagnétique
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/analyseTemporelle.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/daa/analyse_temporelle_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/* </span>
+<a name="l00002"></a>00002 <span class="comment"> * File:   anayseTemporelle.h</span>
+<a name="l00003"></a>00003 <span class="comment"> * Author: camille</span>
+<a name="l00004"></a>00004 <span class="comment"> *</span>
+<a name="l00005"></a>00005 <span class="comment"> * Created on February 26, 2013, 6:34 PM</span>
+<a name="l00006"></a>00006 <span class="comment"> */</span>
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="preprocessor">#ifndef ANAYSETEMPORELLE_H</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define ANAYSETEMPORELLE_H</span>
+<a name="l00010"></a>00010 <span class="preprocessor"></span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="../../de/df9/bloc_configuration_8h.html">blocConfiguration.h</a>&quot;</span>
+<a name="l00012"></a>00012 
+<a name="l00016"></a><a class="code" href="../../d4/dc4/classanalyse_temporelle.html">00016</a> <span class="keyword">class </span><a class="code" href="../../d4/dc4/classanalyse_temporelle.html" title="Cette classe représente la variable analyseTemporelle d&#39;une simulation.">analyseTemporelle</a> : <span class="keyword">public</span> <a class="code" href="../../db/d3c/classbloc_configuration.html" title="Classe de base pour les données de configuration d&#39;une simulation.">blocConfiguration</a> {
+<a name="l00017"></a>00017     Q_OBJECT
+<a name="l00018"></a>00018 <span class="keyword">public</span>:
+<a name="l00019"></a>00019     <a class="code" href="../../d4/dc4/classanalyse_temporelle.html#a0470b91d6c8b3743e0ef65fc683a5c6c">analyseTemporelle</a>();
+<a name="l00020"></a>00020     <span class="keyword">virtual</span> <a class="code" href="../../d4/dc4/classanalyse_temporelle.html#aedf8883480d5dc91d0af7bd09e439ab9">~analyseTemporelle</a>();
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="../../d4/dc4/classanalyse_temporelle.html#a1f5f5fd4c4dd1996c3e62b0483be68c5">00022</a>     <span class="keywordtype">double</span> <a class="code" href="../../d4/dc4/classanalyse_temporelle.html#a1f5f5fd4c4dd1996c3e62b0483be68c5">GetPeriode</a>()<span class="keyword"> const </span>{
+<a name="l00023"></a>00023         <span class="keywordflow">return</span> periode;
+<a name="l00024"></a>00024     }
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="../../d4/dc4/classanalyse_temporelle.html#ab968cf7c2da79b012e1251a1c05ed724">00026</a>     <span class="keywordtype">double</span> <a class="code" href="../../d4/dc4/classanalyse_temporelle.html#ab968cf7c2da79b012e1251a1c05ed724">GetTemps</a>()<span class="keyword"> const </span>{
+<a name="l00027"></a>00027         <span class="keywordflow">return</span> temps;
+<a name="l00028"></a>00028     }
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="keyword">public</span> slots:
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="../../d4/dc4/classanalyse_temporelle.html#a410b14edc3a0b6ca3ed6a9a9c7e78b92">00032</a>     <span class="keywordtype">void</span> <a class="code" href="../../d4/dc4/classanalyse_temporelle.html#a410b14edc3a0b6ca3ed6a9a9c7e78b92">SetPeriode</a>(<span class="keywordtype">double</span> periode) {
+<a name="l00033"></a>00033         this-&gt;periode = periode;
+<a name="l00034"></a>00034     }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="../../d4/dc4/classanalyse_temporelle.html#acec9ff5c5c14e65bc796aa24bb589c24">00036</a>     <span class="keywordtype">void</span> <a class="code" href="../../d4/dc4/classanalyse_temporelle.html#acec9ff5c5c14e65bc796aa24bb589c24">SetTemps</a>(<span class="keywordtype">double</span> temps) {
+<a name="l00037"></a>00037         this-&gt;temps = temps;
+<a name="l00038"></a>00038     }
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040     <span class="keywordtype">void</span> <a class="code" href="../../d4/dc4/classanalyse_temporelle.html#ae88000b0df00f333df42236fd0b9bc07">ecrire</a>();
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="keyword">private</span>:
+<a name="l00043"></a>00043     <span class="keywordtype">double</span> periode;
+<a name="l00044"></a>00044     <span class="keywordtype">double</span> temps;
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 };
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="preprocessor">#endif  </span><span class="comment">/* ANAYSETEMPORELLE_H */</span>
+<a name="l00049"></a>00049 
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Mai 29 2013 18:48:47 pour Editeur de configuration pour simulation électromagnétique par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

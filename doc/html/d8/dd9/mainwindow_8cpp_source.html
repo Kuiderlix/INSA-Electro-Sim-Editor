@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Editeur de configuration pour simulation électromagnétique:  Fichier source de /home/kuiderlix/Prog/cpp/pskl-etprat/mainwindow.cpp</title>
+
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editeur de configuration pour simulation électromagnétique
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/mainwindow.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/dd9/mainwindow_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="../../d9/d53/mainwindow_8h.html">mainwindow.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="../../d9/dc6/class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">00003</a> <a class="code" href="../../d9/dc6/class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db">MainWindow::MainWindow</a>(QWidget *parent)
+<a name="l00004"></a>00004     : QMainWindow(parent)
+<a name="l00005"></a>00005 {
+<a name="l00006"></a>00006     data = <span class="keyword">new</span> <a class="code" href="../../dc/d07/class_data.html" title="Contient toutes les données utiles pour la simulation.">Data</a>();
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008     layout = <span class="keyword">new</span> QVBoxLayout();
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011     QSplitter * splitter = <span class="keyword">new</span> QSplitter();
+<a name="l00012"></a>00012     splitter-&gt;setOrientation(Qt::Vertical);
+<a name="l00013"></a>00013     splitter-&gt;addWidget(construireScene3D());
+<a name="l00014"></a>00014     splitter-&gt;addWidget(construireTableaux());
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016     layout-&gt;addWidget(splitter);
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018     construireDockToolBox();
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020     construireMenu();
+<a name="l00021"></a>00021     construireToolBar();
+<a name="l00022"></a>00022 
+<a name="l00023"></a>00023     QWidget *central = <span class="keyword">new</span> QWidget();
+<a name="l00024"></a>00024     central-&gt;setLayout(layout);
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026     setCentralWidget(central);
+<a name="l00027"></a>00027     currentModel = (<a class="code" href="../../d5/d9e/class_my_sort_filter_proxy_model.html" title="Cette classe permet de personnalisé le tri et le filtrage dans les listes.">MySortFilterProxyModel</a>*)((<a class="code" href="../../d6/d8b/class_table_view.html" title="Cette classe sert de vue de base pour les tableaux de données. Elle affiche les données contenu dans ...">TableView</a>*)tabWidget-&gt;currentWidget())-&gt;model();
+<a name="l00028"></a>00028     connect(filterWidget,SIGNAL(columnChanged(<span class="keywordtype">int</span>)), currentModel,SLOT(setFilterKeyColumn(<span class="keywordtype">int</span>)));
+<a name="l00029"></a>00029     connect(filterWidget,SIGNAL(filterChanged(QString)), currentModel,SLOT(setFilterRegExp(QString)));
+<a name="l00030"></a>00030     connect(tabWidget,SIGNAL(currentChanged(<span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#a436cf1b9ee9f8fa518343492a87f5fd0" title="changeFilter">changeFilter</a>()));
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033     init();
+<a name="l00034"></a>00034 }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="../../d9/dc6/class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">00036</a> <a class="code" href="../../d9/dc6/class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a>()
+<a name="l00037"></a>00037 {
+<a name="l00038"></a>00038     
+<a name="l00039"></a>00039 }
+<a name="l00040"></a>00040 
+<a name="l00041"></a><a class="code" href="../../d9/dc6/class_main_window.html#a436cf1b9ee9f8fa518343492a87f5fd0">00041</a> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#a436cf1b9ee9f8fa518343492a87f5fd0" title="changeFilter">MainWindow::changeFilter</a>()
+<a name="l00042"></a>00042 {
+<a name="l00043"></a>00043     disconnect(filterWidget,SIGNAL(columnChanged(<span class="keywordtype">int</span>)), currentModel,SLOT(setFilterKeyColumn(<span class="keywordtype">int</span>)));
+<a name="l00044"></a>00044     disconnect(filterWidget,SIGNAL(filterChanged(QString)), currentModel,SLOT(setFilterRegExp(QString)));
+<a name="l00045"></a>00045     currentModel = (<a class="code" href="../../d5/d9e/class_my_sort_filter_proxy_model.html" title="Cette classe permet de personnalisé le tri et le filtrage dans les listes.">MySortFilterProxyModel</a>*)((<a class="code" href="../../d6/d8b/class_table_view.html" title="Cette classe sert de vue de base pour les tableaux de données. Elle affiche les données contenu dans ...">TableView</a>*)tabWidget-&gt;currentWidget())-&gt;model();
+<a name="l00046"></a>00046     connect(filterWidget,SIGNAL(columnChanged(<span class="keywordtype">int</span>)), currentModel,SLOT(setFilterKeyColumn(<span class="keywordtype">int</span>)));
+<a name="l00047"></a>00047     connect(filterWidget,SIGNAL(filterChanged(QString)), currentModel,SLOT(setFilterRegExp(QString)));
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049     <a class="code" href="../../d0/dc3/class_table_model.html" title="Cette classe sert de model de base pour les éléments des tableaux.">TableModel</a>* table = (<a class="code" href="../../d0/dc3/class_table_model.html" title="Cette classe sert de model de base pour les éléments des tableaux.">TableModel</a>*)currentModel-&gt;sourceModel();
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051     filterWidget-&gt;<a class="code" href="../../d6/d5c/class_filter_widget.html#a1c90c4c1bb3485031ecae5207d9ca586">setCurrentModel</a>(table);
+<a name="l00052"></a>00052 }
+<a name="l00053"></a>00053 
+<a name="l00054"></a><a class="code" href="../../d9/dc6/class_main_window.html#ad6c10e67ce2635fc4ccd20d9853a7fe5">00054</a> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#ad6c10e67ce2635fc4ccd20d9853a7fe5" title="initialise l&#39;interface graphique avec des données vierges">MainWindow::nouvelleSimulation</a>()
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056     <a class="code" href="../../d9/dc7/class_form_nouveau.html" title="Cette classe est le formulaire pour ajouter une nouvelle simulation.">FormNouveau</a> * win = <span class="keyword">new</span> <a class="code" href="../../d9/dc7/class_form_nouveau.html" title="Cette classe est le formulaire pour ajouter une nouvelle simulation.">FormNouveau</a>(<span class="keyword">this</span>);
+<a name="l00057"></a>00057     <span class="keywordtype">int</span> result = win-&gt;exec();
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059     <span class="keywordflow">if</span> (result == QDialog::Accepted)
+<a name="l00060"></a>00060     {
+<a name="l00061"></a>00061         <span class="keyword">delete</span> data;
+<a name="l00062"></a>00062         data=<span class="keyword">new</span> <a class="code" href="../../dc/d07/class_data.html" title="Contient toutes les données utiles pour la simulation.">Data</a>();
+<a name="l00063"></a>00063         parser.<a class="code" href="../../dc/db7/class_parser.html#af822f72540d96ffc5a460165c74782be">setNumFichier</a>(win-&gt;<a class="code" href="../../d9/dc7/class_form_nouveau.html#a2d0f49eef36d53189e284a7cb4eb5eb4">getNum</a>());
+<a name="l00064"></a>00064         init();
+<a name="l00065"></a>00065     }
+<a name="l00066"></a>00066     <span class="keyword">delete</span> win;
+<a name="l00067"></a>00067 }
+<a name="l00068"></a>00068 
+<a name="l00069"></a><a class="code" href="../../d9/dc6/class_main_window.html#ad0f5d940e30ab44019990e0d350398b1">00069</a> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#ad0f5d940e30ab44019990e0d350398b1" title="Charge les fichiers de configuration et initialise l&#39;interface graphique.">MainWindow::ouvrirSimulation</a>()
+<a name="l00070"></a>00070 {
+<a name="l00071"></a>00071     <a class="code" href="../../d0/d33/class_form_ouvrir.html" title="Cette classe est le formulaire pour ouvrir une nouvelle simulation.">FormOuvrir</a> * win = <span class="keyword">new</span> <a class="code" href="../../d0/d33/class_form_ouvrir.html" title="Cette classe est le formulaire pour ouvrir une nouvelle simulation.">FormOuvrir</a>(<span class="keyword">this</span>);
+<a name="l00072"></a>00072     <span class="keywordtype">int</span> result = win-&gt;exec();
+<a name="l00073"></a>00073     <span class="keywordflow">if</span> (result == QDialog::Accepted)
+<a name="l00074"></a>00074     {
+<a name="l00075"></a>00075         <span class="keyword">delete</span> data;
+<a name="l00076"></a>00076         parser.<a class="code" href="../../dc/db7/class_parser.html#af822f72540d96ffc5a460165c74782be">setNumFichier</a>(win-&gt;<a class="code" href="../../d0/d33/class_form_ouvrir.html#a89c984239e1456364186e1cdbfd65944">getNum</a>());
+<a name="l00077"></a>00077         data=<span class="keyword">new</span> <a class="code" href="../../dc/d07/class_data.html" title="Contient toutes les données utiles pour la simulation.">Data</a>(&amp;parser);
+<a name="l00078"></a>00078         init();
+<a name="l00079"></a>00079     }
+<a name="l00080"></a>00080     <span class="keyword">delete</span> win;
+<a name="l00081"></a>00081 }
+<a name="l00082"></a>00082 
+<a name="l00083"></a><a class="code" href="../../d9/dc6/class_main_window.html#a401d3a98ce66fa433a6564b864edfae9">00083</a> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#a401d3a98ce66fa433a6564b864edfae9" title="Ouvre la fenetre des paramètres du logiciel.">MainWindow::ouvreParametres</a>()
+<a name="l00084"></a>00084 {
+<a name="l00085"></a>00085     <a class="code" href="../../db/d11/class_form_settings.html" title="Cette classe est le formulaire pour modifier les paramètres du logiciel.">FormSettings</a> * win = <span class="keyword">new</span> <a class="code" href="../../db/d11/class_form_settings.html" title="Cette classe est le formulaire pour modifier les paramètres du logiciel.">FormSettings</a>(<span class="keyword">this</span>);
+<a name="l00086"></a>00086     win-&gt;exec();
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 }
+<a name="l00089"></a>00089 
+<a name="l00090"></a><a class="code" href="../../d9/dc6/class_main_window.html#ad30fdbfb111989c600da8c471302b029">00090</a> <span class="keywordtype">void</span> <a class="code" href="../../d9/dc6/class_main_window.html#ad30fdbfb111989c600da8c471302b029">MainWindow::ecrire</a>()
+<a name="l00091"></a>00091 {
+<a name="l00092"></a>00092     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a26f23849f87070cba9da1cb905d646a0">ecrire</a>(parser.<a class="code" href="../../dc/db7/class_parser.html#ae4c116308b635cf73641b67b1010d051">getNumStru</a>());
+<a name="l00093"></a>00093 }
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096 <span class="keywordtype">void</span> MainWindow::construireMenu()
+<a name="l00097"></a>00097 {
+<a name="l00098"></a>00098     QMenu *menuFichier = menuBar()-&gt;addMenu(<span class="stringliteral">&quot;&amp;Fichier&quot;</span>);
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100     actionNouveau = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;icon/nouveau.png&quot;</span>),<span class="stringliteral">&quot;&amp;Nouveau&quot;</span>, <span class="keyword">this</span>);
+<a name="l00101"></a>00101     actionNouveau-&gt;setShortcuts(QKeySequence::New);
+<a name="l00102"></a>00102     connect(actionNouveau,SIGNAL(triggered()),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#ad6c10e67ce2635fc4ccd20d9853a7fe5" title="initialise l&#39;interface graphique avec des données vierges">nouvelleSimulation</a>()));
+<a name="l00103"></a>00103     actionOuvrir = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;icon/ouvrir.png&quot;</span>),<span class="stringliteral">&quot;&amp;Ouvrir&quot;</span>, <span class="keyword">this</span>);
+<a name="l00104"></a>00104     actionOuvrir-&gt;setShortcuts(QKeySequence::Open);
+<a name="l00105"></a>00105     connect(actionOuvrir,SIGNAL(triggered()),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#ad0f5d940e30ab44019990e0d350398b1" title="Charge les fichiers de configuration et initialise l&#39;interface graphique.">ouvrirSimulation</a>()));
+<a name="l00106"></a>00106     QAction *actionQuitter = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;icon/quitter.png&quot;</span>),<span class="stringliteral">&quot;&amp;Quitter&quot;</span>, <span class="keyword">this</span>);
+<a name="l00107"></a>00107     actionQuitter-&gt;setShortcuts(QKeySequence::Quit);
+<a name="l00108"></a>00108     connect(actionQuitter,SIGNAL(triggered()),<span class="keyword">this</span>,SLOT(close()));
+<a name="l00109"></a>00109     menuFichier-&gt;addAction(actionNouveau);
+<a name="l00110"></a>00110     menuFichier-&gt;addAction(actionOuvrir);
+<a name="l00111"></a>00111     menuFichier-&gt;addAction(actionQuitter);
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113     QMenu *menuSimulation = menuBar()-&gt;addMenu(<span class="stringliteral">&quot;&amp;Simulation&quot;</span>);
+<a name="l00114"></a>00114     actionGenerer = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;icon/generer.png&quot;</span>),<span class="stringliteral">&quot;&amp;Générer&quot;</span>, <span class="keyword">this</span>);
+<a name="l00115"></a>00115     connect(actionGenerer,SIGNAL(triggered()),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#ad30fdbfb111989c600da8c471302b029">ecrire</a>()));
+<a name="l00116"></a>00116     menuSimulation-&gt;addAction(actionGenerer);
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119     QMenu *menuScene3D = menuBar()-&gt;addMenu(<span class="stringliteral">&quot;&amp;Scene 3D&quot;</span>);
+<a name="l00120"></a>00120     actionZoom11 = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;icon/initScene.png&quot;</span>),<span class="stringliteral">&quot;&amp;Zoom 1:1&quot;</span>, <span class="keyword">this</span>);
+<a name="l00121"></a>00121     connect(actionZoom11,SIGNAL(triggered()),visualisation,SLOT(startToZoom11()));
+<a name="l00122"></a>00122     menuScene3D-&gt;addAction(actionZoom11);
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124     QMenu *menuOption = menuBar()-&gt;addMenu(<span class="stringliteral">&quot;&amp;Options&quot;</span>);
+<a name="l00125"></a>00125     actionParametre = <span class="keyword">new</span> QAction(QIcon(<span class="stringliteral">&quot;icon/settings.png&quot;</span>),<span class="stringliteral">&quot;&amp;Paramètres&quot;</span>, <span class="keyword">this</span>);
+<a name="l00126"></a>00126     connect(actionParametre,SIGNAL(triggered()),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#a401d3a98ce66fa433a6564b864edfae9" title="Ouvre la fenetre des paramètres du logiciel.">ouvreParametres</a>()));
+<a name="l00127"></a>00127     menuOption-&gt;addAction(actionParametre);
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129 }
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131 QWidget *MainWindow::construireScene3D()
+<a name="l00132"></a>00132 {
+<a name="l00133"></a>00133     visualisation = <span class="keyword">new</span> <a class="code" href="../../d1/db4/class_visualisation3_d.html" title="Affiche et gère la scène 3D.">Visualisation3D</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>(),<span class="keyword">this</span>);
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135     QWidget * visuaWidget = <span class="keyword">new</span> QWidget();
+<a name="l00136"></a>00136     QHBoxLayout * layoutVisua = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138     layoutVisua-&gt;addWidget(visualisation);
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140     QSlider * sliderZoom = <span class="keyword">new</span> QSlider();
+<a name="l00141"></a>00141     sliderZoom-&gt;setMinimum(-100);
+<a name="l00142"></a>00142     sliderZoom-&gt;setMaximum(100);
+<a name="l00143"></a>00143     sliderZoom-&gt;setValue(0);
+<a name="l00144"></a>00144     sliderZoom-&gt;setOrientation(Qt::Vertical);
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146     connect(sliderZoom,SIGNAL(valueChanged(<span class="keywordtype">int</span>)),visualisation,SLOT(setZoom(<span class="keywordtype">int</span>)));
+<a name="l00147"></a>00147     connect(visualisation,SIGNAL(zoomChanged(<span class="keywordtype">int</span>)),sliderZoom,SLOT(setValue(<span class="keywordtype">int</span>)));
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149     layoutVisua-&gt;addWidget(sliderZoom);
+<a name="l00150"></a>00150     visuaWidget-&gt;setLayout(layoutVisua);
+<a name="l00151"></a>00151 
+<a name="l00152"></a>00152     <span class="keywordflow">return</span> visuaWidget;
+<a name="l00153"></a>00153 
+<a name="l00154"></a>00154 }
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156 <span class="keywordtype">void</span> MainWindow::construireToolBar()
+<a name="l00157"></a>00157 {
+<a name="l00158"></a>00158     QToolBar * toolbar = this-&gt;addToolBar(<span class="stringliteral">&quot;ToolBar&quot;</span>);
+<a name="l00159"></a>00159 
+<a name="l00160"></a>00160     toolbar-&gt;addAction(actionNouveau);
+<a name="l00161"></a>00161     toolbar-&gt;addAction(actionOuvrir);
+<a name="l00162"></a>00162     toolbar-&gt;addSeparator();
+<a name="l00163"></a>00163     toolbar-&gt;addAction(actionGenerer);
+<a name="l00164"></a>00164     toolbar-&gt;addSeparator();
+<a name="l00165"></a>00165     toolbar-&gt;addAction(actionZoom11);
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167 }
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169 <span class="keywordtype">void</span> MainWindow::construireDockToolBox()
+<a name="l00170"></a>00170 {
+<a name="l00171"></a>00171     QDockWidget *dock = <span class="keyword">new</span> QDockWidget(<span class="stringliteral">&quot;ToolBox&quot;</span>, <span class="keyword">this</span>);
+<a name="l00172"></a>00172     addDockWidget(Qt::LeftDockWidgetArea, dock);
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174     QWidget *dockToolbox = <span class="keyword">new</span> QWidget;
+<a name="l00175"></a>00175     dock-&gt;setWidget(dockToolbox);
+<a name="l00176"></a>00176     QVBoxLayout *dockLayout = <span class="keyword">new</span> QVBoxLayout;
+<a name="l00177"></a>00177 
+<a name="l00178"></a>00178     QToolBox * toolbox = <span class="keyword">new</span> QToolBox();
+<a name="l00179"></a>00179     toolbox-&gt;setMinimumWidth(300);
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181     descGeo = <span class="keyword">new</span> <a class="code" href="../../d0/d56/class_description_geo_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ...">DescriptionGeoWidget</a>(data);
+<a name="l00182"></a>00182     connect(descGeo,SIGNAL(newMetalCreated(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)),vueMetal,SLOT(addElement(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00183"></a>00183     connect(descGeo,SIGNAL(newParaCreated(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)),vueParal,SLOT(addElement(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00184"></a>00184     connect(descGeo,SIGNAL(newElemLocCreated(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)),vueElemLocal,SLOT(addElement(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00185"></a>00185 
+<a name="l00186"></a>00186     paramSimu = <span class="keyword">new</span> <a class="code" href="../../d5/d1b/class_param_simu_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ...">ParamSimuWidget</a>(data);
+<a name="l00187"></a>00187     connect(paramSimu,SIGNAL(newPortExcitationCreated(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)),vuePortExci,SLOT(addElement(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189     objFDTD = <span class="keyword">new</span> <a class="code" href="../../d8/d54/class_objet_f_d_t_d_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ...">ObjetFDTDWidget</a>(data);
+<a name="l00190"></a>00190     connect(objFDTD,SIGNAL(newSondeCreated(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)),vueSonde,SLOT(addElement(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00191"></a>00191     connect(objFDTD,SIGNAL(newSurfacePrelCreated(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)),vueSurfacePrelev,SLOT(addElement(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00192"></a>00192     connect(objFDTD,SIGNAL(newCartoTempoCreated(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)),vueCartoTempo,SLOT(addElement(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00193"></a>00193 
+<a name="l00194"></a>00194     calculChWidget = <span class="keyword">new</span> <a class="code" href="../../d1/da2/class_calcul_champs_lointain_widget.html" title="Cette classe représente le formulaire pour modifier un ChampsLointain.">CalculChampsLointainWidget</a>(data);
+<a name="l00195"></a>00195     paramAvcWidget = <span class="keyword">new</span> <a class="code" href="../../d7/df3/class_param_avance_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ...">ParamAvanceWidget</a>(data);
+<a name="l00196"></a>00196 
+<a name="l00197"></a>00197     toolbox-&gt;addItem(descGeo, <span class="stringliteral">&quot;Description Géométrique&quot;</span>);
+<a name="l00198"></a>00198     toolbox-&gt;addItem(paramSimu, <span class="stringliteral">&quot;Paramètres Simulation&quot;</span>);
+<a name="l00199"></a>00199     toolbox-&gt;addItem(objFDTD, <span class="stringliteral">&quot;Objets FDTD et DG-FDTD&quot;</span>);
+<a name="l00200"></a>00200     toolbox-&gt;addItem(calculChWidget, <span class="stringliteral">&quot;Calcul Champ Lointain&quot;</span>);
+<a name="l00201"></a>00201     toolbox-&gt;addItem(paramAvcWidget, <span class="stringliteral">&quot;Paramètres Avancés&quot;</span>);
+<a name="l00202"></a>00202 
+<a name="l00203"></a>00203     QPushButton * boutonGenerer = <span class="keyword">new</span> QPushButton(QIcon(<span class="stringliteral">&quot;icon/generer.png&quot;</span>),<span class="stringliteral">&quot;Générer&quot;</span>);
+<a name="l00204"></a>00204     connect(boutonGenerer,SIGNAL(clicked()),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d9/dc6/class_main_window.html#ad30fdbfb111989c600da8c471302b029">ecrire</a>()));
+<a name="l00205"></a>00205     dockLayout-&gt;addWidget(boutonGenerer);
+<a name="l00206"></a>00206     dockLayout-&gt;addWidget(toolbox);
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208     dockToolbox-&gt;setLayout(dockLayout);
+<a name="l00209"></a>00209 }
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211 <span class="keywordtype">void</span> MainWindow::init()
+<a name="l00212"></a>00212 {
+<a name="l00213"></a>00213     <span class="comment">//initialisation des données de la vue</span>
+<a name="l00214"></a>00214     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a4308784f3e4e127e3a2b56a0399bc5ed" title="Vide la scène.">clearScene</a>();
+<a name="l00215"></a>00215     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#ac89bcbe88f2f154f8cb646d794065b10" title="Initialise les variables de la scène (zoom, xRot, yMov, ...)">init</a>();
+<a name="l00216"></a>00216     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a3672d1687a1c03304cf90a95744d2b45">setVolumeCalcul</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>());
+<a name="l00217"></a>00217     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a7886fa97a359ed89daf35470c8ffeaf4">setCageExcitation</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>());
+<a name="l00218"></a>00218     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a0aae161317ce9692ba22f5ad0a174926" title="Ajoute une liste d&#39;élément à la scène.">ajoutListElement</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#aabdc820f5e1024034bedf46bb9afed6c">getBlocParallelepipede</a>());
+<a name="l00219"></a>00219     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a0aae161317ce9692ba22f5ad0a174926" title="Ajoute une liste d&#39;élément à la scène.">ajoutListElement</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#af369e09227942e048bc40183d05392d7">getBlocMetallisations</a>());
+<a name="l00220"></a>00220     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a0aae161317ce9692ba22f5ad0a174926" title="Ajoute une liste d&#39;élément à la scène.">ajoutListElement</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a04e1d1b1217693b42133d584dfbf5b71">getBlocCartoTempo</a>());
+<a name="l00221"></a>00221     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a0aae161317ce9692ba22f5ad0a174926" title="Ajoute une liste d&#39;élément à la scène.">ajoutListElement</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#ad8bbac9c9bc359f9e3bc768f1b44a97e">getBlocElementLocalise</a>());
+<a name="l00222"></a>00222     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a0aae161317ce9692ba22f5ad0a174926" title="Ajoute une liste d&#39;élément à la scène.">ajoutListElement</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#adef5a353076143ac15f0a6e45346d756">getBlocSurfacePrelev</a>());
+<a name="l00223"></a>00223     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a0aae161317ce9692ba22f5ad0a174926" title="Ajoute une liste d&#39;élément à la scène.">ajoutListElement</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a3f936063413710ec567b8a64bbcd9108">getBlocSonde</a>());
+<a name="l00224"></a>00224     visualisation-&gt;<a class="code" href="../../d1/db4/class_visualisation3_d.html#a0aae161317ce9692ba22f5ad0a174926" title="Ajoute une liste d&#39;élément à la scène.">ajoutListElement</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a12c82e6b0c7a114166943d10ce5c534e">getBlocPortExcitation</a>());
+<a name="l00225"></a>00225 
+<a name="l00226"></a>00226     <span class="comment">//initialisation des données des tableaux</span>
+<a name="l00227"></a>00227     vueMetal-&gt;<a class="code" href="../../d6/d8b/class_table_view.html#a3d7a702453c23bb00e609d71a13c7f67">setSourceModel</a>(<span class="keyword">new</span> <a class="code" href="../../dc/d5d/class_table_model_metallisation.html">TableModelMetallisation</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#af369e09227942e048bc40183d05392d7">getBlocMetallisations</a>()));
+<a name="l00228"></a>00228     vueParal-&gt;<a class="code" href="../../d6/d8b/class_table_view.html#a3d7a702453c23bb00e609d71a13c7f67">setSourceModel</a>(<span class="keyword">new</span> <a class="code" href="../../da/dde/class_table_model_parallelepipede.html">TableModelParallelepipede</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#aabdc820f5e1024034bedf46bb9afed6c">getBlocParallelepipede</a>()));
+<a name="l00229"></a>00229     vueSonde-&gt;<a class="code" href="../../d6/d8b/class_table_view.html#a3d7a702453c23bb00e609d71a13c7f67">setSourceModel</a>(<span class="keyword">new</span> <a class="code" href="../../d9/d66/class_table_model_sonde.html">TableModelSonde</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a3f936063413710ec567b8a64bbcd9108">getBlocSonde</a>()));
+<a name="l00230"></a>00230     vueElemLocal-&gt;<a class="code" href="../../d6/d8b/class_table_view.html#a3d7a702453c23bb00e609d71a13c7f67">setSourceModel</a>(<span class="keyword">new</span> <a class="code" href="../../d8/d8b/class_table_model_element_localise.html">TableModelElementLocalise</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#ad8bbac9c9bc359f9e3bc768f1b44a97e">getBlocElementLocalise</a>()));
+<a name="l00231"></a>00231     vuePortExci-&gt;<a class="code" href="../../d6/d8b/class_table_view.html#a3d7a702453c23bb00e609d71a13c7f67">setSourceModel</a>(<span class="keyword">new</span> <a class="code" href="../../d3/d90/class_table_model_port_excitation.html">TableModelPortExcitation</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a12c82e6b0c7a114166943d10ce5c534e">getBlocPortExcitation</a>()));
+<a name="l00232"></a>00232     vueCartoTempo-&gt;<a class="code" href="../../d6/d8b/class_table_view.html#a3d7a702453c23bb00e609d71a13c7f67">setSourceModel</a>(<span class="keyword">new</span> <a class="code" href="../../d0/d3c/class_table_model_carto_tempo.html">TableModelCartoTempo</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a04e1d1b1217693b42133d584dfbf5b71">getBlocCartoTempo</a>()));
+<a name="l00233"></a>00233     vueSurfacePrelev-&gt;<a class="code" href="../../d6/d8b/class_table_view.html#a3d7a702453c23bb00e609d71a13c7f67">setSourceModel</a>(<span class="keyword">new</span> <a class="code" href="../../d5/d72/class_table_model_surface_prelev.html">TableModelSurfacePrelev</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#adef5a353076143ac15f0a6e45346d756">getBlocSurfacePrelev</a>()));
+<a name="l00234"></a>00234 
+<a name="l00235"></a>00235     <span class="comment">//initialisation des formulaires de la toolbox</span>
+<a name="l00236"></a>00236     descGeo-&gt;<a class="code" href="../../d3/dea/class_tool_box_widget.html#acbee6063ce4628c8c08722fe12f7b8f6">setData</a>(data);
+<a name="l00237"></a>00237     paramSimu-&gt;<a class="code" href="../../d3/dea/class_tool_box_widget.html#acbee6063ce4628c8c08722fe12f7b8f6">setData</a>(data);
+<a name="l00238"></a>00238     objFDTD-&gt;<a class="code" href="../../d3/dea/class_tool_box_widget.html#acbee6063ce4628c8c08722fe12f7b8f6">setData</a>(data);
+<a name="l00239"></a>00239     calculChWidget-&gt;<a class="code" href="../../d3/dea/class_tool_box_widget.html#acbee6063ce4628c8c08722fe12f7b8f6">setData</a>(data);
+<a name="l00240"></a>00240     paramAvcWidget-&gt;<a class="code" href="../../d3/dea/class_tool_box_widget.html#acbee6063ce4628c8c08722fe12f7b8f6">setData</a>(data);
+<a name="l00241"></a>00241 }
+<a name="l00242"></a>00242 
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244 QWidget *MainWindow::construireTableaux()
+<a name="l00245"></a>00245 {
+<a name="l00246"></a>00246     QWidget *tables = <span class="keyword">new</span> QWidget;
+<a name="l00247"></a>00247     QVBoxLayout *layoutTable = <span class="keyword">new</span> QVBoxLayout;
+<a name="l00248"></a>00248 
+<a name="l00249"></a>00249     vueMetal = <span class="keyword">new</span> <a class="code" href="../../d2/d27/class_table_view_metallisation.html">TableViewMetallisation</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#af369e09227942e048bc40183d05392d7">getBlocMetallisations</a>());
+<a name="l00250"></a>00250     vueParal = <span class="keyword">new</span> <a class="code" href="../../de/d9c/class_table_view_parallelepipede.html">TableViewParallelepipede</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#aabdc820f5e1024034bedf46bb9afed6c">getBlocParallelepipede</a>());
+<a name="l00251"></a>00251     vueSonde = <span class="keyword">new</span> <a class="code" href="../../d9/d56/class_table_view_sonde.html">TableViewSonde</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a3f936063413710ec567b8a64bbcd9108">getBlocSonde</a>());
+<a name="l00252"></a>00252     vueElemLocal = <span class="keyword">new</span> <a class="code" href="../../d6/ddf/class_table_view_element_localise.html">TableViewElementLocalise</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#ad8bbac9c9bc359f9e3bc768f1b44a97e">getBlocElementLocalise</a>());
+<a name="l00253"></a>00253     vuePortExci = <span class="keyword">new</span> <a class="code" href="../../d6/dd0/class_table_view_port_excitation.html">TableViewPortExcitation</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a12c82e6b0c7a114166943d10ce5c534e">getBlocPortExcitation</a>());
+<a name="l00254"></a>00254     vueCartoTempo = <span class="keyword">new</span> <a class="code" href="../../da/d94/class_table_view_cart_tempo.html">TableViewCartTempo</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#a04e1d1b1217693b42133d584dfbf5b71">getBlocCartoTempo</a>());
+<a name="l00255"></a>00255     vueSurfacePrelev = <span class="keyword">new</span> <a class="code" href="../../dd/d32/class_table_view_surface_prelev.html">TableViewSurfacePrelev</a>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#adef5a353076143ac15f0a6e45346d756">getBlocSurfacePrelev</a>());
+<a name="l00256"></a>00256 
+<a name="l00257"></a>00257     tabWidget = <span class="keyword">new</span> QTabWidget();
+<a name="l00258"></a>00258     tabWidget-&gt;addTab(vueMetal, <span class="stringliteral">&quot;Métallisations&quot;</span>);
+<a name="l00259"></a>00259     tabWidget-&gt;addTab(vueParal, <span class="stringliteral">&quot;Parallelepipèdes&quot;</span>);
+<a name="l00260"></a>00260     tabWidget-&gt;addTab(vueElemLocal, <span class="stringliteral">&quot;Elements Localises&quot;</span>);
+<a name="l00261"></a>00261     tabWidget-&gt;addTab(vuePortExci, <span class="stringliteral">&quot;Ports Excitations&quot;</span>);
+<a name="l00262"></a>00262     tabWidget-&gt;addTab(vueSurfacePrelev, <span class="stringliteral">&quot;Surfaces Prelevements&quot;</span>);
+<a name="l00263"></a>00263     tabWidget-&gt;addTab(vueSonde, <span class="stringliteral">&quot;Sondes&quot;</span>);
+<a name="l00264"></a>00264     tabWidget-&gt;addTab(vueCartoTempo, <span class="stringliteral">&quot;Cartographies Temporelles&quot;</span>);
+<a name="l00265"></a>00265 
+<a name="l00266"></a>00266     filterWidget = <span class="keyword">new</span> <a class="code" href="../../d6/d5c/class_filter_widget.html" title="The FilterWidget class.">FilterWidget</a>;
+<a name="l00267"></a>00267 
+<a name="l00268"></a>00268     layoutTable-&gt;addWidget(tabWidget);
+<a name="l00269"></a>00269     layoutTable-&gt;addWidget(filterWidget);
+<a name="l00270"></a>00270 
+<a name="l00271"></a>00271     tables-&gt;setLayout(layoutTable);
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273     <span class="keywordflow">return</span> tables;
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275 }
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Mai 29 2013 18:48:48 pour Editeur de configuration pour simulation électromagnétique par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Editeur de configuration pour simulation électromagnétique:  Fichier source de /home/kuiderlix/Prog/cpp/pskl-etprat/TableViewSurfacePrelev.cpp</title>
+
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editeur de configuration pour simulation électromagnétique
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/TableViewSurfacePrelev.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/de8/_table_view_surface_prelev_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="../../df/d8c/_table_view_surface_prelev_8h.html">TableViewSurfacePrelev.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="../../dd/d32/class_table_view_surface_prelev.html#a6da7df8af04509c6efc145aaaa9df559">00003</a> <a class="code" href="../../dd/d32/class_table_view_surface_prelev.html#a6da7df8af04509c6efc145aaaa9df559">TableViewSurfacePrelev::TableViewSurfacePrelev</a>(<a class="code" href="../../d5/d15/classbloc_surface_prelevement.html" title="Cette classe représente une liste de surfacePrelevement.">blocSurfacePrelevement</a> *bloc, QWidget *parent) :
+<a name="l00004"></a>00004     <a class="code" href="../../d6/d8b/class_table_view.html" title="Cette classe sert de vue de base pour les tableaux de données. Elle affiche les données contenu dans ...">TableView</a>(parent)
+<a name="l00005"></a>00005 {
+<a name="l00006"></a>00006     <a class="code" href="../../d5/d9e/class_my_sort_filter_proxy_model.html" title="Cette classe permet de personnalisé le tri et le filtrage dans les listes.">MySortFilterProxyModel</a> * proxyModel = <span class="keyword">new</span> <a class="code" href="../../d5/d9e/class_my_sort_filter_proxy_model.html" title="Cette classe permet de personnalisé le tri et le filtrage dans les listes.">MySortFilterProxyModel</a>(<span class="keyword">this</span>);
+<a name="l00007"></a>00007     proxyModel-&gt;setSourceModel(<span class="keyword">new</span> <a class="code" href="../../d5/d72/class_table_model_surface_prelev.html">TableModelSurfacePrelev</a>(bloc));
+<a name="l00008"></a>00008     this-&gt;setModel(proxyModel);
+<a name="l00009"></a>00009     this-&gt;setItemDelegateForColumn(<a class="code" href="../../d5/d72/class_table_model_surface_prelev.html#a45171296d1a49bdd637ba00d45f20f67acd7a93ea680374a3bd8c6acbf02de1c5">TableModelSurfacePrelev::AvantGauche</a>,<span class="keyword">new</span> <a class="code" href="../../dd/d1b/class_coordonnee_delegate.html" title="Cette classe permet de personnalisé l&#39;éditeur d&#39;un tableau pour une certaines colonnes. Elle fourni un éditeur pour modifier une coordonnees. Cette éditeur est en faite un FormCoordonnees.">CoordonneeDelegate</a>());
+<a name="l00010"></a>00010     this-&gt;setItemDelegateForColumn(<a class="code" href="../../d5/d72/class_table_model_surface_prelev.html#a45171296d1a49bdd637ba00d45f20f67a1ae71c374510b340b3813f2e583385f6">TableModelSurfacePrelev::ArriereDroit</a>,<span class="keyword">new</span> <a class="code" href="../../dd/d1b/class_coordonnee_delegate.html" title="Cette classe permet de personnalisé l&#39;éditeur d&#39;un tableau pour une certaines colonnes. Elle fourni un éditeur pour modifier une coordonnees. Cette éditeur est en faite un FormCoordonnees.">CoordonneeDelegate</a>());
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012     this-&gt;setItemDelegateForColumn(<a class="code" href="../../d5/d72/class_table_model_surface_prelev.html#a45171296d1a49bdd637ba00d45f20f67aabcbcc7a39cbd9455e80a8d50ad8cc64">TableModelSurfacePrelev::TypeSurface</a>,<span class="keyword">new</span> <a class="code" href="../../d4/d20/class_combox_decalee_delegate.html" title="Cette classe permet de personnalisé l&#39;éditeur d&#39;un tableau pour une certaines colonnes. Elle fourni un éditeur sous forme de liste déroulante.">ComboxDecaleeDelegate</a>(QStringList() &lt;&lt; <span class="stringliteral">&quot;Huygens&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Surface_de_prelevement_DG&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Kirchhoff&quot;</span>,1));
+<a name="l00013"></a>00013     this-&gt;setItemDelegateForColumn(<a class="code" href="../../d5/d72/class_table_model_surface_prelev.html#a45171296d1a49bdd637ba00d45f20f67a2bf586755c78dc1b3cf379268cef0c1e">TableModelSurfacePrelev::insideOutside</a>,<span class="keyword">new</span> <a class="code" href="../../d4/d20/class_combox_decalee_delegate.html" title="Cette classe permet de personnalisé l&#39;éditeur d&#39;un tableau pour une certaines colonnes. Elle fourni un éditeur sous forme de liste déroulante.">ComboxDecaleeDelegate</a>(QStringList() &lt;&lt; <span class="stringliteral">&quot;Inside&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Outside&quot;</span>,1));
+<a name="l00014"></a>00014     this-&gt;setItemDelegateForColumn(<a class="code" href="../../d5/d72/class_table_model_surface_prelev.html#a45171296d1a49bdd637ba00d45f20f67a8086a53cbc1718b971ee14410047dc23">TableModelSurfacePrelev::nbFace</a>,<span class="keyword">new</span> <a class="code" href="../../d4/d20/class_combox_decalee_delegate.html" title="Cette classe permet de personnalisé l&#39;éditeur d&#39;un tableau pour une certaines colonnes. Elle fourni un éditeur sous forme de liste déroulante.">ComboxDecaleeDelegate</a>(QStringList() &lt;&lt; <span class="stringliteral">&quot;5 Faces&quot;</span> &lt;&lt; <span class="stringliteral">&quot;6 Faces&quot;</span>,5));
+<a name="l00015"></a>00015 }
+<a name="l00016"></a>00016 
+<a name="l00017"></a><a class="code" href="../../dd/d32/class_table_view_surface_prelev.html#a0a7e33760a27f20306c30d556890e6e6">00017</a> <span class="keywordtype">void</span> <a class="code" href="../../dd/d32/class_table_view_surface_prelev.html#a0a7e33760a27f20306c30d556890e6e6" title="Fonction virtual qui est appelé quand l&#39;utilisateur veut ajouter un nouveau élément avec le menu cont...">TableViewSurfacePrelev::addNewElement</a>()
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019     <a class="code" href="../../d0/d1e/class_form_surface_prelevement.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet surfacePrelevement dans la scène 3D...">FormSurfacePrelevement</a> * form = <span class="keyword">new</span> <a class="code" href="../../d0/d1e/class_form_surface_prelevement.html" title="Formulaire permettant d&#39;ajouter un nouvelle objet surfacePrelevement dans la scène 3D...">FormSurfacePrelevement</a>(<span class="keyword">new</span> <a class="code" href="../../d6/db5/classsurface_prelevement.html" title="Cette classe représente la variable surfacePrelevement d&#39;une simulation.">surfacePrelevement</a>);
+<a name="l00020"></a>00020     connect(form,SIGNAL(elementValide(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)),((<a class="code" href="../../d0/dc3/class_table_model.html" title="Cette classe sert de model de base pour les éléments des tableaux.">TableModel</a>*)((<a class="code" href="../../d5/d9e/class_my_sort_filter_proxy_model.html" title="Cette classe permet de personnalisé le tri et le filtrage dans les listes.">MySortFilterProxyModel</a>*)this-&gt;model())-&gt;sourceModel()),SLOT(<a class="code" href="../../d6/d8b/class_table_view.html#ae8e2fcfd6769e96634180f82d7d65ccb" title="Ajoute un élément au model.">addElement</a>(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)));
+<a name="l00021"></a>00021     connect(form,SIGNAL(elementValide(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>*)),form,SLOT(accept()));
+<a name="l00022"></a>00022     form-&gt;exec();
+<a name="l00023"></a>00023 }
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Mai 29 2013 18:48:48 pour Editeur de configuration pour simulation électromagnétique par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

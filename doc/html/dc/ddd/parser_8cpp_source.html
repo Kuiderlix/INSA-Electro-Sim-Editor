@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Editeur de configuration pour simulation électromagnétique:  Fichier source de /home/kuiderlix/Prog/cpp/pskl-etprat/parser.cpp</title>
+
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editeur de configuration pour simulation électromagnétique
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/parser.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/ddd/parser_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="../../d5/d36/parser_8h.html">parser.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="../../dc/db7/class_parser.html#a12234f6cd36b61af4b50c94a179422c1">00003</a> <a class="code" href="../../dc/db7/class_parser.html#a12234f6cd36b61af4b50c94a179422c1">Parser::Parser</a>()
+<a name="l00004"></a>00004 {
+<a name="l00005"></a>00005     numstru = 1;
+<a name="l00006"></a>00006 }
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="comment">/******************************************************************************/</span>
+<a name="l00011"></a>00011 <span class="comment">/******************************************************************************/</span>
+<a name="l00012"></a>00012 <span class="keywordtype">void</span> Parser::parserSautLigne(){
+<a name="l00013"></a>00013     <span class="keywordtype">char</span> temp[100];
+<a name="l00014"></a>00014     <span class="keywordflow">try</span>
+<a name="l00015"></a>00015     {
+<a name="l00016"></a>00016         fi &gt;&gt; temp;
+<a name="l00017"></a>00017     }
+<a name="l00018"></a>00018     <span class="keywordflow">catch</span>(std::exception e)
+<a name="l00019"></a>00019     {
+<a name="l00020"></a>00020         std::cout &lt;&lt; e.what()&lt;&lt; std::endl;
+<a name="l00021"></a>00021     }
+<a name="l00022"></a>00022 }
+<a name="l00023"></a>00023 <span class="keywordtype">int</span> Parser::parserGetInt(){
+<a name="l00024"></a>00024     <span class="keywordtype">int</span> temp=0;
+<a name="l00025"></a>00025     <span class="keywordflow">try</span>
+<a name="l00026"></a>00026     {
+<a name="l00027"></a>00027         parserSautLigne();
+<a name="l00028"></a>00028         fi &gt;&gt; temp;
+<a name="l00029"></a>00029     }
+<a name="l00030"></a>00030     <span class="keywordflow">catch</span>(std::exception e)
+<a name="l00031"></a>00031     {
+<a name="l00032"></a>00032         std::cout &lt;&lt; e.what()&lt;&lt; std::endl;
+<a name="l00033"></a>00033     }
+<a name="l00034"></a>00034     <span class="keywordflow">return</span> temp;
+<a name="l00035"></a>00035 }
+<a name="l00036"></a>00036 <span class="keywordtype">double</span> Parser::parserGetDouble(){
+<a name="l00037"></a>00037     <span class="keywordtype">double</span> temp=0;
+<a name="l00038"></a>00038     <span class="keywordflow">try</span>
+<a name="l00039"></a>00039     {
+<a name="l00040"></a>00040         parserSautLigne();
+<a name="l00041"></a>00041         fi &gt;&gt; temp;
+<a name="l00042"></a>00042     }
+<a name="l00043"></a>00043     <span class="keywordflow">catch</span>(std::exception e)
+<a name="l00044"></a>00044     {
+<a name="l00045"></a>00045         std::cout &lt;&lt; e.what()&lt;&lt; std::endl;
+<a name="l00046"></a>00046     }
+<a name="l00047"></a>00047     <span class="keywordflow">return</span> temp;
+<a name="l00048"></a>00048 }
+<a name="l00049"></a>00049 <span class="keywordtype">string</span> Parser::parserGetString(){
+<a name="l00050"></a>00050     std::string retour;
+<a name="l00051"></a>00051     <span class="keywordflow">try</span>
+<a name="l00052"></a>00052     {
+<a name="l00053"></a>00053         <span class="keywordtype">char</span> temp[<a class="code" href="../../d5/d36/parser_8h.html#a444e44fd92236983b6b5990d2a790a53">TAILLE_CHAINE</a>];
+<a name="l00054"></a>00054         parserSautLigne();
+<a name="l00055"></a>00055         fi &gt;&gt; temp;
+<a name="l00056"></a>00056         retour = std::string(temp);
+<a name="l00057"></a>00057     }
+<a name="l00058"></a>00058     <span class="keywordflow">catch</span>(std::exception e)
+<a name="l00059"></a>00059     {
+<a name="l00060"></a>00060         std::cout &lt;&lt; e.what()&lt;&lt; std::endl;
+<a name="l00061"></a>00061     }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063     <span class="keywordflow">return</span> retour;
+<a name="l00064"></a>00064 }
+<a name="l00065"></a>00065 <span class="comment">/******************************************************************************/</span>
+<a name="l00067"></a>00067 <span class="comment">/******************************************************************************/</span>
+<a name="l00068"></a>00068 <span class="keywordtype">void</span> Parser::scanVolumeDeCalcul(){
+<a name="l00069"></a>00069     cout &lt;&lt; <span class="stringliteral">&quot;    scanVolumeDeCalcul&quot;</span> &lt;&lt; endl;
+<a name="l00070"></a>00070     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>()-&gt;<a class="code" href="../../d5/d4d/classvolume_calcul.html#a6b3f21f39d02d0cee68f8ef5802644bb">SetLongueur</a>(parserGetDouble());
+<a name="l00071"></a>00071     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>()-&gt;<a class="code" href="../../d5/d4d/classvolume_calcul.html#ac6ae8566dfa665a635b84e79b432c48f">SetLargeur</a>(parserGetDouble());
+<a name="l00072"></a>00072     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>()-&gt;<a class="code" href="../../d5/d4d/classvolume_calcul.html#a865ae33cb21449828371e6452d58b19c">SetHauteur</a>(parserGetDouble());
+<a name="l00073"></a>00073     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>()-&gt;<a class="code" href="../../d5/d4d/classvolume_calcul.html#a098d5a86596ac80642dba9f5c3eacd16">SetNombreY</a>(parserGetInt());
+<a name="l00074"></a>00074     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>()-&gt;<a class="code" href="../../d5/d4d/classvolume_calcul.html#ad6f44d0df7283cbabf46919659992878">SetNombreX</a>(parserGetInt());
+<a name="l00075"></a>00075     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a860188d3872c8bedab5bcd56c7a1a8be">getVolumeCalcul</a>()-&gt;<a class="code" href="../../d5/d4d/classvolume_calcul.html#a7ad8083a65e22f58890a5bee86cbe97f">SetNombreZ</a>(parserGetInt());
+<a name="l00076"></a>00076 }
+<a name="l00077"></a>00077 <span class="keywordtype">void</span> Parser::scanTypeParoi(){
+<a name="l00078"></a>00078     cout &lt;&lt; <span class="stringliteral">&quot;    scanTypeParoi&quot;</span> &lt;&lt; endl;
+<a name="l00079"></a>00079     data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">getParoi</a>()-&gt;<a class="code" href="../../d9/d5e/classparoi.html#a55abcc193810b34c33881a19adb15d70">SetParoiInferieure</a>(parserGetInt());
+<a name="l00080"></a>00080     data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">getParoi</a>()-&gt;<a class="code" href="../../d9/d5e/classparoi.html#a68bb14aec7630fe1a7be4e3e157aef3e">SetParoiSuperieure</a>(parserGetInt());
+<a name="l00081"></a>00081     data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">getParoi</a>()-&gt;<a class="code" href="../../d9/d5e/classparoi.html#a738b09fde1116d4b56bd981ca576a215">SetParoiX</a>(parserGetInt());
+<a name="l00082"></a>00082     data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa114867f767d8aa3b4c1726b3c4eb35b">getParoi</a>()-&gt;<a class="code" href="../../d9/d5e/classparoi.html#aa0fc7c9f10155ce862f6707e1ddfba52">SetParoiY</a>(parserGetInt());
+<a name="l00083"></a>00083 }
+<a name="l00084"></a>00084 <span class="keywordtype">void</span> Parser::scanMetallisation(){
+<a name="l00085"></a>00085     cout &lt;&lt; <span class="stringliteral">&quot;    scanMetallisation&quot;</span> &lt;&lt; endl;
+<a name="l00086"></a>00086     <span class="keywordtype">int</span> nbMettalisations = parserGetInt();
+<a name="l00087"></a>00087     
+<a name="l00088"></a>00088     <span class="keywordtype">int</span> i;
+<a name="l00089"></a>00089     <span class="keywordflow">for</span>(i=0; i&lt;nbMettalisations; i++){
+<a name="l00090"></a>00090         <a class="code" href="../../d1/d66/classmetallisation.html" title="Cette classe représente la variable metallisation d&#39;une simulation.">metallisation</a> *temp = <span class="keyword">new</span> <a class="code" href="../../d1/d66/classmetallisation.html" title="Cette classe représente la variable metallisation d&#39;une simulation.">metallisation</a>();
+<a name="l00091"></a>00091         
+<a name="l00092"></a>00092         parserSautLigne();
+<a name="l00093"></a>00093         temp-&gt;<a class="code" href="../../d1/d66/classmetallisation.html#a48670fbbf60460df7abc88b2e8a34ef8">SetConductivite</a>(parserGetDouble());
+<a name="l00094"></a>00094         parserSautLigne();
+<a name="l00095"></a>00095         <span class="keywordtype">int</span> y = parserGetInt();
+<a name="l00096"></a>00096         <span class="keywordtype">int</span> x = parserGetInt();
+<a name="l00097"></a>00097         <span class="keywordtype">int</span> z = parserGetInt();
+<a name="l00098"></a>00098         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(x,y,z);
+<a name="l00099"></a>00099         parserSautLigne();
+<a name="l00100"></a>00100         y = parserGetInt();
+<a name="l00101"></a>00101         x = parserGetInt();
+<a name="l00102"></a>00102         z = parserGetInt();
+<a name="l00103"></a>00103         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(x,y,z);
+<a name="l00104"></a>00104         
+<a name="l00105"></a>00105         data-&gt;<a class="code" href="../../dc/d07/class_data.html#af369e09227942e048bc40183d05392d7">getBlocMetallisations</a>()-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste.">addElement</a>(temp);
+<a name="l00106"></a>00106     }
+<a name="l00107"></a>00107 }
+<a name="l00108"></a>00108 <span class="keywordtype">void</span> Parser::scanParallelepipedes(){
+<a name="l00109"></a>00109     cout &lt;&lt; <span class="stringliteral">&quot;    scanParallelepipedes&quot;</span> &lt;&lt; endl;
+<a name="l00110"></a>00110     <span class="keywordtype">int</span> nbParallelepipedes = parserGetInt();
+<a name="l00111"></a>00111     
+<a name="l00112"></a>00112     <span class="keywordtype">int</span> i;
+<a name="l00113"></a>00113     <span class="keywordflow">for</span>(i=0; i&lt;nbParallelepipedes; i++){
+<a name="l00114"></a>00114         <a class="code" href="../../df/df1/classparallelepipede.html" title="Cette classe représente la variable parallelepipede d&#39;une simulation.">parallelepipede</a>* temp = <span class="keyword">new</span> <a class="code" href="../../df/df1/classparallelepipede.html" title="Cette classe représente la variable parallelepipede d&#39;une simulation.">parallelepipede</a>;
+<a name="l00115"></a>00115         
+<a name="l00116"></a>00116         parserSautLigne();
+<a name="l00117"></a>00117         temp-&gt;<a class="code" href="../../df/df1/classparallelepipede.html#adcb7a4f4de79b3c9e0a33462322e91d1">SetPermitRelative</a>(parserGetDouble());
+<a name="l00118"></a>00118         temp-&gt;<a class="code" href="../../df/df1/classparallelepipede.html#aa50944b89c44b58fc8d6b9addb71946c">SetPermeRelative</a>(parserGetDouble());
+<a name="l00119"></a>00119         temp-&gt;<a class="code" href="../../df/df1/classparallelepipede.html#a568559f5b10c1c7553db10cf693f40fa">SetConductivite</a>(parserGetDouble());
+<a name="l00120"></a>00120         parserSautLigne();
+<a name="l00121"></a>00121         <span class="keywordtype">int</span> y = parserGetInt();
+<a name="l00122"></a>00122         <span class="keywordtype">int</span> x = parserGetInt();
+<a name="l00123"></a>00123         <span class="keywordtype">int</span> z = parserGetInt();
+<a name="l00124"></a>00124         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(x,y,z);
+<a name="l00125"></a>00125         parserSautLigne();
+<a name="l00126"></a>00126         y = parserGetInt();
+<a name="l00127"></a>00127         x = parserGetInt();
+<a name="l00128"></a>00128         z = parserGetInt();
+<a name="l00129"></a>00129         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(x,y,z);
+<a name="l00130"></a>00130         
+<a name="l00131"></a>00131         data-&gt;<a class="code" href="../../dc/d07/class_data.html#aabdc820f5e1024034bedf46bb9afed6c">getBlocParallelepipede</a>()-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste.">addElement</a>(temp);
+<a name="l00132"></a>00132     }
+<a name="l00133"></a>00133 }
+<a name="l00134"></a>00134 <span class="keywordtype">void</span> Parser::scanElementsLocalises(){
+<a name="l00135"></a>00135     cout &lt;&lt; <span class="stringliteral">&quot;    scanElementsLocalises&quot;</span> &lt;&lt; endl;
+<a name="l00136"></a>00136     <span class="keywordtype">int</span> nbElements = parserGetInt();
+<a name="l00137"></a>00137     
+<a name="l00138"></a>00138     <span class="keywordtype">int</span> i;
+<a name="l00139"></a>00139     <span class="keywordflow">for</span>(i=0; i&lt;nbElements; i++){
+<a name="l00140"></a>00140         <a class="code" href="../../d9/d47/classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a> *temp=<span class="keyword">new</span> <a class="code" href="../../d9/d47/classelement_localise.html" title="Cette classe représente la variable elementLocalise d&#39;une simulation.">elementLocalise</a>;
+<a name="l00141"></a>00141         
+<a name="l00142"></a>00142         parserSautLigne();
+<a name="l00143"></a>00143         temp-&gt;<a class="code" href="../../d9/d47/classelement_localise.html#a174e4016c054e97d89000f930b18f1c8">SetType</a>(parserGetInt());
+<a name="l00144"></a>00144         temp-&gt;<a class="code" href="../../d9/d47/classelement_localise.html#a49c8fb8d18edbd752b97b5b8030a4456">SetValeur</a>(parserGetDouble());
+<a name="l00145"></a>00145         temp-&gt;<a class="code" href="../../d9/d47/classelement_localise.html#ad8384c947a2f9ceaa54d70916f16c6f0">SetDirection</a>(parserGetInt());
+<a name="l00146"></a>00146         parserSautLigne();
+<a name="l00147"></a>00147         <span class="keywordtype">int</span> y = parserGetInt();
+<a name="l00148"></a>00148         <span class="keywordtype">int</span> x = parserGetInt();
+<a name="l00149"></a>00149         <span class="keywordtype">int</span> z = parserGetInt();
+<a name="l00150"></a>00150         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(x,y,z);
+<a name="l00151"></a>00151         parserSautLigne();
+<a name="l00152"></a>00152         y = parserGetInt();
+<a name="l00153"></a>00153         x = parserGetInt();
+<a name="l00154"></a>00154         z = parserGetInt();
+<a name="l00155"></a>00155         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(x,y,z);
+<a name="l00156"></a>00156 
+<a name="l00157"></a>00157         data-&gt;<a class="code" href="../../dc/d07/class_data.html#ad8bbac9c9bc359f9e3bc768f1b44a97e">getBlocElementLocalise</a>()-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste.">addElement</a>(temp);
+<a name="l00158"></a>00158     }
+<a name="l00159"></a>00159 }
+<a name="l00160"></a>00160 <span class="keywordtype">void</span> Parser::parseDSC() {
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162     QString nomFichier;
+<a name="l00163"></a>00163     nomFichier = emplacementFichier + <span class="stringliteral">&quot;/DATA&quot;</span>+QString::number(numstru)+<span class="stringliteral">&quot;.dsc&quot;</span>;
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165     fi.open(nomFichier.toStdString().c_str());
+<a name="l00166"></a>00166     <span class="keywordflow">if</span> (fi.is_open()) {
+<a name="l00167"></a>00167         cout &lt;&lt; <span class="stringliteral">&quot;** CHARGEMENT DE LA STRUCTURE DATA.dsc **&quot;</span> &lt;&lt; endl;
+<a name="l00168"></a>00168         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00169"></a>00169 
+<a name="l00170"></a>00170         <span class="keywordflow">do</span> {
+<a name="l00171"></a>00171             fi.getline(chaine,100,<span class="charliteral">&#39;\n&#39;</span>);
+<a name="l00172"></a>00172             cout &lt;&lt; chaine &lt;&lt; endl &lt;&lt; endl;
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174             <span class="comment">/*</span>
+<a name="l00175"></a>00175 <span class="comment">             * Dimensions du volume de simulation.</span>
+<a name="l00176"></a>00176 <span class="comment">             */</span>
+<a name="l00177"></a>00177             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[VOLUME_DE_CALCUL]&quot;</span>))
+<a name="l00178"></a>00178                 scanVolumeDeCalcul();
+<a name="l00179"></a>00179             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[TYPE_PAROIS_0&gt;Mur_1&gt;PEC_2&gt;FLOQUET_3&gt;PML_4&gt;PMC]&quot;</span>))
+<a name="l00180"></a>00180                 scanTypeParoi();
+<a name="l00181"></a>00181             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[METALLISATIONS]&quot;</span>))
+<a name="l00182"></a>00182                 scanMetallisation();
+<a name="l00183"></a>00183             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[PARALLELEPIPEDES_MATERIAUX]&quot;</span>))
+<a name="l00184"></a>00184                 scanParallelepipedes();
+<a name="l00185"></a>00185             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[ELEMENTS_LOCALISES]&quot;</span>))
+<a name="l00186"></a>00186                 scanElementsLocalises();
+<a name="l00187"></a>00187 
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189         } <span class="keywordflow">while</span> (!fi.eof());
+<a name="l00190"></a>00190         fi.close();
+<a name="l00191"></a>00191         cout &lt;&lt; <span class="stringliteral">&quot;**  FIN CHARGEMENT STRUCTURE DATA.dsc  **&quot;</span> &lt;&lt; endl;
+<a name="l00192"></a>00192         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00193"></a>00193     }
+<a name="l00194"></a>00194 }
+<a name="l00195"></a>00195 <span class="comment">/******************************************************************************/</span>
+<a name="l00197"></a>00197 <span class="comment">/******************************************************************************/</span>
+<a name="l00198"></a>00198 <span class="keywordtype">void</span> Parser::scanPML(){
+<a name="l00199"></a>00199     cout &lt;&lt; <span class="stringliteral">&quot;    scanPML&quot;</span> &lt;&lt; endl;
+<a name="l00200"></a>00200     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a21fba04b0e26f921562678acea12741f">getPML</a>()-&gt;<a class="code" href="../../d0/dc0/classpml.html#a12c6a99c8dfc3fc1d6b3a12656e98fec">SetEpaisseurCouche</a>(parserGetInt());
+<a name="l00201"></a>00201     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a21fba04b0e26f921562678acea12741f">getPML</a>()-&gt;<a class="code" href="../../d0/dc0/classpml.html#a81703cfeb371bc51f58be40261c17ddb">SetOrdreVariation</a>(parserGetInt());
+<a name="l00202"></a>00202     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a21fba04b0e26f921562678acea12741f">getPML</a>()-&gt;<a class="code" href="../../d0/dc0/classpml.html#ad88c4d7209501a50cc9b7953314380e9">SetSigmaMax</a>(parserGetDouble());
+<a name="l00203"></a>00203     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a21fba04b0e26f921562678acea12741f">getPML</a>()-&gt;<a class="code" href="../../d0/dc0/classpml.html#a974d3635d2578b9f71b8c12638c7c82f">SetKMax</a>(parserGetDouble());
+<a name="l00204"></a>00204 }
+<a name="l00205"></a>00205 <span class="keywordtype">void</span> Parser::scanParametreExcitation(){
+<a name="l00206"></a>00206     cout &lt;&lt; <span class="stringliteral">&quot;    scanParametreExcitation&quot;</span> &lt;&lt; endl;
+<a name="l00207"></a>00207     data-&gt;<a class="code" href="../../dc/d07/class_data.html#ac0ba89e3d5222ac22fdb6163a6f42b41">getParamExcitations</a>()-&gt;<a class="code" href="../../d7/d22/class_param_excitations.html#adf51f3199711db957ae0adc53c3815b0">SetFrequenceMax</a>(parserGetDouble());
+<a name="l00208"></a>00208     <span class="keywordtype">int</span> typeExcitation = parserGetInt();
+<a name="l00209"></a>00209     data-&gt;<a class="code" href="../../dc/d07/class_data.html#ac0ba89e3d5222ac22fdb6163a6f42b41">getParamExcitations</a>()-&gt;<a class="code" href="../../d7/d22/class_param_excitations.html#ad479b5b80a13f72fcf7e66e2f06c3f37">SetType</a>(typeExcitation);
+<a name="l00210"></a>00210     <span class="keywordflow">if</span>(typeExcitation == 1)
+<a name="l00211"></a>00211         data-&gt;<a class="code" href="../../dc/d07/class_data.html#ac0ba89e3d5222ac22fdb6163a6f42b41">getParamExcitations</a>()-&gt;<a class="code" href="../../d7/d22/class_param_excitations.html#a4fb7100227ce2f687af548a123ec9715">SetFrequenceSinus</a>(parserGetDouble());
+<a name="l00212"></a>00212 }
+<a name="l00213"></a>00213 <span class="keywordtype">void</span> Parser::scanAnalyseTemporelle(){
+<a name="l00214"></a>00214     cout &lt;&lt; <span class="stringliteral">&quot;    scanAnalyseTemporelle&quot;</span> &lt;&lt; endl;
+<a name="l00215"></a>00215     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a60b95e0ffd5c6bde5297b7aaf81c1487">getAnalyseTempo</a>()-&gt;<a class="code" href="../../d4/dc4/classanalyse_temporelle.html#a410b14edc3a0b6ca3ed6a9a9c7e78b92">SetPeriode</a>(parserGetDouble());
+<a name="l00216"></a>00216     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a60b95e0ffd5c6bde5297b7aaf81c1487">getAnalyseTempo</a>()-&gt;<a class="code" href="../../d4/dc4/classanalyse_temporelle.html#acec9ff5c5c14e65bc796aa24bb589c24">SetTemps</a>(parserGetDouble());
+<a name="l00217"></a>00217 }
+<a name="l00218"></a>00218 <span class="keywordtype">void</span> Parser::scanPortExcitation(){
+<a name="l00219"></a>00219     cout &lt;&lt; <span class="stringliteral">&quot;    scanPortExcitation&quot;</span> &lt;&lt; endl;
+<a name="l00220"></a>00220     <span class="keywordtype">int</span> nbPorts = parserGetInt();
+<a name="l00221"></a>00221     
+<a name="l00222"></a>00222     <span class="keywordtype">int</span> i;
+<a name="l00223"></a>00223     <span class="keywordflow">for</span>(i=0; i&lt;nbPorts; i++){
+<a name="l00224"></a>00224         <a class="code" href="../../de/de8/classport_excitation.html" title="Cette classe représente la variable portExcitation d&#39;une simulation.">portExcitation</a>* temp = <span class="keyword">new</span> <a class="code" href="../../de/de8/classport_excitation.html" title="Cette classe représente la variable portExcitation d&#39;une simulation.">portExcitation</a>;
+<a name="l00225"></a>00225         
+<a name="l00226"></a>00226         parserSautLigne();
+<a name="l00227"></a>00227         temp-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a5da6a73a92c84d266208c694de1be4e1">SetPortActif</a>(parserGetInt());
+<a name="l00228"></a>00228         temp-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a3c0bbf8cdaf0e04b41cf6b5be915832f">SetPortInfinitesimal</a>(parserGetInt());
+<a name="l00229"></a>00229         
+<a name="l00230"></a>00230         <span class="keywordflow">if</span>(temp-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a37605aac55fca15df59dab49d33eab0c">IsPortInfinitesimal</a>())
+<a name="l00231"></a>00231             temp-&gt;<a class="code" href="../../de/de8/classport_excitation.html#ab3fe203afad46ea50933506fd21683b9">SetTypePort</a>(parserGetInt());
+<a name="l00232"></a>00232         
+<a name="l00233"></a>00233         temp-&gt;<a class="code" href="../../de/de8/classport_excitation.html#aea4078733fa57e7c29107400ee94a237">SetDirection</a>(parserGetInt());
+<a name="l00234"></a>00234         parserSautLigne();
+<a name="l00235"></a>00235         <span class="keywordtype">int</span> y = parserGetInt();
+<a name="l00236"></a>00236         <span class="keywordtype">int</span> x = parserGetInt();
+<a name="l00237"></a>00237         <span class="keywordtype">int</span> z = parserGetInt();
+<a name="l00238"></a>00238         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(x,y,z);
+<a name="l00239"></a>00239         parserSautLigne();
+<a name="l00240"></a>00240         y = parserGetInt();
+<a name="l00241"></a>00241         x = parserGetInt();
+<a name="l00242"></a>00242         z = parserGetInt();
+<a name="l00243"></a>00243         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(x,y,z);
+<a name="l00244"></a>00244         temp-&gt;<a class="code" href="../../de/de8/classport_excitation.html#aa28d788bdcd20d3ea128c3a8b45b9038">SetImpedance</a>(parserGetDouble());
+<a name="l00245"></a>00245         temp-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a3acfeb06969c8249d1f12217cb4ebf3c">SetTypeSource</a>(parserGetInt());
+<a name="l00246"></a>00246         temp-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a88c0c744e37cd8cfafde9a997e0ed2de">SetPonderationAmplitude</a>(parserGetDouble());
+<a name="l00247"></a>00247         temp-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a639f8da96d51f865027d544d0011ae92">SetPonderationPhase</a>(parserGetDouble());
+<a name="l00248"></a>00248         data-&gt;<a class="code" href="../../dc/d07/class_data.html#a12c82e6b0c7a114166943d10ce5c534e">getBlocPortExcitation</a>()-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste.">addElement</a>(temp);
+<a name="l00249"></a>00249     }
+<a name="l00250"></a>00250 }
+<a name="l00251"></a>00251 <span class="keywordtype">void</span> Parser::scanCageExcitation(){
+<a name="l00252"></a>00252     cout &lt;&lt; <span class="stringliteral">&quot;    scanCageExcitation&quot;</span> &lt;&lt; endl;
+<a name="l00253"></a>00253     data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a63ae900dff2c329dd0855cb09ab77184">setCreate</a>(<span class="keyword">false</span>);
+<a name="l00254"></a>00254     <span class="keywordtype">int</span> nbCages = parserGetInt();
+<a name="l00255"></a>00255     <span class="keywordflow">if</span>(nbCages &gt; 1){
+<a name="l00256"></a>00256         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00257"></a>00257         cout &lt;&lt; <span class="stringliteral">&quot;* Erreur, plus qu&#39;une cage d&#39;excitation *&quot;</span> &lt;&lt; endl;
+<a name="l00258"></a>00258         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00259"></a>00259         <span class="keywordflow">return</span>;
+<a name="l00260"></a>00260     }
+<a name="l00261"></a>00261     <span class="keywordflow">if</span>(nbCages &lt; 1){
+<a name="l00262"></a>00262         <span class="keywordflow">return</span>; <span class="comment">//On veut exactement une cage d&#39;excitation.</span>
+<a name="l00263"></a>00263     }
+<a name="l00264"></a>00264 
+<a name="l00265"></a>00265     data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a63ae900dff2c329dd0855cb09ab77184">setCreate</a>(<span class="keyword">true</span>);
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267     parserSautLigne();
+<a name="l00268"></a>00268     data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a1f6c40f3bbb2dbce71dc925c04e8f47e">SetInsideOutside</a>(parserGetInt());
+<a name="l00269"></a>00269     data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#ab50be72e1778214884939f2d0f93bef8">SetNbFaces</a>(parserGetInt());
+<a name="l00270"></a>00270     data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#ab742fae2153a478251f0a11ca157d822">SetTypeExcitation</a>(parserGetInt());
+<a name="l00271"></a>00271     
+<a name="l00272"></a>00272     <span class="keywordflow">if</span>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a90df2e6c512776288a4b809688acd55f">GetNbFaces</a>() == 1 &amp;&amp; data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a9380a29fec03f511fb7a6996373da8f7">GetTypeExcitation</a>() &lt;= 3){
+<a name="l00273"></a>00273         data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a5d0e3efe8f2079d9253d2b0c1198cc9e">SetModeExcitation</a>(parserGetInt());
+<a name="l00274"></a>00274         data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a0cfdb6ebc9b4c8d18f3591b8d0d2a45b">SetHauteur</a>(parserGetInt());
+<a name="l00275"></a>00275         data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a149cca3314b3a6d8473c172e1f419ef5">SetSensPropagation</a>(parserGetInt());
+<a name="l00276"></a>00276     } <span class="keywordflow">else</span> {
+<a name="l00277"></a>00277         <span class="keywordflow">if</span>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a9380a29fec03f511fb7a6996373da8f7">GetTypeExcitation</a>() == 4)
+<a name="l00278"></a>00278             data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a6139fea0d3458652710c70fb76a18b0e">SetNomFichier</a>(parserGetString());
+<a name="l00279"></a>00279         parserSautLigne();
+<a name="l00280"></a>00280         <span class="keywordtype">int</span> y = parserGetInt();
+<a name="l00281"></a>00281         <span class="keywordtype">int</span> x = parserGetInt();
+<a name="l00282"></a>00282         <span class="keywordtype">int</span> z = parserGetInt();
+<a name="l00283"></a>00283         data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(x,y,z);
+<a name="l00284"></a>00284         parserSautLigne();
+<a name="l00285"></a>00285         y = parserGetInt();
+<a name="l00286"></a>00286         x = parserGetInt();
+<a name="l00287"></a>00287         z = parserGetInt();
+<a name="l00288"></a>00288         data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(x,y,z);
+<a name="l00289"></a>00289         <span class="keywordflow">if</span>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a9380a29fec03f511fb7a6996373da8f7">GetTypeExcitation</a>() &lt;= 3){
+<a name="l00290"></a>00290             parserSautLigne();
+<a name="l00291"></a>00291             y = parserGetInt();
+<a name="l00292"></a>00292             x = parserGetInt();
+<a name="l00293"></a>00293             z = parserGetInt();
+<a name="l00294"></a>00294             data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#acc63cd21bbde2f7d6c44041c2c0e6abb">SetPointReference</a>(x,y,z);
+<a name="l00295"></a>00295             parserSautLigne();
+<a name="l00296"></a>00296             data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#acca2e157a6b8a8c0b245fc5912c0bd66">SetTheta0</a>(parserGetDouble());
+<a name="l00297"></a>00297             data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#abf44214ab01b24453b7758a1b2aab0ae">SetPhi0</a>(parserGetDouble());
+<a name="l00298"></a>00298             data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#aed76273f7e58cd7bf8c91bbe8665c4fe">SetPsi0</a>(parserGetDouble());
+<a name="l00299"></a>00299         }
+<a name="l00300"></a>00300         <span class="keywordflow">if</span>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a9380a29fec03f511fb7a6996373da8f7">GetTypeExcitation</a>() == 4){
+<a name="l00301"></a>00301             data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#aa6a3f41c5c38bb99f4b303bdd9ecfb20">SetModulationAmplitude</a>(parserGetDouble());
+<a name="l00302"></a>00302             data-&gt;<a class="code" href="../../dc/d07/class_data.html#aa5816e4319d30f4abbb3679318ac6144">getCageExcitation</a>()-&gt;<a class="code" href="../../d4/dac/classcage_excitation.html#a8c097220df3b7cd5fd4bbecdcd264a68">SetModulationPhase</a>(parserGetDouble());
+<a name="l00303"></a>00303         }
+<a name="l00304"></a>00304     }
+<a name="l00305"></a>00305 }
+<a name="l00306"></a>00306 <span class="keywordtype">void</span> Parser::scanSondes(){
+<a name="l00307"></a>00307     cout &lt;&lt; <span class="stringliteral">&quot;    scanSondes&quot;</span> &lt;&lt; endl;
+<a name="l00308"></a>00308     <span class="keywordtype">int</span> nbSondes = parserGetInt();
+<a name="l00309"></a>00309     
+<a name="l00310"></a>00310     <span class="keywordtype">int</span> i;
+<a name="l00311"></a>00311     <span class="keywordflow">for</span>(i=0; i&lt;nbSondes; i++){
+<a name="l00312"></a>00312         <a class="code" href="../../d8/d03/classsonde.html" title="Cette classe représente la variable sonde d&#39;une simulation.">sonde</a> *temp = <span class="keyword">new</span> <a class="code" href="../../d8/d03/classsonde.html" title="Cette classe représente la variable sonde d&#39;une simulation.">sonde</a>();
+<a name="l00313"></a>00313         
+<a name="l00314"></a>00314         parserSautLigne();
+<a name="l00315"></a>00315         temp-&gt;<a class="code" href="../../d8/d03/classsonde.html#a0cff0f443286ceef913ebe674f845b54">SetEx</a>(parserGetInt());
+<a name="l00316"></a>00316         temp-&gt;<a class="code" href="../../d8/d03/classsonde.html#a6bf0029a52ddd854fcb0934d6a14adae">SetEy</a>(parserGetInt());
+<a name="l00317"></a>00317         temp-&gt;<a class="code" href="../../d8/d03/classsonde.html#ad2b452911cb09ebcd8a81ad91cb4390c">SetEz</a>(parserGetInt());
+<a name="l00318"></a>00318         temp-&gt;<a class="code" href="../../d8/d03/classsonde.html#a3a55324b84be943e9be7e1ab087afcd4">SetHx</a>(parserGetInt());
+<a name="l00319"></a>00319         temp-&gt;<a class="code" href="../../d8/d03/classsonde.html#a974e4ff94a7fcb282f013b309cbd7f8e">SetHy</a>(parserGetInt());
+<a name="l00320"></a>00320         temp-&gt;<a class="code" href="../../d8/d03/classsonde.html#a4a9d6603999288ca11032b8e1fd7b607">SetHz</a>(parserGetInt());
+<a name="l00321"></a>00321         parserSautLigne();
+<a name="l00322"></a>00322         <span class="keywordtype">int</span> y = parserGetInt();
+<a name="l00323"></a>00323         <span class="keywordtype">int</span> x = parserGetInt();
+<a name="l00324"></a>00324         <span class="keywordtype">int</span> z = parserGetInt();
+<a name="l00325"></a>00325         temp-&gt;<a class="code" href="../../d8/d03/classsonde.html#af521285197e3b26ed507028cc5223c1f">SetPointApplication</a>(x,y,z);
+<a name="l00326"></a>00326         temp-&gt;<a class="code" href="../../d8/d03/classsonde.html#af040efff1745999e30417fe81bcc338f">SetValeurAuCentre</a>(parserGetInt());
+<a name="l00327"></a>00327         
+<a name="l00328"></a>00328         data-&gt;<a class="code" href="../../dc/d07/class_data.html#a3f936063413710ec567b8a64bbcd9108">getBlocSonde</a>()-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste.">addElement</a>(temp);
+<a name="l00329"></a>00329     }
+<a name="l00330"></a>00330 }
+<a name="l00331"></a>00331 <span class="keywordtype">void</span> Parser::scanCartographieTemporelle(){
+<a name="l00332"></a>00332     cout &lt;&lt; <span class="stringliteral">&quot;    scanCartographieTemporelle&quot;</span> &lt;&lt; endl;
+<a name="l00333"></a>00333     <span class="keywordtype">int</span> nbCartos = parserGetInt();
+<a name="l00334"></a>00334     
+<a name="l00335"></a>00335     <span class="keywordtype">int</span> i;
+<a name="l00336"></a>00336     <span class="keywordflow">for</span>(i=0; i&lt;nbCartos; i++){
+<a name="l00337"></a>00337         <a class="code" href="../../d1/da1/classcartographie_temporelle.html" title="Cette classe représente la variable cartographieTemporelle d&#39;une simulation.">cartographieTemporelle</a> *temp = <span class="keyword">new</span> <a class="code" href="../../d1/da1/classcartographie_temporelle.html" title="Cette classe représente la variable cartographieTemporelle d&#39;une simulation.">cartographieTemporelle</a>();
+<a name="l00338"></a>00338         
+<a name="l00339"></a>00339         parserSautLigne();
+<a name="l00340"></a>00340         temp-&gt;<a class="code" href="../../d1/da1/classcartographie_temporelle.html#aeb18e011ad8f9d7ddad85ec8c180cf65">SetChampE</a>(parserGetInt());
+<a name="l00341"></a>00341         temp-&gt;<a class="code" href="../../d1/da1/classcartographie_temporelle.html#a72e0a794c7a298a171f0437428110df8">SetChampH</a>(parserGetInt());
+<a name="l00342"></a>00342         temp-&gt;<a class="code" href="../../d1/da1/classcartographie_temporelle.html#ac6f81f96d0c07908d7545fa89aef4fd2">SetIterationDebut</a>(parserGetInt());
+<a name="l00343"></a>00343         temp-&gt;<a class="code" href="../../d1/da1/classcartographie_temporelle.html#ad670f3e23fca7d5b4eed24edf4c6f2be">SetIterationFin</a>(parserGetInt());
+<a name="l00344"></a>00344         temp-&gt;<a class="code" href="../../d1/da1/classcartographie_temporelle.html#a14507b09e7d59260186015faaeb29780">SetIntervalle</a>(parserGetInt());
+<a name="l00345"></a>00345         parserSautLigne();
+<a name="l00346"></a>00346         <span class="keywordtype">int</span> y = parserGetInt();
+<a name="l00347"></a>00347         <span class="keywordtype">int</span> x = parserGetInt();
+<a name="l00348"></a>00348         <span class="keywordtype">int</span> z = parserGetInt();
+<a name="l00349"></a>00349         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(x,y,z);
+<a name="l00350"></a>00350         parserSautLigne();
+<a name="l00351"></a>00351         y = parserGetInt();
+<a name="l00352"></a>00352         x = parserGetInt();
+<a name="l00353"></a>00353         z = parserGetInt();
+<a name="l00354"></a>00354         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(x,y,z);
+<a name="l00355"></a>00355         data-&gt;<a class="code" href="../../dc/d07/class_data.html#a04e1d1b1217693b42133d584dfbf5b71">getBlocCartoTempo</a>()-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste.">addElement</a>(temp);
+<a name="l00356"></a>00356     }
+<a name="l00357"></a>00357 }
+<a name="l00358"></a>00358 <span class="keywordtype">void</span> Parser::scanSurfacePrelevement(){
+<a name="l00359"></a>00359     cout &lt;&lt; <span class="stringliteral">&quot;    scanSurfacePrelevement&quot;</span> &lt;&lt; endl;
+<a name="l00360"></a>00360     <span class="keywordtype">int</span> nbSurfaces = parserGetInt();
+<a name="l00361"></a>00361 
+<a name="l00362"></a>00362     data-&gt;<a class="code" href="../../dc/d07/class_data.html#adef5a353076143ac15f0a6e45346d756">getBlocSurfacePrelev</a>()-&gt;<a class="code" href="../../d5/d15/classbloc_surface_prelevement.html#ada97c65daa25adfbb0be2f2cc30de243">SetNbSurfacesDG</a>(parserGetInt()); <span class="comment">//Rajouté dernièrement. À vérifier !!</span>
+<a name="l00363"></a>00363     
+<a name="l00364"></a>00364     <span class="keywordtype">int</span> i;
+<a name="l00365"></a>00365     <span class="keywordflow">for</span>(i=0; i&lt;nbSurfaces; i++){
+<a name="l00366"></a>00366         <a class="code" href="../../d6/db5/classsurface_prelevement.html" title="Cette classe représente la variable surfacePrelevement d&#39;une simulation.">surfacePrelevement</a> *temp = <span class="keyword">new</span> <a class="code" href="../../d6/db5/classsurface_prelevement.html" title="Cette classe représente la variable surfacePrelevement d&#39;une simulation.">surfacePrelevement</a>;
+<a name="l00367"></a>00367         
+<a name="l00368"></a>00368         parserSautLigne();
+<a name="l00369"></a>00369         temp-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#a8d0a0c12d2ceb62f347f4a0d01322cf0">SetTypeSurface</a>(parserGetInt());
+<a name="l00370"></a>00370         temp-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#a2ce1a6d93e78b2d7252837db51b1b972">SetNomFichier</a>(parserGetString());
+<a name="l00371"></a>00371         <span class="keywordflow">if</span>(temp-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#a21255a16dcb21a9b1b977f3a5eda7e68">GetTypeSurface</a>() == 2)
+<a name="l00372"></a>00372             temp-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#a1effb0f0a97f91cb2f07a1278bee3ba9">SetInsideOutside</a>(parserGetInt());
+<a name="l00373"></a>00373         temp-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#a9e58af0961fb198ae09841d1ee97fae2">SetNbFaces</a>(parserGetInt()); <span class="comment">//Rajouté dernièrement. À vérifier !!</span>
+<a name="l00374"></a>00374         parserSautLigne();
+<a name="l00375"></a>00375         <span class="keywordtype">int</span> y = parserGetInt();
+<a name="l00376"></a>00376         <span class="keywordtype">int</span> x = parserGetInt();
+<a name="l00377"></a>00377         <span class="keywordtype">int</span> z = parserGetInt();
+<a name="l00378"></a>00378         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(x,y,z);
+<a name="l00379"></a>00379         parserSautLigne();
+<a name="l00380"></a>00380         y = parserGetInt();
+<a name="l00381"></a>00381         x = parserGetInt();
+<a name="l00382"></a>00382         z = parserGetInt();
+<a name="l00383"></a>00383         temp-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(x,y,z);
+<a name="l00384"></a>00384         <span class="keywordflow">if</span>(temp-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#a21255a16dcb21a9b1b977f3a5eda7e68">GetTypeSurface</a>() == 2){
+<a name="l00385"></a>00385             parserSautLigne();
+<a name="l00386"></a>00386             temp-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#aa34efed94b458bf57984a00003159412">SetCompressionLongueur</a>(parserGetInt());
+<a name="l00387"></a>00387             temp-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#a6a3a8872cf4ad755ddd985bbe58a4638">SetCompressionLargeur</a>(parserGetInt());
+<a name="l00388"></a>00388             temp-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#ab4511e3ef0f46a32115d9f0ae78db280">SetCompressionHauteur</a>(parserGetInt());
+<a name="l00389"></a>00389         }
+<a name="l00390"></a>00390         data-&gt;<a class="code" href="../../dc/d07/class_data.html#adef5a353076143ac15f0a6e45346d756">getBlocSurfacePrelev</a>()-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste.">addElement</a>(temp);
+<a name="l00391"></a>00391     }
+<a name="l00392"></a>00392 }
+<a name="l00393"></a>00393 <span class="keywordtype">void</span> Parser::parseANA() {
+<a name="l00394"></a>00394 
+<a name="l00395"></a>00395     QString nomFichier;
+<a name="l00396"></a>00396     nomFichier = emplacementFichier + <span class="stringliteral">&quot;/DATA&quot;</span>+QString::number(numstru)+<span class="stringliteral">&quot;.ana&quot;</span>;
+<a name="l00397"></a>00397 
+<a name="l00398"></a>00398     fi.open(nomFichier.toStdString().c_str());
+<a name="l00399"></a>00399     <span class="keywordflow">if</span> (fi.is_open()) {
+<a name="l00400"></a>00400         cout &lt;&lt; <span class="stringliteral">&quot;** CHARGEMENT DE LA STRUCTURE DATA.ana **&quot;</span> &lt;&lt; endl;
+<a name="l00401"></a>00401         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00402"></a>00402 
+<a name="l00403"></a>00403         <span class="keywordflow">do</span> {
+<a name="l00404"></a>00404             fi.getline(chaine,100,<span class="charliteral">&#39;\n&#39;</span>);
+<a name="l00405"></a>00405             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[PML]&quot;</span>))
+<a name="l00406"></a>00406                 scanPML();
+<a name="l00407"></a>00407             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[PARAMETRES_EXCITATION]&quot;</span>))
+<a name="l00408"></a>00408                 scanParametreExcitation();
+<a name="l00409"></a>00409             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[ANALYSE_TEMPORELLE]&quot;</span>))
+<a name="l00410"></a>00410                 scanAnalyseTemporelle();
+<a name="l00411"></a>00411             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[PORTS_EXCITATION]&quot;</span>))
+<a name="l00412"></a>00412                 scanPortExcitation();
+<a name="l00413"></a>00413             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[CAGES_EXCITATION]&quot;</span>))
+<a name="l00414"></a>00414                 scanCageExcitation();
+<a name="l00415"></a>00415             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[SONDES]&quot;</span>))
+<a name="l00416"></a>00416                 scanSondes();
+<a name="l00417"></a>00417             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[CARTOGRAPHIES_TEMPORELLES]&quot;</span>))
+<a name="l00418"></a>00418                 scanCartographieTemporelle();
+<a name="l00419"></a>00419             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[SURFACES_DE_PRELEVEMENT]&quot;</span>))
+<a name="l00420"></a>00420                 scanSurfacePrelevement();
+<a name="l00421"></a>00421 
+<a name="l00422"></a>00422         } <span class="keywordflow">while</span> (!fi.eof());
+<a name="l00423"></a>00423         fi.close();
+<a name="l00424"></a>00424         cout &lt;&lt; <span class="stringliteral">&quot;**  FIN CHARGEMENT STRUCTURE DATA.ana  **&quot;</span> &lt;&lt; endl;
+<a name="l00425"></a>00425         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00426"></a>00426     }
+<a name="l00427"></a>00427 }
+<a name="l00428"></a>00428 <span class="comment">/******************************************************************************/</span>
+<a name="l00430"></a>00430 <span class="comment">/******************************************************************************/</span>
+<a name="l00431"></a>00431 <span class="keywordtype">void</span> Parser::scanChampLointain(){
+<a name="l00432"></a>00432     cout &lt;&lt; <span class="stringliteral">&quot;    scanCahmpLointain&quot;</span> &lt;&lt; endl;
+<a name="l00433"></a>00433     parserSautLigne();
+<a name="l00434"></a>00434     parserSautLigne();
+<a name="l00435"></a>00435     parserSautLigne();
+<a name="l00436"></a>00436     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>()-&gt;<a class="code" href="../../df/dc7/classchamp_lointain.html#a59dbde5eda2435a35da8408ab5adda1f">SetNomFichier</a>(parserGetString());
+<a name="l00437"></a>00437     parserSautLigne();
+<a name="l00438"></a>00438     <span class="keywordtype">int</span> y = parserGetInt();
+<a name="l00439"></a>00439     <span class="keywordtype">int</span> x = parserGetInt();
+<a name="l00440"></a>00440     <span class="keywordtype">int</span> z = parserGetInt();
+<a name="l00441"></a>00441     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>()-&gt;<a class="code" href="../../df/dc7/classchamp_lointain.html#a4a9b1c97f235546721b166f36b8cc9ba">SetOrigineRepere</a>(x,y,z);
+<a name="l00442"></a>00442     parserSautLigne();
+<a name="l00443"></a>00443     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>()-&gt;<a class="code" href="../../df/dc7/classchamp_lointain.html#abe8d71b89f5f898e972040a950d3fba0">SetFrequenceMin</a>(parserGetDouble());
+<a name="l00444"></a>00444     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>()-&gt;<a class="code" href="../../df/dc7/classchamp_lointain.html#adb34c7e57a31c5d6c7039be26ac830f1">SetFrequenceMax</a>(parserGetDouble());
+<a name="l00445"></a>00445     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>()-&gt;<a class="code" href="../../df/dc7/classchamp_lointain.html#a0f82e06301674f399e38cf6ab847baa9">SetPasFrequence</a>(parserGetDouble());
+<a name="l00446"></a>00446     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>()-&gt;<a class="code" href="../../df/dc7/classchamp_lointain.html#ac5f9f4716571fa350e8d70a9708fa96a">SetCalculImage</a>(parserGetInt());
+<a name="l00447"></a>00447     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>()-&gt;<a class="code" href="../../df/dc7/classchamp_lointain.html#a855ead64fb8464a5f7354116d63dc58c">SetHauteurPlanMasse</a>(parserGetInt());
+<a name="l00448"></a>00448     parserSautLigne();
+<a name="l00449"></a>00449     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>()-&gt;<a class="code" href="../../df/dc7/classchamp_lointain.html#ae99f3de2dbab099101ab5f5ded4e57a0">SetPasDiscrTeta</a>(parserGetInt());
+<a name="l00450"></a>00450     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7e9d45d9ebf3a4b55bfa4eedbed33475">getChampLointain</a>()-&gt;<a class="code" href="../../df/dc7/classchamp_lointain.html#a11a07edc68a66d9a54f7a1fa2a7911a5">SetPasDiscrPhi</a>(parserGetInt());
+<a name="l00451"></a>00451 }
+<a name="l00452"></a>00452 <span class="keywordtype">void</span> Parser::parsePTR(){
+<a name="l00453"></a>00453     QString nomFichier;
+<a name="l00454"></a>00454     nomFichier = emplacementFichier + <span class="stringliteral">&quot;/DATA&quot;</span>+QString::number(numstru)+<span class="stringliteral">&quot;.ptr&quot;</span>;
+<a name="l00455"></a>00455 
+<a name="l00456"></a>00456     fi.open(nomFichier.toStdString().c_str());
+<a name="l00457"></a>00457     <span class="keywordflow">if</span> (fi.is_open()) {
+<a name="l00458"></a>00458         cout &lt;&lt; <span class="stringliteral">&quot;** CHARGEMENT DE LA STRUCTURE DATA.ptr **&quot;</span> &lt;&lt; endl;
+<a name="l00459"></a>00459         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00460"></a>00460 
+<a name="l00461"></a>00461         <span class="keywordflow">do</span> {
+<a name="l00462"></a>00462             fi.getline(chaine,100,<span class="charliteral">&#39;\n&#39;</span>);
+<a name="l00463"></a>00463             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[CALCUL_CHAMP_LOINTAIN]&quot;</span>))
+<a name="l00464"></a>00464                 scanChampLointain();
+<a name="l00465"></a>00465         } <span class="keywordflow">while</span> (!fi.eof());
+<a name="l00466"></a>00466 
+<a name="l00467"></a>00467         fi.close();
+<a name="l00468"></a>00468         cout &lt;&lt; <span class="stringliteral">&quot;**  FIN CHARGEMENT STRUCTURE DATA.ptr  **&quot;</span> &lt;&lt; endl;
+<a name="l00469"></a>00469         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00470"></a>00470     }
+<a name="l00471"></a>00471 }
+<a name="l00472"></a>00472 <span class="comment">/******************************************************************************/</span>
+<a name="l00474"></a>00474 <span class="comment">/******************************************************************************/</span>
+<a name="l00475"></a>00475 <span class="keywordtype">void</span> Parser::scanExcitation(){
+<a name="l00476"></a>00476     cout &lt;&lt; <span class="stringliteral">&quot;    scanExcitation&quot;</span> &lt;&lt; endl;
+<a name="l00477"></a>00477     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a7f02ae1d4a9111c097553c882a73c93f">getExcitation</a>()-&gt;<a class="code" href="../../d5/d83/class_excitation.html#aa5244db9ac43f971059fbb206585173f">SetAmplitudeV0</a>(parserGetDouble());
+<a name="l00478"></a>00478 }
+<a name="l00479"></a>00479 <span class="keywordtype">void</span> Parser::scanFormatStockage(){
+<a name="l00480"></a>00480     cout &lt;&lt; <span class="stringliteral">&quot;    scanFormatStockage&quot;</span> &lt;&lt; endl;
+<a name="l00481"></a>00481     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a2da00311dda30f72122368e2e5b813d2">getFormatStockage</a>()-&gt;<a class="code" href="../../d6/d8d/classformat_stockage.html#a70e96e10144adc9041a9269b46f5afc5">SetFormat</a>(parserGetInt());
+<a name="l00482"></a>00482     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a2da00311dda30f72122368e2e5b813d2">getFormatStockage</a>()-&gt;<a class="code" href="../../d6/d8d/classformat_stockage.html#a38318e76169d387f2b9a0bb68e3f7fb1">SetFormatFichierPrelevement</a>(parserGetInt());
+<a name="l00483"></a>00483 }
+<a name="l00484"></a>00484 <span class="keywordtype">void</span> Parser::scanEchantillonnage(){
+<a name="l00485"></a>00485     cout &lt;&lt; <span class="stringliteral">&quot;    scanEchantillonnage&quot;</span> &lt;&lt; endl;
+<a name="l00486"></a>00486     data-&gt;<a class="code" href="../../dc/d07/class_data.html#ad9c6b61575daf7abc40b1d04aa43cdfc">getBlocEchantillonnage</a>()-&gt;<a class="code" href="../../d2/daa/classbloc_echantillonnage.html#ad0613a500a25208aee2c4c88fb022092">SetFacteurEchatillonnage</a>(parserGetInt());
+<a name="l00487"></a>00487 }
+<a name="l00488"></a>00488 <span class="keywordtype">void</span> Parser::scanCompressionHuygens(){
+<a name="l00489"></a>00489     cout &lt;&lt; <span class="stringliteral">&quot;    scanCompressionHuygens&quot;</span> &lt;&lt; endl;
+<a name="l00490"></a>00490     parserSautLigne();
+<a name="l00491"></a>00491     data-&gt;<a class="code" href="../../dc/d07/class_data.html#ae00c2260f46fb8cadc1e70d0a1efd598">getCompressionHuygens</a>()-&gt;<a class="code" href="../../dc/d0f/classcompression_huygens.html#a88f519c7aca617a478953926409bb818">SetCompressionLongueur</a>(parserGetInt());
+<a name="l00492"></a>00492     data-&gt;<a class="code" href="../../dc/d07/class_data.html#ae00c2260f46fb8cadc1e70d0a1efd598">getCompressionHuygens</a>()-&gt;<a class="code" href="../../dc/d0f/classcompression_huygens.html#aec7e7d545268bdea9035c588b1b5cc16">SetCompressionLargeur</a>(parserGetInt());
+<a name="l00493"></a>00493     data-&gt;<a class="code" href="../../dc/d07/class_data.html#ae00c2260f46fb8cadc1e70d0a1efd598">getCompressionHuygens</a>()-&gt;<a class="code" href="../../dc/d0f/classcompression_huygens.html#a416a5e60c3eddcb0978555b33225c7ce">SetCompressionHauteur</a>(parserGetInt());
+<a name="l00494"></a>00494     data-&gt;<a class="code" href="../../dc/d07/class_data.html#ae00c2260f46fb8cadc1e70d0a1efd598">getCompressionHuygens</a>()-&gt;<a class="code" href="../../dc/d0f/classcompression_huygens.html#a4606ee4c1cab6f804d9d729a2eba03b6">SetFacteurMultiplicatif</a>(parserGetInt());
+<a name="l00495"></a>00495 }
+<a name="l00496"></a>00496 <span class="keywordtype">void</span> Parser::scanCalculDirectivite(){
+<a name="l00497"></a>00497     cout &lt;&lt; <span class="stringliteral">&quot;    scanCalculDirectivite&quot;</span> &lt;&lt; endl;
+<a name="l00498"></a>00498     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a845852df9db88d4acbabeb77e1d41970">getCalculDirective</a>()-&gt;<a class="code" href="../../d6/dae/classcalcul_directivite.html#a312089371329879c9c2e819e8d459702">SetCalcul</a>(parserGetInt());
+<a name="l00499"></a>00499     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a845852df9db88d4acbabeb77e1d41970">getCalculDirective</a>()-&gt;<a class="code" href="../../d6/dae/classcalcul_directivite.html#a08a445b33c44f2b6dd7d3be31ce53da6">SetPasTheta</a>(parserGetInt());
+<a name="l00500"></a>00500     data-&gt;<a class="code" href="../../dc/d07/class_data.html#a845852df9db88d4acbabeb77e1d41970">getCalculDirective</a>()-&gt;<a class="code" href="../../d6/dae/classcalcul_directivite.html#a0c8a6e703a1f73f68d0d68c7e2dcab7a">SetPasPhi</a>(parserGetInt());
+<a name="l00501"></a>00501 }
+<a name="l00502"></a>00502 <span class="keywordtype">void</span> Parser::parseAVC(){
+<a name="l00503"></a>00503     QString nomFichier;
+<a name="l00504"></a>00504     nomFichier = emplacementFichier + <span class="stringliteral">&quot;/DATA&quot;</span>+QString::number(numstru)+<span class="stringliteral">&quot;.avc&quot;</span>;
+<a name="l00505"></a>00505 
+<a name="l00506"></a>00506     fi.open(nomFichier.toStdString().c_str());
+<a name="l00507"></a>00507     <span class="keywordflow">if</span> (fi.is_open()) {
+<a name="l00508"></a>00508         cout &lt;&lt; <span class="stringliteral">&quot;** CHARGEMENT DE LA STRUCTURE DATA.avc **&quot;</span> &lt;&lt; endl;
+<a name="l00509"></a>00509         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00510"></a>00510 
+<a name="l00511"></a>00511         <span class="keywordflow">do</span> {
+<a name="l00512"></a>00512             fi.getline(chaine,100,<span class="charliteral">&#39;\n&#39;</span>);
+<a name="l00513"></a>00513 
+<a name="l00514"></a>00514             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[EXCITATION]&quot;</span>))
+<a name="l00515"></a>00515                 scanExcitation();
+<a name="l00516"></a>00516             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[FORMAT_STOCKAGE]&quot;</span>))
+<a name="l00517"></a>00517                 scanFormatStockage();
+<a name="l00518"></a>00518             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[ECHANTILLONNAGE]&quot;</span>))
+<a name="l00519"></a>00519                 scanEchantillonnage();
+<a name="l00520"></a>00520             <span class="keywordflow">if</span> (!strcmp(chaine, <span class="stringliteral">&quot;[COMPRESSION_HUYGENS]&quot;</span>))
+<a name="l00521"></a>00521                 scanCompressionHuygens();
+<a name="l00522"></a>00522             <span class="keywordflow">if</span> (!strcmp(chaine,<span class="stringliteral">&quot;[CALCUL_DIRECTIVITE]&quot;</span>))
+<a name="l00523"></a>00523                 scanCalculDirectivite();
+<a name="l00524"></a>00524         } <span class="keywordflow">while</span> (!fi.eof());
+<a name="l00525"></a>00525 
+<a name="l00526"></a>00526         fi.close();
+<a name="l00527"></a>00527         cout &lt;&lt; <span class="stringliteral">&quot;**  FIN CHARGEMENT STRUCTURE DATA.avc  **&quot;</span> &lt;&lt; endl;
+<a name="l00528"></a>00528         cout &lt;&lt; <span class="stringliteral">&quot;*****************************************&quot;</span> &lt;&lt; endl;
+<a name="l00529"></a>00529     }
+<a name="l00530"></a>00530 }
+<a name="l00531"></a>00531 <span class="comment">/******************************************************************************/</span>
+<a name="l00533"></a>00533 <span class="comment">/******************************************************************************/</span>
+<a name="l00534"></a>00534 
+<a name="l00535"></a><a class="code" href="../../dc/db7/class_parser.html#a4b0ae86228a508a836e614a77c8b34da">00535</a> <span class="keywordtype">void</span> <a class="code" href="../../dc/db7/class_parser.html#a4b0ae86228a508a836e614a77c8b34da" title="Fonction principale. Elle démarre le parsing.">Parser::parse</a>(<a class="code" href="../../dc/d07/class_data.html" title="Contient toutes les données utiles pour la simulation.">Data</a> * data){
+<a name="l00536"></a>00536     QSettings settings(<span class="stringliteral">&quot;INSAProj&quot;</span>, <span class="stringliteral">&quot;EditSimuIETR&quot;</span>);
+<a name="l00537"></a>00537     emplacementFichier=settings.value(<span class="stringliteral">&quot;PathSimu&quot;</span>,QCoreApplication::applicationDirPath()).toString();
+<a name="l00538"></a>00538     this-&gt;data=data;
+<a name="l00539"></a>00539     parseDSC();
+<a name="l00540"></a>00540     parseANA();
+<a name="l00541"></a>00541     <span class="keywordflow">if</span>(data-&gt;<a class="code" href="../../dc/d07/class_data.html#adef5a353076143ac15f0a6e45346d756">getBlocSurfacePrelev</a>()-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste.">getNbElement</a>() == 1 &amp;&amp; data-&gt;<a class="code" href="../../dc/d07/class_data.html#adef5a353076143ac15f0a6e45346d756">getBlocSurfacePrelev</a>()-&gt;<a class="code" href="../../d5/d15/classbloc_surface_prelevement.html#af4e671e4078bebde10ab1d05bc621c12">GetSurface</a>(0)-&gt;<a class="code" href="../../d6/db5/classsurface_prelevement.html#a21255a16dcb21a9b1b977f3a5eda7e68">GetTypeSurface</a>() == 1)
+<a name="l00542"></a>00542         parsePTR();
+<a name="l00543"></a>00543     parseAVC();
+<a name="l00544"></a>00544 
+<a name="l00545"></a>00545 }
+<a name="l00546"></a>00546 
+<a name="l00547"></a><a class="code" href="../../dc/db7/class_parser.html#ae4c116308b635cf73641b67b1010d051">00547</a> <span class="keywordtype">int</span> <a class="code" href="../../dc/db7/class_parser.html#ae4c116308b635cf73641b67b1010d051">Parser::getNumStru</a>()
+<a name="l00548"></a>00548 {
+<a name="l00549"></a>00549     <span class="keywordflow">return</span> this-&gt;numstru;
+<a name="l00550"></a>00550 }
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Mai 29 2013 18:48:48 pour Editeur de configuration pour simulation électromagnétique par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

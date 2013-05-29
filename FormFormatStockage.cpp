@@ -33,7 +33,7 @@ FormFormatStockage::FormFormatStockage(formatStockage *format, QWidget *parent) 
 
 void FormFormatStockage::init()
 {
-    formatWidget->setCurrentIndex(format->GetFormat());
+    formatWidget->setCurrentIndex(format->GetFormat()-1);
     connect(formatWidget,SIGNAL(currentIndexChanged(int)),format,SLOT(SetFormat(int)));
     formatFichierPrelevementWidget->setCurrentIndex(format->GetFormatFichierPrelevement());
     connect(formatFichierPrelevementWidget,SIGNAL(currentIndexChanged(int)),format,SLOT(SetFormatFichierPrelevement(int)));

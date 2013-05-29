@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_calcul_champs_lointain_widget.html" title="Cette classe représente le formulaire pour modifier un ChampsLointain." alt="" coords="165,5,360,35"/>
-<area shape="rect" id="node5" href="$class_description_geo_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ..." alt="" coords="187,59,339,88"/>
-<area shape="rect" id="node7" href="$class_objet_f_d_t_d_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ..." alt="" coords="197,112,328,141"/>
-<area shape="rect" id="node9" href="$class_param_avance_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ..." alt="" coords="191,165,335,195"/>
-<area shape="rect" id="node11" href="$class_param_simu_widget.html" title="Cette classe représente un widget qui se trouve dans la toolbox. Il agit en faite comme un conteneur ..." alt="" coords="197,219,328,248"/>
-</map>

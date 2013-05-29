@@ -26,7 +26,6 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, QWidget *par
     layout->addLayout(layoutValeur);
 
 
-
     QHBoxLayout * layoutDirection = new QHBoxLayout;
     layoutDirection->addWidget(new QLabel("Direction:"));
     directionWidget = new QComboBox();
@@ -69,7 +68,7 @@ void FormElementLocalise::reset()
 void FormElementLocalise::init()
 {
     FormElementBase::init();
-    typeWidget->setCurrentIndex(localise->GetType());
-    directionWidget->setCurrentIndex(localise->GetDirection());
+    typeWidget->setCurrentIndex(localise->GetType()-1);
+    directionWidget->setCurrentIndex(localise->GetDirection()-1);
     valeurWidget->setValue(localise->GetValeur());
 }

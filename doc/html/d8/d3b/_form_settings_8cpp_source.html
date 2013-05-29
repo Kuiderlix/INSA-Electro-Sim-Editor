@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Editeur de configuration pour simulation électromagnétique:  Fichier source de /home/kuiderlix/Prog/cpp/pskl-etprat/FormSettings.cpp</title>
+
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editeur de configuration pour simulation électromagnétique
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/FormSettings.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/d3b/_form_settings_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="../../dd/df1/_form_settings_8h.html">FormSettings.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="../../db/d11/class_form_settings.html#a14a5bad209c1a85b3d3fab6615bb0585">00003</a> <a class="code" href="../../db/d11/class_form_settings.html#a14a5bad209c1a85b3d3fab6615bb0585">FormSettings::FormSettings</a>(QWidget *parent) :
+<a name="l00004"></a>00004     QDialog(parent)
+<a name="l00005"></a>00005 {
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007     settings = <span class="keyword">new</span> QSettings(<span class="stringliteral">&quot;INSAProj&quot;</span>, <span class="stringliteral">&quot;EditSimuIETR&quot;</span>);
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009     QVBoxLayout * layout = <span class="keyword">new</span> QVBoxLayout();
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011     QGroupBox * group = <span class="keyword">new</span> QGroupBox(<span class="stringliteral">&quot;Paramètres&quot;</span>);
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013     QVBoxLayout *layoutGroup = <span class="keyword">new</span> QVBoxLayout();
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015     QFormLayout * layoutForm = <span class="keyword">new</span> QFormLayout();
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017     QHBoxLayout * layoutEmpl = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00018"></a>00018     champsPathSimu = <span class="keyword">new</span> QLineEdit(settings-&gt;value(<span class="stringliteral">&quot;PathSimu&quot;</span>,QCoreApplication::applicationDirPath()).toString());
+<a name="l00019"></a>00019     layoutEmpl-&gt;addWidget(champsPathSimu);
+<a name="l00020"></a>00020     QPushButton * changerBouton = <span class="keyword">new</span> QPushButton(<span class="stringliteral">&quot;Chercher ...&quot;</span>);
+<a name="l00021"></a>00021     connect(changerBouton,SIGNAL(clicked()),<span class="keyword">this</span>,SLOT(<a class="code" href="../../db/d11/class_form_settings.html#a0dd01a75a912588a870804b7ebe7ee3a">ouvreDialogDossier</a>()));
+<a name="l00022"></a>00022     layoutEmpl-&gt;addWidget(changerBouton);
+<a name="l00023"></a>00023     layoutForm-&gt;addRow(<span class="stringliteral">&quot;Emplacement des simulations: &quot;</span>, layoutEmpl);
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025     layoutGroup-&gt;addLayout(layoutForm);
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027     QHBoxLayout * layoutBouton = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00028"></a>00028     appliquerBouton = <span class="keyword">new</span> QPushButton(<span class="stringliteral">&quot;Appliquer&quot;</span>);
+<a name="l00029"></a>00029     appliquerBouton-&gt;setDefault(<span class="keyword">true</span>);
+<a name="l00030"></a>00030     connect(appliquerBouton,SIGNAL(clicked()),<span class="keyword">this</span>,SLOT(<a class="code" href="../../db/d11/class_form_settings.html#a9daca9db02ec8057bd55e5180e34817e">appliquer</a>()));
+<a name="l00031"></a>00031     layoutBouton-&gt;addWidget(appliquerBouton);
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033     annulerBouton = <span class="keyword">new</span> QPushButton(<span class="stringliteral">&quot;Annuler&quot;</span>);
+<a name="l00034"></a>00034     connect(annulerBouton,SIGNAL(clicked()),<span class="keyword">this</span>,SLOT(reject()));
+<a name="l00035"></a>00035     layoutBouton-&gt;addWidget(annulerBouton);
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038     OKBouton = <span class="keyword">new</span> QPushButton(<span class="stringliteral">&quot;OK&quot;</span>);
+<a name="l00039"></a>00039     connect(OKBouton,SIGNAL(clicked()),<span class="keyword">this</span>,SLOT(<a class="code" href="../../db/d11/class_form_settings.html#a9daca9db02ec8057bd55e5180e34817e">appliquer</a>()));
+<a name="l00040"></a>00040     connect(OKBouton,SIGNAL(clicked()),<span class="keyword">this</span>,SLOT(reject()));
+<a name="l00041"></a>00041     layoutBouton-&gt;addWidget(OKBouton);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043     layoutGroup-&gt;addLayout(layoutBouton);
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045     group-&gt;setLayout(layoutGroup);
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     layout-&gt;addWidget(group);
+<a name="l00048"></a>00048 
+<a name="l00049"></a>00049     setMinimumWidth(500);
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051     setLayout(layout);
+<a name="l00052"></a>00052 }
+<a name="l00053"></a>00053 
+<a name="l00054"></a><a class="code" href="../../db/d11/class_form_settings.html#a0dd01a75a912588a870804b7ebe7ee3a">00054</a> <span class="keywordtype">void</span> <a class="code" href="../../db/d11/class_form_settings.html#a0dd01a75a912588a870804b7ebe7ee3a">FormSettings::ouvreDialogDossier</a>()
+<a name="l00055"></a>00055 {
+<a name="l00056"></a>00056     champsPathSimu-&gt;setText(QFileDialog::getExistingDirectory(<span class="keyword">this</span>,<span class="stringliteral">&quot;&quot;</span>,settings-&gt;value(<span class="stringliteral">&quot;PathSimu&quot;</span>,QCoreApplication::applicationDirPath()).toString()));
+<a name="l00057"></a>00057 }
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="../../db/d11/class_form_settings.html#a9daca9db02ec8057bd55e5180e34817e">00059</a> <span class="keywordtype">void</span> <a class="code" href="../../db/d11/class_form_settings.html#a9daca9db02ec8057bd55e5180e34817e">FormSettings::appliquer</a>()
+<a name="l00060"></a>00060 {
+<a name="l00061"></a>00061     settings-&gt;setValue(<span class="stringliteral">&quot;PathSimu&quot;</span>,champsPathSimu-&gt;text());
+<a name="l00062"></a>00062 }
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Mai 29 2013 18:48:48 pour Editeur de configuration pour simulation électromagnétique par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

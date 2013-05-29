@@ -30,7 +30,7 @@ public:
 public slots:
 
     void SetFormat(int format) {
-        this->format = format;
+        this->format = format+1;
     }
 
     void SetFormatFichierPrelevement(int formatFichierPrelevement) {

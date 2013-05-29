@@ -14,8 +14,8 @@ portExcitation::portExcitation() {
 
     portActif=false;
     portInfinitesimal=false;
-    typePort=0;
-    direction=0;
+    typePort=1;
+    direction=1;
     impedance=0;
     typeSource=0;
     ponderationAmplitude=0;

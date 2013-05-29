@@ -8,7 +8,7 @@
 #include "formatStockage.h"
 
 formatStockage::formatStockage() {
-    format=0;
+    format=1;
     formatFichierPrelevement=0;
 }
 

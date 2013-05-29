@@ -89,8 +89,8 @@ void FormPortExcitation::valider()
     FormElementBase::valider();
     port->SetPortActif(portActifWidget->isChecked());
     port->SetPortInfinitesimal(portInfinitesimalWidget->isChecked());
-    port->SetTypePort(typePortWidget->currentIndex());
-    port->SetDirection(directionWidget->currentIndex());
+    port->SetTypePort(typePortWidget->currentIndex()+1);
+    port->SetDirection(directionWidget->currentIndex()+1);
     port->SetImpedance(impedanceWidget->value());
     port->SetTypeSource(typeSourceWidget->currentIndex());
     port->SetPonderationAmplitude(ponderationAmplitudeWidget->value());
@@ -114,8 +114,8 @@ void FormPortExcitation::init()
 
     portActifWidget->setChecked(port->IsPortActif());
     portInfinitesimalWidget->setChecked(port->IsPortInfinitesimal());
-    typePortWidget->setCurrentIndex(port->GetTypePort());
-    directionWidget->setCurrentIndex(port->GetDirection());
+    typePortWidget->setCurrentIndex(port->GetTypePort()-1);
+    directionWidget->setCurrentIndex(port->GetDirection()-1);
     impedanceWidget->setValue(port->GetImpedance());
     typeSourceWidget->setCurrentIndex(port->GetTypeSource());
     ponderationAmplitudeWidget->setValue(port->GetPonderationAmplitude());

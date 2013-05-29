@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Editeur de configuration pour simulation électromagnétique:  Fichier source de /home/kuiderlix/Prog/cpp/pskl-etprat/TableModelSonde.cpp</title>
+
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editeur de configuration pour simulation électromagnétique
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/TableModelSonde.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/d55/_table_model_sonde_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="../../db/d0c/_table_model_sonde_8h.html">TableModelSonde.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="../../d9/d66/class_table_model_sonde.html#ab58f337e073355976bc8b68fd1a64a53">00003</a> <a class="code" href="../../d9/d66/class_table_model_sonde.html#ab58f337e073355976bc8b68fd1a64a53">TableModelSonde::TableModelSonde</a>(<a class="code" href="../../dd/dec/class_bloc_element_base.html" title="Représente une liste d&#39;elementBase.">BlocElementBase</a> *bloc, QObject *parent) :
+<a name="l00004"></a>00004     <a class="code" href="../../d0/dc3/class_table_model.html" title="Cette classe sert de model de base pour les éléments des tableaux.">TableModel</a>(bloc,parent)
+<a name="l00005"></a>00005 {
+<a name="l00006"></a>00006     this-&gt;bloc = (<a class="code" href="../../da/dc6/classbloc_sonde.html" title="Cette classe représente une liste de sonde.">blocSonde</a>*)bloc;
+<a name="l00007"></a>00007     <a class="code" href="../../d0/dc3/class_table_model.html#a7ded8d5b09f264752bcede7388803bef" title="Initialise les entetes du tableau.">initHeaders</a>(QStringList() &lt;&lt; <span class="stringliteral">&quot;EX&quot;</span> &lt;&lt; <span class="stringliteral">&quot;EY&quot;</span> &lt;&lt; <span class="stringliteral">&quot;EZ&quot;</span> &lt;&lt; <span class="stringliteral">&quot;HX&quot;</span> &lt;&lt; <span class="stringliteral">&quot;HY&quot;</span> &lt;&lt; <span class="stringliteral">&quot;HZ&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Point d&#39;Application&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Valeur au Centre&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Avant Gauche&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Arrière Droit&quot;</span>);
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 }
+<a name="l00010"></a>00010 
+<a name="l00011"></a><a class="code" href="../../d9/d66/class_table_model_sonde.html#ac9e4ff870c30b869a263f46a4351c599">00011</a> QVariant <a class="code" href="../../d9/d66/class_table_model_sonde.html#ac9e4ff870c30b869a263f46a4351c599">TableModelSonde::data</a>(<span class="keyword">const</span> QModelIndex &amp;index, <span class="keywordtype">int</span> role)<span class="keyword"> const</span>
+<a name="l00012"></a>00012 <span class="keyword"></span>{
+<a name="l00013"></a>00013     <span class="keywordflow">if</span> (!index.isValid() || index.row() &lt; 0 || index.row() &gt;= bloc-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste.">getNbElement</a>())
+<a name="l00014"></a>00014     {
+<a name="l00015"></a>00015         <span class="keywordflow">return</span> QVariant();
+<a name="l00016"></a>00016     }
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018     <span class="keywordflow">switch</span> (role)
+<a name="l00019"></a>00019     {
+<a name="l00020"></a>00020     <span class="keywordflow">case</span> Qt::DisplayRole:
+<a name="l00021"></a>00021     <span class="keywordflow">case</span> Qt::EditRole:
+<a name="l00022"></a>00022         <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775aea05f2bf0e0df0654b9eb852191bd6e8">ex</a>)
+<a name="l00023"></a>00023         {
+<a name="l00024"></a>00024             <span class="keywordflow">return</span> QVariant(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;IsEx());
+<a name="l00025"></a>00025         }
+<a name="l00026"></a>00026         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a1ba5f022be147a50e1d84a35260007fd">ey</a>)
+<a name="l00027"></a>00027         {
+<a name="l00028"></a>00028             <span class="keywordflow">return</span> QVariant(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;IsEy());
+<a name="l00029"></a>00029         }
+<a name="l00030"></a>00030         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a3a83f0b9eca9470eb229c1160f7755c9">ez</a>)
+<a name="l00031"></a>00031         {
+<a name="l00032"></a>00032             <span class="keywordflow">return</span> QVariant(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;IsEz());
+<a name="l00033"></a>00033         }
+<a name="l00034"></a>00034         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a6b34c5e02f5ef94fab8eea32c424d77e">hx</a>)
+<a name="l00035"></a>00035         {
+<a name="l00036"></a>00036             <span class="keywordflow">return</span> QVariant(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;IsHx());
+<a name="l00037"></a>00037         }
+<a name="l00038"></a>00038         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a40a73727e0cbcb754085007afd782ad2">hy</a>)
+<a name="l00039"></a>00039         {
+<a name="l00040"></a>00040             <span class="keywordflow">return</span> QVariant(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;IsHy());
+<a name="l00041"></a>00041         }
+<a name="l00042"></a>00042         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775acf9ec7bec0b3047d8c07a3902ac3bb2a">hz</a>)
+<a name="l00043"></a>00043         {
+<a name="l00044"></a>00044             <span class="keywordflow">return</span> QVariant(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;IsHz());
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a74d451a0b1a862327dc734b0c837fc3b">PointAppli</a>)
+<a name="l00047"></a>00047         {
+<a name="l00048"></a>00048             QVariant var;
+<a name="l00049"></a>00049             var.setValue(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;GetPointApplication());
+<a name="l00050"></a>00050             <span class="keywordflow">return</span> var;
+<a name="l00051"></a>00051         }
+<a name="l00052"></a>00052         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a9209ff41539d8b8552fec71488da82ec">ValCentre</a>)
+<a name="l00053"></a>00053         {
+<a name="l00054"></a>00054             <span class="keywordflow">return</span> QVariant(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;IsValeurAuCentre());
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a56f81744950c49d6c9a2a1d59fdd9ffd">AvantGauche</a>)
+<a name="l00057"></a>00057         {
+<a name="l00058"></a>00058             QVariant var;
+<a name="l00059"></a>00059             var.setValue(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;GetAvantGauche());
+<a name="l00060"></a>00060             <span class="keywordflow">return</span> var;
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a4c5ee2938287bcaeaf6b986529d64083">ArriereDroit</a>)
+<a name="l00063"></a>00063         {
+<a name="l00064"></a>00064             QVariant var;
+<a name="l00065"></a>00065             var.setValue(bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row())-&gt;GetArriereDroit());
+<a name="l00066"></a>00066             <span class="keywordflow">return</span> var;
+<a name="l00067"></a>00067         }
+<a name="l00068"></a>00068         <span class="keywordflow">break</span>;
+<a name="l00069"></a>00069     }
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     <span class="keywordflow">return</span> QVariant();
+<a name="l00072"></a>00072 }
+<a name="l00073"></a>00073 
+<a name="l00074"></a><a class="code" href="../../d9/d66/class_table_model_sonde.html#aab03c52ea6051150585d6eb9e2294297">00074</a> <span class="keywordtype">int</span> <a class="code" href="../../d9/d66/class_table_model_sonde.html#aab03c52ea6051150585d6eb9e2294297">TableModelSonde::columnCount</a>(<span class="keyword">const</span> QModelIndex &amp;parent)<span class="keyword"> const</span>
+<a name="l00075"></a>00075 <span class="keyword"></span>{
+<a name="l00076"></a>00076     <span class="keywordflow">return</span> parent.isValid() ? 0 : 10;
+<a name="l00077"></a>00077 }
+<a name="l00078"></a>00078 
+<a name="l00079"></a><a class="code" href="../../d9/d66/class_table_model_sonde.html#aa2e23ba8562cabb036447d9807ed59ec">00079</a> <span class="keywordtype">bool</span> <a class="code" href="../../d9/d66/class_table_model_sonde.html#aa2e23ba8562cabb036447d9807ed59ec">TableModelSonde::setData</a>(<span class="keyword">const</span> QModelIndex &amp;index, <span class="keyword">const</span> QVariant &amp;value, <span class="keywordtype">int</span> role)
+<a name="l00080"></a>00080 {
+<a name="l00081"></a>00081     <span class="keywordflow">if</span> (!index.isValid() || index.row() &lt; 0 || index.row() &gt;= bloc-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste.">getNbElement</a>())
+<a name="l00082"></a>00082     {
+<a name="l00083"></a>00083         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00084"></a>00084     }
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086     <span class="keywordflow">switch</span> (role)
+<a name="l00087"></a>00087     {
+<a name="l00088"></a>00088     <span class="keywordflow">case</span> Qt::DisplayRole:
+<a name="l00089"></a>00089     <span class="keywordflow">case</span> Qt::EditRole:
+<a name="l00090"></a>00090         <a class="code" href="../../d8/d03/classsonde.html" title="Cette classe représente la variable sonde d&#39;une simulation.">sonde</a> * elem = bloc-&gt;<a class="code" href="../../da/dc6/classbloc_sonde.html#a8e5777b9144f7f290dbe3cab3cd169de">GetSonde</a>(index.row());
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092         <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775aea05f2bf0e0df0654b9eb852191bd6e8">ex</a>)
+<a name="l00093"></a>00093         {
+<a name="l00094"></a>00094             elem-&gt;<a class="code" href="../../d8/d03/classsonde.html#a0cff0f443286ceef913ebe674f845b54">SetEx</a>(value.toBool());
+<a name="l00095"></a>00095         }
+<a name="l00096"></a>00096         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a1ba5f022be147a50e1d84a35260007fd">ey</a>)
+<a name="l00097"></a>00097         {
+<a name="l00098"></a>00098             elem-&gt;<a class="code" href="../../d8/d03/classsonde.html#a6bf0029a52ddd854fcb0934d6a14adae">SetEy</a>(value.toBool());
+<a name="l00099"></a>00099         }
+<a name="l00100"></a>00100         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a3a83f0b9eca9470eb229c1160f7755c9">ez</a>)
+<a name="l00101"></a>00101         {
+<a name="l00102"></a>00102             elem-&gt;<a class="code" href="../../d8/d03/classsonde.html#ad2b452911cb09ebcd8a81ad91cb4390c">SetEz</a>(value.toBool());
+<a name="l00103"></a>00103         }
+<a name="l00104"></a>00104         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a6b34c5e02f5ef94fab8eea32c424d77e">hx</a>)
+<a name="l00105"></a>00105         {
+<a name="l00106"></a>00106             elem-&gt;<a class="code" href="../../d8/d03/classsonde.html#a3a55324b84be943e9be7e1ab087afcd4">SetHx</a>(value.toBool());
+<a name="l00107"></a>00107         }
+<a name="l00108"></a>00108         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a40a73727e0cbcb754085007afd782ad2">hy</a>)
+<a name="l00109"></a>00109         {
+<a name="l00110"></a>00110             elem-&gt;<a class="code" href="../../d8/d03/classsonde.html#a974e4ff94a7fcb282f013b309cbd7f8e">SetHy</a>(value.toBool());
+<a name="l00111"></a>00111         }
+<a name="l00112"></a>00112         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775acf9ec7bec0b3047d8c07a3902ac3bb2a">hz</a>)
+<a name="l00113"></a>00113         {
+<a name="l00114"></a>00114             elem-&gt;<a class="code" href="../../d8/d03/classsonde.html#a4a9d6603999288ca11032b8e1fd7b607">SetHz</a>(value.toBool());
+<a name="l00115"></a>00115         }
+<a name="l00116"></a>00116         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a74d451a0b1a862327dc734b0c837fc3b">PointAppli</a>)
+<a name="l00117"></a>00117         {
+<a name="l00118"></a>00118             <a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> c = value.value&lt;<a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
+<a name="l00119"></a>00119             elem-&gt;<a class="code" href="../../d8/d03/classsonde.html#af521285197e3b26ed507028cc5223c1f">SetPointApplication</a>(c.<a class="code" href="../../d6/d67/classcoordonnee.html#ac8be7ac37670f09a7e0a0e9c4440d2d8">GetX</a>(),c.<a class="code" href="../../d6/d67/classcoordonnee.html#a0b666a5d352f1135ad8904e5193b0213">GetY</a>(),c.<a class="code" href="../../d6/d67/classcoordonnee.html#a4d5c88a3e93cc8eed5b848d18541b137">GetZ</a>());
+<a name="l00120"></a>00120         }
+<a name="l00121"></a>00121         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a9209ff41539d8b8552fec71488da82ec">ValCentre</a>)
+<a name="l00122"></a>00122         {
+<a name="l00123"></a>00123             elem-&gt;<a class="code" href="../../d8/d03/classsonde.html#af040efff1745999e30417fe81bcc338f">SetValeurAuCentre</a>(value.toBool());
+<a name="l00124"></a>00124         }
+<a name="l00125"></a>00125         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a56f81744950c49d6c9a2a1d59fdd9ffd">AvantGauche</a>)
+<a name="l00126"></a>00126         {
+<a name="l00127"></a>00127             <a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> c = value.value&lt;<a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
+<a name="l00128"></a>00128             elem-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a230935c8e0e713878651c9f6877bc5db">SetAvantGauche</a>(c);
+<a name="l00129"></a>00129         }
+<a name="l00130"></a>00130         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index.column() == <a class="code" href="../../d9/d66/class_table_model_sonde.html#a52e572905d1e7e140d93687c60bc5775a4c5ee2938287bcaeaf6b986529d64083">ArriereDroit</a>)
+<a name="l00131"></a>00131         {
+<a name="l00132"></a>00132             <a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> c = value.value&lt;<a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&gt;();
+<a name="l00133"></a>00133             elem-&gt;<a class="code" href="../../d9/d8e/classelement_base.html#a22ae89e3c350f30afeaea6dbf35600b5">SetArriereDroit</a>(c);
+<a name="l00134"></a>00134         }
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136         bloc-&gt;<a class="code" href="../../dd/dec/class_bloc_element_base.html#aa745734b1a3e63508f97ca89baf40715" title="Remplace l&#39;élément à l&#39;indice i par elem.">setElement</a>(index.row(),elem);
+<a name="l00137"></a>00137         emit dataChanged(index, index);
+<a name="l00138"></a>00138         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00139"></a>00139         <span class="keywordflow">break</span>;
+<a name="l00140"></a>00140     }
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142     <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00143"></a>00143 }
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Mai 29 2013 18:48:48 pour Editeur de configuration pour simulation électromagnétique par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

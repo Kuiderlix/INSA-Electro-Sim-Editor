@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Editeur de configuration pour simulation électromagnétique:  Fichier source de /home/kuiderlix/Prog/cpp/pskl-etprat/BlocElementBase.h</title>
+
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editeur de configuration pour simulation électromagnétique
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/BlocElementBase.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/d69/_bloc_element_base_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef BLOCELEMENTBASE_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define BLOCELEMENTBASE_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="../../de/df9/bloc_configuration_8h.html">blocConfiguration.h</a>&quot;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="../../d7/dcf/element_base_8h.html">elementBase.h</a>&quot;</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;QColor&gt;</span>
+<a name="l00010"></a><a class="code" href="../../dd/dec/class_bloc_element_base.html">00010</a> <span class="keyword">class </span><a class="code" href="../../dd/dec/class_bloc_element_base.html" title="Représente une liste d&#39;elementBase.">BlocElementBase</a> : <span class="keyword">public</span> <a class="code" href="../../db/d3c/classbloc_configuration.html" title="Classe de base pour les données de configuration d&#39;une simulation.">blocConfiguration</a>
+<a name="l00011"></a>00011 {
+<a name="l00012"></a>00012 <span class="keyword">public</span>:
+<a name="l00013"></a>00013     <a class="code" href="../../dd/dec/class_bloc_element_base.html#a724bd8ef4b1bbf9b01911777ab2b7b90">BlocElementBase</a>();
+<a name="l00014"></a>00014 
+<a name="l00019"></a><a class="code" href="../../dd/dec/class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92">00019</a>     <span class="keywordtype">int</span> <a class="code" href="../../dd/dec/class_bloc_element_base.html#ade46edf4e407cedfa1df160647333b92" title="Retourne le nombre d&#39;élément dans la liste.">getNbElement</a>()<span class="keyword"> const </span>{
+<a name="l00020"></a>00020         <span class="keywordflow">return</span> <a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>.size();
+<a name="l00021"></a>00021     }
+<a name="l00022"></a>00022 
+<a name="l00028"></a><a class="code" href="../../dd/dec/class_bloc_element_base.html#aa745734b1a3e63508f97ca89baf40715">00028</a>     <span class="keywordtype">void</span> <a class="code" href="../../dd/dec/class_bloc_element_base.html#aa745734b1a3e63508f97ca89baf40715" title="Remplace l&#39;élément à l&#39;indice i par elem.">setElement</a>(<span class="keywordtype">int</span> i, <a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>* elem){
+<a name="l00029"></a>00029         <span class="keywordflow">if</span>(i&gt; <a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>.size())<span class="keywordflow">return</span>;
+<a name="l00030"></a>00030         <a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>[i] = elem;
+<a name="l00031"></a>00031     }
+<a name="l00032"></a>00032 
+<a name="l00037"></a><a class="code" href="../../dd/dec/class_bloc_element_base.html#a539ee46c7714d2ee9168dd4e21fb8e66">00037</a>     <span class="keywordtype">void</span> <a class="code" href="../../dd/dec/class_bloc_element_base.html#a539ee46c7714d2ee9168dd4e21fb8e66" title="Supprime l&#39;élément elem du tableau.">removeElement</a>(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a> * elem)
+<a name="l00038"></a>00038     {
+<a name="l00039"></a>00039         <a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>.removeOne(elem);
+<a name="l00040"></a>00040     }
+<a name="l00041"></a>00041 
+<a name="l00046"></a><a class="code" href="../../dd/dec/class_bloc_element_base.html#a83579a670b6f8c7acc64448c49405512">00046</a>     <span class="keywordtype">void</span> <a class="code" href="../../dd/dec/class_bloc_element_base.html#a539ee46c7714d2ee9168dd4e21fb8e66" title="Supprime l&#39;élément elem du tableau.">removeElement</a>(<span class="keywordtype">int</span> i)
+<a name="l00047"></a>00047     {
+<a name="l00048"></a>00048         <a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>.removeAt(i);
+<a name="l00049"></a>00049     }
+<a name="l00050"></a>00050 
+<a name="l00055"></a><a class="code" href="../../dd/dec/class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715">00055</a>     <span class="keywordtype">void</span> <a class="code" href="../../dd/dec/class_bloc_element_base.html#a4fafaff2c2afdf2da6e78ac7b4dea715" title="Ajoute l&#39;élément elem à la fin de la liste.">addElement</a>(<a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a>* elem){
+<a name="l00056"></a>00056         <a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>.push_back(elem);
+<a name="l00057"></a>00057     }
+<a name="l00063"></a><a class="code" href="../../dd/dec/class_bloc_element_base.html#a3b18c87309337fcf0a28bf371c91d010">00063</a>     <a class="code" href="../../d9/d8e/classelement_base.html" title="The elementBase class.">elementBase</a> * <a class="code" href="../../dd/dec/class_bloc_element_base.html#a3b18c87309337fcf0a28bf371c91d010" title="Retourne un elementBase contenu à l&#39;indice i.">getElement</a>(<span class="keywordtype">int</span> i)
+<a name="l00064"></a>00064     {
+<a name="l00065"></a>00065         <span class="keywordflow">return</span> <a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>.at(i);
+<a name="l00066"></a>00066     }
+<a name="l00067"></a>00067 
+<a name="l00072"></a><a class="code" href="../../dd/dec/class_bloc_element_base.html#a747c4823ea52520dbf0638eec1385e42">00072</a>     QList&lt;elementBase*&gt;* <a class="code" href="../../dd/dec/class_bloc_element_base.html#a747c4823ea52520dbf0638eec1385e42" title="Retourne un pointeur sur la liste des éléments.">getListElementPointer</a>()
+<a name="l00073"></a>00073     {
+<a name="l00074"></a>00074         <span class="keywordflow">return</span> &amp;<a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>;
+<a name="l00075"></a>00075     }
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <span class="keyword">protected</span>:
+<a name="l00078"></a><a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">00078</a>     QList&lt;elementBase*&gt; <a class="code" href="../../dd/dec/class_bloc_element_base.html#ab5ef5a00064fb60029526cf96ceac564">listElement</a>;
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 };
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 <span class="preprocessor">#endif // BLOCELEMENTBASE_H</span>
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Mai 29 2013 18:48:48 pour Editeur de configuration pour simulation électromagnétique par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Editeur de configuration pour simulation électromagnétique:  Fichier source de /home/kuiderlix/Prog/cpp/pskl-etprat/coordonnee.h</title>
+
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editeur de configuration pour simulation électromagnétique
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/coordonnee.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/d41/coordonnee_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/* </span>
+<a name="l00002"></a>00002 <span class="comment"> * File:   coordonnee.h</span>
+<a name="l00003"></a>00003 <span class="comment"> * Author: camille</span>
+<a name="l00004"></a>00004 <span class="comment"> *</span>
+<a name="l00005"></a>00005 <span class="comment"> * Created on February 26, 2013, 5:38 PM</span>
+<a name="l00006"></a>00006 <span class="comment"> */</span>
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="preprocessor">#ifndef COORDONNEE_H</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define COORDONNEE_H</span>
+<a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#include &lt;QVariant&gt;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;QString&gt;</span>
+<a name="l00012"></a>00012 
+<a name="l00017"></a><a class="code" href="../../d6/d67/classcoordonnee.html">00017</a> <span class="keyword">class </span><a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> {
+<a name="l00018"></a>00018 <span class="keyword">public</span>:
+<a name="l00019"></a>00019     <a class="code" href="../../d6/d67/classcoordonnee.html#a4c26bd8c4645c1df0640c039d4db26c5">coordonnee</a>();
+<a name="l00020"></a>00020     <a class="code" href="../../d6/d67/classcoordonnee.html#a4c26bd8c4645c1df0640c039d4db26c5">coordonnee</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z);
+<a name="l00021"></a>00021     <a class="code" href="../../d6/d67/classcoordonnee.html#a4c26bd8c4645c1df0640c039d4db26c5">coordonnee</a>(<span class="keyword">const</span> <a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>&amp; orig);
+<a name="l00022"></a>00022     <span class="keyword">virtual</span> <a class="code" href="../../d6/d67/classcoordonnee.html#ac0487f6d359e2ec0d405b7d4508f9e03">~coordonnee</a>();
+<a name="l00023"></a>00023 
+<a name="l00024"></a><a class="code" href="../../d6/d67/classcoordonnee.html#ac8be7ac37670f09a7e0a0e9c4440d2d8">00024</a>     <span class="keywordtype">int</span> <a class="code" href="../../d6/d67/classcoordonnee.html#ac8be7ac37670f09a7e0a0e9c4440d2d8">GetX</a>()<span class="keyword"> const </span>{
+<a name="l00025"></a>00025         <span class="keywordflow">return</span> x;
+<a name="l00026"></a>00026     }
+<a name="l00027"></a>00027 
+<a name="l00028"></a><a class="code" href="../../d6/d67/classcoordonnee.html#a2f934fc35fa42153601e40f010c0f11d">00028</a>     <span class="keywordtype">void</span> <a class="code" href="../../d6/d67/classcoordonnee.html#a2f934fc35fa42153601e40f010c0f11d">SetX</a>(<span class="keywordtype">int</span> x) {
+<a name="l00029"></a>00029         this-&gt;x = x;
+<a name="l00030"></a>00030     }
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="../../d6/d67/classcoordonnee.html#a0b666a5d352f1135ad8904e5193b0213">00032</a>     <span class="keywordtype">int</span> <a class="code" href="../../d6/d67/classcoordonnee.html#a0b666a5d352f1135ad8904e5193b0213">GetY</a>()<span class="keyword"> const </span>{
+<a name="l00033"></a>00033         <span class="keywordflow">return</span> y;
+<a name="l00034"></a>00034     }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="../../d6/d67/classcoordonnee.html#a9eb2893c48fca7f8d2cb2e05b12d62f8">00036</a>     <span class="keywordtype">void</span> <a class="code" href="../../d6/d67/classcoordonnee.html#a9eb2893c48fca7f8d2cb2e05b12d62f8">SetY</a>(<span class="keywordtype">int</span> y) {
+<a name="l00037"></a>00037         this-&gt;y = y;
+<a name="l00038"></a>00038     }
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="../../d6/d67/classcoordonnee.html#a4d5c88a3e93cc8eed5b848d18541b137">00040</a>     <span class="keywordtype">int</span> <a class="code" href="../../d6/d67/classcoordonnee.html#a4d5c88a3e93cc8eed5b848d18541b137">GetZ</a>()<span class="keyword"> const </span>{
+<a name="l00041"></a>00041         <span class="keywordflow">return</span> z;
+<a name="l00042"></a>00042     }
+<a name="l00043"></a>00043 
+<a name="l00044"></a><a class="code" href="../../d6/d67/classcoordonnee.html#ae0f4bdc7a9eea604533fe5b63e9efd00">00044</a>     <span class="keywordtype">void</span> <a class="code" href="../../d6/d67/classcoordonnee.html#ae0f4bdc7a9eea604533fe5b63e9efd00">SetZ</a>(<span class="keywordtype">int</span> z) {
+<a name="l00045"></a>00045         this-&gt;z = z;
+<a name="l00046"></a>00046     }
+<a name="l00047"></a>00047 
+<a name="l00048"></a><a class="code" href="../../d6/d67/classcoordonnee.html#afc68e120b6b69e2a9a6de4ecf5c9c2c2">00048</a>     QString <a class="code" href="../../d6/d67/classcoordonnee.html#afc68e120b6b69e2a9a6de4ecf5c9c2c2">toQString</a>()
+<a name="l00049"></a>00049     {
+<a name="l00050"></a>00050         <span class="keywordflow">return</span> QString().append(<span class="stringliteral">&quot;(x:&quot;</span>).append(QString::number(x)).append(<span class="stringliteral">&quot;, y:&quot;</span>).append(QString::number(y)).append(<span class="stringliteral">&quot;, z:&quot;</span>).append(QString::number(z)).append(<span class="stringliteral">&quot;)&quot;</span>);
+<a name="l00051"></a>00051     }
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053     <span class="keywordtype">bool</span> <a class="code" href="../../d6/d67/classcoordonnee.html#a3e138fc72f052cd786b2fbb60973e0c8">operator==</a>(<a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a> <span class="keyword">const</span>&amp; b);
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055     <span class="keywordtype">void</span> <a class="code" href="../../d6/d67/classcoordonnee.html#a9fe12cd131d8451a8ed209b6c9b87de4">ecrire</a>();
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="keyword">private</span>:
+<a name="l00058"></a>00058     <span class="keywordtype">int</span> x;
+<a name="l00059"></a>00059     <span class="keywordtype">int</span> y;
+<a name="l00060"></a>00060     <span class="keywordtype">int</span> z;
+<a name="l00061"></a>00061 };
+<a name="l00062"></a>00062 Q_DECLARE_METATYPE(<a class="code" href="../../d6/d67/classcoordonnee.html" title="Cette classe représente une coordonnee en 3 dimensions. Elle sert d&#39;unité de position dans la scène 3...">coordonnee</a>)
+<a name="l00063"></a>00063 <span class="preprocessor">#endif  </span><span class="comment">/* COORDONNEE_H */</span>
+<a name="l00064"></a>00064 
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Mai 29 2013 18:48:48 pour Editeur de configuration pour simulation électromagnétique par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

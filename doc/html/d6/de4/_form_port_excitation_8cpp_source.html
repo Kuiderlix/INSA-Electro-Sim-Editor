@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Editeur de configuration pour simulation électromagnétique:  Fichier source de /home/kuiderlix/Prog/cpp/pskl-etprat/FormPortExcitation.cpp</title>
+
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editeur de configuration pour simulation électromagnétique
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Recherche');
+</script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="../../globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">/home/kuiderlix/Prog/cpp/pskl-etprat/FormPortExcitation.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/de4/_form_port_excitation_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="../../d1/d85/_form_port_excitation_8h.html">FormPortExcitation.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a><a class="code" href="../../d4/ddd/class_form_port_excitation.html#a047d5b45a147a0c58ff40d7dae3af32e">00003</a> <a class="code" href="../../d4/ddd/class_form_port_excitation.html#a047d5b45a147a0c58ff40d7dae3af32e">FormPortExcitation::FormPortExcitation</a>(<a class="code" href="../../de/de8/classport_excitation.html" title="Cette classe représente la variable portExcitation d&#39;une simulation.">portExcitation</a> *port, QWidget *parent) :
+<a name="l00004"></a>00004     <a class="code" href="../../d0/d00/class_form_element_base.html" title="Cette classe sert de base aux formulaires qui modifie des objets elementBase.">FormElementBase</a>(port,parent)
+<a name="l00005"></a>00005 {
+<a name="l00006"></a>00006     this-&gt;port=port;
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008     QVBoxLayout * layoutPrincipal = <span class="keyword">new</span> QVBoxLayout();
+<a name="l00009"></a>00009     QGroupBox * groupGeo = <span class="keyword">new</span> QGroupBox(<span class="stringliteral">&quot;Port Excitation&quot;</span>);
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011     QVBoxLayout * layout = <span class="keyword">new</span> QVBoxLayout;
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014     QHBoxLayout * layoutPortActif = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00015"></a>00015     layoutPortActif-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Port Actif:&quot;</span>));
+<a name="l00016"></a>00016     portActifWidget = <span class="keyword">new</span> QCheckBox();
+<a name="l00017"></a>00017     layoutPortActif-&gt;addWidget(portActifWidget);
+<a name="l00018"></a>00018     layout-&gt;addLayout(layoutPortActif);
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021     QHBoxLayout * layoutPortInfinitesimal = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00022"></a>00022     layoutPortInfinitesimal-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Port Infinitesimal:&quot;</span>));
+<a name="l00023"></a>00023     portInfinitesimalWidget = <span class="keyword">new</span> QCheckBox();
+<a name="l00024"></a>00024     layoutPortInfinitesimal-&gt;addWidget(portInfinitesimalWidget);
+<a name="l00025"></a>00025     layout-&gt;addLayout(layoutPortInfinitesimal);
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028     QHBoxLayout * layoutTypePort = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00029"></a>00029     layoutTypePort-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Type Port:&quot;</span>));
+<a name="l00030"></a>00030     typePortWidget = <span class="keyword">new</span> QComboBox();
+<a name="l00031"></a>00031     typePortWidget-&gt;addItems(QStringList() &lt;&lt; <span class="stringliteral">&quot;Magnétique&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Electrique&quot;</span>);
+<a name="l00032"></a>00032     layoutTypePort-&gt;addWidget(typePortWidget);
+<a name="l00033"></a>00033     layout-&gt;addLayout(layoutTypePort);
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036     QHBoxLayout * layoutDirection = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00037"></a>00037     layoutDirection-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Direction:&quot;</span>));
+<a name="l00038"></a>00038     directionWidget = <span class="keyword">new</span> QComboBox();
+<a name="l00039"></a>00039     directionWidget-&gt;addItems(QStringList() &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; <span class="stringliteral">&quot;y&quot;</span> &lt;&lt; <span class="stringliteral">&quot;z&quot;</span>);
+<a name="l00040"></a>00040     layoutDirection-&gt;addWidget(directionWidget);
+<a name="l00041"></a>00041     layout-&gt;addLayout(layoutDirection);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044     QHBoxLayout * layoutImpedance = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00045"></a>00045     layoutImpedance-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Impédance:&quot;</span>));
+<a name="l00046"></a>00046     impedanceWidget = <span class="keyword">new</span> QDoubleSpinBox();
+<a name="l00047"></a>00047     layoutImpedance-&gt;addWidget(impedanceWidget);
+<a name="l00048"></a>00048     layout-&gt;addLayout(layoutImpedance);
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052     QHBoxLayout * layoutTypeSource = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00053"></a>00053     layoutTypeSource-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Type Source:&quot;</span>));
+<a name="l00054"></a>00054     typeSourceWidget = <span class="keyword">new</span> QComboBox();
+<a name="l00055"></a>00055     typeSourceWidget-&gt;addItems(QStringList() &lt;&lt; <span class="stringliteral">&quot;Tension&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Courant&quot;</span>);
+<a name="l00056"></a>00056     layoutTypeSource-&gt;addWidget(typeSourceWidget);
+<a name="l00057"></a>00057     layout-&gt;addLayout(layoutTypeSource);
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060     QHBoxLayout * layoutPonderationAmplitude = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00061"></a>00061     layoutPonderationAmplitude-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Ponderation Amplitude:&quot;</span>));
+<a name="l00062"></a>00062     ponderationAmplitudeWidget = <span class="keyword">new</span> QDoubleSpinBox();
+<a name="l00063"></a>00063     layoutPonderationAmplitude-&gt;addWidget(ponderationAmplitudeWidget);
+<a name="l00064"></a>00064     layout-&gt;addLayout(layoutPonderationAmplitude);
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067     QHBoxLayout * layoutPonderationPhase = <span class="keyword">new</span> QHBoxLayout;
+<a name="l00068"></a>00068     layoutPonderationPhase-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="stringliteral">&quot;Ponderation Phase:&quot;</span>));
+<a name="l00069"></a>00069     ponderationPhaseWidget = <span class="keyword">new</span> QDoubleSpinBox();
+<a name="l00070"></a>00070     layoutPonderationPhase-&gt;addWidget(ponderationPhaseWidget);
+<a name="l00071"></a>00071     layout-&gt;addLayout(layoutPonderationPhase);
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073     layout-&gt;addWidget(<a class="code" href="../../d0/d00/class_form_element_base.html#a10b8d2ffbc930360abdf6edc9d87f206" title="Cette fonction retourne les champs qui sont communs à tous les elementBase. C&#39;est à dire: le formulai...">getWidgetElementBase</a>());
+<a name="l00074"></a>00074 
+<a name="l00075"></a>00075     layout-&gt;setAlignment(Qt::AlignTop);
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077     groupGeo-&gt;setLayout(layout);
+<a name="l00078"></a>00078 
+<a name="l00079"></a>00079     layoutPrincipal-&gt;addWidget(groupGeo);
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081     setLayout(layoutPrincipal);
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083     init();
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 }
+<a name="l00086"></a>00086 
+<a name="l00087"></a><a class="code" href="../../d4/ddd/class_form_port_excitation.html#a2648212510cbaaddd5eaf84fdb509020">00087</a> <span class="keywordtype">void</span> <a class="code" href="../../d4/ddd/class_form_port_excitation.html#a2648212510cbaaddd5eaf84fdb509020" title="Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l&#39;elemen...">FormPortExcitation::valider</a>()
+<a name="l00088"></a>00088 {
+<a name="l00089"></a>00089     <a class="code" href="../../d4/ddd/class_form_port_excitation.html#a2648212510cbaaddd5eaf84fdb509020" title="Cette fonction est appelé quand le bouton valider est pressé. Elle met à jour les données de l&#39;elemen...">FormElementBase::valider</a>();
+<a name="l00090"></a>00090     port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a5da6a73a92c84d266208c694de1be4e1">SetPortActif</a>(portActifWidget-&gt;isChecked());
+<a name="l00091"></a>00091     port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a3c0bbf8cdaf0e04b41cf6b5be915832f">SetPortInfinitesimal</a>(portInfinitesimalWidget-&gt;isChecked());
+<a name="l00092"></a>00092     port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#ab3fe203afad46ea50933506fd21683b9">SetTypePort</a>(typePortWidget-&gt;currentIndex()+1);
+<a name="l00093"></a>00093     port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#aea4078733fa57e7c29107400ee94a237">SetDirection</a>(directionWidget-&gt;currentIndex()+1);
+<a name="l00094"></a>00094     port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#aa28d788bdcd20d3ea128c3a8b45b9038">SetImpedance</a>(impedanceWidget-&gt;value());
+<a name="l00095"></a>00095     port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a3acfeb06969c8249d1f12217cb4ebf3c">SetTypeSource</a>(typeSourceWidget-&gt;currentIndex());
+<a name="l00096"></a>00096     port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a88c0c744e37cd8cfafde9a997e0ed2de">SetPonderationAmplitude</a>(ponderationAmplitudeWidget-&gt;value());
+<a name="l00097"></a>00097     port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a639f8da96d51f865027d544d0011ae92">SetPonderationPhase</a>(ponderationPhaseWidget-&gt;value());
+<a name="l00098"></a>00098     emit <a class="code" href="../../d0/d00/class_form_element_base.html#a3cdadc6f00e3788fb2e6c699484066a1" title="Ce signal est émis quand le bouton valider est pressé. Cela signifie que l&#39;elementBase a bien était m...">elementValide</a>(port);
+<a name="l00099"></a>00099 }
+<a name="l00100"></a>00100 
+<a name="l00101"></a><a class="code" href="../../d4/ddd/class_form_port_excitation.html#af33e6edd18f70b4bcd1e8b37131eff55">00101</a> <span class="keywordtype">void</span> <a class="code" href="../../d4/ddd/class_form_port_excitation.html#af33e6edd18f70b4bcd1e8b37131eff55" title="Place des valeurs par défaut dans le formulaire.">FormPortExcitation::reset</a>()
+<a name="l00102"></a>00102 {
+<a name="l00103"></a>00103     <a class="code" href="../../d4/ddd/class_form_port_excitation.html#af33e6edd18f70b4bcd1e8b37131eff55" title="Place des valeurs par défaut dans le formulaire.">FormElementBase::reset</a>();
+<a name="l00104"></a>00104 
+<a name="l00105"></a>00105     port = <span class="keyword">new</span> <a class="code" href="../../de/de8/classport_excitation.html" title="Cette classe représente la variable portExcitation d&#39;une simulation.">portExcitation</a>();
+<a name="l00106"></a>00106     <a class="code" href="../../d0/d00/class_form_element_base.html#a0fc624d18ff6d8780f715a52a2f184f1" title="Modifie l&#39;elementBase que contient le formulaire.">setElement</a>(port);
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108     init();
+<a name="l00109"></a>00109 }
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111 <span class="keywordtype">void</span> FormPortExcitation::init()
+<a name="l00112"></a>00112 {
+<a name="l00113"></a>00113     <a class="code" href="../../d0/d00/class_form_element_base.html#a394297387d3cee4057531120f3205945" title="Initialise le formulaire avec les données de l&#39;objet elementBase.">FormElementBase::init</a>();
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115     portActifWidget-&gt;setChecked(port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#ae1eb7428a19b68cb3577fe281077a28b">IsPortActif</a>());
+<a name="l00116"></a>00116     portInfinitesimalWidget-&gt;setChecked(port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a37605aac55fca15df59dab49d33eab0c">IsPortInfinitesimal</a>());
+<a name="l00117"></a>00117     typePortWidget-&gt;setCurrentIndex(port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a3d507a82db75010ea4872a100e1aea6b">GetTypePort</a>()-1);
+<a name="l00118"></a>00118     directionWidget-&gt;setCurrentIndex(port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a2565da8b396255dbf9ae463cd624880d">GetDirection</a>()-1);
+<a name="l00119"></a>00119     impedanceWidget-&gt;setValue(port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a627460758fa9043835125a0b9ddfc6a1">GetImpedance</a>());
+<a name="l00120"></a>00120     typeSourceWidget-&gt;setCurrentIndex(port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a30f91ee06610db970e4f9133a58e214f">GetTypeSource</a>());
+<a name="l00121"></a>00121     ponderationAmplitudeWidget-&gt;setValue(port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#a7b5e6afd6d2608deea56133b2689b891">GetPonderationAmplitude</a>());
+<a name="l00122"></a>00122     ponderationPhaseWidget-&gt;setValue(port-&gt;<a class="code" href="../../de/de8/classport_excitation.html#ad1beaeefa49972600481000fb115d0d4">GetPonderationPhase</a>());
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124 }
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Mai 29 2013 18:48:48 pour Editeur de configuration pour simulation électromagnétique par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

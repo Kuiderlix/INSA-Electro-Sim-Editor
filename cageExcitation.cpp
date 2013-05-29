@@ -11,12 +11,12 @@ cageExcitation::cageExcitation() : elementBase(), blocConfiguration() {
     create = false;
 
 
-    insideOutside=0;
+    insideOutside=1;
     nbFaces=0;
-    typeExcitation=0;
+    typeExcitation=1;
     modeExcitation=0;
     hauteur=0;
-    sensPropagation=0;
+    sensPropagation=1;
     theta0=0;
     phi0=0;
     psi0=0;

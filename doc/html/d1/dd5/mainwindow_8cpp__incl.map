@@ -1,0 +1,37 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$d9/d53/mainwindow_8h.html" title="mainwindow.h" alt="" coords="1672,83,1776,112"/>
+<area shape="rect" id="node7" href="$d5/d36/parser_8h.html" title="parser.h" alt="" coords="343,160,412,189"/>
+<area shape="rect" id="node47" href="$da/d09/visualisation3d_8h.html" title="visualisation3d.h" alt="" coords="1085,315,1203,344"/>
+<area shape="rect" id="node65" href="$df/d75/_table_view_metallisation_8h.html" title="TableViewMetallisation.h" alt="" coords="1641,160,1807,189"/>
+<area shape="rect" id="node78" href="$d7/d08/_table_view_parallelepipede_8h.html" title="TableViewParallelepipede.h" alt="" coords="1436,160,1617,189"/>
+<area shape="rect" id="node88" href="$d6/d7c/_table_view_sonde_8h.html" title="TableViewSonde.h" alt="" coords="1017,160,1148,189"/>
+<area shape="rect" id="node92" href="$d7/dd1/_table_view_element_localise_8h.html" title="TableViewElementLocalise.h" alt="" coords="1172,160,1361,189"/>
+<area shape="rect" id="node96" href="$df/dcd/_table_view_port_excitation_8h.html" title="TableViewPortExcitation.h" alt="" coords="436,160,612,189"/>
+<area shape="rect" id="node100" href="$d7/d32/_table_view_cart_tempo_8h.html" title="TableViewCartTempo.h" alt="" coords="636,160,793,189"/>
+<area shape="rect" id="node104" href="$df/d8c/_table_view_surface_prelev_8h.html" title="TableViewSurfacePrelev.h" alt="" coords="817,160,993,189"/>
+<area shape="rect" id="node108" href="$d0/dbd/_description_geo_widget_8h.html" title="DescriptionGeoWidget.h" alt="" coords="1831,160,1993,189"/>
+<area shape="rect" id="node112" href="$d6/d88/_param_simu_widget_8h.html" title="ParamSimuWidget.h" alt="" coords="2017,160,2159,189"/>
+<area shape="rect" id="node114" href="$d8/d5d/_objet_f_d_t_d_widget_8h.html" title="ObjetFDTDWidget.h" alt="" coords="2183,160,2324,189"/>
+<area shape="rect" id="node116" href="$d1/d02/_param_avance_widget_8h.html" title="ParamAvanceWidget.h" alt="" coords="2348,160,2503,189"/>
+<area shape="rect" id="node118" href="$db/da0/_calcul_champs_lointain_widget_8h.html" title="CalculChampsLointainWidget.h" alt="" coords="2527,160,2732,189"/>
+<area shape="rect" id="node120" href="$d6/d0a/_filter_widget_8h.html" title="FilterWidget.h" alt="" coords="2756,160,2857,189"/>
+<area shape="rect" id="node122" href="$d0/d34/_form_nouveau_8h.html" title="FormNouveau.h" alt="" coords="2881,160,2996,189"/>
+<area shape="rect" id="node124" href="$d3/dd7/_form_ouvrir_8h.html" title="FormOuvrir.h" alt="" coords="3020,160,3119,189"/>
+<area shape="rect" id="node126" href="$dd/df1/_form_settings_8h.html" title="FormSettings.h" alt="" coords="3143,160,3252,189"/>
+<area shape="rect" id="node29" href="$df/dc1/_data_8h.html" title="Data.h" alt="" coords="83,237,144,267"/>
+<area shape="rect" id="node31" href="$d2/d4a/volume_calcul_8h.html" title="volumeCalcul.h" alt="" coords="787,392,899,421"/>
+<area shape="rect" id="node33" href="$da/df0/bloc_metallisation_8h.html" title="blocMetallisation.h" alt="" coords="1615,315,1745,344"/>
+<area shape="rect" id="node39" href="$d2/d74/bloc_parallelepipede_8h.html" title="blocParallelepipede.h" alt="" coords="1360,315,1504,344"/>
+<area shape="rect" id="node44" href="$d4/d7d/cage_excitation_8h.html" title="cageExcitation.h" alt="" coords="595,392,712,421"/>
+<area shape="rect" id="node35" href="$d7/d69/_bloc_element_base_8h.html" title="BlocElementBase.h" alt="" coords="1485,392,1621,421"/>
+<area shape="rect" id="node37" href="$d7/dcf/element_base_8h.html" title="elementBase.h" alt="" coords="784,469,893,499"/>
+<area shape="rect" id="node49" href="$d9/dc1/myglwidget_8h.html" title="myglwidget.h" alt="" coords="1280,392,1379,421"/>
+<area shape="rect" id="node53" href="$d4/dc4/cube_8h.html" title="cube.h" alt="" coords="973,392,1035,421"/>
+<area shape="rect" id="node55" href="$d2/d91/point_8h.html" title="point.h" alt="" coords="1007,469,1068,499"/>
+<area shape="rect" id="node67" href="$de/d64/_table_view_8h.html" title="TableView.h" alt="" coords="1013,237,1107,267"/>
+<area shape="rect" id="node70" href="$d1/dca/_table_model_metallisation_8h.html" title="TableModelMetallisation.h" alt="" coords="1637,237,1811,267"/>
+<area shape="rect" id="node73" href="$da/d33/_coordonnee_delegate_8h.html" title="CoordonneeDelegate.h" alt="" coords="1131,237,1285,267"/>
+<area shape="rect" id="node76" href="$d8/df9/_form_metallisation_8h.html" title="FormMetallisation.h" alt="" coords="2059,237,2195,267"/>
+<area shape="rect" id="node81" href="$d9/d66/_table_model_parallelepipede_8h.html" title="TableModelParallelepipede.h" alt="" coords="1427,237,1613,267"/>
+<area shape="rect" id="node86" href="$d9/d73/_form_parallelepipede_8h.html" title="FormParallelepipede.h" alt="" coords="1835,237,1984,267"/>
+</map>

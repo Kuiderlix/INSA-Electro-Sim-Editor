@@ -109,10 +109,10 @@ void FormCageExcitation::valider()
     cageExci->setCreate(true);
     cageExci->SetTypeExcitation(typeWidget->currentIndex()+1);
     cageExci->SetNbFaces(nbFacesWidget->value());
-    cageExci->SetInsideOutside(insideOutsideWidget->currentIndex());
+    cageExci->SetInsideOutside(insideOutsideWidget->currentIndex()+1);
     cageExci->SetModeExcitation(modeWidget->currentIndex());
     cageExci->SetHauteur(hauteurWidget->value());
-    cageExci->SetSensPropagation(sensPropaWidget->currentIndex());
+    cageExci->SetSensPropagation(sensPropaWidget->currentIndex()+1);
     cageExci->SetPointReference(pointRefWidget->getCoord());
     cageExci->SetTheta0(theta0Widget->value());
     cageExci->SetPhi0(phi0Widget->value());
@@ -159,6 +159,14 @@ void FormCageExcitation::actualiseFormulaire(int val)
 void FormCageExcitation::changeCreate(bool c)
 {
     this->cageExci->setCreate(c);
+    if (this->cageExci->isCreate())
+    {
+        boutonValider->setText("Modifier");
+    }
+    else
+    {
+        boutonValider->setText("Ajouter");
+    }
 }
 
 void FormCageExcitation::init()
@@ -167,10 +175,10 @@ void FormCageExcitation::init()
     group->setChecked(cageExci->isCreate());
     nbFacesWidget->setValue(cageExci->GetNbFaces());
     typeWidget->setCurrentIndex(cageExci->GetTypeExcitation()-1);
-    insideOutsideWidget->setCurrentIndex(cageExci->GetInsideOutside());
+    insideOutsideWidget->setCurrentIndex(cageExci->GetInsideOutside()-1);
     modeWidget->setCurrentIndex(cageExci->GetModeExcitation());
     hauteurWidget->setValue(cageExci->GetHauteur());
-    sensPropaWidget->setCurrentIndex(cageExci->GetSensPropagation());
+    sensPropaWidget->setCurrentIndex(cageExci->GetSensPropagation()-1);
     pointRefWidget->setCoordonnee(cageExci->GetPointReference());
     theta0Widget->setValue(cageExci->GetTheta0());
     phi0Widget->setValue(cageExci->GetPhi0());
