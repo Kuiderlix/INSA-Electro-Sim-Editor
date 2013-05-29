@@ -30,6 +30,9 @@ public slots:
 
     void changeCreate(bool);
 
+    void changeBackgroundRed();
+    void changeBackgroundNormal(QWidget * w);
+
 
 private:
     void init();

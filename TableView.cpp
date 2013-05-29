@@ -14,8 +14,19 @@ void TableView::contextMenuEvent(QContextMenuEvent *e)
 {
     QMenu menu;
     menu.addAction("Nouveau...",this,SLOT(addNewElement()));
-    menu.addAction("Supprimer",this,SLOT(deleteElement()));
-    menu.addAction("Editer couleur",this,SLOT(editColor()));
+    QAction * actionSuppr = new QAction("Supprimer",this);
+    connect(actionSuppr,SIGNAL(triggered()),this,SLOT(deleteElement()));
+    menu.addAction(actionSuppr);
+
+    QAction * actionEditColor = new QAction("Editer couleur...",this);
+    connect(actionEditColor,SIGNAL(triggered()),this,SLOT(editColor()));
+    menu.addAction(actionEditColor);
+
+    if (selectedIndexes().empty())
+    {
+        actionEditColor->setEnabled(false);
+        actionSuppr->setEnabled(false);
+    }
 
     menu.exec(e->globalPos());
 }

@@ -169,8 +169,6 @@ void Parser::parseDSC() {
 
         do {
             fi.getline(chaine,100,'\n');
-            cout << chaine << endl << endl;
-
             /*
              * Dimensions du volume de simulation.
              */
