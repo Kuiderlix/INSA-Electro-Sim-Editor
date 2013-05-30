@@ -6,6 +6,8 @@ FormSonde::FormSonde(sonde *m_sonde, QWidget *parent) :
 
     this->m_sonde=m_sonde;
 
+    setWindowTitle("Créer sonde");
+
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
 
     QGroupBox * group = new QGroupBox("Sonde");

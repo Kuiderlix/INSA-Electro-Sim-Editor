@@ -5,6 +5,8 @@ FormMetallisation::FormMetallisation(metallisation* metal, QWidget *parent) :
 {
     this->metal=metal;
 
+    setWindowTitle("Créer métallisation");
+
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
 
     QGroupBox * groupGeo = new QGroupBox("Métallisation");

@@ -5,6 +5,7 @@ FormCartographieTemporelle::FormCartographieTemporelle(cartographieTemporelle *c
 {
     this->carto=carto;
 
+    setWindowTitle("Créer cartographie temporelle");
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
     QGroupBox * groupGeo = new QGroupBox("Cartographie Temporelle");

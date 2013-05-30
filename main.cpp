@@ -19,7 +19,7 @@ using namespace std;
 int main(int argc, char** argv) {    
 
     QApplication app(argc, argv);
-    QApplication::setStyle(QStyleFactory::create("Fusion"));
+    app.setStyle(QStyleFactory::create("fusion"));
     MainWindow fenetre;
     fenetre.showMaximized();
 

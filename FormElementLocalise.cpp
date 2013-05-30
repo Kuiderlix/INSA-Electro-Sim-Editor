@@ -6,6 +6,7 @@ FormElementLocalise::FormElementLocalise(elementLocalise *localise, QWidget *par
     this->localise=localise;
 
 
+    setWindowTitle("Créer élément localisé");
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
     QGroupBox * groupGeo = new QGroupBox("Element Localise");
 

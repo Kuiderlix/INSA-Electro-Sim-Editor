@@ -5,6 +5,8 @@ FormNouveau::FormNouveau(QWidget *parent) :
 {
 
     num=0;
+    setWindowIcon(QIcon("icon/nouveau.png"));
+    setWindowTitle("Nouvelle simulation");
 
     QSettings settings("INSAProj", "EditSimuIETR");
 

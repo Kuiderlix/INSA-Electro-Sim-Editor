@@ -4,6 +4,9 @@ FormOuvrir::FormOuvrir(QWidget *parent) :
     QDialog(parent)
 {
     num=0;
+    setWindowIcon(QIcon("icon/ouvrir.png"));
+    setWindowTitle("Ouvrir une simulation");
+
 
     QSettings settings("INSAProj", "EditSimuIETR");
     QVBoxLayout * layout = new QVBoxLayout();

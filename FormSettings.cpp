@@ -4,6 +4,8 @@ FormSettings::FormSettings(QWidget *parent) :
     QDialog(parent)
 {
 
+    setWindowIcon(QIcon("icon/setting.png"));
+    setWindowTitle("Paramètre logiciel");
     settings = new QSettings("INSAProj", "EditSimuIETR");
 
     QVBoxLayout * layout = new QVBoxLayout();

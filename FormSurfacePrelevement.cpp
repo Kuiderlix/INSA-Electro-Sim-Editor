@@ -5,6 +5,7 @@ FormSurfacePrelevement::FormSurfacePrelevement(surfacePrelevement * surface, QWi
 {
     this->surface=surface;
 
+    setWindowTitle("Créer surface prélèvement");
 
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
     QGroupBox * groupGeo = new QGroupBox("Surface Prelevement");

@@ -230,6 +230,23 @@ void FormCageExcitation::init()
     modulationPhaseWidget->setValue(cageExci->GetModulationPhase());
     modulationAmplitudeWidget->setValue(cageExci->GetModulationAmplitude());
     nomFichierWidget->setText(QString(cageExci->GetNomFichier().c_str()));
+
+    // on remet les champs du formulaire dans leur couleur normal
+    changeBackgroundNormal(nbFacesWidget);
+    changeBackgroundNormal(typeWidget);
+    changeBackgroundNormal(insideOutsideWidget);
+    changeBackgroundNormal(modeWidget);
+    changeBackgroundNormal(hauteurWidget);
+    changeBackgroundNormal(sensPropaWidget);
+    changeBackgroundNormal(pointRefWidget);
+    changeBackgroundNormal(theta0Widget);
+    changeBackgroundNormal(phi0Widget);
+    changeBackgroundNormal(psi0Widget);
+    changeBackgroundNormal(modulationPhaseWidget);
+    changeBackgroundNormal(modulationAmplitudeWidget);
+    changeBackgroundNormal(nomFichierWidget);
+    changeBackgroundNormal(formCoord1);
+    changeBackgroundNormal(formCoord2);
 }
 
 

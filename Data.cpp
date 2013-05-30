@@ -32,7 +32,8 @@ void Data::ecrire(int numstru){
     cartographies.ecrire();
     surfacePrelevements.ecrire();
     //PTR
-    champlointain.ecrire(); //Faire un test ?
+    if(surfacePrelevements.getNbElement() == 1 && surfacePrelevements.GetSurface(0)->GetTypeSurface() == 1)
+        champlointain.ecrire();
     //AVC
     amplitudeV0.ecrire();
     stockage.ecrire();

@@ -97,13 +97,13 @@ void MainWindow::construireMenu()
 {
     QMenu *menuFichier = menuBar()->addMenu("&Fichier");
 
-    actionNouveau = new QAction(QIcon("icon/nouveau.png"),"&Nouveau", this);
+    actionNouveau = new QAction(QIcon("icon/nouveau.png"),"Nouveau", this);
     actionNouveau->setShortcuts(QKeySequence::New);
     connect(actionNouveau,SIGNAL(triggered()),this,SLOT(nouvelleSimulation()));
-    actionOuvrir = new QAction(QIcon("icon/ouvrir.png"),"&Ouvrir", this);
+    actionOuvrir = new QAction(QIcon("icon/ouvrir.png"),"Ouvrir", this);
     actionOuvrir->setShortcuts(QKeySequence::Open);
     connect(actionOuvrir,SIGNAL(triggered()),this,SLOT(ouvrirSimulation()));
-    QAction *actionQuitter = new QAction(QIcon("icon/quitter.png"),"&Quitter", this);
+    QAction *actionQuitter = new QAction(QIcon("icon/quitter.png"),"Quitter", this);
     actionQuitter->setShortcuts(QKeySequence::Quit);
     connect(actionQuitter,SIGNAL(triggered()),this,SLOT(close()));
     menuFichier->addAction(actionNouveau);
@@ -111,18 +111,18 @@ void MainWindow::construireMenu()
     menuFichier->addAction(actionQuitter);
 
     QMenu *menuSimulation = menuBar()->addMenu("&Simulation");
-    actionGenerer = new QAction(QIcon("icon/generer.png"),"&Générer", this);
+    actionGenerer = new QAction(QIcon("icon/generer.png"),"Générer", this);
     connect(actionGenerer,SIGNAL(triggered()),this,SLOT(ecrire()));
     menuSimulation->addAction(actionGenerer);
 
 
     QMenu *menuScene3D = menuBar()->addMenu("&Scene 3D");
-    actionZoom11 = new QAction(QIcon("icon/initScene.png"),"&Zoom 1:1", this);
+    actionZoom11 = new QAction(QIcon("icon/initScene.png"),"Zoom 1:1", this);
     connect(actionZoom11,SIGNAL(triggered()),visualisation,SLOT(startToZoom11()));
     menuScene3D->addAction(actionZoom11);
 
     QMenu *menuOption = menuBar()->addMenu("&Options");
-    actionParametre = new QAction(QIcon("icon/settings.png"),"&Paramètres", this);
+    actionParametre = new QAction(QIcon("icon/settings.png"),"Paramètres", this);
     connect(actionParametre,SIGNAL(triggered()),this,SLOT(ouvreParametres()));
     menuOption->addAction(actionParametre);
 

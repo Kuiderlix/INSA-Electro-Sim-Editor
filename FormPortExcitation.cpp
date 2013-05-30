@@ -5,6 +5,8 @@ FormPortExcitation::FormPortExcitation(portExcitation *port, QWidget *parent) :
 {
     this->port=port;
 
+    setWindowTitle("Créer port excitation");
+
     QVBoxLayout * layoutPrincipal = new QVBoxLayout();
     QGroupBox * groupGeo = new QGroupBox("Port Excitation");
 
